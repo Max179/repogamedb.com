@@ -1,11 +1,11 @@
 {
   "site": "repogamedb.com",
-  "head": "879771f",
-  "commits": 61,
-  "pages": 479,
+  "head": "430c8ca",
+  "commits": 67,
+  "pages": 490,
   "indexable": 13,
-  "noindex": 466,
-  "classes": 462,
+  "noindex": 477,
+  "classes": 473,
   "fields": 19505,
   "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
   "generatedBy": "pipeline/status.mjs",
@@ -26,6 +26,6 @@
   },
   "valueLayer": {
     "file": "data/normalized/p0-instances.json",
-    "count": 49
+    "count": 63
   }
 }
