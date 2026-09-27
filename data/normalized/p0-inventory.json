@@ -56617,6 +56617,249 @@
           "value": 102
         }
       ]
+    },
+    {
+      "name": "EventSystem",
+      "namespace": "UnityEngine.EventSystems",
+      "base": "UIBehaviour",
+      "declared": 14,
+      "written": 3,
+      "fields": [
+        {
+          "name": "m_FirstSelected",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "m_sendNavigationEvents",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "true"
+        },
+        {
+          "name": "m_DragThreshold",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "name": "VoiceLogger",
+      "namespace": "Photon.Voice.Unity",
+      "base": "MonoBehaviour",
+      "declared": 1,
+      "written": 1,
+      "fields": [
+        {
+          "name": "LogLevel.value__",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "name": "StandaloneInputModule",
+      "namespace": "UnityEngine.EventSystems",
+      "base": "PointerInputModule",
+      "declared": 15,
+      "written": 8,
+      "fields": [
+        {
+          "name": "m_SendPointerHoverToParent",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "true"
+        },
+        {
+          "name": "m_HorizontalAxis",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "Horizontal"
+        },
+        {
+          "name": "m_VerticalAxis",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "Vertical"
+        },
+        {
+          "name": "m_SubmitButton",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "Submit"
+        },
+        {
+          "name": "m_CancelButton",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "Cancel"
+        },
+        {
+          "name": "m_InputActionsPerSecond",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 10
+        },
+        {
+          "name": "m_RepeatDelay",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0.5
+        },
+        {
+          "name": "m_ForceModuleActive",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "Mask",
+      "namespace": "UnityEngine.UI",
+      "base": "UIBehaviour",
+      "declared": 5,
+      "written": 1,
+      "fields": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "PostProcessVolume",
+      "namespace": "UnityEngine.Rendering.PostProcessing",
+      "base": "MonoBehaviour",
+      "declared": 9,
+      "written": 5,
+      "fields": [
+        {
+          "name": "sharedProfile",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 11537
+        },
+        {
+          "name": "isGlobal",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "true"
+        },
+        {
+          "name": "blendDistance",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "weight",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1
+        },
+        {
+          "name": "priority",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        }
+      ]
     }
   ],
   "provenance": {

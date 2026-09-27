@@ -571,7 +571,15 @@ function resolveCodedName(assembly: DotNetAssembly, coded: string): string {
  * and picking one would attach the wrong field list to a page.
  */
 export function monoBehaviourClass(assembly: DotNetAssembly, name: string): DotNetType | null {
-  const candidates = assembly.types.filter((t) => t.name === name);
+  // The payload dumper records the MonoScript class name, which is the SIMPLE name, while types here carry their
+  // full name. The refusal probe showed every classNotFound payload (repo 377/377, tcg 2909/2909) has its simple
+  // name in the merged table, so fall back to a simple-name match - and still refuse when more than one type
+  // matches, so an ambiguous name is never guessed.
+  // Search the MERGED table (byName), not assembly.types: the engine/package merge fills byName while
+  // assembly.types still holds only Assembly-CSharp, which is why class lookup failed even after merging.
+  const pool = [...new Set(assembly.byName.values())];
+  const exact = pool.filter((t) => t.name === name);
+  const candidates = exact.length ? exact : pool.filter((t) => (t.name.split('.').pop() ?? t.name) === name);
   if (!candidates.length) return null;
   const mono = candidates.filter((t) => reachesMonoBehaviour(assembly, t));
   if (mono.length !== 1) return null;

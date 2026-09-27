@@ -8,8 +8,30 @@
     "extractedAt": "2026-09-27T03:59:15.072Z",
     "note": "per-instance decoded values; each instance is one object whose layout consumed its payload exactly"
   },
-  "count": 63,
+  "count": 77,
   "instances": [
+    {
+      "class": "EventSystem",
+      "pathId": "2589",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_FirstSelected",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "m_sendNavigationEvents",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "m_DragThreshold",
+          "kind": "int",
+          "value": 10
+        }
+      ]
+    },
     {
       "class": "PunManager",
       "pathId": "2670",
@@ -95,6 +117,65 @@
           "name": "crownedPlayerSteamID",
           "kind": "string",
           "value": ""
+        }
+      ]
+    },
+    {
+      "class": "VoiceLogger",
+      "pathId": "2677",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "LogLevel.value__",
+          "kind": "int",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "class": "StandaloneInputModule",
+      "pathId": "2680",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_SendPointerHoverToParent",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "m_HorizontalAxis",
+          "kind": "string",
+          "value": "Horizontal"
+        },
+        {
+          "name": "m_VerticalAxis",
+          "kind": "string",
+          "value": "Vertical"
+        },
+        {
+          "name": "m_SubmitButton",
+          "kind": "string",
+          "value": "Submit"
+        },
+        {
+          "name": "m_CancelButton",
+          "kind": "string",
+          "value": "Cancel"
+        },
+        {
+          "name": "m_InputActionsPerSecond",
+          "kind": "float",
+          "value": 10
+        },
+        {
+          "name": "m_RepeatDelay",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "m_ForceModuleActive",
+          "kind": "bool",
+          "value": false
         }
       ]
     },
@@ -438,6 +519,18 @@
       ]
     },
     {
+      "class": "Mask",
+      "pathId": "2715",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
       "class": "PlayerMaterial",
       "pathId": "2728",
       "source": "level0 + globalgamemanagers.assets",
@@ -490,6 +583,30 @@
           "name": "debug",
           "kind": "bool",
           "value": true
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2776",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2788",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
         }
       ]
     },
@@ -682,6 +799,18 @@
       ]
     },
     {
+      "class": "Mask",
+      "pathId": "2862",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
       "class": "MenuPlayerListed",
       "pathId": "2866",
       "source": "level0 + globalgamemanagers.assets",
@@ -807,6 +936,18 @@
       ]
     },
     {
+      "class": "Mask",
+      "pathId": "2894",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
       "class": "PlayerMaterial",
       "pathId": "2906",
       "source": "level0 + globalgamemanagers.assets",
@@ -828,6 +969,18 @@
         },
         {
           "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2920",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
           "kind": "bool",
           "value": false
         }
@@ -1034,6 +1187,38 @@
       ]
     },
     {
+      "class": "PostProcessVolume",
+      "pathId": "2992",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "sharedProfile",
+          "kind": "reference",
+          "value": "11537"
+        },
+        {
+          "name": "isGlobal",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "blendDistance",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "weight",
+          "kind": "float",
+          "value": 1
+        },
+        {
+          "name": "priority",
+          "kind": "float",
+          "value": 0
+        }
+      ]
+    },
+    {
       "class": "PlayerMaterial",
       "pathId": "2999",
       "source": "level0 + globalgamemanagers.assets",
@@ -1145,6 +1330,18 @@
           "name": "hideParent",
           "kind": "reference",
           "value": "203"
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "3035",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
         }
       ]
     },
@@ -1370,6 +1567,38 @@
       ]
     },
     {
+      "class": "PostProcessVolume",
+      "pathId": "3127",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "sharedProfile",
+          "kind": "reference",
+          "value": "11536"
+        },
+        {
+          "name": "isGlobal",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "blendDistance",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "weight",
+          "kind": "float",
+          "value": 1
+        },
+        {
+          "name": "priority",
+          "kind": "float",
+          "value": 0
+        }
+      ]
+    },
+    {
       "class": "AudioLowPassLogic",
       "pathId": "3134",
       "source": "level0 + globalgamemanagers.assets",
@@ -1408,6 +1637,18 @@
           "name": "CustomFalloff",
           "kind": "float",
           "value": 0.800000011920929
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "3139",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
         }
       ]
     },
@@ -1791,6 +2032,18 @@
           "name": "enableObject",
           "kind": "reference",
           "value": "102"
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "3207",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
         }
       ]
     },
