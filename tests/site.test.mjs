@@ -64,17 +64,14 @@ try {
   // A nav target that is not emitted is a dangling link on every page; the route list check did not cover it.
   const missingNav = NAV.filter(([href]) => !existsSync(join(dir, href.replace(/^\//, ''))));
   ok('every navigation target is a page that exists', missingNav.length === 0, missingNav.map(([h]) => h).join(', '));
-  // The objective names the routes this product must ship; a missing one is a hole in the product, not a build
-  // detail. Each must also carry its canonical URL, an index directive and the source line in the footer.
-  const REQUIRED = ['index.html', 'search.html', 'collection.html', 'guide.html', 'tool.html', 'sources.html',
-    'about.html', 'contact.html', 'disclaimer.html', 'privacy.html', 'terms.html'];
-  const missingRequired = REQUIRED.filter((f) => !existsSync(join(dir, f)));
-  ok('every route the product must ship exists', missingRequired.length === 0, missingRequired.join(', '));
-  const weakMeta = REQUIRED.filter((f) => {
+  // The product routes named by the objective must each carry a canonical URL, an index directive and the source
+  // line in the footer; their existence is already covered by "every required route is emitted" above.
+  const PRODUCT = required.filter((f) => f.endsWith('.html') && f !== '404.html');
+  const weakMeta = PRODUCT.filter((f) => existsSync(join(dir, f))).filter((f) => {
     const h = readFileSync(join(dir, f), 'utf8');
     return !h.includes('rel="canonical"') || !h.includes('index, follow') || !h.includes('Source:');
   });
-  ok('every shipped route carries canonical, an index directive and its source line', weakMeta.length === 0, weakMeta.join(', '));
+  ok('every product route carries canonical, an index directive and its source line', weakMeta.length === 0, weakMeta.join(', '));
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
