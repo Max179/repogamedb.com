@@ -1,5 +1,4 @@
-// Diagnostic only: for the residual classNotFound types (unique simple name, not reaching MonoBehaviour), is the
-// base-type chain broken because the parent type is missing from the merged table?
+// Diagnostic only: dump the base-type chain of refused classes hop by hop, to observe where resolution stops.
 import { readFileSync, readdirSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
 import { parseAssembly, monoBehaviourClass } from './dotnet-metadata.ts';
@@ -22,23 +21,28 @@ for (const f of readdirSync(dir).filter((x) => x.toLowerCase().endsWith('.dll') 
 }
 const merged = { ...local, byName };
 const pool = [...new Set(byName.values())];
-const fullNames = new Set(pool.map((t) => t.name));
-const simpleNames = new Set(pool.map((t) => t.name.split('.').pop() ?? t.name));
-const bySimple = new Map<string, (typeof pool)[number]>();
-for (const t of pool) { const s = t.name.split('.').pop() ?? t.name; if (!bySimple.has(s)) bySimple.set(s, t); }
-const doc = JSON.parse(readFileSync(CWD + '/data/normalized/' + (PROJECT === 'repo' ? 'repo' : 'tcg') + '-mb-payloads.json', 'utf8'));
-let refused = 0; let parentPresent = 0; let parentAbsent = 0; let parentEmpty = 0;
-const samples: string[] = [];
-for (const o of doc.objects) {
-  const cls: string = o.class;
-  if (monoBehaviourClass(merged, cls)) continue;
-  const t = bySimple.get(cls);
-  if (!t) continue;
-  refused++;
-  const base = t.baseType ?? '';
-  if (!base) { parentEmpty++; continue; }
-  const present = fullNames.has(base) || simpleNames.has(base);
-  if (present) parentPresent++; else { parentAbsent++; if (samples.length < 6) samples.push(cls + ' <- ' + base); }
+const simpleIdx = new Map<string, (typeof pool)[number]>();
+for (const t of pool) { const s = t.name.split('.').pop() ?? t.name; if (!simpleIdx.has(s)) simpleIdx.set(s, t); }
+const candidates = (cls: string) => pool.filter((t) => (t.name.split('.').pop() ?? t.name) === cls);
+function chain(t: (typeof pool)[number]): string[] {
+  const out: string[] = [];
+  let cur: (typeof pool)[number] | undefined = t;
+  const seen = new Set<string>();
+  while (cur && !seen.has(cur.name) && out.length < 6) {
+    seen.add(cur.name);
+    const base = cur.baseType ?? '';
+    const simple = base.split('.').pop() ?? base;
+    const mark = base === '' ? '(none)' : byName.has(base) ? 'exact' : simpleIdx.has(simple) ? 'simple-only' : 'MISSING';
+    out.push(cur.name + '  --base: ' + base + '  [' + mark + ']');
+    cur = byName.get(base) ?? simpleIdx.get(simple);
+  }
+  return out;
 }
-console.log(PROJECT + ': refused=' + refused + ' parentPresent=' + parentPresent + ' parentAbsent=' + parentAbsent + ' parentEmpty=' + parentEmpty);
-console.log('  samples of missing parents: ' + samples.join(' | '));
+const doc = JSON.parse(readFileSync(CWD + '/data/normalized/' + (PROJECT === 'repo' ? 'repo' : 'tcg') + '-mb-payloads.json', 'utf8'));
+const refused = [...new Set(doc.objects.filter((o: { class: string }) => !monoBehaviourClass(merged, o.class)).map((o: { class: string }) => o.class))];
+console.log(PROJECT + ': distinct refused classes=' + refused.length + ' first=' + refused.slice(0, 4).join(', '));
+for (const cls of refused.slice(0, 3)) {
+  const cs = candidates(cls as string);
+  console.log('  ' + cls + ': ' + cs.length + ' candidate(s)');
+  for (const c of cs.slice(0, 2)) for (const line of chain(c)) console.log('     ' + line);
+}
