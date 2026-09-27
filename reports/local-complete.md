@@ -20,11 +20,11 @@
 node pipeline/inventory.ts          -> p0-inventory.json（462 类, 4723 字段）
 node pipeline/normalize_values.ts   -> p0-instances.json（49 实例, 28 类）
 [site] pages=479 indexable=13 schema(noindex)=463 out=web/dist
-node tests/site.test.mjs            -> [site-tests] 29 passed, 0 failed
+node tests/site.test.mjs            -> [site-tests] 35 passed, 0 failed
 node .../typescript/bin/tsc --noEmit -p tsconfig.json -> exit 0
 git status --porcelain              -> 空
 ```
-站点代码 HEAD `fd84e5e` · 45 commits · 工作区干净。
+站点代码 HEAD `c9c3649` · 53 commits · 工作区干净。
 
 **门禁可失败性（反证，非声明）**：故意破坏构建后两半都失败，随后还原：
 - `terms.html` 去掉 canonical → `FAIL every product route carries canonical, an index directive and its source line :: terms.html`（21 passed / 1 failed, exit 1）
