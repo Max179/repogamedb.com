@@ -38,6 +38,8 @@ jobs:
           node-version: '22'
       - name: build the exact artefact that will be published
         run: node pipeline/site.mjs
+      - name: preflight
+        run: node tools/preflight.mjs
       - name: publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
