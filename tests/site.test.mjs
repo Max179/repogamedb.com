@@ -145,6 +145,15 @@ try {
   }
   ok('every indexable page has a unique title and description, without a repeated site name', badMeta.length === 0, badMeta.slice(0, 4).join(', '));
 
+  // Page-weight budget: every page must stay openable on a phone. The ceiling is 1 MiB; the largest page today is
+  // the 782 KiB field-name list, which the reports record as the next optimisation target.
+  const heavyPages = [];
+  for (const f of htmlFiles) {
+    const bytes = readFileSync(f).length;
+    if (bytes > 1048576) heavyPages.push(f.slice(dir.length) + ' = ' + Math.round(bytes / 1024) + ' KiB');
+  }
+  ok('no emitted page exceeds the 1 MiB weight budget', heavyPages.length === 0, heavyPages.join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
