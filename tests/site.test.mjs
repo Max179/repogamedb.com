@@ -38,6 +38,12 @@ try {
   const html = readdirSync(join(dir, 'entity')).slice(0, 25).map((f) => readFileSync(join(dir, 'entity', f), 'utf8'));
   ok('every sampled entity page carries a canonical URL', html.every((h) => h.includes('<link rel="canonical" href="' + SITE.url + '/entity/')));
   ok('every sampled entity page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
+  const f0 = inv.classes[0].fields[0];
+  ok('every field carries per-field provenance',
+    f0.source === inv.source.assembly && f0.version === inv.version && f0.confidence === 'verified-schema' && 'value' in f0);
+  ok('per-field provenance is rendered on an entity page',
+    readFileSync(join(dir, 'entity', readdirSync(join(dir, 'entity')).find((f) => f.endsWith('.html'))), 'utf8').includes('verified-schema'));
+
   ok('every sampled entity page marks the values it does not have as unknown', html.every((h) => /unknown/i.test(h)));
 
   const sitemap = readFileSync(join(dir, 'sitemap.xml'), 'utf8');

@@ -98,8 +98,8 @@ export function build(inventoryPath, outDir) {
     write('entity/' + slugs[ci] + '.html', layout(c.name + ' — R.E.P.O. class', c.name + ': ' + c.written + ' written fields read from the game assembly.', '/entity/' + slugs[ci] + '.html',
       '<h1 class="mono">' + esc(c.name) + '</h1><p class="dim">namespace <span class="mono">' + esc(c.namespace || '-') + '</span> · base <span class="mono">' + esc(c.base || '-') + '</span> · declared ' + c.declared + ' · Unity writes ' + c.written + '</p>' +
       '<div class="note">Field <em>values</em> are <strong>unknown</strong> for this build: they live in the serialized assets (Unity 6 / SerializedFile v22), which this pipeline does not read yet.</div>' +
-      '<h2>Written fields</h2><table><thead><tr><th>Field</th><th>Type</th><th>Kind</th></tr></thead><tbody>' +
-      c.fields.map((f) => '<tr><td class="mono">' + esc(f.name) + '</td><td class="mono dim">' + esc(f.type) + '</td><td class="dim">' + esc(f.kind) + '</td></tr>').join('') +
+      '<h2>Written fields</h2><table><thead><tr><th>Field</th><th>Type</th><th>Kind</th><th>Confidence</th><th>Value</th></tr></thead><tbody>' +
+      c.fields.map((f) => '<tr><td class="mono">' + esc(f.name) + '</td><td class="mono dim">' + esc(f.type) + '</td><td class="dim">' + esc(f.kind) + '</td><td class="dim">' + esc(f.confidence ?? 'unknown') + '</td><td class="dim">' + (f.value == null ? 'unknown' : esc(String(f.value))) + '</td></tr>').join('') +
       '</tbody></table>', inv, '/entity/' + slugs[ci] + '.html'));
   }
 
