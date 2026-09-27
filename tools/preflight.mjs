@@ -26,6 +26,9 @@ if (hasStatus) {
     typeof s.site === 'string' && s.site.length > 3 && s.pages > 0 && s.indexable > 0 && s.indexable < s.pages,
     JSON.stringify({ site: s.site, pages: s.pages, indexable: s.indexable }));
 }
+const hasReport = existsSync('reports/local-complete.md');
+add('the handoff report exists and is not empty', hasReport && readFileSync('reports/local-complete.md', 'utf8').trim().length > 200,
+  hasReport ? readFileSync('reports/local-complete.md', 'utf8').trim().length + ' chars' : 'reports/local-complete.md missing');
 const wf = existsSync('.github/workflows/publish.yml') ? readFileSync('.github/workflows/publish.yml', 'utf8') : '';
 add('the deploy job waits for the gate job', /needs:\s*gate\b/.test(wf) && wf.includes('node tests/site.test.mjs'));
 add('the deploy uses a secret and no token is committed', wf.includes('secrets.CLOUDFLARE_API_TOKEN') && !/apiToken:\s*[A-Za-z0-9_-]{20,}/.test(wf));
