@@ -52,3 +52,17 @@ git status --porcelain              -> 空
 - 值层：4723 字段中仅 80 个 `extracted`（28/462 类有实例）；继续扩展需按"实测字段规则"逐个验证，不接受推测布局
 - 本地化：**有意只出英文单语言**。不生成 `/zh/`：没有译文就不能有译文页，机器编造的文案属于发明内容。若需第二语言，需先有作者文本，生成器结构已可加前缀与互为 `hreflang`
 - 未发布：无 deploy、无域名、无 DNS、无 GSC/Bing 提交、无 AdSense
+
+## 可索引页审计（第 75–76 轮）
+对每个可索引页测量体积、表格行数与标题层级；并对 `search.html` 与 `tool.html` 的 `<main>` 正文做 `difflib` 相似度比较：
+
+| 项目 | search 正文 | tool 正文 | 相似度 | 判定 |
+| --- | --- | --- | --- | --- |
+| repo | 18,173 B | 18,232 B | **0.988** | 两页几乎同质：只差标题与一句话，二者内联同一份字段载荷 |
+| tcg-shop | 18,595 B | 18,655 B | **0.988** | 同上 |
+| supermarket-simulator | 347,375 B | 312,720 B | 0.005 | 已在第 75 轮修好（tool 改为字段名查找） |
+
+其余可索引页均有实质内容（repo：collection 463 行、enums 928 行、enemies 139 行/9 个 h2、values 77 行/28 个 h2；tcg：collection 219 行、cards 276 行/13 个 h2、enums 289 行、values 25 行）。政策页 2–3 KB 属正常文本量。
+
+**待修（下一轮）**：`tool.html` 与本项目 `search.html` 高度重复，按既定可索引性政策应当**合并或 noindex + 移出 sitemap**（保留页面作为便捷入口，但不与 search 争索引），并新增一条通用门禁：**任意两个可索引页的 `<main>` 正文相似度不得超过 0.9**（该门禁在 supermarket 上可通过、在 repo/tcg 修好前必然失败）。审计脚本见 supermarket 仓库 `pipeline/audit_page_similarity.py`。
+
