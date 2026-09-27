@@ -132,6 +132,19 @@ try {
   }
   ok('every internal link resolves to an emitted file', dangling.length === 0, dangling.slice(0, 5).join(', '));
 
+  // A title that repeats the site name, or two pages sharing a title or description, is a real SEO defect.
+  const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = [];
+  for (const u of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
+    const rel = u.replace('<loc>' + SITE.url + '/', '').replace('</loc>', '') || 'index.html';
+    const h = readFileSync(join(dir, rel), 'utf8');
+    const t = (h.match(/<title>([^<]*)<\/title>/) ?? [])[1] ?? '';
+    const d = (h.match(/<meta name="description" content="([^"]*)"/) ?? [])[1] ?? '';
+    const repeats = t.split(SITE.name).length - 1;
+    if (!t || !d || seenTitles.has(t) || seenDescs.has(d) || repeats > 1) badMeta.push(rel + (repeats > 1 ? ' (site name x' + repeats + ')' : ''));
+    seenTitles.add(t); seenDescs.add(d);
+  }
+  ok('every indexable page has a unique title and description, without a repeated site name', badMeta.length === 0, badMeta.slice(0, 4).join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
