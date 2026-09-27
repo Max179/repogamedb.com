@@ -82,10 +82,11 @@ try {
     const body = h.match(/<main>([\s\S]*?)<\/main>/);
     mains[rel] = (body ? body[1] : h).replace(/\s+/g, ' ').trim();
   }
-  // Word 6-grams with containment, NOT character shingles: character shingles are offset sensitive and measured
-  // only 0.070 for two pages that share 98.8% of their characters, so that version could never fire. Containment
-  // against the smaller page still fires when the difference is a contiguous insertion such as a heading line.
-  const grams = (s) => { const w = s.split(/\s+/); const set = new Set(); for (let i = 0; i + 6 <= w.length; i++) set.add(w.slice(i, i + 6).join(' ')); return set; };
+  // Character 40-grams with CONTAINMENT. Two earlier versions of this metric failed and are recorded here so the
+  // reasoning is not repeated: a Jaccard over character shingles measured 0.070 (union denominator plus a shifted
+  // page), and word 6-grams measured 0.048 because the inline JSON payload has almost no whitespace (42 grams for
+  // an 18 KB page). Containment against the smaller page tolerates a contiguous insertion and dense payloads.
+  const grams = (s) => { const set = new Set(); for (let i = 0; i + 40 <= s.length; i += 10) set.add(s.slice(i, i + 40)); return set; };
   const containment = (a, b) => { let inter = 0; for (const x of a) if (b.has(x)) inter++; return inter / Math.min(a.size, b.size); };
   const keys = Object.keys(mains).map((k) => ({ name: k, grams: grams(mains[k]) }));
   const tooSimilar = [];
