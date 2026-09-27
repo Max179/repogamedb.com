@@ -7,12 +7,25 @@ import { parseAssembly } from './dotnet-metadata.ts';
 import type { DotNetAssembly } from './dotnet-metadata.ts';
 import { decodeValues, readMonoBehaviourHeader } from './mono-values.ts';
 
-const jobs = [
-  ['repo', 'C:/Users/CHEN/Desktop/repo/data/normalized/repo-mb-payloads.json',
-   'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/Managed/Assembly-CSharp.dll'],
-  ['tcg', 'C:/Users/CHEN/Desktop/tcg-shop/data/normalized/tcg-mb-payloads.json',
-   'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/Managed/Assembly-CSharp.dll'],
-];
+// Derived from the working directory so one run reports one project's refusal profile. The previous list processed
+// BOTH games, so each repository printed the other's numbers and the step could not be reproduced on a Mac.
+const CWD = process.cwd().replace(/\\/g, '/');
+const PROJECT = CWD.split('/').pop() ?? '';
+const DLL_BY_PROJECT: Record<string, string> = {
+  repo: 'data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/Managed/Assembly-CSharp.dll',
+  // The TCG assembly lives in the installed game, outside the repository; that path stays absolute on purpose.
+  'tcg-shop': 'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/Managed/Assembly-CSharp.dll',
+};
+const DLL = DLL_BY_PROJECT[PROJECT];
+if (!DLL) {
+  console.error('decode_values2: run from a project directory (repo | tcg-shop), not ' + CWD);
+  process.exit(1);
+}
+const jobs = [[
+  PROJECT === 'repo' ? 'repo' : 'tcg',
+  CWD + '/data/normalized/' + (PROJECT === 'repo' ? 'repo' : 'tcg') + '-mb-payloads.json',
+  DLL.startsWith('C:') ? DLL : CWD + '/' + DLL,
+]];
 const ENGINE_MODULES = ['UnityEngine.CoreModule.dll', 'UnityEngine.dll', 'UnityEngine.PhysicsModule.dll', 'UnityEngine.AnimationModule.dll'];
 for (const [label, payloadPath, dll] of jobs) {
   let doc; try { doc = JSON.parse(readFileSync(payloadPath, 'utf8')); } catch { console.log(label + ': no dump'); continue; }
