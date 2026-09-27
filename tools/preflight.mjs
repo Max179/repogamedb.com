@@ -26,6 +26,20 @@ if (hasStatus) {
     typeof s.site === 'string' && s.site.length > 3 && s.pages > 0 && s.indexable > 0 && s.indexable < s.pages,
     JSON.stringify({ site: s.site, pages: s.pages, indexable: s.indexable }));
 }
+if (hasStatus) {
+  const st = JSON.parse(readFileSync('reports/status.json', 'utf8'));
+  const vf = st.valueLayer?.file ?? null;
+  let ok = false;
+  let detail = 'no value layer recorded';
+  if (vf && existsSync(vf)) {
+    const d = JSON.parse(readFileSync(vf, 'utf8'));
+    const arr = [d, d.instances, d.objects, d.rows, d.classes].find((c) => Array.isArray(c));
+    const n = arr ? arr.length : (typeof d.fieldCount === 'number' ? d.fieldCount : null);
+    ok = n === st.valueLayer.count;
+    detail = 'file=' + n + ' status=' + st.valueLayer.count;
+  }
+  add('the status value-layer count matches its file', ok, detail);
+}
 const hasReport = existsSync('reports/local-complete.md');
 add('the handoff report exists and is not empty', hasReport && readFileSync('reports/local-complete.md', 'utf8').trim().length > 200,
   hasReport ? readFileSync('reports/local-complete.md', 'utf8').trim().length + ' chars' : 'reports/local-complete.md missing');
