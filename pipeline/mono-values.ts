@@ -135,20 +135,28 @@ function walkFields(assembly: DotNetAssembly, fields: DotNetField[], payload: Bu
 /** Refusals keyed by (consumed - payload length); 999999 means the field walk itself failed. Diagnostic only, so
  *  the next decoder extension is chosen from measured deltas instead of a guess. */
 export const refusalDeltas = new Map<number, number>();
+/** Which stage refused a payload: before the field walk (class/schema) or during it. */
+export const refusalReasons = { classNotFound: 0, noSerializedFields: 0, walkFailed: 0, layoutShorter: 0, layoutLonger: 0 };
 process.on('exit', () => {
-  if (!refusalDeltas.size) return;
-  const top = [...refusalDeltas.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
-  console.log('[refusal deltas] ' + top.map(([d, n]) => (d === 999999 ? 'walk-failed' : 'delta ' + d) + ': ' + n).join(', '));
+  const r = refusalReasons;
+  if (!refusalDeltas.size && !r.classNotFound && !r.noSerializedFields) return;
+  const top = [...refusalDeltas.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+  console.log('[refusals] classNotFound=' + r.classNotFound + ' noSerializedFields=' + r.noSerializedFields +
+    ' walkFailed=' + r.walkFailed + ' layoutShorter=' + r.layoutShorter + ' layoutLonger=' + r.layoutLonger +
+    ' | top deltas: ' + top.map(([d, n]) => (d === 999999 ? 'walk' : d) + ':' + n).join(' '));
 });
 
 export function decodeValues(assembly: DotNetAssembly, className: string, payload: Buffer): DecodedValue[] | null {
   const type = monoBehaviourClass(assembly, className);
-  if (!type) return null;
+  if (!type) { refusalReasons.classNotFound++; return null; }
   const written = unitySerializedFields(assembly, type);
-  if (!written.length) return null;
+  if (!written.length) { refusalReasons.noSerializedFields++; return null; }
   const r = walkFields(assembly, written, payload, 0, 0);
   if (!r || r.next !== payload.length) {
     const delta = r ? r.next - payload.length : 999999;
+    if (!r) refusalReasons.walkFailed++;
+    else if (delta < 0) refusalReasons.layoutShorter++;
+    else refusalReasons.layoutLonger++;
     refusalDeltas.set(delta, (refusalDeltas.get(delta) ?? 0) + 1);
     return null;
   }
