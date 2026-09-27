@@ -86,7 +86,18 @@ try {
   // reasoning is not repeated: a Jaccard over character shingles measured 0.070 (union denominator plus a shifted
   // page), and word 6-grams measured 0.048 because the inline JSON payload has almost no whitespace (42 grams for
   // an 18 KB page). Containment against the smaller page tolerates a contiguous insertion and dense payloads.
-  const grams = (s) => { const set = new Set(); for (let i = 0; i + 40 <= s.length; i += 10) set.add(s.slice(i, i + 40)); return set; };
+  // Every 40-character window (stride 1, hashed to an int to keep memory bounded). The stride-10 version of this
+  // function was measured at 0.131 containment on two pages whose longest common block is 17284 of 18173
+  // characters: sampled shingles land on different phases in the two pages, so the sampled sets barely intersect.
+  const grams = (s) => {
+    const set = new Set();
+    for (let i = 0; i + 40 <= s.length; i++) {
+      let h = 0;
+      for (let k = 0; k < 40; k++) h = (h * 31 + s.charCodeAt(i + k)) | 0;
+      set.add(h);
+    }
+    return set;
+  };
   const containment = (a, b) => { let inter = 0; for (const x of a) if (b.has(x)) inter++; return inter / Math.min(a.size, b.size); };
   const keys = Object.keys(mains).map((k) => ({ name: k, grams: grams(mains[k]) }));
   const tooSimilar = [];
