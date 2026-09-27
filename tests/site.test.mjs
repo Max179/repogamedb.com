@@ -45,7 +45,12 @@ try {
   ok('every field carries per-field provenance',
     f0.source === inv.source.assembly && f0.version === inv.version && 'value' in f0 &&
     [...confidences].every((c) => c === 'verified-schema' || c === 'extracted'), [...confidences].join(','));
-  ok('the dataset carries real extracted values where the decoder proved them', extracted >= 1, extracted + ' field(s) extracted');
+  // Invariant rather than a count: a field may claim `extracted` only when it carries a non-null value. Whether a
+  // title has any extracted values yet depends on its classes (R.E.P.O. 45, TCG 0 because its classes live in
+  // UnityEngine), so asserting a minimum here would fail an honest dataset.
+  let extractedWithoutValue = 0;
+  for (const c of inv.classes) for (const f of c.fields ?? []) if (f.confidence === 'extracted' && (f.value === null || f.value === undefined)) extractedWithoutValue++;
+  ok('no field claims an extracted value it does not have', extractedWithoutValue === 0, extractedWithoutValue + ' field(s)');
   ok('per-field provenance is rendered on an entity page',
     readFileSync(join(dir, 'entity', readdirSync(join(dir, 'entity')).find((f) => f.endsWith('.html'))), 'utf8').includes('verified-schema'));
 
