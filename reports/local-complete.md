@@ -1,29 +1,34 @@
-﻿# repo 鈥?鏈湴鐘舵€佹姤鍛婏紙Windows 绔級
+﻿# repo (R.E.P.O.) — 本地状态报告（Windows 端）
 
-**鐘舵€侊細`partial`锛堟暟鎹潰宸叉墦閫氾紝绔欑偣鏈缓锛?* 路 2026-09-25 路 Windows Harness
+**状态：site built · tests green · values unknown（尚未 local_complete）** · 2026-09-25 · Windows Harness
 
-## 娓告垙鍖咃紙宸茬‘璁わ紝涓嶅啀鏄?blocker锛?| 椤?| 鍊?|
-|---|---|
-| 鍘嬬缉鍖?| `C:\uTorria\Downloads\REPOv040rar\R.E.P.O.v0.4.0.rar`锛?.54 GB锛孯AR4锛?|
-| 瑙ｅ寘浣嶇疆 | `C:\Users\CHEN\Desktop\repo\data\raw\R.E.P.O.v0.4.0`锛?*鍘熷鏁版嵁鐣欏湪 Windows锛屼笉鍏?Git**锛?|
-| 鍙墽琛?| `REPO\REPO.exe` |
-| 鐗堟湰鏍囩 | `semiwork REPO`锛坄REPO_Data/app.info`锛夛紱鍖呯洰褰?`R.E.P.O.v0.4.0` |
-| 寮曟搸 / 鍚庣 | **Unity** 路 **Mono**锛坄MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll`锛?|
-| 瑙ｅ寘鍛戒护 | `& 'C:\Program Files\WinRAR\UnRAR.exe' x -o+ -idq '<rar>' '<dest>\'` 鈫?EXIT=0 |
+## 1. 游戏包（已确认）
+- 压缩包：`C:\uTorria\Downloads\REPOv040rar\R.E.P.O.v0.4.0.rar`（0.54 GB, RAR4）
+- 解包：`data/raw/R.E.P.O.v0.4.0`（**原始数据留 Windows，不入 Git**），命令 `UnRAR.exe x -o+ -idq` → EXIT=0
+- 版本：`semiwork REPO`（`REPO_Data/app.info`）；引擎 Unity；后端 **Mono**（MonoBleedingEdge）
 
-## P0 鎻愬彇锛堝凡纭瘉锛?| 椤?| 鍊?|
-|---|---|
-| 绋嬪簭闆?| `REPO_Data/Managed/Assembly-CSharp.dll` 2.78 MB |
-| 鎬婚噺 | **1,501 绫诲瀷 / 19,505 瀛楁 / 436 涓?P0 鍊欓€夌被 / 130 涓灇涓?* |
-| 浜х墿 | `data/normalized/p0-inventory.json` |
-| 鎻愬彇鍣?| `pipeline/inventory.ts`锛堝鐢ㄥ弬鑰冮」鐩?ECMA-335 璇诲彇鏋舵瀯锛?*鏈鐢ㄤ换浣曞叾瀹冩父鎴忔暟鎹?*锛?|
-| 澶嶇幇 | `node --experimental-strip-types pipeline/inventory.ts` |
+## 2. P0 数据（已确证，来自游戏自身程序集）
+- 程序集 `REPO_Data/Managed/Assembly-CSharp.dll`（2.78 MB）
+- **1,501 类型 / 19,505 字段 / 436 个 P0 候选类 / 130 个枚举** → `data/normalized/p0-inventory.json`
+- 提取器 `pipeline/inventory.ts`；复现 `node --experimental-strip-types pipeline/inventory.ts`
+- 例：`ShopKeeper` 118 字段 · `ExtractionPoint` 103 · `EnemyOogly` 77 · `ItemGun` 44 · `Level`(`NarrativeName:string`)
+- 真实枚举：`EnemyState` 12（None=0,Spawn=1,Roaming=2,ChaseBegin=3,Chase=4…）· `EnemyType` 5 · `State` 12/8 · `Status` 4
 
-浠ｈ〃鎬?P0 绫伙紙宸茶В鏋愬瓧娈靛悕涓庣被鍨嬶級锛歚ShopKeeper` 118 路 `ExtractionPoint` 103 路 `EnemyOogly` 77 路 `EnemyHeartHugger` 69 路
-`UpgradeStand` 60 路 `CosmeticShopMachineAnimator` 59 路 `StatsManager` 53 路 `ItemWalkieTalkie` 53 路 `ItemGun` 44 路
-`Level` 43锛堝惈 `NarrativeName:string`銆乣NarrativeNameLocalized:LocalizedAsset`锛夈€?
-鐪熷疄鏋氫妇锛堟父鎴忚嚜韬暟鍊硷級锛歚EnemyState` 12锛坄None=0,Spawn=1,Roaming=2,ChaseBegin=3,Chase=4鈥锛壜?`EnemyType` 5
-锛坄VeryLight=0鈥eryHeavy=4`锛壜?`State` 12 路 `State` 8 路 `Status` 4銆?
-## 璧勬簮闈?`resources.assets` 198.5 MB锛? resS 698.9 MB锛壜?`sharedassets0.assets` 64.1 MB锛? resS 356.9 MB锛壜?`globalgamemanagers` 55.8 MB 路 `level0/1/2` 鍚?~0.4鈥?.5 MB銆?
-## 鏈畬鎴?1. 瀹炰緥鍊硷細闇€鍏堢‘璁よ鏋勫缓鐨?SerializedFile 鐗堟湰锛堟帰閽堢粨鏋滆 `reports/container-probe.txt`锛夈€?2. P0 瑙勮寖鍖栧疄浣擄紙鐗╁搧/璐甸噸鐗┿€佹晫浜恒€佽澶囥€佸湴鐐广€佺洰鏍囥€佸嵄闄╀笌鍙牳楠屾暟鍊硷級锛屾瘡瀛楁甯?source/version/checked/confidence锛寀nknown 鏄惧紡鏍囨敞銆?3. 闈欐€佺珯锛坔ome/search/collection/entity/guide/tool/sources/about/contact/disclaimer/privacy/terms锛? 娴嬭瘯 + typecheck + production build銆?
-## Mac handoff锛坰ource-only锛?`Desktop\repo`锛氭彁鍙栬剼鏈€丳0 娓呭崟锛堝惈鏋氫妇锛夈€佹姤鍛娿€佸鐜板懡浠ゃ€?*娓告垙鍖呬笌瑙ｅ寘鍘熷鏁版嵁鐣欏湪 Windows銆?*
+## 3. 站点（本里程碑）
+- 生成器 `pipeline/site.mjs`（零依赖，导出 `build()` / `lookupFields()`）
+- 构建命令 `node pipeline/site.mjs` → **451 页 / 448 条 sitemap URL**（`web/dist/`，已 gitignore）
+- 路由：index（home）/ search / collection / **entity × 436** / enums / guide / tool / sources / about / contact / disclaimer / privacy / terms / 404 / sitemap.xml / robots.txt
+- 每页含 canonical + source/version/extractedAt 页脚；未取到的**字段值一律标 unknown**，不编造
+- 工具：`tool.html` 字段查找 + `search.html` 客户端检索（无网络请求、无 cookie）
+
+## 4. 测试与构建结果
+- `node tests/site.test.mjs` → **13 passed, 0 failed**（正常/边界/无效输入 fixture + 路由/ canonical / 来源行 / sitemap 门禁）
+- 测试抓到两个真实缺陷并已修复：① `site.mjs` 少一个引号导致构建失败；② 短名类（`State`/`Status`）slug 冲突 → **348 页 ≠ 436 类**，修复为唯一 slug 后 451 页
+
+## 5. 未完成 / 阻塞
+- **实例值 unknown**：容器为 **SerializedFile v22（Unity 6）**，头部布局与参考项目（v21）不同；证据见 `reports/container-probe.txt`
+- 未做：typecheck（当前为纯 .mjs 无类型）、多语言、GitHub/Cloudflare 发布（未通过全部门禁，未发布）
+
+## 6. Mac handoff（source-only）
+`Desktop\repo`：`pipeline/`（提取器 + 生成器）、`tests/`、`data/normalized/p0-inventory.json`、`reports/`（含 container-probe.txt）。
+**游戏包与解包原始数据留在 Windows。** 重建：`node pipeline/inventory.ts && node pipeline/site.mjs && node tests/site.test.mjs`
