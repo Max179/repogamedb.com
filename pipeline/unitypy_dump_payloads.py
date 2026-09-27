@@ -22,7 +22,7 @@ for label, root, datafile, out in SETS:
             except Exception: pass
     rows = []
     for o in env.objects:
-        if o.type.name != 'MonoBehaviour' or o.byte_size > 256:
+        if o.type.name != 'MonoBehaviour' or o.byte_size > 4096:
             continue
         try:
             raw = o.get_raw_data()
@@ -36,4 +36,4 @@ for label, root, datafile, out in SETS:
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, 'w', encoding='utf-8') as f:
         json.dump({'game': label, 'source': datafile + ' + globalgamemanagers.assets', 'objects': rows}, f)
-    print('%-5s dumped %d payloads (<256B) -> %s' % (label, len(rows), out))
+    print('%-5s dumped %d payloads (<=4096B) -> %s' % (label, len(rows), out))
