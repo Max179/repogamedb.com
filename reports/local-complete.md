@@ -19,12 +19,12 @@
 ```
 node pipeline/inventory.ts          -> p0-inventory.json（462 类, 4723 字段）
 node pipeline/normalize_values.ts   -> p0-instances.json（49 实例, 28 类）
-node pipeline/site.mjs              -> [site] pages=479 indexable=14 schema(noindex)=462 out=web/dist
-node tests/site.test.mjs            -> [site-tests] 22 passed, 0 failed
+[site] pages=479 indexable=13 schema(noindex)=463 out=web/dist
+node tests/site.test.mjs            -> [site-tests] 29 passed, 0 failed
 node .../typescript/bin/tsc --noEmit -p tsconfig.json -> exit 0
 git status --porcelain              -> 空
 ```
-站点代码 HEAD `99f4fb9` · 37 commits · 工作区干净。
+站点代码 HEAD `fd84e5e` · 45 commits · 工作区干净。
 
 **门禁可失败性（反证，非声明）**：故意破坏构建后两半都失败，随后还原：
 - `terms.html` 去掉 canonical → `FAIL every product route carries canonical, an index directive and its source line :: terms.html`（21 passed / 1 failed, exit 1）
@@ -65,4 +65,11 @@ git status --porcelain              -> 空
 其余可索引页均有实质内容（repo：collection 463 行、enums 928 行、enemies 139 行/9 个 h2、values 77 行/28 个 h2；tcg：collection 219 行、cards 276 行/13 个 h2、enums 289 行、values 25 行）。政策页 2–3 KB 属正常文本量。
 
 **待修（下一轮）**：`tool.html` 与本项目 `search.html` 高度重复，按既定可索引性政策应当**合并或 noindex + 移出 sitemap**（保留页面作为便捷入口，但不与 search 争索引），并新增一条通用门禁：**任意两个可索引页的 `<main>` 正文相似度不得超过 0.9**（该门禁在 supermarket 上可通过、在 repo/tcg 修好前必然失败）。审计脚本见 supermarket 仓库 `pipeline/audit_page_similarity.py`。
+
+## 门禁清单（第 79 轮更新）
+- 站点门禁：repo 29 条、tcg 29 条、supermarket 40 条，覆盖路由与导航目标存在、每条产品路由带 canonical + 明确的 robots 指令 + 页脚来源行、sitemap 恰好列出可索引页且不含 404、404 为 noindex、来源可核（sha256 / metadata 版本 / 表几何）、逐字段来源、extracted 必须有值、搜索载荷与游戏类集合一致。
+- 发布配置也受门禁：workflow 必须构建并跑测试、部署作业必须有 needs: gate、只能用 secret（仓库内不得出现令牌字面量）、Pages 项目名与输出目录已声明、无 tab 且缩进为 2 的倍数、可移植 typecheck 配置存在。
+- 第 75–78 轮新增：noindex/sitemap 政策门禁（重复页与 schema 页不入索引），以及可索引页重复内容门禁（逐字符 40 字符窗口哈希后的包含度 > 0.9 即失败）。
+- 该重复内容判据经三次修正才有效，三次失败都记录在测试注释里：字符 shingle 的 Jaccard 实测 0.070、词 6-gram 包含度 0.048（正文是无空白 JSON）、按 10 字符采样的包含度 0.131——都因采样相位错位而失效；改为逐字符哈希后，破坏构建实测 search.html ~ tool.html = 0.93 并触发 FAIL。
+- 已证实的重复：search.html 与 tool.html 的最长公共块为 17,284 / 18,173 字符（difflib autojunk=False 比例 0.989），因此 tool.html 保留 URL 但 noindex、不入 sitemap。
 
