@@ -25,6 +25,9 @@ try {
     fields: inv.totals?.fields ?? 0,
     version: inv.version ?? 'unknown',
     generatedBy: 'pipeline/status.mjs',
+    // head is the commit this file was GENERATED from; committing the file itself moves HEAD one step on, so a
+    // reader must compare it against the commit that introduced reports/status.json, not against the tip.
+    headNote: 'generated from this commit; the commit that adds this file is one step later',
   };
   // The handoff boundary is part of the deliverable: record what is tracked and assert nothing derived is.
   const tracked = execSync('git ls-files').toString().trim().split('\n').filter(Boolean);
