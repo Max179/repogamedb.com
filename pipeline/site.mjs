@@ -65,6 +65,18 @@ export function build(inventoryPath, outDir) {
   mkdirSync(join(outDir, 'entity'), { recursive: true });
   const pages = new Map();
   const classes = (inv.classes ?? []).slice().sort((a, b) => b.written - a.written);
+  // Class names are not unique in the assembly (several types are literally called State or Status), so the slug
+  // has to be made unique or one class's page overwrites another's. The test caught exactly that: 348 files for 436
+  // classes. Duplicates get a numeric suffix and the link targets are built from this same list.
+  const used = new Set();
+  const slugs = classes.map((c) => {
+    const base = slug(c.name);
+    let s = base;
+    let n = 2;
+    while (used.has(s)) s = base + '-' + n++;
+    used.add(s);
+    return s;
+  });
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
 
   write('index.html', layout(SITE.name + ' — ' + SITE.tagline, SITE.tagline, '/', 
@@ -76,16 +88,17 @@ export function build(inventoryPath, outDir) {
 
   write('collection.html', layout('P0 classes', 'Every P0 class with its written fields.', '/collection.html',
     '<h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1><table><thead><tr><th>Class</th><th>Base</th><th>Written fields</th></tr></thead><tbody>' +
-    classes.map((c) => '<tr><td><a href="/entity/' + slug(c.name) + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') +
+    classes.map((c, i) => '<tr><td><a href="/entity/' + slugs[i] + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') +
     '</tbody></table>', inv, '/collection.html'));
 
-  for (const c of classes) {
-    write('entity/' + slug(c.name) + '.html', layout(c.name + ' — R.E.P.O. class', c.name + ': ' + c.written + ' written fields read from the game assembly.', '/entity/' + slug(c.name) + '.html',
+  for (let ci = 0; ci < classes.length; ci++) {
+    const c = classes[ci];
+    write('entity/' + slugs[ci] + '.html', layout(c.name + ' — R.E.P.O. class', c.name + ': ' + c.written + ' written fields read from the game assembly.', '/entity/' + slugs[ci] + '.html',
       '<h1 class="mono">' + esc(c.name) + '</h1><p class="dim">namespace <span class="mono">' + esc(c.namespace || '-') + '</span> · base <span class="mono">' + esc(c.base || '-') + '</span> · declared ' + c.declared + ' · Unity writes ' + c.written + '</p>' +
       '<div class="note">Field <em>values</em> are <strong>unknown</strong> for this build: they live in the serialized assets (Unity 6 / SerializedFile v22), which this pipeline does not read yet.</div>' +
       '<h2>Written fields</h2><table><thead><tr><th>Field</th><th>Type</th><th>Kind</th></tr></thead><tbody>' +
       c.fields.map((f) => '<tr><td class="mono">' + esc(f.name) + '</td><td class="mono dim">' + esc(f.type) + '</td><td class="dim">' + esc(f.kind) + '</td></tr>').join('') +
-      '</tbody></table>', inv, '/entity/' + slug(c.name) + '.html'));
+      '</tbody></table>', inv, '/entity/' + slugs[ci] + '.html'));
   }
 
   if ((inv.enums ?? []).length) {
