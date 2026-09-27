@@ -53,6 +53,24 @@ for (const [payloadPath, dll, invPath, source] of JOBS) {
       upgraded++;
     }
   }
+  // Classes the decoder proved but that the P0 name filter never selected are added rather than dropped: they are
+  // verified data (a class that exists in the assembly and whose layout consumed its payload exactly).
+  const known = new Set((inv.classes ?? []).map((c) => c.name));
+  for (const [className, fields] of agg) {
+    if (known.has(className)) continue;
+    const type = monoBehaviourClass(asm, className);
+    const entry = {
+      name: className, namespace: type?.namespace ?? '', base: type?.baseType ?? null,
+      declared: type?.fields.length ?? fields.size, written: fields.size,
+      fields: [...fields].map(([name, value]) => ({
+        name, type: 'unknown', kind: 'extracted-instance', source: inv.source.assembly, version: inv.version,
+        checkedAt: inv.source.extractedAt, confidence: 'extracted', fieldSource: source,
+        value: /^-?\d+(\.\d+)?$/.test(value) ? Number(value) : value,
+      })),
+    };
+    (inv.classes ??= []).push(entry as never);
+    upgraded += entry.fields.length;
+  }
   inv.provenance = { ...(inv.provenance ?? {}), extractedValues: 'confidence=extracted means every decoded instance of the class agreed on the value; the field layout was accepted only when it consumed the object payload exactly.' };
   writeFileSync(invPath, JSON.stringify(inv, null, 2), 'utf8');
   console.log('%s: objects decoded=%d classesWithValues=%d fieldsUpgraded=%d conflictsIgnored=%d',
