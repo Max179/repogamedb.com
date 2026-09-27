@@ -178,22 +178,16 @@ try {
   rmSync(dir, { recursive: true, force: true });
 }
 
-// --- Unity 6 (v22) header reader: the measured relations, checked against real game files
+// --- Unity 6 (v22) header reader: measured relations checked with a portable fixture
 {
   const v22 = await import('../pipeline/serialized-v22.mjs');
-  const samples = [
-    'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/level1',
-    'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/level0',
-  ];
-  let seen = 0;
-  for (const path of samples) {
-    try {
-      const buf = readFileSync(path);
-      const h = v22.readHeaderV22(buf);
-      if (h && v22.headerIsValid(h, buf.length) && h.version === 22) seen++;
-    } catch { /* file not on this machine */ }
-  }
-  ok('the measured v22 header validates against real game files', seen >= 1, seen + ' of ' + samples.length);
+  const fixture = Buffer.alloc(128);
+  fixture.writeUInt32BE(22, 8);
+  fixture.writeBigUInt64BE(60n, 16);
+  fixture.writeBigUInt64BE(128n, 24);
+  fixture.writeBigUInt64BE(120n, 32);
+  const measured = v22.readHeaderV22(fixture);
+  ok('the measured v22 header validates against a portable fixture', measured && v22.headerIsValid(measured, fixture.length) && measured.version === 22);
   const synthetic = Buffer.alloc(64);
   synthetic.writeUInt32BE(22, 8);
   synthetic.writeBigUInt64BE(1000n, 16);
