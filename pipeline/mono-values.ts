@@ -50,6 +50,19 @@ export function decodeValues(assembly: DotNetAssembly, className: string, payloa
     if (kind === 'class' && isObjectReference(assembly, resolved)) { plans.push({ field, kind: 'reference', size: PPTR_SIZE, read: 'reference' }); continue; }
     const underlying = (kind === 'valuetype' || kind === 'class') ? enumUnderlying(assembly, resolved) : null;
     if (underlying) { plans.push({ field, kind: 'enum:' + resolved, size: PRIMITIVE_FIELD_SIZES[underlying]!, read: underlying }); continue; }
+    // Arrays are a count followed by that many elements, then alignment to 4. Only element kinds whose element size is
+    // already known are accepted: primitives, and references to object classes of this assembly. Anything else (arrays
+    // of nested value types, of Unity built-ins, of enums) is refused rather than guessed.
+    if (kind === 'array') {
+      const sig = decodeFieldSignature(field.signature);
+      const innerName = sig.name ?? '';
+      const innerPrim = PRIMITIVE_FIELD_SIZES[innerName];
+      if (innerPrim !== undefined) { plans.push({ field, kind: 'array:' + innerName, size: innerPrim, read: 'array-prim' }); continue; }
+      if (innerName.charAt(0) === '#') {
+        const inner = fieldTypeName(assembly, field.signature).replace(/\[\]$/, '');
+        if (isObjectReference(assembly, inner)) { plans.push({ field, kind: 'array:reference', size: PPTR_SIZE, read: 'array-ref' }); continue; }
+      }
+    }
     return null;   // a size this decoder has not measured: refuse the class wholesale
   }
 
@@ -68,6 +81,30 @@ export function decodeValues(assembly: DotNetAssembly, className: string, payloa
       if (p + PPTR_SIZE > payload.length) return null;
       values.push({ name: plan.field.name, kind: 'reference', value: String(payload.readBigInt64LE(p + 4)) });
       p += PPTR_SIZE; while (p % 4 !== 0) p++;
+      continue;
+    }
+    if (plan.read === 'array-prim' || plan.read === 'array-ref') {
+      if (p + 4 > payload.length) return null;
+      const n = payload.readInt32LE(p); p += 4;
+      if (n < 0 || n > 100000 || p + n * plan.size > payload.length) return null;
+      const parts: string[] = [];
+      const k = plan.read === 'array-ref' ? '' : plan.kind.split(':')[1]!;
+      for (let i = 0; i < n; i++) {
+        if (plan.read === 'array-ref') { parts.push(String(payload.readBigInt64LE(p + 4))); p += PPTR_SIZE; continue; }
+        if (k === 'bool') parts.push(String(payload.readUInt8(p) !== 0));
+        else if (k === 'i1') parts.push(String(payload.readInt8(p)));
+        else if (k === 'u1') parts.push(String(payload.readUInt8(p)));
+        else if (k === 'i2') parts.push(String(payload.readInt16LE(p)));
+        else if (k === 'u2' || k === 'char') parts.push(String(payload.readUInt16LE(p)));
+        else if (k === 'int') parts.push(String(payload.readInt32LE(p)));
+        else if (k === 'uint') parts.push(String(payload.readUInt32LE(p)));
+        else if (k === 'float') parts.push(String(payload.readFloatLE(p)));
+        else if (k === 'double') parts.push(String(payload.readDoubleLE(p)));
+        else parts.push(String(payload.readBigInt64LE(p)));
+        p += plan.size;
+      }
+      values.push({ name: plan.field.name, kind: plan.kind, value: '[' + parts.join(', ') + ']' });
+      while (p % 4 !== 0) p++;
       continue;
     }
     if (p + plan.size > payload.length) return null;
