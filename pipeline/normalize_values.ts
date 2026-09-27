@@ -6,16 +6,27 @@ import type { DotNetAssembly } from './dotnet-metadata.ts';
 import { parseAssembly, monoBehaviourClass } from './dotnet-metadata.ts';
 import { readMonoBehaviourHeader, decodeValues } from './mono-values.ts';
 
-const JOBS = [
-  ['C:/Users/CHEN/Desktop/repo/data/normalized/repo-mb-payloads.json',
-   'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/Managed/Assembly-CSharp.dll',
-   'C:/Users/CHEN/Desktop/repo/data/normalized/p0-inventory.json',
-   'level0 + globalgamemanagers.assets'],
-  ['C:/Users/CHEN/Desktop/tcg-shop/data/normalized/tcg-mb-payloads.json',
-   'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/Managed/Assembly-CSharp.dll',
-   'C:/Users/CHEN/Desktop/tcg-shop/data/normalized/p0-inventory.json',
-   'level1 + globalgamemanagers.assets'],
-];
+// Paths are derived from the working directory so a run touches exactly one project. The previous list hardcoded
+// BOTH games, so running this inside one repository silently rewrote the other repository's data files, and the
+// absolute Windows paths made the step impossible to reproduce from the Mac handoff.
+const CWD = process.cwd().replace(/\\/g, '/');
+const PROJECT = CWD.split('/').pop() ?? '';
+const DLL_BY_PROJECT: Record<string, string> = {
+  repo: 'data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/Managed/Assembly-CSharp.dll',
+  // The TCG assembly lives in the installed game, outside the repository; that path stays absolute on purpose.
+  'tcg-shop': 'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/Managed/Assembly-CSharp.dll',
+};
+const DLL = DLL_BY_PROJECT[PROJECT];
+if (!DLL) {
+  console.error('normalize_values: run from a project directory (repo | tcg-shop), not ' + CWD);
+  process.exit(1);
+}
+const JOBS = [[
+  CWD + '/data/normalized/' + (PROJECT === 'repo' ? 'repo' : 'tcg') + '-mb-payloads.json',
+  DLL.startsWith('C:') ? DLL : CWD + '/' + DLL,
+  CWD + '/data/normalized/p0-inventory.json',
+  (PROJECT === 'repo' ? 'level0' : 'level1') + ' + globalgamemanagers.assets',
+]];
 
 for (const [payloadPath, dll, invPath, source] of JOBS) {
   let doc, inv;

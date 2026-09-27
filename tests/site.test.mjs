@@ -166,6 +166,13 @@ try {
   }
   ok('no page repeats a claim this project has already falsified', offenders.length === 0, offenders.slice(0, 4).join(', '));
 
+  // The normalizer must not name the other project: that is how a run here rewrote the other repository.
+  {
+    const src = readFileSync('pipeline/normalize_values.ts', 'utf8');
+    const other = SITE.domain === 'repogamedb.com' ? 'tcg-shop' : 'repo';
+    ok('the normalizer only ever touches this project', !src.includes('/Desktop/' + other), 'cross-project absolute path present: ' + other);
+  }
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
