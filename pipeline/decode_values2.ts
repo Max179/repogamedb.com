@@ -1,8 +1,8 @@
 // End-to-end decode. Unity splits the engine into module assemblies; UnityEngine.dll here is a type-forwarding
 // facade (21 types), so the real hierarchy comes from UnityEngine.CoreModule.dll. Parsing it lets references to
 // Transform/GameObject/Camera be recognised as the 12-byte object references that were measured earlier.
-import { readFileSync, existsSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { basename, dirname, join } from 'node:path';
 import { parseAssembly } from './dotnet-metadata.ts';
 import type { DotNetAssembly } from './dotnet-metadata.ts';
 import { decodeValues, readMonoBehaviourHeader } from './mono-values.ts';
@@ -26,19 +26,24 @@ const jobs = [[
   CWD + '/data/normalized/' + (PROJECT === 'repo' ? 'repo' : 'tcg') + '-mb-payloads.json',
   DLL.startsWith('C:') ? DLL : CWD + '/' + DLL,
 ]];
-const ENGINE_MODULES = ['UnityEngine.CoreModule.dll', 'UnityEngine.dll', 'UnityEngine.PhysicsModule.dll', 'UnityEngine.AnimationModule.dll'];
+// Every managed assembly in the game's Managed folder is merged, not just the engine modules: the refusal
+// breakdown measured 377 (repo) and 2909 (tcg) payloads refused because their class was not found, while 143 and
+// 178 assemblies were never loaded. BCL/system assemblies are skipped and Assembly-CSharp keeps priority on clashes.
+const SKIP_ASSEMBLY = /^(mscorlib|netstandard|System|Mono\.|Microsoft\.|Windows|Accessibility|UnityEditor)/i;
 for (const [label, payloadPath, dll] of jobs) {
   let doc; try { doc = JSON.parse(readFileSync(payloadPath, 'utf8')); } catch { console.log(label + ': no dump'); continue; }
   const local = parseAssembly(dll);
   const byName = new Map(local.byName);
   const loaded: string[] = [];
-  for (const mod of ENGINE_MODULES) {
-    const p = join(dirname(dll), mod);
-    if (!existsSync(p)) continue;
+  const managedDir = dirname(dll);
+  const others = readdirSync(managedDir)
+    .filter((f) => f.toLowerCase().endsWith('.dll') && !SKIP_ASSEMBLY.test(f) && f !== basename(dll))
+    .sort();
+  for (const file of others) {
     try {
-      const ext = parseAssembly(p);
+      const ext = parseAssembly(join(managedDir, file));
       for (const [k, v] of ext.byName) if (!byName.has(k)) byName.set(k, v);
-      loaded.push(mod + '(' + ext.typeCount + ')');
+      loaded.push(file + '(' + ext.typeCount + ')');
     } catch { /* skip */ }
   }
   const merged: DotNetAssembly = { ...local, byName };
