@@ -130,6 +130,37 @@ export function build(inventoryPath, outDir) {
         e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join(''), inv));
   }
 
+  // Values decoded from the games' own bytes, one row per object. Kept plain (no type annotations) because this
+  // file is checked as JavaScript.
+  {
+    var instPath = inventoryPath.replace('p0-inventory.json', 'p0-instances.json');
+    var inst = null;
+    try { inst = JSON.parse(readFileSync(instPath, 'utf8')); } catch (e) { inst = null; }
+    var list = (inst && inst.instances) ? inst.instances : [];
+    var grouped = {};
+    for (var gi = 0; gi < list.length; gi++) {
+      var it = list[gi];
+      if (!grouped[it.class]) grouped[it.class] = [];
+      grouped[it.class].push(it);
+    }
+    var names = Object.keys(grouped);
+    var rows = names.slice(0, 40).map(function (cls) {
+      var items = grouped[cls];
+      return '<h2 class="mono">' + esc(cls) + ' <span class="dim">(' + items.length + ')</span></h2>' +
+        '<table><thead><tr><th>Object</th><th>Decoded fields</th></tr></thead><tbody>' +
+        items.slice(0, 20).map(function (x) {
+          var vals = (x.values || []).map(function (v) { return v.name + '=' + String(v.value); }).join('  ');
+          return '<tr><td class="mono dim">' + esc(x.pathId) + '</td><td class="mono">' + esc(vals) + '</td></tr>';
+        }).join('') + '</tbody></table>';
+    }).join('');
+    var vbody = '<h1>Decoded values <span class="dim">(' + list.length + ' objects)</span></h1>' +
+      '<div class="note">Each row is one object read out of the game&apos;s own files. Its class was accepted only because the measured layout consumed that object&apos;s payload exactly, so these are the game&apos;s values rather than estimates. A field a decode did not produce is simply absent.</div>' +
+      (list.length === 0
+        ? '<p class="dim">No object in this build decoded yet: the classes present are either not in this assembly or hold field types whose sizes are not measured. Everything else on this site says <span class="mono">unknown</span> rather than guessing.</p>'
+        : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : ''));
+    write('values.html', layout('Decoded values', 'Field values decoded from the games own files, one row per object.', '/values.html', vbody, inv));
+  }
+
   write('search.html', layout('Search', 'Search classes and fields.', '/search.html',
     '<h1>Search</h1><p class="dim">Client-side over ' + inv.totals.fields + ' fields. No network requests.</p>' +
     '<input id="q" placeholder="field or class" style="width:100%;padding:10px;background:#0d1117;color:var(--fg);border:1px solid var(--line)">' +
