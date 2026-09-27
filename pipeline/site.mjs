@@ -109,7 +109,7 @@ export function build(inventoryPath, outDir) {
     const enemyEnums = (inv.enums ?? []).filter((e) => /enemy|state|type/i.test(e.name)).slice(0, 8);
     const enemyClasses = classes.filter((c) => /^Enemy/.test(c.name)).slice(0, 80);
     const body = '<h1>Enemies</h1>' +
-      '<div class="note">The enum values below are read from the game&apos;s own assembly, so they are the game&apos;s own numbers. Per-instance numbers (health, damage, speed) are <strong>unknown</strong> in this build and are not estimated.</div>' +
+      '<div class="note">The enum values below are read from the game&apos;s own assembly, so they are the game&apos;s own numbers. Per-instance numbers such as health, damage and speed are known only where this build decoded them (see the values page) and are <strong>unknown</strong> otherwise and are not estimated.</div>' +
       enemyEnums.map((e) => '<h2 class="mono">' + esc(e.name) + ' <span class="dim">(' + e.members.length + ' values)</span></h2><table><tbody>' +
         e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join('') +
       (enemyClasses.length ? '<h2>Enemy classes <span class="dim">(' + enemyClasses.length + ')</span></h2><table><thead><tr><th>Class</th><th>Written fields</th></tr></thead><tbody>' +
@@ -189,11 +189,11 @@ export function build(inventoryPath, outDir) {
     '<h2>Assembly</h2><p class="mono">' + esc(inv.source.assembly) + '</p><h2>Extractor</h2><p class="mono">' + esc(inv.source.extractor) + '</p>' +
     '<h2>Extracted at</h2><p class="mono">' + esc(inv.source.extractedAt) + '</p><h2>Game version</h2><p>' + esc(inv.version) + '</p>' +
     '<h2>Per-field provenance</h2><p>' + esc(inv.provenance?.fields ?? 'source, version, checkedAt, confidence, value') + '</p>' +
-    '<h2>Not extracted (unknown)</h2><p>Per-field values: the serialized assets are Unity 6 / SerializedFile v22, which this pipeline does not parse yet. They are marked unknown rather than estimated. See <span class="mono">reports/v22-header.md</span> and <span class="mono">reports/v22-object-table.md</span>.</p>';
+    '<h2>Not extracted (unknown)</h2><p>Per-field values: the serialized assets are Unity 6 / SerializedFile v22. This pipeline parses the MonoBehaviour payloads it can consume exactly and publishes every decoded value on the values page, with its object and field; a payload it cannot consume exactly is left unknown rather than estimated. See <span class="mono">reports/v22-header.md</span> and <span class="mono">reports/v22-object-table.md</span>.</p>';
   write('sources.html', layout('Sources', 'Where every number came from.', '/sources.html', '<h1>Sources</h1>' + src, inv));
   write('guide.html', layout('Guide', 'How to read this database.', '/guide.html',
     '<h1>How to read this database</h1><h2>What is verified</h2><p>Class names, field names, field types, the write order Unity uses, and enum values are read from the game&apos;s own managed assembly.</p>' +
-    '<h2>What is unknown</h2><p>Every field <em>value</em> (prices, health, damage, weights) - marked unknown in this build.</p>' +
+    '<h2>What is unknown</h2><p>Field <em>values</em> (prices, health, damage, weights) are known only where this build decoded them - every decoded object and field is listed on the values page. Everything the decoder could not consume exactly is marked <strong>unknown</strong> in this build.</p>' +
     '<h2>Which pages are indexed</h2><p>The pages that answer a question are indexable. Class reference pages are marked <span class="mono">noindex, follow</span> and kept out of the sitemap, because a schema is not an answer to a search.</p>', inv));
   const simple = (rel, title, desc, body) => write(rel, layout(title, desc, '/' + rel, '<h1>' + title + '</h1>' + body, inv));
   simple('about.html', 'About', 'About this database and its Windows-side pipeline.',
