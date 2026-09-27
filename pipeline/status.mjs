@@ -26,6 +26,15 @@ try {
     version: inv.version ?? 'unknown',
     generatedBy: 'pipeline/status.mjs',
   };
+  // The handoff boundary is part of the deliverable: record what is tracked and assert nothing derived is.
+  const tracked = execSync('git ls-files').toString().trim().split('\n').filter(Boolean);
+  const byTop = {};
+  for (const f of tracked) {
+    const top = f.includes('/') ? f.split('/')[0] : '(root)';
+    byTop[top] = (byTop[top] ?? 0) + 1;
+  }
+  const excluded = tracked.filter((f) => f.startsWith('data/raw/') || f.startsWith('web/dist/') || f.endsWith('payloads.json'));
+  out.handoff = { trackedFiles: tracked.length, byTop, excludedCount: excluded.length, excluded: excluded.slice(0, 5) };
   writeFileSync('reports/status.json', JSON.stringify(out, null, 2) + '\n');
   console.log('[status] ' + JSON.stringify(out));
 } finally {

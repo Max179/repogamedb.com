@@ -110,6 +110,10 @@ try {
   ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.join(', '));
 
   const status = JSON.parse(readFileSync('reports/status.json', 'utf8'));
+  ok('the status manifest records a source-only handoff',
+    status.handoff.excludedCount === 0 && (status.handoff.byTop['data/raw'] ?? 0) === 0 &&
+    (status.handoff.byTop['data'] ?? 0) > 0 && status.handoff.trackedFiles > 5,
+    JSON.stringify(status.handoff));
   ok('the machine-readable status matches this build',
     status.pages === stats.pages && status.indexable === stats.urls && status.noindex === stats.pages - stats.urls,
     JSON.stringify({ buildPages: stats.pages, statusPages: status.pages, buildUrls: stats.urls, statusUrls: status.indexable }));
