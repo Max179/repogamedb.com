@@ -35,3 +35,17 @@ git ls-files | Select-String '^data/raw/|^web/dist/'      # must print nothing
   not present in this environment, so no push, no Pages project and no DNS change has been made from here.
 - The custom domain (`repogamedb.com`) is bound in the Cloudflare dashboard by the
   account owner; it is deliberately not encoded in this repository.
+
+## Reproduction from a clean clone (handoff check)
+The repository was cloned into a temporary directory with nothing else present, which is what a Mac-side handoff
+looks like, and the whole pipeline was run there:
+
+- cloned tracked files: 46; `data/raw/` present: false; `web/dist/` present: false
+- build: `[site] pages=495 indexable=13 schema(noindex)=479` — identical to the numbers above
+- gates: `[site-tests] 38 passed, 0 failed` (exit 0)
+- typecheck: exit 0
+- preflight: `[preflight] 10 ok, 0 failed` (exit 0)
+
+So the deliverable is reproducible from Git alone; the raw game packages and the build output are genuinely not
+needed to rebuild it, which is the property the handoff boundary claims.
+
