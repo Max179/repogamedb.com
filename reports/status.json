@@ -1,0 +1,12 @@
+{
+  "site": "repogamedb.com",
+  "head": "d52e5f6",
+  "commits": 46,
+  "pages": 479,
+  "indexable": 13,
+  "noindex": 466,
+  "classes": 462,
+  "fields": 19505,
+  "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+  "generatedBy": "pipeline/status.mjs"
+}
