@@ -55,7 +55,6 @@ try {
   rmSync(dir, { recursive: true, force: true });
 }
 
-console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 // --- Unity 6 (v22) header reader: the measured relations, checked against real game files
 {
   const v22 = await import('../pipeline/serialized-v22.mjs');
@@ -84,4 +83,5 @@ console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
   ok('a short buffer is refused rather than read past', v22.readHeaderV22(Buffer.alloc(8)) === null);
 }
 
+console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
