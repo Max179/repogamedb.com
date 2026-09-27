@@ -39,12 +39,16 @@ for (const [label, payloadPath, dll] of jobs) {
   const others = readdirSync(managedDir)
     .filter((f) => f.toLowerCase().endsWith('.dll') && !SKIP_ASSEMBLY.test(f) && f !== basename(dll))
     .sort();
+  const parseFailures: string[] = [];
   for (const file of others) {
     try {
       const ext = parseAssembly(join(managedDir, file));
       for (const [k, v] of ext.byName) if (!byName.has(k)) byName.set(k, v);
       loaded.push(file + '(' + ext.typeCount + ')');
-    } catch { /* skip */ }
+    } catch { parseFailures.push(file); }
+  }
+  if (parseFailures.length) {
+    console.log('  assemblies that failed to parse: ' + parseFailures.length + ' -> ' + parseFailures.slice(0, 8).join(', '));
   }
   const merged: DotNetAssembly = { ...local, byName };
   console.log(label + ': local=' + local.typeCount + ' merged=' + byName.size + ' engine modules: ' + (loaded.join(', ') || 'none'));
