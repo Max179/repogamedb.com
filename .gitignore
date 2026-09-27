@@ -1,0 +1,17 @@
+﻿node_modules/
+data/raw/
+web/.next/
+web/out/
+*.tmp
+reports/*.local.json
+
+
+web/dist/
+
+
+data/normalized/*-payloads.json
+
+
+
+
+

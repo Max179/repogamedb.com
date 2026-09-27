@@ -1,0 +1,31 @@
+{
+  "site": "repogamedb.com",
+  "head": "f926188",
+  "commits": 70,
+  "pages": 495,
+  "indexable": 13,
+  "noindex": 482,
+  "classes": 478,
+  "fields": 19505,
+  "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+  "generatedBy": "pipeline/status.mjs",
+  "headNote": "generated from this commit; the commit that adds this file is one step later",
+  "handoff": {
+    "trackedFiles": 45,
+    "byTop": {
+      "(root)": 6,
+      ".github": 1,
+      "data": 2,
+      "pipeline": 20,
+      "reports": 14,
+      "tests": 1,
+      "tools": 1
+    },
+    "excludedCount": 0,
+    "excluded": []
+  },
+  "valueLayer": {
+    "file": "data/normalized/p0-instances.json",
+    "count": 77
+  }
+}

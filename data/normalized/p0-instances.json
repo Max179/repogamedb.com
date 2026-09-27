@@ -1,0 +1,2063 @@
+{
+  "game": "R.E.P.O.",
+  "engine": "unity",
+  "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+  "source": {
+    "assembly": "REPO_Data/Managed/Assembly-CSharp.dll",
+    "extractor": "repo-p0-inventory@0.1.0",
+    "extractedAt": "2026-09-27T03:59:15.072Z",
+    "note": "per-instance decoded values; each instance is one object whose layout consumed its payload exactly"
+  },
+  "count": 77,
+  "instances": [
+    {
+      "class": "EventSystem",
+      "pathId": "2589",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_FirstSelected",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "m_sendNavigationEvents",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "m_DragThreshold",
+          "kind": "int",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "class": "PunManager",
+      "pathId": "2670",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "lagSimulationGui",
+          "kind": "reference",
+          "value": "2671"
+        },
+        {
+          "name": "syncStripPlayers",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "DiscordManager",
+      "pathId": "2673",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "clientId",
+          "kind": "u8",
+          "value": 1412070858389717000
+        }
+      ]
+    },
+    {
+      "class": "ProgressionManager",
+      "pathId": "2675",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "roundPointsHauling",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "roundPointsScouting",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "roundPointsCombat",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "roundPointsSupport",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "roundPointsTotalHaul",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "roundPointsBonusAllSurvived",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "roundPointsBonusNoDeaths",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "penaltyDeath",
+          "kind": "float",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "class": "SessionManager",
+      "pathId": "2676",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "crownedPlayerSteamID",
+          "kind": "string",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "class": "VoiceLogger",
+      "pathId": "2677",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "LogLevel.value__",
+          "kind": "int",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "class": "StandaloneInputModule",
+      "pathId": "2680",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_SendPointerHoverToParent",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "m_HorizontalAxis",
+          "kind": "string",
+          "value": "Horizontal"
+        },
+        {
+          "name": "m_VerticalAxis",
+          "kind": "string",
+          "value": "Vertical"
+        },
+        {
+          "name": "m_SubmitButton",
+          "kind": "string",
+          "value": "Submit"
+        },
+        {
+          "name": "m_CancelButton",
+          "kind": "string",
+          "value": "Cancel"
+        },
+        {
+          "name": "m_InputActionsPerSecond",
+          "kind": "float",
+          "value": 10
+        },
+        {
+          "name": "m_RepeatDelay",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "m_ForceModuleActive",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "ChatManager",
+      "pathId": "2681",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "chatText",
+          "kind": "reference",
+          "value": "2666"
+        },
+        {
+          "name": "currentPossessChatID",
+          "kind": "enum:PossessChatID",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2685",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 12
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "GameManager",
+      "pathId": "2692",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "localTest",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "maxPlayersPhoton",
+          "kind": "int",
+          "value": 20
+        },
+        {
+          "name": "maxPlayers",
+          "kind": "int",
+          "value": 6
+        },
+        {
+          "name": "matchmakingMaxPlayers",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "BatteryVisualLogic",
+      "pathId": "2698",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "batteryBarContainerGroup",
+          "kind": "reference",
+          "value": "3107"
+        },
+        {
+          "name": "batteryBarPrefab",
+          "kind": "reference",
+          "value": "2481"
+        },
+        {
+          "name": "batteryBars",
+          "kind": "int",
+          "value": 3
+        },
+        {
+          "name": "batteryBarContainer",
+          "kind": "reference",
+          "value": "2435"
+        },
+        {
+          "name": "inUI",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "cameraTurn",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "batteryBarCharge",
+          "kind": "reference",
+          "value": "2157"
+        },
+        {
+          "name": "batteryBarDrain",
+          "kind": "reference",
+          "value": "2048"
+        },
+        {
+          "name": "itemBattery",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "batteryBorderShadow",
+          "kind": "reference",
+          "value": "2979"
+        },
+        {
+          "name": "batteryBorderMain",
+          "kind": "reference",
+          "value": "2989"
+        },
+        {
+          "name": "batteryBackground",
+          "kind": "reference",
+          "value": "3179"
+        },
+        {
+          "name": "batteryCharge",
+          "kind": "reference",
+          "value": "2831"
+        },
+        {
+          "name": "batteryDrain",
+          "kind": "reference",
+          "value": "2919"
+        },
+        {
+          "name": "batteryOutVisual",
+          "kind": "reference",
+          "value": "368"
+        },
+        {
+          "name": "batteryChargeNeededVisual",
+          "kind": "reference",
+          "value": "599"
+        },
+        {
+          "name": "barLossEffectPrefab",
+          "kind": "reference",
+          "value": "2482"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2700",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 14
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "BatteryVisualLogic",
+      "pathId": "2708",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "batteryBarContainerGroup",
+          "kind": "reference",
+          "value": "3089"
+        },
+        {
+          "name": "batteryBarPrefab",
+          "kind": "reference",
+          "value": "2481"
+        },
+        {
+          "name": "batteryBars",
+          "kind": "int",
+          "value": 3
+        },
+        {
+          "name": "batteryBarContainer",
+          "kind": "reference",
+          "value": "2463"
+        },
+        {
+          "name": "inUI",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "cameraTurn",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "batteryBarCharge",
+          "kind": "reference",
+          "value": "2121"
+        },
+        {
+          "name": "batteryBarDrain",
+          "kind": "reference",
+          "value": "2061"
+        },
+        {
+          "name": "itemBattery",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "batteryBorderShadow",
+          "kind": "reference",
+          "value": "2955"
+        },
+        {
+          "name": "batteryBorderMain",
+          "kind": "reference",
+          "value": "3013"
+        },
+        {
+          "name": "batteryBackground",
+          "kind": "reference",
+          "value": "3203"
+        },
+        {
+          "name": "batteryCharge",
+          "kind": "reference",
+          "value": "2830"
+        },
+        {
+          "name": "batteryDrain",
+          "kind": "reference",
+          "value": "2942"
+        },
+        {
+          "name": "batteryOutVisual",
+          "kind": "reference",
+          "value": "321"
+        },
+        {
+          "name": "batteryChargeNeededVisual",
+          "kind": "reference",
+          "value": "556"
+        },
+        {
+          "name": "barLossEffectPrefab",
+          "kind": "reference",
+          "value": "2482"
+        }
+      ]
+    },
+    {
+      "class": "MixerEffects",
+      "pathId": "2711",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "mixer",
+          "kind": "reference",
+          "value": "1433"
+        },
+        {
+          "name": "camTilt",
+          "kind": "reference",
+          "value": "3174"
+        },
+        {
+          "name": "DistortionTiltMultiplier",
+          "kind": "float",
+          "value": 0.004999999888241291
+        },
+        {
+          "name": "DistortionTiltMax",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "DistortionTiltSpeed",
+          "kind": "float",
+          "value": 5
+        },
+        {
+          "name": "LowpassTiltMultiplier",
+          "kind": "float",
+          "value": 20
+        },
+        {
+          "name": "LowpassTiltMax",
+          "kind": "float",
+          "value": 2000
+        },
+        {
+          "name": "LowpassTiltSpeed",
+          "kind": "float",
+          "value": 5
+        },
+        {
+          "name": "PitchTiltMultiplier",
+          "kind": "float",
+          "value": 0.0010000000474974513
+        },
+        {
+          "name": "PitchTiltMax",
+          "kind": "float",
+          "value": 0.10000000149011612
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2715",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2728",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 6
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "ValuableDiscover",
+      "pathId": "2734",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "graphicPrefab",
+          "kind": "reference",
+          "value": "2102"
+        },
+        {
+          "name": "canvasRect",
+          "kind": "reference",
+          "value": "2046"
+        }
+      ]
+    },
+    {
+      "class": "SpawnPoint",
+      "pathId": "2763",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "debug",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2776",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2788",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "WorldSpaceUIParent",
+      "pathId": "2801",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "valueLostPrefab",
+          "kind": "reference",
+          "value": "4597"
+        },
+        {
+          "name": "TTSPrefab",
+          "kind": "reference",
+          "value": "4598"
+        },
+        {
+          "name": "playerNamePrefab",
+          "kind": "reference",
+          "value": "4596"
+        }
+      ]
+    },
+    {
+      "class": "MenuElementHover",
+      "pathId": "2815",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "hasHoverEffect",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2818",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 5
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "CameraCrouchNoise",
+      "pathId": "2824",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "AnimNoise",
+          "kind": "reference",
+          "value": "2995"
+        },
+        {
+          "name": "Strength",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "LerpSpeed",
+          "kind": "float",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "class": "PlayerAccess",
+      "pathId": "2827",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "camTilt",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "playerTransform",
+          "kind": "reference",
+          "value": "1014"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2837",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 11
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "NetworkManager",
+      "pathId": "2839",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "gameTime",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "playerAvatarPrefab",
+          "kind": "reference",
+          "value": "1972"
+        }
+      ]
+    },
+    {
+      "class": "CameraNoise",
+      "pathId": "2851",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "StrengthDefault",
+          "kind": "float",
+          "value": 0.20000000298023224
+        },
+        {
+          "name": "AnimNoise",
+          "kind": "reference",
+          "value": "2949"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2852",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 13
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2862",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "MenuPlayerListed",
+      "pathId": "2866",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "playerName",
+          "kind": "reference",
+          "value": "2668"
+        },
+        {
+          "name": "playerHead",
+          "kind": "reference",
+          "value": "2800"
+        },
+        {
+          "name": "pingText",
+          "kind": "reference",
+          "value": "2668"
+        },
+        {
+          "name": "isSpectate",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "leftCrown",
+          "kind": "reference",
+          "value": "560"
+        },
+        {
+          "name": "rightCrown",
+          "kind": "reference",
+          "value": "964"
+        },
+        {
+          "name": "forceCrown",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "brightName",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2867",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 6
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "DirtFinderMapScanlines",
+      "pathId": "2872",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "Speed",
+          "kind": "float",
+          "value": -0.019999999552965164
+        },
+        {
+          "name": "MaxZ",
+          "kind": "float",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "class": "SpawnPoint",
+      "pathId": "2874",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "debug",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "PlayerCollision",
+      "pathId": "2882",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "Player",
+          "kind": "reference",
+          "value": "3199"
+        },
+        {
+          "name": "StandCollision",
+          "kind": "reference",
+          "value": "1259"
+        },
+        {
+          "name": "CrouchCollision",
+          "kind": "reference",
+          "value": "1043"
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2894",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2906",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 7
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "2920",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2941",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 10
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2945",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 14
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "SpawnPoint",
+      "pathId": "2950",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "debug",
+          "kind": "bool",
+          "value": true
+        }
+      ]
+    },
+    {
+      "class": "MapBacktrack",
+      "pathId": "2961",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "pointPrefab",
+          "kind": "reference",
+          "value": "4274"
+        },
+        {
+          "name": "amount",
+          "kind": "int",
+          "value": 15
+        },
+        {
+          "name": "spacing",
+          "kind": "float",
+          "value": 2
+        },
+        {
+          "name": "pointWait",
+          "kind": "float",
+          "value": 0.10000000149011612
+        },
+        {
+          "name": "resetWait",
+          "kind": "float",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2971",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 9
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "MenuElementAnimations",
+      "pathId": "2981",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "forceMiddlePivot",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "DebugLevelsCompleted",
+      "pathId": "2982",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "Text",
+          "kind": "reference",
+          "value": "2617"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2984",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 6
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "CameraUtils",
+      "pathId": "2987",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "MainCamera",
+          "kind": "reference",
+          "value": "1351"
+        }
+      ]
+    },
+    {
+      "class": "BuildManager",
+      "pathId": "2991",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "version",
+          "kind": "reference",
+          "value": "11482"
+        }
+      ]
+    },
+    {
+      "class": "PostProcessVolume",
+      "pathId": "2992",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "sharedProfile",
+          "kind": "reference",
+          "value": "11537"
+        },
+        {
+          "name": "isGlobal",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "blendDistance",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "weight",
+          "kind": "float",
+          "value": 1
+        },
+        {
+          "name": "priority",
+          "kind": "float",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "2999",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 8
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "EnemySlowMouthDebug",
+      "pathId": "3005",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "playerAvatarVisuals",
+          "kind": "reference",
+          "value": "3047"
+        },
+        {
+          "name": "localPlayerJaw",
+          "kind": "reference",
+          "value": "4119"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "3007",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 13
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "3014",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 7
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "HUD",
+      "pathId": "3018",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "hidden",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "hideParent",
+          "kind": "reference",
+          "value": "203"
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "3035",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "AudioLowPassLogic",
+      "pathId": "3043",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "LowPass",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "ForceStart",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "AlwaysActive",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "HasCustomVolume",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "CustomVolume",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "HasCustomFalloff",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "CustomFalloff",
+          "kind": "float",
+          "value": 0.800000011920929
+        }
+      ]
+    },
+    {
+      "class": "PlayerAvatarTalkAnimation",
+      "pathId": "3068",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "audioSource",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "playerAvatar",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "objectToRotate",
+          "kind": "reference",
+          "value": "630"
+        },
+        {
+          "name": "threshold",
+          "kind": "float",
+          "value": 0.009999999776482582
+        },
+        {
+          "name": "rotationMaxAngle",
+          "kind": "float",
+          "value": 45
+        },
+        {
+          "name": "amountMultiplier",
+          "kind": "float",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "class": "AudioListenerFollow",
+      "pathId": "3072",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "TargetPositionTransform",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "TargetRotationTransform",
+          "kind": "reference",
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "3081",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 15
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "AudioLowPassLogic",
+      "pathId": "3093",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "LowPass",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "ForceStart",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "AlwaysActive",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "HasCustomVolume",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "CustomVolume",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "HasCustomFalloff",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "CustomFalloff",
+          "kind": "float",
+          "value": 0.800000011920929
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "3102",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 15
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "DebugFPS",
+      "pathId": "3104",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "Text",
+          "kind": "reference",
+          "value": "2602"
+        }
+      ]
+    },
+    {
+      "class": "SplashScreenUI",
+      "pathId": "3117",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "semiworkTransform",
+          "kind": "reference",
+          "value": "2328"
+        },
+        {
+          "name": "warningTransform",
+          "kind": "reference",
+          "value": "2274"
+        }
+      ]
+    },
+    {
+      "class": "PostProcessVolume",
+      "pathId": "3127",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "sharedProfile",
+          "kind": "reference",
+          "value": "11536"
+        },
+        {
+          "name": "isGlobal",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "blendDistance",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "weight",
+          "kind": "float",
+          "value": 1
+        },
+        {
+          "name": "priority",
+          "kind": "float",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "class": "AudioLowPassLogic",
+      "pathId": "3134",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "LowPass",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "ForceStart",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "AlwaysActive",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "HasCustomVolume",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "CustomVolume",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "HasCustomFalloff",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "CustomFalloff",
+          "kind": "float",
+          "value": 0.800000011920929
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "3139",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "MusicManager",
+      "pathId": "3145",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "MusicMixerOn",
+          "kind": "reference",
+          "value": "1462"
+        },
+        {
+          "name": "MusicMixerOff",
+          "kind": "reference",
+          "value": "1460"
+        },
+        {
+          "name": "MusicMixerScareOnly",
+          "kind": "reference",
+          "value": "1458"
+        },
+        {
+          "name": "MusicEnemyNear",
+          "kind": "reference",
+          "value": "2723"
+        },
+        {
+          "name": "MusicEnemySighting",
+          "kind": "reference",
+          "value": "3208"
+        },
+        {
+          "name": "MusicEnemyCatch",
+          "kind": "reference",
+          "value": "3155"
+        }
+      ]
+    },
+    {
+      "class": "BatteryVisualLogic",
+      "pathId": "3150",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "batteryBarContainerGroup",
+          "kind": "reference",
+          "value": "2778"
+        },
+        {
+          "name": "batteryBarPrefab",
+          "kind": "reference",
+          "value": "2481"
+        },
+        {
+          "name": "batteryBars",
+          "kind": "int",
+          "value": 3
+        },
+        {
+          "name": "batteryBarContainer",
+          "kind": "reference",
+          "value": "1891"
+        },
+        {
+          "name": "inUI",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "cameraTurn",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "batteryBarCharge",
+          "kind": "reference",
+          "value": "2228"
+        },
+        {
+          "name": "batteryBarDrain",
+          "kind": "reference",
+          "value": "2297"
+        },
+        {
+          "name": "itemBattery",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "batteryBorderShadow",
+          "kind": "reference",
+          "value": "2912"
+        },
+        {
+          "name": "batteryBorderMain",
+          "kind": "reference",
+          "value": "2917"
+        },
+        {
+          "name": "batteryBackground",
+          "kind": "reference",
+          "value": "2732"
+        },
+        {
+          "name": "batteryCharge",
+          "kind": "reference",
+          "value": "3038"
+        },
+        {
+          "name": "batteryDrain",
+          "kind": "reference",
+          "value": "2994"
+        },
+        {
+          "name": "batteryOutVisual",
+          "kind": "reference",
+          "value": "719"
+        },
+        {
+          "name": "batteryChargeNeededVisual",
+          "kind": "reference",
+          "value": "481"
+        },
+        {
+          "name": "barLossEffectPrefab",
+          "kind": "reference",
+          "value": "2482"
+        }
+      ]
+    },
+    {
+      "class": "PlayerAvatarMenu",
+      "pathId": "3154",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cameraAndStuff",
+          "kind": "reference",
+          "value": "1139"
+        },
+        {
+          "name": "expressionAvatar",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "iconMakerAvatar",
+          "kind": "bool",
+          "value": false
+        },
+        {
+          "name": "worldAvatar",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "MapLayer",
+      "pathId": "3157",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "layer",
+          "kind": "int",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "class": "DebugServerUI",
+      "pathId": "3169",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "Text",
+          "kind": "reference",
+          "value": "2604"
+        }
+      ]
+    },
+    {
+      "class": "CameraTilt",
+      "pathId": "3174",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "tiltZ",
+          "kind": "float",
+          "value": 0.029999999329447746
+        },
+        {
+          "name": "tiltZMax",
+          "kind": "float",
+          "value": 10
+        },
+        {
+          "name": "tiltX",
+          "kind": "float",
+          "value": 0.05000000074505806
+        },
+        {
+          "name": "tiltXMax",
+          "kind": "float",
+          "value": 10
+        },
+        {
+          "name": "strafeAmount",
+          "kind": "float",
+          "value": 2
+        },
+        {
+          "name": "CrouchMultiplier",
+          "kind": "float",
+          "value": 0.5
+        },
+        {
+          "name": "tiltXresult",
+          "kind": "float",
+          "value": 0
+        },
+        {
+          "name": "tiltZresult",
+          "kind": "float",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "class": "BatteryVisualLogic",
+      "pathId": "3183",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "batteryBarContainerGroup",
+          "kind": "reference",
+          "value": "2813"
+        },
+        {
+          "name": "batteryBarPrefab",
+          "kind": "reference",
+          "value": "2481"
+        },
+        {
+          "name": "batteryBars",
+          "kind": "int",
+          "value": 3
+        },
+        {
+          "name": "batteryBarContainer",
+          "kind": "reference",
+          "value": "1925"
+        },
+        {
+          "name": "inUI",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "cameraTurn",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "batteryBarCharge",
+          "kind": "reference",
+          "value": "2284"
+        },
+        {
+          "name": "batteryBarDrain",
+          "kind": "reference",
+          "value": "2333"
+        },
+        {
+          "name": "itemBattery",
+          "kind": "reference",
+          "value": "0"
+        },
+        {
+          "name": "batteryBorderShadow",
+          "kind": "reference",
+          "value": "2940"
+        },
+        {
+          "name": "batteryBorderMain",
+          "kind": "reference",
+          "value": "2885"
+        },
+        {
+          "name": "batteryBackground",
+          "kind": "reference",
+          "value": "2690"
+        },
+        {
+          "name": "batteryCharge",
+          "kind": "reference",
+          "value": "3066"
+        },
+        {
+          "name": "batteryDrain",
+          "kind": "reference",
+          "value": "2953"
+        },
+        {
+          "name": "batteryOutVisual",
+          "kind": "reference",
+          "value": "660"
+        },
+        {
+          "name": "batteryChargeNeededVisual",
+          "kind": "reference",
+          "value": "425"
+        },
+        {
+          "name": "barLossEffectPrefab",
+          "kind": "reference",
+          "value": "2482"
+        }
+      ]
+    },
+    {
+      "class": "PlayerMaterial",
+      "pathId": "3195",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "cosmeticType",
+          "kind": "enum:CosmeticType",
+          "value": 13
+        },
+        {
+          "name": "tintable",
+          "kind": "bool",
+          "value": true
+        },
+        {
+          "name": "tintType",
+          "kind": "enum:TintType",
+          "value": 0
+        },
+        {
+          "name": "tintFresnel",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "DebugConsoleUI",
+      "pathId": "3201",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "toggleKey",
+          "kind": "enum:KeyCode",
+          "value": 96
+        },
+        {
+          "name": "chatText",
+          "kind": "reference",
+          "value": "2592"
+        },
+        {
+          "name": "suggestionsText",
+          "kind": "reference",
+          "value": "2628"
+        },
+        {
+          "name": "responseText",
+          "kind": "reference",
+          "value": "2657"
+        },
+        {
+          "name": "scrollIndicator",
+          "kind": "reference",
+          "value": "2593"
+        },
+        {
+          "name": "enableObject",
+          "kind": "reference",
+          "value": "102"
+        }
+      ]
+    },
+    {
+      "class": "Mask",
+      "pathId": "3207",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "m_ShowMaskGraphic",
+          "kind": "bool",
+          "value": false
+        }
+      ]
+    },
+    {
+      "class": "DebugUI",
+      "pathId": "3209",
+      "source": "level0 + globalgamemanagers.assets",
+      "values": [
+        {
+          "name": "enableParent",
+          "kind": "reference",
+          "value": "377"
+        }
+      ]
+    }
+  ]
+}
