@@ -45,12 +45,16 @@ export const NAV = [['/', 'Home'], ['/search.html', 'Search'], ['/collection.htm
   ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'], ['/terms.html', 'Terms']];
 
 /** A schema page is a reference; it is generated and linked, but not offered to a search engine. */
+/** A page that duplicates a query-answering page keeps its URL but is not indexed: the audit in round 76 found
+ *  /tool.html sharing 98.8% of its main content with /search.html, so /tool.html is a noindex convenience page. */
+export function isNoindexPage(path) { return isSchemaPage(path) || path === '/tool.html'; }
+
 export function isSchemaPage(path) {
   return String(path).startsWith('/entity/');
 }
 
 function layout(title, description, path, body, inv) {
-  const noindex = isSchemaPage(path);
+  const noindex = isNoindexPage(path);
   const nav = NAV.map(([h, txt]) => '<a href="' + h + '">' + txt + '</a>').join('');
   return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
     '<title>' + esc(title) + '</title><meta name="description" content="' + esc(description) + '">' +
@@ -203,11 +207,11 @@ export function build(inventoryPath, outDir) {
   write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p><a href="/">Back to the index</a></p>', inv));
 
   // The sitemap lists what a search engine should offer: question-answering pages, not every schema page.
-  const urls = [...pages.keys()].filter((p) => p.endsWith('.html') && p !== '/404.html' && !isSchemaPage(p));
+  const urls = [...pages.keys()].filter((p) => p.endsWith('.html') && p !== '/404.html' && !isNoindexPage(p));
   write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
     urls.map((p) => '<url><loc>' + SITE.url + p + '</loc></url>').join('') + '</urlset>');
   write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n');
-  return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isSchemaPage).length };
+  return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length };
 }
 
 if (process.argv[1] && process.argv[1].endsWith('site.mjs')) {

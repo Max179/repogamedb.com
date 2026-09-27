@@ -69,9 +69,31 @@ try {
   const PRODUCT = required.filter((f) => f.endsWith('.html') && f !== '404.html');
   const weakMeta = PRODUCT.filter((f) => existsSync(join(dir, f))).filter((f) => {
     const h = readFileSync(join(dir, f), 'utf8');
-    return !h.includes('rel="canonical"') || !h.includes('index, follow') || !h.includes('Source:');
+    const robots = /content="(no)?index, follow"/.test(h);
+    return !h.includes('rel="canonical"') || !robots || !h.includes('Source:');
   });
-  ok('every product route carries canonical, an index directive and its source line', weakMeta.length === 0, weakMeta.join(', '));
+  ok('every product route carries canonical, a robots directive and its source line', weakMeta.length === 0, weakMeta.join(', '));
+  // Two indexable pages that answer the same query with the same text are duplicate content; the audit that
+  // prompted this gate found search.html and tool.html sharing 98.8% of their main text.
+  const mains = {};
+  for (const m of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
+    const rel = m.replace('<loc>' + SITE.url + '/', '').replace('</loc>', '') || 'index.html';
+    const h = readFileSync(join(dir, rel), 'utf8');
+    const body = h.match(/<main>([\s\S]*?)<\/main>/);
+    mains[rel] = (body ? body[1] : h).replace(/\s+/g, ' ').trim();
+  }
+  const shingle = (s) => { const set = new Set(); for (let i = 0; i + 40 <= s.length; i += 10) set.add(s.slice(i, i + 40)); return set; };
+  const jaccard = (a, b) => { let inter = 0; for (const x of a) if (b.has(x)) inter++; return inter / (a.size + b.size - inter); };
+  const keys = Object.keys(mains).map((k) => [k, shingle(mains[k])]);
+  const tooSimilar = [];
+  for (let i = 0; i < keys.length; i++) {
+    for (let j = i + 1; j < keys.length; j++) {
+      const s = jaccard(keys[i][1], keys[j][1]);
+      if (s > 0.9) tooSimilar.push(keys[i][0] + ' ~ ' + keys[j][0] + ' = ' + s.toFixed(2));
+    }
+  }
+  ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
