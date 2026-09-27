@@ -54776,6 +54776,7 @@
   ],
   "provenance": {
     "fields": "per-field: source (assembly), version, checkedAt, confidence, value",
-    "note": "confidence=verified-schema means the field exists and is written by Unity according to the assembly; value=null means the instance value is unknown (Unity 6 / SerializedFile v22 container not parsed yet)."
+    "note": "confidence=verified-schema means the field exists and is written by Unity according to the assembly; value=null means the instance value is unknown (Unity 6 / SerializedFile v22 container not parsed yet).",
+    "extractedValues": "confidence=extracted means every decoded instance of the class agreed on the value; the field layout was accepted only when it consumed the object payload exactly."
   }
 }

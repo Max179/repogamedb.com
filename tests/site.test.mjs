@@ -39,8 +39,13 @@ try {
   ok('every sampled entity page carries a canonical URL', html.every((h) => h.includes('<link rel="canonical" href="' + SITE.url + '/entity/')));
   ok('every sampled entity page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
   const f0 = inv.classes[0].fields[0];
+  const confidences = new Set();
+  let extracted = 0;
+  for (const c of inv.classes) for (const f of c.fields ?? []) { confidences.add(f.confidence); if (f.confidence === 'extracted') extracted++; }
   ok('every field carries per-field provenance',
-    f0.source === inv.source.assembly && f0.version === inv.version && f0.confidence === 'verified-schema' && 'value' in f0);
+    f0.source === inv.source.assembly && f0.version === inv.version && 'value' in f0 &&
+    [...confidences].every((c) => c === 'verified-schema' || c === 'extracted'), [...confidences].join(','));
+  ok('the dataset carries real extracted values where the decoder proved them', extracted >= 1, extracted + ' field(s) extracted');
   ok('per-field provenance is rendered on an entity page',
     readFileSync(join(dir, 'entity', readdirSync(join(dir, 'entity')).find((f) => f.endsWith('.html'))), 'utf8').includes('verified-schema'));
 
