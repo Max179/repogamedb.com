@@ -110,6 +110,8 @@ try {
   ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.join(', '));
 
   const status = JSON.parse(readFileSync('reports/status.json', 'utf8'));
+  ok('the status records the decoded value layer with a positive count',
+    status.valueLayer !== null && status.valueLayer.count > 0, JSON.stringify(status.valueLayer));
   ok('the status manifest records a source-only handoff',
     status.handoff.excludedCount === 0 && (status.handoff.byTop['data/raw'] ?? 0) === 0 &&
     (status.handoff.byTop['data'] ?? 0) > 0 && status.handoff.trackedFiles > 5,

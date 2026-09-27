@@ -1,7 +1,7 @@
 {
   "site": "repogamedb.com",
-  "head": "ec4bd53",
-  "commits": 51,
+  "head": "de93099",
+  "commits": 54,
   "pages": 479,
   "indexable": 13,
   "noindex": 466,
@@ -23,5 +23,9 @@
     },
     "excludedCount": 0,
     "excluded": []
+  },
+  "valueLayer": {
+    "file": "data/normalized/p0-instances.json",
+    "count": 49
   }
 }

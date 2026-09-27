@@ -3,7 +3,7 @@
  * Emit reports/status.json from measurements rather than prose, so the handoff status is machine-readable and can
  * be checked by a gate. Every number here comes from a fresh build into a temp directory plus git; none is typed in.
  */
-import { readFileSync, writeFileSync, mkdtempSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdtempSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execSync } from 'node:child_process';
@@ -38,6 +38,16 @@ try {
   }
   const excluded = tracked.filter((f) => f.startsWith('data/raw/') || f.startsWith('web/dist/') || f.endsWith('payloads.json'));
   out.handoff = { trackedFiles: tracked.length, byTop, excludedCount: excluded.length, excluded: excluded.slice(0, 5) };
+  // Value-layer coverage: how much decoded data exists, recorded so a reader does not have to infer it from prose.
+  const valueFile = ['data/normalized/p0-instances.json', 'data/normalized/p0-field-rows.json'].find((f) => existsSync(f)) ?? null;
+  let valueCount = null;
+  if (valueFile) {
+    const d = JSON.parse(readFileSync(valueFile, 'utf8'));
+    const candidates = [d, d.instances, d.objects, d.rows, d.classes];
+    const arr = candidates.find((c) => Array.isArray(c));
+    valueCount = arr ? arr.length : (typeof d.fieldCount === 'number' ? d.fieldCount : null);
+  }
+  out.valueLayer = valueFile ? { file: valueFile, count: valueCount } : null;
   writeFileSync('reports/status.json', JSON.stringify(out, null, 2) + '\n');
   console.log('[status] ' + JSON.stringify(out));
 } finally {
