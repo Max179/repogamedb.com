@@ -8,3 +8,6 @@ reports/*.local.json
 
 web/dist/
 
+
+data/normalized/*-payloads.json
+
