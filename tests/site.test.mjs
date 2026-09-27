@@ -82,14 +82,17 @@ try {
     const body = h.match(/<main>([\s\S]*?)<\/main>/);
     mains[rel] = (body ? body[1] : h).replace(/\s+/g, ' ').trim();
   }
-  const shingle = (s) => { const set = new Set(); for (let i = 0; i + 40 <= s.length; i += 10) set.add(s.slice(i, i + 40)); return set; };
-  const jaccard = (a, b) => { let inter = 0; for (const x of a) if (b.has(x)) inter++; return inter / (a.size + b.size - inter); };
-  const keys = Object.keys(mains).map((k) => [k, shingle(mains[k])]);
+  // Word 6-grams with containment, NOT character shingles: character shingles are offset sensitive and measured
+  // only 0.070 for two pages that share 98.8% of their characters, so that version could never fire. Containment
+  // against the smaller page still fires when the difference is a contiguous insertion such as a heading line.
+  const grams = (s) => { const w = s.split(/\s+/); const set = new Set(); for (let i = 0; i + 6 <= w.length; i++) set.add(w.slice(i, i + 6).join(' ')); return set; };
+  const containment = (a, b) => { let inter = 0; for (const x of a) if (b.has(x)) inter++; return inter / Math.min(a.size, b.size); };
+  const keys = Object.keys(mains).map((k) => ({ name: k, grams: grams(mains[k]) }));
   const tooSimilar = [];
   for (let i = 0; i < keys.length; i++) {
     for (let j = i + 1; j < keys.length; j++) {
-      const s = jaccard(keys[i][1], keys[j][1]);
-      if (s > 0.9) tooSimilar.push(keys[i][0] + ' ~ ' + keys[j][0] + ' = ' + s.toFixed(2));
+      const s = containment(keys[i].grams, keys[j].grams);
+      if (s > 0.9) tooSimilar.push(keys[i].name + ' ~ ' + keys[j].name + ' = ' + s.toFixed(2));
     }
   }
   ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.join(', '));
