@@ -1,0 +1,11 @@
+﻿R.E.P.O. / TCG 容器探针（只读，2026-09-25）
+
+文件                      大小             BE 前 6 个 u32              解析器结论
+resources.assets (REPO)   208,174,496      0,0,22,0,0,30803442        REFUSED: dataOffset 0 is inconsistent with metadataSize 0
+sharedassets0.assets       67,228,396       0,0,22,0,0,374850          REFUSED: 同上
+level0 (REPO)             530,084          0,0,22,0,0,88111           REFUSED: 同上
+level1 (TCG)              1,814,108        0,0,22,0,0,318743          REFUSED: 同上；unityVersion 串 = 6000.0.66f2
+
+结论：TCG 与 REPO 的 SerializedFile 为 v22（Unity 6 世代），头部布局与参考项目（2019.4 / v21）不同。
+实例值提取必须先把容器解析器扩到 v22 并通过自洽校验；在此之前实例值一律 unknown（不猜测）。
+字段布局不受影响：来自各游戏自身托管程序集，已提取完成。
