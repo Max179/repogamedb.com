@@ -80,6 +80,21 @@ for (const [payloadPath, dll, invPath, source] of JOBS) {
     (inv.classes ??= []).push(entry as never);
     upgraded += entry.fields.length;
   }
+  const instances: { class: string; pathId: string; source: string; values: unknown }[] = [];
+  for (const o of doc.objects) {
+    const buf = Buffer.from(o.payload, 'base64');
+    const h = readMonoBehaviourHeader(buf);
+    if (!h) continue;
+    const values = decodeValues(asm, o.class, buf.subarray(h.bytes));
+    if (!values) continue;
+    instances.push({ class: o.class, pathId: String(o.pathId), source, values });
+  }
+  writeFileSync(invPath.replace('p0-inventory.json', 'p0-instances.json'), JSON.stringify({
+    game: inv.game, engine: inv.engine, version: inv.version,
+    source: { ...inv.source, note: 'per-instance decoded values; each instance is one object whose layout consumed its payload exactly' },
+    count: instances.length, instances,
+  }, null, 2), 'utf8');
+  console.log('  instances written: %d', instances.length);
   inv.provenance = { ...(inv.provenance ?? {}), extractedValues: 'confidence=extracted means every decoded instance of the class agreed on the value; the field layout was accepted only when it consumed the object payload exactly.' };
   writeFileSync(invPath, JSON.stringify(inv, null, 2), 'utf8');
   console.log('%s: objects decoded=%d classesWithValues=%d fieldsUpgraded=%d conflictsIgnored=%d',
