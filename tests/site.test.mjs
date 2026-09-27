@@ -56,4 +56,32 @@ try {
 }
 
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
+// --- Unity 6 (v22) header reader: the measured relations, checked against real game files
+{
+  const v22 = await import('../pipeline/serialized-v22.mjs');
+  const samples = [
+    'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/level1',
+    'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/level0',
+  ];
+  let seen = 0;
+  for (const path of samples) {
+    try {
+      const buf = readFileSync(path);
+      const h = v22.readHeaderV22(buf);
+      if (h && v22.headerIsValid(h, buf.length) && h.version === 22) seen++;
+    } catch { /* file not on this machine */ }
+  }
+  ok('the measured v22 header validates against real game files', seen >= 1, seen + ' of ' + samples.length);
+  const synthetic = Buffer.alloc(64);
+  synthetic.writeUInt32BE(22, 8);
+  synthetic.writeBigUInt64BE(1000n, 16);
+  synthetic.writeBigUInt64BE(2000n, 24);
+  synthetic.writeBigUInt64BE(1060n, 32);
+  ok('a fileSize that does not equal the file length is refused', v22.headerOf(synthetic, 2000) !== null && v22.headerOf(synthetic, 1999) === null);
+  const badGap = Buffer.from(synthetic);
+  badGap.writeBigUInt64BE(1900n, 32);
+  ok('a dataOffset gap outside the measured range is refused', v22.headerOf(badGap, 2000) === null);
+  ok('a short buffer is refused rather than read past', v22.readHeaderV22(Buffer.alloc(8)) === null);
+}
+
 process.exit(fail ? 1 : 0);
