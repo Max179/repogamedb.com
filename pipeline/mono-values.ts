@@ -132,12 +132,25 @@ function walkFields(assembly: DotNetAssembly, fields: DotNetField[], payload: Bu
   return { values, next: p };
 }
 
+/** Refusals keyed by (consumed - payload length); 999999 means the field walk itself failed. Diagnostic only, so
+ *  the next decoder extension is chosen from measured deltas instead of a guess. */
+export const refusalDeltas = new Map<number, number>();
+process.on('exit', () => {
+  if (!refusalDeltas.size) return;
+  const top = [...refusalDeltas.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+  console.log('[refusal deltas] ' + top.map(([d, n]) => (d === 999999 ? 'walk-failed' : 'delta ' + d) + ': ' + n).join(', '));
+});
+
 export function decodeValues(assembly: DotNetAssembly, className: string, payload: Buffer): DecodedValue[] | null {
   const type = monoBehaviourClass(assembly, className);
   if (!type) return null;
   const written = unitySerializedFields(assembly, type);
   if (!written.length) return null;
   const r = walkFields(assembly, written, payload, 0, 0);
-  if (!r || r.next !== payload.length) return null;
+  if (!r || r.next !== payload.length) {
+    const delta = r ? r.next - payload.length : 999999;
+    refusalDeltas.set(delta, (refusalDeltas.get(delta) ?? 0) + 1);
+    return null;
+  }
   return r.values;
 }
