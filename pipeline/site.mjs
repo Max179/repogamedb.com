@@ -38,7 +38,9 @@ const NAV = [['/', 'Home'], ['/search.html', 'Search'], ['/collection.html', 'Cl
   ['/tool.html', 'Tool'], ['/sources.html', 'Sources'], ['/about.html', 'About'], ['/contact.html', 'Contact'],
   ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'], ['/terms.html', 'Terms']];
 
-function layout(title, description, path, body, inv) {
+// The sixth argument is the page path some call sites still pass; the canonical URL is built from `path`, so it is
+// redundant. TypeScript found it ("Expected 0-5 arguments, but got 6") rather than a human reading 12 call sites.
+function layout(title, description, path, body, inv, _redundantPagePath) {
   const nav = NAV.map(([h, t]) => '<a href="' + h + '">' + t + '</a>').join('');
   return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
     '<title>' + esc(title) + '</title><meta name="description" content="' + esc(description) + '">' +
