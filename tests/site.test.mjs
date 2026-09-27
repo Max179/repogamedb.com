@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 /**
  * Site tests for the R.E.P.O. build. Deterministic: builds into a temp dir and inspects the output.
  * A gate that cannot fail is not a gate, so every check below asserts something that has been wrong at least once
@@ -55,5 +55,40 @@ try {
   rmSync(dir, { recursive: true, force: true });
 }
 
+
+// --- Unity 6 (v22) header reader: measured relations, checked against the real game files
+{
+  const { readHeaderV22, headerIsValid, headerOf } = await import(''../pipeline/serialized-v22.mjs'');
+  const samples = [
+    [''TCG'', ''C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/level1''],
+    [''TCG'', ''C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/level2''],
+    [''REPO'', ''C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/level0''],
+    [''REPO'', ''C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/resources.assets''],
+  ];
+  let seen = 0;
+  const bad = [];
+  for (const [game, path] of samples) {
+    try {
+      const buf = readFileSync(path);
+      const h = readHeaderV22(buf);
+      if (!h || !headerIsValid(h, buf.length)) { bad.push(game + '' '' + path.split(''/'').pop()); continue; }
+      if (h.version !== 22) { bad.push(game + '' version='' + h.version); continue; }
+      seen++;
+    } catch { /* file not on this machine */ }
+  }
+  ok(''the measured v22 header validates against real game files'', seen >= 2 && bad.length === 0, seen + '' files, bad: '' + bad.join('', ''));
+  const synthetic = Buffer.alloc(64);
+  synthetic.writeUInt32BE(22, 8);
+  synthetic.writeBigUInt64BE(1000n, 16);
+  synthetic.writeBigUInt64BE(2000n, 24);
+  synthetic.writeBigUInt64BE(1060n, 32);
+  ok(''a header whose fileSize does not equal the file length is refused'', headerOf(synthetic, 2000) !== null && headerOf(synthetic, 1999) === null);
+  const badGap = Buffer.from(synthetic);
+  badGap.writeBigUInt64BE(1900n, 32);
+  ok(''a header whose dataOffset gap is outside the measured range is refused'', headerOf(badGap, 2000) === null);
+  ok(''a short buffer is refused rather than read past'', readHeaderV22(Buffer.alloc(8)) === null);
+}
+
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
+
