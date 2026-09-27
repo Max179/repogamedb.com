@@ -1,4 +1,6 @@
-/**
+/* (plain block comment, not JSDoc: the offsets below are written as @24, and TypeScript parses @ inside a JSDoc
+ * block as a tag, which fails the typecheck with "Identifier expected")
+ *
  * Unity 6 (SerializedFile v22) header reader — the first implemented piece of the v22 container path.
  *
  * Every field here was measured, not assumed: the file length is known, so the u64 (big-endian) in the header that
