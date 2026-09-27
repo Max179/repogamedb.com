@@ -1,6 +1,8 @@
 // Merge decoded instance values into the normalized inventory: a field becomes confidence=extracted only when every
 // decoded instance of that class agrees on the value; otherwise it stays null/verified-schema.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import type { DotNetAssembly } from './dotnet-metadata.ts';
 import { parseAssembly, monoBehaviourClass } from './dotnet-metadata.ts';
 import { readMonoBehaviourHeader, decodeValues } from './mono-values.ts';
 
@@ -19,13 +21,14 @@ for (const [payloadPath, dll, invPath, source] of JOBS) {
   let doc, inv;
   try { doc = JSON.parse(readFileSync(payloadPath, 'utf8')); inv = JSON.parse(readFileSync(invPath, 'utf8')); }
   catch { console.log(payloadPath.split('/').slice(-3)[0] + ': missing input'); continue; }
-  let asm = parseAssembly(dll);
+  // The engine merge must be identical to the one the decoder runner uses, or the two report different counts.
+  let asm: DotNetAssembly = parseAssembly(dll);
   {
-    // Engine types live in module assemblies; merging them lets references to Transform/GameObject be recognised.
     const byName = new Map(asm.byName);
     for (const mod of ['UnityEngine.CoreModule.dll', 'UnityEngine.dll', 'UnityEngine.PhysicsModule.dll', 'UnityEngine.AnimationModule.dll']) {
-      const p = dll.replace(/[^\\/]+$/, mod);
-      try { const ext = parseAssembly(p); for (const [k, v] of ext.byName) if (!byName.has(k)) byName.set(k, v); } catch { /* absent */ }
+      const p = join(dirname(dll), mod);
+      if (!existsSync(p)) continue;
+      try { const ext = parseAssembly(p); for (const [k, v] of ext.byName) if (!byName.has(k)) byName.set(k, v); } catch { /* skip */ }
     }
     asm = { ...asm, byName };
   }
