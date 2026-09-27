@@ -5,3 +5,6 @@ web/out/
 *.tmp
 reports/*.local.json
 
+
+web/dist/
+
