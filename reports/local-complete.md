@@ -12,19 +12,19 @@
 
 ## 2. P0 数据
 - `data/normalized/p0-inventory.json`：**462 个 P0 类 / 4,723 字段**，其中 `extracted` 80、`verified-schema` 4,643；每字段带 source / version / confidence
-- `data/normalized/p0-instances.json`：**49 个实例 / 28 个类**（只有解码器"恰好耗尽 payload"时才写入）
+- `data/normalized/p0-instances.json`：**77 个实例**（只有解码器"恰好耗尽 payload"时才写入）
 - 枚举页、`values.html`（可信值层）均来自上述文件，非手写
 
 ## 3. 站点与门禁（本轮实测）
 ```
 node pipeline/inventory.ts          -> p0-inventory.json（462 类, 4723 字段）
-node pipeline/normalize_values.ts   -> p0-instances.json（49 实例, 28 类）
+node pipeline/normalize_values.ts   -> p0-instances.json（77 实例）
 [site] pages=479 indexable=13 schema(noindex)=463 out=web/dist
-node tests/site.test.mjs            -> [site-tests] 35 passed, 0 failed
+node tests/site.test.mjs            -> [site-tests] 38 passed, 0 failed
 node .../typescript/bin/tsc --noEmit -p tsconfig.json -> exit 0
 git status --porcelain              -> 空
 ```
-站点代码 HEAD `c9c3649` · 53 commits · 工作区干净。
+站点代码 HEAD `cffcc27` · 75 commits · 工作区干净。
 
 **门禁可失败性（反证，非声明）**：故意破坏构建后两半都失败，随后还原：
 - `terms.html` 去掉 canonical → `FAIL every product route carries canonical, an index directive and its source line :: terms.html`（21 passed / 1 failed, exit 1）
@@ -72,4 +72,12 @@ git status --porcelain              -> 空
 - 第 75–78 轮新增：noindex/sitemap 政策门禁（重复页与 schema 页不入索引），以及可索引页重复内容门禁（逐字符 40 字符窗口哈希后的包含度 > 0.9 即失败）。
 - 该重复内容判据经三次修正才有效，三次失败都记录在测试注释里：字符 shingle 的 Jaccard 实测 0.070、词 6-gram 包含度 0.048（正文是无空白 JSON）、按 10 字符采样的包含度 0.131——都因采样相位错位而失效；改为逐字符哈希后，破坏构建实测 search.html ~ tool.html = 0.93 并触发 FAIL。
 - 已证实的重复：search.html 与 tool.html 的最长公共块为 17,284 / 18,173 字符（difflib autojunk=False 比例 0.989），因此 tool.html 保留 URL 但 noindex、不入 sitemap。
+
+## 值层更新（第 102–113 轮）——本条**更正**上文关于值层的描述
+- 上文"值层偏薄，原因是本作 P0 类多为引擎类型、payload 无法精确耗尽"**已不再准确**。实测（第 101–108 轮）表明主导原因是**类查找的名字形式不匹配**：dumper 记录的是 MonoScript 的简单类名，而类型表按含命名空间的完整名建索引，且查找只搜了 `assembly.types`（仅 Assembly-CSharp）而没有搜合并表 `byName`。
+- 两处修复（第 102、106 轮，均经测量验证后保留）：合并**全部非系统托管程序集**；类查找改在**合并表**上进行，并加"唯一简单名回退、歧义即拒绝"。
+- 效果：repo 已发布实例 **49 → 77**；tcg **41 → 260**（约 6 倍）。
+- 仍被拒绝的部分（按阶段计数，均可观测）：repo `classNotFound=149`、`walkFailed=624`、`layoutShorter=84`、不支持形态 `generic:148 class:18`；tcg `classNotFound=318`、`walkFailed=5956`、不支持形态 `generic:906 class:420`。
+- 第 113 轮尝试支持的 `class` 内联（理论依据：Unity 对 `[Serializable]` 类字段与结构体同样内联）经测量**无增益**，已按事先声明的标准**回退**；仓库中不留无效改动。
+- 残留 `classNotFound` 共 28 个不同类名，链观测显示它们是 ScriptableObject 归属偏差与泛型基类未记录两类边缘个案，**拒绝而非猜测**是当前正确行为。
 
