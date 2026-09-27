@@ -156,6 +156,16 @@ try {
   }
   ok('no emitted page exceeds the 1 MiB weight budget', heavyPages.length === 0, heavyPages.join(', '));
 
+  // Claims this project already falsified must not come back. Each phrase below was true once and is not now, so a
+  // page asserting one would be a false statement to a reader rather than a style issue.
+  const FORBIDDEN = ['does not parse yet', 'no field is listed', 'Every field value'];
+  const offenders = [];
+  for (const f of htmlFiles) {
+    const h = readFileSync(f, 'utf8');
+    for (const phrase of FORBIDDEN) if (h.includes(phrase)) offenders.push(f.slice(dir.length) + ' :: ' + phrase);
+  }
+  ok('no page repeats a claim this project has already falsified', offenders.length === 0, offenders.slice(0, 4).join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
