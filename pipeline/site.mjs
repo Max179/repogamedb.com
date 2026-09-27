@@ -40,7 +40,7 @@ export function lookupFields(inventory, query, limit = 50) {
   return out;
 }
 
-const NAV = [['/', 'Home'], ['/search.html', 'Search'], ['/collection.html', 'Classes'], ['/enemies.html', 'Enemies'],
+export const NAV = [['/', 'Home'], ['/search.html', 'Search'], ['/collection.html', 'Classes'], ['/enemies.html', 'Enemies'],
   ['/guide.html', 'Guide'], ['/tool.html', 'Tool'], ['/sources.html', 'Sources'], ['/about.html', 'About'],
   ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'], ['/terms.html', 'Terms']];
 

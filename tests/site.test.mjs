@@ -7,7 +7,7 @@
 import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, SITE } from '../pipeline/site.mjs';
+import { build, lookupFields, SITE, NAV } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
 let pass = 0, fail = 0;
@@ -61,6 +61,9 @@ try {
   ok('the sitemap omits the 404 page and lists every other page', !sitemap.includes('/404.html') && locs === stats.urls, locs + ' vs ' + stats.urls);
   ok('robots.txt points at the sitemap', readFileSync(join(dir, 'robots.txt'), 'utf8').includes('Sitemap: ' + SITE.url + '/sitemap.xml'));
   ok('the build reports the page count it emitted', stats.pages > 300, String(stats.pages));
+  // A nav target that is not emitted is a dangling link on every page; the route list check did not cover it.
+  const missingNav = NAV.filter(([href]) => !existsSync(join(dir, href.replace(/^\//, ''))));
+  ok('every navigation target is a page that exists', missingNav.length === 0, missingNav.map(([h]) => h).join(', '));
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
