@@ -1,5 +1,5 @@
-// Diagnostic only: classify the residual classNotFound cases into ambiguous / present-but-not-MonoBehaviour /
-// absent, so any further rule is chosen from measurement instead of assumption.
+// Diagnostic only: for the residual classNotFound types (unique simple name, not reaching MonoBehaviour), is the
+// base-type chain broken because the parent type is missing from the merged table?
 import { readFileSync, readdirSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
 import { parseAssembly, monoBehaviourClass } from './dotnet-metadata.ts';
@@ -22,18 +22,23 @@ for (const f of readdirSync(dir).filter((x) => x.toLowerCase().endsWith('.dll') 
 }
 const merged = { ...local, byName };
 const pool = [...new Set(byName.values())];
-const simpleCount = new Map<string, number>();
-for (const t of pool) { const s = t.name.split('.').pop() ?? t.name; simpleCount.set(s, (simpleCount.get(s) ?? 0) + 1); }
+const fullNames = new Set(pool.map((t) => t.name));
+const simpleNames = new Set(pool.map((t) => t.name.split('.').pop() ?? t.name));
+const bySimple = new Map<string, (typeof pool)[number]>();
+for (const t of pool) { const s = t.name.split('.').pop() ?? t.name; if (!bySimple.has(s)) bySimple.set(s, t); }
 const doc = JSON.parse(readFileSync(CWD + '/data/normalized/' + (PROJECT === 'repo' ? 'repo' : 'tcg') + '-mb-payloads.json', 'utf8'));
-let ok = 0; let absent = 0; let ambiguous = 0; let uniqueNoMono = 0;
-const ambSamples: string[] = [];
+let refused = 0; let parentPresent = 0; let parentAbsent = 0; let parentEmpty = 0;
+const samples: string[] = [];
 for (const o of doc.objects) {
   const cls: string = o.class;
-  if (monoBehaviourClass(merged, cls)) { ok++; continue; }
-  const n = simpleCount.get(cls) ?? 0;
-  if (n === 0) absent++;
-  else if (n > 1) { ambiguous++; if (ambSamples.length < 6) ambSamples.push(cls + 'x' + n); }
-  else uniqueNoMono++;
+  if (monoBehaviourClass(merged, cls)) continue;
+  const t = bySimple.get(cls);
+  if (!t) continue;
+  refused++;
+  const base = t.baseType ?? '';
+  if (!base) { parentEmpty++; continue; }
+  const present = fullNames.has(base) || simpleNames.has(base);
+  if (present) parentPresent++; else { parentAbsent++; if (samples.length < 6) samples.push(cls + ' <- ' + base); }
 }
-console.log(PROJECT + ': payloads=' + doc.objects.length + ' resolved=' + ok + ' refused(absentName=' + absent + ' ambiguous=' + ambiguous + ' uniqueButNotMonoBehaviour=' + uniqueNoMono + ')');
-console.log('  ambiguous samples: ' + ambSamples.join(', '));
+console.log(PROJECT + ': refused=' + refused + ' parentPresent=' + parentPresent + ' parentAbsent=' + parentAbsent + ' parentEmpty=' + parentEmpty);
+console.log('  samples of missing parents: ' + samples.join(' | '));
