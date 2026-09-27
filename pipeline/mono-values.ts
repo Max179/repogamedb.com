@@ -127,6 +127,7 @@ function walkFields(assembly: DotNetAssembly, fields: DotNetField[], payload: Bu
       while (p % 4 !== 0) p++;
       continue;
     }
+    refusalKinds.set(String(kind), (refusalKinds.get(String(kind)) ?? 0) + 1);
     return null;   // not measured: refuse the class wholesale
   }
   return { values, next: p };
@@ -135,6 +136,8 @@ function walkFields(assembly: DotNetAssembly, fields: DotNetField[], payload: Bu
 /** Refusals keyed by (consumed - payload length); 999999 means the field walk itself failed. Diagnostic only, so
  *  the next decoder extension is chosen from measured deltas instead of a guess. */
 export const refusalDeltas = new Map<number, number>();
+/** Field forms that hit the "not measured: refuse the class wholesale" branch, so the next supported form is measured. */
+export const refusalKinds = new Map<string, number>();
 /** Which stage refused a payload: before the field walk (class/schema) or during it. */
 export const refusalReasons = { classNotFound: 0, noSerializedFields: 0, walkFailed: 0, layoutShorter: 0, layoutLonger: 0 };
 process.on('exit', () => {
@@ -143,7 +146,8 @@ process.on('exit', () => {
   const top = [...refusalDeltas.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
   console.log('[refusals] classNotFound=' + r.classNotFound + ' noSerializedFields=' + r.noSerializedFields +
     ' walkFailed=' + r.walkFailed + ' layoutShorter=' + r.layoutShorter + ' layoutLonger=' + r.layoutLonger +
-    ' | top deltas: ' + top.map(([d, n]) => (d === 999999 ? 'walk' : d) + ':' + n).join(' '));
+    ' | top deltas: ' + top.map(([d, n]) => (d === 999999 ? 'walk' : d) + ':' + n).join(' ') +
+    ' | unsupported kinds: ' + [...refusalKinds.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6).map(([k, n]) => k + ':' + n).join(' '));
 });
 
 export function decodeValues(assembly: DotNetAssembly, className: string, payload: Buffer): DecodedValue[] | null {
