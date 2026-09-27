@@ -118,6 +118,20 @@ try {
     status.pages === stats.pages && status.indexable === stats.urls && status.noindex === stats.pages - stats.urls,
     JSON.stringify({ buildPages: stats.pages, statusPages: status.pages, buildUrls: stats.urls, statusUrls: status.indexable }));
 
+  // Every internal href must resolve: a dangling link is a broken page for a reader and for a crawler.
+  const htmlFiles = [];
+  const walk = (d) => { for (const e of readdirSync(d, { withFileTypes: true })) { const f = join(d, e.name); if (e.isDirectory()) walk(f); else if (e.name.endsWith('.html')) htmlFiles.push(f); } };
+  walk(dir);
+  const dangling = [];
+  for (const f of htmlFiles) {
+    const h = readFileSync(f, 'utf8');
+    for (const m of h.matchAll(/href="(\/[^"#?]*)([#?][^"]*)?"/g)) {
+      const t = m[1] === '/' ? 'index.html' : m[1].slice(1);
+      if (!existsSync(join(dir, t)) && !existsSync(join(dir, t, 'index.html'))) dangling.push(f.slice(dir.length) + ' -> ' + m[1]);
+    }
+  }
+  ok('every internal link resolves to an emitted file', dangling.length === 0, dangling.slice(0, 5).join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
