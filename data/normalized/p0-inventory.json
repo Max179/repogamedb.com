@@ -51159,8 +51159,9 @@
           "source": "REPO_Data/Managed/Assembly-CSharp.dll",
           "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
           "checkedAt": "2026-09-27T03:59:15.072Z",
-          "confidence": "verified-schema",
-          "value": null
+          "confidence": "extracted",
+          "value": 3047,
+          "fieldSource": "level0 + globalgamemanagers.assets"
         },
         {
           "name": "localPlayerJaw",
@@ -51169,8 +51170,9 @@
           "source": "REPO_Data/Managed/Assembly-CSharp.dll",
           "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
           "checkedAt": "2026-09-27T03:59:15.072Z",
-          "confidence": "verified-schema",
-          "value": null
+          "confidence": "extracted",
+          "value": 4119,
+          "fieldSource": "level0 + globalgamemanagers.assets"
         }
       ]
     },
@@ -51420,8 +51422,9 @@
           "source": "REPO_Data/Managed/Assembly-CSharp.dll",
           "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
           "checkedAt": "2026-09-27T03:59:15.072Z",
-          "confidence": "verified-schema",
-          "value": null
+          "confidence": "extracted",
+          "value": 2102,
+          "fieldSource": "level0 + globalgamemanagers.assets"
         },
         {
           "name": "canvasRect",
@@ -51430,8 +51433,9 @@
           "source": "REPO_Data/Managed/Assembly-CSharp.dll",
           "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
           "checkedAt": "2026-09-27T03:59:15.072Z",
-          "confidence": "verified-schema",
-          "value": null
+          "confidence": "extracted",
+          "value": 2046,
+          "fieldSource": "level0 + globalgamemanagers.assets"
         }
       ]
     },
@@ -55400,6 +55404,446 @@
           "confidence": "extracted",
           "fieldSource": "level0 + globalgamemanagers.assets",
           "value": 0
+        }
+      ]
+    },
+    {
+      "name": "WorldSpaceUIParent",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 8,
+      "written": 3,
+      "fields": [
+        {
+          "name": "valueLostPrefab",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 4597
+        },
+        {
+          "name": "TTSPrefab",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 4598
+        },
+        {
+          "name": "playerNamePrefab",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 4596
+        }
+      ]
+    },
+    {
+      "name": "PlayerAccess",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 2,
+      "written": 2,
+      "fields": [
+        {
+          "name": "camTilt",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "playerTransform",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1014
+        }
+      ]
+    },
+    {
+      "name": "PlayerCollision",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 4,
+      "written": 3,
+      "fields": [
+        {
+          "name": "Player",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 3199
+        },
+        {
+          "name": "StandCollision",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1259
+        },
+        {
+          "name": "CrouchCollision",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1043
+        }
+      ]
+    },
+    {
+      "name": "MapBacktrack",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 11,
+      "written": 5,
+      "fields": [
+        {
+          "name": "pointPrefab",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 4274
+        },
+        {
+          "name": "amount",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 15
+        },
+        {
+          "name": "spacing",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 2
+        },
+        {
+          "name": "pointWait",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0.10000000149011612
+        },
+        {
+          "name": "resetWait",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "name": "CameraUtils",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 2,
+      "written": 1,
+      "fields": [
+        {
+          "name": "MainCamera",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1351
+        }
+      ]
+    },
+    {
+      "name": "HUD",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 3,
+      "written": 2,
+      "fields": [
+        {
+          "name": "hidden",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "false"
+        },
+        {
+          "name": "hideParent",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 203
+        }
+      ]
+    },
+    {
+      "name": "AudioListenerFollow",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 4,
+      "written": 2,
+      "fields": [
+        {
+          "name": "TargetPositionTransform",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "TargetRotationTransform",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "SplashScreenUI",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 3,
+      "written": 2,
+      "fields": [
+        {
+          "name": "semiworkTransform",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 2328
+        },
+        {
+          "name": "warningTransform",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 2274
+        }
+      ]
+    },
+    {
+      "name": "CameraPosition",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 11,
+      "written": 6,
+      "fields": [
+        {
+          "name": "playerTransform",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1014
+        },
+        {
+          "name": "playerOffset.x",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "playerOffset.y",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1.5
+        },
+        {
+          "name": "playerOffset.z",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "camController",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 0
+        },
+        {
+          "name": "positionSmooth",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "name": "PlayerAvatarMenu",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 14,
+      "written": 4,
+      "fields": [
+        {
+          "name": "cameraAndStuff",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 1139
+        },
+        {
+          "name": "expressionAvatar",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "true"
+        },
+        {
+          "name": "iconMakerAvatar",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "false"
+        },
+        {
+          "name": "worldAvatar",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "DebugUI",
+      "namespace": "",
+      "base": "MonoBehaviour",
+      "declared": 2,
+      "written": 1,
+      "fields": [
+        {
+          "name": "enableParent",
+          "type": "unknown",
+          "kind": "extracted-instance",
+          "source": "REPO_Data/Managed/Assembly-CSharp.dll",
+          "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+          "checkedAt": "2026-09-27T03:59:15.072Z",
+          "confidence": "extracted",
+          "fieldSource": "level0 + globalgamemanagers.assets",
+          "value": 377
         }
       ]
     }

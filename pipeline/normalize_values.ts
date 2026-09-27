@@ -19,7 +19,16 @@ for (const [payloadPath, dll, invPath, source] of JOBS) {
   let doc, inv;
   try { doc = JSON.parse(readFileSync(payloadPath, 'utf8')); inv = JSON.parse(readFileSync(invPath, 'utf8')); }
   catch { console.log(payloadPath.split('/').slice(-3)[0] + ': missing input'); continue; }
-  const asm = parseAssembly(dll);
+  let asm = parseAssembly(dll);
+  {
+    // Engine types live in module assemblies; merging them lets references to Transform/GameObject be recognised.
+    const byName = new Map(asm.byName);
+    for (const mod of ['UnityEngine.CoreModule.dll', 'UnityEngine.dll', 'UnityEngine.PhysicsModule.dll', 'UnityEngine.AnimationModule.dll']) {
+      const p = dll.replace(/[^\\/]+$/, mod);
+      try { const ext = parseAssembly(p); for (const [k, v] of ext.byName) if (!byName.has(k)) byName.set(k, v); } catch { /* absent */ }
+    }
+    asm = { ...asm, byName };
+  }
   const agg = new Map<string, Map<string, string>>();   // class -> field -> value (string form)
   const conflicts = new Set<string>();
   let decoded = 0;

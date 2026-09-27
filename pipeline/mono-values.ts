@@ -8,16 +8,23 @@ import { readMonoBehaviourHeader, PRIMITIVE_FIELD_SIZES, PPTR_SIZE } from './mon
 export { readMonoBehaviourHeader };
 export interface DecodedValue { name: string; kind: string; value: string | number | boolean | null }
 
+const UNITY_OBJECT_BASES = new Set(['Object', 'Component', 'Behaviour', 'MonoBehaviour', 'ScriptableObject']);
+
+/** A reference is a 12-byte PPtr when the type is a UnityEngine.Object — which needs the base chain, possibly through
+ *  UnityEngine.dll (measured: GameObject/Transform/Camera/TextMeshProUGUI all 12 B, 5 confirmations). */
 function isObjectReference(assembly: DotNetAssembly, typeName: string): boolean {
   const t = assembly.byName.get(typeName);
   if (!t) return false;
-  if (reachesMonoBehaviour(assembly, t)) return true;
+  if (UNITY_OBJECT_BASES.has(t.name)) return true;
   const seen = new Set<string>();
   let cur: DotNetType | undefined = t;
   while (cur && !seen.has(cur.name)) {
     seen.add(cur.name);
-    if (cur.baseType === 'ScriptableObject') return true;
-    cur = assembly.byName.get(cur.baseType ?? '');
+    const base = cur.baseType;
+    if (!base) return false;
+    if (UNITY_OBJECT_BASES.has(base)) return true;
+    if (base === 'Enum' || base === 'ValueType') return false;
+    cur = assembly.byName.get(base);
   }
   return false;
 }
