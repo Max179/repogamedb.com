@@ -104,5 +104,19 @@ try {
   ok('a short buffer is refused rather than read past', v22.readHeaderV22(Buffer.alloc(8)) === null);
 }
 
+// --- the publish configuration is part of the deliverable, so it is gated with the site
+{
+  const wf = readFileSync('.github/workflows/publish.yml', 'utf8');
+  const wr = readFileSync('wrangler.toml', 'utf8');
+  ok('the publish workflow builds the site and runs the gates', wf.includes('node pipeline/site.mjs') && wf.includes('node tests/site.test.mjs'));
+  ok('the deploy job cannot run unless the gate job succeeded', /needs:\s*gate\b/.test(wf));
+  ok('the deploy uses a secret and no token is committed',
+    wf.includes('secrets.CLOUDFLARE_API_TOKEN') && !/apiToken:\s*[A-Za-z0-9_-]{20,}/.test(wf));
+  ok('the Pages project and its output directory are declared', /name = "[a-z0-9-]+"/.test(wr) && wr.includes('pages_build_output_dir = "web/dist"'));
+  ok('a portable typecheck config exists for a clean runner', readFileSync('tsconfig.ci.json', 'utf8').includes('typeRoots'));
+  ok('the workflow is free of tabs and uses 2-space indentation levels',
+    !/\t/.test(wf) && wf.split('\n').every((l) => l.trim() === '' || (l.match(/^ */)[0].length % 2) === 0));
+}
+
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
