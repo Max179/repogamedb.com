@@ -250,6 +250,16 @@ try {
   });
   ok('mobile smoke: every page has a responsive viewport and no fixed width wider than a phone', notMobile.length === 0, notMobile.slice(0, 3).join(', '));
 
+  // The deploy target is declared twice (workflow flag and wrangler.toml); the two must agree.
+  {
+    const wfText = readFileSync('.github/workflows/publish.yml', 'utf8');
+    const wrangler = readFileSync('wrangler.toml', 'utf8');
+    const inWorkflow = (wfText.match(/--project-name=([a-z0-9-]+)/) ?? [])[1];
+    const inWrangler = (wrangler.match(/name = "([a-z0-9-]+)"/) ?? [])[1];
+    ok('the workflow and wrangler.toml agree on the Cloudflare Pages project, and the workflow gates the deploy',
+      !!inWorkflow && inWorkflow === inWrangler && /needs:\s*gate\b/.test(wfText) && wfText.includes('node tests/site.test.mjs') && wfText.includes('preflight'),
+      JSON.stringify({ workflow: inWorkflow, wrangler: inWrangler }));
+  }
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
