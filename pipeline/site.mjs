@@ -78,7 +78,7 @@ function layout(title, description, path, body, inv) {
     '<footer>Source: <span class="mono">' + esc(inv.source.assembly) + '</span> · Game version: ' + esc(inv.version) +
     ' · Extracted: ' + esc(inv.source.extractedAt) +
     ' · Confidence: read from the game&apos;s own assembly. Values not extracted are marked unknown - nothing is invented.<br>' +
-    'Not affiliated with the game&apos;s developer. No game assets are redistributed.</footer></body></html>';
+    'Not affiliated with the game&apos;s developer. Some images are taken from the game to identify items; those images remain the property of the developer.</footer></body></html>';
 }
 
 export function build(inventoryPath, outDir) {
@@ -217,7 +217,9 @@ export function build(inventoryPath, outDir) {
   for (const e of entries) {
     const img = (e.images ?? [])[0];
     const imgHtml = img ? '<img class="hero" src="/' + esc(img.file) + '" alt="' + esc(img.alt.en) + '" width="960" height="200">' +
-      (img.kind === 'diagram' ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>' : '') : '';
+      (img.kind === 'diagram'
+      ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>'
+      : '<p class="dim small">Image taken from the game itself to identify this item; it remains the property of the developer.</p>') : '';
     const facts = (e.facts ?? []).map((x) => '<li>' + esc(x.claim) + ' <span class="dim small">(verified against the game&apos;s own files)</span></li>').join('');
     const related = (e.related ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
     write('entries/' + e.id + '.html', layout(e.title, e.summary, '/entries/' + e.id + '.html',
@@ -256,7 +258,7 @@ export function build(inventoryPath, outDir) {
     '<p><a href="/entries/">Back to the player-facing entries</a></p>', inv));
   // copy the entry images into the build (text formats only, so a binary screenshot needs a one-line addition here)
   for (const e of entries) for (const img of e.images ?? []) {
-    try { write(img.file, readFileSync(join(process.cwd(), 'content', 'assets', img.file), 'utf8')); } catch { /* missing asset: the content gate already fails this case */ }
+    try { write(img.file, readFileSync(join(process.cwd(), 'content', 'assets', img.file))); } catch { /* missing asset: the content gate already fails this case */ }
   }
 
   const artDir = join(process.cwd(), 'content', 'articles');

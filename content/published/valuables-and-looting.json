@@ -34,6 +34,14 @@
   ],
   "images": [
     {
+      "file": "mapped/valuables-and-looting-egg.png",
+      "kind": "game",
+      "alt": {
+        "en": "A texture taken from the game of an egg-shaped valuable.",
+        "zh": "取自游戏的蛋形贵重物品贴图。"
+      }
+    },
+    {
       "file": "valuables-and-looting.svg",
       "kind": "diagram",
       "alt": {

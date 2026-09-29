@@ -6,6 +6,7 @@
  */
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 
 export const BANNED = ['il2cpp', 'serializedfile', 'pptr', 'schema', 'metadata', 'payload', 'monobehaviour',
   'scriptableobject', 'sha256', 'parser', 'namespace'];
@@ -63,6 +64,22 @@ export function checkArticle(a, ids) {
   return bad;
 }
 
+/** An image that claims to come from the game must match the manifest record that documents its origin. */
+export function checkMappedImages(entry, dir, manifest) {
+  const bad = [];
+  for (const img of entry.images ?? []) {
+    if (img.kind !== 'game') continue;
+    const rec = (manifest.records ?? []).find((r) => r.file === img.file);
+    if (!rec) { bad.push('game image without a manifest record: ' + img.file); continue; }
+    const p = join(dir, img.file);
+    if (!existsSync(p)) { bad.push('mapped image not on disk: ' + img.file); continue; }
+    const buf = readFileSync(p);
+    const h = createHash('sha256').update(buf).digest('hex');
+    if (h !== rec.sha256 || buf.length !== rec.bytes) bad.push('mapped image does not match its manifest record: ' + img.file);
+  }
+  return bad;
+}
+
 if (process.argv[1] && process.argv[1].endsWith('content-gate.mjs')) {
   const root = process.cwd();
   const pubDir = join(root, 'content', 'published');
@@ -76,12 +93,14 @@ if (process.argv[1] && process.argv[1].endsWith('content-gate.mjs')) {
     }
   }
   const ids = new Set(entries.map((e) => e.data.id));
+  const manifestPath = join(root, 'content', 'images-manifest.json');
+  const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : { records: [] };
   let violations = 0;
   const titles = new Map();
   for (const e of entries) {
     const isPublished = e.file.includes('published');
     if (!isPublished) continue;
-    const bad = checkEntry(e.data, assetsDir, ids);
+    const bad = checkEntry(e.data, assetsDir, ids).concat(checkMappedImages(e.data, assetsDir, manifest));
     if (e.data.title) titles.set(e.data.title, (titles.get(e.data.title) ?? 0) + 1);
     if (bad.length) { violations += bad.length; console.log('  FAIL ' + e.data.id + ': ' + bad.join('; ')); }
     else console.log('  OK   ' + e.data.id + ' (' + e.data.images.length + ' image(s), ' + e.data.facts.length + ' fact(s))');

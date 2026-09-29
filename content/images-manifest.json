@@ -1,0 +1,29 @@
+{
+  "source": "C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data",
+  "records": [
+    {
+      "entity": "enemies-and-their-behaviour",
+      "kind": "game",
+      "file": "mapped/enemies-and-their-behaviour-bombthrower.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Enemy Bomb Thrower BaseColor (Screaming)",
+      "note": "albedo texture named for the game's bomb-throwing monster",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1040561,
+      "sha256": "41611021cc393e8814baa7ae29d27c2e805e919946c9f142d2d442aa4dc44bc7"
+    },
+    {
+      "entity": "valuables-and-looting",
+      "kind": "game",
+      "file": "mapped/valuables-and-looting-egg.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Egg 2",
+      "note": "texture of an egg-shaped valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 199823,
+      "sha256": "8e590d46abc6ba601948e9d0f384a8567242f101c8af319fb74e1626ed63b1b6"
+    }
+  ]
+}

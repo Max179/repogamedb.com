@@ -220,6 +220,13 @@ try {
   }
   ok('every article page carries its goal, version, prerequisites, steps, mistakes, related entities and sources', thinArticles.length === 0, thinArticles.slice(0, 6).join(', '));
 
+  // An image claiming to come from the game must match the manifest that documents where it came from.
+  const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+  const gameImages = published.flatMap((e) => (e.images ?? []).filter((i) => i.kind === 'game').map((i) => ({ id: e.id, img: i })));
+  const badGame = gameImages.filter(({ img }) => !(manifest.records ?? []).some((r) => r.file === img.file) || !existsSync(join(dir, img.file)));
+  ok('every game image used in an entry has a manifest record and exists in the build', badGame.length === 0 && gameImages.length > 0,
+    badGame.map((x) => x.id + ':' + x.img.file).join(', ') || (gameImages.length ? '' : 'no game image is used yet'));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
