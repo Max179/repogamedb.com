@@ -45,6 +45,24 @@ export function checkEntry(entry, dir, ids) {
   return bad;
 }
 
+/** @returns {string[]} violations for a published article: every step must say what to do and why it is grounded. */
+export function checkArticle(a, ids) {
+  const bad = [];
+  const prose = [a.title, a.target, ...(a.steps ?? []).map((s) => s.do), ...(a.commonMistakes ?? [])].join(' ').toLowerCase();
+  for (const term of BANNED) if (prose.includes(term)) bad.push('internal term "' + term + '" in prose');
+  for (const w of BANNED_WORDS) if (new RegExp('\\b' + w + '\\b').test(prose)) bad.push('internal word "' + w + '" in prose');
+  if (!a.title || a.title.length < 8 || /^[a-z0-9_]+$/.test(a.title)) bad.push('bad article title');
+  if (!a.target || a.target.length < 60) bad.push('target under 60 characters');
+  if (!a.version) bad.push('no applicable version');
+  if (!(a.prerequisites ?? []).length) bad.push('no prerequisites');
+  if ((a.steps ?? []).length < 3) bad.push('fewer than three steps');
+  for (const s of a.steps ?? []) if (!s.do || !s.because) bad.push('step without action or grounding: ' + JSON.stringify(s));
+  if (!(a.commonMistakes ?? []).length) bad.push('no common mistakes');
+  for (const r of a.relatedEntities ?? []) if (!ids.has(r)) bad.push('related entity does not exist: ' + r);
+  if (!(a.sources ?? []).length) bad.push('no sources');
+  return bad;
+}
+
 if (process.argv[1] && process.argv[1].endsWith('content-gate.mjs')) {
   const root = process.cwd();
   const pubDir = join(root, 'content', 'published');
@@ -67,6 +85,13 @@ if (process.argv[1] && process.argv[1].endsWith('content-gate.mjs')) {
     if (e.data.title) titles.set(e.data.title, (titles.get(e.data.title) ?? 0) + 1);
     if (bad.length) { violations += bad.length; console.log('  FAIL ' + e.data.id + ': ' + bad.join('; ')); }
     else console.log('  OK   ' + e.data.id + ' (' + e.data.images.length + ' image(s), ' + e.data.facts.length + ' fact(s))');
+  }
+  const artDir = join(root, 'content', 'articles');
+  const articles = existsSync(artDir) ? readdirSync(artDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(artDir, x), 'utf8'))) : [];
+  for (const a of articles) {
+    const bad = checkArticle(a, ids);
+    if (bad.length) { violations += bad.length; console.log('  FAIL article ' + a.id + ': ' + bad.join('; ')); }
+    else console.log('  OK   article ' + a.id + ' (' + a.steps.length + ' step(s))');
   }
   for (const [t, n] of titles) if (n > 1) { violations++; console.log('  FAIL duplicate title: ' + t); }
   console.log('[content-gate] ' + (entries.length) + ' entry file(s), ' + violations + ' violation(s)');

@@ -1,0 +1,39 @@
+{
+  "id": "valuable-run-routine",
+  "title": "A looting routine that gets the valuables out",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to work a level so the loot reaches the extraction point instead of being lost on the way there.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "A known extraction point",
+    "Room to carry at least one object"
+  ],
+  "steps": [
+    {
+      "do": "Take the small valuables first and leave the awkward ones for a second trip.",
+      "because": "valuables are individual objects of very different size (GumballValuable, ValuableEgg, BlenderValuable, TrafficLightValuable)"
+    },
+    {
+      "do": "Clear the path to extraction before you carry the biggest item.",
+      "because": "the level defines which valuables it places, so what you find is not random scenery (LevelValuables)"
+    },
+    {
+      "do": "Pick up the boxed valuables when you have a free hand.",
+      "because": "at least one valuable comes in a box you can carry (ItemValuableBox)"
+    }
+  ],
+  "commonMistakes": [
+    "Grabbing the heaviest object first and running out of time to place it.",
+    "Clearing the level before completing any extraction.",
+    "Walking past a boxed valuable because it does not look like loot."
+  ],
+  "relatedEntities": [
+    "valuables-and-looting",
+    "extraction-run"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

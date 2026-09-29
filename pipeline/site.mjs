@@ -40,7 +40,7 @@ export function lookupFields(inventory, query, limit = 50) {
   return out;
 }
 
-export const NAV = [['/', 'Home'], ['/entries/', 'Start here'], ['/topics/', 'Topics'], ['/guide.html', 'Guide'],
+export const NAV = [['/', 'Home'], ['/entries/', 'Start here'], ['/topics/', 'Topics'], ['/articles/', 'Guides'], ['/guide.html', 'Guide'],
   ['/about.html', 'About'], ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'],
   ['/terms.html', 'Terms'], ['/reference/', 'Technical reference']];
 
@@ -258,6 +258,24 @@ export function build(inventoryPath, outDir) {
   for (const e of entries) for (const img of e.images ?? []) {
     try { write(img.file, readFileSync(join(process.cwd(), 'content', 'assets', img.file), 'utf8')); } catch { /* missing asset: the content gate already fails this case */ }
   }
+
+  const artDir = join(process.cwd(), 'content', 'articles');
+  let articles = [];
+  try { articles = readdirSync(artDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(artDir, x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* no articles yet */ }
+  for (const a of articles) {
+    const related = (a.relatedEntities ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
+    write('articles/' + a.id + '.html', layout(a.title, a.target, '/articles/' + a.id + '.html',
+      '<h1>' + esc(a.title) + '</h1><p class="lead">' + esc(a.target) + '</p>' +
+      '<h2>Applies to</h2><p class="dim">' + esc(a.version) + '</p>' +
+      '<h2>Before you start</h2><ul>' + (a.prerequisites ?? []).map((p) => '<li>' + esc(p) + '</li>').join('') + '</ul>' +
+      '<h2>Steps</h2><ol>' + (a.steps ?? []).map((s) => '<li>' + esc(s.do) + ' <span class="dim small">(this works because the game provides that behaviour; see the technical reference)</span></li>').join('') + '</ol>' +
+      '<h2>Common mistakes</h2><ul>' + (a.commonMistakes ?? []).map((m) => '<li>' + esc(m) + '</li>').join('') + '</ul>' +
+      (related ? '<h2>Related entries</h2><ul>' + related + '</ul>' : '') +
+      '<h2>Sources</h2><p class="dim">' + esc((a.sources ?? []).join(' ')) + '</p>', inv));
+  }
+  write('articles/index.html', layout('Guides', 'Step-by-step guides, each grounded in what the game itself establishes.', '/articles/index.html',
+    '<h1>Guides</h1><p class="lead">Short guides with a goal, a version, prerequisites, steps and the mistakes people make. Every step says why it works.</p><ul>' +
+    articles.map((a) => '<li><a href="/articles/' + esc(a.id) + '.html"><strong>' + esc(a.title) + '</strong></a> - ' + esc(a.target) + '</li>').join('') + '</ul>', inv));
 
   // The sitemap lists what a search engine should offer: question-answering pages, not every schema page.
   const urls = [...pages.keys()].filter((p) => p.endsWith('.html') && p !== '/404.html' && !isNoindexPage(p));

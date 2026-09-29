@@ -207,6 +207,19 @@ try {
     NAV.some(([h]) => h === '/entries/') && NAV.some(([h]) => h === '/topics/') &&
     NAV.findIndex(([h]) => h === '/reference/') > NAV.findIndex(([h]) => h === '/entries/'));
 
+  const articles = readdirSync('content/articles').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'articles', x), 'utf8')));
+  ok('every published article has a page', articles.every((a) => existsSync(join(dir, 'articles', a.id + '.html'))));
+  const thinArticles = [];
+  for (const a of articles) {
+    const h = readFileSync(join(dir, 'articles', a.id + '.html'), 'utf8');
+    for (const section of ['Applies to', 'Before you start', 'Steps', 'Common mistakes', 'Related entries', 'Sources']) if (!h.includes(section)) thinArticles.push(a.id + ':' + section);
+    if (!/<ol>/.test(h) || (a.steps ?? []).length < 3) thinArticles.push(a.id + ':steps');
+    if (!sitemap.includes(SITE.url + '/articles/' + a.id + '.html')) thinArticles.push(a.id + ':not in sitemap');
+    const ids = (a.steps ?? []).flatMap((s) => String(s.because).split(/[(),\s]+/)).filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
+    for (const id of ids) if (h.includes(id)) thinArticles.push(a.id + ': leaks ' + id);
+  }
+  ok('every article page carries its goal, version, prerequisites, steps, mistakes, related entities and sources', thinArticles.length === 0, thinArticles.slice(0, 6).join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }

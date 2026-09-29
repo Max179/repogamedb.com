@@ -1,0 +1,39 @@
+{
+  "id": "first-run-what-to-expect",
+  "title": "Your first run: what to expect",
+  "tier": "published",
+  "kind": "article",
+  "target": "What a R.E.P.O. run actually contains, in the order you meet it, based only on behaviour the game's own files establish.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A fresh run, solo or with a crew",
+    "A level you can walk around"
+  ],
+  "steps": [
+    {
+      "do": "Treat every monster as a different problem rather than one enemy type.",
+      "because": "the game defines several distinct monsters with their own behaviour (EnemyOogly, EnemySlowWalkerAnim, EnemyHeadGrabberAnim)"
+    },
+    {
+      "do": "Find the extraction point before you fill your hands.",
+      "because": "extraction happens at tracked points on the level (ExtractionPoint, ExtractionPointTracking)"
+    },
+    {
+      "do": "Bank an extraction before you push deeper into the level.",
+      "because": "the game records completed extractions, so finishing one is progress (ExtractionsDoneState)"
+    }
+  ],
+  "commonMistakes": [
+    "Dealing with every monster the same way.",
+    "Carrying valuables carelessly: they are physics objects whose behaviour the game defines per item.",
+    "Pushing deeper without completing an extraction first."
+  ],
+  "relatedEntities": [
+    "enemies-and-their-behaviour",
+    "valuables-and-looting",
+    "extraction-run"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
