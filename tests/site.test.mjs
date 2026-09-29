@@ -5,6 +5,7 @@
  * (a missing canonical, a page missing its source line, a sitemap listing the 404 page).
  */
 import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { build, lookupFields, SITE, NAV } from '../pipeline/site.mjs';
@@ -173,6 +174,12 @@ try {
       .filter((f) => readFileSync(f, 'utf8').includes('/Desktop/' + other));
     ok('the value pipeline only ever touches this project', offenders.length === 0, 'cross-project path in ' + offenders.join(', '));
   }
+
+  // The content model decides what may become a page: an entry that fails its rules must not reach the build.
+  ok('the published entries pass the content gate', (() => {
+    try { execFileSync(process.execPath, ['tools/content-gate.mjs'], { stdio: 'pipe' }); return true; }
+    catch (e) { return String(e.stdout ?? '') + String(e.message ?? ''); }
+  })() === true);
 
 } finally {
   rmSync(dir, { recursive: true, force: true });
