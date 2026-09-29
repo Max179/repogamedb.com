@@ -2445,12 +2445,27 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/gear-you-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/levels-and-the-way-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/valuables-and-looting.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/weapons-you-can-bring.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -2515,7 +2530,22 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/topics/items.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/maps.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/topics/valuables.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/weapons.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
