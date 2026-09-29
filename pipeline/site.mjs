@@ -61,7 +61,8 @@ function layout(title, description, path, body, inv) {
   const nav = NAV.map(([h, txt]) => '<a href="' + h + '">' + txt + '</a>').join('');
   return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
     '<title>' + esc(title) + '</title><meta name="description" content="' + esc(description) + '">' +
-    '<link rel="canonical" href="' + SITE.url + path + '">' +
+    '<link rel="canonical" href="' + SITE.url + path + '">'  + '\n<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
+    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
     (noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">') +
     '<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
     '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +

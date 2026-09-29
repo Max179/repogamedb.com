@@ -227,6 +227,29 @@ try {
   ok('every game image used in an entry has a manifest record and exists in the build', badGame.length === 0 && gameImages.length > 0,
     badGame.map((x) => x.id + ':' + x.img.file).join(', ') || (gameImages.length ? '' : 'no game image is used yet'));
 
+  const urlsCfg = JSON.parse(readFileSync('config/urls.json', 'utf8'));
+  const classified = new Map((urlsCfg.entries ?? []).map((e) => [e.url, e.action]));
+  const emitted = htmlFiles.map((f) => '/' + f.slice(dir.length + 1).split('\\').join('/')).filter((p) => p !== '/404.html');
+  const unclassified = emitted.filter((p) => !classified.has(p));
+  const keepNotInSitemap = [...classified].filter(([u, a]) => a === 'keep' && !sitemap.includes(SITE.url + u)).map(([u]) => u);
+  const noindexInSitemap = [...classified].filter(([u, a]) => a === 'noindex' && sitemap.includes(SITE.url + u)).map(([u]) => u);
+  const badRedirects = (urlsCfg.redirects ?? []).filter((r) => !existsSync(join(dir, String(r.to).replace(/^\//, ''))));
+  ok('every emitted page is classified in config/urls.json and the classification matches the sitemap',
+    unclassified.length === 0 && keepNotInSitemap.length === 0 && noindexInSitemap.length === 0 && badRedirects.length === 0,
+    JSON.stringify({ unclassified: unclassified.slice(0, 3), keepNotInSitemap: keepNotInSitemap.slice(0, 3), noindexInSitemap: noindexInSitemap.slice(0, 3), badRedirects: badRedirects.slice(0, 3) }));
+  const missingAlternates = htmlFiles.filter((f) => {
+    const h = readFileSync(f, 'utf8');
+    return !h.includes('hreflang="en"') || !h.includes('hreflang="x-default"');
+  });
+  ok('every page declares the languages it really has (en plus x-default, self-referencing)', missingAlternates.length === 0, missingAlternates.slice(0, 3).join(', '));
+  const notMobile = htmlFiles.filter((f) => {
+    const h = readFileSync(f, 'utf8');
+    if (!h.includes('name="viewport"') || !h.includes('width=device-width')) return true;
+    for (const m of h.matchAll(/style="[^"]*width:\s*(\d+)px/gi)) if (Number(m[1]) > 400) return true;
+    return false;
+  });
+  ok('mobile smoke: every page has a responsive viewport and no fixed width wider than a phone', notMobile.length === 0, notMobile.slice(0, 3).join(', '));
+
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
