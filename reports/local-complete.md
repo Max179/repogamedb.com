@@ -81,3 +81,13 @@ git status --porcelain              -> 空
 - 第 113 轮尝试支持的 `class` 内联（理论依据：Unity 对 `[Serializable]` 类字段与结构体同样内联）经测量**无增益**，已按事先声明的标准**回退**；仓库中不留无效改动。
 - 残留 `classNotFound` 共 28 个不同类名，链观测显示它们是 ScriptableObject 归属偏差与泛型基类未记录两类边缘个案，**拒绝而非猜测**是当前正确行为。
 
+## 玩家向重建与本地收尾（本轮阶段，全部由测试与构建核验）
+
+- 三层内容模型：content/published（唯一可索引）/ reference（技术资料，独立入口 /reference/ + noindex + 不入 sitemap）/ draft（不构建），规则见 content/README.md；
+- 已发布词条 3 条、结构化文章 2 篇：文章含目标、适用版本、前置、步骤（每步带依据）、常见错误、相关实体、来源；由 tools/content-gate.mjs 逐条校验；
+- 真实映射图片 2 张：tools/extract-images.py 以显式映射表从游戏资源包导出，记录来源包、资产名、尺寸、字节数与 sha256 于 content/images-manifest.json；门禁要求 kind=game 的图片必须与清单一致。其余图片一律为原创示意图并标注"非截图"；
+- URL 分类：config/urls.json 逐页 keep/noindex（本阶段 19 keep / 485 noindex / 0 redirect）；门禁保证每个产出页面都被分类、keep 必须在 sitemap、noindex 必须不在 sitemap、redirect 目标必须存在；
+- SEO 与移动端：canonical、每页均带 hreflang=en 与 hreflang=x-default（只声明真实存在的语言，无译文不声明）、robots.txt、sitemap 只列 keep 页、404 为 noindex、移动端 smoke（viewport + 无固定像素宽度超 400）；
+- 构建与门禁：pages=512 indexable=19，49 条门禁全部通过；tools/deploy-check.mjs 检查本地发布前提与凭据；
+- 发布：未发布。本机没有 git remote、没有 gh、没有 Cloudflare/GitHub 凭据，属外部发布阻塞；本地一切可验证项均已通过。
+
