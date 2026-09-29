@@ -90,4 +90,5 @@ git status --porcelain              -> 空
 - SEO 与移动端：canonical、每页均带 hreflang=en 与 hreflang=x-default（只声明真实存在的语言，无译文不声明）、robots.txt、sitemap 只列 keep 页、404 为 noindex、移动端 smoke（viewport + 无固定像素宽度超 400）；
 - 构建与门禁：pages=512 indexable=19，49 条门禁全部通过；tools/deploy-check.mjs 检查本地发布前提与凭据；
 - 发布：未发布。本机没有 git remote、没有 gh、没有 Cloudflare/GitHub 凭据，属外部发布阻塞；本地一切可验证项均已通过。
+- 内容扩充（本轮）：已发布词条 6 条、结构化文章 2 篇、可索引页 25 个，构建 pages=521 indexable=25，50 条门禁全过；每条词条均带依据事实、示意图（标注非截图）或映射确认的游戏图、相关内链与来源。
 

@@ -34,3 +34,8 @@ to Cloudflare Pages with `secrets.CLOUDFLARE_API_TOKEN` / `secrets.CLOUDFLARE_AC
 3. binding repogamedb.com to the Pages project in the Cloudflare dashboard (deliberately not encoded in the repository).
 
 `node tools/deploy-check.mjs` prints exactly these as external blockers and reports 0 local failures.
+
+## Content breadth at handoff
+- Published entries: 6; structured guides: 2; indexable pages: 25.
+- Build: `pages=521 indexable=25`; gates: 50 all passing.
+- Every entry carries facts with grounding, a labelled diagram (or a game image recorded in `content/images-manifest.json`), related links and sources.
