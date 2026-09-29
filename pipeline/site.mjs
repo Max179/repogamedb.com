@@ -10,7 +10,7 @@
  *     disclaimer, privacy, terms) are indexable and listed.
  * Nothing is estimated: a value this build does not have is rendered as "unknown".
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 export const SITE = {
@@ -40,17 +40,20 @@ export function lookupFields(inventory, query, limit = 50) {
   return out;
 }
 
-export const NAV = [['/', 'Home'], ['/search.html', 'Search'], ['/collection.html', 'Classes'], ['/enemies.html', 'Enemies'],
-  ['/guide.html', 'Guide'], ['/tool.html', 'Tool'], ['/sources.html', 'Sources'], ['/about.html', 'About'],
-  ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'], ['/terms.html', 'Terms']];
+export const NAV = [['/', 'Home'], ['/entries/', 'Start here'], ['/topics/', 'Topics'], ['/guide.html', 'Guide'],
+  ['/about.html', 'About'], ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'],
+  ['/terms.html', 'Terms'], ['/reference/', 'Technical reference']];
 
 /** A schema page is a reference; it is generated and linked, but not offered to a search engine. */
 /** A page that duplicates a query-answering page keeps its URL but is not indexed: the audit in round 76 found
  *  /tool.html sharing 98.8% of its main content with /search.html, so /tool.html is a noindex convenience page. */
 export function isNoindexPage(path) { return isSchemaPage(path) || path === '/tool.html'; }
 
+/** Technical reference: identifiers and tables kept reachable for modders but never offered to a search engine. */
+export const REFERENCE_PATHS = new Set(['/collection.html', '/enemies.html', '/enums.html', '/values.html', '/tool.html', '/sources.html', '/reference/']);
 export function isSchemaPage(path) {
-  return String(path).startsWith('/entity/');
+  const p = String(path);
+  return p.startsWith('/entity/') || REFERENCE_PATHS.has(p) || p.startsWith('/reference/');
 }
 
 function layout(title, description, path, body, inv) {
@@ -205,6 +208,56 @@ export function build(inventoryPath, outDir) {
     '<p>This static build sets no cookies, runs no analytics and makes no third-party requests. The search and lookup tools run entirely in the browser over data embedded in the page.</p>');
   simple('terms.html', 'Terms', 'Use of this database.', '<p>Provided as-is for personal reference. Data may change as the game patches; each build records the version it was extracted from.</p>');
   write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p><a href="/">Back to the index</a></p>', inv));
+
+  // Player-facing entries: rendered from content/published, which the content gate has already checked. Identifiers
+  // are deliberately NOT printed here - a player page states what is established and links to the reference for proof.
+  const entriesDir = join(process.cwd(), 'content', 'published');
+  let entries = [];
+  try { entries = readdirSync(entriesDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(entriesDir, x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* no entries yet */ }
+  for (const e of entries) {
+    const img = (e.images ?? [])[0];
+    const imgHtml = img ? '<img class="hero" src="/' + esc(img.file) + '" alt="' + esc(img.alt.en) + '" width="960" height="200">' +
+      (img.kind === 'diagram' ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>' : '') : '';
+    const facts = (e.facts ?? []).map((x) => '<li>' + esc(x.claim) + ' <span class="dim small">(verified against the game&apos;s own files)</span></li>').join('');
+    const related = (e.related ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
+    write('entries/' + e.id + '.html', layout(e.title, e.summary, '/entries/' + e.id + '.html',
+      '<h1>' + esc(e.title) + '</h1><p class="lead">' + esc(e.summary) + '</p>' + imgHtml +
+      '<h2>What is established</h2><ul>' + facts + '</ul>' +
+      '<h2>How it works in play</h2>' + (e.body ?? []).map((p) => '<p>' + esc(p) + '</p>').join('') +
+      (related ? '<h2>Related</h2><ul>' + related + '</ul>' : '') +
+      '<h2>Version and source</h2><p class="dim">' + esc((e.sources ?? []).join(' ')) + '</p>' +
+      '<p><a href="/reference/">How each fact was verified</a></p>', inv));
+  }
+  write('entries/index.html', layout('Start here', 'How to use this site: what the entries are, what they avoid, and where to begin.', '/entries/index.html',
+    '<h1>Start here</h1><p class="lead">This site is a small, honest reference for players. It does not try to be a full wiki: ' +
+    'every entry states what the game itself establishes, and says plainly when something has not been verified.</p>' +
+    '<h2>How the site is organised</h2><ul>' +
+    '<li><strong>Entries</strong> answer one question each, in plain language, with a diagram and a note on the version.</li>' +
+    '<li><strong>Topics</strong> group the entries by what you are dealing with in the game.</li>' +
+    '<li><strong>Technical reference</strong> holds the raw identifiers for modders. It is kept out of search engines on purpose.</li></ul>' +
+    '<h2>Where to begin</h2><p>If you are new, the safest reading order is a single round of the game: what you are up against, then what you are carrying, then how you finish the run. ' +
+    'Pick your topic from the <a href="/topics/">topic list</a>.</p>' +
+    '<h2>What we will never do</h2><p>We do not print a number we could not verify, we do not fill gaps with guesses, and a diagram is always labelled as a diagram rather than passed off as a picture of the game.</p>', inv));
+  const topics = [...new Set(entries.map((e) => e.category).filter(Boolean))].sort();
+  const topicSlug = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  for (const t of topics) {
+    const list = entries.filter((e) => e.category === t);
+    write('topics/' + topicSlug(t) + '.html', layout(t, 'What this site has on ' + t.toLowerCase() + '.', '/topics/' + topicSlug(t) + '.html',
+      '<h1>' + esc(t) + '</h1><p class="lead">' + list.length + ' entr' + (list.length === 1 ? 'y' : 'ies') + ' on this part of the game.</p>' +
+      list.map((e) => '<h2><a href="/entries/' + esc(e.id) + '.html">' + esc(e.title) + '</a></h2><p>' + esc(e.summary) + '</p>' +
+        '<ul><li>' + esc((e.facts ?? [])[0]?.claim ?? '') + '</li></ul>').join(''), inv));
+  }
+  write('topics/index.html', layout('Topics', 'The parts of the game this site covers so far.', '/topics/index.html',
+    '<h1>Topics</h1><ul>' + topics.map((t) => '<li><a href="/topics/' + topicSlug(t) + '.html">' + esc(t) + '</a></li>').join('') + '</ul>', inv));
+  write('reference/index.html', layout('Technical reference', 'Identifiers, tables and provenance for modders. Not indexed.', '/reference/index.html',
+    '<h1>Technical reference</h1><p class="lead">For modders and for checking our data. Deliberately kept out of search engines: it lists identifiers read from the game&apos;s files.</p><ul>' +
+    '<li><a href="/collection.html">All identifiers</a></li><li><a href="/enemies.html">Enemies</a></li><li><a href="/enums.html">Settings and states</a></li>' +
+    '<li><a href="/values.html">Decoded values</a></li><li><a href="/tool.html">Lookup tool</a></li><li><a href="/sources.html">Sources and method</a></li></ul>' +
+    '<p><a href="/entries/">Back to the player-facing entries</a></p>', inv));
+  // copy the entry images into the build (text formats only, so a binary screenshot needs a one-line addition here)
+  for (const e of entries) for (const img of e.images ?? []) {
+    try { write(img.file, readFileSync(join(process.cwd(), 'content', 'assets', img.file), 'utf8')); } catch { /* missing asset: the content gate already fails this case */ }
+  }
 
   // The sitemap lists what a search engine should offer: question-answering pages, not every schema page.
   const urls = [...pages.keys()].filter((p) => p.endsWith('.html') && p !== '/404.html' && !isNoindexPage(p));

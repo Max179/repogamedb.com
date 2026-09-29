@@ -8,7 +8,7 @@ import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, SITE, NAV } from '../pipeline/site.mjs';
+import { build, lookupFields, SITE, NAV, REFERENCE_PATHS } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
 let pass = 0, fail = 0;
@@ -180,6 +180,30 @@ try {
     try { execFileSync(process.execPath, ['tools/content-gate.mjs'], { stdio: 'pipe' }); return true; }
     catch (e) { return String(e.stdout ?? '') + String(e.message ?? ''); }
   })() === true);
+
+  const published = readdirSync('content/published').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'published', x), 'utf8')));
+  const missingPages = published.filter((e) => !existsSync(join(dir, 'entries', e.id + '.html')));
+  ok('every published entry has a page', missingPages.length === 0, missingPages.map((e) => e.id).join(', '));
+  const thin = [];
+  for (const e of published) {
+    const h = readFileSync(join(dir, 'entries', e.id + '.html'), 'utf8');
+    if (!h.includes(e.title) || !h.includes(e.summary)) thin.push(e.id + ':text');
+    if (!h.includes('What is established') || !h.includes('Version and source')) thin.push(e.id + ':structure');
+    if (!/<img[^>]+alt="[^"]+"/.test(h)) thin.push(e.id + ':image');
+    const ids = (e.facts ?? []).flatMap((x) => String(x.evidence).replace(/^identifiers?:?\s*/, '').split(/[,\s]+/)).filter((x) => x && /[A-Za-z]/.test(x));
+    for (const id of ids) if (h.includes(id)) thin.push(e.id + ': leaks ' + id + ' to players');
+    if (!sitemap.includes(SITE.url + '/entries/' + e.id + '.html')) thin.push(e.id + ':not in sitemap');
+  }
+  ok('every entry page carries its text, structure and image, leaks no identifier and is in the sitemap', thin.length === 0, thin.slice(0, 6).join(', '));
+  const badRefPages = [...REFERENCE_PATHS].filter((rel) => {
+    const file = rel.endsWith('/') ? join(dir, rel.slice(1), 'index.html') : join(dir, rel.slice(1));
+    const h = readFileSync(file, 'utf8');
+    return !h.includes('noindex, follow') || sitemap.includes(SITE.url + rel);
+  });
+  ok('technical reference pages are noindex and stay out of the sitemap', badRefPages.length === 0, badRefPages.join(', '));
+  ok('the player navigation puts entries and topics before the technical reference',
+    NAV.some(([h]) => h === '/entries/') && NAV.some(([h]) => h === '/topics/') &&
+    NAV.findIndex(([h]) => h === '/reference/') > NAV.findIndex(([h]) => h === '/entries/'));
 
 } finally {
   rmSync(dir, { recursive: true, force: true });
