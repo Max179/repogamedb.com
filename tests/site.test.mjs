@@ -190,7 +190,9 @@ try {
     if (!h.includes(e.title) || !h.includes(e.summary)) thin.push(e.id + ':text');
     if (!h.includes('What is established') || !h.includes('Version and source')) thin.push(e.id + ':structure');
     if (!/<img[^>]+alt="[^"]+"/.test(h)) thin.push(e.id + ':image');
-    const ids = (e.facts ?? []).flatMap((x) => String(x.evidence).replace(/^identifiers?:?\s*/, '').split(/[,\s]+/)).filter((x) => x && /[A-Za-z]/.test(x));
+    // Only code-style names count as a leak: a plain English word such as "Shelf" is also the subject of the entry.
+    const ids = (e.facts ?? []).flatMap((x) => String(x.evidence).replace(/^identifiers?:?\s*/, '').split(/[,\s]+/))
+      .filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
     for (const id of ids) if (h.includes(id)) thin.push(e.id + ': leaks ' + id + ' to players');
     if (!sitemap.includes(SITE.url + '/entries/' + e.id + '.html')) thin.push(e.id + ':not in sitemap');
   }
