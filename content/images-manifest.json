@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "what-the-map-shows-you",
+      "kind": "game",
+      "file": "mapped/what-the-map-shows-you-valuablemap.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "valuabless_Valuable Map_BaseColor",
+      "note": "base colour texture of the map marker the crew map uses for valuables",
+      "width": 512,
+      "height": 512,
+      "bytes": 44990,
+      "sha256": "95fcde51f9b5b132c6c9cb2c9c7482c3b519041a5b1a14af442e800acf61006a"
+    },
+    {
       "entity": "when-the-chat-box-will-not-open",
       "kind": "game",
       "file": "mapped/when-the-chat-box-will-not-open-emojis.jpg",

@@ -1,0 +1,47 @@
+{
+  "id": "using-the-map-instead-of-your-memory",
+  "title": "Using the map instead of your memory",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the R.E.P.O. map so the crew stops relying on memory, using the markers and the reveal behaviour the game already provides.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run already in progress",
+    "The map open to at least one member of the crew",
+    "A crew that says what it finds rather than keeping it quiet"
+  ],
+  "steps": [
+    {
+      "do": "Open the map early rather than at the moment you are lost.",
+      "because": "the map fills in over time with its own spacing and waits (MapBacktrack)"
+    },
+    {
+      "do": "Call a valuable out as soon as it shows, instead of carrying it in silence.",
+      "because": "valuables get a map marker with a small and a large version (MapValuable)"
+    },
+    {
+      "do": "Use the map to keep track of the crew as well as the loot.",
+      "because": "the player has a marker of its own on the map (DirtFinderMapPlayer)"
+    },
+    {
+      "do": "Watch the map for monsters instead of only listening for them.",
+      "because": "monsters have their own marker on the map (DirtFinderMapEnemy)"
+    },
+    {
+      "do": "Do not read a dark patch as an empty room.",
+      "because": "the map starts dark and fills in behind you (DirtFinderMapScanlines)"
+    }
+  ],
+  "commonMistakes": [
+    "Relying on memory for a layout you have only walked through once.",
+    "Assuming a dark part of the map contains nothing.",
+    "Carrying a valuable in without telling anyone it exists."
+  ],
+  "relatedEntities": [
+    "what-the-map-shows-you",
+    "how-a-level-is-put-together"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

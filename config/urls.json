@@ -60,6 +60,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/using-the-map-instead-of-your-memory.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/valuable-run-routine.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2601,6 +2606,11 @@
     },
     {
       "url": "/entries/what-being-grabbed-feels-like.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-map-shows-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
