@@ -804,6 +804,30 @@
       "height": 512,
       "bytes": 52269,
       "sha256": "55e64e0d21e2909992528e85e23b4358d43017406457d0c8a2e1e6465e0cb7e5"
+    },
+    {
+      "entity": "the-shadow",
+      "kind": "game",
+      "file": "mapped/the-shadow-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "shadow_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the shadow monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 37668,
+      "sha256": "87f1b9dcf9791bb961a2d89ccd406b77c769c500d9630f71e91c4db8cf6dcdff"
+    },
+    {
+      "entity": "the-balloon-monster",
+      "kind": "game",
+      "file": "mapped/the-balloon-monster-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "BirthdayBoyBaseColor",
+      "note": "the colour texture the game ships for the balloon monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 68836,
+      "sha256": "f5d56ba8b6bbf5d6656c8e483dfee2da5e37af8674e02a2bda2e59c730ab77f9"
     }
   ]
 }

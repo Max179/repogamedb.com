@@ -1,0 +1,74 @@
+{
+  "id": "the-balloon-monster",
+  "title": "The balloon monster",
+  "category": "Enemies",
+  "summary": "One monster in R.E.P.O. does its work with balloons: the game gives it a maximum number, a prefab and spawn points, a blowing state, a pop effect, and checkers for doors and for standing up.",
+  "body": [
+    "One of the monsters does its work with balloons rather than with hands. The game gives it a maximum number of balloons, a prefab to spawn them from and a list of points to spawn them at, so the balloons are objects the monster owns rather than an effect.",
+    "It blows them up. There is a state for blowing, which is why the monster can be caught in the act of making one larger instead of only appearing with balloons already in place.",
+    "Popping one is an event of its own. There is a pop effect and the monster keeps track of the balloon being animated, so a balloon that bursts is something the game knows about.",
+    "Balloons have to fit. There are collision checkers for a balloon, for standing up and for a door, which is how the monster knows whether it can rise, whether it can pass a doorway and where a balloon can go.",
+    "The monster is built from parts like the others. It has a head pivot and two eye pivots, a visual mesh of its own, and a horizontal rotation spring so its body turns with some weight.",
+    "It carries more than one collider: a large one and a small one. That is how one monster can be both easy to hit in the open and hard to catch when it is packed away, without the game writing two enemies.",
+    "It keeps a target and a state. A player target and a current state are tracked, and it hangs from a parent of its own, so what it is doing is decided rather than scripted.",
+    "The image beside this entry is the game's own: the colour texture of the balloon monster.",
+    "What this entry does not tell you: how many balloons it may hold at once, what a balloon does when it reaches you, or how often this monster appears. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "It keeps a maximum number of balloons, a balloon prefab and the points they spawn at.",
+      "evidence": "identifiers: maxBalloons, balloonPrefab, balloonSpawnPoints, balloons"
+    },
+    {
+      "claim": "It has a state for blowing a balloon up.",
+      "evidence": "identifiers: blowing, animatingBalloon"
+    },
+    {
+      "claim": "A balloon popping has an effect of its own.",
+      "evidence": "identifier: balloonPopEffect"
+    },
+    {
+      "claim": "There are collision checkers for a balloon, for standing up and for a door.",
+      "evidence": "identifiers: balloonCollisionChecker, standUpCollisionChecker, doorCollisionChecker"
+    },
+    {
+      "claim": "It has more than one collider, a large one and a small one, with a visual mesh of its own.",
+      "evidence": "identifiers: BBcollider, colliderSmall, visualMesh"
+    },
+    {
+      "claim": "Its head and both eyes have pivots, and its body has a horizontal rotation spring.",
+      "evidence": "identifiers: headPivot, leftEyePivot, rightEyePivot, horizontalRotationSpring"
+    },
+    {
+      "claim": "It tracks a player target and a state of its own, and hangs from a parent object.",
+      "evidence": "identifiers: playerTarget, currentState, enemyParent, anim"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "the-shadow"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-balloon-monster-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the balloon monster.",
+        "zh": "游戏为气球怪物提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-balloon-monster.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the monster blows a balloon from a spawn point, the balloon checks where it fits, and popping it is an effect of its own.",
+        "zh": "示意图：怪物从生成点吹起气球，气球自行检测可否通过，破裂时有专属效果。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

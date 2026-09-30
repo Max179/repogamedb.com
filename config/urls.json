@@ -2710,6 +2710,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-balloon-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-beamer.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2796,6 +2801,11 @@
     },
     {
       "url": "/entries/the-save-and-your-run-record.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-shadow.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

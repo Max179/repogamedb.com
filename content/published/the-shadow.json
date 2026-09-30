@@ -1,0 +1,83 @@
+{
+  "id": "the-shadow",
+  "title": "The shadow and how it moves",
+  "category": "Enemies",
+  "summary": "The shadow is the most articulated thing in R.E.P.O.: its pose is driven by a spring animator, its hands, eyes and hair have pivots and resting positions, and its slap has an animation curve and a ready state.",
+  "body": [
+    "The shadow is built to move like a body rather than like a single shape. Its pose is driven by a spring pose animator with separate bending values for the torso, the head, the neck and each arm, which is why it folds and leans instead of turning as a block.",
+    "Its limbs have pivots of their own. Both eyes, both wrists and both arms have their own pivot and point, and the hands have resting positions, so the monster can hold its hands down and then reach rather than only swinging.",
+    "It turns at two speeds. There is a speed for the head and a separate one for the eyes, which is how a large creature can take its time while its gaze snaps.",
+    "Its slap is modelled in parts. There is an animation curve for the slap, a hand area to detect a player, a second area underneath, and a flag for the hand being ready to slap, which is why the attack has a moment of warning rather than arriving at random.",
+    "It sees from a point of its own. The vision transform belongs to the monster rather than being shared, and the vision system behind it is the one that weighs what it sees by whether you are standing, crouching or crawling.",
+    "It carries several colliders rather than one. There is a collider for the top, a set for crouching, a set for shooting and checkers for collisions, along with a collider for being hurt and a second hurt collider described as a wave, so what can hit it depends on where it is.",
+    "Its hair hangs on four springs, each with a pivot and a target, and the whole body has a horizontal rotation spring, so the parts lag behind the movement rather than following it exactly.",
+    "Both hands have their own animators, and there is an effect of its own that draws veins across the player screen, which is how the game shows that this one has hold of you.",
+    "The image beside this entry is the game's own: the colour texture of the shadow.",
+    "What this entry does not tell you: how much damage it does, how fast it moves, or how long the warning before a slap lasts. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Its pose is driven by a spring pose animator with separate bending values for the torso, head, neck and arms.",
+      "evidence": "identifiers: springPoseAnimator, torsoBend, headBend, neckBend, rightArmBend, leftArmBend"
+    },
+    {
+      "claim": "Both eyes, both wrists and both arms have pivots of their own, and the hands have resting positions.",
+      "evidence": "identifiers: leftEyePivot, rightEyePivot, rightWristPivot, leftWristPivot, leftArmPoint, rightArmPoint, leftHandDownPos, rightHandDownPos"
+    },
+    {
+      "claim": "The head and the eyes turn at speeds of their own.",
+      "evidence": "identifiers: headTurnSpeed, eyeTurnSpeed"
+    },
+    {
+      "claim": "The slap has an animation curve, a hand area and a flag for being ready to slap.",
+      "evidence": "identifiers: slapAnimationCurve, handArea, handAreaUnder, handAreaUnderSlapReady"
+    },
+    {
+      "claim": "Its sight comes from a vision point of its own.",
+      "evidence": "identifier: visionTransform"
+    },
+    {
+      "claim": "It has separate colliders for its top, for crouching and for shooting, with collision checkers and two hurt colliders.",
+      "evidence": "identifiers: topCollider, crouchColliders, shootingColliders, collisionCheckers, hurtCollider, hurtColliderWave"
+    },
+    {
+      "claim": "Its hair hangs on four springs, each with a pivot and a target.",
+      "evidence": "identifiers: hairSpring1, hairPivot1, hairTarget1, hairSpring2, hairPivot2, hairTarget2, hairSpring3, hairSpring4"
+    },
+    {
+      "claim": "The body has a horizontal rotation spring and each hand has an animator of its own.",
+      "evidence": "identifiers: horizontalRotationSpring, leftHandAnimator, rightHandAnimator"
+    },
+    {
+      "claim": "An effect of its own draws veins across the player screen.",
+      "evidence": "identifier: screenVeinEffect"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "when-a-monster-has-you"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-shadow-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the shadow monster.",
+        "zh": "游戏为暗影怪物提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-shadow.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the shadow bends, turns its head and eyes at different speeds, warns with a slap-ready hand, and grabs.",
+        "zh": "示意图：暗影弯腰、头与眼以不同速度转向、抬手预警拍击并抓取玩家。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

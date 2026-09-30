@@ -126,6 +126,8 @@ MAPPINGS = [
   {'entity': 'valuables-that-are-also-tools', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Jackhammer_BaseColor", 'file': 'valuables-that-are-also-tools-jackhammer.jpg', 'note': "the colour texture the game ships for the valuable jackhammer", 'max': 512, 'quality': 88},
   {'entity': 'valuables-that-are-also-tools', 'bundle': 'resources.assets', 'match': "new valaubles_Arctic Valuable Fire Extinguisher_BaseColor", 'file': 'valuables-that-are-also-tools-extinguisher.jpg', 'note': "the colour texture the game ships for the valuable fire extinguisher", 'max': 512, 'quality': 88},
   {'entity': 'the-hunter', 'bundle': 'resources.assets', 'match': "Hunter Material Albedo", 'file': 'the-hunter-texture.jpg', 'note': "the colour texture the game ships for the hunter monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-shadow', 'bundle': 'resources.assets', 'match': "shadow_DefaultMaterial_BaseColor", 'file': 'the-shadow-texture.jpg', 'note': "the colour texture the game ships for the shadow monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-balloon-monster', 'bundle': 'resources.assets', 'match': "BirthdayBoyBaseColor", 'file': 'the-balloon-monster-texture.jpg', 'note': "the colour texture the game ships for the balloon monster", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
