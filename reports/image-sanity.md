@@ -8,8 +8,9 @@ near-white (above 235). A flag is not a verdict: it means the file has to be loo
 
 | file | asset | stddev | uniform share | median | flag |
 | --- | --- | --- | --- | --- | --- |
+| mapped/the-spinny-texture.jpg | Spinny_Albedo | 10.2 | 58% | 109 | almost no variation (stddev 10.2) |
 | mapped/moving-loot-and-gear-crate.png | Crate_DefaultMaterial_BaseColor | 10.3 | 50% | 47 | almost no variation (stddev 10.3) |
 | mapped/the-boombox-valuable-lights.png | Boombox_DefaultMaterial_Emissive | 33.4 | 93% | 0 | 93% of pixels within 6 of the median |
 | mapped/when-the-chat-box-will-not-open-emojis.jpg | emojis | 42.8 | 90% | 0 | 90% of pixels within 6 of the median |
 
-Totals: 105 records, 3 flagged.
+Totals: 106 records, 4 flagged.

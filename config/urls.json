@@ -2970,6 +2970,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-spinny.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-staffs.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

@@ -1,0 +1,80 @@
+{
+  "id": "the-spinny",
+  "title": "The spinny and the wheel it spins",
+  "category": "Enemies",
+  "summary": "The spinny is built around a spinning wheel: coloured slices with borders of their own, a target angle and extra spins, a jingle for each colour, and a mouth on a tongue that spits.",
+  "body": [
+    "The spinny is built around a wheel. It carries the wheel itself, the pieces the wheel is made of, and the colour and the border of every slice, so the wheel is a real object with segments rather than a picture that turns.",
+    "The wheel has a result. There is a target angle for the wheel, a length of time a spin lasts and a count of extra spins, which is how a spin can be aimed at a slice instead of stopping wherever it happens to be.",
+    "Every colour on the wheel has a jingle of its own: green, red, black, white and yellow. One of them is a second black jingle that the whole crew hears rather than only the players standing nearby, and there is a looping roulette sound and a tick under them. A player who has learned the jingles can follow the wheel without looking at it.",
+    "It picks one player and keeps an eye on the way to them. A player target, a lock point and a line-of-sight check are things it holds separately, so being seen and being chased are not the same moment.",
+    "Its head is a mouth on a tongue. The head has a pivot for being closed and a pivot for being open, a flag for the mouth being open, springs for the base and the top of the tongue with targets of their own, and sounds kept apart for opening the mouth, closing it and for the tongue landing on something.",
+    "It spits as well as bites. There are droplets, a splash, and a particle system kept for the spitting, which is why the spit reads as its own attack rather than as part of the head.",
+    "It carries money with it. There is a money bag, a smaller spare valuable, a spawn point for the bag and a collision check used only for the money, so what happens to the coins is tracked separately from the body.",
+    "Its effects are separate objects rather than one flash. Damage, healing, a full heal, a money prize and an interruption each have an effect of their own, with a colour and a setting for whether it plays when it starts; the full heal also has smoke and the spit has its droplets.",
+    "It is audible before it is visible. There is a song it loops and a muffled version of that song, a sound for leaving the song behind, an idle loop and a running loop for moving, and a death jingle, which is how the crew hears it coming through the level.",
+    "The image beside this entry is the game's own: the colour texture of the spinny.",
+    "What this entry does not tell you: what each slice of the wheel does, what the money bag is worth, or how long a spin lasts. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "It carries a spinning wheel made of pieces of its own, and the colour and the border of each slice are kept for every slice.",
+      "evidence": "identifiers: spinnyWheel, pieces, SliceColours, SliceBorders, colors"
+    },
+    {
+      "claim": "The wheel has a target angle, a spin duration and a count of extra spins.",
+      "evidence": "identifiers: targetAngleDegrees, spinDurationSeconds, extraSpins"
+    },
+    {
+      "claim": "Each colour on the wheel has its own jingle, one of them is a second black jingle heard by the whole crew, and a looping roulette sound and a tick sit under them.",
+      "evidence": "identifiers: jingleGreen, jingleRed, jingleBlack, jingleBlackGlobal, jingleWhite, jingleYellow, rouletteLoop, tickSound"
+    },
+    {
+      "claim": "It holds a player target, a lock point, a line-of-sight check and a collision check as separate things.",
+      "evidence": "identifiers: playerTarget, playerLockPoint, lineOfSightChecker, collisionCheck"
+    },
+    {
+      "claim": "Its head is a mouth over a tongue, with a pivot for closed and one for open and springs for the base and the top of the tongue.",
+      "evidence": "identifiers: mouthOpened, closedHeadPivot, openHeadPivot, springTopTongue, SpringBaseTongueQuaternion, closedTongueSpring, tongueTopTarget, tongueBaseTarget"
+    },
+    {
+      "claim": "Opening the mouth, closing it and the tongue landing on something have their own sounds.",
+      "evidence": "identifiers: openMouthSound, closeMouthSound, tongueHitSound"
+    },
+    {
+      "claim": "It spits droplets with a splash through a particle system kept for the spitting.",
+      "evidence": "identifiers: spitDroplets, spitSplash, RunSpitParticleSystem"
+    },
+    {
+      "claim": "It carries a money bag, a smaller spare valuable, a spawn point for the bag and a collision check of its own for the money.",
+      "evidence": "identifiers: moneyBag, surplusValuableSmall, moneyBagSpawnPoint, moneyCollisionCheck"
+    },
+    {
+      "claim": "Damage, healing, a full heal, a money prize and an interruption each have their own effect, with a colour and a play-on-start setting.",
+      "evidence": "identifiers: hurtParticle, healParticle, fullHealParticle, moneyPrizeParticle, interruptParticle, particleColor, playOnStart, healingSmokeParticle, fullHealSmokeParticle"
+    },
+    {
+      "claim": "It loops a song and a muffled version of it, has a sound for leaving the song, an idle loop and a running loop, and a death jingle.",
+      "evidence": "identifiers: songLoop, muffledSongLoop, leaveSongSound, idleLoop, runningLoop, deathJingleSound, deathSound"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "how-monsters-find-you",
+    "reading-a-monster-before-it-reaches-you"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-spinny-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the spinny monster.",
+        "zh": "游戏为该怪物提供的颜色贴图。"
+      }
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

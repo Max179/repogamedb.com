@@ -1260,6 +1260,18 @@
       "height": 512,
       "bytes": 62184,
       "sha256": "ce20f8614b477cd37bd729705252e1207702b8e00da555d32eef0e44e6379f38"
+    },
+    {
+      "entity": "the-spinny",
+      "kind": "game",
+      "file": "mapped/the-spinny-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Spinny_Albedo",
+      "note": "the colour texture the game ships for the spinny monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 43410,
+      "sha256": "e0c98664fd0d5e26402a44f96f92d5040a773bdb1b10c8ed315a7bfef1c4883e"
     }
   ]
 }

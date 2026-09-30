@@ -52,15 +52,17 @@ compared against its note, and kept.
 | 2026-09-30 | mapped/melee-weapons-sword.jpg | Sword_Albedo | melee-weapons | ok — the blade, guard and grip materials; legible |
 | 2026-09-30 | mapped/guns-and-how-they-fire-lasergun.jpg | laser gun_DefaultMaterial_BaseColor | guns-and-how-they-fire | ok — the gun sheet with its striped housing, sights and grip; legible |
 | 2026-09-30 | mapped/the-exploding-rubber-duck-duck.jpg | rubber duck_DefaultMaterial_BaseColor | the-exploding-rubber-duck | ok with a note — a mostly flat yellow sheet, which is what a rubber duck looks like: the eyes, beak and leg are the readable parts |
+| 2026-09-30 | mapped/the-spinny-texture.jpg | Spinny_Albedo | the-spinny | ok with a note — the game's own colour sheet for the spinny: a mottled grey-brown atlas with a few distinctly coloured patches (a pink star, orange and brown wedges) and dark spots. It is an atlas rather than a portrait, and the low spread is the mottled ground; it is the game's own picture for this monster, so it is kept |
 
 Nothing in any of the five batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
 
 ## Sanity pass before the eye check (tools/image-sanity.py)
 
-`tools/image-sanity.py` measures every exported file first: greyscale, with transparent pictures composited on the dark page background, flagging a file when it carries almost no variation (stddev below 12) or when more than 90% of its pixels sit within 6 of the median. The run for this build flagged 3 of 104 records:
+`tools/image-sanity.py` measures every exported file first: greyscale, with transparent pictures composited on the dark page background, flagging a file when it carries almost no variation (stddev below 12) or when more than 90% of its pixels sit within 6 of the median. The run for this build flagged 4 of 106 records:
 
 - **moving-loot-and-gear-crate.png** (stddev 10.3) — the wooden crate sheet, already opened above: planks and battens are visible, the low spread is because the wood is one tone. Kept.
 - **when-the-chat-box-will-not-open-emojis.jpg** (90%) — the emoji sheet the game uses with its chat box; the emoji sit on the game's own black field. Kept.
 - **the-boombox-valuable-lights.png** (93%) — an emissive map, so it is nearly black by nature, and the entry is explicitly about that map (its bright spots are the speakers the game lights). Rather than drop it, the entry now also carries the game's colour texture for the same item, `the-boombox-valuable-texture.jpg`, so the reader sees the case and the light map together; the light map is kept because it is the subject the entry describes.
+- **the-spinny-texture.jpg** (stddev 10.2) — the colour sheet for the monster the new entry describes: a mottled grey-brown atlas with a few distinctly coloured patches and dark spots. Opened above; the spread is low because the sheet is mostly mottled fur, so it is kept with that caveat recorded rather than dropped.
 
 The run is written to `reports/image-sanity.md` on every build; a flag is a request for a look, not a verdict.
