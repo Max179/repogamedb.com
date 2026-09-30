@@ -7,6 +7,7 @@
     "The screen in the truck is not a flat panel. The menu around it is animated: antennas, a front panel, two windows and a dish each have a spring with a target of their own, so the whole console moves as the truck does.",
     "Every part of the console has two ends. The middle antenna, the front panel, both windows, the dish and the back antenna each keep a transform and a target, which is where the spring pulls them to.",
     "It has debris of its own. There are particles for skeleton bits and smoke at the start and again at the end, along with a loop and sounds for swerving, speeding up and slowing down, which is how the truck console reacts to being driven.",
+    "The text is held as an object of its own. It carries a static grab collider, the message string it is showing, a callback for when a chat message arrives, an engine success sound and a test line kept for building, which is why what you read on the screen is driven rather than printed.",
     "The display has settings for how text arrives. There is a reveal setting and a delay between one message and the next, so the text can be typed out rather than appearing all at once.",
     "Messages are their own object. There is a screen type, a chat message with a loading bar and a result bar with a light of its own, so a message can be shown while it is being worked on and then resolved.",
     "It has sounds for its own typing. There are separate sounds for typing, for emoji, for a new line, for a new page and a loop while a message is charging, along with custom emoji sounds, which is why the console can sound busy without anything being said.",
@@ -56,6 +57,10 @@
     {
       "claim": "The truck's body rustles in three long and three short sounds, its skeleton hits have sounds of their own including the skull, and there are faster swerves and fire-pass swerves.",
       "evidence": "identifiers: soundBodyRustleLong01, soundBodyRustleLong02, soundBodyRustleLong03, soundBodyRustleShort01, soundBodyRustleShort02, soundBodyRustleShort03, soundSkeletonHit, soundSkeletonHitSkull, soundSwerveFast01, soundSwerveFast02, soundFirePass, soundFirePassSwerve01, soundFirePassSwerve02"
+    },
+    {
+      "claim": "The screen's text carries a static grab collider, the chat message it shows, a callback for when a message arrives, an engine success sound of its own and a test line kept for building.",
+      "evidence": "identifiers: TruckScreenText, staticGrabCollider, chatMessageString, onChatMessage, engineSuccessSound, testingText"
     }
   ],
   "related": [
