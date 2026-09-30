@@ -55,6 +55,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/dealing-with-the-monster-that-carries-a-bomb.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/dealing-with-the-monster-that-comes-apart.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

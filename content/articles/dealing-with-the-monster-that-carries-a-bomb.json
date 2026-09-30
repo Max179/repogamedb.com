@@ -1,0 +1,70 @@
+{
+  "id": "dealing-with-the-monster-that-carries-a-bomb",
+  "title": "Dealing with the monster that carries a bomb",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to read the monster that attacks with a bomb in R.E.P.O.: the effects and voice lines are separate, the fuse tells, ignites and loops on a curve, and being stunned or attacking are split into their own sounds.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "Sound you can hear over the level",
+    "A route out of the room"
+  ],
+  "steps": [
+    {
+      "do": "Listen for the fuse rather than watching the bomb, because the tell, the ignition and the burning loop each have their own sound.",
+      "because": "the fuse has a tell, an ignite and a loop of its own (soundFuseTell, soundFuseIgnite, soundFuseLoop)"
+    },
+    {
+      "do": "Give the loop a curve rather than a steady volume, because the burning sound is played on one.",
+      "because": "the fuse loop is played on a curve of its own (soundFuseLoopCurve)"
+    },
+    {
+      "do": "Treat the explosion tell as the last warning you get.",
+      "because": "there is a separate sound for the tell before the explosion (soundExplosionTell)"
+    },
+    {
+      "do": "Know that the monster speaks and thumps separately, because deaths, jumps and landings each have an effect and a voice line.",
+      "because": "deaths, jumps and landings each have an effect sound and a voice line (soundDeathSFX, soundDeathVO, soundJumpSFX, soundJumpVO, soundLandSFX, soundLandVO)"
+    },
+    {
+      "do": "Read its approach from the short and long move sounds and the footstep.",
+      "because": "it has a short move, a long move and a footstep sound (soundMoveShort, soundMoveLong, soundFootstep)"
+    },
+    {
+      "do": "Judge a hit by its weight, because light, medium and heavy impacts sound different.",
+      "because": "impacts are split into light, medium and heavy (soundImpactLight, soundImpactMedium, soundImpactHeavy)"
+    },
+    {
+      "do": "Know that an attack is announced by a breaker rather than by the voice alone.",
+      "because": "attacks run through their own breaker (soundAttackBreaker)"
+    },
+    {
+      "do": "Expect the idle noise to be broken up as well.",
+      "because": "the idle noise has a breaker of its own (soundIdleBreaker)"
+    },
+    {
+      "do": "Treat a stun as three sounds, because being stunned has an introduction, a loop and an outro.",
+      "because": "being stunned has an intro, a loop and an outro (soundStunIntro, soundStunLoop, soundStunOutro)"
+    },
+    {
+      "do": "Do not trust your own ears for volume, because the monster's output can be scaled as a whole.",
+      "because": "the monster carries a volume multiplier for its sounds (enemy, controller, volumeMultiplier)"
+    }
+  ],
+  "commonMistakes": [
+    "Watching the bomb and missing the fuse tell.",
+    "Hearing the fuse and assuming it is already lit, when ignition is a separate sound.",
+    "Treating a jump or a landing as one noise instead of an effect plus a voice.",
+    "Relaxing during a stun because only the start was noticed.",
+    "Ignoring the idle breaker and reading a pause as the monster leaving."
+  ],
+  "relatedEntities": [
+    "the-bomb-and-its-fuse",
+    "the-bomb-thrower",
+    "enemies-and-their-behaviour"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
