@@ -1,0 +1,47 @@
+{
+  "id": "sending-the-drone-first",
+  "title": "Sending the drone in first",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use a R.E.P.O. drone deliberately, given that the game lets it target valuables, players, enemies and ordinary objects rather than only one of them.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A drone in the crew's hands",
+    "A room you would rather not walk into",
+    "Battery left in it"
+  ],
+  "steps": [
+    {
+      "do": "Decide what the drone is for before it goes out.",
+      "because": "the drone has separate targeting for valuables, players, enemies and ordinary objects (targetValuables)"
+    },
+    {
+      "do": "Check it is not set to go for players before you deploy it.",
+      "because": "players sit on the same targeting list as the loot (targetPlayers)"
+    },
+    {
+      "do": "Watch the line it draws rather than assuming it is on the right thing.",
+      "because": "the drone keeps a line between two points to show its target (lineBetweenTwoPoints)"
+    },
+    {
+      "do": "Do not count on it lasting the whole level.",
+      "because": "the drone runs on a battery with its own drain setting (batteryDrainPreset)"
+    },
+    {
+      "do": "Send it in before the crew rather than after somebody is already in trouble.",
+      "because": "deploying and retracting are deliberate steps with their own sounds (DroneDeploy)"
+    }
+  ],
+  "commonMistakes": [
+    "Deploying a drone that is set to target players.",
+    "Letting it run out of battery in the middle of a room.",
+    "Treating the drone as a substitute for looking where you are going."
+  ],
+  "relatedEntities": [
+    "the-drone",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

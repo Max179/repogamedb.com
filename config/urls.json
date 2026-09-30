@@ -65,6 +65,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/sending-the-drone-first.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/using-a-stun-window.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2550,6 +2555,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/keycards-and-the-office.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/levels-and-the-way-out.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2581,6 +2591,11 @@
     },
     {
       "url": "/entries/the-cart-and-its-boost-pads.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-drone.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

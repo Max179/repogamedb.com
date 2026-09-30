@@ -362,6 +362,30 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-drone",
+      "kind": "game",
+      "file": "mapped/the-drone-drone.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Drone",
+      "note": "albedo texture of the drone the crew can deploy",
+      "width": 512,
+      "height": 512,
+      "bytes": 34105,
+      "sha256": "9d2755f3d05500c7c90ad48103e703c9e863f23d4c90d59642ff675e6aa9c62d"
+    },
+    {
+      "entity": "keycards-and-the-office",
+      "kind": "game",
+      "file": "mapped/keycards-and-the-office-keycard.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "shop office keycard_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the office keycard the shop uses",
+      "width": 512,
+      "height": 512,
+      "bytes": 12022,
+      "sha256": "f258d02236f5307fe9d1802e886ce2c68397dab79a5ed9aa32de42a4e23f63dc"
+    },
+    {
       "entity": "what-a-monster-is-doing",
       "kind": "game",
       "file": "mapped/what-a-monster-is-doing-robe.jpg",
