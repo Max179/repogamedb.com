@@ -1334,6 +1334,18 @@
       "sha256": "52323939e1e021ff68c06cca5b04caaa4ff3d2a9737da8a8ff47d19aacb8591b"
     },
     {
+      "entity": "the-gumball-machine-that-hypnotises",
+      "kind": "game",
+      "file": "mapped/the-gumball-machine-hypnosis-spiral.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Screen Spiral",
+      "note": "the spiral the game draws over the screen when the gumball machine has you",
+      "width": 512,
+      "height": 481,
+      "bytes": 23393,
+      "sha256": "81e4e61a57651d364a9261b26b432a0f94142eebe5b9bcb1fdb73b89dc77ed38"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",
