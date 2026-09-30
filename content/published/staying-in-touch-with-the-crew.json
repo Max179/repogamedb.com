@@ -23,7 +23,9 @@
   "related": [
     "carts-grabbing-and-physics",
     "choosing-when-to-leave",
-    "enemies-and-their-behaviour"
+    "enemies-and-their-behaviour",
+    "the-lobby-and-spectating",
+    "the-player-list-and-what-a-row-shows"
   ],
   "images": [
     {
