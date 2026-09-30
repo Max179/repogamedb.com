@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 60
+- published entries: 62
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 27
@@ -14,8 +14,8 @@ the reason it is still a draft.
 
 | target column | what it covers | published | draft | reference |
 | --- | --- | --- | --- | --- |
-| enemies | Enemies and their variants | 8 | 0 | 0 |
-| behaviour | Behaviour and how to answer it | 8 | 0 | 0 |
+| enemies | Enemies and their variants | 9 | 0 | 0 |
+| behaviour | Behaviour and how to answer it | 9 | 0 | 0 |
 | valuables | Valuables and value grades | 6 | 0 | 0 |
 | extraction | Hauling and extraction | 3 | 0 | 0 |
 | items | Items you can carry | 12 | 0 | 0 |
@@ -30,7 +30,7 @@ the reason it is still a draft.
 | combos | Item combinations | 0 | 1 | 0 |
 | physics | Physics, grabbing and the cart | 2 | 0 | 0 |
 | cosmetics | Cosmetics and the avatar | 2 | 0 | 0 |
-| interface | Screens and run records | 2 | 0 | 0 |
+| interface | Screens and run records | 3 | 0 | 0 |
 | faq | Answers to the questions players ask most | 1 | 0 | 0 |
 | glossary | Glossary of the terms this site uses | 1 | 0 | 0 |
 | versions | Which version this site documents | 1 | 0 | 0 |

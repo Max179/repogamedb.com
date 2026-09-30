@@ -2625,6 +2625,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-a-run-is-scored.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-monsters-find-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2696,6 +2701,11 @@
     },
     {
       "url": "/entries/stunning-instead-of-killing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-beamer.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

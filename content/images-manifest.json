@@ -744,6 +744,18 @@
       "height": 512,
       "bytes": 56177,
       "sha256": "94c1450a5d7cb5fc9beace152c48e8097393946cacc8c64c3766feffadd56ebd"
+    },
+    {
+      "entity": "the-beamer",
+      "kind": "game",
+      "file": "mapped/the-beamer-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Beamer_Albedo",
+      "note": "the colour texture the game ships for the beamer monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 66316,
+      "sha256": "2c1f6e66d9bfa116e619b5b828d63a45a0afab9d2152e097537c5985c3c0e742"
     }
   ]
 }
