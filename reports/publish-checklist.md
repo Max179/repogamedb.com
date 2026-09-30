@@ -4,17 +4,17 @@ Everything that can be done without credentials has been done and is verified on
 This file lists exactly what is still missing, so publishing is a short, unambiguous step once the
 credentials exist.
 
-> **Re-measured 2026-10-01 on `fcd3409`.** Earlier versions of this file quoted 28 entries, 10 guides,
+> **Re-measured 2026-10-01 on `1e56fce`.** Earlier versions of this file quoted 28 entries, 10 guides,
 > `pages=588` and 50 gates, then 141 entries and `pages=698`; both had drifted. Everything below is measured
 > on the current commit with the site's own generators.
 
-## Verified locally on this commit (`2ab02ce`, 320 commits)
+## Verified locally on this commit (`1e56fce`, 368 commits)
 - Build, gates, typecheck and preflight all pass on branch `main`, on a clean working tree.
-- Content: **147 published entries, 42 structured guides**; 1 draft that documents an absence rather than a gap, all facts grounded in identifiers read from the game's own files.
-- Build: `pages=711 indexable=171` (534 noindex reference pages kept out of the sitemap).
+- Content: **152 published entries, 43 structured guides**; 1 draft that documents an absence rather than a gap, all facts grounded in identifiers read from the game's own files.
+- Build: `pages=717 indexable=174` (543 noindex reference pages kept out of the sitemap).
 - Site gates: `[site-tests] 62 passed, 0 failed`.
 - Coverage matrix: **21** target columns, **20** holding at least one published entry, 1 (`combos`) recorded as absent in the game, 0 quality failures.
-- Images: **105** entries carry a picture confirmed from the game and **42** carry an original diagram only; the manifest holds **127 records**, none unused. Every record has been opened by eye and has a verdict in `reports/image-reviews.md`, and a gate fails the build if a record is added without one.
+- Images: **107** entries carry a picture confirmed from the game and **45** carry an original diagram only; the manifest holds **129 records**, none unused. Every record has been opened by eye and has a verdict in `reports/image-reviews.md`, and a gate fails the build if a record is added without one.
 - Every image mapping is re-checkable: a gate asserts each `content/images-manifest.json` record matches the
   file on disk by byte count, sha256 and real dimensions.
 - `.github/workflows/publish.yml` runs the build, then the gates, then the portable typecheck; the `deploy` job
