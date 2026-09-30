@@ -2710,6 +2710,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-animal.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-balloon-monster.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2756,6 +2761,11 @@
     },
     {
       "url": "/entries/the-heart-hugger.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-hidden.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

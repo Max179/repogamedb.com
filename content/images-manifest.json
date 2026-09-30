@@ -900,6 +900,18 @@
       "height": 512,
       "bytes": 35096,
       "sha256": "13908e4d13337b2c4e2e2d6cbd92ae16fc6cab83b6fc9519a50cc91d975b6dde"
+    },
+    {
+      "entity": "the-animal",
+      "kind": "game",
+      "file": "mapped/the-animal-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Animal_Albedo",
+      "note": "the colour texture the game ships for the animal monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 40451,
+      "sha256": "4f49108635c2dc3e7e11e052259402a1c24bfbe230e5c2a9f7d0ead8a390236f"
     }
   ]
 }

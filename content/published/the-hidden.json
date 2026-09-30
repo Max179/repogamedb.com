@@ -1,0 +1,69 @@
+{
+  "id": "the-hidden",
+  "title": "The hidden one and its breathing",
+  "category": "Enemies",
+  "summary": "The hidden monster in R.E.P.O. is tracked by what it does to the air and the floor: the game gives it breath particles and breathing sounds, footprint shapes, and a way for a player to pick it up.",
+  "body": [
+    "The hidden monster is not loud, but it is not silent either. Its animation keeps a set of breath particles, including a fast version and one that runs constantly, so a monster that is standing still can still be noticed.",
+    "It breathes audibly. There are separate sounds for breathing in and out, and a fast set of both, so the difference between calm and hunting is something you can hear before you see anything move.",
+    "It leaves marks on the floor. There are shapes for a left and a right footstep and a smoke effect to go with them, along with sounds for a step and for a sprint, which is how the game hints at a monster that is itself hard to look at.",
+    "Being stunned is a sequence rather than a single event. There is a start, a loop and a stop, so a stunned monster can be heard staying stunned.",
+    "It jumps and lands, and both have sounds of their own, so even an unseen monster gives away where it is when it moves vertically.",
+    "A player can pick it up. There is a transform the player holds it by, with a curve for lifting it and a curve for moving it from side to side, and there are sounds for picking it up, letting it go and moving it while it is carried.",
+    "That makes this monster unusual among the creatures in the game: rather than only being run from, it can be carried, which is why the game needs a carrying arrangement of its own for it.",
+    "What this entry does not tell you: what it looks like when it is visible, how much damage it does, or how long it stays hidden. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "It has breath particles, including a fast version and one that runs constantly.",
+      "evidence": "identifiers: particleBreath, particleBreathFast, particleBreathConstant"
+    },
+    {
+      "claim": "Breathing in and out are separate sounds, with a fast set of both.",
+      "evidence": "identifiers: soundBreatheIn, soundBreatheOut, soundBreatheInFast, soundBreatheOutFast"
+    },
+    {
+      "claim": "It has separate shapes for a left and a right footstep, with smoke and step and sprint sounds.",
+      "evidence": "identifiers: particleFootstepShapeRight, particleFootstepShapeLeft, particleFootstepSmoke, soundFootstep, soundFootstepSprint"
+    },
+    {
+      "claim": "Being stunned has a start, a loop and a stop.",
+      "evidence": "identifiers: soundStunStart, soundStunLoop, soundStunStop"
+    },
+    {
+      "claim": "Jumping and landing are separate sounds.",
+      "evidence": "identifiers: soundJump, soundLand"
+    },
+    {
+      "claim": "A player can pick it up, with a transform of its own and curves for lifting and moving it.",
+      "evidence": "identifiers: playerPickupTransform, playerPickupCurveUp, playerPickupCurveSide"
+    },
+    {
+      "claim": "There are sounds for picking it up, letting it go and moving while it is held.",
+      "evidence": "identifiers: soundPlayerPickup, soundPlayerRelease, soundPlayerMove"
+    },
+    {
+      "claim": "It keeps a state, an animator and a rotation spring of its own.",
+      "evidence": "identifiers: currentState, enemyHiddenAnim, rotationSpring"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "how-a-monster-sees-you"
+  ],
+  "images": [
+    {
+      "file": "the-hidden.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the hidden one breathes, leaves footprints, can be stunned, and can be picked up and carried by a player.",
+        "zh": "示意图：隐者呼吸、留下脚印、可被击晕，也可被玩家拾起搬运。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
