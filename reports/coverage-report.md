@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 121
+- published entries: 123
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 28
@@ -18,13 +18,13 @@ the reason it is still a draft.
 | behaviour | Behaviour and how to answer it | 36 | 0 | 0 |
 | valuables | Valuables and value grades | 17 | 0 | 0 |
 | extraction | Hauling and extraction | 4 | 0 | 0 |
-| items | Items you can carry | 14 | 0 | 0 |
+| items | Items you can carry | 15 | 0 | 0 |
 | weapons | Weapons | 6 | 0 | 0 |
 | ammo | Ammunition and charge | 3 | 0 | 0 |
 | medical | Medical help and reviving | 3 | 0 | 0 |
 | maps | Maps, levels and themes | 5 | 0 | 0 |
 | events | Events and set pieces | 2 | 0 | 0 |
-| shop | The shop between runs | 8 | 0 | 0 |
+| shop | The shop between runs | 9 | 0 | 0 |
 | coop | Playing with a crew | 3 | 0 | 0 |
 | solo | Solo strategy | 2 | 0 | 0 |
 | combos | Item combinations | 0 | 1 | 0 |

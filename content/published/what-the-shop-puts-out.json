@@ -1,0 +1,66 @@
+{
+  "id": "what-the-shop-puts-out",
+  "title": "What the shop puts out",
+  "category": "Shop",
+  "summary": "The shop between runs in R.E.P.O. chooses its stock rather than displaying a fixed shelf: it holds the volumes it may put things in, keeps separate pools of ordinary items, consumables, upgrades and health packs, has secret stock as well, and works to a target amount for each kind.",
+  "body": [
+    "What is for sale between runs is decided rather than fixed. The shop holds the volumes it can put something into and the things it might offer, so the shelf is the result of a choice rather than a list built by hand.",
+    "The stock is kept in kinds. Ordinary items, consumables, upgrades and health packs each have their own pool, which is why a shop can be short of one kind and full of another.",
+    "There is secret stock as well. Separate volumes and separate items are held for it, so the shop can keep something back rather than putting everything on display.",
+    "It works to numbers. There is a target amount of items to put out and a separate amount for consumables, for upgrades and for health packs, which is why the shelf fills to a shape rather than at random.",
+    "It carries its own totals. There is a running cost and a currency total, so the shop keeps account of what it has laid out and what it has taken.",
+    "It knows when the player is a thief. There is a flag for it, which is how the shop can respond to how you have been behaving rather than only to what you buy.",
+    "It also keeps the small parts of presentation. There is a helper for rotating an item, which is how what is on offer can be turned to be seen instead of sitting at whatever angle it arrived at.",
+    "And it knows where the run ends. The shop holds a reference to the extraction point, which is how the place you leave from is tied to the place you spend in.",
+    "What this entry does not tell you: how many items the shop will put out, what anything costs, or what decides that a secret item appears. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The shop holds the volumes it can use and the items it may offer.",
+      "evidence": "identifiers: ShopManager, itemVolumes, potentialItems"
+    },
+    {
+      "claim": "Its offerings are split into ordinary items, consumables, upgrades and health packs.",
+      "evidence": "identifiers: potentialItems, potentialItemConsumables, potentialItemUpgrades, potentialItemHealthPacks"
+    },
+    {
+      "claim": "It keeps separate volumes and items for secret stock.",
+      "evidence": "identifiers: secretItemVolumes, potentialSecretItems"
+    },
+    {
+      "claim": "It aims for a number of items, with separate amounts for consumables, upgrades and health packs.",
+      "evidence": "identifiers: itemSpawnTargetAmount, itemConsumablesAmount, itemUpgradesAmount, itemHealthPacksAmount"
+    },
+    {
+      "claim": "It keeps a total cost and a total currency.",
+      "evidence": "identifiers: totalCost, totalCurrency"
+    },
+    {
+      "claim": "It knows whether the player is a thief.",
+      "evidence": "identifier: isThief"
+    },
+    {
+      "claim": "It has an item rotate helper and a reference to the extraction point.",
+      "evidence": "identifiers: itemRotateHelper, extractionPoint"
+    }
+  ],
+  "related": [
+    "the-shop-between-runs",
+    "how-upgrades-are-kept-track-of"
+  ],
+  "images": [
+    {
+      "file": "what-the-shop-puts-out.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the shop aims for a number of items, splits them into kinds, keeps secret stock, and tracks its totals and the way out.",
+        "zh": "示意图：商店按目标数量铺货、按类别分配、保留秘密库存，并记录成本与出口位置。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

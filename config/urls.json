@@ -3025,6 +3025,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-thrown-grenade.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-tick-and-its-mouth.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3151,6 +3156,11 @@
     },
     {
       "url": "/entries/what-the-map-shows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-shop-puts-out.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
