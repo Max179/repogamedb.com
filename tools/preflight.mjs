@@ -16,8 +16,12 @@ try {
 } catch (e) {
   add('site gates pass', false, String(e).slice(0, 160));
 }
-const dirty = execSync('git status --porcelain').toString().trim();
-add('working tree is clean', dirty === '', dirty.split('\n').slice(0, 2).join(' | '));
+// reports/status.json counts the files git tracks, so its own regeneration can never match a clone that has
+// just gained files: the file describes the previous commit (see its headNote). It is excluded from this
+// check so the build steps in the Mac handoff stay reproducible from a clean clone.
+const dirtyAll = execSync('git status --porcelain').toString().trim().split('\n').filter(Boolean);
+const dirty = dirtyAll.filter((l) => !/reports\/status\.json$/.test(l));
+add('working tree is clean', dirty.length === 0, dirty.slice(0, 2).join(' | '));
 const hasStatus = existsSync('reports/status.json');
 add('machine-readable status exists', hasStatus, 'reports/status.json');
 if (hasStatus) {

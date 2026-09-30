@@ -13,4 +13,4 @@ near-white (above 235). A flag is not a verdict: it means the file has to be loo
 | mapped/the-boombox-valuable-lights.png | Boombox_DefaultMaterial_Emissive | 33.4 | 93% | 0 | 93% of pixels within 6 of the median |
 | mapped/when-the-chat-box-will-not-open-emojis.jpg | emojis | 42.8 | 90% | 0 | 90% of pixels within 6 of the median |
 
-Totals: 120 records, 4 flagged.
+Totals: 117 records, 4 flagged.

@@ -49,14 +49,6 @@
   ],
   "images": [
     {
-      "file": "mapped/the-orb-orb.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The albedo texture taken from the game of the orb the crew can carry.",
-        "zh": "取自游戏的宝珠反照率贴图。"
-      }
-    },
-    {
       "file": "the-orb.svg",
       "kind": "diagram",
       "alt": {
@@ -69,5 +61,5 @@
   "sources": [
     "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "diagram-only"
 }

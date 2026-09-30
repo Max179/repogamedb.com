@@ -2845,11 +2845,6 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
-      "url": "/entries/the-cart-cannon.html",
-      "action": "keep",
-      "reason": "player-facing page: a question a player asks"
-    },
-    {
       "url": "/entries/the-cart-laser.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2920,11 +2915,6 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
-      "url": "/entries/the-ladder.html",
-      "action": "keep",
-      "reason": "player-facing page: a question a player asks"
-    },
-    {
       "url": "/entries/the-leaf-blower.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2956,11 +2946,6 @@
     },
     {
       "url": "/entries/the-oogly.html",
-      "action": "keep",
-      "reason": "player-facing page: a question a player asks"
-    },
-    {
-      "url": "/entries/the-orb.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3330,6 +3315,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-cart-cannon.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-gnomes-and-the-pickaxe.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3345,6 +3335,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-ladder.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-lobby-and-spectating.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3356,6 +3351,11 @@
     },
     {
       "url": "/reference/notes/the-numbers-that-float-over-things.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/notes/the-orb.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

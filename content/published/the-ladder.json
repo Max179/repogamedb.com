@@ -44,14 +44,6 @@
   ],
   "images": [
     {
-      "file": "mapped/the-ladder-ladder.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The base colour texture taken from the game of the extending ladder the crew carries.",
-        "zh": "取自游戏的伸缩梯基础色贴图。"
-      }
-    },
-    {
       "file": "the-ladder.svg",
       "kind": "diagram",
       "alt": {
@@ -64,5 +56,5 @@
   "sources": [
     "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "diagram-only"
 }

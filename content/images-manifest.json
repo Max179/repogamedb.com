@@ -422,18 +422,6 @@
       "sha256": "03d094b4a61d03bacc43f97b647fa8d49096db610b9dd754dcc6038642f4d19e"
     },
     {
-      "entity": "the-ladder",
-      "kind": "game",
-      "file": "mapped/the-ladder-ladder.jpg",
-      "sourceBundle": "resources.assets",
-      "assetName": "ladder_DefaultMaterial_BaseColor",
-      "note": "the base colour texture of the extending ladder the crew carries",
-      "width": 512,
-      "height": 512,
-      "bytes": 33450,
-      "sha256": "d9a8e4c5ebc44635a9f7d5b3875aaeb119ff92fd7eaa76c728b27012a5c34d3a"
-    },
-    {
       "entity": "the-shop-radio",
       "kind": "game",
       "file": "mapped/the-shop-radio-boombox.jpg",
@@ -458,18 +446,6 @@
       "sha256": "4b0bb248d58d2d803cbe9524b021f590f238e8e751c58cec473e20f0f64344a0"
     },
     {
-      "entity": "the-cart-cannon",
-      "kind": "game",
-      "file": "mapped/the-cart-cannon-cannon.jpg",
-      "sourceBundle": "resources.assets",
-      "assetName": "cannon_DefaultMaterial_BaseColor",
-      "note": "the base colour texture of the cannon that fits the cart",
-      "width": 512,
-      "height": 512,
-      "bytes": 57157,
-      "sha256": "52ab761c1420e99242d5137bfaf7261ca3a7902315bbe14254013e3c2c81ec7b"
-    },
-    {
       "entity": "the-valuable-tracker",
       "kind": "game",
       "file": "mapped/the-valuable-tracker-device.jpg",
@@ -480,18 +456,6 @@
       "height": 512,
       "bytes": 39706,
       "sha256": "f87d485379c5e51c135b05d688e7972e5ddbd30bd760e6b62abe39f3dce8bf74"
-    },
-    {
-      "entity": "the-orb",
-      "kind": "game",
-      "file": "mapped/the-orb-orb.jpg",
-      "sourceBundle": "resources.assets",
-      "assetName": "Item Orb_Albedo",
-      "note": "albedo texture of the orb the crew can carry",
-      "width": 512,
-      "height": 512,
-      "bytes": 21343,
-      "sha256": "81b34f76eba0b39d94af3fa6297c2c81e3419a42d685a7a9224d00e0bed578a5"
     },
     {
       "entity": "the-valuables-you-can-find",
