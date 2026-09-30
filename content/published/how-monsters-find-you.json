@@ -1,0 +1,45 @@
+{
+  "id": "how-monsters-find-you",
+  "title": "How monsters find you",
+  "category": "Enemies",
+  "tier": "published",
+  "summary": "Monsters in R.E.P.O. do not wander blindly: the game tracks the room a player is in and the distance to them, which is how a monster can commit to a chase.",
+  "body": [
+    "The game keeps track of which room a player is in, so a monster can react to where you are rather than only to what it can see.",
+    "Distance to a player is tracked as well, which is why closing the gap is something the game can measure rather than approximate.",
+    "Because monsters are physical objects, knowing where you are still ends in contact: the tracking gets them there, physics decides what happens next.",
+    "What this entry does not tell you: how far a monster can notice you, how fast it moves or how long it commits to a chase. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game tracks which room a player is in.",
+      "evidence": "identifier: EnemyPlayerRoom"
+    },
+    {
+      "claim": "The distance between a monster and a player is tracked.",
+      "evidence": "identifier: EnemyPlayerDistance"
+    },
+    {
+      "claim": "Monsters are physical objects, so contact is a collision.",
+      "evidence": "identifier: EnemyRigidbody"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "carts-grabbing-and-physics"
+  ],
+  "images": [
+    {
+      "file": "how-monsters-find-you.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a monster registers the room, measures the distance, closes in, and contact is a collision.",
+        "zh": "怪物追踪示意图：怪物定位房间、测量距离、靠近、接触即碰撞。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
