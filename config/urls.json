@@ -2680,6 +2680,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/running-a-gun-dry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/staying-in-touch-with-the-crew.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2898,6 +2903,11 @@
       "url": "/tool.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/topics/ammunition.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/topics/co-op.html",

@@ -1,0 +1,74 @@
+{
+  "id": "running-a-gun-dry",
+  "title": "Running a gun dry",
+  "category": "Ammunition",
+  "summary": "Shots in R.E.P.O. are not only a number going down: the game fires a bullet object of its own, keeps a state for being out of shots, and gives the click of an empty gun a sound of its own.",
+  "body": [
+    "A gun in R.E.P.O. does not simply subtract a number as it fires. The game has a bullet object of its own, so a shot is something that exists in the level rather than only a flash at the muzzle.",
+    "Being empty is a state rather than a message on screen. The game keeps an out-of-ammo state with its own beginning, its own update and its own fixed update, which is why a gun can behave differently the moment it runs dry instead of only refusing to fire.",
+    "An empty gun has a sound of its own. There is a click for having nothing to fire, so the game tells you through your ears and not only through a counter.",
+    "Some guns build up before they fire. A gun carries a build-up time beside its shot time, so it can be charged and then released rather than firing the instant it is pressed.",
+    "How many shots leave the gun at once is a property of that gun. Some fire a single shot and some fire several, with a spread and a range configured per gun, which is why two guns behave differently at the same distance.",
+    "Others have to cool down instead of reloading. One of the game's guns has overheat particles, a heat curve and two reload sounds, so pushing it too hard has a consequence the gun itself shows you.",
+    "There is a charge side as well. Some guns run on battery rather than shots, with a drain rate and a full bar of drain of their own, which is why a gun that has run dry is not always a gun with an empty battery.",
+    "The image beside this entry is the game's own: the colour texture of one of its guns.",
+    "What this entry does not tell you: how many shots any gun holds, how long a build-up lasts, or how quickly a battery drains. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game fires a bullet object of its own rather than only playing an effect.",
+      "evidence": "identifier: ItemGunBullet"
+    },
+    {
+      "claim": "Being out of shots is a state with its own beginning, update and fixed update.",
+      "evidence": "identifiers: OutOfAmmo, onStateOutOfAmmoStart, onStateOutOfAmmoUpdate, onStateOutOfAmmoFixedUpdate"
+    },
+    {
+      "claim": "An empty gun has a click of its own.",
+      "evidence": "identifier: soundNoAmmoClick"
+    },
+    {
+      "claim": "A gun can build up before it fires, with a time for the build-up and a time for the shot.",
+      "evidence": "identifiers: hasBuildUp, buildUpTime, shootTime, hasOneShot"
+    },
+    {
+      "claim": "How many shots a gun puts out at once, its spread and its range are configured per gun.",
+      "evidence": "identifiers: numberOfBullets, gunRandomSpread, gunRange"
+    },
+    {
+      "claim": "One gun overheats rather than only reloading, with overheat particles, a heat curve and two reload sounds.",
+      "evidence": "identifiers: particleOverHeat, heatLatchCurve, soundReload, soundReload2"
+    },
+    {
+      "claim": "Some guns run on charge, with a drain rate and a full bar of drain.",
+      "evidence": "identifiers: batteryDrain, batteryDrainFullBar, batteryDrainFullBars"
+    }
+  ],
+  "related": [
+    "guns-and-how-they-fire",
+    "batteries-and-charging"
+  ],
+  "images": [
+    {
+      "file": "mapped/running-a-gun-dry-shotgun.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for one of its guns.",
+        "zh": "游戏为其中一把枪提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "running-a-gun-dry.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a shot leaves as a bullet, the gun builds up or fires, runs out into an empty state, and the click tells you.",
+        "zh": "示意图：子弹射出、蓄力或直接开火、进入空仓状态、空响提示。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

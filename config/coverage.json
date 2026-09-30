@@ -66,9 +66,10 @@
       "label": "Ammunition and charge",
       "entries": [
         "batteries-and-charging",
-        "guns-and-how-they-fire"
+        "guns-and-how-they-fire",
+        "running-a-gun-dry"
       ],
-      "status": "guns use battery charge rather than a separate ammunition item in this build"
+      "status": "guns fire a bullet object and keep an out-of-shots state; there is no separate ammunition item, so shots and charge are the two resources"
     },
     {
       "id": "medical",

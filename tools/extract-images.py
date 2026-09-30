@@ -118,6 +118,7 @@ MAPPINGS = [
   {'entity': 'mines-traps-and-lasers', 'bundle': 'resources.assets', 'match': "Stun trap_DefaultMaterial_BaseColor", 'file': 'mines-traps-and-lasers-trap.jpg', 'note': "the colour texture the game ships for a stun trap", 'max': 512, 'quality': 88},
   {'entity': 'healing-at-the-truck', 'bundle': 'resources.assets', 'match': "Truck Healer_DefaultMaterial_BaseColor", 'file': 'healing-at-the-truck-healer.jpg', 'note': "the colour texture the game ships for the healer in the truck", 'max': 512, 'quality': 88},
   {'entity': 'the-floater', 'bundle': 'resources.assets', 'match': "enemy floater_Material_BaseColor", 'file': 'the-floater-texture.jpg', 'note': "the colour texture the game ships for the floater monster", 'max': 512, 'quality': 88},
+  {'entity': 'running-a-gun-dry', 'bundle': 'resources.assets', 'match': "shotgun_DefaultMaterial_BaseColor", 'file': 'running-a-gun-dry-shotgun.jpg', 'note': "the colour texture the game ships for one of its guns", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

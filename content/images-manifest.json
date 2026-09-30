@@ -708,6 +708,18 @@
       "height": 512,
       "bytes": 50031,
       "sha256": "2b28d0289eccd4fd27b7bdd202dc23486e5ec47287ed4c48c55021d82a2f3054"
+    },
+    {
+      "entity": "running-a-gun-dry",
+      "kind": "game",
+      "file": "mapped/running-a-gun-dry-shotgun.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "shotgun_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for one of its guns",
+      "width": 512,
+      "height": 512,
+      "bytes": 43769,
+      "sha256": "73c37be76960384a35bb440626893482d6593905a8876ccb324c284d44962dd0"
     }
   ]
 }
