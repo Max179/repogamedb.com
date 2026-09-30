@@ -82,7 +82,7 @@ const groupOf = (category) => (CATEGORIES.find((c) => c.src.includes(category)) 
 
 export function build(inventoryPath, outDir) {
   const inv = JSON.parse(readFileSync(inventoryPath, 'utf8'));
-  const srcLine = 'Source: read from the installed game · version ' + (inv.version ?? 'unknown') + ' · nothing invented';
+  const srcLine = 'Source: read from a local copy of the game · version ' + (inv.version ?? 'unknown') + ' · nothing invented';
   let manifest = { records: [] };
   try { manifest = JSON.parse(readFileSync(join(process.cwd(), 'content', 'images-manifest.json'), 'utf8')); } catch { /* none yet */ }
 
