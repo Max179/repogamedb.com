@@ -1,0 +1,92 @@
+{
+  "id": "the-bomb-thrower",
+  "title": "The bomb thrower",
+  "category": "Enemies",
+  "summary": "One monster in R.E.P.O. is built around a head that grows and comes off: the game keeps an explosion it warns you about, a torso of heads that open, melee and scream with twelve breakers, and feet that swap between bare skin and boots.",
+  "body": [
+    "This monster is built around a head. The body holds the animation, the head itself, a collider for it and a place to spawn it, along with a spring that turns the whole creature, which is why the head can be treated as a part that leaves.",
+    "The head has a life of its own. It has a controller, a target for its eye, a material for its collider, a splash of its own and a cloud it releases, plus sounds for laughing, for the moment before it goes off, for going off, and for coming away from the body.",
+    "It is grown rather than swapped. There is a flag for the head being grown visually and an amount added while it idles, with three separate sounds for the growing, which is why the head swells over time instead of appearing.",
+    "The torso carries more than one head. They scream, and the game keeps the scream as an introduction, a loop and an ending, with a version the whole crew hears as well as a local one.",
+    "Those heads open and close. There are separate sounds for opening for one victim and for several, and the same pair for closing, so what the torso does is played rather than merely animated.",
+    "They also bite. There is a melee sound for the torso heads, and a global version of it, which is how the same attack can be heard by whoever is caught and by everyone else.",
+    "The screaming is broken up. The game keeps twelve breakers for the torso heads, which is why the noise is cut and resumed rather than played as one long sound.",
+    "The feet change. There are separate points for the bare skin and for a boot, and footsteps differ between light and heavy for both, so what the monster wears is audible.",
+    "It arrives and leaves visibly. There are particles for the teleport, for the head coming away and for its death, with sounds for arriving and for leaving.",
+    "The rest is the ordinary racket of a monster: an idle loop, a landing, a jump, a short and a long move, being hurt and dying, each with its own sound.",
+    "What this entry does not tell you: how long the head takes to grow, how much damage an explosion does, or how far the sound carries. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The monster's body holds the animation, the head, a collider for the head and a place to spawn it.",
+      "evidence": "identifiers: EnemyBombThrower, anim, head, headCollider, headSpawnTransform"
+    },
+    {
+      "claim": "The head has a controller, an eye target, a collider material, a splash particle and a cloud, with sounds for laughing, the tell before the explosion, the explosion and the head coming off.",
+      "evidence": "identifiers: EnemyBombThrowerHead, controller, eyeLookAt, colliderMaterial, particleSplash, uraniumCloudPrefab, soundLaugh, soundExplosionTell, soundExplosion, soundHeadDetach"
+    },
+    {
+      "claim": "The head is grown, with a flag for the visual growth and an amount added while idle, and three sounds for growing.",
+      "evidence": "identifiers: headGrownVisually, headAdditiveIdleAmount, soundHeadGrow01, soundHeadGrow02, soundHeadGrow03"
+    },
+    {
+      "claim": "The torso heads scream, with an intro, a loop and an outro, and a global version of the scream.",
+      "evidence": "identifiers: torsoHeadsScreaming, soundTorsoHeadsScreamingIntro, soundTorsoHeadsScreamingLoop, soundTorsoHeadsScreamingOutro, soundTorsoHeadsScream, soundTorsoHeadsScreamGlobal"
+    },
+    {
+      "claim": "The torso heads open and close with separate sounds for one victim and for several.",
+      "evidence": "identifiers: soundTorsoHeadsOpenSolo, soundTorsoHeadsOpenMultiple, soundTorsoHeadsCloseSolo, soundTorsoHeadsCloseMultiple"
+    },
+    {
+      "claim": "The torso heads have a melee sound and a global version of it.",
+      "evidence": "identifiers: soundTorsoHeadsMelee, soundTorsoHeadsMeleeGlobal"
+    },
+    {
+      "claim": "Twelve breakers are kept for the screaming torso heads.",
+      "evidence": "identifiers: soundTorsoHeadsBreaker00, soundTorsoHeadsBreaker05, soundTorsoHeadsBreaker11"
+    },
+    {
+      "claim": "The feet have separate points for bare skin and for a boot, with light and heavy footsteps for each.",
+      "evidence": "identifiers: footSkinTransform, footBootTransform, soundFootstepSkinLight, soundFootstepSkinHeavy, soundFootstepBootLight, soundFootstepBootHeavy"
+    },
+    {
+      "claim": "There are particles for the teleport, for the head detaching and for the death, with sounds for arriving and leaving.",
+      "evidence": "identifiers: teleportParticles, headDetachParticles, deathParticles, soundTeleportIn, soundTeleportOut"
+    },
+    {
+      "claim": "The head is aimed at a transform and a position, with a spring, and the body turns on a spring of its own.",
+      "evidence": "identifiers: springHead, headLookTransform, headLookPositionTransform, horizontalRotationSpring"
+    },
+    {
+      "claim": "It has an idle loop and sounds for landing, jumping, a short and a long move, being hurt and dying.",
+      "evidence": "identifiers: soundIdleLoop, soundLand, soundJump, soundMoveShort, soundMoveLong, soundHurt, soundDeath"
+    }
+  ],
+  "related": [
+    "the-bomb-and-its-fuse",
+    "enemies-and-their-behaviour",
+    "what-a-monster-is-doing"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-bomb-thrower-skin.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own colour texture for the bomb thrower's body in its ordinary state.",
+        "zh": "游戏自带的炸弹投掷者本体颜色贴图（常态）。"
+      }
+    },
+    {
+      "file": "mapped/the-bomb-thrower-emission.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The emission texture the game ships for the same monster, the parts of it that glow on their own.",
+        "zh": "游戏为同一只怪物准备的自发光贴图，即会自行发亮的部分。"
+      }
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

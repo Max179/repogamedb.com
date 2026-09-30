@@ -1,9 +1,9 @@
 {
   "site": "repogamedb.com",
-  "head": "d933097",
-  "commits": 294,
-  "pages": 704,
-  "indexable": 164,
+  "head": "72e3cc9",
+  "commits": 296,
+  "pages": 705,
+  "indexable": 165,
   "noindex": 540,
   "classes": 478,
   "fields": 19505,
@@ -11,12 +11,12 @@
   "generatedBy": "pipeline/status.mjs",
   "headNote": "generated from this commit; the commit that adds this file is one step later",
   "handoff": {
-    "trackedFiles": 510,
+    "trackedFiles": 511,
     "byTop": {
       "(root)": 6,
       ".github": 1,
       "config": 2,
-      "content": 438,
+      "content": 439,
       "data": 4,
       "docs": 1,
       "pipeline": 20,

@@ -180,6 +180,10 @@ MAPPINGS = [
   # their subject outright, so the mapping needs no interpretation.
   {'entity': 'the-boosts-a-vehicle-earns', 'bundle': 'resources.assets', 'match': "Truck Ramp", 'file': 'the-boosts-a-vehicle-earns-ramp.jpg', 'note': "the colour texture the game ships for the truck ramp a vehicle drives up", 'max': 512, 'quality': 88},
   {'entity': 'the-boosts-a-vehicle-earns', 'bundle': 'resources.assets', 'match': "Arena Race Boost Pad", 'file': 'the-boosts-a-vehicle-earns-boost-pad.jpg', 'note': "the colour texture the game ships for the boost pad on the race track", 'max': 512, 'quality': 88},
+  # The bomb thrower entry describes the monster's own body. The plain colour sheet and the emission sheet are
+  # its two sides; the screaming variant of the same sheet belongs to the behaviour entry and is not reused here.
+  {'entity': 'the-bomb-thrower', 'bundle': 'resources.assets', 'match': "Enemy Bomb Thrower BaseColor", 'file': 'the-bomb-thrower-skin.jpg', 'note': "the colour texture the game ships for the bomb thrower's body in its ordinary state", 'max': 1024, 'quality': 84},
+  {'entity': 'the-bomb-thrower', 'bundle': 'resources.assets', 'match': "Enemy Bomb Thrower Emission", 'file': 'the-bomb-thrower-emission.jpg', 'note': "the emission texture the game ships for the bomb thrower, the parts of it that glow", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

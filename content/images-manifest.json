@@ -1404,6 +1404,30 @@
       "height": 512,
       "bytes": 31945,
       "sha256": "c96e9a17a3037c595f1e86c7af8957fd2f705ded0514006bc8c7e687de66c833"
+    },
+    {
+      "entity": "the-bomb-thrower",
+      "kind": "game",
+      "file": "mapped/the-bomb-thrower-skin.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Enemy Bomb Thrower BaseColor",
+      "note": "the colour texture the game ships for the bomb thrower's body in its ordinary state",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 165693,
+      "sha256": "63d468f519c66f6d43bafbd1f9fe824266b871ab3083dd4bf64aea463c23ec06"
+    },
+    {
+      "entity": "the-bomb-thrower",
+      "kind": "game",
+      "file": "mapped/the-bomb-thrower-emission.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Enemy Bomb Thrower Emission",
+      "note": "the emission texture the game ships for the bomb thrower, the parts of it that glow",
+      "width": 512,
+      "height": 512,
+      "bytes": 23000,
+      "sha256": "86bde6ed9372b56ed537b0a272034ac3742864c908c637706bb916419b5303ac"
     }
   ]
 }
