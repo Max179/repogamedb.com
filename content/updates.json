@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-10-01",
+    "title": "Keeping the crew in touch when the level splits you",
+    "url": "/articles/keeping-the-crew-in-touch-when-the-level-splits-you.html",
+    "kind": "New guide"
+  },
+  {
     "date": "2026-09-30",
     "title": "The money head in the museum",
     "url": "/entries/the-money-head-in-the-museum.html",
@@ -62,11 +68,5 @@
     "title": "The walkie-talkie and how it answers",
     "url": "/entries/the-walkie-talkie-and-how-it-answers.html",
     "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "Making the shop visit count",
-    "url": "/articles/making-the-shop-visit-count.html",
-    "kind": "New guide"
   }
 ]
