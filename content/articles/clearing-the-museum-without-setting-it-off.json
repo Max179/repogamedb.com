@@ -1,0 +1,69 @@
+{
+  "id": "clearing-the-museum-without-setting-it-off",
+  "title": "Clearing the museum without setting it off",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to move through R.E.P.O.'s museum level: reading the security lasers through a whole cycle before you cross them, why the traps answer to how rare the valuable is, and what the sounds and the ceiling tell you while you work.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A museum level in the run",
+    "A crew that can watch one machine while another carries",
+    "Enough carrying capacity for what the museum holds"
+  ],
+  "steps": [
+    {
+      "do": "Read the lasers before you carry anything through their path.",
+      "because": "the museum keeps its security lasers as a system with a state and logic of their own (MuseumLaserState, MuseumLaserLogic)"
+    },
+    {
+      "do": "Watch one laser through a whole cycle before you commit to crossing it.",
+      "because": "it powers up and shuts down on curves rather than switching, so what you see is one moment of a changing state (animationCurvePowerUp, animationCurveShutdown)"
+    },
+    {
+      "do": "Judge the beam by both of its layers rather than by the bright line alone.",
+      "because": "the beam is drawn as an outer and an inner layer with their own renderers, alongside a hit position and hit visuals (beamMeshRenderer, beamInnerMeshRenderer, laserHitPosTransform, laserBeamVisualHitTransform)"
+    },
+    {
+      "do": "Listen as much as you look while you work near one.",
+      "because": "the laser has three audio sources — its own, one for being near and one for a hit — with separate loops for running, being near and hitting (audioSourceTransform, audioSourceCloseTransform, audioSourceHitTransform, soundLoop, soundNearLoop, soundHitLoop)"
+    },
+    {
+      "do": "Back off when it overloads instead of finishing the carry.",
+      "because": "an overload is a state with its own sparks and its own sound, so it is a warning rather than an ordinary hit (particleOverloadedSparksParticleSystem, soundOverload)"
+    },
+    {
+      "do": "Expect the beam to sweep without the housing turning.",
+      "because": "the spinner and the beam visuals are separate transforms of their own (spinnerTransform, laserBeamVisualTransform)"
+    },
+    {
+      "do": "Assume a guarded valuable is armed according to what it is worth.",
+      "because": "a trap carries an activation level tied to how rare the valuable it guards is, and the trap object has states of its own (TrapActivateRarityLevel, Trap, TrapDone)"
+    },
+    {
+      "do": "Sweep for placed hazards, not only for monsters.",
+      "because": "the level ships mines of more than one kind, including a mine that stuns and one that is triggered (MineType, ItemMine, ItemMineStun, ItemMineTrigger)"
+    },
+    {
+      "do": "Look up before you relax in a room you have cleared.",
+      "because": "an enemy watches from the ceiling with an animation of its own and a line it works along (EnemyCeilingEye, EnemyCeilingEyeAnim, CeilingEyeLine)"
+    },
+    {
+      "do": "Take the museum's props deliberately rather than by accident.",
+      "because": "the museum defines its props as objects of their own, and cosmetic objects carry a condition the game tracks (MuseumPropMoneyHead, CosmeticWorldObjectHealth)"
+    }
+  ],
+  "commonMistakes": [
+    "Crossing a beam's path after watching only half of its cycle.",
+    "Trusting the visible line on its own while the beam is between states.",
+    "Grabbing the rarest thing first when the trap answers to rarity.",
+    "Watching the floor for mines and forgetting the ceiling."
+  ],
+  "relatedEntities": [
+    "the-museums-laser",
+    "the-museum-and-its-props",
+    "mines-traps-and-lasers"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
