@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The traffic light that is also a trap",
+    "url": "/entries/the-traffic-light-valuable.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Keeping everyone standing through a run",
     "url": "/articles/keeping-everyone-standing-through-a-run.html",
     "kind": "New guide"
@@ -62,11 +68,5 @@
     "title": "Getting free when a monster has you",
     "url": "/articles/getting-free-when-a-monster-has-you.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The player list and what a row shows",
-    "url": "/reference/notes/the-player-list-and-what-a-row-shows.html",
-    "kind": "New entry"
   }
 ]
