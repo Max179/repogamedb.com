@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The bomb thrower",
+    "url": "/entries/the-bomb-thrower.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Keeping your speed up a ramp and through a drift",
     "url": "/articles/keeping-your-speed-up-a-ramp-and-through-a-drift.html",
     "kind": "New guide"
@@ -64,11 +70,5 @@
     "title": "The traffic light that is also a trap",
     "url": "/entries/the-traffic-light-valuable.html",
     "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Keeping everyone standing through a run",
-    "url": "/articles/keeping-everyone-standing-through-a-run.html",
-    "kind": "New guide"
   }
 ]
