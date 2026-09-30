@@ -80,6 +80,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reviving-someone-under-pressure.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/running-a-level-with-a-crew.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2630,6 +2635,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-cart-cannon.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-drone.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2646,6 +2656,11 @@
     },
     {
       "url": "/entries/the-orb.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-revive-item.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

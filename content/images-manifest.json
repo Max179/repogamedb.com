@@ -362,6 +362,30 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-revive-item",
+      "kind": "game",
+      "file": "mapped/the-revive-item-reviver.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "reviver_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the revive item the crew carries",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 145282,
+      "sha256": "4b0bb248d58d2d803cbe9524b021f590f238e8e751c58cec473e20f0f64344a0"
+    },
+    {
+      "entity": "the-cart-cannon",
+      "kind": "game",
+      "file": "mapped/the-cart-cannon-cannon.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "cannon_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the cannon that fits the cart",
+      "width": 512,
+      "height": 512,
+      "bytes": 57157,
+      "sha256": "52ab761c1420e99242d5137bfaf7261ca3a7902315bbe14254013e3c2c81ec7b"
+    },
+    {
       "entity": "the-valuable-tracker",
       "kind": "game",
       "file": "mapped/the-valuable-tracker-device.jpg",

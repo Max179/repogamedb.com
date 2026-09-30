@@ -1,0 +1,47 @@
+{
+  "id": "reviving-someone-under-pressure",
+  "title": "Reviving someone under pressure",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to bring a fallen crew mate back in R.E.P.O. using the revive item, rather than discovering too late that nobody carried one.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A revive item in the crew",
+    "Somebody who is down and reachable",
+    "Enough cover to stand still for a moment"
+  ],
+  "steps": [
+    {
+      "do": "Decide before the run who is carrying the revive item.",
+      "because": "reviving is done with a carried device rather than a command (ItemReviveItem)"
+    },
+    {
+      "do": "Take the device to the person rather than expecting them to come to you.",
+      "because": "the device reaches out with hands of its own (handsParent)"
+    },
+    {
+      "do": "Do it in a dark room without hesitating, because the device lights itself.",
+      "because": "it carries spot, point and healing lights (healingLight)"
+    },
+    {
+      "do": "Expect the revive to affect you as well as them.",
+      "because": "it has a screen effect for the player doing the reviving (reviveScreenEffect)"
+    },
+    {
+      "do": "Do not treat it as a reason to stand and fight.",
+      "because": "it is a revive item rather than a weapon (ItemReviveItem)"
+    }
+  ],
+  "commonMistakes": [
+    "Leaving the revive item behind in the van.",
+    "Trying to revive somebody from across the room.",
+    "Reviving in the open with the monster still there."
+  ],
+  "relatedEntities": [
+    "the-revive-item",
+    "health-and-recovery"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
