@@ -12,6 +12,7 @@
     "A breaker is a named interruption with a sound and a volume behind it. That is how a level can drop its ambience for something specific and then return to the loop underneath.",
     "The choice of music is a property of the level. A level names the music preset and the ambience presets it uses, and it can carry a constant music preset instead, so which sound belongs to a map is decided with the map.",
     "Because the music, the enemy states and the ambience are separate, a level can be quiet while something is hunting you and loud while nothing is, which is the game using sound as information rather than decoration.",
+    "The approach of a monster has its own cue. That cue carries a distance at which it counts as on screen, a fade speed and tracks of its own, which is why the music can close in on you before the monster does.",
     "What this entry does not tell you: which pieces a level uses, how loud any of it is, or how long the waits between pieces are. We have not verified those numbers, so we do not print them."
   ],
   "facts": [
@@ -38,6 +39,10 @@
     {
       "claim": "A level names the music preset and ambience presets it uses, and it can hold a constant music preset of its own.",
       "evidence": "identifiers: MusicPreset, AmbiencePresets, ConstantMusicPreset"
+    },
+    {
+      "claim": "A cue for a nearby monster carries an on-screen distance, a fade speed and its own tracks.",
+      "evidence": "identifiers: MusicEnemyNear, OnScreenDistance, FadeSpeed, Tracks"
     }
   ],
   "related": [
