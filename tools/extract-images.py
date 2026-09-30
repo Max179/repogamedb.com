@@ -45,7 +45,7 @@ MAPPINGS = [
   {'entity': 'how-a-level-is-put-together', 'bundle': 'sharedassets0.assets', 'match': "level manor 01",
    'file': 'how-a-level-is-put-together-level.jpg', 'note': "one of the game own level theme textures, named for the manor theme the generator assembles", 'max': 1024, 'quality': 84},
   {'entity': 'how-monsters-find-you', 'bundle': 'resources.assets', 'match': "Enemy_Ceiling Eye_Albedo Engn 1",
-   'file': 'how-monsters-find-you-eye.jpg', 'note': "albedo texture of a monster eye, the part the game uses for sensing", 'max': 1024, 'quality': 84},
+   'file': 'how-monsters-find-you-eye.jpg', 'note': "albedo texture of a monster eye", 'max': 1024, 'quality': 84},
   {'entity': 'how-upgrades-are-kept-track-of', 'bundle': 'resources.assets', 'match': "Upgrade Stand_DefaultMaterial_BaseColor",
    'file': 'how-upgrades-are-kept-track-of-upgradestand.jpg', 'note': "base colour texture of the upgrade stand the entry describes", 'max': 1024, 'quality': 84},
   {'entity': 'levels-and-the-way-out', 'bundle': 'resources.assets', 'match': "Shop Door",

@@ -223,7 +223,7 @@
       "file": "mapped/how-monsters-find-you-eye.jpg",
       "sourceBundle": "resources.assets",
       "assetName": "Enemy_Ceiling Eye_Albedo Engn 1",
-      "note": "albedo texture of a monster eye, the part the game uses for sensing",
+      "note": "albedo texture of a monster eye",
       "width": 1024,
       "height": 1024,
       "bytes": 114909,
