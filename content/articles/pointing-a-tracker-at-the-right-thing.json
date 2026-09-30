@@ -1,0 +1,47 @@
+{
+  "id": "pointing-a-tracker-at-the-right-thing",
+  "title": "Pointing a tracker at the right thing",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get useful answers out of the valuable tracker in R.E.P.O., given that it is a device you aim rather than a marker you read.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A tracker in the crew",
+    "Something you are trying to find",
+    "A moment when the room is quiet enough to listen"
+  ],
+  "steps": [
+    {
+      "do": "Aim it rather than holding it up, because it has a nozzle.",
+      "because": "the tracker has a nozzle with a light of its own (nozzleTransform)"
+    },
+    {
+      "do": "Watch the screen as well as listening to it.",
+      "because": "it carries a display and a text readout (displayText)"
+    },
+    {
+      "do": "Learn the found and the lost signals before you rely on it.",
+      "because": "the game keeps separate sounds and colours for each (soundTargetFound)"
+    },
+    {
+      "do": "Use it in the dark, since it lights itself.",
+      "because": "both the nozzle and the display carry lights (nozzleLight)"
+    },
+    {
+      "do": "Treat it as one item among several rather than the only tool.",
+      "because": "the tracker is one of many carried items (ItemTracker)"
+    }
+  ],
+  "commonMistakes": [
+    "Holding the tracker without pointing it at anything.",
+    "Reading the screen and ignoring the sound.",
+    "Carrying a tracker instead of something that moves loot."
+  ],
+  "relatedEntities": [
+    "the-valuable-tracker",
+    "the-orb"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

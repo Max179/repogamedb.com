@@ -67,6 +67,8 @@ MAPPINGS = [
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
   {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
    'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'the-valuable-tracker', 'bundle': 'resources.assets', 'match': "valuable tracker_DefaultMaterial_BaseColor",
+   'file': 'the-valuable-tracker-device.jpg', 'note': 'the base colour texture of the valuable tracker the crew carries', 'max': 512, 'quality': 88},
   {'entity': 'the-orb', 'bundle': 'resources.assets', 'match': "Item Orb_Albedo",
    'file': 'the-orb-orb.jpg', 'note': 'albedo texture of the orb the crew can carry', 'max': 512, 'quality': 88},
   {'entity': 'the-valuables-you-can-find', 'bundle': 'resources.assets', 'match': "lots of valuables_Valuable Crystal Ball Glass_BaseColor",

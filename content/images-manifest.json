@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-valuable-tracker",
+      "kind": "game",
+      "file": "mapped/the-valuable-tracker-device.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "valuable tracker_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the valuable tracker the crew carries",
+      "width": 512,
+      "height": 512,
+      "bytes": 39706,
+      "sha256": "f87d485379c5e51c135b05d688e7972e5ddbd30bd760e6b62abe39f3dce8bf74"
+    },
+    {
       "entity": "the-orb",
       "kind": "game",
       "file": "mapped/the-orb-orb.jpg",

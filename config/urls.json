@@ -60,6 +60,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/pointing-a-tracker-at-the-right-thing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-a-level-before-you-commit.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2666,6 +2671,11 @@
     },
     {
       "url": "/entries/the-upgrades-you-find.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-valuable-tracker.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
