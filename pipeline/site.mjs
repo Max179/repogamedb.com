@@ -220,10 +220,15 @@ export function build(inventoryPath, outDir) {
       (img.kind === 'diagram'
         ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>'
         : '<p class="dim small">Image taken from the game itself to identify this item; it remains the property of the developer.</p>')).join('');
+    // An entry with no image taken from the game is labelled as diagram-only on its own page and demoted out of the
+    // featured list, so an original illustration can never stand in for a screenshot without saying so.
+    const tierNote = e.imageTier === 'diagram-only'
+      ? '<p class="note"><strong>Illustrated with an original diagram only.</strong> No image has been taken from the game for this entry yet, so the picture below is an illustration and is not a screenshot of the game.</p>'
+      : '<p class="dim small"><strong>Illustrated with an image taken from the game.</strong> The picture below identifies the item and remains the property of the developer.</p>';
     const facts = (e.facts ?? []).map((x) => '<li>' + esc(x.claim) + ' <span class="dim small">(verified against the game&apos;s own files)</span></li>').join('');
     const related = (e.related ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
     write('entries/' + e.id + '.html', layout(e.title, e.summary, '/entries/' + e.id + '.html',
-      '<h1>' + esc(e.title) + '</h1><p class="lead">' + esc(e.summary) + '</p>' + imgHtml +
+      '<h1>' + esc(e.title) + '</h1><p class="lead">' + esc(e.summary) + '</p>' + tierNote + imgHtml +
       '<h2>What is established</h2><ul>' + facts + '</ul>' +
       '<h2>How it works in play</h2>' + (e.body ?? []).map((p) => '<p>' + esc(p) + '</p>').join('') +
       (related ? '<h2>Related</h2><ul>' + related + '</ul>' : '') +
@@ -246,7 +251,7 @@ export function build(inventoryPath, outDir) {
     const list = entries.filter((e) => e.category === t);
     write('topics/' + topicSlug(t) + '.html', layout(t, 'What this site has on ' + t.toLowerCase() + '.', '/topics/' + topicSlug(t) + '.html',
       '<h1>' + esc(t) + '</h1><p class="lead">' + list.length + ' entr' + (list.length === 1 ? 'y' : 'ies') + ' on this part of the game.</p>' +
-      list.map((e) => '<h2><a href="/entries/' + esc(e.id) + '.html">' + esc(e.title) + '</a></h2><p>' + esc(e.summary) + '</p>' +
+      list.map((e) => '<h2><a href="/entries/' + esc(e.id) + '.html">' + esc(e.title) + '</a>' + (e.imageTier === 'diagram-only' ? ' <span class="dim small">(original diagram only)</span>' : '') + '</h2><p>' + esc(e.summary) + '</p>' +
         '<ul><li>' + esc((e.facts ?? [])[0]?.claim ?? '') + '</li></ul>').join(''), inv));
   }
   write('topics/index.html', layout('Topics', 'The parts of the game this site covers so far.', '/topics/index.html',

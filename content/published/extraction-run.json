@@ -25,6 +25,14 @@
   ],
   "images": [
     {
+      "file": "mapped/extraction-run-point.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture taken from the game of the extraction point itself.",
+        "zh": "取自游戏的撤离点自身基础色贴图。"
+      }
+    },
+    {
       "file": "extraction-run.svg",
       "kind": "diagram",
       "alt": {
@@ -36,5 +44,6 @@
   ],
   "sources": [
     "This installation of the game, read only. Identifiers used to verify each fact are kept on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

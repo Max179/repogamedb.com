@@ -35,6 +35,14 @@
   ],
   "images": [
     {
+      "file": "mapped/health-and-recovery-pack.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture taken from the game of the small health pack the crew carries.",
+        "zh": "取自游戏的小型医疗包基础色贴图。"
+      }
+    },
+    {
       "file": "health-and-recovery.svg",
       "kind": "diagram",
       "alt": {
@@ -46,5 +54,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

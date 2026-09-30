@@ -43,6 +43,14 @@
   ],
   "images": [
     {
+      "file": "mapped/how-a-level-is-put-together-level.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own level theme textures, named for the manor theme the generator assembles.",
+        "zh": "游戏自带的关卡主题贴图之一，名字对应生成器所拼装的主题。"
+      }
+    },
+    {
       "file": "how-a-level-is-put-together.svg",
       "kind": "diagram",
       "alt": {
@@ -54,5 +62,6 @@
   ],
   "sources": [
     "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

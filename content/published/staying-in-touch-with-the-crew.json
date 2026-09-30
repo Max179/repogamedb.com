@@ -27,6 +27,14 @@
   ],
   "images": [
     {
+      "file": "mapped/staying-in-touch-with-the-crew-radio.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture taken from the game of the radio the crew uses to talk.",
+        "zh": "取自游戏的对讲机基础色贴图。"
+      }
+    },
+    {
       "file": "staying-in-touch-with-the-crew.svg",
       "kind": "diagram",
       "alt": {
@@ -38,5 +46,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

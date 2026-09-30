@@ -30,6 +30,14 @@
   ],
   "images": [
     {
+      "file": "mapped/when-a-monster-has-you-bite.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The albedo texture taken from the game of the monster mouth that grabs a player.",
+        "zh": "取自游戏的怪物嘴部反照率贴图，玩家就是被它抓住的。"
+      }
+    },
+    {
       "file": "when-a-monster-has-you.svg",
       "kind": "diagram",
       "alt": {
@@ -41,5 +49,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

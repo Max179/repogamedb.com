@@ -61,5 +61,6 @@
   ],
   "sources": [
     "This installation of the game, read only. Identifiers used to verify each fact are kept on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

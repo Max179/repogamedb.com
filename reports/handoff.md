@@ -38,7 +38,7 @@ to Cloudflare Pages with `secrets.CLOUDFLARE_API_TOKEN` / `secrets.CLOUDFLARE_AC
 
 ## Content breadth at handoff
 - Published entries: 28; structured guides: 10.
-- Real images extracted from the game with a recorded mapping: 13. Origin bundle, asset name, written size and sha256 are in `content/images-manifest.json`; every other image is a diagram labelled as a diagram, never as a screenshot.
+- Real images extracted from the game with a recorded mapping: 29. 26 of 28 published entries carry one of those images; the other 2 are diagram-only, labelled as such on their own page and demoted out of the featured list. Per-entry origin (bundle, asset name, size, bytes, sha256) is in reports/image-coverage.md.
 - Build: `pages=588 indexable=59` (485 reference pages stay noindex); gates: 50 all passing; typecheck: exit 0.
 - Categories covered: Enemies, Extraction, Valuables, Items, Shop, Maps, Comms, Weapons, Physics, Cosmetics.
 - Every entry carries facts with grounding, a labelled diagram (or a game image recorded in `content/images-manifest.json`), related links and sources.

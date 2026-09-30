@@ -45,5 +45,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "diagram-only"
 }

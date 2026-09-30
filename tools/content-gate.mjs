@@ -41,6 +41,22 @@ export function checkEntry(entry, dir, ids) {
     if (img.kind === 'diagram' && !(img.disclaimer ?? '').length) bad.push('diagram must carry a disclaimer saying it is not a screenshot: ' + img.file);
     if (!img.alt || !img.alt.en || !img.alt.zh) bad.push('image needs English and Chinese alt text: ' + img.file);
   }
+  // An entry must say which kind of picture it was given. A diagram is allowed, but it has to be declared as a
+  // diagram-only entry and its diagram has to carry a disclaimer, so an illustration can never pass as a screenshot.
+  const hasGame = (entry.images ?? []).some((img) => img.kind === 'game');
+  if (entry.imageTier !== 'game-image' && entry.imageTier !== 'diagram-only') {
+    bad.push('entry must declare imageTier "game-image" or "diagram-only"');
+  } else if (hasGame && entry.imageTier !== 'game-image') {
+    bad.push('entry has an image taken from the game but is not marked imageTier "game-image"');
+  } else if (!hasGame && entry.imageTier !== 'diagram-only') {
+    bad.push('entry without any image taken from the game must be marked imageTier "diagram-only"');
+  }
+  if (!hasGame) {
+    const d = (entry.images ?? []).find((img) => img.kind === 'diagram');
+    if (!d || !/not a screenshot/i.test(d.disclaimer ?? '')) {
+      bad.push('a diagram-only entry needs a diagram whose disclaimer says it is not a screenshot');
+    }
+  }
   for (const rel of entry.related ?? []) if (!ids.has(rel)) bad.push('related entry does not exist: ' + rel);
   if (!entry.sources || !entry.sources.length) bad.push('no version/source note');
   return bad;

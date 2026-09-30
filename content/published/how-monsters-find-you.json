@@ -30,6 +30,14 @@
   ],
   "images": [
     {
+      "file": "mapped/how-monsters-find-you-eye.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The albedo texture taken from the game of a monster eye, the part the game uses for sensing.",
+        "zh": "取自游戏的怪物眼睛反照率贴图，即游戏用于感知的部位。"
+      }
+    },
+    {
       "file": "how-monsters-find-you.svg",
       "kind": "diagram",
       "alt": {
@@ -41,5 +49,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

@@ -34,6 +34,14 @@
   ],
   "images": [
     {
+      "file": "mapped/choosing-when-to-leave-clock.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The albedo texture taken from the game of the shop clock a run is measured against.",
+        "zh": "取自游戏的店铺时钟反照率贴图，行动时长以它为参照。"
+      }
+    },
+    {
       "file": "choosing-when-to-leave.svg",
       "kind": "diagram",
       "alt": {
@@ -45,5 +53,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

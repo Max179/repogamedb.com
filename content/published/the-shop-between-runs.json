@@ -34,6 +34,14 @@
   ],
   "images": [
     {
+      "file": "mapped/the-shop-between-runs-depot.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture taken from the game of the depot the shop sits in between runs.",
+        "zh": "取自游戏的仓库区基础色贴图，两次行动之间店铺就在这里。"
+      }
+    },
+    {
       "file": "the-shop-between-runs.svg",
       "kind": "diagram",
       "alt": {
@@ -45,5 +53,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }

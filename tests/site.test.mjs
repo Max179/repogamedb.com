@@ -203,6 +203,22 @@ try {
     return !h.includes('noindex, follow') || sitemap.includes(SITE.url + rel);
   });
   ok('technical reference pages are noindex and stay out of the sitemap', badRefPages.length === 0, badRefPages.join(', '));
+
+  // The picture rule, checked on the built pages rather than only in the content files: an entry must say whether
+  // its picture came from the game or is an original diagram, and most entries must actually carry a game image.
+  const unlabelled = [];
+  for (const e of published) {
+    const h = readFileSync(join(dir, 'entries', e.id + '.html'), 'utf8');
+    const hasGame = (e.images ?? []).some((i) => i.kind === 'game');
+    if (hasGame && !h.includes('Illustrated with an image taken from the game.')) unlabelled.push(e.id + ':game');
+    if (!hasGame && !h.includes('Illustrated with an original diagram only.')) unlabelled.push(e.id + ':diagram');
+  }
+  ok('every entry page states whether its picture came from the game or is an original diagram', unlabelled.length === 0, unlabelled.slice(0, 5).join(', '));
+
+  const illustrated = published.filter((e) => (e.images ?? []).some((i) => i.kind === 'game'));
+  ok('at least half of the published entries carry an image taken from the game',
+    illustrated.length * 2 >= published.length, illustrated.length + ' of ' + published.length + ' entries');
+
   ok('the player navigation puts entries and topics before the technical reference',
     NAV.some(([h]) => h === '/entries/') && NAV.some(([h]) => h === '/topics/') &&
     NAV.findIndex(([h]) => h === '/reference/') > NAV.findIndex(([h]) => h === '/entries/'));

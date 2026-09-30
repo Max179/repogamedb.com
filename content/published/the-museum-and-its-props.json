@@ -30,6 +30,14 @@
   ],
   "images": [
     {
+      "file": "mapped/the-museum-and-its-props-painting.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "One of the paintings the game itself places in the museum level.",
+        "zh": "游戏本身放在博物馆关卡中的画作之一。"
+      }
+    },
+    {
       "file": "the-museum-and-its-props.svg",
       "kind": "diagram",
       "alt": {
@@ -41,5 +49,6 @@
   ],
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
-  ]
+  ],
+  "imageTier": "game-image"
 }
