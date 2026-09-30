@@ -1,0 +1,47 @@
+{
+  "id": "arming-the-cart-and-firing-it",
+  "title": "Arming the cart and firing it",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to arm the cart in R.E.P.O. and use what you fitted, given that the cannon and the laser are separate weapons with different behaviour.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "The cart in the crew",
+    "Money or a find for a weapon",
+    "A route where a weapon is worth carrying"
+  ],
+  "steps": [
+    {
+      "do": "Decide which weapon the cart gets before buying one, since they are separate items.",
+      "because": "the laser is its own item, apart from the cannon (ItemCartLaser)"
+    },
+    {
+      "do": "Give the weapon time to open before expecting it to fire.",
+      "because": "the laser has hatches with their own opening curves (animationCurveHatchType1)"
+    },
+    {
+      "do": "Treat the warning light as a warning rather than as decoration.",
+      "because": "it has a warning light with a curve of its own (animationCurveWarningLight)"
+    },
+    {
+      "do": "Fire deliberately rather than holding on, if it is a single-shot weapon.",
+      "because": "the laser records whether it fires one shot at a time (semiLaser)"
+    },
+    {
+      "do": "Remember the cart has to come with you for the weapon to matter.",
+      "because": "both weapons are items made for the cart (ItemCartCannon)"
+    }
+  ],
+  "commonMistakes": [
+    "Buying a cart weapon and leaving the cart behind.",
+    "Firing while the hatches are still opening.",
+    "Using a single-shot weapon as though it were automatic."
+  ],
+  "relatedEntities": [
+    "the-cart-laser",
+    "the-cart-cannon"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

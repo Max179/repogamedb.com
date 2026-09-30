@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-cart-laser",
+      "kind": "game",
+      "file": "mapped/the-cart-laser-cannon.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "laser cannon_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the laser fitted to the cart",
+      "width": 512,
+      "height": 512,
+      "bytes": 64367,
+      "sha256": "abc3d8c6717a0a771343ecb1198b06115918e9278f11922ef0bae613cea26666"
+    },
+    {
       "entity": "the-leaf-blower",
       "kind": "game",
       "file": "mapped/the-leaf-blower-blower.jpg",

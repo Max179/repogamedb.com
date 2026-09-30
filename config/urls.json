@@ -15,6 +15,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/arming-the-cart-and-firing-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/carrying-a-tool-that-runs-out.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2666,6 +2671,11 @@
     },
     {
       "url": "/entries/the-cart-cannon.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cart-laser.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

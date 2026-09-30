@@ -67,6 +67,8 @@ MAPPINGS = [
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
   {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
    'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'the-cart-laser', 'bundle': 'resources.assets', 'match': "laser cannon_DefaultMaterial_BaseColor",
+   'file': 'the-cart-laser-cannon.jpg', 'note': 'the base colour texture of the laser fitted to the cart', 'max': 512, 'quality': 88},
   {'entity': 'the-leaf-blower', 'bundle': 'resources.assets', 'match': "leafblower_DefaultMaterial_BaseColor",
    'file': 'the-leaf-blower-blower.jpg', 'note': 'the base colour texture of the leaf blower the crew carries', 'max': 512, 'quality': 88},
   {'entity': 'melee-weapons', 'bundle': 'resources.assets', 'match': "Sword_Albedo",
