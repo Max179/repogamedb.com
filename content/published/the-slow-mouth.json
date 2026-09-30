@@ -40,6 +40,14 @@
       "evidence": "identifiers: soundSpawnVO, soundIdleBreakerVO, soundHurtVO, soundDieVO, soundNoticeVO, soundChaseLoopVO, soundDetachVO, soundStunLoopVO"
     },
     {
+      "claim": "Its animator keeps both jaws, its head and eyes, a middle eye, a talking loop, a transform for its particles and a state of its own.",
+      "evidence": "identifiers: EnemySlowMouthAnim, upperJaw, lowerJaw, headTransform, eyes, eyesMiddle, talkLoop, particleTransforn, visualsTransform, state"
+    },
+    {
+      "claim": "Its hive attack has a hit position, a blob with its own mesh and a fly-up curve, all parented to the enemy.",
+      "evidence": "identifiers: EnemySlowMouthHiveAttack, hitPositionTransform, blobTransform, blobMeshTransform, flyUpCurve, enemyParent"
+    },
+    {
       "claim": "There are plain sounds as well as the voice lines.",
       "evidence": "identifiers: soundDetach, soundStunLoopVO"
     },
