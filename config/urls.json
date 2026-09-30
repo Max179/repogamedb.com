@@ -55,6 +55,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-a-monster-state.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/running-a-level-with-a-crew.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2611,6 +2616,11 @@
     },
     {
       "url": "/entries/weapons-you-can-bring.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-a-monster-is-doing.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

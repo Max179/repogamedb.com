@@ -67,6 +67,8 @@ MAPPINGS = [
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
   {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
    'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'what-a-monster-is-doing', 'bundle': 'resources.assets', 'match': "Enemy_Robe_Albedo",
+   'file': 'what-a-monster-is-doing-robe.jpg', 'note': 'albedo texture of one of the monsters whose states the entry describes', 'max': 512, 'quality': 88},
   {'entity': 'the-upgrades-you-find', 'bundle': 'resources.assets', 'match': "Upgrade_Energy_Albedo",
    'file': 'the-upgrades-you-find-energy.jpg', 'note': 'albedo texture of one of the player upgrades the game ships', 'max': 512, 'quality': 88},
   {'entity': 'what-the-map-shows-you', 'bundle': 'resources.assets', 'match': "valuabless_Valuable Map_BaseColor",

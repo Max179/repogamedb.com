@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "what-a-monster-is-doing",
+      "kind": "game",
+      "file": "mapped/what-a-monster-is-doing-robe.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Enemy_Robe_Albedo",
+      "note": "albedo texture of one of the monsters whose states the entry describes",
+      "width": 512,
+      "height": 512,
+      "bytes": 35631,
+      "sha256": "53ff321b48a59ed57baedaad1cfdf9fcc166e7d5c23758db09b4a0c4e35dc5d0"
+    },
+    {
       "entity": "the-upgrades-you-find",
       "kind": "game",
       "file": "mapped/the-upgrades-you-find-energy.jpg",

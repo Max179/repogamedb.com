@@ -1,0 +1,47 @@
+{
+  "id": "reading-a-monster-state",
+  "title": "Reading what a monster is actually doing",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to read the phase a R.E.P.O. monster is in, so the crew reacts to what it is doing rather than simply to the sight of it.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "A monster you have already seen",
+    "A way to tell the crew what you are looking at"
+  ],
+  "steps": [
+    {
+      "do": "When one appears, wait to see whether it settles into roaming or comes straight for you.",
+      "because": "spawning and roaming are states of their own (EnemyState)"
+    },
+    {
+      "do": "Treat a slower pursuit as the same chase rather than as a reprieve.",
+      "because": "chasing has its own stages, including a slower pursuit (ChaseSlow)"
+    },
+    {
+      "do": "Assume you are being searched for when it goes quiet.",
+      "because": "investigating and sneaking are separate from chasing (Investigate)"
+    },
+    {
+      "do": "Move away from anything a monster could look under.",
+      "because": "there is a state for looking underneath (LookUnder)"
+    },
+    {
+      "do": "Use a stun knowing it is one state among many, not the end of the monster.",
+      "because": "being stunned sits in the same state list (Stunned)"
+    }
+  ],
+  "commonMistakes": [
+    "Mistaking a slow chase for having lost it.",
+    "Hiding under something without checking whether it looks there.",
+    "Treating a stun as though it were a kill."
+  ],
+  "relatedEntities": [
+    "what-a-monster-is-doing",
+    "reading-a-monster-before-it-reaches-you"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
