@@ -2635,6 +2635,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-many-valuables-a-level-holds.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-monsters-find-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2881,6 +2886,11 @@
     },
     {
       "url": "/entries/the-thin-man.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-things-that-are-not-loot.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
