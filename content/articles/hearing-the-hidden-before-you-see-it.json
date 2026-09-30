@@ -1,0 +1,70 @@
+{
+  "id": "hearing-the-hidden-before-you-see-it",
+  "title": "Hearing the hidden before you see it",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the hidden monster in R.E.P.O. gives itself away: the breath particles it leaves in the air, the shapes its footsteps make, the sounds it makes while moving and being stunned, and the fact that a player can pick it up.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "Sound you can hear over the level",
+    "A moment to stand still"
+  ],
+  "steps": [
+    {
+      "do": "Watch the air rather than the floor, because the hidden one leaves breath behind it.",
+      "because": "it has breath particles, including a fast version and one that runs constantly (particleBreath, particleBreathFast, particleBreathConstant)"
+    },
+    {
+      "do": "Listen for breathing in and out, because both are sounded and both have a faster set.",
+      "because": "breathing in and out are separate sounds, with a fast set of both (soundBreatheIn, soundBreatheOut, soundBreatheInFast, soundBreatheOutFast)"
+    },
+    {
+      "do": "Read the floor: its steps leave shapes as well as noise.",
+      "because": "it has separate shapes for a left and a right footstep, with smoke and step and sprint sounds (particleFootstepShapeLeft, particleFootstepShapeRight, particleFootstepSmoke, soundFootstep, soundFootstepSprint)"
+    },
+    {
+      "do": "Treat its footsteps as a direction rather than a location, because the left and right shapes are kept apart.",
+      "because": "the shapes for the left and the right footstep are separate objects (particleFootstepShapeLeft, particleFootstepShapeRight)"
+    },
+    {
+      "do": "Know what being stunned sounds like, because a stun has a beginning, a loop and an end.",
+      "because": "being stunned has a start, a loop and a stop (soundStunStart, soundStunLoop, soundStunStop)"
+    },
+    {
+      "do": "Listen for a jump and a landing, which are two separate sounds.",
+      "because": "jumping and landing are separate sounds (soundJump, soundLand)"
+    },
+    {
+      "do": "Know that a player can pick it up, because it has a transform and curves for being lifted and moved.",
+      "because": "a player can pick it up, with a transform of its own and curves for lifting and moving it (playerPickupTransform, playerPickupCurveUp, playerPickupCurveSide, enemyHiddenAnim)"
+    },
+    {
+      "do": "Use the sounds of it being handled to know a crewmate has it, because picking up, letting go and moving are each sounded.",
+      "because": "there are sounds for picking it up, letting it go and moving while it is held (soundPlayerPickup, soundPlayerRelease, soundPlayerMove, soundPlayerMoveStop)"
+    },
+    {
+      "do": "Expect it to hang and turn like a caught object, because it carries a state and a rotation spring of its own.",
+      "because": "it keeps a state, an animator and a rotation spring of its own (currentState, enemyHiddenAnim, rotationSpring)"
+    },
+    {
+      "do": "Know when it is finished, because being hurt and dying have their own sounds.",
+      "because": "it has sounds for being hurt and for dying (soundHurt, soundDeath)"
+    }
+  ],
+  "commonMistakes": [
+    "Watching the floor and missing the breath left in the air.",
+    "Hearing breathing but never noticing the faster set that means it is close.",
+    "Ignoring the footsteps because they are only shapes on the floor.",
+    "Treating a stun as the end of it, when a stun has a loop and an end of its own.",
+    "Forgetting that a crewmate can be carrying it."
+  ],
+  "relatedEntities": [
+    "the-hidden",
+    "enemies-and-their-behaviour",
+    "how-monsters-find-you"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}

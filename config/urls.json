@@ -90,6 +90,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/hearing-the-hidden-before-you-see-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
