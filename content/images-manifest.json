@@ -624,6 +624,42 @@
       "height": 1024,
       "bytes": 101705,
       "sha256": "ca74ca7db92098f54352cadde10245601e7b90ddf7e10d171b94313133a504b2"
+    },
+    {
+      "entity": "the-wizard-valuables",
+      "kind": "game",
+      "file": "mapped/the-wizard-valuables-hourglass.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Valuable Wizard Time Glass NEW_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the wizard's time glass valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 26878,
+      "sha256": "15c873dabd9dba728f7fc1cfe3edc02b3a2073d63136bf5b81a0f1d84ffcf304"
+    },
+    {
+      "entity": "the-wizard-valuables",
+      "kind": "game",
+      "file": "mapped/the-wizard-valuables-cube.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Valuable Wizard Cube of Knowledge_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the wizard's cube of knowledge valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 36635,
+      "sha256": "8596916b9cfb401be3c104a6040e181964dfb2c7ea4e12846d0ac43e5c99e2f2"
+    },
+    {
+      "entity": "the-wizard-valuables",
+      "kind": "game",
+      "file": "mapped/the-wizard-valuables-sword.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Valuable Wizard Sword_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the wizard's sword valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 24755,
+      "sha256": "059ea95dff713bffacaaa7e61dd27ccd203189da0a30ce28ef9548a35b3b0b04"
     }
   ]
 }

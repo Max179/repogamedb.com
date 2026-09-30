@@ -1,0 +1,84 @@
+{
+  "id": "the-wizard-valuables",
+  "title": "The wizard's valuables",
+  "category": "Valuables",
+  "summary": "One level in R.E.P.O. is built around a wizard's school, and its loot follows that theme: a broom, an hourglass and a staff are each named as their own kind of valuable rather than being ordinary props.",
+  "body": [
+    "Valuables are not all the same kind of object. The wizard level's things are named in the game's own data as separate kinds of valuable, which is why they behave as loot rather than as scenery you walk past.",
+    "A broom is one of them. The game names a broom as a valuable in its own right, so it can be picked up, thrown into the cart and sold with the rest of the haul.",
+    "An hourglass is another. There is a valuable for the wizard's time glass, and the game ships a colour texture for it: that texture is the first image beside this entry.",
+    "A staff is the third one the game names. The wizard's staff is its own kind of valuable as well, which matters because the level is also full of props that look expensive but are not named as loot at all.",
+    "The level holds more wizard objects than those three. The game ships artwork for a cube of knowledge, a goblin head, a sword and a power crystal, and the files also group a set of small wizard valuables together, so the themed loot is wider than the three kinds named above.",
+    "What that means in practice: what you can carry is decided by what the game names, not by what looks valuable, and the wizard level is where that difference is easiest to see. If you are unsure whether something is loot, the test is whether it can be picked up.",
+    "What this entry does not tell you: what any wizard valuable is worth, how many of them appear in a run, or how often the level comes up. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The broom is a valuable of its own kind rather than scenery.",
+      "evidence": "identifier: WizardBroomValuable"
+    },
+    {
+      "claim": "The wizard's time glass is a valuable of its own kind.",
+      "evidence": "identifier: ValuableWizardTimeGlass"
+    },
+    {
+      "claim": "The wizard's staff is a valuable of its own kind.",
+      "evidence": "identifier: ValuableWizardStaff"
+    },
+    {
+      "claim": "The game ships artwork for a cube of knowledge, a goblin head, a sword and a power crystal.",
+      "evidence": "asset names: Valuable Wizard Cube of Knowledge_DefaultMaterial_BaseColor, Valuable Wizard Goblin Head_DefaultMaterial_Metallic, Valuable Wizard Sword_DefaultMaterial_BaseColor, Wizard Valuable Power Crystal_DefaultMaterial_Metallic"
+    },
+    {
+      "claim": "The files group a set of small wizard valuables together.",
+      "evidence": "asset name: tiny pack_Wizard tiny valuables_Normal"
+    },
+    {
+      "claim": "Whether an object counts as loot is decided by the game's own naming rather than by how it looks.",
+      "evidence": "identifiers: ValuableObject, NotValuableObject"
+    }
+  ],
+  "related": [
+    "the-valuables-you-can-find",
+    "the-level-themes-and-what-they-hold"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-wizard-valuables-hourglass.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the wizard's time glass valuable.",
+        "zh": "游戏为巫师沙漏珍贵物提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mapped/the-wizard-valuables-cube.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the cube of knowledge valuable.",
+        "zh": "游戏为知识立方珍贵物提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mapped/the-wizard-valuables-sword.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the wizard's sword valuable.",
+        "zh": "游戏为巫师之剑珍贵物提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-wizard-valuables.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a wizard object is picked up, carried to the cart, and sold as a valuable; props that are not named as loot cannot be.",
+        "zh": "示意图：巫师物件被拾起、运回推车并作为珍贵物出售；未命名为战利品的道具不能。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

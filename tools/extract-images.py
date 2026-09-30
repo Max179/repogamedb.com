@@ -111,6 +111,9 @@ MAPPINGS = [
    'file': 'what-the-map-shows-you-valuablemap.jpg', 'note': "base colour texture of the map marker the crew map uses for valuables", 'max': 512, 'quality': 88},
   {'entity': 'when-the-chat-box-will-not-open', 'bundle': 'sharedassets0.assets', 'match': "emojis",
    'file': 'when-the-chat-box-will-not-open-emojis.jpg', 'note': "the sheet of emoji the game uses with its chat box", 'max': 1024, 'quality': 84},
+  {'entity': 'the-wizard-valuables', 'bundle': 'resources.assets', 'match': "Valuable Wizard Time Glass NEW_DefaultMaterial_BaseColor", 'file': 'the-wizard-valuables-hourglass.jpg', 'note': "the colour texture the game ships for the wizard's time glass valuable", 'max': 512, 'quality': 88},
+  {'entity': 'the-wizard-valuables', 'bundle': 'resources.assets', 'match': "Valuable Wizard Cube of Knowledge_DefaultMaterial_BaseColor", 'file': 'the-wizard-valuables-cube.jpg', 'note': "the colour texture the game ships for the wizard's cube of knowledge valuable", 'max': 512, 'quality': 88},
+  {'entity': 'the-wizard-valuables', 'bundle': 'resources.assets', 'match': "Valuable Wizard Sword_DefaultMaterial_BaseColor", 'file': 'the-wizard-valuables-sword.jpg', 'note': "the colour texture the game ships for the wizard's sword valuable", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
