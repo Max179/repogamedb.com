@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Keeping everyone standing through a run",
+    "url": "/articles/keeping-everyone-standing-through-a-run.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Keeping the crew in touch when the level splits you",
     "url": "/articles/keeping-the-crew-in-touch-when-the-level-splits-you.html",
     "kind": "New guide"
@@ -61,12 +67,6 @@
     "date": "2026-09-30",
     "title": "The player list and what a row shows",
     "url": "/reference/notes/the-player-list-and-what-a-row-shows.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The walkie-talkie and how it answers",
-    "url": "/entries/the-walkie-talkie-and-how-it-answers.html",
     "kind": "New entry"
   }
 ]
