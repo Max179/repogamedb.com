@@ -56,7 +56,9 @@ compared against its note, and kept.
 | 2026-09-30 | mapped/the-elsa-in-two-sizes-fur.jpg | Elsa Fur Big | the-elsa-in-two-sizes | ok with a note — a small 64x64 greyscale fur card (a tuft of fur on a dark field), the game's own fur picture for the big size; kept because it is exactly the subject the entry names, with the size recorded here |
 | 2026-09-30 | mapped/the-money-head-in-the-museum-head.jpg | moneyhead grungle_DefaultMaterial_BaseColor | the-money-head-in-the-museum | ok with a note — a blue-grey atlas for the prop: a blotched face area with dark eye and mouth sockets in the upper half and flat UV bands below. It is an atlas rather than a portrait, but it is the game's own colour texture for this prop and was not flagged by the sanity pass |
 
-Nothing in any of the five batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
+Five review batches are recorded in the table above, and none of them rejected a picture. A later pass did, and that rejection is recorded below. The manifest is regenerated whenever a mapping changes and currently holds 108 records; reports/image-coverage.md carries the current count and each picture's entry.
+
+Rejected in a later pass: `Headman Eye Sockets`, mapped for a new entry about how a monster's eyes move. Opened for review it turned out to be a near-blank dark maroon band with nothing readable on it, so the mapping and the file were deleted and the manifest regenerated (108 records). The entry was not written with that picture; the subject waits for a legible one.
 
 ## Sanity pass before the eye check (tools/image-sanity.py)
 

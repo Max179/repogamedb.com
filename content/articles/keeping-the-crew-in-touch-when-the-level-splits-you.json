@@ -1,0 +1,69 @@
+{
+  "id": "keeping-the-crew-in-touch-when-the-level-splits-you",
+  "title": "Keeping the crew in touch when the level splits you",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the walkie-talkie, the chat box and the map in R.E.P.O. so that a crew which spreads out through a level still knows who is where and what is happening.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A walkie-talkie bought and carried",
+    "A level with more than one room in it",
+    "A crew that is willing to say where they are"
+  ],
+  "steps": [
+    {
+      "do": "Carry the walkie-talkie rather than assuming you can always talk: it is an item you equip, not something the player has built in.",
+      "because": "the walkie-talkie is a carried item with a light and materials of its own (itemEquippable, itemLight, NormalMaterial, BlackMaterial)"
+    },
+    {
+      "do": "Watch the device itself for who is on the channel, because it keeps a record of who is holding it and which sets are in use.",
+      "because": "it keeps a record of who is on it and which sets are being used (inThisWalkie, someoneInThisWalkie, walkiesBeingUsed, otherWalkie)"
+    },
+    {
+      "do": "Read its lines and its eyes when you are trying to reach someone, since the walkie shows its state rather than only making a noise.",
+      "because": "it shows its state with two lines, a scrolling texture and eyes of its own (lineRendererL, lineRendererR, lineTextureScrollSpeed, mshRenderersEyes)"
+    },
+    {
+      "do": "Tune and wire deliberately: tuning in, tuning out, wiring in and wiring out are four separate actions with a sound each.",
+      "because": "it carries tuning and wiring sounds of its own (tuneInSound, tuneOutSound, wireInSound, wireOutSound)"
+    },
+    {
+      "do": "Treat interference as information rather than a fault, because the walkie keeps interference loops and a breaker for them.",
+      "because": "it carries interference loops and a breaker for the interference (interferenceLoop, interferenceInsideLoop, interferenceBreaker)"
+    },
+    {
+      "do": "Do not expect to type while a job has you locked, because some of them lock the chat box.",
+      "because": "starting the truck and clearing slackers lock the chat box (LockedStartingTruck, LockedDestroySlackers)"
+    },
+    {
+      "do": "Send a message and then watch it move, because a message has states of its own between being written and being sent.",
+      "because": "a message moves through states of its own (ChatState, Inactive, Active, Possessed, Send)"
+    },
+    {
+      "do": "Use the lobby chat before the run and the crew chat during it, because they are two different interfaces.",
+      "because": "the lobby and the run have separate chat interfaces (LobbyChatUI, ChatUI)"
+    },
+    {
+      "do": "Read the map for the crew and for the monsters rather than only for the valuables, because each has a marker of its own.",
+      "because": "monsters and the player each have their own marker on the map (DirtFinderMapEnemy, DirtFinderMapPlayer)"
+    },
+    {
+      "do": "Expect the map to fill in as you go rather than being complete when you arrive, because it backtracks and scans.",
+      "because": "the map is drawn in layers and fills in over time (MapLayer, MapBacktrack, DirtFinderMapScanlines)"
+    }
+  ],
+  "commonMistakes": [
+    "Leaving the walkie-talkie in the truck and finding out when the level splits the crew.",
+    "Assuming a silent walkie means nobody is talking, when the interference and the session state are shown on the device.",
+    "Trying to type while a job has the chat box locked.",
+    "Treating the map as a full picture of the level rather than one that fills in as you move."
+  ],
+  "relatedEntities": [
+    "the-walkie-talkie-and-how-it-answers",
+    "when-the-chat-box-will-not-open",
+    "what-the-map-shows-you"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}

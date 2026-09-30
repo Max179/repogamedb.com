@@ -1262,7 +1262,7 @@
       "sha256": "89c0a90500615b7a1a47f58dd85c94ff25ee4e74f22e11bd063496a53fc4ef27"
     },
     {
-      "entity": "the-walkie-talkie-and-what-it-answers",
+      "entity": "the-walkie-talkie-and-how-it-answers",
       "kind": "game",
       "file": "mapped/the-walkie-talkie-texture.jpg",
       "sourceBundle": "resources.assets",
