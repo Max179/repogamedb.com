@@ -10,12 +10,15 @@ that subject.
 
 ## What is mapped
 
-120 records in `content/images-manifest.json`, covering **104 of 142** published entries. Each record carries the
+115 records in `content/images-manifest.json`, covering **100 of 142** published entries. Each record carries the
 source bundle, asset name, byte count, dimensions and sha256, and a gate re-checks all four against the file on disk.
+Six mappings have been exported, opened and rejected since this audit was first written; each rejection is recorded in
+`reports/image-reviews.md` with what the sheet actually showed, and that is why the count is 115 and not the 120 an
+earlier version of this report quoted.
 
 ## What is not mapped, and why
 
-The **38** diagram-only entries fall into three groups. None of them is a backlog item.
+The **42** diagram-only entries fall into four groups. None of them is a backlog item.
 
 ### 1. Nothing in the build depicts the subject — 30 entries
 
@@ -53,11 +56,29 @@ A matching name is not enough: the file has to be opened.
 | `the-things-that-are-not-loot` | `props_Material_BaseColor`, `shop prop candy shelves_DefaultMaterial_BaseColor` | "Props" is a catch-all sheet; it does not show the class of objects the entry is about. |
 | `the-cart-as-an-object` | `PORTABLE CART_Cart Base.001_BaseColor`, `cart handle_DefaultMaterial_BaseColor` | Both cart textures are **already mapped** to `the-cart-and-its-boost-pads` and `carts-grabbing-and-physics`. Reusing one would put the same picture on three pages. |
 
+### 4. A picture was mapped, opened and rejected — 4 entries
+
+These are the review rejections recorded in `reports/image-reviews.md`: the texture name matched, the file was
+exported, and opening it showed something that is not the subject. The mapping, the file and the manifest record
+were deleted each time, and the entry went back to its diagram.
+
+| Entry | File rejected | What the sheet actually shows |
+| --- | --- | --- |
+| `the-ladder` | `the-ladder-ladder.jpg` | blue-grey metal panels with hazard stripes and dark rectangles. No rail, rung or extending section can be made out, so nothing on it reads as a ladder. |
+| `the-cart-cannon` | `the-cart-cannon-cannon.jpg` | dark angular shards on grey with red panels. Nothing reads as a cannon or a barrel. |
+| `the-orb` | `the-orb-orb.jpg` | a dark brown field with one yellow-and-black chevron panel. There is no sphere on the sheet. |
+| `the-level-themes-and-what-they-hold` | `the-level-themes-and-what-they-hold-arctic.jpg` | building interior surfaces, not the valuable the note claimed. |
+
+A fifth rejection, `Headman Eye Sockets` for `the-heads-eyes-hair-and-teeth`, is the one group 3 above already
+describes: it was opened and found to be a near-blank dark maroon band, and the ledger holds its row.
+
 ### Recorded from the other sites
 
-The same rule produced one rejection on supermarketsimulator.wiki: `T_PaperBag_alb` was exported, **opened**, and
-rejected as a near-uniform tan field (stddev 2.5). Every `T_PaperBag_*` texture is a material map, so no picture of
-a bag exists there either. The mapping was deleted and the entry returned to diagram-only.
+The same rule produced three rejections on supermarketsimulator.wiki: `T_PaperBag_alb` was exported, **opened**, and
+rejected as a near-uniform tan field (stddev 2.5) — every `T_PaperBag_*` texture is a material map, so no picture of
+a bag exists there either; `Toggle_Switch_Off_Frame` is a flat purple disc with no structure of its own; and
+`T_CategorySign_AlbedoTransparency` is the blank plate the category signs are printed on, with no category anywhere
+on it. Each mapping was deleted and each entry kept another picture or its diagram.
 
 ## The rule this audit applies
 
