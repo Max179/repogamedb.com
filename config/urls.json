@@ -2450,6 +2450,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/choosing-when-to-leave.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/enemies-and-their-behaviour.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

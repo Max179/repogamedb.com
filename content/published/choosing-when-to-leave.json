@@ -1,0 +1,49 @@
+{
+  "id": "choosing-when-to-leave",
+  "title": "Choosing when to leave",
+  "category": "Extraction",
+  "tier": "published",
+  "summary": "In R.E.P.O. leaving is a choice you make with the loot in your hands: the game records completed extractions and marks points of interest on the level so a crew can decide when the haul is enough.",
+  "body": [
+    "Finishing is recorded rather than assumed, so a crew that banks an extraction has progress that a crew still inside does not.",
+    "The level points the way to places of interest, which is why finding the way out is a navigation task rather than a memory test.",
+    "Because the level decides what loot it holds, the question is never whether more exists but whether what is left is worth the risk.",
+    "What this entry does not tell you: quotas, payout maths or deadlines. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Completed extractions are recorded by the game.",
+      "evidence": "identifier: ExtractionsDoneState"
+    },
+    {
+      "claim": "The level interface works from defined points of interest.",
+      "evidence": "identifiers: LevelPoint, LevelUI"
+    },
+    {
+      "claim": "The level decides which valuables are available to take.",
+      "evidence": "identifier: LevelValuables"
+    },
+    {
+      "claim": "Some level behaviour is driven by settings of its own.",
+      "evidence": "identifier: DriftLevelSettings"
+    }
+  ],
+  "related": [
+    "extraction-run",
+    "valuables-and-looting"
+  ],
+  "images": [
+    {
+      "file": "choosing-when-to-leave.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: loot is gathered, the way out is marked, the crew decides, and the extraction is recorded.",
+        "zh": "撤离决策示意图：收集物品、标记出口、小队决定、记录撤离。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
