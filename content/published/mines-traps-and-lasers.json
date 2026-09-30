@@ -13,6 +13,7 @@
     "One danger comes from above. There is an enemy that watches from the ceiling with its own animation and a line it works along, which is how the game makes a room dangerous from a direction you are not looking.",
     "Explosions are handled as their own effects with their own sounds, so a mine going off is a scripted event rather than a side effect of an object disappearing.",
     "The lasers are built from parts. A museum laser has two balls, each with a transform and a light of its own, two beams with lights at their ends and in the middle, and sparks of its own, which is why the beams can be tracked rather than only being drawn.",
+    "The stun mine bites as well as trips. Its jaw opens along a curve with a transform for each half, and it carries a flash and lightning particles with an electricity sound of their own, which is why the stun is drawn as something snapping shut rather than only a radius going off.",
     "The mines are staged too. A mine has a trigger with a transform and line particles, a light that shows it is armed, and a beep for arming, for being armed, for disarming, for being disarmed and for going off, and it can be set off by bodies and by forces before a timer destroys it.",
     "The images beside this entry are the game's own: the colour texture of an explosive mine and of a stun trap, taken from the installation this site describes.",
     "What this entry does not tell you: how much damage any of these does, how often they appear, or whether they can be disarmed. We have not verified those numbers, so we do not print them."
@@ -57,6 +58,10 @@
     {
       "claim": "A mine can be set off by rigid bodies and by forces, and carries a timer for being destroyed.",
       "evidence": "identifiers: triggeredByRigidBodies, triggeredByForces, destroyTimer"
+    },
+    {
+      "claim": "The stun mine has a jaw opened by a curve, with a transform for each half, and a flash and lightning particles with an electricity sound of their own.",
+      "evidence": "identifiers: ItemMineStun, jawAnimationCurve, jaw1Tranform, jaw2Tranform, particleFlash, particleLightning, soundElectricity"
     }
   ],
   "related": [
