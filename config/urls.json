@@ -2960,6 +2960,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-record-every-monster-is-given.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-revive-item.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
