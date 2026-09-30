@@ -47,7 +47,9 @@
         "when-a-monster-has-you",
         "how-a-monster-sees-you",
         "what-the-game-records-about-each-monster",
-        "what-a-monster-does-when-it-has-not-seen-you"
+        "what-a-monster-does-when-it-has-not-seen-you",
+        "how-many-monsters-a-level-sends",
+        "what-happens-when-the-head-catches-you"
       ]
     },
     {

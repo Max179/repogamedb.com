@@ -1,0 +1,53 @@
+{
+  "id": "what-happens-when-the-head-catches-you",
+  "title": "What happens when the head catches you",
+  "category": "Behaviour",
+  "summary": "Being caught by the head in R.E.O. is a sequence of its own: the game keeps a beginning and a first and last bite, two pieces of music, four camera glitches and a set of glass sounds.",
+  "body": [
+    "Being caught by the head is not a single animation. The game keeps a catch sequence of its own, with a beginning, a first bite and a last bite, so the moment can be built from parts rather than played as one clip.",
+    "It comes with music. Two pieces are kept for the sequence, which is how the game can start one thing and move into another as the bite lands rather than playing a single loop.",
+    "The camera is part of it. There are two long glitches and two short ones, so the picture can break for different lengths depending on where the sequence is, which is why being caught reads as a failure of the view rather than only of the player.",
+    "Glass is involved as well. There are two breaking sounds and a tension sound, so the sequence has a build-up before the breaks rather than starting with the crash.",
+    "Because the bites are separate, the sequence can be paced: beginning, first bite, last bite. That is the same pattern the monsters use elsewhere in the game, where a state, a build-up and an outcome are always distinct.",
+    "It also means the sequence is data rather than code. Each sound and each glitch is a value on the sequence, so the moment can be tuned without changing what the head does when it is not catching anyone.",
+    "Watching it is not a mystery either: the same head that catches you is the one documented under its own eyes, hair and teeth, so the sequence is the end of a behaviour that starts with being looked at.",
+    "What this entry does not tell you: how long the sequence lasts, how many bites there are in total, or what happens to the run afterwards. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The catch sequence has a beginning, a first bite and a last bite.",
+      "evidence": "identifiers: EnemyHeadCatchCutscene, BiteBegin, BiteFirst, BiteLast"
+    },
+    {
+      "claim": "Two pieces of music are kept for it.",
+      "evidence": "identifiers: Music01, Music02"
+    },
+    {
+      "claim": "The camera glitches, with two long and two short versions.",
+      "evidence": "identifiers: CameraGlitchLong01, CameraGlitchLong02, CameraGlitchShort01, CameraGlitchShort02"
+    },
+    {
+      "claim": "There are two breaking sounds and a tension sound.",
+      "evidence": "identifiers: GlassBreak01, GlassBreak02, GlassTension"
+    }
+  ],
+  "related": [
+    "the-heads-eyes-hair-and-teeth",
+    "when-a-monster-has-you"
+  ],
+  "images": [
+    {
+      "file": "what-happens-when-the-head-catches-you.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a catch begins, the camera glitches for a long or a short moment, glass tensions and breaks, and the bite lands first and last.",
+        "zh": "示意图：抓捕开始、镜头发生长或短的故障、玻璃先紧绷后破裂，咬击分首次与末次落点。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

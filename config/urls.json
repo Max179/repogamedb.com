@@ -2640,6 +2640,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-many-monsters-a-level-sends.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-many-valuables-a-level-holds.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3011,6 +3016,11 @@
     },
     {
       "url": "/entries/what-being-grabbed-feels-like.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-happens-when-the-head-catches-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

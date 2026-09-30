@@ -1,0 +1,61 @@
+{
+  "id": "how-many-monsters-a-level-sends",
+  "title": "How many monsters a level will send",
+  "category": "Behaviour",
+  "summary": "The monsters in an R.E.O. level are budgeted rather than sprinkled: a director keeps three difficulty settings, amount curves for each, a pause between spawns and its own despawn times.",
+  "body": [
+    "The monsters in a level are decided rather than scattered. A director holds the plan, and it holds three difficulty settings of its own, so the same level can be run at more than one level of pressure without being rebuilt.",
+    "Each difficulty has amount curves, and they come in pairs. Keeping two curves per difficulty means the number of monsters can be shaped by something other than one line, and it means the three settings do not have to share a rule.",
+    "There is a pause between spawns as well. A curve of its own decides how long the director waits while nothing is happening, which is why a level can be quiet for a while and then busy without either state being random.",
+    "Despawning is on a timer, too. There are two curves for how long a monster is allowed to stay, which is how the game can clear a level out rather than letting it fill up with everything it has ever sent.",
+    "What has gone away affects what comes next. There are values for how much despawns decrease with time, given both as a number of minutes and as a percentage, so the director can ease off as a run goes on.",
+    "It counts what it has spawned. Keeping a running count means the director can decide on the total rather than on each monster in isolation, which is the difference between a budget and a queue.",
+    "Put together with the loot director, a level is a set of quotas: so much value in valuables, and so many monsters at a chosen difficulty, each with its own curves and its own pause.",
+    "What this entry does not tell you: what any of the curves are set to, how many monsters a level may hold, or how the three difficulties differ. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The level has an enemy director with three difficulty settings of its own.",
+      "evidence": "identifiers: EnemyDirector, enemiesDifficulty1, enemiesDifficulty2, enemiesDifficulty3"
+    },
+    {
+      "claim": "Each difficulty has its amount curves in pairs.",
+      "evidence": "identifiers: amountCurve1_1, amountCurve1_2, amountCurve2_1, amountCurve2_2, amountCurve3_1, amountCurve3_2"
+    },
+    {
+      "claim": "There is a curve for how long the director pauses between spawns.",
+      "evidence": "identifier: spawnIdlePauseCurve"
+    },
+    {
+      "claim": "There are two curves for how long a monster is allowed to stay before it despawns.",
+      "evidence": "identifiers: despawnTimeCurve_1, despawnTimeCurve_2"
+    },
+    {
+      "claim": "Despawns decrease with time, given as a number of minutes and as a percentage.",
+      "evidence": "identifiers: despawnedDecreaseMinutes, despawnedDecreasePercent"
+    },
+    {
+      "claim": "The director counts the enemies it has spawned.",
+      "evidence": "identifier: enemiesSpawned"
+    }
+  ],
+  "related": [
+    "how-many-valuables-a-level-holds",
+    "enemies-and-their-behaviour"
+  ],
+  "images": [
+    {
+      "file": "how-many-monsters-a-level-sends.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the director picks a difficulty, draws an amount for it from a pair of curves, pauses between spawns, and despawns monsters on a timer.",
+        "zh": "示意图：导演选定难度、按成对曲线决定数量、在生成之间停顿，并按计时让怪物消失。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
