@@ -37,4 +37,12 @@ compared against its note, and kept.
 | 2026-09-30 | mapped/carts-grabbing-and-physics-handle.jpg | cart handle_DefaultMaterial_BaseColor | carts-grabbing-and-physics | ok with a note — dark, but the handle geometry and its fasteners can be made out, and it is the handle the entry describes |
 | 2026-09-30 | mapped/health-and-recovery-pack.jpg | health pack small_DefaultMaterial_BaseColor | health-and-recovery | ok — the grey and white pack with its vents, straps and panels; legible |
 
-Nothing in any of the three batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
+| 2026-09-30 | mapped/levels-and-the-way-out-door.jpg | Shop Door | levels-and-the-way-out | ok — the purple shop door with its handle and hinges; legible |
+| 2026-09-30 | mapped/protecting-your-loot-locker.jpg | locker_Material_BaseColor | protecting-your-loot | ok with a note — dark navy lockers, but the door seams, vents and handles are visible |
+| 2026-09-30 | mapped/reading-a-monster-before-it-reaches-you-face.jpg | Headman Face_Albedo | reading-a-monster-before-it-reaches-you | ok — the face, ear and eye areas of the headman texture; legible and exactly what the note claims |
+| 2026-09-30 | mapped/staying-in-touch-with-the-crew-radio.jpg | Radio_BaseColor | staying-in-touch-with-the-crew | ok — the radio's parts sheet: casing, dial faces, grille and panels; legible |
+| 2026-09-30 | mapped/the-museum-and-its-props-painting.jpg | Museum Painting H 01 | the-museum-and-its-props | ok — a painted landscape with trees and sea; legible, a museum picture rather than a texture of a surface |
+| 2026-09-30 | mapped/the-shop-between-runs-depot.jpg | Truck Depot_DefaultMaterial_BaseColor | the-shop-between-runs | ok — the depot sheet with its structures, signs and hazard stripes; legible |
+| 2026-09-30 | mapped/weapons-you-can-bring-guns.jpg | Guns_DefaultMaterial_BaseColor | weapons-you-can-bring | ok — the guns sheet with its barrels, grips and scopes; legible |
+
+Nothing in any of the four batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
