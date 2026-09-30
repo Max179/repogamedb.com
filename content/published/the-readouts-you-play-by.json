@@ -10,6 +10,7 @@
     "The goal is shown as well. A run has an objective readout, so the game can tell you what it is asking for without you opening a menu.",
     "Item details have two readouts rather than one. There is the ordinary description of what you are looking at, and a second one for the extra detail, which is why some items can show more than a name and a price.",
     "What things are worth is read from its own screen element, so value is presented as something the game decides rather than something you work out from the numbers on a shelf.",
+    "The level readout has a moon of its own. It carries a number, a moon object with text of its own, a moon icon and an offset for where it sits, which is why the interface can show the level through a picture rather than only a figure.",
     "The shop has readouts too: what something will cost you, and how the shop itself is growing. Those belong to the interface rather than the level, which is why they are visible outside a run.",
     "What this entry does not tell you: what any readout displays in a given situation, how the numbers are worked out, or how the interface is arranged on screen. We have not verified those, so we do not print them."
   ],
@@ -37,6 +38,10 @@
     {
       "claim": "There are readouts for the level and for the run record.",
       "evidence": "identifiers: LevelUI, StatsUI"
+    },
+    {
+      "claim": "The level readout carries a number, a moon object and text, a moon icon and an offset for its transform.",
+      "evidence": "identifiers: transformOffset, textNumber, objectMoon, textMoon, iconMoon"
     },
     {
       "claim": "The health readout is drawn with artwork the game ships, and the interface has a player picture of its own.",
