@@ -8,16 +8,13 @@ credentials exist.
 > `pages=588` and 50 gates, then 141 entries and `pages=698`; both had drifted. Everything below is measured
 > on the current commit with the site's own generators.
 
-## Verified locally on this commit (`fcd3409`, 285 commits)
-- Build: `[site] pages=701 indexable=161 schema(noindex)=534 out=web/dist`.
+## Verified locally on this commit (`2ab02ce`, 320 commits)
+- Build, gates, typecheck and preflight all pass on branch `main`, on a clean working tree.
+- Content: **147 published entries, 42 structured guides**; 1 draft that documents an absence rather than a gap, all facts grounded in identifiers read from the game's own files.
+- Build: `pages=711 indexable=171` (534 noindex reference pages kept out of the sitemap).
 - Site gates: `[site-tests] 62 passed, 0 failed`.
-- Preflight: `[preflight] 11 ok, 0 failed`, exit 0. Preflight also refuses a dirty working tree, so it only
-  passes on a committed state.
-- Coverage matrix: 21 columns, 20 with published content, 1 (`combos`) recorded as absent in the game, 0 quality failures.
-- Content: **142 published entries, 37 structured guides**; 1 draft that documents an absence rather than a gap.
-- Images: **100** of those entries carry a picture confirmed from the game and **42** carry an original diagram
-  only; the manifest holds **115 records**, none unused. Every record has been opened by eye and has a verdict
-  in `reports/image-reviews.md`, and a gate fails the build if a record is added without one.
+- Coverage matrix: **21** target columns, **20** holding at least one published entry, 1 (`combos`) recorded as absent in the game, 0 quality failures.
+- Images: **105** entries carry a picture confirmed from the game and **42** carry an original diagram only; the manifest holds **127 records**, none unused. Every record has been opened by eye and has a verdict in `reports/image-reviews.md`, and a gate fails the build if a record is added without one.
 - Every image mapping is re-checkable: a gate asserts each `content/images-manifest.json` record matches the
   file on disk by byte count, sha256 and real dimensions.
 - `.github/workflows/publish.yml` runs the build, then the gates, then the portable typecheck; the `deploy` job
