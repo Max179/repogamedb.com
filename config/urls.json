@@ -2995,6 +2995,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-monster-that-grabs-heads.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-museum-and-its-props.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3401,11 +3406,6 @@
     },
     {
       "url": "/reference/notes/the-lobby-and-spectating.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-monster-that-grabs-heads.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

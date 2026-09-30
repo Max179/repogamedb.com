@@ -662,6 +662,18 @@
       "sha256": "e4e345f4bb2ea31373c9404751c0fa0339ef55ff524e90b205602d0063bacefb"
     },
     {
+      "entity": "the-monster-that-grabs-heads",
+      "kind": "game",
+      "file": "mapped/the-monster-that-grabs-heads-headman.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "headman",
+      "note": "the colour texture the game ships for the monster that grabs heads",
+      "width": 512,
+      "height": 512,
+      "bytes": 73070,
+      "sha256": "94a27b34cab7756b2bab2ec969cebd25f2482c5c88501abddcabf2d145e187d1"
+    },
+    {
       "entity": "running-a-gun-dry",
       "kind": "game",
       "file": "mapped/running-a-gun-dry-shotgun.jpg",
