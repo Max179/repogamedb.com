@@ -22,6 +22,8 @@ export const SITE = {
   versionBadge: 'R.E.P.O. v0.4.0 · as installed',
   heroImage: 'mapped/the-truck-and-the-end-of-a-run-healer.jpg',
   heroAlt: 'The colour texture the game ships for the healer inside the truck.',
+  featured: ['enemies-and-their-behaviour', 'valuables-and-looting', 'weapons-you-can-bring', 'the-truck-and-the-end-of-a-run',
+    'the-extraction-point-and-its-machinery', 'the-shop-between-runs', 'guns-and-how-they-fire', 'how-monsters-find-you'],
 };
 
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
