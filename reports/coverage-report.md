@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 151
+- published entries: 152
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 43
@@ -26,7 +26,7 @@ the reason it is still a draft.
 | maps | Maps, levels and themes | 5 | 0 | 0 |
 | events | Events and set pieces | 3 | 0 | 0 |
 | shop | The shop between runs | 9 | 0 | 0 |
-| coop | Playing with a crew | 3 | 0 | 0 |
+| coop | Playing with a crew | 4 | 0 | 0 |
 | solo | Solo strategy | 2 | 0 | 0 |
 | combos | Item combinations | 0 | 1 | 0 |
 | physics | Physics, grabbing and the cart | 10 | 0 | 0 |

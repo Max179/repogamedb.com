@@ -1,0 +1,67 @@
+{
+  "id": "what-the-record-keeps-about-each-player",
+  "title": "What the record keeps about each player",
+  "category": "Co-op",
+  "summary": "R.E.P.O.'s record is not only a team name: it keeps three inventory spots for each player with flags for whether they are taken, a health and a colour, a crown, a flag for every upgrade, and run statistics.",
+  "body": [
+    "Each player is kept as their own set of values. The record holds three inventory spots per player, which is why what one crew member is carrying has nothing to do with what another is carrying.",
+    "The spots know when they are taken. Each of the three has a flag for being occupied, so a slot can be shown as claimed without the item being read off the model.",
+    "A player has a colour and a health value. Both are kept on the record, which is why the crew can be told apart and why a member's condition survives the moment they were hurt.",
+    "There is a crown. The record keeps a flag for a player having one, which is how a run can mark one member out of the crew.",
+    "Upgrades are kept one flag at a time. The record holds a separate entry for each upgrade it knows: speed, strength, throwing, range, an extra jump, launching, the player count on the map, the tumble climb, the tumble wings, a crouch rest and the death head battery.",
+    "Batteries are kept separately. There is a record for battery upgrades and a stat battery of its own, which is why a charge is not only a property of the item holding it.",
+    "Runs are recorded as statistics. The record carries run statistics and a flag for whether they have been synced, alongside the date and the time and a flag for the team name having changed.",
+    "The file itself is described too: a folder path, the latest save version and a dictionary of the items the game knows.",
+    "What this entry does not tell you: what any upgrade does, how many players a crew may hold, or where the save is written. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Each player has three inventory spots, each with a flag for being taken.",
+      "evidence": "identifiers: playerInventorySpot1, playerInventorySpot2, playerInventorySpot3, playerInventorySpot1Taken, playerInventorySpot2Taken, playerInventorySpot3Taken"
+    },
+    {
+      "claim": "A player's colour and health are kept on the record.",
+      "evidence": "identifiers: playerColor, playerHealth"
+    },
+    {
+      "claim": "The record keeps a flag for a player having a crown.",
+      "evidence": "identifier: playerHasCrown"
+    },
+    {
+      "claim": "Every upgrade the record knows has its own flag, including speed, strength, throwing, range, an extra jump, launching, the map player count, the tumble climb, the tumble wings, a crouch rest and the death head battery.",
+      "evidence": "identifiers: playerUpgradeSpeed, playerUpgradeStrength, playerUpgradeThrow, playerUpgradeRange, playerUpgradeExtraJump, playerUpgradeLaunch, playerUpgradeMapPlayerCount, playerUpgradeTumbleClimb, playerUpgradeTumbleWings, playerUpgradeCrouchRest, playerUpgradeDeathHeadBattery"
+    },
+    {
+      "claim": "Battery upgrades are kept separately, with a stat battery of their own.",
+      "evidence": "identifiers: itemBatteryUpgrades, itemStatBattery"
+    },
+    {
+      "claim": "Run statistics and a flag for whether they are synced are kept, with the date and time and a flag for a changed team name.",
+      "evidence": "identifiers: runStats, statsSynced, dateAndTime, teamNameChanged"
+    },
+    {
+      "claim": "The file itself carries a folder path, the latest save version and a dictionary of items.",
+      "evidence": "identifiers: folderPath, latestSaveVersion, itemDictionary"
+    }
+  ],
+  "related": [
+    "the-save-and-your-run-record",
+    "how-upgrades-are-kept-track-of",
+    "gear-you-carry"
+  ],
+  "images": [
+    {
+      "file": "what-the-record-keeps-about-each-player.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: each player holds three inventory spots with taken flags, a colour, a health and a crown; upgrades have a flag each; and the file keeps run statistics, a battery record, a date and a version.",
+        "zh": "示意图：每位玩家有三个带占用标记的储物位、颜色、生命与王冠；每种升级各有一个标记；文件另存对局统计、电池记录、日期与版本。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

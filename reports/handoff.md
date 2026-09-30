@@ -24,9 +24,9 @@ This was verified from a clean clone: the same build, gates, typecheck and prefl
 game package and without `web/dist`.
 
 ## What the site contains
-- Published subjects: 142 — 100 entities with a confirmed game picture under `/entries/`, 42 picture-less subjects kept as noindex notes under `/reference/notes/`; structured guides: 38. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
-- Real images extracted from the game with a recorded mapping: 115. 100 entities carry one; the other 42 subjects are notes and are labelled "no confirmed picture from the game yet". A diagram is never passed off as a screenshot. Per-entry origin is in reports/image-coverage.md.
-- Build: `pages=702 indexable=162`. URL classification in `config/urls.json`: 162 keep, 534 noindex. The evidence layer lives under `/reference/`; the old top-level addresses are noindex stubs that point there. Player layer: home, game guide, `/entities/` and 10 category pages, 100 entity pages, 38 guides, `/tools/`, `/updates.html`; evidence layer: `/reference/`, `/entity/` and the tables.
+- Published subjects: 152 — 105 entities with a confirmed game picture under `/entries/`, 47 picture-less subjects kept as noindex notes under `/reference/notes/`; structured guides: 43. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
+- Real images extracted from the game with a recorded mapping: 127. 105 entities carry one; the other 47 subjects are notes and are labelled "no confirmed picture from the game yet". A diagram is never passed off as a screenshot. Per-entry origin is in reports/image-coverage.md.
+- Build: `pages=717 indexable=172`. URL classification in `config/urls.json`: 172 keep, 545 noindex. The evidence layer lives under `/reference/`; the old top-level addresses are noindex stubs that point there. Player layer: home, game guide, `/entities/` and 10 category pages, 105 entity pages, 43 guides, `/tools/`, `/updates.html`; evidence layer: `/reference/`, `/entity/` and the tables.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
 
 ## Publishing (not done, and why)

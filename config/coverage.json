@@ -152,7 +152,8 @@
       "entries": [
         "staying-in-touch-with-the-crew",
         "when-the-chat-box-will-not-open",
-        "the-lobby-and-spectating"
+        "the-lobby-and-spectating",
+        "what-the-record-keeps-about-each-player"
       ],
       "status": "multiplayer is networked; documented through comms and lobby entries"
     },
