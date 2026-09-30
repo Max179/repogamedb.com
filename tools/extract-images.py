@@ -151,6 +151,9 @@ MAPPINGS = [
   {'entity': 'the-snow-bike-valuable', 'bundle': 'resources.assets', 'match': "Arctic snow bike_DefaultMaterial_BaseColor", 'file': 'the-snow-bike-valuable-texture.jpg', 'note': "the colour texture the game ships for the snow bike valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-potions-you-can-find', 'bundle': 'resources.assets', 'match': "lots of valuables_Valuable Levitation Potion_BaseColor", 'file': 'the-potions-you-can-find-levitation.jpg', 'note': "the colour texture the game ships for its levitation potion valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-potions-you-can-find', 'bundle': 'resources.assets', 'match': "cauldron box_DefaultMaterial_BaseColor", 'file': 'the-potions-you-can-find-cauldron.jpg', 'note': "the colour texture the game ships for the boxed cauldron valuable", 'max': 512, 'quality': 88},
+  {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "Teeth Bot - Albedo", 'file': 'valuables-that-move-glow-or-talk-teethbot.jpg', 'note': "the colour texture the game ships for the teeth bot valuable", 'max': 512, 'quality': 88},
+  {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "valuable scream doll_Material.002_BaseColor", 'file': 'valuables-that-move-glow-or-talk-screamdoll.jpg', 'note': "the colour texture the game ships for the scream doll valuable", 'max': 512, 'quality': 88},
+  {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "valuabless_Valuable Old Camera_BaseColor", 'file': 'valuables-that-move-glow-or-talk-camera.jpg', 'note': "the colour texture the game ships for the old camera valuable", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

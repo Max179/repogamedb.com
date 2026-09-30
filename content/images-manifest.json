@@ -1104,6 +1104,42 @@
       "height": 512,
       "bytes": 43624,
       "sha256": "41ee4634f2b4aa172b7dd9f0a64c5f1c04b722a03d1c2393876fba53d2d6d935"
+    },
+    {
+      "entity": "valuables-that-move-glow-or-talk",
+      "kind": "game",
+      "file": "mapped/valuables-that-move-glow-or-talk-teethbot.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Teeth Bot - Albedo",
+      "note": "the colour texture the game ships for the teeth bot valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 26980,
+      "sha256": "24dd0e6a685de63748b3c8800c984afa501041f5f7e170596f149120389249c7"
+    },
+    {
+      "entity": "valuables-that-move-glow-or-talk",
+      "kind": "game",
+      "file": "mapped/valuables-that-move-glow-or-talk-screamdoll.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "valuable scream doll_Material.002_BaseColor",
+      "note": "the colour texture the game ships for the scream doll valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 60792,
+      "sha256": "9ef25ece34baab60fae539a793139e5e38e8926008b4dda865fad89ff87ea953"
+    },
+    {
+      "entity": "valuables-that-move-glow-or-talk",
+      "kind": "game",
+      "file": "mapped/valuables-that-move-glow-or-talk-camera.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "valuabless_Valuable Old Camera_BaseColor",
+      "note": "the colour texture the game ships for the old camera valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 42285,
+      "sha256": "90ae1e3acfbad7d115a61e3471d7fc0bd891bbfdf06541467f20499d62e7b436"
     }
   ]
 }
