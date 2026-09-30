@@ -1080,6 +1080,30 @@
       "height": 512,
       "bytes": 54537,
       "sha256": "d93959fdae6871d802d7c38946a63bb9e9e399d1f00dff355c0e949cad342af3"
+    },
+    {
+      "entity": "the-potions-you-can-find",
+      "kind": "game",
+      "file": "mapped/the-potions-you-can-find-levitation.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "lots of valuables_Valuable Levitation Potion_BaseColor",
+      "note": "the colour texture the game ships for its levitation potion valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 32175,
+      "sha256": "9fad10f5e88d7149207e7f80b33078710c141e2b289787f04c2dfe86f6ace64f"
+    },
+    {
+      "entity": "the-potions-you-can-find",
+      "kind": "game",
+      "file": "mapped/the-potions-you-can-find-cauldron.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "cauldron box_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the boxed cauldron valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 43624,
+      "sha256": "41ee4634f2b4aa172b7dd9f0a64c5f1c04b722a03d1c2393876fba53d2d6d935"
     }
   ]
 }

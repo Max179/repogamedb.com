@@ -2875,6 +2875,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-potions-you-can-find.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-readouts-you-play-by.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
