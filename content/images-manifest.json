@@ -888,6 +888,18 @@
       "height": 512,
       "bytes": 53822,
       "sha256": "aa2d819445d15ba4bbc1cd9277f9966e6fa05c0cdc09aeebeba2386aa6131595"
+    },
+    {
+      "entity": "the-slow-mouth",
+      "kind": "game",
+      "file": "mapped/the-slow-mouth-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "enemy slow mouth player mouth",
+      "note": "the mouth texture the game puts on the player when the slow mouth attaches",
+      "width": 512,
+      "height": 512,
+      "bytes": 35096,
+      "sha256": "13908e4d13337b2c4e2e2d6cbd92ae16fc6cab83b6fc9519a50cc91d975b6dde"
     }
   ]
 }
