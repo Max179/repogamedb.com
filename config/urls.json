@@ -2625,6 +2625,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-a-monster-sees-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-a-run-is-scored.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2736,6 +2741,11 @@
     },
     {
       "url": "/entries/the-floater.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-hunter.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -2936,6 +2946,11 @@
     },
     {
       "url": "/topics/ammunition.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/behaviour.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

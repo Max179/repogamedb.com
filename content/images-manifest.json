@@ -792,6 +792,18 @@
       "height": 512,
       "bytes": 59089,
       "sha256": "2b5209f586266d97bb2c2d571c2d9239922514cc18163a92c84f1b76897abc28"
+    },
+    {
+      "entity": "the-hunter",
+      "kind": "game",
+      "file": "mapped/the-hunter-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Hunter Material Albedo",
+      "note": "the colour texture the game ships for the hunter monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 52269,
+      "sha256": "55e64e0d21e2909992528e85e23b4358d43017406457d0c8a2e1e6465e0cb7e5"
     }
   ]
 }
