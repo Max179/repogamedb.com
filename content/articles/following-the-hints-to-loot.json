@@ -1,0 +1,77 @@
+{
+  "id": "following-the-hints-to-loot",
+  "title": "Following the game's own hints to loot",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the discovery hints in R.E.P.O. are built and how to use them: what the card's colours mean, when a custom discovery is used, what makes something loot at all, and how the game decides to leave a valuable behind a monster.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "Something worth picking up ahead",
+    "A tracker or a free hand"
+  ],
+  "steps": [
+    {
+      "do": "Read the discovery card as the game's own hint rather than as decoration, because it is built around a target and carries colours for the corners and the middle.",
+      "because": "the discovery graphic has a target and colours for its corners and middle (target, colorDiscoverCorner, colorDiscoverMiddle)"
+    },
+    {
+      "do": "Notice the other two colours a discovery can use, because there is a reminder colour and a bad colour alongside the discovery colours.",
+      "because": "there are reminder and bad colours as well (ColorReminderCorner, ColorReminderMiddle, ColorBadCorner, ColorBadMiddle)"
+    },
+    {
+      "do": "Listen as well as look, because the discovery has a sound of its own.",
+      "because": "the discovery graphic carries a sound (sound)"
+    },
+    {
+      "do": "Do not blink at the animation: it has an intro curve and a speed, so it arrives rather than appearing.",
+      "because": "the discovery animates in with its own curve and speed (introCurve, introSpeed)"
+    },
+    {
+      "do": "Expect some discoveries to be set up for a particular object, because a custom discovery can carry its own corner and middle colours and a wait before it shows.",
+      "because": "a custom discovery has its own colours and a wait time (ValuableDiscoverCustom, colorCorner, colorMiddle, waitTime)"
+    },
+    {
+      "do": "Expect that custom one to be able to sound and to be marked on the map, because both are optional parts of it.",
+      "because": "the custom discovery can have its own sound and map marker (hasCustomSound, customSound, hasCustomMap, customMap)"
+    },
+    {
+      "do": "Watch the tracker for it rather than only the screen, because a custom discovery can be marked as tracked.",
+      "because": "a custom discovery can be tracked (valuableTrackerTracked)"
+    },
+    {
+      "do": "Do not judge by looks: whether something counts as loot is decided by the game's own naming.",
+      "because": "whether an object counts as loot is decided by the game's own naming (ValuableObject, NotValuableObject)"
+    },
+    {
+      "do": "Know that loot carries presets of its own, so two things that look alike can differ in value, durability, weight and sound.",
+      "because": "loot carries value, durability, physics and audio presets of its own (valuePreset, durabilityPreset, physAttributePreset, audioPreset, audioPresetPitch)"
+    },
+    {
+      "do": "Treat something that is not loot differently, because it is given health and break thresholds instead of a value.",
+      "because": "a non-loot object is given health and break thresholds rather than a value (hasHealth, healthMax, healthDestroy, healthLossOnBreakLight, healthLossOnBreakMedium, healthLossOnBreakHeavy)"
+    },
+    {
+      "do": "Remember the game sorts loot by size, because there are volume types and a lookup for bigger or smaller ones.",
+      "because": "the game sorts loot by volume type and can look for bigger or smaller ones (ValuableVolume, VolumeType, LookForValuableTypes, includeBigger, includeSmaller)"
+    },
+    {
+      "do": "Do not assume a monster drops nothing: a monster can be set to leave a valuable behind, up to a maximum.",
+      "because": "a monster can be set to spawn a valuable up to a maximum (spawnValuable, spawnValuableMax)"
+    }
+  ],
+  "commonMistakes": [
+    "Ignoring the discovery card and hunting by eye.",
+    "Assuming two identical-looking objects are worth the same, when they carry their own presets.",
+    "Picking up something that is not loot and finding it has a health bar rather than a value.",
+    "Leaving a monster before the roll that decides whether it drops a valuable."
+  ],
+  "relatedEntities": [
+    "what-the-game-draws-when-you-find-something",
+    "the-things-that-are-not-loot",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
