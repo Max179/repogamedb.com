@@ -19,7 +19,7 @@ export const SITE = {
   accent: '#ff5c5c',
   tagline: 'Monsters, valuables, gear, maps and the run from entry to extraction',
   searchPlaceholder: 'Search monsters, valuables, gear or guides',
-  versionBadge: 'R.E.P.O. v0.4.0 · as installed',
+  versionBadge: 'R.E.P.O. v0.4.0 · read from a local copy',
   heroImage: 'mapped/the-truck-and-the-end-of-a-run-healer.jpg',
   heroAlt: 'The colour texture the game ships for the healer inside the truck.',
   featured: ['enemies-and-their-behaviour', 'valuables-and-looting', 'weapons-you-can-bring', 'the-truck-and-the-end-of-a-run',
