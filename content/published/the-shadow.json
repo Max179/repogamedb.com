@@ -51,6 +51,14 @@
     {
       "claim": "An effect of its own draws veins across the player screen.",
       "evidence": "identifier: screenVeinEffect"
+    },
+    {
+      "claim": "The third and the fourth hair springs have pivots and targets of their own as well.",
+      "evidence": "identifiers: hairPivot3, hairTarget3, hairPivot4, hairTarget4"
+    },
+    {
+      "claim": "A separate animator carries a shockwave and two whoosh lines for it.",
+      "evidence": "identifiers: EnemyShadowAnim, enemyShadow, shockwaveParticles, wooshLine1, wooshLine2"
     }
   ],
   "related": [
