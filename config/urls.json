@@ -35,6 +35,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/handling-a-valuable-that-might-be-a-trap.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2581,6 +2586,11 @@
     },
     {
       "url": "/entries/valuables-and-looting.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/valuables-that-fight-back.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

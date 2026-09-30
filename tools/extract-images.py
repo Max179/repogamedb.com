@@ -30,6 +30,9 @@ MAPPINGS = [
   {'entity': 'the-truck-and-the-end-of-a-run', 'bundle': 'resources.assets', 'match': 'Truck Healer_DefaultMaterial_BaseColor',
    'file': 'the-truck-and-the-end-of-a-run-healer.jpg', 'note': 'albedo texture of the truck healer the crew recovers in',
    'max': 1024, 'quality': 84},
+  {'entity': 'valuables-that-fight-back', 'bundle': 'resources.assets', 'match': 'Gumball basecolor',
+   'file': 'valuables-that-fight-back-gumball.jpg', 'note': 'albedo texture of a gumball machine valuable, one of the trap valuables the entry describes',
+   'max': 1024, 'quality': 84},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

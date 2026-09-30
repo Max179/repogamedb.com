@@ -37,8 +37,8 @@ to Cloudflare Pages with `secrets.CLOUDFLARE_API_TOKEN` / `secrets.CLOUDFLARE_AC
 `node tools/deploy-check.mjs` prints exactly these as external blockers and reports 0 local failures.
 
 ## Content breadth at handoff
-- Published entries: 27; structured guides: 9.
-- Real images extracted from the game with a recorded mapping: 12. Origin bundle, asset name, written size and sha256 are in `content/images-manifest.json`; every other image is a diagram labelled as a diagram, never as a screenshot.
-- Build: `pages=584 indexable=57` (485 reference pages stay noindex); gates: 50 all passing; typecheck: exit 0.
+- Published entries: 28; structured guides: 10.
+- Real images extracted from the game with a recorded mapping: 13. Origin bundle, asset name, written size and sha256 are in `content/images-manifest.json`; every other image is a diagram labelled as a diagram, never as a screenshot.
+- Build: `pages=588 indexable=59` (485 reference pages stay noindex); gates: 50 all passing; typecheck: exit 0.
 - Categories covered: Enemies, Extraction, Valuables, Items, Shop, Maps, Comms, Weapons, Physics, Cosmetics.
 - Every entry carries facts with grounding, a labelled diagram (or a game image recorded in `content/images-manifest.json`), related links and sources.

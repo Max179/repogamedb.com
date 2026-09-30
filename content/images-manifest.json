@@ -144,6 +144,18 @@
       "height": 512,
       "bytes": 54988,
       "sha256": "3bab3414877db3307353c6ba99829d4a19448b68e3b4c429d12a0a6a2e957f98"
+    },
+    {
+      "entity": "valuables-that-fight-back",
+      "kind": "game",
+      "file": "mapped/valuables-that-fight-back-gumball.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Gumball basecolor",
+      "note": "albedo texture of a gumball machine valuable, one of the trap valuables the entry describes",
+      "width": 512,
+      "height": 512,
+      "bytes": 38714,
+      "sha256": "3f1aed406b3533886794c454ec385d5402bb4dd671301efeae6fa55dff08ecbb"
     }
   ]
 }

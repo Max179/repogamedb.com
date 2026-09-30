@@ -1,0 +1,47 @@
+{
+  "id": "handling-a-valuable-that-might-be-a-trap",
+  "title": "Handling a valuable that might be a trap",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to handle a valuable in R.E.P.O. when it turns out to be a trap, using the behaviour the game gives those objects instead of assuming every pickup is quiet.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A valuable you have not handled before",
+    "Both hands free",
+    "A crew that knows where you are heading next"
+  ],
+  "steps": [
+    {
+      "do": "Treat an unfamiliar valuable as something that may do something.",
+      "because": "the game has valuables built on a trap behaviour (Trap)"
+    },
+    {
+      "do": "Do not linger next to one once you have picked it up.",
+      "because": "a trap valuable can be set to start on a timer (triggerOnTimer)"
+    },
+    {
+      "do": "Expect monsters to take an interest in these objects.",
+      "because": "they carry an interest flag for monsters (enemyInvestigate)"
+    },
+    {
+      "do": "Put it down somewhere harmless if it starts moving, and come back for it.",
+      "because": "some of them move under their own turning force (SelfTorqueMultiplier)"
+    },
+    {
+      "do": "Use a valuable box when you want one contained rather than carried loose.",
+      "because": "a valuable box holds them with a value limit and an extraction time (ItemValuableBox)"
+    }
+  ],
+  "commonMistakes": [
+    "Assuming every valuable is a quiet pickup.",
+    "Standing over one while it does whatever it does.",
+    "Carrying a shaking object through a doorway."
+  ],
+  "relatedEntities": [
+    "valuables-that-fight-back",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
