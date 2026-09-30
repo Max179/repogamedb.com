@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-valuables-you-can-find",
+      "kind": "game",
+      "file": "mapped/the-valuables-you-can-find-crystal.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "lots of valuables_Valuable Crystal Ball Glass_BaseColor",
+      "note": "the base colour texture of one of the valuable families the game ships",
+      "width": 512,
+      "height": 512,
+      "bytes": 43606,
+      "sha256": "aa841c1ae9e3b7352d64d836d631333f31d1b49885d8e9d8a3125bdc52918252"
+    },
+    {
       "entity": "the-level-themes-and-what-they-hold",
       "kind": "game",
       "file": "mapped/the-level-themes-and-what-they-hold-arctic.jpg",
