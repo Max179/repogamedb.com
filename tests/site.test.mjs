@@ -415,5 +415,18 @@ ok('every game image used in an entry has a manifest record and exists in the bu
   ok('the image manifest is not empty', checked > 0);
 }
 
+// --- every identifier an entry cites as evidence must be a real identifier in this build
+{
+  let passed = true, out = '';
+  try {
+    out = execFileSync(process.execPath, ['tools/verify-citations.mjs'], { encoding: 'utf8' });
+  } catch (e) {
+    passed = false;
+    out = String((e.stdout ?? '') + (e.stderr ?? ''));
+  }
+  ok('every identifier cited as evidence exists in this build', passed,
+    out.trim().split('\n').filter((l) => l.includes('CHECK')).slice(0, 3).join(' | '));
+}
+
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

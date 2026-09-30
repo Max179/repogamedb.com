@@ -1,0 +1,73 @@
+{
+  "id": "reading-a-monster-before-it-strikes",
+  "title": "Reading a monster before it strikes",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the sounds and the small movements R.E.P.O. gives a monster before it attacks: the cracks and the clap of the shadow, the stinger when something sights you, where a head is actually pointed, and when a chase begins and ends.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "A monster within earshot",
+    "A moment to listen rather than swing"
+  ],
+  "steps": [
+    {
+      "do": "Listen for the cracks before the clap: the shadow has a long and a short version of both its neck and its back cracks.",
+      "because": "the shadow's animation carries long and short neck and back cracks (neckCrackLong, neckCrackShort, backCrackLong, backCrackShort)"
+    },
+    {
+      "do": "Treat the clap as a warning with a flag of its own rather than as flavour, because the animation keeps a tell for it.",
+      "because": "the clap has a tell of its own and a second version heard by everyone (clapSound, globalClapSound, clapTell)"
+    },
+    {
+      "do": "Listen for the moment it decides on you, because there are separate sounds for being targeted and for being dropped.",
+      "because": "there are targeted and untargeted sounds (targeted, notTargeted)"
+    },
+    {
+      "do": "Watch what the slap throws off, because the attack has particles of its own rather than being only a sound.",
+      "because": "the slap has particles of its own (slapParticles)"
+    },
+    {
+      "do": "Watch for smoke as well: a monster can make smoke when it appears.",
+      "because": "a monster can spawn smoke as it appears (spawnSmokeParticle)"
+    },
+    {
+      "do": "Do not wait for a roar to know you have been seen, because the game plays a stinger when a monster sights you.",
+      "because": "the game has a stinger for a monster sighting you (SightingStinger)"
+    },
+    {
+      "do": "Read where a head is pointed rather than where the body is, because a head follows a position and a rotation of its own.",
+      "because": "a head follows a position and a rotation (FollowPosition, FollowRotation, TargetRotation)"
+    },
+    {
+      "do": "Expect a difference between idling and chasing, because the head's follow values are separate for each.",
+      "because": "the head has separate position and rotation values for idling and for chasing (PositionFollowIdle, RotationFollowIdle, PositionFollowChasing)"
+    },
+    {
+      "do": "Know that a chase starts and ends rather than switching instantly, because there is an offset with an intro and an outro curve and speed.",
+      "because": "the chase offset has an intro and an outro curve with a speed each (Offset, IntroCurve, IntroSpeed, OutroCurve, OutroSpeed)"
+    },
+    {
+      "do": "Do not read the eyes as attention, because they go idle on their own within a time range and limits of their own.",
+      "because": "the eyes idle on their own, with a shortest and a longest time and limits in x and y (EnemyHeadEyeIdle, TimeMin, TimeMax, MinX, MaxX, MinY, MaxY)"
+    },
+    {
+      "do": "Know when it is finished: a monster has a freeze time for dying, and it says what kind it is.",
+      "because": "a monster carries a freeze time for dying and a type (FreezeTimer, Type)"
+    }
+  ],
+  "commonMistakes": [
+    "Swinging at the first noise instead of waiting for the tell that means an attack is coming.",
+    "Watching the body and missing that the head has already turned to you.",
+    "Treating a monster's idle eye movement as it having noticed you.",
+    "Walking away from a kill early, before the dying freeze is over."
+  ],
+  "relatedEntities": [
+    "the-shadow",
+    "enemies-and-their-behaviour",
+    "how-monsters-find-you"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
