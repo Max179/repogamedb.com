@@ -1,0 +1,172 @@
+{
+  "site": "repogamedb.com",
+  "floor": 17,
+  "columns": [
+    {
+      "id": "enemies",
+      "label": "Enemies and their variants",
+      "categories": [
+        "Enemies"
+      ]
+    },
+    {
+      "id": "behaviour",
+      "label": "Behaviour and how to answer it",
+      "categories": [
+        "Enemies"
+      ],
+      "entries": [
+        "what-a-monster-is-doing",
+        "reading-a-monster-before-it-reaches-you",
+        "when-a-monster-has-you"
+      ]
+    },
+    {
+      "id": "valuables",
+      "label": "Valuables and value grades",
+      "categories": [
+        "Valuables"
+      ],
+      "entries": [
+        "the-valuables-you-can-find",
+        "valuables-that-fight-back"
+      ]
+    },
+    {
+      "id": "extraction",
+      "label": "Hauling and extraction",
+      "categories": [
+        "Extraction"
+      ],
+      "entries": [
+        "the-truck-and-the-end-of-a-run",
+        "choosing-when-to-leave"
+      ]
+    },
+    {
+      "id": "items",
+      "label": "Items you can carry",
+      "categories": [
+        "Items"
+      ]
+    },
+    {
+      "id": "weapons",
+      "label": "Weapons",
+      "categories": [
+        "Weapons"
+      ]
+    },
+    {
+      "id": "ammo",
+      "label": "Ammunition and charge",
+      "entries": [
+        "batteries-and-charging",
+        "guns-and-how-they-fire"
+      ],
+      "status": "guns use battery charge rather than a separate ammunition item in this build"
+    },
+    {
+      "id": "medical",
+      "label": "Medical help and reviving",
+      "entries": [
+        "health-and-recovery",
+        "the-revive-item"
+      ]
+    },
+    {
+      "id": "maps",
+      "label": "Maps, levels and themes",
+      "categories": [
+        "Maps"
+      ]
+    },
+    {
+      "id": "events",
+      "label": "Events and set pieces",
+      "entries": [
+        "the-museum-and-its-props"
+      ],
+      "status": "no separate event system found; set pieces are documented under maps"
+    },
+    {
+      "id": "shop",
+      "label": "The shop between runs",
+      "categories": [
+        "Shop"
+      ]
+    },
+    {
+      "id": "coop",
+      "label": "Playing with a crew",
+      "entries": [
+        "staying-in-touch-with-the-crew",
+        "when-the-chat-box-will-not-open"
+      ],
+      "status": "multiplayer is networked; documented through comms and lobby entries"
+    },
+    {
+      "id": "solo",
+      "label": "Solo strategy",
+      "entries": [
+        "the-cart-and-its-boost-pads",
+        "extraction-run"
+      ],
+      "status": "solo play is covered through guides rather than a separate system"
+    },
+    {
+      "id": "combos",
+      "label": "Item combinations",
+      "entries": [],
+      "status": "no combination or crafting system found in this build"
+    },
+    {
+      "id": "physics",
+      "label": "Physics, grabbing and the cart",
+      "categories": [
+        "Physics"
+      ],
+      "entries": [
+        "carts-grabbing-and-physics",
+        "the-cart-and-its-boost-pads"
+      ]
+    },
+    {
+      "id": "cosmetics",
+      "label": "Cosmetics and the avatar",
+      "categories": [
+        "Cosmetics"
+      ]
+    },
+    {
+      "id": "interface",
+      "label": "Screens and run records",
+      "categories": [
+        "Interface"
+      ]
+    },
+    {
+      "id": "faq",
+      "label": "Answers to the questions players ask most",
+      "entries": [],
+      "status": "not yet written"
+    },
+    {
+      "id": "glossary",
+      "label": "Glossary of the terms this site uses",
+      "entries": [],
+      "status": "not yet written"
+    },
+    {
+      "id": "versions",
+      "label": "Which version this site documents",
+      "entries": [],
+      "status": "not yet written"
+    },
+    {
+      "id": "guides",
+      "label": "Step-by-step run guides",
+      "kind": "articles"
+    }
+  ]
+}

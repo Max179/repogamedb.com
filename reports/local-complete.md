@@ -124,4 +124,5 @@ git status --porcelain              -> 空
 - 计数（第 165 轮）：词条 48 条、文章 26 篇、真实映射图 48 条（100%）、diagram-only 0 条；images-manifest 51 条，无未使用、无缺失。pages=681 indexable=94，tsc exit 0。
 - 计数（第 166 轮）：词条 49 条、文章 27 篇、真实映射图 49 条（100%）、diagram-only 0 条；images-manifest 52 条，无未使用、无缺失。pages=685 indexable=96，tsc exit 0。
 - 计数（第 167 轮）：词条 49 条、文章 28 篇、真实映射图 49 条（100%）、diagram-only 0 条；images-manifest 52 条，无未使用、无缺失。pages=686 indexable=97，tsc exit 0。
+- 覆盖矩阵（第 168 轮）：新增 config/coverage.json（本作目标栏目 21 个）与 tools/coverage.mjs，逐栏统计已发布/草稿/技术页数量并生成 reports/coverage-report.md；同时把覆盖率与质量（重复标题、重复摘要、占位词、摘要过短）并入 tools/preflight.mjs 门禁，低于 config/coverage.json 的 floor 即失败。当前已覆盖 17/21 栏，未覆盖栏目：combos、faq、glossary、versions。技术性参考页与未证实内容分别留在 reference/draft 分层，不进入构建与索引。
 
