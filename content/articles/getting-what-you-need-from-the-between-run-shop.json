@@ -1,0 +1,57 @@
+{
+  "id": "getting-what-you-need-from-the-between-run-shop",
+  "title": "Getting what you need from the between-run shop",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the shop between runs in R.E.P.O. decides what it offers, so money goes on what the run needs rather than on what happens to be on the shelf.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "Between-run money to spend",
+    "A crew that agrees on what is missing",
+    "Enough runs to know what you keep losing"
+  ],
+  "steps": [
+    {
+      "do": "Know the shop aims for an amount of stock rather than stocking by accident.",
+      "because": "it aims for a number of items, with separate amounts for consumables, upgrades and health packs (itemSpawnTargetAmount, itemConsumablesAmount, itemUpgradesAmount, itemHealthPacksAmount)"
+    },
+    {
+      "do": "Check what kinds of thing it can offer at all.",
+      "because": "its offerings are split into ordinary items, consumables, upgrades and health packs (potentialItems, potentialItemConsumables, potentialItemUpgrades, potentialItemHealthPacks)"
+    },
+    {
+      "do": "Look for secret stock, which is kept separately.",
+      "because": "the shop keeps separate volumes and items for secret stock (secretItemVolumes, potentialSecretItems)"
+    },
+    {
+      "do": "Read the prices the game gives you.",
+      "because": "shop costs are shown by the game rather than inferred (ShopCostUI)"
+    },
+    {
+      "do": "Buy upgrades at their stand, where their information is.",
+      "because": "upgrades are bought at a stand and carry their own information (UpgradeStand, ItemUpgrade, UpgradeInfo)"
+    },
+    {
+      "do": "Get cosmetics from the machine rather than from the shelves.",
+      "because": "cosmetics come from a separate machine (CosmeticShopMachine, CosmeticShopMachineAnimator)"
+    },
+    {
+      "do": "Expect the shop to track what you have bought.",
+      "because": "the shop holds the volumes it can use and the items it may offer, and an item manager keeps what has been purchased (ShopManager, itemVolumes, potentialItems, ItemManager)"
+    }
+  ],
+  "commonMistakes": [
+    "Spending on consumables when the crew keeps dying rather than running out of things.",
+    "Ignoring the upgrade stand and buying loose items instead.",
+    "Assuming a shelf holds everything the shop can sell.",
+    "Forgetting that the shop's stock is aimed at amounts rather than guaranteed."
+  ],
+  "relatedEntities": [
+    "the-shop-between-runs",
+    "what-the-shop-puts-out",
+    "how-upgrades-are-kept-track-of"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
