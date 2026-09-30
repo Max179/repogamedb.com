@@ -2950,6 +2950,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-readouts-that-fade-away.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-readouts-you-play-by.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
