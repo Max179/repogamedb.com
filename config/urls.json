@@ -2650,6 +2650,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/mines-traps-and-lasers.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/moving-loot-and-gear.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2886,6 +2891,11 @@
     },
     {
       "url": "/topics/enemies.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/events.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

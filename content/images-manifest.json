@@ -660,6 +660,30 @@
       "height": 512,
       "bytes": 24755,
       "sha256": "059ea95dff713bffacaaa7e61dd27ccd203189da0a30ce28ef9548a35b3b0b04"
+    },
+    {
+      "entity": "mines-traps-and-lasers",
+      "kind": "game",
+      "file": "mapped/mines-traps-and-lasers-mine.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Explosive mine_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for an explosive mine found in a level",
+      "width": 512,
+      "height": 512,
+      "bytes": 36103,
+      "sha256": "73b69ec1467a69cb29343b74985c7503d4301f371030cf36be9e0cf7f1d8d841"
+    },
+    {
+      "entity": "mines-traps-and-lasers",
+      "kind": "game",
+      "file": "mapped/mines-traps-and-lasers-trap.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Stun trap_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for a stun trap",
+      "width": 512,
+      "height": 512,
+      "bytes": 52968,
+      "sha256": "686eed3ac393a27aebed9033598439abe9307c03ad31e79bd2083a64c3267a00"
     }
   ]
 }

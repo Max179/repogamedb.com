@@ -1,0 +1,83 @@
+{
+  "id": "mines-traps-and-lasers",
+  "title": "The mines, traps and lasers in a level",
+  "category": "Events",
+  "summary": "Not everything dangerous in R.E.P.O. is a monster: some of it is placed. The game has mines of more than one kind, traps that are armed when a valuable is disturbed, and security lasers with a state of their own.",
+  "body": [
+    "Not everything dangerous in a level is a monster. Some of it is placed: the game has mines that are also items you can buy, traps that are armed when a valuable is disturbed, and security lasers that belong to the museum rather than to the crew.",
+    "Mines come in kinds rather than as one model. There is a mine that stuns and a mine that is triggered, and the game keeps a mine type of its own, which is why a mine on the floor can be either something the crew brought or something the level put there.",
+    "The game ships textures for more than one mine. There is artwork for an explosive mine and for a shockwave mine, so the mines in a level are not all the same object even though they are all mines.",
+    "Traps are tied to what they guard. A trap carries an activation level tied to how rare the valuable is, so the same trap object can be more or less likely to go off depending on what is sitting next to it.",
+    "The trap object is its own thing in the data, with states of its own and a variant that is a television, which is why a trap does not have to look like a trap.",
+    "The museum keeps its lasers as a system rather than as decoration. They have a state and their own logic, so a laser can be reasoned about by the level rather than simply existing.",
+    "One danger comes from above. There is an enemy that watches from the ceiling with its own animation and a line it works along, which is how the game makes a room dangerous from a direction you are not looking.",
+    "Explosions are handled as their own effects with their own sounds, so a mine going off is a scripted event rather than a side effect of an object disappearing.",
+    "The images beside this entry are the game's own: the colour texture of an explosive mine and of a stun trap, taken from the installation this site describes.",
+    "What this entry does not tell you: how much damage any of these does, how often they appear, or whether they can be disarmed. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Mines come in kinds, including one that stuns and one that is triggered.",
+      "evidence": "identifiers: MineType, ItemMine, ItemMineStun, ItemMineTrigger"
+    },
+    {
+      "claim": "The game ships artwork for an explosive mine and for a shockwave mine.",
+      "evidence": "asset names: Explosive mine_DefaultMaterial_BaseColor, Shockwave Mine_DefaultMaterial_BaseColor"
+    },
+    {
+      "claim": "A trap carries an activation level tied to how rare the valuable it guards is.",
+      "evidence": "identifier: TrapActivateRarityLevel"
+    },
+    {
+      "claim": "The trap object has states of its own and a variant that is a television.",
+      "evidence": "identifiers: Trap, TrapTV, TrapDone"
+    },
+    {
+      "claim": "The museum keeps its security lasers as a system with a state and logic of their own.",
+      "evidence": "identifiers: MuseumLaserState, MuseumLaserLogic"
+    },
+    {
+      "claim": "An enemy watches from the ceiling, with its own animation and a line it works along.",
+      "evidence": "identifiers: EnemyCeilingEye, EnemyCeilingEyeAnim, CeilingEyeLine"
+    },
+    {
+      "claim": "Explosions have their own particle scripts and sounds rather than being a side effect.",
+      "evidence": "identifiers: ParticleScriptExplosion, soundExplosionTell"
+    }
+  ],
+  "related": [
+    "valuables-that-fight-back",
+    "the-museum-and-its-props"
+  ],
+  "images": [
+    {
+      "file": "mapped/mines-traps-and-lasers-mine.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for an explosive mine found in a level.",
+        "zh": "游戏为关卡中的爆炸地雷提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mapped/mines-traps-and-lasers-trap.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for a stun trap.",
+        "zh": "游戏为眩晕陷阱提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mines-traps-and-lasers.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a level places mines, traps and lasers; a trap is armed by the valuable beside it, and a mine may be the crew's own.",
+        "zh": "示意图：关卡放置地雷、陷阱与激光；陷阱由旁边的珍贵物触发，地雷也可能是玩家自带的。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

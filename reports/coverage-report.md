@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 53
+- published entries: 54
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 27
@@ -23,7 +23,7 @@ the reason it is still a draft.
 | ammo | Ammunition and charge | 2 | 0 | 0 |
 | medical | Medical help and reviving | 2 | 0 | 0 |
 | maps | Maps, levels and themes | 4 | 0 | 0 |
-| events | Events and set pieces | 1 | 0 | 0 |
+| events | Events and set pieces | 2 | 0 | 0 |
 | shop | The shop between runs | 6 | 0 | 0 |
 | coop | Playing with a crew | 2 | 0 | 0 |
 | solo | Solo strategy | 2 | 0 | 0 |
