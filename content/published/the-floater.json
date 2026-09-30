@@ -1,0 +1,78 @@
+{
+  "id": "the-floater",
+  "title": "The floater and how it attacks",
+  "category": "Enemies",
+  "summary": "The floater is a monster of its own rather than a variation of another: its head, arms and legs are driven by springs, its attack runs through named states with their own sounds, and it dies into particles of its own.",
+  "body": [
+    "The floater is a monster in its own right rather than a variation of something else. The game gives it a controller and an animator of its own, with a set of states that belong to it.",
+    "Its body is driven by springs. The head, both legs and both arms each have a spring with a target and a source, and the animator carries multipliers for how fast those springs settle and how much they damp, which is why the floater moves as a loose bundle rather than as a rigid shape.",
+    "Its attack is a sequence. The game runs the floater's attack through named states and keeps a timer beside the current one, so charging, waiting and striking are read in order rather than being a single animation.",
+    "The sequence can be heard. There are sounds for starting the charge, for the delay before the hit, for the strike going up and for it coming down, with loops for both the charge and the delay, which is why you can hear that something is coming before it arrives.",
+    "It is not silent when it is stopped either. There are separate sounds for being hurt, for dying and for being stunned, and a loop that plays while it is stunned.",
+    "Dying is an effect of its own. Impact, pieces thrown far, shorter pieces and smoke are four separate particle systems rather than one shared explosion.",
+    "The area effect the attack leaves behind has states of its own, so what the attack does across a space is tracked rather than being a single hit.",
+    "The image beside this entry is the game's own: the colour texture of the floater.",
+    "What this entry does not tell you: how much damage a floater does, how long its charge lasts, or how many of them a level may hold. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The floater has a controller and an animator of its own rather than sharing another monster's.",
+      "evidence": "identifiers: EnemyFloater, EnemyFloaterAnim"
+    },
+    {
+      "claim": "Its head, both legs and both arms each have a spring with a target and a source.",
+      "evidence": "identifiers: springHead, springHeadTarget, springLegL, springLegR, springArmL, springArmR"
+    },
+    {
+      "claim": "The animator carries multipliers for how fast the springs settle and how much they damp.",
+      "evidence": "identifiers: springSpeedMultiplier, springDampingMultiplier"
+    },
+    {
+      "claim": "The attack runs through named states with a timer beside the current one.",
+      "evidence": "identifiers: FloaterAttackState, currentState, stateTimer"
+    },
+    {
+      "claim": "The attack has separate sounds for charging, for the delay before the hit and for the strike going up and coming down.",
+      "evidence": "identifiers: sfxChargeAttackStart, sfxDelayAttackLocal, sfxAttackUpLocal, sfxAttackDownLocal"
+    },
+    {
+      "claim": "There are separate sounds for being hurt, for dying and for being stunned, and a loop that plays while stunned.",
+      "evidence": "identifiers: sfxHurt, sfxDeath, sfxStunnedLoop"
+    },
+    {
+      "claim": "Dying uses four separate particle systems rather than one shared effect.",
+      "evidence": "identifiers: particleDeathImpact, particleDeathBitsFar, particleDeathBitsShort, particleDeathSmoke"
+    },
+    {
+      "claim": "The area effect the attack leaves behind has states of its own.",
+      "evidence": "identifier: FloaterSphereEffectState"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "enemies-that-move-differently"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-floater-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the floater, showing its pale body and the pink tissue over it.",
+        "zh": "游戏为漂浮怪提供的颜色贴图，可见其苍白身体与覆盖其上的粉色组织。"
+      }
+    },
+    {
+      "file": "the-floater.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the floater charges, waits, strikes, leaves an area effect, and can be stunned.",
+        "zh": "示意图：漂浮怪蓄力、停顿、攻击、留下范围效果，并可被击晕。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

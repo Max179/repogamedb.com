@@ -696,6 +696,18 @@
       "height": 512,
       "bytes": 64405,
       "sha256": "9a1a49c0bd4e84f639096748bc5d134be0dd44db42f6731b690608f342ffe94a"
+    },
+    {
+      "entity": "the-floater",
+      "kind": "game",
+      "file": "mapped/the-floater-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "enemy floater_Material_BaseColor",
+      "note": "the colour texture the game ships for the floater monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 50031,
+      "sha256": "2b28d0289eccd4fd27b7bdd202dc23486e5ec47287ed4c48c55021d82a2f3054"
     }
   ]
 }
