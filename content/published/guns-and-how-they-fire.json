@@ -1,0 +1,69 @@
+{
+  "id": "guns-and-how-they-fire",
+  "title": "Guns and how they fire",
+  "category": "Weapons",
+  "summary": "Guns in R.E.P.O. are configured rather than uniform: the game gives a gun its own build-up, spread, range, recoil and camera shake, and some of them cost battery.",
+  "body": [
+    "A gun is configured, not fixed. The game gives each one its own firing numbers rather than one shared behaviour, which is why two guns can feel quite different.",
+    "Some of them wind up. A gun records whether it has a build-up and how long that takes, which is why some shots can be prepared and others cannot.",
+    "They fire a set number of rounds. The game keeps a count of bullets per gun, so what comes out is part of the weapon rather than of the moment.",
+    "They are not perfectly accurate. A gun carries its own random spread, which is why distance changes what a shot is good for.",
+    "They push you and the target. Recoil, camera shake and a torque multiplier are all settings on the gun, which is why firing moves the world as well as the shot.",
+    "Some of them run on battery. Guns carry a battery drain, and some record a full-bar drain, which is why ammunition is not the only thing that runs out.",
+    "They are not all the same shape. The game ships a laser gun alongside the rest, with its own surfaces, so the family is wider than one model.",
+    "What this entry does not tell you: how much damage any gun does, how far it reaches, or what one costs. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A gun is configured with its own firing numbers rather than one shared behaviour.",
+      "evidence": "identifier: ItemGun"
+    },
+    {
+      "claim": "A gun records whether it has a build-up, and how long it takes.",
+      "evidence": "identifiers: hasBuildUp, buildUpTime, shootTime"
+    },
+    {
+      "claim": "A gun fires a set number of bullets and carries its own spread.",
+      "evidence": "identifiers: numberOfBullets, gunRandomSpread, hasOneShot"
+    },
+    {
+      "claim": "Recoil, camera shake and torque are settings on the gun.",
+      "evidence": "identifiers: gunRecoilForce, cameraShakeMultiplier, torqueMultiplier, grabStrengthMultiplier"
+    },
+    {
+      "claim": "Some guns run on a battery, including a full-bar drain.",
+      "evidence": "identifiers: batteryDrain, batteryDrainFullBar, batteryDrainFullBars"
+    },
+    {
+      "claim": "There is a laser gun alongside the other guns.",
+      "evidence": "identifier: laser gun_DefaultMaterial_BaseColor"
+    }
+  ],
+  "related": [
+    "weapons-you-can-bring",
+    "the-cart-cannon"
+  ],
+  "images": [
+    {
+      "file": "mapped/guns-and-how-they-fire-lasergun.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture taken from the game of the laser gun it ships.",
+        "zh": "取自游戏的激光枪基础色贴图。"
+      }
+    },
+    {
+      "file": "guns-and-how-they-fire.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the gun is readied, it builds up, it fires with recoil and spread, and it runs on battery.",
+        "zh": "示意图：持枪准备、蓄力、开火并后坐散射、消耗电量。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

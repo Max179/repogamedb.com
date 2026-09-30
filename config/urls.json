@@ -40,6 +40,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/firing-a-gun-without-wasting-the-shot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/first-run-what-to-expect.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2575,6 +2580,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/guns-and-how-they-fire.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/health-and-recovery.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2646,6 +2656,11 @@
     },
     {
       "url": "/entries/the-drone.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-exploding-rubber-duck.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

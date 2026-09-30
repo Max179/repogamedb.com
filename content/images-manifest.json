@@ -362,6 +362,30 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "guns-and-how-they-fire",
+      "kind": "game",
+      "file": "mapped/guns-and-how-they-fire-lasergun.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "laser gun_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the laser gun the game ships",
+      "width": 512,
+      "height": 512,
+      "bytes": 64710,
+      "sha256": "b09ff69183b1be9575950ae10ff642a8809169159293f0f6bc60bd2a894eabb6"
+    },
+    {
+      "entity": "the-exploding-rubber-duck",
+      "kind": "game",
+      "file": "mapped/the-exploding-rubber-duck-duck.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "rubber duck_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the rubber duck item",
+      "width": 512,
+      "height": 512,
+      "bytes": 10223,
+      "sha256": "03d094b4a61d03bacc43f97b647fa8d49096db610b9dd754dcc6038642f4d19e"
+    },
+    {
       "entity": "the-ladder",
       "kind": "game",
       "file": "mapped/the-ladder-ladder.jpg",

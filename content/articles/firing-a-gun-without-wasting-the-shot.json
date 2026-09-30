@@ -1,0 +1,47 @@
+{
+  "id": "firing-a-gun-without-wasting-the-shot",
+  "title": "Firing a gun without wasting the shot",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get a shot on target in R.E.P.O. given that each gun has its own build-up, spread, recoil and battery use.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A gun in the crew",
+    "Charge in it if it needs any",
+    "A clear line to what you are shooting at"
+  ],
+  "steps": [
+    {
+      "do": "Learn whether your gun builds up before you need it in a hurry.",
+      "because": "a gun records whether it has a build-up and how long that takes (hasBuildUp)"
+    },
+    {
+      "do": "Close the distance rather than firing across a room.",
+      "because": "a gun carries its own random spread (gunRandomSpread)"
+    },
+    {
+      "do": "Expect the shot to move you as well as the target.",
+      "because": "recoil and camera shake are settings on the gun (gunRecoilForce)"
+    },
+    {
+      "do": "Watch the battery as well as the rounds.",
+      "because": "some guns drain a battery, including a full bar (batteryDrainFullBar)"
+    },
+    {
+      "do": "Do not treat two guns as interchangeable.",
+      "because": "each gun carries its own firing numbers (ItemGun)"
+    }
+  ],
+  "commonMistakes": [
+    "Firing from across a room and missing.",
+    "Ignoring the battery until the gun stops.",
+    "Assuming every gun handles the same way."
+  ],
+  "relatedEntities": [
+    "guns-and-how-they-fire",
+    "weapons-you-can-bring"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
