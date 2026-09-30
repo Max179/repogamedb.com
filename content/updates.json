@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Reading the music and the radio",
+    "url": "/articles/reading-the-music-and-the-radio.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Following the game's own hints to loot",
     "url": "/articles/following-the-hints-to-loot.html",
     "kind": "New guide"
@@ -63,12 +69,6 @@
     "date": "2026-09-30",
     "title": "The money head in the museum",
     "url": "/entries/the-money-head-in-the-museum.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The elsa at two sizes",
-    "url": "/entries/the-elsa-in-two-sizes.html",
     "kind": "New entry"
   }
 ]
