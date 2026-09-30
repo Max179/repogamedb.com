@@ -3345,6 +3345,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-bar-that-shows-a-charge.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-body-every-monster-shares.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
