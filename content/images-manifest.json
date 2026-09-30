@@ -626,6 +626,18 @@
       "sha256": "9a1a49c0bd4e84f639096748bc5d134be0dd44db42f6731b690608f342ffe94a"
     },
     {
+      "entity": "mines-traps-and-lasers",
+      "kind": "game",
+      "file": "mapped/mines-traps-and-lasers-mine.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Explosive mine_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for an explosive mine found in a level",
+      "width": 512,
+      "height": 512,
+      "bytes": 36103,
+      "sha256": "73b69ec1467a69cb29343b74985c7503d4301f371030cf36be9e0cf7f1d8d841"
+    },
+    {
       "entity": "the-floater",
       "kind": "game",
       "file": "mapped/the-floater-texture.jpg",
