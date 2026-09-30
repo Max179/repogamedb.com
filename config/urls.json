@@ -2585,6 +2585,16 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/drifting-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/driving-a-vehicle-and-staying-upright.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/enemies-and-their-behaviour.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
