@@ -2500,6 +2500,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/staying-in-touch-with-the-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-shop-between-runs.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2568,6 +2573,11 @@
       "url": "/tool.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/topics/comms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/topics/enemies.html",
