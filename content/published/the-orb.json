@@ -6,6 +6,7 @@
   "body": [
     "The orb is an item with a mode. The game sorts orbs into two kinds, a constant one and a pulsing one, which is why two orbs can behave differently rather than being one object.",
     "It has a radius. The orb carries a reach of its own, so what it affects is a distance rather than a point.",
+    "It has an icon and a state of its own. The orb keeps a picture for itself and a flag for whether it is active, alongside its own kind, which is why it can be shown in a list apart from the rest of the loot.",
     "It is coloured. The orb keeps colour presets and a colour of its own, which is why it can be told apart at a glance.",
     "It is battery-powered. The orb drains a battery at a rate of its own, so it is one of the items that makes charge worth carrying.",
     "It has its own sounds. Starting, shutting down and its idle loop each have a sound, so you can hear its state without looking at it.",
@@ -22,6 +23,10 @@
     {
       "claim": "The orb carries a radius of its own.",
       "evidence": "identifier: orbRadius"
+    },
+    {
+      "claim": "The orb keeps an icon of its own, a flag for whether it is active, and its own kind.",
+      "evidence": "identifiers: orbIcon, itemActive, orbType"
     },
     {
       "claim": "It keeps colour presets and a colour of its own.",
