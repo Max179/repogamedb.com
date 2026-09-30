@@ -2695,6 +2695,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-your-own-condition-is-shown.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
