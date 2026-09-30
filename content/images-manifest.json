@@ -936,6 +936,30 @@
       "height": 512,
       "bytes": 70374,
       "sha256": "d11db4ddc4b26ecf193a245a8a6245a896381a50bc768c40ca1063f0413d18ff"
+    },
+    {
+      "entity": "valuables-with-a-behaviour-of-their-own",
+      "kind": "game",
+      "file": "mapped/valuables-with-a-behaviour-milk.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "milk carton_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the milk carton valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 54628,
+      "sha256": "4c65d6b5d57f45e7b0a2da52947cb8e8f9f0955d0c0320339cd62574670107cd"
+    },
+    {
+      "entity": "valuables-with-a-behaviour-of-their-own",
+      "kind": "game",
+      "file": "mapped/valuables-with-a-behaviour-scale.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "new valaubles_Valuable Arctic Scale_BaseColor",
+      "note": "the colour texture the game ships for the scale valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 46081,
+      "sha256": "48ef689ed11cc2ef88575682f2eb0e9f98b05189f54bb5c617297b272f8719bc"
     }
   ]
 }

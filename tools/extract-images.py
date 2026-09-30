@@ -137,6 +137,8 @@ MAPPINGS = [
   {'entity': 'the-duck-monster', 'bundle': 'resources.assets', 'match': "duckckckck_Enemy_Duck_BaseColor", 'file': 'the-duck-monster-texture.jpg', 'note': "the colour texture the game ships for the duck monster", 'max': 512, 'quality': 88},
   {'entity': 'the-oogly', 'bundle': 'resources.assets', 'match': "Oogly_Albedo", 'file': 'the-oogly-texture.jpg', 'note': "the colour texture the game ships for the oogly monster", 'max': 512, 'quality': 88},
   {'entity': 'the-slow-walker', 'bundle': 'resources.assets', 'match': "Slow Walker_Albedo", 'file': 'the-slow-walker-texture.jpg', 'note': "the colour texture the game ships for the slow walker monster", 'max': 512, 'quality': 88},
+  {'entity': 'valuables-with-a-behaviour-of-their-own', 'bundle': 'resources.assets', 'match': "milk carton_DefaultMaterial_BaseColor", 'file': 'valuables-with-a-behaviour-milk.jpg', 'note': "the colour texture the game ships for the milk carton valuable", 'max': 512, 'quality': 88},
+  {'entity': 'valuables-with-a-behaviour-of-their-own', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Scale_BaseColor", 'file': 'valuables-with-a-behaviour-scale.jpg', 'note': "the colour texture the game ships for the scale valuable", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
