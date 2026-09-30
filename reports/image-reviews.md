@@ -29,4 +29,12 @@ compared against its note, and kept.
 | 2026-09-30 | mapped/extraction-run-point.jpg | extraction point_DefaultMaterial_BaseColor | extraction-run | ok — the large extraction point sheet with its blue machinery; legible |
 | 2026-09-30 | mapped/how-upgrades-are-kept-track-of-upgradestand.jpg | Upgrade Stand_DefaultMaterial_BaseColor | how-upgrades-are-kept-track-of | ok with a note — dark blue and hard to read as an object, but the panel structure is visible and this is the stand the entry describes |
 
-Nothing in either batch was rejected, so no mapping or file was removed and the manifest still holds 104 records.
+| 2026-09-30 | mapped/moving-loot-and-gear-crate.png | Crate_DefaultMaterial_BaseColor | moving-loot-and-gear | ok — a wooden crate with visible planks and corner battens; legible |
+| 2026-09-30 | mapped/enemies-and-their-behaviour-duck.png | Duck monster_BaseColor | enemies-and-their-behaviour | ok — the yellow and red duck monster; legible, matches the monster the note names |
+| 2026-09-30 | mapped/gear-you-carry-walkie.png | Walkie_Basecolor RED | gear-you-carry | ok — the red walkie-talkie sheet; legible, and the same asset the walkie-talkie entry maps under its own record |
+| 2026-09-30 | mapped/cosmetics-and-the-token-machine-hat.jpg | Witch hat_Albedo | cosmetics-and-the-token-machine | ok with a note — a very light sheet, but the crown and brim of the hat are visible in the shading, so it is a hat rather than a blank export |
+| 2026-09-30 | mapped/stunning-instead-of-killing-baton.jpg | Stun baton_DefaultMaterial_BaseColor | stunning-instead-of-killing | ok — the grey baton with its green stripe; legible |
+| 2026-09-30 | mapped/carts-grabbing-and-physics-handle.jpg | cart handle_DefaultMaterial_BaseColor | carts-grabbing-and-physics | ok with a note — dark, but the handle geometry and its fasteners can be made out, and it is the handle the entry describes |
+| 2026-09-30 | mapped/health-and-recovery-pack.jpg | health pack small_DefaultMaterial_BaseColor | health-and-recovery | ok — the grey and white pack with its vents, straps and panels; legible |
+
+Nothing in any of the three batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
