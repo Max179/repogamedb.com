@@ -2800,6 +2800,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-bomb-and-its-fuse.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-boombox-valuable.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3241,11 +3246,6 @@
     },
     {
       "url": "/reference/notes/the-body-every-monster-shares.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-bomb-and-its-fuse.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

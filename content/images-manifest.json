@@ -1274,6 +1274,18 @@
       "sha256": "ce20f8614b477cd37bd729705252e1207702b8e00da555d32eef0e44e6379f38"
     },
     {
+      "entity": "the-bomb-and-its-fuse",
+      "kind": "game",
+      "file": "mapped/the-bomb-and-its-fuse-body.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "bang_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the monster that carries the bomb",
+      "width": 512,
+      "height": 512,
+      "bytes": 81168,
+      "sha256": "54c1d12acc3d61d0fd42405e0be6b7b123382cc61b59ecd7173e5186f1e759a9"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",
