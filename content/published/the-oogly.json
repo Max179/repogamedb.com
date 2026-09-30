@@ -13,6 +13,9 @@
     "It has eyes, a jaw and a set of vector springs, which is why the face is a set of moving parts rather than one shape.",
     "It grabs players and drags them. There is a trail object, a trail renderer and a mesh renderer for a grabbed player, along with sounds for grabbing and dropping, so a lifted crew member is something the monster draws.",
     "Everything it does is audible: idling, wrestling, a call of its own, fast flight, seeing a player, charging, being hurt and dying each have their own sound, and there are effects for its eyes, its spotlight, its death and its hits.",
+    "The body is assembled as well as lit. It carries a visual transform, renderers that give it emission and a fresnel edge, a physics controller of its own and settings for how hard it moves and how smoothly it turns.",
+    "Its pose and its voice are held separately. The hands and the tail each hold a pose, and the audio is gathered around a main source with a list of voice lines and a shared sound for seeing a player, so the whole crew can hear that it has found someone.",
+    "The teleport has more than an out and an in: there is a loop and an end as well, and the spotlight carries a maximum intensity of its own on top of the point light.",
     "The image beside this entry is the game's own: the colour texture of the oogly.",
     "What this entry does not tell you: how far its light reaches, how high it flies, or how much damage it does. We have not verified those numbers, so we do not print them."
   ],
@@ -56,6 +59,18 @@
     {
       "claim": "There is also a trail renderer for its own tail and a follow target with a remembered start position.",
       "evidence": "identifiers: tailTrailRenderer, tailMeshRenderer, followTarget, followTargetStartPosition"
+    },
+    {
+      "claim": "Its body carries a visual transform, renderers for emission and fresnel, a physics controller, and settings for how hard it moves and how smoothly it turns.",
+      "evidence": "identifiers: visualTransform, emissionRenderers, fresnelRenderers, physicsController, moveForce, turnSmoothness"
+    },
+    {
+      "claim": "Its hands and tail each hold a pose, and its audio is kept together with a main source, a list of voice lines and a shared sound for seeing a player.",
+      "evidence": "identifiers: handPose, tailPose, mainAudioSource, voList, audioSeePlayerGlobal"
+    },
+    {
+      "claim": "The teleport has a loop and an end of its own, and the spotlight has a maximum intensity of its own.",
+      "evidence": "identifiers: particlesTeleportLoop, particlesTeleportEnd, spotlightMaxIntensity"
     }
   ],
   "related": [
