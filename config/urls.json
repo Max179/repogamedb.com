@@ -2805,6 +2805,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-bullet-and-what-it-leaves-behind.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-car-and-the-plane-you-can-carry.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3070,6 +3075,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-tumble-wings-upgrade.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-upgrade-stand-and-its-roll.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3243,6 +3253,11 @@
       "url": "/tool.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/topics/ammo.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/topics/ammunition.html",
