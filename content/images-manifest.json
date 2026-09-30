@@ -1286,6 +1286,18 @@
       "sha256": "54c1d12acc3d61d0fd42405e0be6b7b123382cc61b59ecd7173e5186f1e759a9"
     },
     {
+      "entity": "the-traffic-light-valuable",
+      "kind": "game",
+      "file": "mapped/the-traffic-light-valuable-light.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "TrafficLightBaseColor",
+      "note": "the game's own colour texture for the traffic light valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 77312,
+      "sha256": "f90e2e7e19ef6bdfad2ab2c93c4517e26a022de33b92631c727884f317a35ce9"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",

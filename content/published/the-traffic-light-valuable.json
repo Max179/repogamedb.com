@@ -1,0 +1,80 @@
+{
+  "id": "the-traffic-light-valuable",
+  "title": "The traffic light that is also a trap",
+  "category": "Valuables",
+  "summary": "One of R.E.P.O.'s trap valuables is a traffic light: it keeps three coloured lenses with a point light each, a light of its own for the zap, its own timings for every colour, sparks, smoke, camera shake and a fast and a slow tick.",
+  "body": [
+    "Not every valuable is a thing to carry. This one is a trap first: it keeps whether the trap has been triggered, whether it is active, whether it has started, and whether it works on a timer rather than on contact.",
+    "Its lights are its own. There are three lenses, one for each colour, plus a box light behind them, and a point light for green, one for red and one for yellow so the light a colour casts can be separate from the colour shown.",
+    "There is a light kept for the zap as well, which is why the moment it strikes can read differently from the colour it is displaying.",
+    "Every colour has its own length of time, and red lingers longer than the rest. That is what makes the light a rhythm you can learn rather than a flicker.",
+    "What it does when it fires is drawn in parts. Sparks, smoke and the zap each have their own particles, so the flash, the mess left behind and the strike are not one effect.",
+    "It shakes the camera when it fires. The shake has a length, a strength and bounds of its own, which is how the game can rattle the view without moving the room.",
+    "It also throws itself about: there is a torque multiplier for the trap and a multiplier for how it tumbles, so a triggered light does not stay politely upright.",
+    "It sounds like a machine. There is a zap, a flicker, a sound for switching on, a sound for the smoke, and two different ticks, one fast and one slow, which is the countdown you can hear.",
+    "It knows whether it is the copy that matters locally, and monsters can be set to investigate it, so the trap is not only something that happens to a player.",
+    "The image beside this entry is the game's own: the colour sheet it ships for this valuable, with the street-art paint and the stripes its casing carries.",
+    "What this entry does not tell you: how much the light is worth, how much damage the zap does, or how long the timings are. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "It keeps whether the trap is triggered, active or started, and whether it triggers on a timer rather than on contact.",
+      "evidence": "identifiers: trapTriggered, trapActive, trapStart, triggerOnTimer, trapActivateRarityLevel"
+    },
+    {
+      "claim": "It has three coloured lenses and a box light, with a point light for each colour.",
+      "evidence": "identifiers: greenLight, redLight, yellowLight, boxLight, pointLightGreen, pointLightRed, pointLightYellow"
+    },
+    {
+      "claim": "There is a light kept for the zap on top of the colour lights.",
+      "evidence": "identifier: zapLight"
+    },
+    {
+      "claim": "Each colour has a length of time of its own, and red lingers after the others.",
+      "evidence": "identifiers: redLightDuration, greenLightDuration, yellowLightDuration, lingerOnRedTime"
+    },
+    {
+      "claim": "Sparks, smoke and the zap each have their own particles.",
+      "evidence": "identifiers: sparkParticles, smokeParticles, zapParticles"
+    },
+    {
+      "claim": "Zapping shakes the camera, with a length, a strength and bounds of its own.",
+      "evidence": "identifiers: cameraShakeTime, cameraShakeStrength, cameraShakeBounds"
+    },
+    {
+      "claim": "It torques and tumbles, with a multiplier for each.",
+      "evidence": "identifiers: SelfTorqueMultiplier, tumbleForceMultiplier"
+    },
+    {
+      "claim": "It has sounds for the zap, the flicker, switching on and the smoke, plus a fast and a slow tick.",
+      "evidence": "identifiers: zapSound, flickeringSound, turnOnSound, smokeSound, fastTickSound, slowTickSound"
+    },
+    {
+      "claim": "It keeps track of whether it is the local copy, and monsters can be made to investigate it.",
+      "evidence": "identifiers: isLocal, enemyInvestigate"
+    },
+    {
+      "claim": "The game ships its own colour sheet for the valuable.",
+      "evidence": "identifier: TrafficLightBaseColor"
+    }
+  ],
+  "related": [
+    "valuables-that-fight-back",
+    "valuables-and-looting",
+    "how-a-monster-takes-damage"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-traffic-light-valuable-light.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour sheet the game ships for the traffic light valuable.",
+        "zh": "游戏为交通灯贵重物提供的颜色贴图。"
+      }
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
