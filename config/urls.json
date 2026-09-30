@@ -2465,6 +2465,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/reading-a-monster-before-it-reaches-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/valuables-and-looting.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
