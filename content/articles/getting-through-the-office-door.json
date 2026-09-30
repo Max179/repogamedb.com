@@ -1,0 +1,61 @@
+{
+  "id": "getting-through-the-office-door",
+  "title": "Getting through the office door",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the keycard door in R.E.P.O. works and how items that switch, light up or unlock behave once you are through it.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with the shop's keycard door",
+    "Something to carry",
+    "A crew that can share what is behind it"
+  ],
+  "steps": [
+    {
+      "do": "Expect the office door to be a locked and an unlocked state rather than a key you hold.",
+      "because": "the keycard is kept in a locked and an unlocked state (shop office keycard_LOCKED, shop office keycard_UNLOCKED)"
+    },
+    {
+      "do": "Look for the door that belongs to the shop rather than any door.",
+      "because": "the shop has a keycard door of its own (ShopKeycardDoor)"
+    },
+    {
+      "do": "Read the panel rather than the handle: it is where the door answers you.",
+      "because": "the door has its own panel, switches material when it opens and carries an unlock sound (shopKeycardPanelMeshRenderer, unlockedMaterial, unlockSound)"
+    },
+    {
+      "do": "Treat it as a physical door, because it is hung rather than a way of moving a player.",
+      "because": "it is a hinged physical object with a level collider (hingedPhysGrabObject, levelColliderObject)"
+    },
+    {
+      "do": "Expect items to keep a state of their own once you are through.",
+      "because": "items have a state of their own with a manager behind them (ItemState, ItemManager, ItemAttributes)"
+    },
+    {
+      "do": "Toggle deliberately and check whether it turns itself off when put away.",
+      "because": "an item can be toggled, with a toggle state, a sound and a rule about switching off when put away (ItemToggle, toggleState, playSound, autoTurnOffWhenEquipped, onToggle)"
+    },
+    {
+      "do": "Know whether a carried light is meant to stay on.",
+      "because": "an item can carry a light with an intensity curve and a setting for staying on (ItemLight, itemLight, lightIntensityCurve, alwaysActive)"
+    },
+    {
+      "do": "Watch how loud a tool is, because it has its own level.",
+      "because": "an item carries a sound level of its own, with types including one for items from the secret shop (ItemVolume, itemVolume, volumes, itemSecretShopType)"
+    }
+  ],
+  "commonMistakes": [
+    "Hunting for a key item when the door answers to a locked and unlocked state.",
+    "Yanking the door instead of using its panel.",
+    "Leaving a tool switched on and putting it away.",
+    "Carrying a light that was never set to stay on."
+  ],
+  "relatedEntities": [
+    "keycards-and-the-office",
+    "items-you-switch-carry-or-unlock",
+    "gear-you-carry"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

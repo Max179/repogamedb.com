@@ -1,6 +1,36 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Getting through the office door",
+    "url": "/articles/getting-through-the-office-door.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Expecting a monster to move like nothing else",
+    "url": "/articles/expecting-a-monster-to-move-like-nothing-else.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Reading the readouts without looking away",
+    "url": "/articles/reading-the-readouts-without-looking-away.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Breaking contact with a monster",
+    "url": "/articles/breaking-contact-with-a-monster.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Reading what a level will hold",
+    "url": "/articles/reading-what-a-level-will-hold.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Protecting a haul in the valuables box",
     "url": "/articles/protecting-a-haul-in-the-valuables-box.html",
     "kind": "New guide"
@@ -52,35 +82,5 @@
     "title": "Hearing the hidden before you see it",
     "url": "/articles/hearing-the-hidden-before-you-see-it.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Pushing the cart without losing the load",
-    "url": "/articles/pushing-the-cart-without-losing-the-load.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Dealing with the monster that comes apart",
-    "url": "/articles/dealing-with-the-monster-that-comes-apart.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The bomb thrower",
-    "url": "/entries/the-bomb-thrower.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Keeping your speed up a ramp and through a drift",
-    "url": "/articles/keeping-your-speed-up-a-ramp-and-through-a-drift.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The boosts a vehicle earns",
-    "url": "/entries/the-boosts-a-vehicle-earns.html",
-    "kind": "New entry"
   }
 ]
