@@ -10,7 +10,7 @@ site is built from is committed under `data/normalized/`.
 ## How to build and verify
 ```
 node pipeline/site.mjs                                   # production build
-node tests/site.test.mjs                                 # 57 gates
+node tests/site.test.mjs                                 # 60 gates
 node <22>/node_modules/typescript/bin/tsc --noEmit -p tsconfig.json
 node tools/content-gate.mjs                              # content model: entries and articles
 node tools/classify-urls.mjs                             # refresh config/urls.json

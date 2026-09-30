@@ -54,6 +54,10 @@ for (const [s, n] of summaries) if (n > 1) bad.push('duplicate summary: ' + s.sl
 // ---- coverage ----
 const rows = [];
 const gaps = [];
+// A column whose draft records `finding: "absent"` is not an unwritten gap: the
+// system was looked for in the game's own files and is not there. Counting it as
+// a gap made coverage.mjs exit non-zero forever and read as unfinished work.
+const absences = [];
 for (const col of cfg.columns) {
   if (col.kind === 'articles') {
     rows.push({ col, pub: articles.length, dra: 0, ref: 0 });
@@ -67,8 +71,10 @@ for (const col of cfg.columns) {
   const ref = reference.filter((e) => e.data.column === col.id);
   rows.push({ col, pub: pub.length, dra: dra.length, ref: ref.length });
   if (pub.length === 0) {
-    gaps.push('| ' + col.id + ' | ' + col.label + ' | ' + (col.status ?? 'not yet grounded') + ' | ' +
-      (dra.map((d) => d.data.id + (d.data.reason ? ' (' + d.data.reason + ')' : '')).join(', ') || '-') + ' |');
+    const line = '| ' + col.id + ' | ' + col.label + ' | ' + (col.status ?? 'not yet grounded') + ' | ' +
+      (dra.map((d) => d.data.id + (d.data.reason ? ' (' + d.data.reason + ')' : '')).join(', ') || '-') + ' |';
+    if (dra.some((d) => d.data.finding === 'absent')) absences.push(line);
+    else gaps.push(line);
   }
 }
 
@@ -83,6 +89,7 @@ writeFileSync(join(root, 'reports', 'coverage-report.md'),
   '- draft entries (not built, not indexed): ' + drafts.length + '\n' +
   '- reference pages (technical, noindex): ' + reference.length + '\n' +
   '- published guides (articles): ' + articles.length + '\n' +
+  '- columns investigated and found absent in the game: ' + absences.length + '\n' +
   '- quality failures: ' + bad.length + '\n\n' +
   '| target column | what it covers | published | draft | reference |\n| --- | --- | --- | --- | --- |\n' +
   rows.map((r) => '| ' + r.col.id + ' | ' + r.col.label + ' | ' + r.pub + ' | ' + r.dra + ' | ' + r.ref + ' |').join('\n') +
@@ -90,14 +97,24 @@ writeFileSync(join(root, 'reports', 'coverage-report.md'),
   (gaps.length ? '| column | target | why it is not published | draft in progress |\n| --- | --- | --- | --- |\n' + gaps.join('\n') +
     '\n\nA column with no published entry is a gap in this site, not a gap in the game: it is either not yet\n' +
   'grounded in the game\'s own files, or written and waiting in content/draft.\n'
-    : 'Every target column has at least one published entry.\n') +
+    : 'No column is waiting on unpublished site work.\n') +
+  '\n## Columns investigated and found absent in the game\n\n' +
+  (absences.length
+    ? 'These are not site gaps. The system was searched for in the game\'s own files and does not exist in\n' +
+      'this build, so publishing an entry would invent it. Recording the absence is the correct outcome.\n\n' +
+      '| column | target | finding | evidence |\n| --- | --- | --- | --- |\n' + absences.join('\n') + '\n'
+    : 'None. Every target column corresponds to something the game actually has.\n') +
   (bad.length ? '\n## Quality failures\n\n' + bad.map((b) => '- ' + b).join('\n') + '\n' : ''),
   'utf8');
 
 console.log('[coverage] ' + cfg.site + ': columns=' + cfg.columns.length +
   ' covered=' + rows.filter((r) => r.pub > 0).length +
   ' published=' + published.length + ' draft=' + drafts.length + ' reference=' + reference.length +
+  ' absent=' + absences.length +
   ' qualityFailures=' + bad.length);
-for (const r of rows) if (r.pub === 0) console.log('  GAP  ' + r.col.id + ' (' + r.col.label + ')');
+for (const r of rows) if (r.pub === 0) {
+  const isAbsent = drafts.some((d) => d.data.column === r.col.id && d.data.finding === 'absent');
+  console.log('  ' + (isAbsent ? 'ABSENT' : 'GAP   ') + '  ' + r.col.id + ' (' + r.col.label + ')');
+}
 for (const b of bad) console.log('  QUALITY  ' + b);
 process.exit(bad.length || gaps.length ? 1 : 0);

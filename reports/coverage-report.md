@@ -10,6 +10,7 @@ the reason it is still a draft.
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 35
+- columns investigated and found absent in the game: 1
 - quality failures: 0
 
 | target column | what it covers | published | draft | reference |
@@ -38,9 +39,13 @@ the reason it is still a draft.
 
 ## Columns with nothing published yet
 
-| column | target | why it is not published | draft in progress |
+No column is waiting on unpublished site work.
+
+## Columns investigated and found absent in the game
+
+These are not site gaps. The system was searched for in the game's own files and does not exist in
+this build, so publishing an entry would invent it. Recording the absence is the correct outcome.
+
+| column | target | finding | evidence |
 | --- | --- | --- | --- |
 | combos | Item combinations | no combination or crafting system found in this build | item-combinations (No combination, crafting or recipe system was found in this build. Items are separate objects that can be carried, thrown and used, but nothing in the files ties one item to another as an ingredient, so an entry here would invent a system.) |
-
-A column with no published entry is a gap in this site, not a gap in the game: it is either not yet
-grounded in the game's own files, or written and waiting in content/draft.
