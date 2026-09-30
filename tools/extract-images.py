@@ -165,6 +165,7 @@ MAPPINGS = [
   {'entity': 'the-museums-laser', 'bundle': 'resources.assets', 'match': "security laser _DefaultMaterial_BaseColor", 'file': 'the-museums-laser-texture.jpg', 'note': "the base colour texture the game ships for the security laser", 'max': 512, 'quality': 88},
   {'entity': 'the-walkie-talkie-and-what-it-answers', 'bundle': 'resources.assets', 'match': "Walkie_Basecolor RED", 'file': 'the-walkie-talkie-texture.jpg', 'note': "the colour texture the game ships for the walkie-talkie the crew talks through", 'max': 512, 'quality': 88},
   {'entity': 'the-spinny', 'bundle': 'resources.assets', 'match': "Spinny_Albedo", 'file': 'the-spinny-texture.jpg', 'note': "the colour texture the game ships for the spinny monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-elsa-in-two-sizes', 'bundle': 'resources.assets', 'match': "Elsa Fur Big", 'file': 'the-elsa-in-two-sizes-fur.jpg', 'note': "the fur texture the game ships for the elsa at its big size, one of the two the game keeps for the two sizes", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
