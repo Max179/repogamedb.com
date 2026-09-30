@@ -96,4 +96,5 @@ git status --porcelain              -> 空
 - 计数（第 132 轮）：已发布词条 13 条、结构化文章 4 篇、映射已确认的游戏图片 6 张；其余图片为标注"非截图"的自绘示意图。
 - 计数（第 134 轮）：词条 15 条、文章 4 篇、真实映射图 6 张。
 - 计数（第 139 轮）：词条 18 条、文章 5 篇、真实映射图 6 张。
+- 计数（第 142 轮）：词条 21 条、文章 5 篇、真实映射图 8 张。新增词条"外观与代币机"（新栏目 Cosmetics），依据 CosmeticShopMachine / CosmeticShopMachineAnimator / CosmeticShopMachineConfetti / CosmeticAsset / CosmeticHideCondition / PlayerAvatarMenu 等已核验标识符；并从 resources.assets 映射确认 2 张游戏原图（CosmeticShopToken_Basecolor_Rare、Witch hat_Albedo，按最长边 1024 压到 15–26 KB，清单记录写入后的实际尺寸/字节/sha256）。构建 pages=564 indexable=47，50 条门禁全过，tsc exit 0，发布仍为外部凭据阻塞。
 

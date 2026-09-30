@@ -2460,6 +2460,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/cosmetics-and-the-token-machine.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/enemies-and-their-behaviour.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2601,6 +2606,11 @@
     },
     {
       "url": "/topics/comms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/cosmetics.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

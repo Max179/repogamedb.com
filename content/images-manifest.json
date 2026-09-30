@@ -72,6 +72,30 @@
       "height": 512,
       "bytes": 258795,
       "sha256": "ada7395e6a81dd5d86fd278541efd3b79b6bb989535a53ffd49ae58e957b80d8"
+    },
+    {
+      "entity": "cosmetics-and-the-token-machine",
+      "kind": "game",
+      "file": "mapped/cosmetics-and-the-token-machine-token.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "CosmeticShopToken_Basecolor_Rare",
+      "note": "the game token the cosmetic machine dispenses, in its rare colouring",
+      "width": 256,
+      "height": 256,
+      "bytes": 14736,
+      "sha256": "24178be039442020b4d12d1b8650b7575e01c20126868ce6b623bf6eceeb60da"
+    },
+    {
+      "entity": "cosmetics-and-the-token-machine",
+      "kind": "game",
+      "file": "mapped/cosmetics-and-the-token-machine-hat.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Witch hat_Albedo",
+      "note": "albedo texture of one wearable cosmetic the game ships",
+      "width": 512,
+      "height": 512,
+      "bytes": 26363,
+      "sha256": "6586323eb8d58758fdd3d6532fedc0e096df321f217d9e5dee980111142e123d"
     }
   ]
 }

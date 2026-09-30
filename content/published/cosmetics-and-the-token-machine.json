@@ -1,0 +1,74 @@
+{
+  "id": "cosmetics-and-the-token-machine",
+  "title": "Cosmetics and the token machine",
+  "summary": "R.E.P.O. gives out player cosmetics from their own machine in the shop: you spend currency, the machine spins a display, and a cosmetic token comes out at one of four grades.",
+  "body": [
+    "The shop has a machine for cosmetics, and it behaves like a dispenser rather than a shelf: you put currency in, the machine spins a display in front of you, and a cosmetic is handed over at the end.",
+    "What you receive is a token. The game keeps its tokens in four grades, and each grade has its own colouring, so an uncommon pull and a rare pull do not look the same even before you put either of them on.",
+    "The handover is staged rather than instant. The machine has its own animation and a confetti effect for the moment a cosmetic is revealed, and the reveal runs on a screen that spins up, then settles.",
+    "Wearing a cosmetic is about the avatar rather than the whole character. The player figure is split into parts that each carry a default surface, and a cosmetic is laid over those surfaces, which is why a hat lands on the head instead of covering the body.",
+    "You are not stuck with what you pull. A cosmetic can be hidden again, and the game keeps a menu for your avatar as well as its own interface for the tokens and for cosmetic objects in the world.",
+    "What this entry does not tell you: what a spin costs, the odds of each grade, or how many cosmetics the game ships. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The shop contains a machine that gives out player cosmetics.",
+      "evidence": "identifier: CosmeticShopMachine"
+    },
+    {
+      "claim": "Cosmetics are handed over as tokens, and the game keeps tokens in four grades.",
+      "evidence": "identifiers: CosmeticShopToken_Basecolor_Common, CosmeticShopToken_Basecolor_Uncommon, CosmeticShopToken_Basecolor_Rare, CosmeticShopToken_Basecolor_UltraRare"
+    },
+    {
+      "claim": "The machine spins a display, settles on a result and celebrates it.",
+      "evidence": "identifiers: screenSpinTransform, screenSpinSettleTransform, CosmeticShopMachineAnimator, CosmeticShopMachineConfetti"
+    },
+    {
+      "claim": "A cosmetic is its own asset, laid over the avatar's base surfaces.",
+      "evidence": "identifiers: CosmeticAsset, _PlayerAvatar_Cosmetics_Overlays_Template_Player Avatar_BaseColor"
+    },
+    {
+      "claim": "The avatar is split into parts, so a cosmetic is applied to a part such as the head, the body, an arm or a leg.",
+      "evidence": "identifiers: Cosmetic - Head Top Mesh - Default, Cosmetic - Body Top Mesh - Default, Cosmetic - Arm Left Mesh - Default, Cosmetic - Leg Left Mesh - Default"
+    },
+    {
+      "claim": "A cosmetic can be hidden again, and the game keeps its own interface for tokens and cosmetic objects.",
+      "evidence": "identifiers: CosmeticHideCondition, CosmeticTokenUI, CosmeticWorldObjectUI, PlayerAvatarMenu"
+    }
+  ],
+  "related": [
+    "the-shop-between-runs",
+    "how-upgrades-are-kept-track-of"
+  ],
+  "images": [
+    {
+      "file": "mapped/cosmetics-and-the-token-machine-token.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The game token the cosmetic machine dispenses, shown in its rare colouring.",
+        "zh": "外观机器发放的游戏代币，图为稀有等级配色。"
+      }
+    },
+    {
+      "file": "mapped/cosmetics-and-the-token-machine-hat.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "A hat cosmetic texture taken from the game, one of the items the machine can hand over.",
+        "zh": "取自游戏的帽子外观贴图，属于机器可能开出的物品之一。"
+      }
+    },
+    {
+      "file": "cosmetics-and-the-token-machine.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: pay the machine, it spins, a token comes out at one of four grades, and you wear or hide the cosmetic.",
+        "zh": "示意图：向机器付费、机器旋转、开出四种等级之一的代币、你穿上或隐藏外观。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
+  ],
+  "category": "Cosmetics"
+}
