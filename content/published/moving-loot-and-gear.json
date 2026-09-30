@@ -34,6 +34,14 @@
   ],
   "images": [
     {
+      "file": "mapped/moving-loot-and-gear-crate.png",
+      "kind": "game",
+      "alt": {
+        "en": "An albedo texture taken from the game of a crate used for moving things.",
+        "zh": "取自游戏用于搬运的木箱反照率贴图。"
+      }
+    },
+    {
       "file": "moving-loot-and-gear.svg",
       "kind": "diagram",
       "alt": {

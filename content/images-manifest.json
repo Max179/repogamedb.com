@@ -2,6 +2,18 @@
   "source": "C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data",
   "records": [
     {
+      "entity": "moving-loot-and-gear",
+      "kind": "game",
+      "file": "mapped/moving-loot-and-gear-crate.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Crate_DefaultMaterial_BaseColor",
+      "note": "albedo texture of a crate used to move stock in the game",
+      "width": 512,
+      "height": 512,
+      "bytes": 204496,
+      "sha256": "e516165da90ad217540c0c1a6555b0fb1a8bc89e51727987559c1e221dd85809"
+    },
+    {
       "entity": "enemies-and-their-behaviour",
       "kind": "game",
       "file": "mapped/enemies-and-their-behaviour-bombthrower.png",

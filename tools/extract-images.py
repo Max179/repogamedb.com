@@ -6,6 +6,7 @@ ROOT = r'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data'
 OUT_DIR = os.path.join('content', 'assets', 'mapped')
 MANIFEST = os.path.join('content', 'images-manifest.json')
 MAPPINGS = [
+  {'entity': 'moving-loot-and-gear', 'bundle': 'resources.assets', 'match': 'Crate_DefaultMaterial_BaseColor', 'file': 'moving-loot-and-gear-crate.png', 'note': 'albedo texture of a crate used to move stock in the game'},
   {'entity': 'enemies-and-their-behaviour', 'bundle': 'resources.assets', 'match': 'Enemy Bomb Thrower BaseColor (Screaming)', 'file': 'enemies-and-their-behaviour-bombthrower.png', 'note': 'albedo texture named for the game bomb-throwing monster'},
   {'entity': 'enemies-and-their-behaviour', 'bundle': 'resources.assets', 'match': 'Duck monster_BaseColor', 'file': 'enemies-and-their-behaviour-duck.png', 'note': 'albedo texture of another monster kind the enemies entry describes'},
   {'entity': 'valuables-and-looting', 'bundle': 'resources.assets', 'match': 'Egg 2', 'file': 'valuables-and-looting-egg.png', 'note': 'texture of an egg-shaped valuable'},
