@@ -428,5 +428,18 @@ ok('every game image used in an entry has a manifest record and exists in the bu
     out.trim().split('\n').filter((l) => l.includes('CHECK')).slice(0, 3).join(' | '));
 }
 
+// --- every picture the site shows from the game must have been opened and judged.
+// The ledger preamble calls the review a separate human step, but a gate only required a verdict for
+// pictures the sanity pass happened to flag, so most mappings were never looked at. This closes that:
+// a manifest record without a verdict now fails the suite.
+{
+  const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+  const ledger = readFileSync('reports/image-reviews.md', 'utf8');
+  const judged = new Set([...ledger.matchAll(/\|\s*(mapped\/[^\s|]+)\s*\|/g)].map((m) => m[1].trim()));
+  const unjudged = manifest.records.filter((r) => !judged.has(r.file)).map((r) => r.file);
+  ok('every mapped picture has a verdict in the review ledger', unjudged.length === 0,
+    unjudged.slice(0, 3).join(', '));
+}
+
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);
