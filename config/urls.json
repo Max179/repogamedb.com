@@ -2850,6 +2850,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-upscream.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-valuable-tracker.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
