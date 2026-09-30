@@ -2655,6 +2655,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-a-vehicles-body-follows-its-physics.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-many-monsters-a-level-sends.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2886,6 +2891,11 @@
     },
     {
       "url": "/entries/the-level-themes-and-what-they-hold.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-lights-and-beeps-on-a-vehicle.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
