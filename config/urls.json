@@ -2445,6 +2445,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/entries/carts-grabbing-and-physics.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/enemies-and-their-behaviour.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2561,6 +2566,11 @@
     },
     {
       "url": "/topics/maps.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/physics.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
