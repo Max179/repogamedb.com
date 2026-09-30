@@ -10,6 +10,8 @@
     "Hits freeze for a moment. The game keeps a hit freeze and a delay for it, so an impact registers rather than passing straight through.",
     "The swing is tuned. There are settings for how fast a swing is detected, how much force a scroll adds, and how much torque it applies, which is why swinging is a controllable action rather than a single animation.",
     "It is aimed. A melee weapon records which side it hits on and how far it tilts forward, so which way you are facing matters.",
+    "A swing can be handed over or tuned. A weapon can be set to leave its swing to logic alone, or to use a torque and a turn strength of its own with its own rotation and an orientation offset, which is why a heavy weapon and a light one do not move alike.",
+    "It is also audible and visible. Swinging has a sound and a loop, and a hit has a dink of its own with particles for both the swing and the dink.",
     "It can be left to physics. A weapon can be set to use force rotation or to turn itself, which is why some of them behave like a held object rather than a fixed swing.",
     "What this entry does not tell you: how much damage any of them does, how long durability lasts, or what one costs. We have not verified those numbers, so we do not print them."
   ],
@@ -41,6 +43,14 @@
     {
       "claim": "It can be set to use force rotation or to turn itself.",
       "evidence": "identifiers: usesForceRotation, turnWeapon"
+    },
+    {
+      "claim": "A swing can be left to logic alone or given its own torque and turn strength, its own rotation and an orientation offset.",
+      "evidence": "identifiers: swingLogicOnly, customTorqueStrength, turnWeaponStrength, customRotation, orientationOffset"
+    },
+    {
+      "claim": "Swinging has a sound and a loop, and a hit has a dink sound and particles of its own.",
+      "evidence": "identifiers: soundSwingLoop, soundSwing, soundDink, particleSystemSwing, particleSystemDink"
     }
   ],
   "related": [

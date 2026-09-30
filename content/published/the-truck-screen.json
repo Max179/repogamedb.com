@@ -5,6 +5,7 @@
   "summary": "The screen in the R.E.P.O. truck is a machine of its own: the menu has antennas, panels, windows and a dish on springs, and the display reveals text, shows chat messages and changes its background.",
   "body": [
     "The screen in the truck is not a flat panel. The menu around it is animated: antennas, a front panel, two windows and a dish each have a spring with a target of their own, so the whole console moves as the truck does.",
+    "Every part of the console has two ends. The middle antenna, the front panel, both windows, the dish and the back antenna each keep a transform and a target, which is where the spring pulls them to.",
     "It has debris of its own. There are particles for skeleton bits and smoke at the start and again at the end, along with a loop and sounds for swerving, speeding up and slowing down, which is how the truck console reacts to being driven.",
     "The display has settings for how text arrives. There is a reveal setting and a delay between one message and the next, so the text can be typed out rather than appearing all at once.",
     "Messages are their own object. There is a screen type, a chat message with a loading bar and a result bar with a light of its own, so a message can be shown while it is being worked on and then resolved.",
@@ -19,6 +20,10 @@
     {
       "claim": "The truck menu is animated, with antennas, a front panel, two windows and a dish each on a spring with a target.",
       "evidence": "identifiers: TruckMenuAnimated, antennaMiddleSpring, frontPanelSpring, windowLeftSpring, windowRightSpring, dishSpring, antennaBackSpring"
+    },
+    {
+      "claim": "Each of those parts also keeps a transform and a target of its own.",
+      "evidence": "identifiers: antennaMiddleTransform, antennaMiddleTarget, frontPanelTransform, frontPanelTarget, windowRightTransform, windowRightTarget, windowLeftTransform, windowLeftTarget, dishTransform, dishTarget, antennaBackTransform, antennaBackTarget"
     },
     {
       "claim": "It has skeleton bit and smoke particles at the start and at the end, plus a loop and swerve, speed-up and slow-down sounds.",
