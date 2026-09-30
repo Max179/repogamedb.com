@@ -1,6 +1,34 @@
 [
   {
     "date": "2026-09-30",
+    "title": "The spinny and the wheel it spins",
+    "url": "/entries/the-spinny.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Reading the run record instead of guessing",
+    "url": "/articles/reading-the-run-record-instead-of-guessing.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-09-30",
+    "url": "/reference/notes/content/updates.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-09-30",
+    "url": "/reference/notes/data/guide-questions.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "Staying on the shopkeeper's good side",
+    "url": "/articles/staying-on-the-shopkeepers-good-side.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-09-30",
     "title": "Clearing the museum without setting it off",
     "url": "/articles/clearing-the-museum-without-setting-it-off.html",
     "kind": "New guide"
@@ -39,36 +67,6 @@
     "date": "2026-09-30",
     "title": "What decides whether a monster appears",
     "url": "/reference/notes/what-decides-whether-a-monster-appears.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The tricycle rider's rig",
-    "url": "/reference/notes/the-tricycle-riders-rig.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The bullet and what it leaves behind",
-    "url": "/reference/notes/the-bullet-and-what-it-leaves-behind.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The tumble wings upgrade",
-    "url": "/reference/notes/the-tumble-wings-upgrade.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The cart as an object",
-    "url": "/reference/notes/the-cart-as-an-object.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The record every monster is given",
-    "url": "/reference/notes/the-record-every-monster-is-given.html",
     "kind": "New entry"
   }
 ]
