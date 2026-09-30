@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-09-30",
+    "title": "The elsa at two sizes",
+    "url": "/entries/the-elsa-in-two-sizes.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-09-30",
     "title": "The spinny and the wheel it spins",
     "url": "/entries/the-spinny.html",
     "kind": "New entry"
@@ -61,12 +67,6 @@
     "date": "2026-09-30",
     "title": "How your own condition is shown",
     "url": "/reference/notes/how-your-own-condition-is-shown.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "What decides whether a monster appears",
-    "url": "/reference/notes/what-decides-whether-a-monster-appears.html",
     "kind": "New entry"
   }
 ]
