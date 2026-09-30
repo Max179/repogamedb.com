@@ -7,7 +7,7 @@
       "file": "mapped/enemies-and-their-behaviour-bombthrower.png",
       "sourceBundle": "resources.assets",
       "assetName": "Enemy Bomb Thrower BaseColor (Screaming)",
-      "note": "albedo texture named for the game's bomb-throwing monster",
+      "note": "albedo texture named for the game bomb-throwing monster",
       "width": 1024,
       "height": 1024,
       "bytes": 1040561,
@@ -24,6 +24,18 @@
       "height": 512,
       "bytes": 199823,
       "sha256": "8e590d46abc6ba601948e9d0f384a8567242f101c8af319fb74e1626ed63b1b6"
+    },
+    {
+      "entity": "gear-you-carry",
+      "kind": "game",
+      "file": "mapped/gear-you-carry-walkie.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Walkie_Basecolor RED",
+      "note": "albedo texture of the walkie-talkie item the entry cites",
+      "width": 512,
+      "height": 512,
+      "bytes": 258795,
+      "sha256": "ada7395e6a81dd5d86fd278541efd3b79b6bb989535a53ffd49ae58e957b80d8"
     }
   ]
 }

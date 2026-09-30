@@ -41,6 +41,14 @@
         "zh": "装备示意图：出发前选装备、带进关卡、情况不利时使用、能带回多少带多少。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    },
+    {
+      "file": "mapped/gear-you-carry-walkie.png",
+      "kind": "game",
+      "alt": {
+        "en": "An albedo texture taken from the game of the walkie-talkie item.",
+        "zh": "取自游戏的对讲机贴图（反照率贴图）。"
+      }
     }
   ],
   "sources": [

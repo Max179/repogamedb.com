@@ -216,11 +216,10 @@ export function build(inventoryPath, outDir) {
   let entries = [];
   try { entries = readdirSync(entriesDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(entriesDir, x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* no entries yet */ }
   for (const e of entries) {
-    const img = (e.images ?? [])[0];
-    const imgHtml = img ? '<img class="hero" src="/' + esc(img.file) + '" alt="' + esc(img.alt.en) + '" width="960" height="200">' +
+    const imgHtml = (e.images ?? []).map((img) => '<img class="hero" src="/' + esc(img.file) + '" alt="' + esc(img.alt.en) + '" width="960" height="200">' +
       (img.kind === 'diagram'
-      ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>'
-      : '<p class="dim small">Image taken from the game itself to identify this item; it remains the property of the developer.</p>') : '';
+        ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>'
+        : '<p class="dim small">Image taken from the game itself to identify this item; it remains the property of the developer.</p>')).join('');
     const facts = (e.facts ?? []).map((x) => '<li>' + esc(x.claim) + ' <span class="dim small">(verified against the game&apos;s own files)</span></li>').join('');
     const related = (e.related ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
     write('entries/' + e.id + '.html', layout(e.title, e.summary, '/entries/' + e.id + '.html',
