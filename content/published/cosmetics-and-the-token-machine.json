@@ -6,6 +6,7 @@
     "The shop has a machine for cosmetics, and it behaves like a dispenser rather than a shelf: you put currency in, the machine spins a display in front of you, and a cosmetic is handed over at the end.",
     "What you receive is a token. The game keeps its tokens in four grades, and each grade has its own colouring, so an uncommon pull and a rare pull do not look the same even before you put either of them on.",
     "The handover is staged rather than instant. The machine has its own animation and a confetti effect for the moment a cosmetic is revealed, and the reveal runs on a screen that spins up, then settles.",
+    "The celebration is built from parts as well. The confetti has an active object, a smoke gradient, fast lines and swirl lines with their own gradients, and sparkles and confetti with gradients of their own, which is why a pull can be marked without a single particle doing all of it.",
     "Wearing a cosmetic is about the avatar rather than the whole character. The player figure is split into parts that each carry a default surface, and a cosmetic is laid over those surfaces, which is why a hat lands on the head instead of covering the body.",
     "You are not stuck with what you pull. A cosmetic can be hidden again, and the game keeps a menu for your avatar as well as its own interface for the tokens and for cosmetic objects in the world.",
     "The machine's own parts are recorded too. It has a transform for what it hands over, with a curve for the cosmetic arriving and another for it leaving, a screen with plain and new text and a localised asset behind that text, and debug settings that name a cosmetic and its asset, which is how the reveal can be looked at without spending anything.",
@@ -47,6 +48,10 @@
     {
       "claim": "The machine carries its own transform with a curve going in and a curve going out, text for its screen in plain and new versions with a localised asset, and debug settings for a cosmetic and its asset.",
       "evidence": "identifiers: cosmeticTransform, cosmeticTransformCurveIn, cosmeticTransformCurveOut, screenCosmeticTexts, screenCosmeticTextsNew, screenCosmeticTextsNewLocalizedAsset, debugCosmetic, debugCosmeticAsset"
+    },
+    {
+      "claim": "The confetti the machine fires is built from parts: an active object, smoke gradients, fast lines, swirl lines and sparkles, each with their own gradients.",
+      "evidence": "identifiers: CosmeticShopMachineConfetti, activeObject, smokeGradients, fastLines, fastLinesGradients, swirlLines, swirlLinesGradients, sparklesGradients, confettiGradients"
     }
   ],
   "related": [
