@@ -114,11 +114,17 @@ MAPPINGS = [
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
+# Loading a bundle is by far the slowest part of this script, and mappings are grouped by bundle, so the
+# loaded environment is cached per file. Reading the same bundle once per mapping made long runs exceed their time
+# limit and could leave the manifest written from a partial run.
+_env_cache = {}
 for m in MAPPINGS:
     path = os.path.join(ROOT, m['bundle'])
     if not os.path.exists(path):
         print('  MISSING BUNDLE ' + path); continue
-    env = UnityPy.load(path)
+    if path not in _env_cache:
+        _env_cache[path] = UnityPy.load(path)
+    env = _env_cache[path]
     done = False
     for o in env.objects:
         if o.type.name != 'Texture2D':
