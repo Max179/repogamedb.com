@@ -3370,6 +3370,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-eye-that-follows-you.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-gnomes-and-the-pickaxe.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
