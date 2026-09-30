@@ -1,0 +1,73 @@
+{
+  "id": "the-save-and-your-run-record",
+  "title": "The save and your run record",
+  "category": "Interface",
+  "summary": "R.E.P.O. keeps a record of a run rather than only a pile of loot: the game stores the team name, the players, the time played, the upgrades and a total of what was bought.",
+  "body": [
+    "The save holds more than money. The game stores a team name and the names of the players, which is why a run has an identity rather than being an anonymous pile of valuables.",
+    "Time is part of the record. The game tracks how long has been played, so a run can be measured rather than guessed at.",
+    "Shopping is totalled. Items bought and a running total of purchases are kept, which is why spending is something the game can report back rather than something you remember.",
+    "Upgrades are recorded by name. The game carries names for each upgrade it knows about, covering rest, a battery, an extra jump, health, launch, map player count, range, speed, stamina, strength, climbing and wings.",
+    "It is versioned. The save carries its own version and a list of the lobby kinds it accepts, which is why an older save can be recognised rather than silently misread.",
+    "It reports back on screen. There is a stats screen with a text readout and its own scanline effect, so the record is something you look at rather than only something stored.",
+    "The end of a run has its own screen as well. The game keeps a result screen, which is why finishing has a place to be summarised instead of simply stopping.",
+    "What this entry does not tell you: what counts towards any figure, how records are compared, or what carries between runs. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The save stores the team name and the names of the players.",
+      "evidence": "identifiers: StatsManager, teamName, playerNames"
+    },
+    {
+      "claim": "The game tracks how long has been played.",
+      "evidence": "identifier: timePlayed"
+    },
+    {
+      "claim": "Purchases are kept both as a list and as a running total.",
+      "evidence": "identifiers: itemsPurchased, itemsPurchasedTotal"
+    },
+    {
+      "claim": "The game carries a name for each upgrade it knows about.",
+      "evidence": "identifiers: upgradesInfo, localizedUpgradeSpeed, localizedUpgradeTumbleWings"
+    },
+    {
+      "claim": "The save is versioned and lists the lobby kinds it accepts.",
+      "evidence": "identifiers: saveVersion, savedLobbyTypes"
+    },
+    {
+      "claim": "The record is shown on a stats screen of its own.",
+      "evidence": "identifiers: StatsUI, scanlineObject"
+    },
+    {
+      "claim": "There is a result screen for the end of a run.",
+      "evidence": "identifier: ResultScreenUI"
+    }
+  ],
+  "related": [
+    "the-truck-and-the-end-of-a-run",
+    "the-shop-between-runs"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-save-and-your-run-record-background.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The background the game itself uses for its end-of-run result screen.",
+        "zh": "游戏本身用于结算画面的背景图。"
+      }
+    },
+    {
+      "file": "the-save-and-your-run-record.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a run is played, the purchases and upgrades are recorded, and a result screen reports them back.",
+        "zh": "示意图：进行一趟行动、记录购买与升级、结算画面反馈结果。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

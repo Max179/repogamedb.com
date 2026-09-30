@@ -95,6 +95,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/what-the-run-record-is-for.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/collection.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -2620,6 +2625,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-save-and-your-run-record.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-shop-between-runs.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2751,6 +2761,11 @@
     },
     {
       "url": "/topics/index.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/interface.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

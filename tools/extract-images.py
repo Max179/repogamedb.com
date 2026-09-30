@@ -67,6 +67,8 @@ MAPPINGS = [
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
   {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
    'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'the-save-and-your-run-record', 'bundle': 'sharedassets0.assets', 'match': "result screen_truck background",
+   'file': 'the-save-and-your-run-record-background.jpg', 'note': 'the background the game itself uses for its end-of-run result screen', 'max': 1024, 'quality': 86},
   {'entity': 'batteries-and-charging', 'bundle': 'resources.assets', 'match': "Charging station new_DefaultMaterial_BaseColor",
    'file': 'batteries-and-charging-station.jpg', 'note': 'base colour texture of the charging station the crew can use', 'max': 1024, 'quality': 84},
   {'entity': 'the-staffs', 'bundle': 'resources.assets', 'match': "Antigrav Staff_Albedo",

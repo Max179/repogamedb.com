@@ -1,0 +1,47 @@
+{
+  "id": "what-the-run-record-is-for",
+  "title": "What the run record is actually for",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the record R.E.P.O. keeps of a run, given that the game stores the team, the time played, the upgrades and every purchase.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run under way",
+    "Access to the shop between runs",
+    "A crew that agrees what the record is for"
+  ],
+  "steps": [
+    {
+      "do": "Name the team before the first run, because the save keeps the name.",
+      "because": "the save stores a team name and the player names (teamName)"
+    },
+    {
+      "do": "Check the purchase total when you want to know where the money went.",
+      "because": "items bought and a running total are both kept (itemsPurchasedTotal)"
+    },
+    {
+      "do": "Match the upgrade names on the record against what the crew actually has.",
+      "because": "the game carries a name for every upgrade it knows about (localizedUpgradeSpeed)"
+    },
+    {
+      "do": "Use the time played to judge whether a run is still worth continuing.",
+      "because": "the game tracks how long has been played (timePlayed)"
+    },
+    {
+      "do": "Read the result screen at the end rather than trusting memory.",
+      "because": "the game keeps a result screen of its own (ResultScreenUI)"
+    }
+  ],
+  "commonMistakes": [
+    "Never naming the team and then wondering which save is which.",
+    "Ignoring the purchase total until the money is already gone.",
+    "Assuming the record carries between runs without checking."
+  ],
+  "relatedEntities": [
+    "the-save-and-your-run-record",
+    "the-truck-and-the-end-of-a-run"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

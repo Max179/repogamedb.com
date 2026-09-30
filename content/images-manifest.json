@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-save-and-your-run-record",
+      "kind": "game",
+      "file": "mapped/the-save-and-your-run-record-background.jpg",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "result screen_truck background",
+      "note": "the background the game itself uses for its end-of-run result screen",
+      "width": 1024,
+      "height": 576,
+      "bytes": 39068,
+      "sha256": "3e8f8a44b3a3df47b3ff16ae4724aff5534ccbe35a9a57eca8d3ca355cbbf1d6"
+    },
+    {
       "entity": "batteries-and-charging",
       "kind": "game",
       "file": "mapped/batteries-and-charging-station.jpg",
