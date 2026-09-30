@@ -174,6 +174,12 @@ MAPPINGS = [
   {'entity': 'the-tray-valuable', 'bundle': 'resources.assets', 'match': "tray_DefaultMaterial_BaseColor", 'file': 'the-tray-valuable-tray.jpg', 'note': "the colour texture the game ships for the tray valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-spinny', 'bundle': 'resources.assets', 'match': "Spinny_Albedo", 'file': 'the-spinny-texture.jpg', 'note': "the colour texture the game ships for the spinny monster", 'max': 512, 'quality': 88},
   {'entity': 'the-elsa-in-two-sizes', 'bundle': 'resources.assets', 'match': "Elsa Fur Big", 'file': 'the-elsa-in-two-sizes-fur.jpg', 'note': "the fur texture the game ships for the elsa at its big size, one of the two the game keeps for the two sizes", 'max': 512, 'quality': 88},
+  # The three below have texture names that name their subject outright, so the
+  # mapping needs no interpretation: "Grenades Base" is the grenade, the
+  # tricycle albedo is the tricycle, and the wings texture names the upgrade.
+  {'entity': 'the-thrown-grenade', 'bundle': 'resources.assets', 'match': "Grenades Base", 'file': 'the-thrown-grenade-grenade.jpg', 'note': "the base colour texture the game ships for the grenade the player throws", 'max': 512, 'quality': 88},
+  {'entity': 'the-tricycle-riders-rig', 'bundle': 'resources.assets', 'match': "tricycle_bike_Albedo", 'file': 'the-tricycle-riders-rig-tricycle.jpg', 'note': "the albedo texture of the tricycle the rider monster arrives on", 'max': 512, 'quality': 88},
+  {'entity': 'the-tumble-wings-upgrade', 'bundle': 'resources.assets', 'match': "Upgrade_Tumble-Wings_Albedo", 'file': 'the-tumble-wings-upgrade-wings.jpg', 'note': "the albedo texture the game ships for the tumble wings upgrade", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

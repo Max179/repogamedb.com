@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The tray that carries several valuables",
+    "url": "/entries/the-tray-valuable.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The gumball machine that hypnotises you",
     "url": "/entries/the-gumball-machine-that-hypnotises.html",
     "kind": "New entry"
@@ -64,10 +70,5 @@
     "title": "Reading the run record instead of guessing",
     "url": "/articles/reading-the-run-record-instead-of-guessing.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-09-30",
-    "url": "/reference/notes/content/updates.html",
-    "kind": "New entry"
   }
 ]
