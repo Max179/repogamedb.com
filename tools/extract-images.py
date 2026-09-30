@@ -154,6 +154,8 @@ MAPPINGS = [
   {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "Teeth Bot - Albedo", 'file': 'valuables-that-move-glow-or-talk-teethbot.jpg', 'note': "the colour texture the game ships for the teeth bot valuable", 'max': 512, 'quality': 88},
   {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "valuable scream doll_Material.002_BaseColor", 'file': 'valuables-that-move-glow-or-talk-screamdoll.jpg', 'note': "the colour texture the game ships for the scream doll valuable", 'max': 512, 'quality': 88},
   {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "valuabless_Valuable Old Camera_BaseColor", 'file': 'valuables-that-move-glow-or-talk-camera.jpg', 'note': "the colour texture the game ships for the old camera valuable", 'max': 512, 'quality': 88},
+  {'entity': 'how-the-staffs-are-fired', 'bundle': 'resources.assets', 'match': "Void Staff_Albedo", 'file': 'how-the-staffs-are-fired-void.jpg', 'note': "the colour texture the game ships for the void staff", 'max': 512, 'quality': 88},
+  {'entity': 'how-the-staffs-are-fired', 'bundle': 'resources.assets', 'match': "Torque Staff_Albedo", 'file': 'how-the-staffs-are-fired-torque.jpg', 'note': "the colour texture the game ships for the torque staff", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

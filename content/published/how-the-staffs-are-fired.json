@@ -1,0 +1,101 @@
+{
+  "id": "how-the-staffs-are-fired",
+  "title": "How the staffs are fired",
+  "category": "Items",
+  "summary": "The three staffs in R.E.P.O. are built the same way: each one charges up with its own particles and sounds, reads as loaded, spawns a projectile from a point of its own, and carries a crystal, a screen arrow and a state to hold it all together.",
+  "body": [
+    "The staffs differ in what they do, but they are fired the same way. Each one carries the same set of parts: particles for being loaded, for being refused and for charging up, and a state of its own to sit in.",
+    "A refusal is both seen and heard. Charging a staff that will not fire brings up refusal particles and a pair of sounds, one for the world and one for the interface, so the refusal is not silent.",
+    "Charging up is loud in its own right. There is a sound for the charge and a second one that loops while it is going on, which is why you can hear a staff being wound up before anything happens.",
+    "Firing has its own noise. A cast sound and a lightning sound belong to the moment of release, and two choir sounds belong to the effect alongside them.",
+    "A loaded staff keeps telling you so. There is a quiet loop for a low charge and a different loop for a high one, which is why the sound changes as the charge builds rather than staying level.",
+    "What leaves the staff is a projectile. There is a prefab for it and a point on the staff to spawn it from, so the shot comes from the object rather than from the middle of the screen.",
+    "Each staff is built around a crystal. The antigravity and torque staffs name a crystal material and renderers for it, while the void staff names mesh renderers, an emission gradient and a sphere collider of its own.",
+    "There are differences in the parts that move. The antigravity staff has a left and a right wing with a curve that drives them, and it also keeps a list of colliders to ignore while it works.",
+    "The void staff does something extra on impact. It names a second prefab to create when its shot lands, which is a part the other two do not carry.",
+    "Aiming is shown on screen. Every staff carries a screen arrow, so where the effect will go is drawn in the interface rather than left to guesswork.",
+    "The images beside this entry are the game's own: the colour artwork for the void staff and for the torque staff.",
+    "What this entry does not tell you: what a staff costs, how long a charge takes, or how strong any of the effects is. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "All three staffs carry particles for being loaded, refused and charged up, and a state of their own.",
+      "evidence": "identifiers: ItemStaffZeroGravity, ItemStaffVoid, ItemStaffTorque, loadedParticles, denyParticles, chargeUpParticles, currentState"
+    },
+    {
+      "claim": "A refused staff shows particles and plays a sound for the world and a separate sound for the interface.",
+      "evidence": "identifiers: denyParticles, denySound, denySoundUI"
+    },
+    {
+      "claim": "Charging up has its own sound and a loop that runs while it does.",
+      "evidence": "identifiers: chargeUpSound, chargeUpSoundLoop"
+    },
+    {
+      "claim": "Firing plays a cast sound and a lightning sound, with two choir sounds belonging to the effect.",
+      "evidence": "identifiers: castSound, lightning01Sound, choir01Sound, choir02Sound"
+    },
+    {
+      "claim": "A loaded staff has a quiet loop for a low charge and a different loop for a high one.",
+      "evidence": "identifiers: loadedLowSoundLoop, loadedHighSoundLoop"
+    },
+    {
+      "claim": "The void staff has a set of loaded particles that stay active.",
+      "evidence": "identifiers: ItemStaffVoid, loadedActiveParticles"
+    },
+    {
+      "claim": "Each staff fires a projectile from a prefab and a spawn point of its own.",
+      "evidence": "identifiers: projectilePrefab, projectileSpawnPoint"
+    },
+    {
+      "claim": "The void staff names a prefab to create when its shot lands.",
+      "evidence": "identifiers: ItemStaffVoid, prefabToInstantiateOnHit"
+    },
+    {
+      "claim": "The antigravity staff has a left and a right wing driven by a curve, and a list of colliders to ignore.",
+      "evidence": "identifiers: ItemStaffZeroGravity, wingTransformL, wingTransformR, wingAnimationCurve, ignoreColliders"
+    },
+    {
+      "claim": "Each staff has crystal artwork: a material and renderers, or mesh renderers with an emission gradient and a sphere collider.",
+      "evidence": "identifiers: crystalMaterial, crystalRenderers, crystalMeshRenderers, emissionGradient, sphereCollider, crystalRenderer"
+    },
+    {
+      "claim": "Every staff carries a screen arrow for aiming.",
+      "evidence": "identifier: screenArrow"
+    }
+  ],
+  "related": [
+    "the-staffs",
+    "gear-you-carry"
+  ],
+  "images": [
+    {
+      "file": "mapped/how-the-staffs-are-fired-void.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the void staff.",
+        "zh": "游戏为虚空法杖提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mapped/how-the-staffs-are-fired-torque.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the torque staff.",
+        "zh": "游戏为扭矩法杖提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "how-the-staffs-are-fired.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a staff charges up with its own sound, reads as loaded, spawns a projectile from its own point, and the object lifts, turns or moves.",
+        "zh": "示意图：法杖自行蓄力发声、显示已就绪、从自身发射点射出弹体，随后物体被抬起、翻转或移动。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

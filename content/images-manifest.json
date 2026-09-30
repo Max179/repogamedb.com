@@ -1140,6 +1140,30 @@
       "height": 512,
       "bytes": 42285,
       "sha256": "90ae1e3acfbad7d115a61e3471d7fc0bd891bbfdf06541467f20499d62e7b436"
+    },
+    {
+      "entity": "how-the-staffs-are-fired",
+      "kind": "game",
+      "file": "mapped/how-the-staffs-are-fired-void.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Void Staff_Albedo",
+      "note": "the colour texture the game ships for the void staff",
+      "width": 512,
+      "height": 512,
+      "bytes": 40411,
+      "sha256": "5647851d37fd0fd9b7f212991cfe7c860df1c41bfe6c34ddc76158c29153bda5"
+    },
+    {
+      "entity": "how-the-staffs-are-fired",
+      "kind": "game",
+      "file": "mapped/how-the-staffs-are-fired-torque.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Torque Staff_Albedo",
+      "note": "the colour texture the game ships for the torque staff",
+      "width": 512,
+      "height": 512,
+      "bytes": 68086,
+      "sha256": "575a1c4afd5e95780850ff305de746e9d6a5381fbb9117873cc13d99299b5a57"
     }
   ]
 }
