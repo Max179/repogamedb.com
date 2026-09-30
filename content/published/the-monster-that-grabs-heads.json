@@ -1,0 +1,79 @@
+{
+  "id": "the-monster-that-grabs-heads",
+  "title": "The monster that grabs heads",
+  "category": "Enemies",
+  "summary": "One monster in R.E.P.O. attacks by taking hold of a player's head: the game gives it a tongue on its own springs, eyes on springs that track targets, a staged dropkick, and separate sounds for grabbing and letting go.",
+  "body": [
+    "This monster is built out of springs. Its head, its torso and its tongue each hang on a spring with a source and a target, which is why it leans and snaps towards a player rather than moving as one rigid body.",
+    "The tongue is in two parts. The tip and the middle of the tongue have separate springs, transforms and targets of their own, so the reach can extend while the base whips about.",
+    "It watches with eyes on springs. The eyes track transforms of their own, with eye springs and targets, and there is a parent transform for what it looks at, so its gaze follows rather than snapping onto a fixe point.",
+    "It arrives and leaves visibly. There are particles for the teleport and for its death, with a sound for arriving and for leaving, so a grab that comes out of nowhere is still announced.",
+    "The dropkick is staged. There is a sound for the warning before it, one for starting it, one for ending it and one for the hit, which is why a kick can be read before it lands.",
+    "Lifting a player is a sequence. Taking a head and letting it go are each sounded, and the release has a start and an end of its own, so the moment a player is dropped is audible.",
+    "The rest of it is heard before it is seen: breathing that loops locally, running, light and heavy footsteps, a short and a long move, and short and long noises it makes on its own.",
+    "It also complains. Being noticed has a local and a global sound, being unable to reach a player has one of its own, and being stunned has an introduction, a loop and an outro.",
+    "What this entry does not tell you: how much damage a grab or a kick does, how far its tongue reaches, or how long a stun holds it. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Its head, torso and tongue hang on springs with sources and targets.",
+      "evidence": "identifiers: springHeadTalk, springTorsoTalk, springTongueMiddle, springTongueTip"
+    },
+    {
+      "claim": "The tongue has separate parts for the middle and the tip, each with a transform and a target.",
+      "evidence": "identifiers: springTongueMiddleTransform, springTongueMiddleTarget, springTongueTipTransform, springTongueTipTarget"
+    },
+    {
+      "claim": "Its eyes sit on springs and track targets through a parent transform.",
+      "evidence": "identifiers: eyeSprings, eyeTransforms, eyeTargetTransforms, lookAtTransforms, lookAtParentTransform, lookAtParentAnimTransform"
+    },
+    {
+      "claim": "Arriving and dying are drawn with particles and sounded.",
+      "evidence": "identifiers: teleportParticles, deathParticles, soundTeleportIn, soundTeleportOut"
+    },
+    {
+      "claim": "A dropkick is staged in four sounds.",
+      "evidence": "identifiers: soundDropkickTell, soundDropkickStart, soundDropkickEnd, soundDropkickHit"
+    },
+    {
+      "claim": "Grabbing a head and releasing it are sounded, and the release has a start and an end.",
+      "evidence": "identifiers: soundGrabHead, soundReleaseHeadStart, soundReleaseHeadEnd"
+    },
+    {
+      "claim": "It breathes locally, runs and walks with light and heavy footsteps.",
+      "evidence": "identifiers: soundLocalBreathingLoop, soundRun, soundFootstepLight, soundFootstepHeavy"
+    },
+    {
+      "claim": "Being noticed has a local and a global sound, and being unable to reach a player has one of its own.",
+      "evidence": "identifiers: soundNotice, soundNoticeGlobal, soundCantReach"
+    },
+    {
+      "claim": "Being stunned has an introduction, a loop and an outro.",
+      "evidence": "identifiers: soundStunIntro, soundStunLoop, soundStunOutro"
+    },
+    {
+      "claim": "It has short and long noises and short and long moves.",
+      "evidence": "identifiers: soundNoiseShort, soundNoiseLong, soundMoveShort, soundMoveLong"
+    }
+  ],
+  "related": [
+    "when-a-monster-has-you",
+    "what-being-grabbed-feels-like",
+    "enemies-and-their-behaviour"
+  ],
+  "images": [
+    {
+      "file": "the-monster-that-grabs-heads.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the monster leans on its springs, its tongue reaches in two parts, its eyes track a player, and a staged dropkick follows a tell.",
+        "zh": "示意图：怪物靠弹簧前倾、舌头分两节伸出、眼睛追踪玩家，随后是有预警的分段飞踢。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

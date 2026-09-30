@@ -3385,6 +3385,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-monster-that-grabs-heads.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-music-of-a-level.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
