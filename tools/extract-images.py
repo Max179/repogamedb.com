@@ -145,6 +145,8 @@ MAPPINGS = [
   {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Cartoon Mouse Texture", 'file': 'the-cartoon-television-mouse.png', 'note': "the picture the game itself uses for the mouse in the cartoon the television plays", 'max': 256},
   {'entity': 'the-tick-and-its-mouth', 'bundle': 'resources.assets', 'match': "Tick_basecolor", 'file': 'the-tick-and-its-mouth-texture.jpg', 'note': "the colour texture the game ships for the tick monster", 'max': 512, 'quality': 88},
   {'entity': 'the-valuable-thrower', 'bundle': 'resources.assets', 'match': "Valuable Thrower_Albedo", 'file': 'the-valuable-thrower-texture.jpg', 'note': "the colour texture the game ships for the monster that throws valuables", 'max': 512, 'quality': 88},
+  {'entity': 'the-bowtie-monster', 'bundle': 'resources.assets', 'match': "bowtie_BaseColor", 'file': 'the-bowtie-monster-texture.jpg', 'note': "the colour texture the game ships for the bowtie monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-robed-monster', 'bundle': 'resources.assets', 'match': "robey01", 'file': 'the-robed-monster-texture.jpg', 'note': "the colour texture the game ships for the robed monster", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

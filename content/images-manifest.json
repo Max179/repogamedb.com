@@ -1032,6 +1032,30 @@
       "height": 512,
       "bytes": 48345,
       "sha256": "f898036568bc8ad77d45488123830b7cdc5dfc14bfd54bf8f61b7bd939271434"
+    },
+    {
+      "entity": "the-bowtie-monster",
+      "kind": "game",
+      "file": "mapped/the-bowtie-monster-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "bowtie_BaseColor",
+      "note": "the colour texture the game ships for the bowtie monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 33548,
+      "sha256": "b9deb1cd85b074d229e722663a22a24cea95078e20c1e62bcdc5b3c856261fe1"
+    },
+    {
+      "entity": "the-robed-monster",
+      "kind": "game",
+      "file": "mapped/the-robed-monster-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "robey01",
+      "note": "the colour texture the game ships for the robed monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 28400,
+      "sha256": "cdfdb65760583391da42f1fa88bb0a99881d7e534733dd62271e3dac5635acd0"
     }
   ]
 }

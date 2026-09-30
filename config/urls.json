@@ -2735,6 +2735,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-bowtie-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-car-and-the-plane-you-can-carry.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2856,6 +2861,11 @@
     },
     {
       "url": "/entries/the-revive-item.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-robed-monster.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

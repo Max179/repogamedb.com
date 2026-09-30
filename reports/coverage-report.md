@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 94
+- published entries: 96
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 27
@@ -14,8 +14,8 @@ the reason it is still a draft.
 
 | target column | what it covers | published | draft | reference |
 | --- | --- | --- | --- | --- |
-| enemies | Enemies and their variants | 29 | 0 | 0 |
-| behaviour | Behaviour and how to answer it | 32 | 0 | 0 |
+| enemies | Enemies and their variants | 31 | 0 | 0 |
+| behaviour | Behaviour and how to answer it | 34 | 0 | 0 |
 | valuables | Valuables and value grades | 12 | 0 | 0 |
 | extraction | Hauling and extraction | 3 | 0 | 0 |
 | items | Items you can carry | 12 | 0 | 0 |
