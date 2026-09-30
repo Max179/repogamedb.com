@@ -1,0 +1,47 @@
+{
+  "id": "reading-a-theme-before-you-fill-your-arms",
+  "title": "Reading a theme before you fill your arms",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the level themes in R.E.P.O. to decide what is worth carrying, given that each theme brings its own props and its own valuables.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run already under way",
+    "A crew member who can carry loot",
+    "An idea of what extraction is worth"
+  ],
+  "steps": [
+    {
+      "do": "Identify the theme in the first room rather than halfway through the level.",
+      "because": "the game ships separate artwork for each theme, so a theme is there to be seen (level arctic 01)"
+    },
+    {
+      "do": "Learn what the theme counts as a valuable before you fill your arms.",
+      "because": "a level carries a set of valuables it prefers (ValuablePresets)"
+    },
+    {
+      "do": "Expect the props to belong to the theme rather than being clutter.",
+      "because": "each theme brings scenery of its own (Wizard Cloak)"
+    },
+    {
+      "do": "Treat a themed room as deliberate rather than random.",
+      "because": "a level description names special modules of its own (ModulesSpecial)"
+    },
+    {
+      "do": "Do not assume two levels of the same theme hold the same things.",
+      "because": "the preferred valuables are recorded level by level (Level)"
+    }
+  ],
+  "commonMistakes": [
+    "Carrying a full load before working out which theme you are in.",
+    "Assuming a themed prop is junk.",
+    "Expecting every arctic level to hold the same loot."
+  ],
+  "relatedEntities": [
+    "the-level-themes-and-what-they-hold",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

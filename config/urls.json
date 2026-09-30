@@ -65,6 +65,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-a-theme-before-you-fill-your-arms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/running-a-level-with-a-crew.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2616,6 +2621,11 @@
     },
     {
       "url": "/entries/the-drone.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-level-themes-and-what-they-hold.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
