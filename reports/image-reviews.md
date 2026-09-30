@@ -45,4 +45,12 @@ compared against its note, and kept.
 | 2026-09-30 | mapped/the-shop-between-runs-depot.jpg | Truck Depot_DefaultMaterial_BaseColor | the-shop-between-runs | ok — the depot sheet with its structures, signs and hazard stripes; legible |
 | 2026-09-30 | mapped/weapons-you-can-bring-guns.jpg | Guns_DefaultMaterial_BaseColor | weapons-you-can-bring | ok — the guns sheet with its barrels, grips and scopes; legible |
 
-Nothing in any of the four batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
+| 2026-09-30 | mapped/when-a-monster-has-you-bite.jpg | Headman Mouth Bite Albedo | when-a-monster-has-you | ok — the mouth's plates and teeth in maroon and cream; legible as the texture it is |
+| 2026-09-30 | mapped/what-being-grabbed-feels-like-grabber.jpg | HeadGrabberBaseColor | what-being-grabbed-feels-like | ok — the grabber's pieced skin texture; legible, matches the monster the note names |
+| 2026-09-30 | mapped/the-cart-laser-cannon.jpg | laser cannon_DefaultMaterial_BaseColor | the-cart-laser | ok — the cannon sheet with its housing, hazard stripes and lens ring; legible |
+| 2026-09-30 | mapped/the-leaf-blower-blower.jpg | leafblower_DefaultMaterial_BaseColor | the-leaf-blower | ok — the worn green and rust blower sheet with its nozzle and housing; legible |
+| 2026-09-30 | mapped/melee-weapons-sword.jpg | Sword_Albedo | melee-weapons | ok — the blade, guard and grip materials; legible |
+| 2026-09-30 | mapped/guns-and-how-they-fire-lasergun.jpg | laser gun_DefaultMaterial_BaseColor | guns-and-how-they-fire | ok — the gun sheet with its striped housing, sights and grip; legible |
+| 2026-09-30 | mapped/the-exploding-rubber-duck-duck.jpg | rubber duck_DefaultMaterial_BaseColor | the-exploding-rubber-duck | ok with a note — a mostly flat yellow sheet, which is what a rubber duck looks like: the eyes, beak and leg are the readable parts |
+
+Nothing in any of the five batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
