@@ -1,0 +1,53 @@
+{
+  "id": "when-the-chat-box-will-not-open",
+  "title": "When the chat box will not open",
+  "category": "Comms",
+  "summary": "The chat box in R.E.P.O. is not always ready: the game tracks whether a player is idle, typing or locked out while starting the truck or clearing slackers, and a message moves through states of its own.",
+  "body": [
+    "Typing is a state the game keeps track of. A player is either idle, typing, or locked out, so the game knows where your message is in its journey before it reaches anyone else.",
+    "Some jobs lock the chat. Starting the truck and clearing slackers both put a player into a locked state, which is why the box can refuse your input at the moment you most want to shout.",
+    "A message has states of its own as well. It begins inactive, becomes active, can be possessed, and is then sent, which is why a message can sit waiting instead of firing the instant you press a key.",
+    "It is all managed in one place, with a separate interface for the lobby and for the run, so talking before a level starts and talking inside one are handled by different screens.",
+    "What this entry does not tell you: how long a lock lasts, or how far a message carries. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The chat box has its own set of player states, including idle and typing.",
+      "evidence": "identifiers: PlayerChatBoxState, Idle, Typing"
+    },
+    {
+      "claim": "Some jobs lock the chat box, including starting the truck and clearing slackers.",
+      "evidence": "identifiers: LockedStartingTruck, LockedDestroySlackers"
+    },
+    {
+      "claim": "A message moves through states of its own, including active, possessed and sent.",
+      "evidence": "identifiers: ChatState, Inactive, Active, Possessed, Send"
+    },
+    {
+      "claim": "The chat is managed in one place.",
+      "evidence": "identifier: ChatManager"
+    },
+    {
+      "claim": "The lobby and the run have separate chat interfaces.",
+      "evidence": "identifiers: LobbyChatUI, ChatUI"
+    }
+  ],
+  "related": [
+    "staying-in-touch-with-the-crew",
+    "the-shop-between-runs"
+  ],
+  "images": [
+    {
+      "file": "when-the-chat-box-will-not-open.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a player is idle, starts typing, is locked out during a job, and the message is finally sent.",
+        "zh": "示意图：玩家空闲、开始输入、在执行任务时被锁定、消息最终发出。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
+  ]
+}

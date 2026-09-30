@@ -30,6 +30,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-a-level-before-you-commit.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/running-a-level-with-a-crew.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2490,6 +2495,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-a-level-is-put-together.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-monsters-find-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2556,6 +2566,11 @@
     },
     {
       "url": "/entries/when-a-monster-has-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/when-the-chat-box-will-not-open.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

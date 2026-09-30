@@ -1,0 +1,47 @@
+{
+  "id": "reading-a-level-before-you-commit",
+  "title": "Reading a level before your crew commits",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to read a R.E.P.O. level as it is generated, so the crew picks a direction early instead of drifting from room to room until the timer runs out.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A crew already inside a run",
+    "A way to talk to each other",
+    "Enough carrying space for what you expect to find"
+  ],
+  "steps": [
+    {
+      "do": "Learn the opening rooms before anyone splits off on their own.",
+      "because": "a level is generated in a fixed order that begins with the start room (LevelState)"
+    },
+    {
+      "do": "Work out whether this level holds enemies at all before you commit to a fight.",
+      "because": "a level carries a note about whether it has enemies (HasEnemies)"
+    },
+    {
+      "do": "Treat a dead end as a decision rather than an accident.",
+      "because": "the level description names dead-end modules alongside the normal and passage ones (ModulesDeadEnd1)"
+    },
+    {
+      "do": "Find the extraction point and its area before you fill both arms.",
+      "because": "the extraction point is a placed thing with an area of its own (ExtractionPoint)"
+    },
+    {
+      "do": "Check what this level prefers to hold before deciding what is worth carrying out.",
+      "because": "a level carries its own preferred set of valuables (ValuablePresets)"
+    }
+  ],
+  "commonMistakes": [
+    "Splitting up before anyone has seen the start room.",
+    "Filling both arms before you know where the extraction point is.",
+    "Assuming every level contains enemies."
+  ],
+  "relatedEntities": [
+    "how-a-level-is-put-together",
+    "levels-and-the-way-out"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
