@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to use the sounds and the small movements R.E.P.O. gives a monster before it attacks: the cracks and the clap of the shadow, the stinger when something sights you, where a head is actually pointed, and when a chase begins and ends.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run in progress",
     "A monster within earshot",
@@ -68,6 +68,6 @@
     "how-monsters-find-you"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }

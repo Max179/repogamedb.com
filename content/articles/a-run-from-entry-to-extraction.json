@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "What a R.E.P.O. run contains in order, and the decisions at each stage, based on behaviour the game's own files establish.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A crew and a level",
     "Gear chosen before leaving",
@@ -39,6 +39,6 @@
     "enemies-and-their-behaviour"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

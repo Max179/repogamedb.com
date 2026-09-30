@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to use the level themes in R.E.P.O. to decide what is worth carrying, given that each theme brings its own props and its own valuables.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run already under way",
     "A crew member who can carry loot",
@@ -42,6 +42,6 @@
     "valuables-and-looting"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

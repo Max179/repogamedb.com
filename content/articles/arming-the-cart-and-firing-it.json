@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to arm the cart in R.E.P.O. and use what you fitted, given that the cannon and the laser are separate weapons with different behaviour.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "The cart in the crew",
     "Money or a find for a weapon",
@@ -42,6 +42,6 @@
     "the-cart-cannon"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How music works in R.E.P.O.: the shop's radio is an object with its own clips, while a level's music is run by a manager whose states tell you whether something is near, has seen you or has you, with ambience that can be broken by named interruptions.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run in progress",
     "A shop visit between runs",
@@ -64,6 +64,6 @@
     "enemies-and-their-behaviour"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }

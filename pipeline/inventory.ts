@@ -6,6 +6,14 @@ import { parseAssembly, unitySerializedFields, fieldTypeName, decodeFieldSignatu
 
 const DLL = 'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/Managed/Assembly-CSharp.dll';
 const OUT = 'C:/Users/CHEN/Desktop/repo/data/normalized/p0-inventory.json';
+// The version is the one the game itself carries: its main-menu text asset holds the record
+// "Version - RELEASE" followed by "v0.4.0" (measured 2026-10-01). The player-settings slot in
+// globalgamemanagers reads "0.1", a stale default, so that slot is not used as the version.
+const VERSION_SOURCE = {
+  file: 'REPO_Data/sharedassets0.assets', sha256: 'c4b42e9553f716578a9358b92b5e39705aa3e7edaa379c0d643d98395d0cf84a',
+  bytes: 67228396, offset: 66428081, label: 'Version - RELEASE / v0.4.0',
+  note: "the version label the game's own menu asset carries; the player-settings slot in globalgamemanagers reads 0.1, a stale default",
+};
 if (!existsSync(DLL)) { console.error('assembly missing: ' + DLL); process.exit(2); }
 const asm = parseAssembly(DLL);
 const RE = /item|valuable|enemy|monster|equipment|upgrade|location|level|objective|goal|danger|hazard|damage|health|price|value|shop|extraction|cart|truck|orb|diamond|coin|money|cost|stat|weapon|grenade|mine|turret|drone|vase|potion|museum|truck|haul/i;
@@ -23,8 +31,8 @@ for (const t of asm.types) {
 mkdirSync(dirname(OUT), { recursive: true });
 const payload = {
   game: 'R.E.P.O.', engine: 'unity', scriptBackend: 'mono',
-  version: '0.4.0 (folder R.E.P.O.v0.4.0)',
-  source: { assembly: 'REPO_Data/Managed/Assembly-CSharp.dll', extractor: 'repo-p0-inventory@0.1.0', extractedAt: new Date().toISOString() },
+  version: '0.4.0',
+  source: { assembly: 'REPO_Data/Managed/Assembly-CSharp.dll', extractor: 'repo-p0-inventory@0.1.0', extractedAt: new Date().toISOString(), versionSource: VERSION_SOURCE },
   totals: { types: asm.typeCount, fields: asm.fieldCount, candidateClasses: classes.length, enums: enums.length },
   enums, classes,
 };

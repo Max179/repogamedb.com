@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to read the monster that attacks with a bomb in R.E.P.O.: the effects and voice lines are separate, the fuse tells, ignites and loops on a curve, and being stunned or attacking are split into their own sounds.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run in progress",
     "Sound you can hear over the level",
@@ -65,6 +65,6 @@
     "enemies-and-their-behaviour"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }

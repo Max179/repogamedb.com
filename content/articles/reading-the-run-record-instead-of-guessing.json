@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to read what R.E.P.O. records about a run: the four kinds of points, the haul total beside them, the crew bonuses and the death penalty, and what the save keeps about the crew over time.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run finished, well or badly",
     "A save that has been played at least once",
@@ -56,6 +56,6 @@
     "what-the-game-records-about-each-monster"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

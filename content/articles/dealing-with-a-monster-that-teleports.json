@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to work in R.E.P.O. when a monster keeps arriving without walking: it covers what the game actually does before a monster teleports, what it does while you can see it, and how to make a room safe anyway.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A level where you have already met a monster",
     "Something worth carrying out of that level",
@@ -51,6 +51,6 @@
     "how-monsters-find-you"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

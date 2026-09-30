@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to use the R.E.P.O. map so the crew stops relying on memory, using the markers and the reveal behaviour the game already provides.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run already in progress",
     "The map open to at least one member of the crew",
@@ -42,6 +42,6 @@
     "how-a-level-is-put-together"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

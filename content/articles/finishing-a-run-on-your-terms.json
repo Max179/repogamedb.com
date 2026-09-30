@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to end a R.E.P.O. run deliberately, using the truck and the end-of-run states the game already defines instead of drifting until something goes wrong.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "Loot already carried to the extraction point",
     "A way to call the crew back",
@@ -42,6 +42,6 @@
     "choosing-when-to-leave"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How the hauling cart in R.E.P.O. actually behaves: the handle and grab points, the surface materials it carries, the stabilising force, the two cart modes and the screen and sounds that tell you what it is doing.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A cart in reach",
     "A load worth moving",
@@ -65,6 +65,6 @@
     "the-cart-and-its-boost-pads"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }

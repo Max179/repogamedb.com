@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to move through R.E.P.O.'s museum level: reading the security lasers through a whole cycle before you cross them, why the traps answer to how rare the valuable is, and what the sounds and the ceiling tell you while you work.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A museum level in the run",
     "A crew that can watch one machine while another carries",
@@ -64,6 +64,6 @@
     "mines-traps-and-lasers"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

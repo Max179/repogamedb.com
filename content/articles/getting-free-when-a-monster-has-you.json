@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "What to do in R.E.P.O. when a monster has hold of you or a crew mate: the two kinds built around holding a player, why the picture and the sound are not yours while you are held, and how the crew gets you back on your feet.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A monster that can hold a player somewhere in the level",
     "A revive device somewhere in the crew",
@@ -57,6 +57,6 @@
     "the-revive-item"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

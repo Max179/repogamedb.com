@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to read a R.E.P.O. level as it is generated, so the crew picks a direction early instead of drifting from room to room until the timer runs out.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A crew already inside a run",
     "A way to talk to each other",
@@ -42,6 +42,6 @@
     "levels-and-the-way-out"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

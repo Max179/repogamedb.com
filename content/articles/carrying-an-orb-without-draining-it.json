@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to get use out of the orb in R.E.P.O. given that it runs on a battery, has two modes and absorbs valuables rather than simply sitting there.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "An orb in the crew",
     "Spare batteries or a charging station",
@@ -42,6 +42,6 @@
     "batteries-and-charging"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How the hidden monster in R.E.P.O. gives itself away: the breath particles it leaves in the air, the shapes its footsteps make, the sounds it makes while moving and being stunned, and the fact that a player can pick it up.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run in progress",
     "Sound you can hear over the level",
@@ -65,6 +65,6 @@
     "how-monsters-find-you"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }

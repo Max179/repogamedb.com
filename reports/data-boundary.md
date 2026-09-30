@@ -17,7 +17,8 @@
 | 可执行 | `REPO/REPO.exe` |
 | 数据目录 | `REPO/REPO_Data/` |
 | 总体积 | **1,636.5 MB** |
-| 版本 | **0.4.0**（目录名 `R.E.P.O.v0.4.0`，与 `app.info` 一致） |
+| 版本 | **0.4.0** — 依据游戏自身的主菜单文本资源：`REPO_Data/sharedassets0.assets`（67,228,396 B，`sha256=c4b42e9553f716578a9358b92b5e39705aa3e7edaa379c0d643d98395d0cf84a`）偏移 66,428,081 处的序列化文本记录 `Version - RELEASE` + `v0.4.0`；目录名 `R.E.P.O.v0.4.0` 同号 |
+| 版本槽位 | `globalgamemanagers` 的播放器设置槽位读作 `0.1`（**陈旧默认值，非发布版本**），故版本不取自该槽位 |
 | `app.info` | `semiwork` / `REPO`（开发商 / 产品名） |
 | 引擎 | **Mono**（存在 `REPO_Data/Managed/`，**不存在** `il2cpp_data/`） |
 | 关键程序集 | `Managed/Assembly-CSharp.dll` — 2,915,840 字节 |

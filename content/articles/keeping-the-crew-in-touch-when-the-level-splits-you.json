@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to use the walkie-talkie, the chat box and the map in R.E.P.O. so that a crew which spreads out through a level still knows who is where and what is happening.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A walkie-talkie bought and carried",
     "A level with more than one room in it",
@@ -64,6 +64,6 @@
     "what-the-map-shows-you"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }

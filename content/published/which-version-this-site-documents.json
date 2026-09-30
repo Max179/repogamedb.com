@@ -5,7 +5,7 @@
   "summary": "Every page here describes one installation of R.E.P.O.: this entry states which build was read, what was measured from it, and what that means for what you can rely on.",
   "body": [
     "This site describes one installation. Everything published here was read from the copy of R.E.P.O. installed on the machine that built the site, and the version it reports is named below.",
-    "The build reads as version nought point four point nought, from a folder named for the same release. The reading was taken from the game's own files rather than from a store page, so it reflects what was actually on disk.",
+    "The build reads as version nought point four point nought. That is the release label the game itself carries, and the reading was taken from the game's own files rather than from a store page, so it reflects what was actually on disk.",
     "We record measurements rather than impressions. From this build we read one thousand five hundred and one named types, of which four hundred and seventy-six carry data of their own, and one hundred and thirty sets of named options. We also read nineteen thousand five hundred and five rows of stored data names.",
     "The measured value layer is small on purpose. Only seventy-seven values in this build could be tied to a named thing with confidence, and those are the only ones published; everything else is described without a number rather than guessed at.",
     "What that means for you: if your copy is a different version, an entry here may describe something that has since changed. We do not carry a claim across versions, and we do not cover builds we have not read.",
@@ -14,10 +14,10 @@
   "facts": [
     {
       "claim": "This site documents the build reporting version nought point four point nought.",
-      "evidence": "read from the version recorded in the installation this site was built from"
+      "evidence": "read from the release label the game itself carries, recorded on the technical sources page for this site"
     },
     {
-      "claim": "The version is read from the game files rather than from a store listing.",
+      "claim": "The version is read from the game's own files rather than from a store listing.",
       "evidence": "the same build is recorded on the technical sources page for this site"
     },
     {

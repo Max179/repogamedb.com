@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to bring a fallen crew mate back in R.E.P.O. using the revive item, rather than discovering too late that nobody carried one.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A revive item in the crew",
     "Somebody who is down and reachable",
@@ -42,6 +42,6 @@
     "health-and-recovery"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to behave in R.E.P.O.'s between-run shop: what the shopkeeper senses and how it warns you before it grabs, why a ruckus is what brings it over, and what its switch and its barrels tell you while the crew buys.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A finished run with takings to spend",
     "The shop with its shopkeeper awake",
@@ -60,6 +60,6 @@
     "what-the-shop-puts-out"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

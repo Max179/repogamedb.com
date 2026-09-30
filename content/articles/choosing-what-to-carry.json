@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to decide what your crew brings, based on the gear and loot behaviour the game defines, so the run survives its own mistakes.",
-  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A crew and a level to enter",
     "Access to the shop between runs",
@@ -39,6 +39,6 @@
     "valuables-and-looting"
   ],
   "sources": [
-    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
   ]
 }

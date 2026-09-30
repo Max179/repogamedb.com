@@ -4,7 +4,7 @@
   "tier": "published",
   "kind": "article",
   "target": "How to read the bomb thrower in R.E.P.O. before it acts: the head that grows and comes off, the tell before it goes off, and the screaming heads on its body that open before they bite.",
-  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
   "prerequisites": [
     "A run in progress",
     "Sound you can hear over the level",
@@ -65,6 +65,6 @@
     "what-a-monster-is-doing"
   ],
   "sources": [
-    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+    "A local copy of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
   ]
 }
