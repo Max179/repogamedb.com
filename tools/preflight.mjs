@@ -61,7 +61,7 @@ add('build output is not tracked', !tracked.includes('web/dist/'));
   } catch (e) {
     out = String((e.stdout ?? '') + (e.stderr ?? ''));
   }
-  const m = out.match(/columns=(\d+) covered=(\d+) published=(\d+) draft=(\d+) reference=(\d+) qualityFailures=(\d+)/);
+  const m = out.match(/columns=(\d+) covered=(\d+) published=(\d+) draft=(\d+) reference=(\d+)(?: absent=\d+)? qualityFailures=(\d+)/);
   const cfg = JSON.parse(readFileSync('config/coverage.json', 'utf8'));
   const covered = m ? Number(m[2]) : -1;
   const quality = m ? Number(m[6]) : -1;
