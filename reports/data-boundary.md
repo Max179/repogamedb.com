@@ -80,17 +80,17 @@ Mac 侧**不需要**原始包：归一化数据已提交，脱离游戏包即可
 
 ---
 
-## 五、当前批次状态（本轮由生成器实测，非转述）
+## 五、当前批次状态（2026-10-01 用生成器重测，非转述；此前一版数字为 2026-09-25 批次）
 
 | 指标 | 值 | 来源 |
 |---|---|---|
-| HEAD | `a1dfddc`，commits 250 | `pipeline/status.mjs` |
-| 页面 | 698（indexable 157 / noindex 541） | `pipeline/status.mjs` |
-| 覆盖率列 | 21 列，**20 列有内容**，published **140**，draft **1** | `tools/coverage.mjs` |
+| HEAD | `79ea35f`，commits 284 | `pipeline/status.mjs` |
+| 页面 | 701（indexable 161 / noindex 540） | `pipeline/status.mjs` |
+| 覆盖率列 | 21 列，**20 列有内容**，published **142**，draft **1** | `tools/coverage.mjs` |
 | 唯一缺口列 | `combos`（Item combinations） | `tools/coverage.mjs` |
 | 质量失败 | **0** | `tools/coverage.mjs` |
-| 图片 | 141 条目：**98 条有确认游戏图**、43 条仅示意图；清单 113 条记录、**0 条未使用** | `tools/image-coverage.mjs` |
-| 门禁 | **58 passed / 0 failed** | `node tests/site.test.mjs` |
+| 图片 | 142 条目：**100 条有确认游戏图**、42 条仅示意图；清单 115 条记录、**0 条未使用**；**每条记录都有人工判定** | `tools/image-coverage.mjs` + `reports/image-reviews.md` |
+| 门禁 | **62 passed / 0 failed** | `node tests/site.test.mjs` |
 
 ---
 
