@@ -38,6 +38,10 @@
     {
       "claim": "Bandages are an overlay of their own, named as a cosmetic among the layers the avatar wears.",
       "evidence": "identifier: cosmetic bandages_DefaultMaterial_BaseColor"
+    },
+    {
+      "claim": "The cosmetic side ships icons of its own for clothing and for colour.",
+      "evidence": "identifiers: clothes_icon, color_icon"
     }
   ],
   "related": [
@@ -45,6 +49,22 @@
     "how-upgrades-are-kept-track-of"
   ],
   "images": [
+    {
+      "file": "mapped/cosmetics-and-the-token-machine-clothes.png",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own icon for its clothing cosmetics: a white shirt and trousers.",
+        "zh": "游戏自带的服装外观图标：白色的上衣与裤子。"
+      }
+    },
+    {
+      "file": "mapped/cosmetics-and-the-token-machine-color.png",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own icon for cosmetic colour: a painter's palette with a brush.",
+        "zh": "游戏自带的外观配色图标：调色盘与画笔。"
+      }
+    },
     {
       "file": "mapped/cosmetics-and-the-token-machine-bandages.jpg",
       "kind": "game",

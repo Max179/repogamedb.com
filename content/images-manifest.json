@@ -1488,6 +1488,30 @@
       "height": 512,
       "bytes": 68891,
       "sha256": "dec019df738583f5124772ad25d62f7bfaa2bc1ebaa03ebc9a753ae96328215c"
+    },
+    {
+      "entity": "cosmetics-and-the-token-machine",
+      "kind": "game",
+      "file": "mapped/cosmetics-and-the-token-machine-clothes.png",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "clothes_icon",
+      "note": "the icon the game uses for its clothing cosmetics",
+      "width": 256,
+      "height": 256,
+      "bytes": 18409,
+      "sha256": "85ed02954995d0c0e2823958a0b614c700cec56bc771cba8cba974eb0cf1c756"
+    },
+    {
+      "entity": "cosmetics-and-the-token-machine",
+      "kind": "game",
+      "file": "mapped/cosmetics-and-the-token-machine-color.png",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "color_icon",
+      "note": "the icon the game uses for cosmetic colour",
+      "width": 256,
+      "height": 256,
+      "bytes": 26075,
+      "sha256": "e549d8193461cafdc3fcac1d0c99b9ad0279d3d23d38dc8bdd289eb1563418ef"
     }
   ]
 }

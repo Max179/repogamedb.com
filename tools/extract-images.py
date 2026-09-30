@@ -195,6 +195,9 @@ MAPPINGS = [
   {'entity': 'the-cart-as-an-object', 'bundle': 'resources.assets', 'match': "cart handle arrow", 'file': 'the-cart-as-an-object-arrow.jpg', 'note': "the arrow the game draws on the cart's handle", 'max': 512, 'quality': 88},
   # The cosmetics entry names the overlays laid over the avatar; this asset is the bandage overlay the game ships.
   {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'resources.assets', 'match': "cosmetic bandages_DefaultMaterial_BaseColor", 'file': 'cosmetics-and-the-token-machine-bandages.jpg', 'note': "the bandage overlay the game ships for the avatar, named as a cosmetic", 'max': 512, 'quality': 88},
+  # The cosmetics entry names the cosmetic interfaces; these two icons are the pictures of its clothing and colour menus.
+  {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'sharedassets0.assets', 'match': "clothes_icon", 'file': 'cosmetics-and-the-token-machine-clothes.png', 'note': "the icon the game uses for its clothing cosmetics", 'max': 256},
+  {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'sharedassets0.assets', 'match': "color_icon", 'file': 'cosmetics-and-the-token-machine-color.png', 'note': "the icon the game uses for cosmetic colour", 'max': 256},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
