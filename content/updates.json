@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Pushing the cart without losing the load",
+    "url": "/articles/pushing-the-cart-without-losing-the-load.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Dealing with the monster that comes apart",
     "url": "/articles/dealing-with-the-monster-that-comes-apart.html",
     "kind": "New guide"
@@ -63,12 +69,6 @@
     "date": "2026-10-01",
     "title": "The egg valuable that cracks and gets up",
     "url": "/entries/the-egg-valuable-that-cracks.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The baby head that keeps waking up",
-    "url": "/entries/the-baby-head-valuable.html",
     "kind": "New entry"
   }
 ]
