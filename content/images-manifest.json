@@ -1322,6 +1322,18 @@
       "sha256": "4947a55f148bf2f0a89bce0b4183846c8633238cd62e6b942fd97d9f9b725ba0"
     },
     {
+      "entity": "the-blender-valuable",
+      "kind": "game",
+      "file": "mapped/the-blender-valuable-body.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "blender disembled (no glass)_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the blender valuable's body",
+      "width": 512,
+      "height": 512,
+      "bytes": 49674,
+      "sha256": "52323939e1e021ff68c06cca5b04caaa4ff3d2a9737da8a8ff47d19aacb8591b"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",
