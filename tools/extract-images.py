@@ -65,6 +65,10 @@ MAPPINGS = [
    'file': 'weapons-you-can-bring-guns.jpg', 'note': "base colour texture of the guns the crew can buy and carry", 'max': 1024, 'quality': 84},
   {'entity': 'when-a-monster-has-you', 'bundle': 'resources.assets', 'match': "Headman Mouth Bite Albedo",
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
+  {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
+   'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'when-the-chat-box-will-not-open', 'bundle': 'sharedassets0.assets', 'match': "emojis",
+   'file': 'when-the-chat-box-will-not-open-emojis.jpg', 'note': "the sheet of emoji the game uses with its chat box", 'max': 1024, 'quality': 84},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

@@ -105,4 +105,5 @@ git status --porcelain              -> 空
 - 计数（第 148 轮，图片覆盖）：词条 28 条，其中 26 条带真实游戏图片（93%），2 条仅有原创示意图并已降级；images-manifest 记录 29 条，全部被词条引用、无未使用记录、无缺失记录。
 - 图片纪律：每条 published 词条在 `imageTier` 中声明自己的图片等级（`game-image` 或 `diagram-only`）；门禁 tools/content-gate.mjs 校验二者与实际图片一致，且 diagram-only 词条的示意图必须写明"非游戏截图"；tools/image-coverage.mjs 生成 reports/image-coverage.md，逐条列出图片等级以及真实图片的来源包、资产名、尺寸、字节数与 sha256（前 16 位），并在出现"已用图无清单记录"或"清单记录无人使用"时以非 0 退出。词条页在正文顶部明确写出"Illustrated with an image taken from the game"或"Illustrated with an original diagram only"，后者同时从精选列表中移出、在栏目页标注"(original diagram only)"。
 - 站点规模（第 148 轮）：pages=604 indexable=59，门禁 52 条全过，tsc exit 0。
+- 图片覆盖（第 149 轮继续追图）：词条 28 条，其中 28 条带真实游戏图片（100%），0 条为已标注的 diagram-only；images-manifest 记录 31 条，无未使用、无缺失。仍缺真实图片的词条：（无）——已在页面顶部标注"仅为原创示意图/非游戏截图"并移出精选列表。站点规模：pages=606 indexable=59，门禁 52 条全过，tsc exit 0。
 

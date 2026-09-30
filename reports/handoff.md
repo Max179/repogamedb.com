@@ -22,7 +22,7 @@ game package and without `web/dist`.
 
 ## What the site contains
 - Published entries: 3; structured guides: 2 (each guide has goal, version, prerequisites, grounded steps, common mistakes, related entries, sources).
-- Real images extracted from the game with a recorded mapping: 5. Origin, asset name, size and sha256 are in `content/images-manifest.json`; diagrams are labelled as diagrams.
+- Real images extracted from the game with a recorded mapping: 31. 28 of 28 published entries carry one of those images; the other 0 are diagram-only, labelled as such on their own page and demoted out of the featured list. Per-entry origin (bundle, asset name, size, bytes, sha256) is in reports/image-coverage.md.
 - Content at handoff: 8 entries and 3 structured guides.
 - Build: `pages=512 indexable=19`. URL classification in `config/urls.json`: 19 keep, 485 noindex.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.

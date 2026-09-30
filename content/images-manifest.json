@@ -348,6 +348,30 @@
       "height": 512,
       "bytes": 52399,
       "sha256": "ba4241ddabc411dc3c2c91508167a6bc10adf6ddff189062f7e7ad3bf60d6173"
+    },
+    {
+      "entity": "what-being-grabbed-feels-like",
+      "kind": "game",
+      "file": "mapped/what-being-grabbed-feels-like-grabber.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "HeadGrabberBaseColor",
+      "note": "albedo texture of the head-grabber monster, the enemy that takes hold of a player",
+      "width": 512,
+      "height": 512,
+      "bytes": 44044,
+      "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
+    },
+    {
+      "entity": "when-the-chat-box-will-not-open",
+      "kind": "game",
+      "file": "mapped/when-the-chat-box-will-not-open-emojis.jpg",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "emojis",
+      "note": "the sheet of emoji the game uses with its chat box",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 101705,
+      "sha256": "ca74ca7db92098f54352cadde10245601e7b90ddf7e10d171b94313133a504b2"
     }
   ]
 }
