@@ -4,18 +4,22 @@ Everything that can be done without credentials has been done and is verified on
 This file lists exactly what is still missing, so publishing is a short, unambiguous step once the
 credentials exist.
 
-> **Re-measured 2026-10-01.** The previous numbers here (28 entries, 10 guides, `pages=588`, 50 gates)
-> were from an early build and had drifted badly. Everything below is measured on `01fddb6`.
+> **Re-measured 2026-10-01 on `fcd3409`.** Earlier versions of this file quoted 28 entries, 10 guides,
+> `pages=588` and 50 gates, then 141 entries and `pages=698`; both had drifted. Everything below is measured
+> on the current commit with the site's own generators.
 
-## Verified locally on this commit (`01fddb6`)
-- Build: `[site] pages=698 indexable=157 schema(noindex)=535 out=web/dist`.
-- Site gates: `[site-tests] 60 passed, 0 failed`.
+## Verified locally on this commit (`fcd3409`, 285 commits)
+- Build: `[site] pages=701 indexable=161 schema(noindex)=534 out=web/dist`.
+- Site gates: `[site-tests] 62 passed, 0 failed`.
 - Preflight: `[preflight] 11 ok, 0 failed`, exit 0. Preflight also refuses a dirty working tree, so it only
   passes on a committed state.
-- Coverage matrix: 21 columns, 20 with published content, 1 recorded as absent in the game, 0 quality failures.
-- Content: **141 published entries, 35 structured guides**; 1 draft that documents an absence rather than a gap.
+- Coverage matrix: 21 columns, 20 with published content, 1 (`combos`) recorded as absent in the game, 0 quality failures.
+- Content: **142 published entries, 37 structured guides**; 1 draft that documents an absence rather than a gap.
+- Images: **100** of those entries carry a picture confirmed from the game and **42** carry an original diagram
+  only; the manifest holds **115 records**, none unused. Every record has been opened by eye and has a verdict
+  in `reports/image-reviews.md`, and a gate fails the build if a record is added without one.
 - Every image mapping is re-checkable: a gate asserts each `content/images-manifest.json` record matches the
-  file on disk by byte count, sha256 and real dimensions (114 records).
+  file on disk by byte count, sha256 and real dimensions.
 - `.github/workflows/publish.yml` runs the build, then the gates, then the portable typecheck; the `deploy` job
   has `needs: gate`, so nothing reaches the internet unless those pass.
 - `wrangler.toml` and the workflow agree on the Pages project name: `repogamedb`.
