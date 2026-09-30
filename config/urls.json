@@ -130,6 +130,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/when-to-swing-and-when-to-stop.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/collection.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -2616,6 +2621,11 @@
     },
     {
       "url": "/entries/levels-and-the-way-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/melee-weapons.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

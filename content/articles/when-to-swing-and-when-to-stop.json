@@ -1,0 +1,47 @@
+{
+  "id": "when-to-swing-and-when-to-stop",
+  "title": "When to swing and when to stop",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use a melee weapon in R.E.P.O. without wasting one, given that the game gives melee weapons durability, a hit freeze and a swing you can aim.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A melee weapon in the crew",
+    "Charge in it if it needs any",
+    "A monster you intend to hit rather than avoid"
+  ],
+  "steps": [
+    {
+      "do": "Accept that a melee weapon wears out as you use it.",
+      "because": "melee weapons drain durability on hits (durabilityDrainOnEnemiesAndPVP)"
+    },
+    {
+      "do": "Check the weapon over after a fight rather than assuming it is fine.",
+      "because": "a melee weapon can have a broken mesh of its own (hasBrokenMesh)"
+    },
+    {
+      "do": "Face what you are hitting, since the weapon records its hitting side.",
+      "because": "there is a hitting side angle and a forward tilt (hittingSideAngle)"
+    },
+    {
+      "do": "Expect a moment of freeze on impact and use it.",
+      "because": "the game keeps a hit freeze with its own delay (hitFreezeDelay)"
+    },
+    {
+      "do": "Remember that some melee weapons run on battery.",
+      "because": "a melee weapon can be set to use battery logic (usesBatteryLogic)"
+    }
+  ],
+  "commonMistakes": [
+    "Swinging a spent weapon and wondering why nothing happens.",
+    "Hitting sideways without facing the target.",
+    "Forgetting a battery-powered melee weapon needs charge."
+  ],
+  "relatedEntities": [
+    "melee-weapons",
+    "weapons-you-can-bring"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

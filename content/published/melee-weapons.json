@@ -1,0 +1,73 @@
+{
+  "id": "melee-weapons",
+  "title": "Melee weapons and their wear",
+  "category": "Weapons",
+  "summary": "Melee weapons in R.E.P.O. are not a single swing: the game gives them durability that drains, a freeze on impact, a swing that can be aimed and turned, and a battery option.",
+  "body": [
+    "A melee weapon is its own item. The game gives each one its own behaviour rather than one shared swing, which is why two melee weapons do not handle alike.",
+    "They wear out. Melee weapons drain durability when they hit monsters and other players, which is why a weapon is something that can be used up rather than kept forever.",
+    "Some of them run on battery. A melee weapon can be set to use battery logic, and it can have a broken mesh of its own, which is why a weapon can look as well as work differently when it is spent.",
+    "Hits freeze for a moment. The game keeps a hit freeze and a delay for it, so an impact registers rather than passing straight through.",
+    "The swing is tuned. There are settings for how fast a swing is detected, how much force a scroll adds, and how much torque it applies, which is why swinging is a controllable action rather than a single animation.",
+    "It is aimed. A melee weapon records which side it hits on and how far it tilts forward, so which way you are facing matters.",
+    "It can be left to physics. A weapon can be set to use force rotation or to turn itself, which is why some of them behave like a held object rather than a fixed swing.",
+    "What this entry does not tell you: how much damage any of them does, how long durability lasts, or what one costs. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A melee weapon is its own item with its own behaviour.",
+      "evidence": "identifier: ItemMelee"
+    },
+    {
+      "claim": "Melee weapons drain durability when they hit monsters and other players.",
+      "evidence": "identifier: durabilityDrainOnEnemiesAndPVP"
+    },
+    {
+      "claim": "A melee weapon can be set to use battery logic and to have a broken mesh.",
+      "evidence": "identifiers: usesBatteryLogic, hasBrokenMesh"
+    },
+    {
+      "claim": "A hit freezes for a moment, with its own delay.",
+      "evidence": "identifiers: hitFreeze, hitFreezeDelay"
+    },
+    {
+      "claim": "The swing is tuned with its own detection speed, scroll force and torque.",
+      "evidence": "identifiers: swingDetectSpeedMultiplier, scrollSwingForce, torqueStrength"
+    },
+    {
+      "claim": "A melee weapon records which side it hits on and how far it tilts forward.",
+      "evidence": "identifiers: hittingSideAngle, forwardTilt, symmetricalSides"
+    },
+    {
+      "claim": "It can be set to use force rotation or to turn itself.",
+      "evidence": "identifiers: usesForceRotation, turnWeapon"
+    }
+  ],
+  "related": [
+    "weapons-you-can-bring",
+    "guns-and-how-they-fire"
+  ],
+  "images": [
+    {
+      "file": "mapped/melee-weapons-sword.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The albedo texture taken from the game of one of its melee weapons.",
+        "zh": "取自游戏的近战武器反照率贴图之一。"
+      }
+    },
+    {
+      "file": "melee-weapons.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the weapon is swung, the hit freezes, durability drops, and it eventually breaks.",
+        "zh": "示意图：挥动武器、命中定格、耐久下降、最终损坏。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

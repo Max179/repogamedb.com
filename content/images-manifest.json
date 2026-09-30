@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "melee-weapons",
+      "kind": "game",
+      "file": "mapped/melee-weapons-sword.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Sword_Albedo",
+      "note": "the albedo texture of one of the melee weapons the game ships",
+      "width": 512,
+      "height": 512,
+      "bytes": 32946,
+      "sha256": "4950acb33a30733e8d9f09f31214a2ac85cfbfda8450acb5ac2bac80087f331b"
+    },
+    {
       "entity": "guns-and-how-they-fire",
       "kind": "game",
       "file": "mapped/guns-and-how-they-fire-lasergun.jpg",
