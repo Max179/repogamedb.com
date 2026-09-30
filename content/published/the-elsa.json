@@ -54,6 +54,10 @@
     {
       "claim": "Beyond voice lines it has sound sources of its own for barking, for a stun loop and for panting.",
       "evidence": "identifiers: barkSource, stunLoopSource, pantingSmallSource"
+    },
+    {
+      "claim": "Its barking idles are broken up by small breakers of their own.",
+      "evidence": "identifiers: EnemyElsaAnim, barkIdleBreaker01_01SmallSound, barkIdleBreaker01_02SmallSound, barkIdleBreaker02_01SmallSound, barkIdleBreaker02_02SmallSound"
     }
   ],
   "related": [

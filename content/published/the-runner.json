@@ -32,6 +32,10 @@
     {
       "claim": "It has feet of its own and a collider for being hurt.",
       "evidence": "identifiers: feetTransform, hurtCollider"
+    },
+    {
+      "claim": "Its steps come in a slow and a fast version, and its slash has a sound with a grunt of its own.",
+      "evidence": "identifiers: EnemyRunnerAnim, sfxFootstepSlow, sfxFootstepFast, sfxAttackSlash, sfxAttackGrunt"
     }
   ],
   "related": [
