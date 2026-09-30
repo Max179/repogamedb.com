@@ -44,7 +44,8 @@
         "reading-a-monster-before-it-reaches-you",
         "when-a-monster-has-you",
         "how-a-monster-sees-you",
-        "what-the-game-records-about-each-monster"
+        "what-the-game-records-about-each-monster",
+        "what-a-monster-does-when-it-has-not-seen-you"
       ]
     },
     {
@@ -192,7 +193,8 @@
       "entries": [
         "the-readouts-you-play-by",
         "how-a-run-is-scored",
-        "the-truck-screen"
+        "the-truck-screen",
+        "what-the-game-draws-when-you-find-something"
       ]
     },
     {

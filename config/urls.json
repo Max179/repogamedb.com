@@ -2985,12 +2985,22 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/what-a-monster-does-when-it-has-not-seen-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/what-a-monster-is-doing.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/entries/what-being-grabbed-feels-like.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-game-draws-when-you-find-something.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

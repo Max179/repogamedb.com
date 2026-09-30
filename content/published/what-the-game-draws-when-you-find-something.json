@@ -1,0 +1,57 @@
+{
+  "id": "what-the-game-draws-when-you-find-something",
+  "title": "What the game draws when you find something",
+  "category": "Interface",
+  "summary": "Finding a valuable in R.E.P.O. is shown with a graphic of its own: three pairs of corner and middle colours for a find, a reminder and a bad one, with intro and outro animations and a sound.",
+  "body": [
+    "Finding something is not only a sound. The game draws a graphic for it, and that graphic carries its own colours, its own animation and its own sound.",
+    "There are three pairs of colours. One pair is used when something is discovered, one when you are being reminded of it, and one when the news is bad, and each pair has a corner colour and a middle colour.",
+    "The graphic animates in and out. There is a curve and a speed for coming in and another curve and speed for going out, so the same graphic can appear sharply or drift, depending on how the game sets it.",
+    "It waits as well. There is a wait time before it acts, which is how the marking can be delayed rather than firing the instant something is picked up.",
+    "It is anchored rather than fixed. There are positions for the middle of the screen and for each of the four corners, so the same graphic can be drawn where it makes sense for what is being marked.",
+    "It carries a sound of its own, which is why a find can be heard as well as seen, and it has a target, so the graphic knows what it belongs to.",
+    "Because the colours, the animations, the wait and the positions are all separate, the game can use one marking system for a discovery, for a reminder and for a warning without writing three of them.",
+    "What this entry does not tell you: what any of the colours are, how long the animation takes, or how the three states are chosen. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The graphic has three pairs of colours: one for a discovery, one for a reminder and one for bad news, each with a corner and a middle colour.",
+      "evidence": "identifiers: ValuableDiscoverGraphic, colorDiscoverCorner, colorDiscoverMiddle, ColorReminderCorner, ColorReminderMiddle, ColorBadCorner, ColorBadMiddle"
+    },
+    {
+      "claim": "It animates in and out with its own curves and speeds.",
+      "evidence": "identifiers: introCurve, introSpeed, outroCurve, outroSpeed"
+    },
+    {
+      "claim": "It has a wait time before it acts.",
+      "evidence": "identifier: waitTime"
+    },
+    {
+      "claim": "It can be anchored to the middle of the screen or to any of the four corners.",
+      "evidence": "identifiers: middle, topLeft, topRight, botLeft, botRight"
+    },
+    {
+      "claim": "It carries a sound of its own and a target it belongs to.",
+      "evidence": "identifiers: sound, target"
+    }
+  ],
+  "related": [
+    "the-valuable-tracker",
+    "the-valuables-you-can-find"
+  ],
+  "images": [
+    {
+      "file": "what-the-game-draws-when-you-find-something.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: on a find the graphic animates in with one colour pair, waits, can be reminded in another, and warns in a third before animating out.",
+        "zh": "示意图：发现时以一支配色动画进入、等待，可用第二支配色提醒，第三支配色示警，随后退出动画。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

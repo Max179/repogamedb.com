@@ -1,0 +1,66 @@
+{
+  "id": "what-a-monster-does-when-it-has-not-seen-you",
+  "title": "What a monster does when it has not seen you",
+  "category": "Behaviour",
+  "summary": "A monster that has lost you in R.E.P.O. does not simply stand still: the game gives it a roaming state with a speed, a path radius, a mind-changing timer and a teleport chance.",
+  "body": [
+    "A monster that has not seen you is still doing something. The game gives it a roaming state of its own, with the details kept on that state rather than on the monster.",
+    "It has a speed and an acceleration. Those two values decide how it walks a path and how quickly it gets going, so a roaming monster can be heavy or twitchy without changing what kind of creature it is.",
+    "The path is a range rather than a line. There is a smallest and a largest radius for the path, along with a shortest and a longest time before it changes its mind, so the route is decided while it walks rather than being laid out in advance.",
+    "It pauses as well. There is a roaming cooldown with a minimum and a maximum, and a wait before it turns, which is why a monster can stand at a corner for a moment rather than pacing without stopping.",
+    "It can teleport while roaming. There is a chance of that happening, which is how a creature can disappear from one part of a level and appear in another without having walked there.",
+    "It behaves differently depending on whether you can see it. There is a time it will spend on screen and a cooldown after that, so a monster has a rule for how long it is willing to be watched.",
+    "It also reacts to how close you are. There are timers and distances for a player being near and for a player being far, with a value that decreases the near time, which is why the same monster can seem patient at a distance and impatient up close.",
+    "There is a limit on how many physical objects it will hit along the way, which is how the game keeps a roaming creature from shouldering the level apart.",
+    "What this entry does not tell you: how fast any monster roams, how often it teleports, or how far it can sense a player. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The roaming state has its own speed and acceleration.",
+      "evidence": "identifiers: EnemyStateRoaming, Speed, Acceleration"
+    },
+    {
+      "claim": "Its path has a smallest and a largest radius, with a shortest and a longest time before it changes.",
+      "evidence": "identifiers: RoamingPathRadiusMin, RoamingPathRadiusMax, RoamingChangeMin, RoamingChangeMax"
+    },
+    {
+      "claim": "It has a roaming cooldown between a minimum and a maximum, and a wait before turning.",
+      "evidence": "identifiers: RoamingCooldownMin, RoamingCooldownMax, RoamingTurnWaitTime"
+    },
+    {
+      "claim": "It can teleport while roaming, with a chance of its own.",
+      "evidence": "identifier: RoamingTeleportChance"
+    },
+    {
+      "claim": "It has a time it will spend on screen and a cooldown afterwards.",
+      "evidence": "identifiers: RoamingOnScreenTime, RoamingOnScreenCooldown"
+    },
+    {
+      "claim": "It has timers and distances for a player being near and far, with a value that decreases the near time.",
+      "evidence": "identifiers: PlayerNearTimeMax, PlayerNearDistance, PlayerNearDecrease, PlayerFarTimeMin, PlayerFarTimeMax, PlayerFarDistance"
+    },
+    {
+      "claim": "There is a maximum number of physical objects it will hit while roaming.",
+      "evidence": "identifier: PhysObjectHitMax"
+    }
+  ],
+  "related": [
+    "how-monsters-find-you",
+    "what-a-monster-is-doing"
+  ],
+  "images": [
+    {
+      "file": "what-a-monster-does-when-it-has-not-seen-you.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a roaming monster picks a path within a radius, changes it on a timer, may teleport, and shortens its patience when a player is close.",
+        "zh": "示意图：怪物在半径内选择路径、按计时改道、可能传送，并在玩家靠近时缩短耐心。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
