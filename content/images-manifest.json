@@ -1298,6 +1298,18 @@
       "sha256": "f90e2e7e19ef6bdfad2ab2c93c4517e26a022de33b92631c727884f317a35ce9"
     },
     {
+      "entity": "the-baby-head-valuable",
+      "kind": "game",
+      "file": "mapped/the-baby-head-valuable-head.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "babyhead_Material.007_BaseColor",
+      "note": "the colour texture the game ships for the baby head valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 26252,
+      "sha256": "b87526a6687e5619838ca20d23d9e78282dbe56ee2be61af6b043f5b2180f940"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",

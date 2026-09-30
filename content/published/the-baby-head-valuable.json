@@ -1,0 +1,75 @@
+{
+  "id": "the-baby-head-valuable",
+  "title": "The baby head that keeps waking up",
+  "category": "Valuables",
+  "summary": "One of R.E.P.O.'s trap valuables is a baby's head: it has an awake and an asleep state written into its eyes, sounds for both and for crying, a jolt of its own on a timer, and a cry that carries a set distance.",
+  "body": [
+    "Some valuables fight back; this one simply will not settle. It is a trap first: the game keeps whether the trap has been triggered, whether it is active, whether it has started, whether it works on a timer, and the rarity level it activates at.",
+    "Its head is built from parts. There is the head itself, an eyelid pivot and a pivot for each eye, so the lids and the eyes move as separate things rather than as one face.",
+    "Being awake and being asleep are written as two different eye rotations, with a head angle for being awake and a speed for the eyes to move between the two. That is why the head looks like it is dozing and then is not.",
+    "Waking up and drifting off each take a length of time of their own, so the change is a movement rather than a switch.",
+    "It sounds like a baby. There is a sound for being awake, a sound for crying, and a sound for being asleep, and the crying has a distance of its own that it carries.",
+    "It does not lie still. There is a shortest and a longest interval between its jolts, and a smallest and a largest force for them, so the head twitches on a rhythm you cannot quite learn.",
+    "It is thrown about as well: there is a torque multiplier and a maximum velocity belonging to it, which is what a knock does to a head this size.",
+    "It knows whether it is the copy that matters locally, and monsters can be set to come and investigate it, so waking it is not only a problem for the player holding it.",
+    "The image beside this entry is the game's own: the colour sheet it ships for the head, with the eye, the brow, the mouth and the skin all on one sheet.",
+    "What this entry does not tell you: what the head is worth, how far the cry carries in metres, or how long it stays quiet. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "It keeps whether the trap is triggered, active or started, whether it triggers on a timer, and the rarity at which it activates.",
+      "evidence": "identifiers: trapTriggered, trapActive, trapStart, triggerOnTimer, trapActivateRarityLevel"
+    },
+    {
+      "claim": "Its head, its eyelid pivot and each eye pivot are separate things.",
+      "evidence": "identifiers: head, eyelidPivot, leftEyePivot, rightEyePivot, leftEye, rightEye"
+    },
+    {
+      "claim": "Being awake and asleep are two eye rotations, with a head angle for being awake and a speed for the eyes to move between them.",
+      "evidence": "identifiers: awakeEyelidRotation, asleepEyelidRotation, headAwakeAngle, eyeLerpSpeed, maxTiltAngle"
+    },
+    {
+      "claim": "Waking and falling asleep each take a length of time of their own.",
+      "evidence": "identifiers: awakeTransitionTime, asleepTransitionTime"
+    },
+    {
+      "claim": "It has separate sounds for being awake, for crying and for being asleep, and the cry carries a distance of its own.",
+      "evidence": "identifiers: awakeSound, crySound, asleepSound, cryDistance"
+    },
+    {
+      "claim": "It jolts on its own, with a shortest and a longest interval and a smallest and a largest force.",
+      "evidence": "identifiers: joltIntervalMin, joltIntervalMax, joltForceMin, joltForceMax"
+    },
+    {
+      "claim": "It is thrown about, with a torque multiplier and a maximum velocity of its own.",
+      "evidence": "identifiers: torqueMultiplier, maxVelocity"
+    },
+    {
+      "claim": "It keeps track of whether it is the local copy, and monsters can be made to investigate it.",
+      "evidence": "identifiers: isLocal, enemyInvestigate"
+    },
+    {
+      "claim": "The game ships its own colour sheet for the head.",
+      "evidence": "identifier: babyhead_Material.007_BaseColor"
+    }
+  ],
+  "related": [
+    "valuables-that-fight-back",
+    "valuables-that-move-glow-or-talk",
+    "valuables-and-looting"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-baby-head-valuable-head.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour sheet the game ships for the baby head valuable.",
+        "zh": "游戏为婴儿头贵重物提供的颜色贴图。"
+      }
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
