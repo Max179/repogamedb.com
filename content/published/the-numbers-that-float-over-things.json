@@ -1,0 +1,53 @@
+{
+  "id": "the-numbers-that-float-over-things",
+  "title": "The numbers that float over things",
+  "category": "Interface",
+  "summary": "R.E.P.O. shows value in the world rather than only in a menu: the game keeps a floating text object with an intro and an outro, its own colours and sizes for a value and for a cost.",
+  "body": [
+    "Not all information in R.E.P.O. is in a panel. Some of it floats in the world, attached to what it is describing, and that floating text is an object of its own with parts of its own.",
+    "It arrives and leaves with a curve. There is a curve for coming in and a curve for going out, which is how value can fade up over a crate and disappear again rather than appearing and vanishing in a frame.",
+    "It has two colours. One is for a value and one is for a cost, which is how the same piece of floating text can mean a gain or a loss without a second object being made.",
+    "It has two text sizes as well, one for a value and one for a cost. Keeping the sizes apart means a price and a pay-out can be written at different weights without changing what the text is.",
+    "It belongs to a world-space interface parent. That is the arrangement that lets the game put interface elements at a place in a level rather than at a place on the screen.",
+    "There is a variant for value that has been lost. Keeping a separate object for a loss is how a loss can be drawn differently from a gain rather than only being a different colour.",
+    "The value screen documented on the readouts entry is a different thing: that one is part of the interface you read, and this one is attached to what is being read about.",
+    "What this entry does not tell you: what the curves look like, how long the text stays, or what colours are used. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The floating value text has an intro and an outro curve.",
+      "evidence": "identifiers: WorldSpaceUIValue, curveIntro, curveOutro"
+    },
+    {
+      "claim": "It carries one colour for a value and another for a cost.",
+      "evidence": "identifiers: colorValue, colorCost"
+    },
+    {
+      "claim": "It has one text size for a value and another for a cost.",
+      "evidence": "identifiers: textSizeValue, textSizeCost"
+    },
+    {
+      "claim": "There is a world-space interface parent and a separate object for value that has been lost.",
+      "evidence": "identifiers: WorldSpaceUIParent, WorldSpaceUIValueLost"
+    }
+  ],
+  "related": [
+    "the-readouts-you-play-by",
+    "valuables-and-looting"
+  ],
+  "images": [
+    {
+      "file": "the-numbers-that-float-over-things.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: floating text fades in over an object, shows a value in one colour and size or a cost in another, and fades out again.",
+        "zh": "示意图：浮动文本在物件上淡入，以不同配色与字号显示价值或花费，随后淡出。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
