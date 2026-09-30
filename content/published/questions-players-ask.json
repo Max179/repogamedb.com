@@ -1,0 +1,65 @@
+{
+  "id": "questions-players-ask",
+  "title": "Questions players ask most",
+  "category": "FAQ",
+  "summary": "Short, checkable answers to the questions this site is asked most about R.E.P.O., each one pointing at the entry that explains it in full rather than repeating it here.",
+  "body": [
+    "These are the questions that come up most, answered in a sentence or two. Every answer is backed by something the game itself defines, and the longer explanation is in the entry named beside it.",
+    "On a monster: it can be stopped without being destroyed, because stun arrives as a carried item, a thrown grenade and a placed mine, and a stunned monster is in a state of its own rather than gone.",
+    "On a fallen crew mate: reviving is done with a carried device rather than a command, so whether you can help depends on what the crew brought with them.",
+    "On getting out: the extraction point is a placed thing with an area of its own, and the truck has defined end-of-run states including one for every player being aboard.",
+    "On what you are carrying: batteries are items rather than a shared pool, and some equipment has a drain rate of its own, so what runs out depends on what you brought.",
+    "On talking: a player has a chat box with states of its own, and those states include being locked while starting the truck or clearing slackers, which is why the box is not always available.",
+    "On the shop: it is a place you return to between runs, with its own stock of items, and upgrades there are items rather than numbers.",
+    "What this list does not do is guess. Where an answer would need a number we have not verified, we say so rather than inventing one."
+  ],
+  "facts": [
+    {
+      "claim": "A monster can be stopped without being killed, using a baton, a stun grenade or a stun mine.",
+      "evidence": "identifiers: ItemStunBaton, ItemGrenadeStun, ItemMineStun"
+    },
+    {
+      "claim": "A stunned monster is in a named state of its own rather than gone.",
+      "evidence": "identifiers: EnemyStateStunned, EnemyState"
+    },
+    {
+      "claim": "Reviving a fallen crew mate is done with a carried device.",
+      "evidence": "identifier: ItemReviveItem"
+    },
+    {
+      "claim": "The extraction point is a placed thing with an area, and the truck has defined end-of-run states.",
+      "evidence": "identifiers: ExtractionPoint, TruckScreenPage"
+    },
+    {
+      "claim": "Batteries are carried items, and some equipment has its own drain rate.",
+      "evidence": "identifiers: ItemBattery, batteryDrainPreset"
+    },
+    {
+      "claim": "A player has a chat box with states that include being locked during certain jobs.",
+      "evidence": "identifiers: PlayerChatBoxState, LockedStartingTruck"
+    },
+    {
+      "claim": "The shop is where you return between runs and upgrades there are items.",
+      "evidence": "identifiers: ShopManager, ItemUpgrade"
+    }
+  ],
+  "related": [
+    "stunning-instead-of-killing",
+    "the-truck-and-the-end-of-a-run"
+  ],
+  "images": [
+    {
+      "file": "questions-players-ask.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a question is asked, checked against the game, answered briefly, and linked to the entry that explains it.",
+        "zh": "示意图：提出问题、对照游戏核实、简短回答、链接到详细条目。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. Every answer is backed by the identifiers listed on the technical reference pages."
+  ],
+  "imageTier": "diagram-only"
+}

@@ -5,9 +5,9 @@ counted, not claimed: a column counts only published entries, and anything not y
 the reason it is still a draft.
 
 - target columns: 21
-- columns with at least one published entry: 17
-- published entries: 49
-- draft entries (not built, not indexed): 0
+- columns with at least one published entry: 20
+- published entries: 52
+- draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 27
 - quality failures: 0
@@ -27,23 +27,20 @@ the reason it is still a draft.
 | shop | The shop between runs | 6 | 0 | 0 |
 | coop | Playing with a crew | 2 | 0 | 0 |
 | solo | Solo strategy | 2 | 0 | 0 |
-| combos | Item combinations | 0 | 0 | 0 |
+| combos | Item combinations | 0 | 1 | 0 |
 | physics | Physics, grabbing and the cart | 2 | 0 | 0 |
 | cosmetics | Cosmetics and the avatar | 2 | 0 | 0 |
 | interface | Screens and run records | 1 | 0 | 0 |
-| faq | Answers to the questions players ask most | 0 | 0 | 0 |
-| glossary | Glossary of the terms this site uses | 0 | 0 | 0 |
-| versions | Which version this site documents | 0 | 0 | 0 |
+| faq | Answers to the questions players ask most | 1 | 0 | 0 |
+| glossary | Glossary of the terms this site uses | 1 | 0 | 0 |
+| versions | Which version this site documents | 1 | 0 | 0 |
 | guides | Step-by-step run guides | 27 | 0 | 0 |
 
 ## Columns with nothing published yet
 
 | column | target | why it is not published | draft in progress |
 | --- | --- | --- | --- |
-| combos | Item combinations | no combination or crafting system found in this build | - |
-| faq | Answers to the questions players ask most | not yet written | - |
-| glossary | Glossary of the terms this site uses | not yet written | - |
-| versions | Which version this site documents | not yet written | - |
+| combos | Item combinations | no combination or crafting system found in this build | item-combinations (No combination, crafting or recipe system was found in this build. Items are separate objects that can be carried, thrown and used, but nothing in the files ties one item to another as an ingredient, so an entry here would invent a system.) |
 
 A column with no published entry is a gap in this site, not a gap in the game: it is either not yet
 grounded in the game's own files, or written and waiting in content/draft.

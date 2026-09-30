@@ -1,6 +1,6 @@
 {
   "site": "repogamedb.com",
-  "floor": 17,
+  "floor": 20,
   "columns": [
     {
       "id": "enemies",
@@ -117,7 +117,9 @@
     {
       "id": "combos",
       "label": "Item combinations",
-      "entries": [],
+      "entries": [
+        "item-combinations"
+      ],
       "status": "no combination or crafting system found in this build"
     },
     {
@@ -148,20 +150,23 @@
     {
       "id": "faq",
       "label": "Answers to the questions players ask most",
-      "entries": [],
-      "status": "not yet written"
+      "entries": [
+        "questions-players-ask"
+      ]
     },
     {
       "id": "glossary",
       "label": "Glossary of the terms this site uses",
-      "entries": [],
-      "status": "not yet written"
+      "entries": [
+        "glossary-of-terms"
+      ]
     },
     {
       "id": "versions",
       "label": "Which version this site documents",
-      "entries": [],
-      "status": "not yet written"
+      "entries": [
+        "which-version-this-site-documents"
+      ]
     },
     {
       "id": "guides",

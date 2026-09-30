@@ -2600,6 +2600,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/glossary-of-terms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/guns-and-how-they-fire.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2651,6 +2656,11 @@
     },
     {
       "url": "/entries/protecting-your-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/questions-players-ask.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -2805,6 +2815,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/which-version-this-site-documents.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/your-avatar-and-where-it-is-shown.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2875,6 +2890,16 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/topics/faq.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/glossary.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/topics/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2906,6 +2931,11 @@
     },
     {
       "url": "/topics/valuables.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/versions.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

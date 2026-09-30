@@ -1,0 +1,55 @@
+{
+  "id": "which-version-this-site-documents",
+  "title": "Which version of R.E.P.O. this site documents",
+  "category": "Versions",
+  "summary": "Every page here describes one installation of R.E.P.O.: this entry states which build was read, what was measured from it, and what that means for what you can rely on.",
+  "body": [
+    "This site describes one installation. Everything published here was read from the copy of R.E.P.O. installed on the machine that built the site, and the version it reports is named below.",
+    "The build reads as version nought point four point nought, from a folder named for the same release. The reading was taken from the game's own files rather than from a store page, so it reflects what was actually on disk.",
+    "We record measurements rather than impressions. From this build we read one thousand five hundred and one named types, of which four hundred and seventy-six carry data of their own, and one hundred and thirty sets of named options. We also read nineteen thousand five hundred and five rows of stored data names.",
+    "The measured value layer is small on purpose. Only seventy-seven values in this build could be tied to a named thing with confidence, and those are the only ones published; everything else is described without a number rather than guessed at.",
+    "What that means for you: if your copy is a different version, an entry here may describe something that has since changed. We do not carry a claim across versions, and we do not cover builds we have not read.",
+    "What this entry does not tell you: when any update shipped, what changed between versions, or whether a newer build behaves differently. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "This site documents the build reporting version nought point four point nought.",
+      "evidence": "read from the version recorded in the installation this site was built from"
+    },
+    {
+      "claim": "The version is read from the game files rather than from a store listing.",
+      "evidence": "the same build is recorded on the technical sources page for this site"
+    },
+    {
+      "claim": "The build holds one thousand five hundred and one named types, four hundred and seventy-six of which carry data of their own.",
+      "evidence": "counted from the normalized type list committed with this site"
+    },
+    {
+      "claim": "The build holds one hundred and thirty sets of named options and nineteen thousand five hundred and five rows of stored data names.",
+      "evidence": "counted from the committed normalized data"
+    },
+    {
+      "claim": "Only seventy-seven measured values could be tied to a named thing, and only those are published.",
+      "evidence": "the measured value layer recorded in the machine-readable status file"
+    }
+  ],
+  "related": [
+    "the-shop-between-runs",
+    "what-a-monster-is-doing"
+  ],
+  "images": [
+    {
+      "file": "which-version-this-site-documents.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: one installation is read, its version and measurements are recorded, and every page is built from that.",
+        "zh": "示意图：读取一份安装、记录版本与统计、所有页面据此生成。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The version and the measurements are listed on the sources page; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "item-combinations",
+  "title": "Item combinations",
+  "tier": "draft",
+  "column": "combos",
+  "reason": "No combination, crafting or recipe system was found in this build. Items are separate objects that can be carried, thrown and used, but nothing in the files ties one item to another as an ingredient, so an entry here would invent a system.",
+  "searched": [
+    "type names containing combine, craft, recipe, mix and merge",
+    "data names containing ingredient and recipe",
+    "option sets containing craft and recipe"
+  ],
+  "sources": [
+    "This installation of the game, read only. Nothing here is published or built."
+  ]
+}

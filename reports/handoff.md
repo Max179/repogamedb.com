@@ -10,7 +10,7 @@ site is built from is committed under `data/normalized/`.
 ## How to build and verify
 ```
 node pipeline/site.mjs                                   # production build
-node tests/site.test.mjs                                 # 49 gates
+node tests/site.test.mjs                                 # 52 gates
 node <22>/node_modules/typescript/bin/tsc --noEmit -p tsconfig.json
 node tools/content-gate.mjs                              # content model: entries and articles
 node tools/classify-urls.mjs                             # refresh config/urls.json
@@ -21,10 +21,10 @@ This was verified from a clean clone: the same build, gates, typecheck and prefl
 game package and without `web/dist`.
 
 ## What the site contains
-- Published entries: 49; structured guides: 28.
-- Real images extracted from the game with a recorded mapping: 52. 49 of 49 published entries carry one; the other 0 are diagram-only and labelled as such. Per-entry origin is in reports/image-coverage.md.
+- Published entries: 52; structured guides: 28. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
+- Real images extracted from the game with a recorded mapping: 52. 49 published entries carry one; the other 3 are diagram-only and labelled "original diagram, not a screenshot". Per-entry origin is in reports/image-coverage.md.
 - Content at handoff: 8 entries and 3 structured guides.
-- Build: `pages=512 indexable=19`. URL classification in `config/urls.json`: 19 keep, 485 noindex.
+- Build: `pages=696 indexable=104`. URL classification in `config/urls.json`: 104 keep.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
 
 ## Publishing (not done, and why)

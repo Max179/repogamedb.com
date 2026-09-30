@@ -1,0 +1,64 @@
+{
+  "id": "glossary-of-terms",
+  "title": "Glossary of the terms this site uses",
+  "category": "Glossary",
+  "summary": "The words this site uses for R.E.P.O. in plain language, each with a note on which part of the game it comes from so you can match it to what you see while playing.",
+  "body": [
+    "We keep a small vocabulary. Where the game has its own word for something, this site uses that word rather than inventing a new one, so a name here matches a name you have already seen.",
+    "A run means one trip into a level and back out again, not a whole session. The game separates an ordinary level from a run level, which is why the word is used deliberately here.",
+    "The cart is the crew's hauling vehicle rather than a shopping trolley. It is an object with its own driving behaviour, which is why entries about the cart talk about speed and tilt rather than about wheels.",
+    "A monster state is what a monster is doing at that moment, not what kind of monster it is. Being stunned and despawning sit in the same list, which is why a stun is described here as a state rather than an interruption.",
+    "A trap valuable is a valuable that does something when it is disturbed. That is a different thing from a valuable that is simply worth money, which is why they are separate entries.",
+    "A module is one piece of a level, assembled by the generator rather than placed by hand, and the extraction point is the way out rather than a button you press.",
+    "Where we cannot match a word to one of the game's own, we say so instead of guessing. The technical reference shows how each term was checked for anyone who wants to see the working."
+  ],
+  "facts": [
+    {
+      "claim": "A run means one trip into a level and back out, not a whole session.",
+      "evidence": "identifiers: ChangeLevelType, ExtractionPoint"
+    },
+    {
+      "claim": "The cart is the crew's hauling vehicle rather than a shopping trolley.",
+      "evidence": "identifier: ItemVehicle"
+    },
+    {
+      "claim": "A monster state is what a monster is doing, not what kind of monster it is.",
+      "evidence": "identifier: EnemyState"
+    },
+    {
+      "claim": "A trap valuable is a valuable that does something when disturbed.",
+      "evidence": "identifier: Trap"
+    },
+    {
+      "claim": "A module is one piece of a level assembled by the generator.",
+      "evidence": "identifiers: ModuleAmount, ModulesNormal1"
+    },
+    {
+      "claim": "The extraction point is the way out rather than a button.",
+      "evidence": "identifier: ExtractionPoint"
+    },
+    {
+      "claim": "An upgrade here means an item rather than a number going up.",
+      "evidence": "identifier: ItemUpgrade"
+    }
+  ],
+  "related": [
+    "how-a-level-is-put-together",
+    "the-cart-and-its-boost-pads"
+  ],
+  "images": [
+    {
+      "file": "glossary-of-terms.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a term used on this site is matched to the part of the game it comes from, then used the same way everywhere.",
+        "zh": "示意图：本站使用的术语对应到游戏中的出处，并在全站保持一致。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each term is on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
