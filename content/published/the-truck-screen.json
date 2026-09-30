@@ -43,6 +43,14 @@
     {
       "claim": "Engine sounds are attached to the screen as well.",
       "evidence": "identifiers: engineSoundTransform, engineRevSound"
+    },
+    {
+      "claim": "The screen opens on a curve, and its door has a loop that is started and ended separately.",
+      "evidence": "identifiers: TruckScreenOpen, openScreenCurve, doorLoop, doorLoopStart, doorLoopEnd"
+    },
+    {
+      "claim": "The truck's body rustles in three long and three short sounds, its skeleton hits have sounds of their own including the skull, and there are faster swerves and fire-pass swerves.",
+      "evidence": "identifiers: soundBodyRustleLong01, soundBodyRustleLong02, soundBodyRustleLong03, soundBodyRustleShort01, soundBodyRustleShort02, soundBodyRustleShort03, soundSkeletonHit, soundSkeletonHitSkull, soundSwerveFast01, soundSwerveFast02, soundFirePass, soundFirePassSwerve01, soundFirePassSwerve02"
     }
   ],
   "related": [
