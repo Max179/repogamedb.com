@@ -1,0 +1,47 @@
+{
+  "id": "finishing-a-run-on-your-terms",
+  "title": "Finishing a run on your own terms",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to end a R.E.P.O. run deliberately, using the truck and the end-of-run states the game already defines instead of drifting until something goes wrong.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "Loot already carried to the extraction point",
+    "A way to call the crew back",
+    "Enough health left to reach the truck"
+  ],
+  "steps": [
+    {
+      "do": "Decide how much you are hauling before you call the run, not while standing in the doorway.",
+      "because": "the game separates an ending where not enough was hauled from one where enough was (TruckScreenPage)"
+    },
+    {
+      "do": "Walk your own loot in rather than leaving it for someone else to carry.",
+      "because": "progress toward the extraction point is tracked for each player (ExtractionPointTracking)"
+    },
+    {
+      "do": "Call everyone back before the last load, so nobody is caught outside.",
+      "because": "one of the endings is that every player is aboard the truck (TruckScreenPage)"
+    },
+    {
+      "do": "Use the truck to recover before you spend the takings.",
+      "because": "the truck carries a healer of its own (TruckHealer)"
+    },
+    {
+      "do": "Treat the doors opening as the moment the run is over, and stop exploring.",
+      "because": "the truck doors are a staged part of the ending (TruckDoor)"
+    }
+  ],
+  "commonMistakes": [
+    "Hauling one more valuable after the crew has already called the run.",
+    "Leaving your own loot for someone else to carry in.",
+    "Spending the takings before anyone has healed."
+  ],
+  "relatedEntities": [
+    "the-truck-and-the-end-of-a-run",
+    "choosing-when-to-leave"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

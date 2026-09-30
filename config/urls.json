@@ -25,6 +25,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/finishing-a-run-on-your-terms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/first-run-what-to-expect.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2566,6 +2571,11 @@
     },
     {
       "url": "/entries/the-shop-between-runs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-truck-and-the-end-of-a-run.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

@@ -132,6 +132,18 @@
       "height": 512,
       "bytes": 39629,
       "sha256": "360f831c4b2f8a0bffa489cd5b163c0d092f08ffc3ee2c1a22ed961fde75dc79"
+    },
+    {
+      "entity": "the-truck-and-the-end-of-a-run",
+      "kind": "game",
+      "file": "mapped/the-truck-and-the-end-of-a-run-healer.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Truck Healer_DefaultMaterial_BaseColor",
+      "note": "albedo texture of the truck healer the crew recovers in",
+      "width": 512,
+      "height": 512,
+      "bytes": 54988,
+      "sha256": "3bab3414877db3307353c6ba99829d4a19448b68e3b4c429d12a0a6a2e957f98"
     }
   ]
 }

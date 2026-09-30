@@ -96,6 +96,7 @@ git status --porcelain              -> 空
 - 计数（第 132 轮）：已发布词条 13 条、结构化文章 4 篇、映射已确认的游戏图片 6 张；其余图片为标注"非截图"的自绘示意图。
 - 计数（第 134 轮）：词条 15 条、文章 4 篇、真实映射图 6 张。
 - 计数（第 139 轮）：词条 18 条、文章 5 篇、真实映射图 6 张。
+- 计数（第 146 轮）：词条 27 条、文章 9 篇、真实映射图 12 张。新增"卡车与一趟的收尾"（Extraction，依据 TruckDoor / TruckScreenPage 的 Start·EndNotEnough·EndEnough·AllPlayersInTruck / TruckHealer / ExtractionPointTracking）一条词条，以及指南《按自己的节奏收尾》；并从 resources.assets 映射确认卡车治疗器贴图。构建 pages=584 indexable=57，50 条门禁全过，tsc exit 0。
 - 计数（第 145 轮）：词条 26 条、文章 8 篇、真实映射图 11 张。新增"你的角色与它出现的地方"（Cosmetics，依据 PlayerAvatarMenu 的 worldAvatar / iconMakerAvatar / expressionAvatar 三份模型、PlayerAvatarLeftArm / RightArm / Eyelids、CosmeticHideCondition）一条词条，以及指南《给你的角色挑一件真正合适的》；并从 sharedassets0.assets 映射确认 PlayerAvatar_Albedo。构建 pages=580 indexable=55，50 条门禁全过，tsc exit 0。
 - 计数（第 144 轮）：词条 25 条、文章 7 篇、真实映射图 10 张。新增"把怪物电晕而不是打死"（Weapons，依据 ItemStunBaton / ItemGrenadeStun / ItemMineStun / EnemyStateStunned / MineType）与"推车与加速板"（Physics，依据 ItemVehicle / maxSpeedKmh / maxTiltAngle / hurtColliderSmall / ItemVehicleBoostPad）两条词条，以及指南《把眩晕当成窗口来用》；并从 resources.assets 映射确认 2 张游戏原图（眩晕电棍、手推车）。构建 pages=576 indexable=53，50 条门禁全过，tsc exit 0。
 - 计数（第 143 轮）：词条 23 条、文章 6 篇、真实映射图 8 张。新增"聊天框什么时候打不开"（Comms，依据 PlayerChatBoxState / ChatState / LockedStartingTruck / LockedDestroySlackers）与"关卡是怎么拼出来的"（Maps，依据 Level / LevelGenerator / LevelState / ModulesNormal1 / ChangeLevelType / ExtractionPoint）两条词条，以及指南《在分队之前先读一张图》。构建 pages=569 indexable=50，50 条门禁全过，tsc exit 0。

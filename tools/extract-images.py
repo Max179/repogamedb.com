@@ -27,6 +27,9 @@ MAPPINGS = [
   {'entity': 'your-avatar-and-where-it-is-shown', 'bundle': 'sharedassets0.assets', 'match': 'PlayerAvatar_Albedo',
    'file': 'your-avatar-and-where-it-is-shown-avatar.jpg', 'note': 'albedo texture of the player character whose parts cosmetics are laid over',
    'max': 1024, 'quality': 84},
+  {'entity': 'the-truck-and-the-end-of-a-run', 'bundle': 'resources.assets', 'match': 'Truck Healer_DefaultMaterial_BaseColor',
+   'file': 'the-truck-and-the-end-of-a-run-healer.jpg', 'note': 'albedo texture of the truck healer the crew recovers in',
+   'max': 1024, 'quality': 84},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
