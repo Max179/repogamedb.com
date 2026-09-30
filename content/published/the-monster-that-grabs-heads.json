@@ -11,6 +11,7 @@
     "The dropkick is staged. There is a sound for the warning before it, one for starting it, one for ending it and one for the hit, which is why a kick can be read before it lands.",
     "Lifting a player is a sequence. Taking a head and letting it go are each sounded, and the release has a start and an end of its own, so the moment a player is dropped is audible.",
     "The rest of it is heard before it is seen: breathing that loops locally, running, light and heavy footsteps, a short and a long move, and short and long noises it makes on its own.",
+    "Where its head goes is kept in three places. There is a target position for the head, one for following a player and one for letting go, with a curve between them and a local camera ready for whoever it has hold of, which is why the grip can be aimed and released deliberately.",
     "Every spring has an end in the world. The torso and the head each keep a transform and a target, and each foot has a footstep transform of its own, which is why the parts that lean and reach are anchored rather than floating.",
     "It swipes as well as grabs. The attack has a swipe sound of its own, separate from the four the dropkick is staged with.",
     "The image beside this entry is the game's own: the colour texture it ships for the monster, a pale head with yellow eyes and the rest of its parts laid out on the same sheet.",
@@ -69,6 +70,10 @@
     {
       "claim": "The game ships its own colour texture for the monster.",
       "evidence": "asset name: headman"
+    },
+    {
+      "claim": "It keeps three head target positions — a plain one, one for following and one for releasing — with a curve of its own and a local camera for the player it has hold of.",
+      "evidence": "identifiers: headTargetPositionTransform, headTargetPositionFollowTransform, headTargetPositionReleaseTransform, headTargetPositionCurve, localCameraPrefab"
     }
   ],
   "related": [
