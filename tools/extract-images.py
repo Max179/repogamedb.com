@@ -43,7 +43,7 @@ MAPPINGS = [
   {'entity': 'health-and-recovery', 'bundle': 'resources.assets', 'match': "health pack small_DefaultMaterial_BaseColor",
    'file': 'health-and-recovery-pack.jpg', 'note': "base colour texture of the small health pack the crew carries", 'max': 1024, 'quality': 84},
   {'entity': 'how-a-level-is-put-together', 'bundle': 'sharedassets0.assets', 'match': "level manor 01",
-   'file': 'how-a-level-is-put-together-level.jpg', 'note': "one of the game own level theme textures, named for the manor theme the generator assembles", 'max': 1024, 'quality': 84},
+   'file': 'how-a-level-is-put-together-level.jpg', 'note': "the game's own manor picture, shipped under the name of the level theme the generator assembles", 'max': 1024, 'quality': 84},
   {'entity': 'how-monsters-find-you', 'bundle': 'resources.assets', 'match': "Enemy_Ceiling Eye_Albedo Engn 1",
    'file': 'how-monsters-find-you-eye.jpg', 'note': "albedo texture of a monster eye", 'max': 1024, 'quality': 84},
   {'entity': 'how-upgrades-are-kept-track-of', 'bundle': 'resources.assets', 'match': "Upgrade Stand_DefaultMaterial_BaseColor",
