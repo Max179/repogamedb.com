@@ -49,6 +49,14 @@
         "zh": "贵重物品流程示意图：物品散落在关卡中、小队拾取搬运、易碎品不可掉落。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    },
+    {
+      "file": "mapped/valuables-and-looting-coin.png",
+      "kind": "game",
+      "alt": {
+        "en": "An albedo texture taken from the game of a coin valuable.",
+        "zh": "取自游戏的金币形贵重物品贴图。"
+      }
     }
   ],
   "sources": [

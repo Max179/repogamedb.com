@@ -14,6 +14,18 @@
       "sha256": "41611021cc393e8814baa7ae29d27c2e805e919946c9f142d2d442aa4dc44bc7"
     },
     {
+      "entity": "enemies-and-their-behaviour",
+      "kind": "game",
+      "file": "mapped/enemies-and-their-behaviour-duck.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Duck monster_BaseColor",
+      "note": "albedo texture of another monster kind the enemies entry describes",
+      "width": 512,
+      "height": 512,
+      "bytes": 275373,
+      "sha256": "212f2b55b5e7f94c191ee052d0553c74ce49868e4b7126a1117a5f45fca9e7ea"
+    },
+    {
       "entity": "valuables-and-looting",
       "kind": "game",
       "file": "mapped/valuables-and-looting-egg.png",
@@ -24,6 +36,18 @@
       "height": 512,
       "bytes": 199823,
       "sha256": "8e590d46abc6ba601948e9d0f384a8567242f101c8af319fb74e1626ed63b1b6"
+    },
+    {
+      "entity": "valuables-and-looting",
+      "kind": "game",
+      "file": "mapped/valuables-and-looting-coin.png",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "Coin Albedo",
+      "note": "albedo texture of a coin valuable, taken from the shared assets of the game",
+      "width": 512,
+      "height": 512,
+      "bytes": 38518,
+      "sha256": "3dc1be950ae96a4999f7274effca953b183953c2f71886be73b20168a3830a80"
     },
     {
       "entity": "gear-you-carry",

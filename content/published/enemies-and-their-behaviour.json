@@ -49,6 +49,14 @@
         "zh": "怪物遭遇流程示意图：怪物发现小队、追击、被躲开或击退、小队继续前进。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    },
+    {
+      "file": "mapped/enemies-and-their-behaviour-duck.png",
+      "kind": "game",
+      "alt": {
+        "en": "Another albedo texture taken from the game, for a different monster kind.",
+        "zh": "取自游戏的另一种怪物的反照率贴图。"
+      }
     }
   ],
   "sources": [
