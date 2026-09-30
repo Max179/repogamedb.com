@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-orb",
+      "kind": "game",
+      "file": "mapped/the-orb-orb.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Item Orb_Albedo",
+      "note": "albedo texture of the orb the crew can carry",
+      "width": 512,
+      "height": 512,
+      "bytes": 21343,
+      "sha256": "81b34f76eba0b39d94af3fa6297c2c81e3419a42d685a7a9224d00e0bed578a5"
+    },
+    {
       "entity": "the-valuables-you-can-find",
       "kind": "game",
       "file": "mapped/the-valuables-you-can-find-crystal.jpg",

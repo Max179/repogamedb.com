@@ -15,6 +15,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/carrying-an-orb-without-draining-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/choosing-upgrades-as-a-crew.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2631,6 +2636,11 @@
     },
     {
       "url": "/entries/the-museum-and-its-props.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-orb.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

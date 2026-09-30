@@ -1,0 +1,47 @@
+{
+  "id": "carrying-an-orb-without-draining-it",
+  "title": "Carrying an orb without draining it",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get use out of the orb in R.E.P.O. given that it runs on a battery, has two modes and absorbs valuables rather than simply sitting there.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "An orb in the crew",
+    "Spare batteries or a charging station",
+    "Valuables worth collecting"
+  ],
+  "steps": [
+    {
+      "do": "Decide which mode suits the room before you switch it on.",
+      "because": "the game keeps two kinds of orb, a constant one and a pulsing one (OrbType)"
+    },
+    {
+      "do": "Leave it off when there is nothing to collect.",
+      "because": "the orb drains a battery at a rate of its own (batteryDrainRate)"
+    },
+    {
+      "do": "Carry spares, since the orb is one of the items that makes charge matter.",
+      "because": "the orb has a battery drain preset like other gear (batteryDrainPreset)"
+    },
+    {
+      "do": "Listen for it starting and stopping rather than watching it.",
+      "because": "starting, shutting down and idling each have their own sound (soundOrbBoot)"
+    },
+    {
+      "do": "Give it room to work rather than tucking it into a corner.",
+      "because": "the orb has a radius rather than acting on one point (orbRadius)"
+    }
+  ],
+  "commonMistakes": [
+    "Leaving the orb running in an empty room.",
+    "Setting out without a spare battery.",
+    "Standing outside the radius and assuming it is broken."
+  ],
+  "relatedEntities": [
+    "the-orb",
+    "batteries-and-charging"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
