@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The gumball machine that hypnotises you",
+    "url": "/entries/the-gumball-machine-that-hypnotises.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The blender valuable and its bill soup",
     "url": "/entries/the-blender-valuable.html",
     "kind": "New entry"
@@ -62,11 +68,6 @@
   {
     "date": "2026-09-30",
     "url": "/reference/notes/content/updates.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-09-30",
-    "url": "/reference/notes/data/guide-questions.html",
     "kind": "New entry"
   }
 ]
