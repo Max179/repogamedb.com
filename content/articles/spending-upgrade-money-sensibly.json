@@ -1,0 +1,47 @@
+{
+  "id": "spending-upgrade-money-sensibly",
+  "title": "Spending upgrade money sensibly",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to decide between the upgrades available to a R.E.P.O. crew when each one is an item with its own purpose rather than a general improvement.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "Surplus money after a run",
+    "An upgrade stand in the shop",
+    "A crew that agrees on what is missing"
+  ],
+  "steps": [
+    {
+      "do": "Work out what the crew is actually short of before buying.",
+      "because": "the save records a name for every upgrade the game knows about (upgradesInfo)"
+    },
+    {
+      "do": "Prefer the upgrades that help the whole crew over the ones that help one player once.",
+      "because": "an upgrade records whether it improves the player or the gear (isPlayerUpgrade)"
+    },
+    {
+      "do": "Put what you buy where it will be used rather than leaving it loose.",
+      "because": "upgrades are placed on a stand and cached with their position (CachedUpgrade)"
+    },
+    {
+      "do": "Check the charging and battery situation before buying more battery gear.",
+      "because": "batteries and charging are their own items (ChargingStation)"
+    },
+    {
+      "do": "Buy nothing on a run you have not yet extracted from.",
+      "because": "the shop is where upgrades are applied between runs (ShopRadio)"
+    }
+  ],
+  "commonMistakes": [
+    "Buying an upgrade nobody in the crew will use.",
+    "Spending everything and leaving nothing for the next run.",
+    "Leaving a bought upgrade in the van."
+  ],
+  "relatedEntities": [
+    "the-upgrades-you-find",
+    "how-upgrades-are-kept-track-of"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
