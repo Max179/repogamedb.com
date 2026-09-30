@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The boosts a vehicle earns",
+    "url": "/entries/the-boosts-a-vehicle-earns.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Reading the music and the radio",
     "url": "/articles/reading-the-music-and-the-radio.html",
     "kind": "New guide"
@@ -64,11 +70,5 @@
     "title": "Keeping the crew in touch when the level splits you",
     "url": "/articles/keeping-the-crew-in-touch-when-the-level-splits-you.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "The money head in the museum",
-    "url": "/entries/the-money-head-in-the-museum.html",
-    "kind": "New entry"
   }
 ]
