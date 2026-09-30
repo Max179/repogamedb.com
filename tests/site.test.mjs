@@ -7,6 +7,7 @@
 import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { build, lookupFields, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
 
@@ -368,6 +369,50 @@ ok('every game image used in an entry has a manifest record and exists in the bu
   ok('the workflow runs the preflight before deploying', wf.includes('node tools/preflight.mjs'));
   ok('the workflow is free of tabs and uses 2-space indentation levels',
     !/\t/.test(wf) && wf.split('\n').every((l) => l.trim() === '' || (l.match(/^ */)[0].length % 2) === 0));
+}
+
+
+// --- every recorded image origin is re-checkable: the file on disk must match
+// the manifest's bytes, sha256 and dimensions. A mapping that cannot be
+// re-checked is not evidence, so this is gated rather than reported.
+{
+  const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+  const pngOrJpegDims = (b) => {
+    if (b.length > 24 && b.readUInt32BE(0) === 0x89504e47) {
+      return { width: b.readUInt32BE(16), height: b.readUInt32BE(20) };
+    }
+    if (b.length > 4 && b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i + 9 < b.length) {
+        if (b[i] !== 0xff) { i++; continue; }
+        const m = b[i + 1];
+        if (m === 0xd8 || m === 0x01 || (m >= 0xd0 && m <= 0xd7)) { i += 2; continue; }
+        const len = b.readUInt16BE(i + 2);
+        if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) {
+          return { height: b.readUInt16BE(i + 5), width: b.readUInt16BE(i + 7) };
+        }
+        i += 2 + len;
+      }
+    }
+    return null;
+  };
+  const records = manifest.records ?? [];
+  const bad = [];
+  let checked = 0;
+  for (const r of records) {
+    const f = join('content', 'assets', r.file);
+    if (!existsSync(f)) { bad.push(r.file + ' (missing)'); continue; }
+    const buf = readFileSync(f);
+    const sha = createHash('sha256').update(buf).digest('hex');
+    const dim = pngOrJpegDims(buf);
+    if (buf.length !== r.bytes) bad.push(r.file + ' (bytes)');
+    else if (sha !== r.sha256) bad.push(r.file + ' (sha256)');
+    else if (dim && (dim.width !== r.width || dim.height !== r.height)) bad.push(r.file + ' (dimensions)');
+    else checked++;
+  }
+  ok('every image manifest record matches the file on disk (bytes, sha256, dimensions)',
+    bad.length === 0, bad.slice(0, 3).join(', '));
+  ok('the image manifest is not empty', checked > 0);
 }
 
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
