@@ -45,8 +45,8 @@
       "file": "mapped/cosmetics-and-the-token-machine-token.jpg",
       "kind": "game",
       "alt": {
-        "en": "The game token the cosmetic machine dispenses, shown in its rare colouring.",
-        "zh": "外观机器发放的游戏代币，图为稀有等级配色。"
+        "en": "The texture of the game token the cosmetic machine dispenses, in its rare colouring.",
+        "zh": "外观机器发放的代币贴图，图为稀有等级配色。"
       }
     },
     {
