@@ -58,6 +58,14 @@ site on the bare domain (no `/en` prefix).** Measured on the built output and th
   entry hero image. No third language exists anywhere in `content/`.
 - No document or config in the repository names the eleven languages, and there is no translation catalogue.
 
+  **Correction (2026-10-01, game-data side): the game ships six language tables, but they are placeholders.**
+  `REPO_Data/StreamingAssets/aa/StandaloneWindows64/` holds one Unity Localization string table per language —
+  **6 languages** (da-DK, en-US, fi-FI, pt-BR, pt-PT, sv-SE), 566 strings each. Comparing every string against the
+  English table: **da-DK 3, sv-SE 20, fi-FI, pt-BR and pt-PT 0** are genuinely translated; the rest are the English
+  string with a `(<locale>)` marker in front of it — a placeholder the localizer never replaced. They are committed as
+  `data/normalized/localization-<locale>.json` (extractor `tools/extract-localization.py`, with bundle sha256 and a
+  `verification` block). A site must not present those strings as translations.
+
 This is a build-side gap, not a credentials gap, which is why it is listed apart from the external blockers above.
 It is template and content work — locale routing, per-locale rendering, the switcher, `hreflang`, per-locale
 sitemaps, and the translated copy — so it belongs with the site-design session rather than with the game-data work,

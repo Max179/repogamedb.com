@@ -104,3 +104,15 @@ Mac 侧**不需要**原始包：归一化数据已提交，脱离游戏包即可
 | 引擎 | 未知（待确认 Mono/IL2CPP） | **Mono** |
 | 完整性 | 无 | 3 个关键文件 sha256 |
 | 权利 | 未涉及 | **已记录为盗版重打包** |
+
+## 本地化数据（2026-10-01 提取）
+
+| 项 | 值 |
+|---|---|
+| 载体 | `REPO_Data/StreamingAssets/aa/StandaloneWindows64/localization-assets-shared_assets_all.bundle` + `localization-string-tables-<locale>_assets_all.bundle` |
+| 语言数 | **6**（da-DK、en-US、fi-FI、pt-BR、pt-PT、sv-SE） |
+| 规模 | 每语言 **566 条**（三个表集合：Menu 363、Game 11、HUD 192） |
+| 译文性质 | **几乎全是占位**：逐条与英文表比对后，真翻译仅 da-DK 3 条、sv-SE 20 条，fi-FI/pt-BR/pt-PT 为 0 条；其余均为「`(语言)` + 英文原文」 |
+| 提取产物 | `data/normalized/localization-<locale>.json` × 6（含 bundle sha256 与 `verification`） |
+| 提取器 | `tools/extract-localization.py` |
+| 权利状态 | unknown（与游戏包整体一致） |
