@@ -2820,6 +2820,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-oogly.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-orb.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2861,6 +2866,11 @@
     },
     {
       "url": "/entries/the-slow-mouth.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-slow-walker.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

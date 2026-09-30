@@ -912,6 +912,30 @@
       "height": 512,
       "bytes": 56774,
       "sha256": "925a45a3ae88657f03a7b1a77e427d59a44003f57829c3d57516b7c67dd10c66"
+    },
+    {
+      "entity": "the-oogly",
+      "kind": "game",
+      "file": "mapped/the-oogly-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Oogly_Albedo",
+      "note": "the colour texture the game ships for the oogly monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 55806,
+      "sha256": "d61e2e2c3a84afbc3332f2af715efe08e8116aba8fe4bd85a4e80138aeebbffd"
+    },
+    {
+      "entity": "the-slow-walker",
+      "kind": "game",
+      "file": "mapped/the-slow-walker-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Slow Walker_Albedo",
+      "note": "the colour texture the game ships for the slow walker monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 70374,
+      "sha256": "d11db4ddc4b26ecf193a245a8a6245a896381a50bc768c40ca1063f0413d18ff"
     }
   ]
 }

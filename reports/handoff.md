@@ -21,9 +21,9 @@ This was verified from a clean clone: the same build, gates, typecheck and prefl
 game package and without `web/dist`.
 
 ## What the site contains
-- Published entries: 80; structured guides: 28. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
-- Real images extracted from the game with a recorded mapping: 76. 68 published entries carry one; the other 12 are diagram-only and labelled "original diagram, not a screenshot". Per-entry origin is in reports/image-coverage.md.
-- Build: `pages=781 indexable=137`. URL classification in `config/urls.json`: 137 keep.
+- Published entries: 82; structured guides: 28. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
+- Real images extracted from the game with a recorded mapping: 78. 70 published entries carry one; the other 12 are diagram-only and labelled "original diagram, not a screenshot". Per-entry origin is in reports/image-coverage.md.
+- Build: `pages=787 indexable=139`. URL classification in `config/urls.json`: 139 keep.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
 
 ## Publishing (not done, and why)
