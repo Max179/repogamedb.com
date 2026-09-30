@@ -27,6 +27,15 @@ const entries = emitted.filter((p) => p !== '/404.html').map((p) => ({
   action: indexable.has(p) ? 'keep' : 'noindex',
   reason: indexable.has(p) ? 'player-facing page: a question a player asks' : 'technical reference or duplicate kept reachable but not indexed',
 }));
+// A partial or stale web/dist would silently shrink this file, and the site tests compare it against a
+// full build, so a short run here surfaces later as "unclassified" pages. Refuse to overwrite a
+// classification with a much smaller one unless the operator asks for it.
+const previousCount = (previous.entries ?? []).length;
+if (previousCount && entries.length < previousCount / 2 && !process.argv.includes('--force')) {
+  console.error('[classify] refusing to write ' + entries.length + ' entries over the existing ' + previousCount +
+    ': web/dist looks partial or stale (rebuild the site first, or pass --force)');
+  process.exit(2);
+}
 mkdirSync('config', { recursive: true });
 writeFileSync('config/urls.json', JSON.stringify({
   site: SITE.domain,
