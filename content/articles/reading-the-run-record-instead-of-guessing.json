@@ -1,0 +1,61 @@
+{
+  "id": "reading-the-run-record-instead-of-guessing",
+  "title": "Reading the run record instead of guessing",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to read what R.E.P.O. records about a run: the four kinds of points, the haul total beside them, the crew bonuses and the death penalty, and what the save keeps about the crew over time.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run finished, well or badly",
+    "A save that has been played at least once",
+    "The stats screen or the end-of-run screen within reach"
+  ],
+  "steps": [
+    {
+      "do": "Read the points by kind before you read any total.",
+      "because": "hauling, scouting, combat and support are kept as separate figures rather than one number (roundPointsHauling, roundPointsScouting, roundPointsCombat, roundPointsSupport)"
+    },
+    {
+      "do": "Look at the haul's own total as well as its points.",
+      "because": "the haul has a total of its own beside the points it earned (roundPointsTotalHaul)"
+    },
+    {
+      "do": "Check the two crew bonuses before you blame the level.",
+      "because": "surviving as a full crew and finishing with no deaths are bonuses of their own (roundPointsBonusAllSurvived, roundPointsBonusNoDeaths)"
+    },
+    {
+      "do": "Count the death penalty as a line rather than a mood.",
+      "because": "dying carries a penalty of its own, so a run that felt fine can still have lost points on that line (penaltyDeath)"
+    },
+    {
+      "do": "Read the figures where the game keeps them instead of only on the run's own screen.",
+      "because": "the points live in a progression manager of their own (ProgressionManager)"
+    },
+    {
+      "do": "Check what the save knows about the crew.",
+      "because": "the save stores the team name and the player names and tracks how long has been played (StatsManager, teamName, playerNames, timePlayed)"
+    },
+    {
+      "do": "Compare a run against what the crew has bought between runs.",
+      "because": "purchases are kept as a list and as a running total, with a name for each upgrade the game knows about (itemsPurchased, itemsPurchasedTotal, upgradesInfo)"
+    },
+    {
+      "do": "Read a finished run on the screen built for it.",
+      "because": "there is a stats screen of its own and a result screen for the end of a run (StatsUI, ResultScreenUI)"
+    }
+  ],
+  "commonMistakes": [
+    "Reading the total and treating every point as if it were hauling.",
+    "Assuming a bad run was about the haul when the crew bonuses were missed.",
+    "Ignoring the death penalty when comparing two runs.",
+    "Looking only at the run's own screen for figures the progression manager keeps."
+  ],
+  "relatedEntities": [
+    "how-a-run-is-scored",
+    "the-save-and-your-run-record",
+    "what-the-game-records-about-each-monster"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
