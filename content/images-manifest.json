@@ -1212,6 +1212,18 @@
       "height": 512,
       "bytes": 49140,
       "sha256": "00692dbebdd5a5ad72dcf92a2293b959899d71fa7d24e28c1c3aae612bdaa076"
+    },
+    {
+      "entity": "the-charging-station-and-its-beam",
+      "kind": "game",
+      "file": "mapped/the-charging-station-panel.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Charging station new_DefaultMaterial_BaseColor",
+      "note": "the base colour texture the game ships for the charging station",
+      "width": 512,
+      "height": 512,
+      "bytes": 49547,
+      "sha256": "97592d565c82554a8bba947bab3460aaee73c68bd60ffe48d64b0b6d8165fc09"
     }
   ]
 }

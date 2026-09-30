@@ -2795,6 +2795,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-charging-station-and-its-beam.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-drone.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
