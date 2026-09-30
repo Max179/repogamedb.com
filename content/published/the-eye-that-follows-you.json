@@ -10,6 +10,7 @@
     "It can be shown for the people making the game. There is a debug flag that draws the eye target, which is a thing the build keeps for itself rather than for the shop.",
     "The head has a second small motion. A part for the hair tilt turns and settles on a spring, with a random range and random times for when it moves, so the head is never perfectly still.",
     "That part works on the enemy's own transform, which is how a tilt set up in one place follows the monster rather than a point in the level.",
+    "It fires with both eyes. The monster carries a beam for its left eye and one for its right, particles for them and an animation of its own, which is why the glare can come from two places at once rather than one.",
     "The eye arrives and leaves audibly. There are sounds for it spawning and despawning and for it blinking, so an eye that appears in a room is heard as well as seen.",
     "It stares, twitches and fires. There is a sound for starting to stare and a loop that runs while it stares, a loop for its twitching, and a buildup and a beam for its laser, with an explosion particle script kept beside them.",
     "The image beside this entry is the game's own: the albedo texture it ships for a monster eye, the surface the pupil in this entry is drawn on.",
@@ -43,6 +44,10 @@
     {
       "claim": "It has a sound for starting to stare and a loop while staring, a loop for twitching, and a buildup and a beam for its laser with an explosion particle script.",
       "evidence": "identifiers: sfxStaringStart, sfxStareLoop, sfxTwitchLoop, sfxLaserBuildup, sfxLaserBeam, particleScriptExplosion"
+    },
+    {
+      "claim": "The monster carries a beam for each eye and particles for them, with an animation of its own.",
+      "evidence": "identifiers: EnemyCeilingEye, eyeBeamLeft, eyeBeamRight, eyeBeamParticles, eyeAnim"
     }
   ],
   "related": [
