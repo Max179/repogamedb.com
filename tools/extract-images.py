@@ -171,6 +171,7 @@ MAPPINGS = [
   {'entity': 'the-egg-valuable-that-cracks', 'bundle': 'resources.assets', 'match': "Egg 3", 'file': 'the-egg-valuable-that-cracks-egg.jpg', 'note': "one of the egg textures the game ships for its egg valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-blender-valuable', 'bundle': 'resources.assets', 'match': "blender disembled (no glass)_DefaultMaterial_BaseColor", 'file': 'the-blender-valuable-body.jpg', 'note': "the colour texture the game ships for the blender valuable's body", 'max': 512, 'quality': 88},
   {'entity': 'the-gumball-machine-that-hypnotises', 'bundle': 'resources.assets', 'match': "Screen Spiral", 'file': 'the-gumball-machine-hypnosis-spiral.jpg', 'note': "the spiral the game draws over the screen when the gumball machine has you", 'max': 512, 'quality': 88},
+  {'entity': 'the-tray-valuable', 'bundle': 'resources.assets', 'match': "tray_DefaultMaterial_BaseColor", 'file': 'the-tray-valuable-tray.jpg', 'note': "the colour texture the game ships for the tray valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-spinny', 'bundle': 'resources.assets', 'match': "Spinny_Albedo", 'file': 'the-spinny-texture.jpg', 'note': "the colour texture the game ships for the spinny monster", 'max': 512, 'quality': 88},
   {'entity': 'the-elsa-in-two-sizes', 'bundle': 'resources.assets', 'match': "Elsa Fur Big", 'file': 'the-elsa-in-two-sizes-fur.jpg', 'note': "the fur texture the game ships for the elsa at its big size, one of the two the game keeps for the two sizes", 'max': 512, 'quality': 88},
 ]

@@ -1346,6 +1346,18 @@
       "sha256": "81e4e61a57651d364a9261b26b432a0f94142eebe5b9bcb1fdb73b89dc77ed38"
     },
     {
+      "entity": "the-tray-valuable",
+      "kind": "game",
+      "file": "mapped/the-tray-valuable-tray.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "tray_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the tray valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 64257,
+      "sha256": "c5ae4ae055323ed2d0e153829699b835cde8201925acad67bdeaa23495c5d1ad"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",
