@@ -1164,6 +1164,18 @@
       "height": 512,
       "bytes": 68086,
       "sha256": "575a1c4afd5e95780850ff305de746e9d6a5381fbb9117873cc13d99299b5a57"
+    },
+    {
+      "entity": "the-extraction-point-and-its-machinery",
+      "kind": "game",
+      "file": "mapped/the-extraction-point-buttons.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "extraction buttons and screens_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the extraction point's button and screens",
+      "width": 512,
+      "height": 512,
+      "bytes": 37405,
+      "sha256": "0173bc536af3acdb5790868d7ca9e7baa7c52165ed5d5e5995ef64c68a4b52fb"
     }
   ]
 }

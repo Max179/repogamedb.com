@@ -156,6 +156,7 @@ MAPPINGS = [
   {'entity': 'valuables-that-move-glow-or-talk', 'bundle': 'resources.assets', 'match': "valuabless_Valuable Old Camera_BaseColor", 'file': 'valuables-that-move-glow-or-talk-camera.jpg', 'note': "the colour texture the game ships for the old camera valuable", 'max': 512, 'quality': 88},
   {'entity': 'how-the-staffs-are-fired', 'bundle': 'resources.assets', 'match': "Void Staff_Albedo", 'file': 'how-the-staffs-are-fired-void.jpg', 'note': "the colour texture the game ships for the void staff", 'max': 512, 'quality': 88},
   {'entity': 'how-the-staffs-are-fired', 'bundle': 'resources.assets', 'match': "Torque Staff_Albedo", 'file': 'how-the-staffs-are-fired-torque.jpg', 'note': "the colour texture the game ships for the torque staff", 'max': 512, 'quality': 88},
+  {'entity': 'the-extraction-point-and-its-machinery', 'bundle': 'resources.assets', 'match': "extraction buttons and screens_DefaultMaterial_BaseColor", 'file': 'the-extraction-point-buttons.jpg', 'note': "the colour texture the game ships for the extraction point's button and screens", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
