@@ -157,6 +157,8 @@ MAPPINGS = [
   {'entity': 'how-the-staffs-are-fired', 'bundle': 'resources.assets', 'match': "Void Staff_Albedo", 'file': 'how-the-staffs-are-fired-void.jpg', 'note': "the colour texture the game ships for the void staff", 'max': 512, 'quality': 88},
   {'entity': 'how-the-staffs-are-fired', 'bundle': 'resources.assets', 'match': "Torque Staff_Albedo", 'file': 'how-the-staffs-are-fired-torque.jpg', 'note': "the colour texture the game ships for the torque staff", 'max': 512, 'quality': 88},
   {'entity': 'the-extraction-point-and-its-machinery', 'bundle': 'resources.assets', 'match': "extraction buttons and screens_DefaultMaterial_BaseColor", 'file': 'the-extraction-point-buttons.jpg', 'note': "the colour texture the game ships for the extraction point's button and screens", 'max': 512, 'quality': 88},
+  {'entity': 'the-upgrade-stand-and-its-roll', 'bundle': 'resources.assets', 'match': "upgrade stand button_DefaultMaterial_BaseColor", 'file': 'the-upgrade-stand-button.jpg', 'note': "the colour texture the game ships for the upgrade stand's button", 'max': 512, 'quality': 88},
+  {'entity': 'the-upgrade-stand-and-its-roll', 'bundle': 'resources.assets', 'match': "upgrade stand roller_DefaultMaterial_BaseColor", 'file': 'the-upgrade-stand-roller.jpg', 'note': "the colour texture the game ships for the upgrade stand's roller", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

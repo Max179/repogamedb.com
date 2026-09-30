@@ -1,0 +1,100 @@
+{
+  "id": "the-upgrade-stand-and-its-roll",
+  "title": "The upgrade stand and its roll",
+  "category": "Shop",
+  "summary": "The stand you buy upgrades from in R.E.P.O. is a machine of its own: it has a button you grab, a hatch that opens onto a compartment, a build-up with its own light and stages, a roller with start, rolling and settle curves, a reroll, and a fire it can break out into.",
+  "body": [
+    "The upgrade stand is a machine rather than a shop counter. It has a button you grab, a hatch, a compartment the upgrade sits in and a check for whether the upgrade is inside its box, so what you buy is rolled out of the stand instead of being handed over.",
+    "A roll has stages of its own. There are separate curves for the shake as the roll starts, for the roll itself and for the shake as it settles, with a start sound, a loop while it rolls and a sound for the end.",
+    "The hatch is animated and loud. It has its own curve, a sound for opening and a different one for closing, plus separate impact sounds for each, and particles of its own.",
+    "There is a reroll as well. It has sounds for starting, for each tick, for settling and for finishing, and the compartment it uses carries hurt colliders of its own.",
+    "The button is a whole object. It has a renderer with a normal material and a deny material, a curve for the press and another for a refusal, springs for its rotation, and sounds for pressing, refusing and twisting up and down.",
+    "The stand builds up before it rolls. It has stages to go through, a build-up light, an intro curve and an outro curve, build-up particles, a loop sound and a length for the build-up.",
+    "It can catch fire. A fire light, a hurt collider for the fire, a looping fire particle, rubble for the button, a break particle and a break sound all belong to the stand, which is why a failed roll is more than a message.",
+    "The parts move on springs. The whole mesh carries a rotation spring and a position spring, and the button has one of its own, so the stand reacts rather than switching between poses.",
+    "It also powers itself on and off. There are sounds for the stand being on and off and for a light going out, a curve for a flickering fade, and rolling particles that belong to the roll.",
+    "The pictures beside this entry are the game's own: the colour artwork for the stand's button, which carries the arrow mark, and for its roller.",
+    "What this entry does not tell you: what an upgrade costs, what any of them does, or how the odds of a roll work. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The stand has a button you grab, a hatch, a compartment for the upgrade and a check for the upgrade being inside its box.",
+      "evidence": "identifiers: UpgradeStand, buttonGrabObject, button, hatch, upgradeCompartment, upgradeInsideBoxCheck"
+    },
+    {
+      "claim": "A roll has a start shake, a rolling curve and an end shake, with a start sound, a rolling loop and an end sound.",
+      "evidence": "identifiers: rollStartShakeCurve, rollCurve, rollEndShakeCurve, soundRollStart, soundRolling, soundRollEnd"
+    },
+    {
+      "claim": "The hatch has its own curve, opening and closing sounds, separate impact sounds for each, and particles.",
+      "evidence": "identifiers: hatchAnimationCurve, soundHatchOpen, soundHatchClose, soundHatchOpenImpact, soundHatchCloseImpact, hatchParticles, hatchClosed"
+    },
+    {
+      "claim": "There is a reroll with sounds for starting, ticking, settling and ending, and a compartment with hurt colliders.",
+      "evidence": "identifiers: soundRerollStart, soundRerollTick, soundRerollSettle, soundRerollEnd, rerollCompartmentHurtColliders"
+    },
+    {
+      "claim": "The button has a renderer, a normal material, a deny material, press and deny curves, a rotation spring and sounds for pressing, refusing and twisting.",
+      "evidence": "identifiers: buttonRenderer, buttonNormalMaterial, buttonDenyMaterial, buttonPressAnimationCurve, buttonDenyCurve, buttonRotationSpring, soundButtonPress, soundButtonDeny, soundButtonTwistUp, soundButtonTwistDown"
+    },
+    {
+      "claim": "The stand builds up with stages, a light, intro and outro curves, build-up particles, a loop sound and a duration.",
+      "evidence": "identifiers: buildUpStages, buildUpLight, buildUpIntroCurve, buildUpOutroCurve, buildUpParticles, soundBuildUpLoop, buildUpDuration"
+    },
+    {
+      "claim": "It can catch fire, with a fire light, a fire hurt collider, a fire loop, button rubble, break particles and a break sound.",
+      "evidence": "identifiers: fireLight, fireHurtCollider, particleFireLoop, buttonRubble, particleButtonBreak, soundButtonBreak, soundLilButtonFire"
+    },
+    {
+      "claim": "The mesh and the button each carry springs of their own.",
+      "evidence": "identifiers: meshRotationSpring, meshPositionSpring, buttonRotationSpring, allMeshesTransform"
+    },
+    {
+      "claim": "It has sounds for being on and off and for a light going out, a curve for a flickering fade, and rolling particles.",
+      "evidence": "identifiers: soundStateOn, soundStateOff, soundFluorescentLightTurnOff, flickerFadeLightCurve, rollingParticles"
+    },
+    {
+      "claim": "It carries a state and a localized line for interacting with it.",
+      "evidence": "identifiers: currentState, interactLocalized"
+    },
+    {
+      "claim": "The game ships colour artwork for the stand's button and its roller.",
+      "evidence": "asset names: upgrade stand button_DefaultMaterial_BaseColor, upgrade stand roller_DefaultMaterial_BaseColor"
+    }
+  ],
+  "related": [
+    "how-upgrades-are-kept-track-of",
+    "the-upgrades-you-find"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-upgrade-stand-button.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the upgrade stand's button, with its arrow mark.",
+        "zh": "游戏为升级台按钮提供的颜色贴图，带箭头标记。"
+      }
+    },
+    {
+      "file": "mapped/the-upgrade-stand-roller.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the upgrade stand's roller.",
+        "zh": "游戏为升级台滚轴提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-upgrade-stand-and-its-roll.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: grab the button, the stand builds up, the hatch rolls out an upgrade, and a reroll can be taken instead.",
+        "zh": "示意图：抓住按钮、升级台蓄能、舱门滚出一件升级，也可以选择重掷。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

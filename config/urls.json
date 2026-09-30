@@ -2980,6 +2980,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-upgrade-stand-and-its-roll.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-upgrades-you-find.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

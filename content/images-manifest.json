@@ -1176,6 +1176,30 @@
       "height": 512,
       "bytes": 37405,
       "sha256": "0173bc536af3acdb5790868d7ca9e7baa7c52165ed5d5e5995ef64c68a4b52fb"
+    },
+    {
+      "entity": "the-upgrade-stand-and-its-roll",
+      "kind": "game",
+      "file": "mapped/the-upgrade-stand-button.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "upgrade stand button_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the upgrade stand's button",
+      "width": 512,
+      "height": 512,
+      "bytes": 9305,
+      "sha256": "f2ed6d721673280a411cb32d439f1db0c7749cdd8b2a2bba61b0e3316c4583d2"
+    },
+    {
+      "entity": "the-upgrade-stand-and-its-roll",
+      "kind": "game",
+      "file": "mapped/the-upgrade-stand-roller.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "upgrade stand roller_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the upgrade stand's roller",
+      "width": 512,
+      "height": 512,
+      "bytes": 24959,
+      "sha256": "a3a415c0b69f3ed5327b205065d2be7e2056b3a417f59d1dfcd97f623dcdea52"
     }
   ]
 }
