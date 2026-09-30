@@ -2475,6 +2475,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-upgrades-are-kept-track-of.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
