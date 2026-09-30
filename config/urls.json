@@ -20,6 +20,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/running-a-level-with-a-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/valuable-run-routine.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

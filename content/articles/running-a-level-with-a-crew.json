@@ -1,0 +1,44 @@
+{
+  "id": "running-a-level-with-a-crew",
+  "title": "Running a level with a crew",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to work a level as a team so the loot reaches extraction, based on the gear and extraction behaviour the game defines.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A crew of two or more",
+    "An agreed extraction point",
+    "Gear chosen before you leave"
+  ],
+  "steps": [
+    {
+      "do": "Agree who carries what before you split up.",
+      "because": "gear and loot are individual carried items in the game rather than a shared pool (ItemWalkieTalkie, ItemValuableBox)"
+    },
+    {
+      "do": "Keep a way to reach each other.",
+      "because": "a walkie-talkie exists as its own item (ItemWalkieTalkie)"
+    },
+    {
+      "do": "Carry a revive item instead of assuming help will arrive.",
+      "because": "reviving crew members uses a dedicated item (ItemReviveItem)"
+    },
+    {
+      "do": "Bank one extraction as a crew before deciding to go deeper.",
+      "because": "extractions happen at tracked points and are recorded (ExtractionPoint, ExtractionsDoneState)"
+    }
+  ],
+  "commonMistakes": [
+    "Splitting up with no way to talk.",
+    "One player carrying everything worth taking.",
+    "Never extracting because there is always one more item."
+  ],
+  "relatedEntities": [
+    "gear-you-carry",
+    "extraction-run",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
