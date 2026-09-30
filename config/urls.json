@@ -2725,6 +2725,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-bomb-and-its-fuse.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-cart-and-its-boost-pads.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
