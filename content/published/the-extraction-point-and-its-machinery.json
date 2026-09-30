@@ -14,6 +14,9 @@
     "It keeps track of where it is. Floors are held apart for active, used and inactive states, so the machine accounts for its own surface rather than being scenery.",
     "It moves what it takes. Suck, upward and ceiling particles belong to it, along with a prefab for a valuable being extracted and its own upward speed, rotation speed and maximum distance.",
     "It has parts for safety and for being hit. A safety spawn, a room volume, hurt colliders and a grenade it can hand out are all part of it, along with a platform, a ramp and a bar for the haul.",
+    "Its sounds are a set rather than one sound. Switching on, its green lights, the haul counter moving up and moving back, the suction starting and stopping and the emoji screen glitching each have their own, and the tube building up, slamming, rising and hitting the ceiling are played for everyone rather than only nearby.",
+    "It also points at itself. Two spotlights with heads of their own can be switched on and off, and a ping follows a transform, which is how the machine draws attention to the part of it that matters.",
+    "It can be locked, and it is tied to a station and a button of its own, so extraction is something the machine agrees to rather than something you simply declare.",
     "The image beside this entry is the game's own: the colour artwork it ships for the extraction point's button and screens.",
     "What this entry does not tell you: what a haul is worth, how long extraction takes, or what the button does with the grenade. We have not verified those numbers, so we do not print them."
   ],
@@ -57,6 +60,26 @@
     {
       "claim": "It carries a safety spawn, a room volume, hurt colliders, a grenade reference, a platform, a ramp and a haul bar.",
       "evidence": "identifiers: safetySpawn, roomVolume, hurtColliders, hurtColliderMain, grenadeRef, platform, ramp, haulBar"
+    },
+    {
+      "claim": "Finishing a haul is counted in four surplus steps, and a completed one plays a jingle in a local and a shared version.",
+      "evidence": "identifiers: surplusStateDoneLevel1, surplusStateDoneLevel2, surplusStateDoneLevel3, surplusStateDoneLevel4, completeJingleLocal, completeJingleGlobal"
+    },
+    {
+      "claim": "It has two spotlights with heads of their own that can be switched on and off, and a ping that follows a transform.",
+      "evidence": "identifiers: spotlight1, spotlight2, spotlightHead1, spotlightHead2, spotlightOn, spotlightOff, soundPing, soundPingTransform"
+    },
+    {
+      "claim": "Switching on, its green lights, the haul counter moving both ways, the suction starting and stopping and the emoji screen glitching each have their own sound.",
+      "evidence": "identifiers: soundActivate1, soundActivate2, soundActivate3, soundGreenLights, soundLightsOn, soundHaulIncrease, soundHaulDecrease, soundSuckLoop, soundSuckEnd, soundEmojiGlitch"
+    },
+    {
+      "claim": "The tube's building up, slamming, rising and ceiling hit have versions played for everyone, and the ceiling hit carries particles.",
+      "evidence": "identifiers: soundTubeBuildup, soundTubeSlamGlobal, soundTubeRaiseGlobal, soundTubeHitCeilingGlobal, tubeHitParticles"
+    },
+    {
+      "claim": "The machine can be locked and is tied to a station and a button of its own.",
+      "evidence": "identifiers: isLocked, shopStation, shopButton"
     },
     {
       "claim": "The game ships colour artwork for the extraction point's button and screens.",
