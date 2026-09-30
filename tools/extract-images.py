@@ -184,6 +184,9 @@ MAPPINGS = [
   # its two sides; the screaming variant of the same sheet belongs to the behaviour entry and is not reused here.
   {'entity': 'the-bomb-thrower', 'bundle': 'resources.assets', 'match': "Enemy Bomb Thrower BaseColor", 'file': 'the-bomb-thrower-skin.jpg', 'note': "the colour texture the game ships for the bomb thrower's body in its ordinary state", 'max': 1024, 'quality': 84},
   {'entity': 'the-bomb-thrower', 'bundle': 'resources.assets', 'match': "Enemy Bomb Thrower Emission", 'file': 'the-bomb-thrower-emission.jpg', 'note': "the emission texture the game ships for the bomb thrower, the parts of it that glow", 'max': 512, 'quality': 88},
+  # Both assets name their subject outright: the ladder texture is the ladder, and the hidden monster's own
+  # texture is a picture of its foot.
+  {'entity': 'the-ladder', 'bundle': 'resources.assets', 'match': "ladder_DefaultMaterial_BaseColor", 'file': 'the-ladder-texture.jpg', 'note': "the colour texture the game ships for the ladder the crew climbs", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

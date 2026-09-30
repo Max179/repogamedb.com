@@ -2945,6 +2945,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-ladder.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-leaf-blower.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3356,11 +3361,6 @@
     },
     {
       "url": "/reference/notes/the-hidden.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-ladder.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

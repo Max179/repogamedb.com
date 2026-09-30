@@ -44,6 +44,14 @@
   ],
   "images": [
     {
+      "file": "mapped/the-ladder-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the ladder's body, a worn blue and grey metal sheet with black and yellow hazard stripes.",
+        "zh": "游戏给梯身准备的颜色贴图：磨损的蓝灰金属面上带黑黄警示条纹。"
+      }
+    },
+    {
       "file": "the-ladder.svg",
       "kind": "diagram",
       "alt": {
@@ -56,5 +64,5 @@
   "sources": [
     "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

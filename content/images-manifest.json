@@ -1428,6 +1428,18 @@
       "height": 512,
       "bytes": 23000,
       "sha256": "86bde6ed9372b56ed537b0a272034ac3742864c908c637706bb916419b5303ac"
+    },
+    {
+      "entity": "the-ladder",
+      "kind": "game",
+      "file": "mapped/the-ladder-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "ladder_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the ladder the crew climbs",
+      "width": 512,
+      "height": 512,
+      "bytes": 33450,
+      "sha256": "d9a8e4c5ebc44635a9f7d5b3875aaeb119ff92fd7eaa76c728b27012a5c34d3a"
     }
   ]
 }
