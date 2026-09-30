@@ -2990,6 +2990,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-token-machines-show.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-tricycle-rider.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
