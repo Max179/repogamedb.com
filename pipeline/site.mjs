@@ -14,10 +14,10 @@ import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node
 import { dirname, join } from 'node:path';
 
 export const SITE = {
-  name: 'R.E.P.O. Database',
+  name: 'R.E.P.O. Wiki',
   domain: 'repogamedb.com',
   url: 'https://repogamedb.com',
-  tagline: 'Weapons, valuables, enemies and extraction data - read from the game files',
+  tagline: 'Learn the threats, carry the right gear and get your crew home with the valuable haul',
 };
 
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -40,8 +40,8 @@ export function lookupFields(inventory, query, limit = 50) {
   return out;
 }
 
-export const NAV = [['/', 'Home'], ['/search.html', 'Search'], ['/collection.html', 'Classes'], ['/enemies.html', 'Enemies'],
-  ['/guide.html', 'Guide'], ['/tool.html', 'Tool'], ['/sources.html', 'Sources'], ['/about.html', 'About'],
+export const NAV = [['/', 'Home'], ['/guide.html', 'Start playing'], ['/enemies.html', 'Threats'], ['/collection.html', 'Browse the archive'],
+  ['/search.html', 'Find an answer'], ['/tool.html', 'Tools'], ['/sources.html', 'Reference'], ['/about.html', 'About'],
   ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'], ['/terms.html', 'Terms']];
 
 /** A schema page is a reference; it is generated and linked, but not offered to a search engine. */
@@ -64,14 +64,8 @@ function layout(title, description, path, body, inv) {
     '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
     '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description) + '">' +
     '<meta property="og:url" content="' + SITE.url + path + '">' +
-    '<style>:root{--bg:#0d1117;--fg:#e6edf3;--dim:#8b949e;--line:#21262d;--accent:#58a6ff}' +
-    'body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,Segoe UI,Roboto,sans-serif}' +
-    'header,footer{border-bottom:1px solid var(--line);padding:14px 20px}footer{border-top:1px solid var(--line);border-bottom:0;color:var(--dim);font-size:13px}' +
-    'main{max-width:1000px;margin:0 auto;padding:22px 20px}nav a{color:var(--accent);margin-right:14px;text-decoration:none;font-size:14px}' +
-    'h1{font-size:26px;margin:6px 0 14px}h2{font-size:19px;margin-top:26px}table{border-collapse:collapse;width:100%;font-size:14px}' +
-    'th,td{border-bottom:1px solid var(--line);text-align:left;padding:6px 8px}.mono{font-family:ui-monospace,Consolas,monospace}' +
-    '.dim{color:var(--dim)}.note{border-left:3px solid var(--accent);padding:8px 12px;background:#161b22;margin:14px 0}</style></head><body>' +
-    '<header><strong>' + esc(SITE.name) + '</strong><nav style="margin-top:8px">' + nav + '</nav></header><main>' + body + '</main>' +
+    '<style>:root{--bg:#111316;--fg:#f2f4f0;--dim:#a4aaa8;--line:#34393b;--accent:#f2a65a;--panel:#1a1e20}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#3c2a20,transparent 30rem),var(--bg);color:var(--fg);font:16px/1.65 system-ui,Segoe UI,Roboto,sans-serif}header.top{position:sticky;top:0;z-index:4;background:rgba(17,19,22,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.bar{max-width:1180px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:28px}.brand{color:var(--fg);font-weight:800;display:flex;gap:10px;align-items:center;white-space:nowrap}.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#26170d;font-size:12px}nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:var(--dim);font-size:14px}main{max-width:1180px;margin:auto;padding:0 24px 70px}.hero{padding:76px 0 60px;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;border-bottom:1px solid var(--line)}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:clamp(3.5rem,8vw,7rem);line-height:.86;letter-spacing:-.07em;margin:10px 0 22px;max-width:7ch}.lead{font-size:1.18rem;color:#d6dad6;max-width:38rem}.hero-art{min-height:380px;padding:28px;border:1px solid #76502d;border-radius:22px;background:linear-gradient(145deg,#513a28,#242324 58%,#151617);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 70px rgba(0,0,0,.25);transform:rotate(-1.2deg)}.hero-art strong{font-size:clamp(2.8rem,6vw,5.8rem);line-height:.84;letter-spacing:-.07em;color:#fff3e0}.hero-art span{color:var(--accent);letter-spacing:.12em;font-size:12px}.hero-search{display:flex;gap:8px;margin:28px 0 16px}.hero-search input{flex:1;padding:13px 15px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--fg)}button,.button{padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font-weight:700}.primary{background:var(--accent);color:#26170d;border-color:var(--accent)}.actions{display:flex;gap:10px;flex-wrap:wrap}.section{padding:54px 0;border-bottom:1px solid var(--line)}.section h2{font-size:2rem;line-height:1.05}.task-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.task{min-height:170px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;color:var(--fg);display:flex;flex-direction:column;gap:8px;transition:transform .2s,border-color .2s}.task:hover{transform:translateY(-4px);border-color:var(--accent);text-decoration:none}.task span{color:var(--dim);font-size:.92rem}.task i{margin-top:auto;color:var(--accent);font-style:normal}.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}.archive-list{display:grid;gap:10px}.archive-list a{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);color:var(--fg)}.archive-list span{color:var(--dim)}.dim{color:var(--dim)}.mono{font-family:ui-monospace,Consolas,monospace}.note{border-left:3px solid var(--accent);padding:14px 18px;background:var(--panel);margin:18px 0}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);text-align:left;padding:9px 8px}footer{border-top:1px solid var(--line);padding:24px;max-width:1180px;margin:auto;color:var(--dim)}@media(max-width:800px){.bar{padding:12px 16px;flex-direction:column;align-items:flex-start;gap:10px}main{padding:0 16px 46px}.hero{grid-template-columns:1fr;padding:50px 0 42px}.task-grid{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr;gap:22px}}@media(max-width:460px){.task-grid{grid-template-columns:1fr}}</style></head><body>' +
+    '<header class="top"><div class="bar"><a class="brand" href="/"><span class="mark">R</span><span>' + esc(SITE.name) + '</span></a><nav>' + nav + '</nav></div></header><main>' + body + '</main>' +
     '<footer>Source: <span class="mono">' + esc(inv.source.assembly) + '</span> · Game version: ' + esc(inv.version) +
     ' · Extracted: ' + esc(inv.source.extractedAt) +
     ' · Confidence: read from the game&apos;s own assembly. Values not extracted are marked unknown - nothing is invented.<br>' +
@@ -95,9 +89,13 @@ export function build(inventoryPath, outDir) {
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
 
   write('index.html', layout(SITE.name + ' - ' + SITE.tagline, SITE.tagline, '/',
-    '<h1>R.E.P.O. database</h1><div class="note">This build covers the <strong>schema layer</strong>: classes, the fields Unity writes and the game&apos;s own enums, extracted from <span class="mono">Assembly-CSharp.dll</span>. Per-field <em>values</em> are not extracted yet (the container is Unity 6 / SerializedFile v22) and are marked <strong>unknown</strong>. The class reference pages are deliberately <span class="mono">noindex</span>: they are a reference, not an answer.</div>' +
-    '<p>' + inv.totals.types + ' types · ' + inv.totals.fields + ' fields · ' + classes.length + ' P0 classes · ' + (inv.enums ?? []).length + ' enums.</p>' +
-    '<p><a href="/collection.html">Browse classes</a> · <a href="/enemies.html">Enemies</a> · <a href="/tool.html">Field lookup tool</a> · <a href="/sources.html">Sources</a></p>', inv));
+    '<section class="hero"><div><p class="eyebrow">A field guide for the next extraction</p><h1>R.E.P.O.</h1><p class="lead">' + esc(SITE.tagline) + '. Find a threat, plan the run and keep the team moving.</p>' +
+    '<form class="hero-search" action="/search.html"><input name="q" type="search" placeholder="Search enemies, valuables or gear"><button>Search</button></form>' +
+    '<p class="actions"><a class="button primary" href="/guide.html">Start here</a><a class="button" href="/enemies.html">Browse threats</a></p></div>' +
+    '<div class="hero-art" aria-label="R.E.P.O."><span>CREW LOG / 001</span><strong>GET IN.<br>GET OUT.<br>GET PAID.</strong><span>RECOVER · CARRY · EXTRACT</span></div></section>' +
+    '<section class="section"><p class="eyebrow">Choose your next task</p><h2>Prepare for the run</h2><div class="task-grid">' +
+    [['Know the threats','Identify enemies before they corner the crew.','/enemies.html'],['Carry the haul','Find what is worth moving and how to protect it.','/collection.html'],['Make extraction','Keep a route and a fallback when time is short.','/guide.html'],['Bring the right gear','Check the tools before you spend.','/tool.html']].map(([a,b,h])=>'<a class="task" href="'+h+'"><strong>'+a+'</strong><span>'+b+'</span><i>→</i></a>').join('')+'</div></section>' +
+    '<section class="section split"><div><p class="eyebrow">Browse the archive</p><h2>A field guide, not a wall of code.</h2><p class="dim">Explore threats, valuables, equipment and the route back out.</p></div><div class="archive-list"><a href="/enemies.html"><b>Enemies & responses</b><span>Know what is coming</span></a><a href="/collection.html"><b>Valuables & equipment</b><span>Plan the haul</span></a><a href="/guide.html"><b>Extraction guides</b><span>Make it home</span></a></div></section>', inv));
 
   write('collection.html', layout('P0 classes', 'Every P0 class with the fields Unity writes.', '/collection.html',
     '<h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1><p class="dim">Reference pages. Each is marked noindex and kept out of the sitemap.</p><table><thead><tr><th>Class</th><th>Base</th><th>Written fields</th></tr></thead><tbody>' +
