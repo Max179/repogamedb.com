@@ -37,6 +37,18 @@
     {
       "claim": "The game ships two face pictures for it, one with bright eyes and an open mouth and one blank.",
       "evidence": "asset name: Thin Man_Albedo"
+    },
+    {
+      "claim": "Its tentacles hang from a parent of their own, with a speed and a curve for their movement.",
+      "evidence": "identifiers: tentaclesParent, tentacleSpeed, tentacleCurve"
+    },
+    {
+      "claim": "It has an extended pouch, smoke particles with a calm fill, and it grows in a loop rather than changing size once.",
+      "evidence": "identifiers: extendedPouch, particleSmoke, particleSmokeCalmFill, growLoop"
+    },
+    {
+      "claim": "Its arrival and departure are drawn, and its scream has a local version.",
+      "evidence": "identifiers: teleportIn, teleportOut, screamLocal"
     }
   ],
   "related": [
