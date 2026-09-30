@@ -1310,6 +1310,18 @@
       "sha256": "b87526a6687e5619838ca20d23d9e78282dbe56ee2be61af6b043f5b2180f940"
     },
     {
+      "entity": "the-egg-valuable-that-cracks",
+      "kind": "game",
+      "file": "mapped/the-egg-valuable-that-cracks-egg.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Egg 3",
+      "note": "one of the egg textures the game ships for its egg valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 56764,
+      "sha256": "4947a55f148bf2f0a89bce0b4183846c8633238cd62e6b942fd97d9f9b725ba0"
+    },
+    {
       "entity": "the-spinny",
       "kind": "game",
       "file": "mapped/the-spinny-texture.jpg",

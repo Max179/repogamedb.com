@@ -168,6 +168,7 @@ MAPPINGS = [
   {'entity': 'the-bomb-and-its-fuse', 'bundle': 'resources.assets', 'match': "bang_DefaultMaterial_BaseColor", 'file': 'the-bomb-and-its-fuse-body.jpg', 'note': "the colour texture the game ships for the monster that carries the bomb", 'max': 512, 'quality': 88},
   {'entity': 'the-traffic-light-valuable', 'bundle': 'resources.assets', 'match': "TrafficLightBaseColor", 'file': 'the-traffic-light-valuable-light.jpg', 'note': "the game's own colour texture for the traffic light valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-baby-head-valuable', 'bundle': 'resources.assets', 'match': "babyhead_Material.007_BaseColor", 'file': 'the-baby-head-valuable-head.jpg', 'note': "the colour texture the game ships for the baby head valuable", 'max': 512, 'quality': 88},
+  {'entity': 'the-egg-valuable-that-cracks', 'bundle': 'resources.assets', 'match': "Egg 3", 'file': 'the-egg-valuable-that-cracks-egg.jpg', 'note': "one of the egg textures the game ships for its egg valuable", 'max': 512, 'quality': 88},
   {'entity': 'the-spinny', 'bundle': 'resources.assets', 'match': "Spinny_Albedo", 'file': 'the-spinny-texture.jpg', 'note': "the colour texture the game ships for the spinny monster", 'max': 512, 'quality': 88},
   {'entity': 'the-elsa-in-two-sizes', 'bundle': 'resources.assets', 'match': "Elsa Fur Big", 'file': 'the-elsa-in-two-sizes-fur.jpg', 'note': "the fur texture the game ships for the elsa at its big size, one of the two the game keeps for the two sizes", 'max': 512, 'quality': 88},
 ]
