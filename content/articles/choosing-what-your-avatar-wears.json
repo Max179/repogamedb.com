@@ -1,0 +1,47 @@
+{
+  "id": "choosing-what-your-avatar-wears",
+  "title": "Choosing what your avatar actually wears",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to decide what a R.E.P.O. cosmetic looks like on you, given that the game builds your avatar from parts and shows it in more than one place.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "At least one cosmetic unlocked",
+    "Access to the avatar menu",
+    "A moment in the shop rather than in the middle of a run"
+  ],
+  "steps": [
+    {
+      "do": "Judge a cosmetic by which body part it lands on, not only by how rare it was.",
+      "because": "the avatar is built from named parts, each with its own default surface (PlayerAvatarLeftArm)"
+    },
+    {
+      "do": "Check what it looks like in the menu rather than trusting the unlock moment.",
+      "because": "the avatar menu keeps a separate version of you for the world (worldAvatar)"
+    },
+    {
+      "do": "Look at your icon as well as the model, since they are not the same one.",
+      "because": "a second avatar is kept for making your icon (iconMakerAvatar)"
+    },
+    {
+      "do": "If a piece does not suit you any more, hide it rather than feeling stuck with it.",
+      "because": "a cosmetic can be hidden again after being unlocked (CosmeticHideCondition)"
+    },
+    {
+      "do": "Sort out your look in the shop, where you can see the result, instead of mid-run.",
+      "because": "cosmetic objects in the world have their own interface (CosmeticWorldObjectUI)"
+    }
+  ],
+  "commonMistakes": [
+    "Wearing something only because it was hard to get.",
+    "Assuming the icon and the model look the same.",
+    "Trying to change your look while the crew is already inside a level."
+  ],
+  "relatedEntities": [
+    "your-avatar-and-where-it-is-shown",
+    "cosmetics-and-the-token-machine"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

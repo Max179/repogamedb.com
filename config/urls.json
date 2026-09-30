@@ -20,6 +20,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/choosing-what-your-avatar-wears.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/first-run-what-to-expect.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2586,6 +2591,11 @@
     },
     {
       "url": "/entries/when-the-chat-box-will-not-open.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/your-avatar-and-where-it-is-shown.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

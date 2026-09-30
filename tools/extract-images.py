@@ -24,6 +24,9 @@ MAPPINGS = [
   {'entity': 'the-cart-and-its-boost-pads', 'bundle': 'resources.assets', 'match': 'PORTABLE CART_Cart Base.001_BaseColor',
    'file': 'the-cart-and-its-boost-pads-cart.jpg', 'note': 'albedo texture of the portable cart the crew hauls loot with',
    'max': 1024, 'quality': 84},
+  {'entity': 'your-avatar-and-where-it-is-shown', 'bundle': 'sharedassets0.assets', 'match': 'PlayerAvatar_Albedo',
+   'file': 'your-avatar-and-where-it-is-shown-avatar.jpg', 'note': 'albedo texture of the player character whose parts cosmetics are laid over',
+   'max': 1024, 'quality': 84},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

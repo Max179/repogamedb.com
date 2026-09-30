@@ -120,6 +120,18 @@
       "height": 512,
       "bytes": 40356,
       "sha256": "d2d253e485d62ccb18b5bde2701c1af355f29e68067957613a4b5f9194775727"
+    },
+    {
+      "entity": "your-avatar-and-where-it-is-shown",
+      "kind": "game",
+      "file": "mapped/your-avatar-and-where-it-is-shown-avatar.jpg",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "PlayerAvatar_Albedo",
+      "note": "albedo texture of the player character whose parts cosmetics are laid over",
+      "width": 512,
+      "height": 512,
+      "bytes": 39629,
+      "sha256": "360f831c4b2f8a0bffa489cd5b163c0d092f08ffc3ee2c1a22ed961fde75dc79"
     }
   ]
 }
