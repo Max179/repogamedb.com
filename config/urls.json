@@ -20,6 +20,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/breaking-contact-with-a-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/carrying-a-tool-that-runs-out.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

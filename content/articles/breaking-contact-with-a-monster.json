@@ -1,0 +1,61 @@
+{
+  "id": "breaking-contact-with-a-monster",
+  "title": "Breaking contact with a monster",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get out of a monster's sight in R.E.P.O. — and what to do when running is not enough — using how it sees, how it takes damage and when it gives up.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run with a monster awake",
+    "Something to hit with, or objects to throw",
+    "A level with somewhere to break line of sight"
+  ],
+  "steps": [
+    {
+      "do": "Change your posture before you change your distance.",
+      "because": "how visible a player is has separate values for standing, crouching and crawling (VisionDotStanding, VisionDotCrouch, VisionDotCrawl)"
+    },
+    {
+      "do": "Know that how many sightings it takes differs by posture too.",
+      "because": "the number of sightings needed to trigger is separate for standing, crouching and crawling (VisionsToTrigger, VisionsToTriggerCrouch, VisionsToTriggerCrawl)"
+    },
+    {
+      "do": "Put distance between you and the point it sees from, not between you and the model.",
+      "because": "a monster has a vision point and a vision distance of its own, with a closer distance for a crouching player (VisionTransform, VisionDistance, VisionDistanceClose, VisionDistanceCloseCrouch)"
+    },
+    {
+      "do": "Do not treat objects as cover.",
+      "because": "objects are seen as well, with their own value and a radius that can be overridden (PhysObjectVision, PhysObjectVisionDot, PhysObjectVisionRadiusOverride)"
+    },
+    {
+      "do": "Hit it if you can, because it can be hurt rather than only avoided.",
+      "because": "a monster carries a health total and impacts hurt it with separate damage for a light, a medium and a heavy one (EnemyHealth, health, impactHurt, impactLightDamage, impactMediumDamage, impactHeavyDamage)"
+    },
+    {
+      "do": "Throw something when your weapon is out of the picture.",
+      "because": "being hurt by an object has its own switch, a multiplier and an option to stun (objectHurt, objectHurtMultiplier, objectHurtStun)"
+    },
+    {
+      "do": "Use a pit if the level has one.",
+      "because": "a monster checks whether it is over a pit, with transforms, a distance and a direction of its own (EnemyPitCheck, pitCheckTransforms, pitCheckDistance, isOverPit)"
+    },
+    {
+      "do": "Expect the chase to end by itself rather than lasting the whole run.",
+      "because": "a chase despawns after a time, and a monster that is stuck despawns with a count of its own (ChaseDespawn, DespawnAfterChaseTime, EnemyStateDespawn, StuckDespawn, StuckDespawnCount)"
+    }
+  ],
+  "commonMistakes": [
+    "Backing away while standing upright, which keeps you as visible as you were.",
+    "Hiding behind an object a monster can see just as easily as it sees you.",
+    "Running with an empty weapon instead of throwing what is in reach.",
+    "Assuming a monster that has stopped chasing has left the level."
+  ],
+  "relatedEntities": [
+    "how-a-monster-sees-you",
+    "how-a-monster-takes-damage",
+    "when-a-monster-gives-up"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

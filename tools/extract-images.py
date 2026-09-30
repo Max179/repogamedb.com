@@ -202,6 +202,8 @@ MAPPINGS = [
   {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'sharedassets0.assets', 'match': "color_icon", 'file': 'cosmetics-and-the-token-machine-color.png', 'note': "the icon the game uses for cosmetic colour", 'max': 256},
   # The television entry names the set, its screen and its background; this asset is the set's own texture.
   {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Flat screen TV", 'file': 'the-cartoon-television-set.jpg', 'note': "the game's own texture for the flat screen television the cartoon plays on", 'max': 512, 'quality': 88},
+  # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
+  # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
