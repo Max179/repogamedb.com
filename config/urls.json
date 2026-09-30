@@ -210,6 +210,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/using-a-vehicle-as-a-weapon-without-wrecking-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/using-the-ladder-without-wasting-the-battery.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

@@ -1,0 +1,61 @@
+{
+  "id": "using-a-vehicle-as-a-weapon-without-wrecking-it",
+  "title": "Using a vehicle as a weapon without wrecking it",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to hit things with a vehicle in R.E.P.O. while keeping the vehicle and yourself in one piece.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A vehicle you can drive",
+    "Room to build up some speed",
+    "The understanding that the vehicle is an item you can lose"
+  ],
+  "steps": [
+    {
+      "do": "Decide which size of hit you are going for before you commit.",
+      "because": "small, medium and big impacts each have a threshold and a required distance of their own (smallImpactThreshold, mediumImpactThreshold, bigImpactThreshold, smallImpactDistanceRequired, mediumImpactDistanceRequired, bigImpactDistanceRequired)"
+    },
+    {
+      "do": "Hit on purpose rather than repeatedly, because impacts are watched over a window and then cooled down.",
+      "because": "impact detection runs over a window with a cooldown and a cooldown per kind (impactDetectionWindow, impactCooldown, impactTypeCooldown)"
+    },
+    {
+      "do": "Count the cost of a big hit before taking it.",
+      "because": "durability loss is scaled by a multiplier with a separate amount for each size of impact (durabilityLossMultiplier, smallImpactDurabilityLoss, mediumImpactDurabilityLoss, bigImpactDurabilityLoss)"
+    },
+    {
+      "do": "Give monsters their own time between hits.",
+      "because": "each size of impact has its own durability cooldown for enemies (smallImpactEnemyDurabilityCooldown, mediumImpactEnemyDurabilityCooldown, bigImpactEnemyDurabilityCooldown)"
+    },
+    {
+      "do": "Aim the part of the vehicle that actually hits.",
+      "because": "the vehicle carries hurt colliders of three sizes and an impact box of its own (hurtColliderSmall, hurtColliderMedium, hurtColliderBig, enemyImpactBoxTransform)"
+    },
+    {
+      "do": "Keep it upright while you line the hit up.",
+      "because": "stabilisation is a force with angular drag, a maximum tilt angle, a correction torque and lift (stabilizationForce, angularDrag, maxTiltAngle, tiltCorrectionTorque, liftForce)"
+    },
+    {
+      "do": "Respect the speed limits rather than holding the throttle down.",
+      "because": "speed is limited by both a soft and a hard maximum with limits on the body's velocity (maxSpeedKmh, softMaxSpeedKmh, softMaxSpeedDecayRate, maxRBVelocity)"
+    },
+    {
+      "do": "Recover deliberately if you lose control.",
+      "because": "the vehicle is an item with a state and a timer of its own (currentState, stateTimer, stateTimerMax)"
+    }
+  ],
+  "commonMistakes": [
+    "Ramming at full speed and paying for the biggest durability loss there is.",
+    "Hitting in bursts and then wondering why nothing registers during the cooldown.",
+    "Forgetting the vehicle is an item and treating it as scenery.",
+    "Lining up a hit and rolling the vehicle instead."
+  ],
+  "relatedEntities": [
+    "hitting-things-with-a-vehicle",
+    "driving-a-vehicle-and-staying-upright",
+    "the-lights-and-beeps-on-a-vehicle"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
