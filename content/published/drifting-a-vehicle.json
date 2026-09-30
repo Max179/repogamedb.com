@@ -14,6 +14,8 @@
     "The drift is lit and drawn. There are drifting particles with a transform of their own, and a drift light with settings that differ by drift level, so the effect changes as the drift gets harder rather than staying one colour.",
     "It has a loop of its own. The drift sound loop runs between a lowest and a highest pitch, which is why the noise rises with the slide instead of repeating flatly.",
     "Staying fast rewards it. There are separate boost times for full speed and for low speed, a threshold for what counts as full speed, and rates for how the boost grows over time and at hyper speed.",
+    "The drift is drawn at more than one strength. There are drifting particles for three levels, with a particle set aside for the moment the first boost level is reached, so a light slide and a hard one do not throw the same effect.",
+    "The vehicle is configured around the drift as well. The boost has a forward push and a speed multiplier of its own, and the body carries a force multiplier, an extra turn angle you may take by hand and the colliders it is made of.",
     "It is felt as well as seen. There are rumble strengths for position and rotation, a rumble speed and a multiplier when the boost is active, so a drift reaches the controller rather than only the screen.",
     "What this entry does not tell you: how fast you must be going to drift, how long a boost lasts, or how much speed a drift adds. We have not verified those numbers, so we do not print them."
   ],
@@ -61,6 +63,14 @@
     {
       "claim": "The drift carries rumble strengths for position and rotation, a rumble speed and a boost multiplier.",
       "evidence": "identifiers: driftRumblePositionStrength, driftRumbleRotationStrength, driftRumbleSpeed, driftRumbleBoostMultiplier"
+    },
+    {
+      "claim": "The drift is drawn in levels: there are drifting particles for three levels and a particle for the moment the first boost level is reached.",
+      "evidence": "identifiers: driftParticlesLevel1, driftParticlesLevel2, driftParticlesLevel3, driftBoostLevel0ReachedParticles"
+    },
+    {
+      "claim": "The boost has a forward push and a speed multiplier of its own, and the vehicle records a force multiplier, an extra turn angle it may take by hand and its own colliders.",
+      "evidence": "identifiers: driftBoostLevel2ForwardBoost, driftBoostLevel2SpeedBoostMultiplier, forceMultiplier, manualTurnExtraAngle, vehicleColliders"
     }
   ],
   "related": [

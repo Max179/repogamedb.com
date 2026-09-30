@@ -10,6 +10,7 @@
     "An impact is graded from a threshold and a distance. Small, medium and big impacts each have a threshold to cross and a distance the object has to be away for that grade, so brushing past and ploughing into something are told apart.",
     "Durability is paid by grade. There is a multiplier for the loss and a separate amount for a small, a medium and a big impact, which is how a vehicle wears out differently depending on how it is driven.",
     "Hitting a monster is handled apart. Each size of impact has its own durability cooldown for enemies, so a run of hits on a creature does not drain the vehicle as fast as the same hits on scenery.",
+    "What a hit costs a monster is graded again. For each size of impact there are three levels of durability loss, so a small hit, a medium hit and a big one each have their own figures to work from rather than one number shared out.",
     "It has a box for enemies and one for bumper cars. There is an enemy impact box transform and a bumper car box, which is why the same vehicle can register a hit on a creature differently from a hit on a fairground car.",
     "The camera takes the hit as well. There are shake strengths for position and rotation with a decay rate, and an intensity for each size of impact, so what you feel matches what you hit.",
     "It also throws sparks of the right size. Each grade has its own impact particles, and there are transforms for the midpoint of the vehicle and for the point of impact, so the effect happens where the collision did rather than at the middle of the model.",
@@ -47,6 +48,10 @@
     {
       "claim": "Each grade of impact has its own particles, and there are transforms for the midpoint and the impact point.",
       "evidence": "identifiers: impactParticlesSmall, impactParticlesMedium, impactParticlesBig, midpointTransform, impactTransform"
+    },
+    {
+      "claim": "Durability loss against monsters is graded three ways by level: small, medium and big impacts each have three of their own.",
+      "evidence": "identifiers: smallImpactEnemyDurabilityLossLevel1, smallImpactEnemyDurabilityLossLevel2, smallImpactEnemyDurabilityLossLevel3, mediumImpactEnemyDurabilityLossLevel1, mediumImpactEnemyDurabilityLossLevel2, mediumImpactEnemyDurabilityLossLevel3, bigImpactEnemyDurabilityLossLevel1, bigImpactEnemyDurabilityLossLevel2, bigImpactEnemyDurabilityLossLevel3"
     }
   ],
   "related": [
