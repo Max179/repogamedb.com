@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The egg valuable that cracks and gets up",
+    "url": "/entries/the-egg-valuable-that-cracks.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The baby head that keeps waking up",
     "url": "/entries/the-baby-head-valuable.html",
     "kind": "New entry"
@@ -61,12 +67,6 @@
     "date": "2026-09-30",
     "title": "Staying on the shopkeeper's good side",
     "url": "/articles/staying-on-the-shopkeepers-good-side.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "Clearing the museum without setting it off",
-    "url": "/articles/clearing-the-museum-without-setting-it-off.html",
     "kind": "New guide"
   }
 ]
