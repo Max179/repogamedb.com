@@ -263,7 +263,23 @@ try {
   const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
   const gameImages = published.flatMap((e) => (e.images ?? []).filter((i) => i.kind === 'game').map((i) => ({ id: e.id, img: i })));
   const badGame = gameImages.filter(({ img }) => !(manifest.records ?? []).some((r) => r.file === img.file) || !existsSync(join(dir, img.file)));
-  ok('every game image used in an entry has a manifest record and exists in the build', badGame.length === 0 && gameImages.length > 0,
+    // The binding picture rule is enforced in two steps: tools/image-sanity.py flags every exported file that carries
+  // almost no variation, and this gate refuses to let a flag go unanswered. Every flagged file must have a verdict
+  // written into reports/image-reviews.md, so a near-blank or flat sheet cannot sit in the manifest unexamined.
+  ok('the sanity report covers every mapped picture', (() => {
+    const manifestCount = JSON.parse(readFileSync('content/images-manifest.json', 'utf8')).records.length;
+    const totals = readFileSync('reports/image-sanity.md', 'utf8').match(/Totals: (\d+) records, (\d+) flagged/);
+    return totals && Number(totals[1]) === manifestCount ? true : 'sanity report does not cover the manifest';
+  })() === true);
+  ok('every picture the sanity pass flagged has a verdict in the review ledger', (() => {
+    const sanity = readFileSync('reports/image-sanity.md', 'utf8');
+    const ledger = readFileSync('reports/image-reviews.md', 'utf8');
+    const files = [...new Set([...sanity.matchAll(/mapped\/[^\s|)]+/g)].map((m) => m[0].split('/').pop()))];
+    const missing = files.filter((f) => !ledger.includes(f));
+    return missing.length ? missing.join(', ') : true;
+  })() === true);
+
+ok('every game image used in an entry has a manifest record and exists in the build', badGame.length === 0 && gameImages.length > 0,
     badGame.map((x) => x.id + ':' + x.img.file).join(', ') || (gameImages.length ? '' : 'no game image is used yet'));
 
   const urlsCfg = JSON.parse(readFileSync('config/urls.json', 'utf8'));
