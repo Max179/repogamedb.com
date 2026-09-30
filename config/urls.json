@@ -2650,6 +2650,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-a-monster-takes-damage.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-a-run-is-scored.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2671,6 +2676,11 @@
     },
     {
       "url": "/entries/how-monsters-find-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-monsters-jump.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
