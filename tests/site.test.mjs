@@ -259,14 +259,16 @@ try {
     for (const id of ids) if (h.includes(id)) thinArticles.push(a.id + ': leaks ' + id);
   }
   ok('every article page carries its goal, version, prerequisites, steps, mistakes, related entities and sources', thinArticles.length === 0, thinArticles.slice(0, 6).join(', '));
-  // The player questions live in a file of their own and the build swallows a broken one, so check the file
-  // itself and that every question belongs to a published guide (not every guide has one here).
+  // The player questions the home page uses live in a file of their own and the build swallows a broken one, so
+  // check the file itself, that every question belongs to a published guide and that no guide goes unasked.
   let questions = null;
   try { questions = JSON.parse(readFileSync(join('data', 'guide-questions.json'), 'utf8')); } catch (e) { questions = null; }
   const questionProblems = [];
   if (!questions) questionProblems.push('data/guide-questions.json does not parse');
-  for (const id of Object.keys(questions ?? {})) if (!articles.some((a) => a.id === id)) questionProblems.push(id + ':not a published guide');
-  ok('the player questions parse and belong to published guides', questionProblems.length === 0, questionProblems.slice(0, 6).join(', '));
+  const asked = Object.keys(questions ?? {});
+  for (const a of articles) if (!asked.includes(a.id)) questionProblems.push(a.id + ':no player question');
+  for (const id of asked) if (!articles.some((a) => a.id === id)) questionProblems.push(id + ':not a published guide');
+  ok('the player questions parse and cover every guide', questionProblems.length === 0, questionProblems.slice(0, 6).join(', '));
 
   // An image claiming to come from the game must match the manifest that documents where it came from.
   const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
