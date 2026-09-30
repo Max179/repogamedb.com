@@ -167,7 +167,7 @@ export function build(inventoryPath, outDir) {
       : '<p class="dim">No update notes yet.</p>') +
     '\n<p><a href="/updates.html">All updates &rarr;</a></p>\n</section>\n' +
     '<section class="block">\n<h2>Where the pictures and facts come from</h2>\n' +
-    '<p>Pictures are taken from the installed game itself, each one recorded with the asset it came from; a diagram drawn for this site is always labelled as a diagram and is never passed off as a screenshot. Facts are read from the game\'s own files, not from a wiki or a forum. The build this site documents is <strong>' + esc(inv.version ?? 'unknown') + '</strong>.</p>\n' +
+    '<p>Pictures are taken from a local copy of the game itself, each one recorded with the asset it came from; a diagram drawn for this site is always labelled as a diagram and is never passed off as a screenshot. Facts are read from the game\'s own files, not from a wiki or a forum. The build this site documents is <strong>' + esc(inv.version ?? 'unknown') + '</strong>.</p>\n' +
     '<p class="dim small">The raw identifiers, tables and extraction notes are kept in a technical reference, reachable from the footer of every page and kept out of search engines on purpose.</p>\n</section>\n');
 
   // ---- game guide ------------------------------------------------------------------------------
