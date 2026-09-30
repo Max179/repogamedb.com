@@ -32,6 +32,10 @@
     {
       "claim": "A level records a set of valuables it prefers.",
       "evidence": "identifier: ValuablePresets"
+    },
+    {
+      "claim": "The themes are not limited to the four best known: an arena has level artwork of its own alongside the arctic, manor, museum and forest pictures.",
+      "evidence": "identifiers: level arena 01, level arctic 01"
     }
   ],
   "related": [
@@ -39,6 +43,22 @@
     "valuables-and-looting"
   ],
   "images": [
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-arctic.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own picture for its arctic level theme: a drawn snow base with a dome, dishes and a satellite mast.",
+        "zh": "游戏自带的极地关卡主题图：画着带穹顶、天线盘与卫星杆的雪地基地。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-arena.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own picture for its arena level theme: a barn beside a dark trail of watching eyes.",
+        "zh": "游戏自带的竞技场关卡主题图：谷仓旁边是一条布满窥视眼睛的暗色路径。"
+      }
+    },
     {
       "file": "the-level-themes-and-what-they-hold.svg",
       "kind": "diagram",
@@ -52,5 +72,5 @@
   "sources": [
     "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

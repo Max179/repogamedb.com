@@ -187,6 +187,10 @@ MAPPINGS = [
   # Both assets name their subject outright: the ladder texture is the ladder, and the hidden monster's own
   # texture is a picture of its foot.
   {'entity': 'the-ladder', 'bundle': 'resources.assets', 'match': "ladder_DefaultMaterial_BaseColor", 'file': 'the-ladder-texture.jpg', 'note': "the colour texture the game ships for the ladder the crew climbs", 'max': 512, 'quality': 88},
+  # The theme entry names the level artwork the game ships per theme; these two are that artwork, and the
+  # manor picture already belongs to the level-building entry, so it is not reused here.
+  {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'sharedassets0.assets', 'match': "level arctic 01", 'file': 'the-level-themes-and-what-they-hold-arctic.jpg', 'note': "the game's own picture for its arctic level theme", 'max': 1024, 'quality': 84},
+  {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'sharedassets0.assets', 'match': "level arena 01", 'file': 'the-level-themes-and-what-they-hold-arena.jpg', 'note': "the game's own picture for its arena level theme", 'max': 1024, 'quality': 84},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

@@ -2955,6 +2955,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-level-themes-and-what-they-hold.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-lights-and-beeps-on-a-vehicle.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3361,11 +3366,6 @@
     },
     {
       "url": "/reference/notes/the-hidden.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-level-themes-and-what-they-hold.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

@@ -1440,6 +1440,30 @@
       "height": 512,
       "bytes": 33450,
       "sha256": "d9a8e4c5ebc44635a9f7d5b3875aaeb119ff92fd7eaa76c728b27012a5c34d3a"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-arctic.jpg",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "level arctic 01",
+      "note": "the game's own picture for its arctic level theme",
+      "width": 1024,
+      "height": 512,
+      "bytes": 29419,
+      "sha256": "3067a1e5736f730b48ec9c6a5b3a57d8b31bf8d329676b0c46c464fb806d07b5"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-arena.jpg",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "level arena 01",
+      "note": "the game's own picture for its arena level theme",
+      "width": 1024,
+      "height": 512,
+      "bytes": 22612,
+      "sha256": "61c95e1bacf06ac44063f1169ec660554b1a7165ba9f763447b1318859573f65"
     }
   ]
 }
