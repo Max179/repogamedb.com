@@ -1,0 +1,68 @@
+{
+  "id": "making-the-shop-visit-count",
+  "title": "Making the shop visit count",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to spend a run's takings at the shop in R.E.P.O.: the kinds of goods on offer and the secret stock behind them, banking before buying, rolling the upgrade stand and its reroll, and what the cosmetic machine is doing while you wait.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run finished, so there are takings to spend",
+    "Enough in the total to buy something",
+    "An idea of what the crew is short of"
+  ],
+  "steps": [
+    {
+      "do": "Bank before you shop, and know what the crew is carrying.",
+      "because": "the shop keeps a total cost and a total currency of its own, so what is on offer is decided against what the crew has brought back (ShopManager, totalCost, totalCurrency)"
+    },
+    {
+      "do": "Shop by kind rather than looking for one list of gear.",
+      "because": "the goods on offer are held in separate pools: ordinary items, consumables, upgrades and health packs (potentialItems, potentialItemConsumables, potentialItemUpgrades, potentialItemHealthPacks)"
+    },
+    {
+      "do": "Do not assume the shelf is everything the shop has.",
+      "because": "there are secret volumes and secret items held apart from the rest, so some stock is kept back (secretItemVolumes, potentialSecretItems)"
+    },
+    {
+      "do": "Expect the shelf to be built to a target rather than restocked at random.",
+      "because": "there is a target amount of items with separate amounts for consumables, upgrades and health packs (itemSpawnTargetAmount, itemConsumablesAmount, itemUpgradesAmount, itemHealthPacksAmount)"
+    },
+    {
+      "do": "Use the upgrade stand rather than treating upgrades as a list.",
+      "because": "upgrades come out of a stand with a button you grab, a hatch and a compartment, and the roll has its own start, rolling and end (UpgradeStand, buttonGrabObject, hatch, upgradeCompartment, soundRollStart, soundRolling, soundRollEnd)"
+    },
+    {
+      "do": "If the roll is not what you wanted, look for the reroll before walking away.",
+      "because": "the stand has a reroll of its own with its own sounds and its own hurt colliders (soundRerollStart, soundRerollTick, soundRerollSettle, rerollCompartmentHurtColliders)"
+    },
+    {
+      "do": "Give the stand room while it works.",
+      "because": "the stand can build up, light up and catch fire, with a fire light, a fire hurt collider and a loop for it (buildUpStages, buildUpLight, fireLight, fireHurtCollider, particleFireLoop)"
+    },
+    {
+      "do": "Treat a cosmetic pull as a sequence and wait for it.",
+      "because": "the machine spins a display and settles it, and the reward has a different sound for each grade, so the pull is staged rather than instant (screenSpinTransform, screenSpinSettleTransform, soundScreenCosmeticRewardCommon, soundScreenCosmeticRewardUncommon, soundScreenCosmeticRewardRare, soundScreenCosmeticRewardUltraRare)"
+    },
+    {
+      "do": "Spend with the next run in mind rather than the last one.",
+      "because": "the shop is tied to the extraction point, so what you buy here is what you take out there (extractionPoint, ShopManager)"
+    },
+    {
+      "do": "Buy gear as objects rather than as abstract upgrades where you can.",
+      "because": "what the shop sells is stock that becomes objects and equipment the crew then carries (potentialItems, potentialItemHealthPacks)"
+    }
+  ],
+  "commonMistakes": [
+    "Spending the takings before checking what the crew actually needs.",
+    "Looking for equipment in the same pool as consumables.",
+    "Forgetting that the upgrade stand can be rerolled.",
+    "Standing in the upgrade stand's way while it builds up."
+  ],
+  "relatedEntities": [
+    "the-shop-between-runs",
+    "the-upgrade-stand-and-its-roll"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

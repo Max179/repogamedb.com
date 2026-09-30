@@ -80,6 +80,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/making-the-shop-visit-count.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/pointing-a-tracker-at-the-right-thing.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
