@@ -828,6 +828,30 @@
       "height": 512,
       "bytes": 68836,
       "sha256": "f5d56ba8b6bbf5d6656c8e483dfee2da5e37af8674e02a2bda2e59c730ab77f9"
+    },
+    {
+      "entity": "the-runner",
+      "kind": "game",
+      "file": "mapped/the-runner-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Runner_substance01_Albedo",
+      "note": "the colour texture the game ships for the runner monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 61667,
+      "sha256": "4dc7a1606ce311ec14eb85c5445ee3fe3511df6bc575eec9911e28d053f2cbc1"
+    },
+    {
+      "entity": "the-thin-man",
+      "kind": "game",
+      "file": "mapped/the-thin-man-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Thin Man_Albedo",
+      "note": "the colour texture the game ships for the thin man monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 27183,
+      "sha256": "03172b254b08d4a1dcadd905380dfc8cfb0aafcd3ff1f0fcc7dfd0ccd0eb1bbb"
     }
   ]
 }

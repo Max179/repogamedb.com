@@ -128,6 +128,8 @@ MAPPINGS = [
   {'entity': 'the-hunter', 'bundle': 'resources.assets', 'match': "Hunter Material Albedo", 'file': 'the-hunter-texture.jpg', 'note': "the colour texture the game ships for the hunter monster", 'max': 512, 'quality': 88},
   {'entity': 'the-shadow', 'bundle': 'resources.assets', 'match': "shadow_DefaultMaterial_BaseColor", 'file': 'the-shadow-texture.jpg', 'note': "the colour texture the game ships for the shadow monster", 'max': 512, 'quality': 88},
   {'entity': 'the-balloon-monster', 'bundle': 'resources.assets', 'match': "BirthdayBoyBaseColor", 'file': 'the-balloon-monster-texture.jpg', 'note': "the colour texture the game ships for the balloon monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-runner', 'bundle': 'resources.assets', 'match': "Runner_substance01_Albedo", 'file': 'the-runner-texture.jpg', 'note': "the colour texture the game ships for the runner monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-thin-man', 'bundle': 'resources.assets', 'match': "Thin Man_Albedo", 'file': 'the-thin-man-texture.jpg', 'note': "the colour texture the game ships for the thin man monster", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
