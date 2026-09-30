@@ -7,6 +7,7 @@
     "The cannon is a fixture for the cart. The game ships it as its own item rather than as a handheld, which is why the cart can become a platform rather than only a trolley.",
     "It has to charge before it fires. The game keeps a build-up time, a firing time and a return time, which is why firing is a decision with a wind-up rather than an instant.",
     "It can fire once or repeatedly. The cannon records whether it is a single shot, so a build-up of the same shape can mean different things.",
+    "Firing is staged in two parts. The cannon has a transform for its shooting animation and two stages of build-up, and it fires with a sound split between what you hear and what the whole crew hears, which is why a cannon going off is not the same noise to everyone.",
     "It tells you when it is live. The cannon has a main colour and a light of its own, so its state is visible without a menu.",
     "It recoils. There is its own animation for firing and for the kick, with a nozzle that moves, which is why the shot is felt on the cart.",
     "It has a grab point and a logo screen. The cannon can be grabbed at a point of its own and shows the cart logo, so it belongs to the cart rather than merely sitting on it.",
@@ -46,6 +47,10 @@
     {
       "claim": "The cannon has an investigation range and a corrector it is aimed by, a light at its grab point, and sounds for booting up, aiming, turning quickly, grabbing and letting go.",
       "evidence": "identifiers: investigationRange, currentCorrector, cartGrabLight, soundBootUp, soundAimLoop, soundQuickTurn, soundGrabStart, soundGrabEnd"
+    },
+    {
+      "claim": "Its shooting has a transform and two stages of build-up of its own, and it fires with a sound that comes in a local and a shared version.",
+      "evidence": "identifiers: ItemCartCannon, shootAnimationTransform, buildup1, buildup2, shootSound, shootSoundGlobal"
     }
   ],
   "related": [
