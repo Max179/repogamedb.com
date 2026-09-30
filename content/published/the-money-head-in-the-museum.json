@@ -7,7 +7,7 @@
     "Some of what is in a level is not scenery. The money head is a prop with a mechanism: it has a state, a head that opens and closes, and a top half and a bottom half on transforms of their own rather than being one solid piece.",
     "Opening it is animated rather than switched. There is a curve for the movement and a second curve for its lights, with a particle effect when it opens and a spot light of its own, so the prop announces itself when it starts working.",
     "Its eyes are what change. There is an object for the red-eyed state, a sound kept for that state alone, a curve for how long the eyes stay lit, and a colour the game uses while they cool, so the glare is a cycle rather than a permanent look.",
-    "It has a pair of eyes with a light and particles each, and a transform for firing them, so the prop can look lit and threatening rather than being one glowing object.",
+    "It has a pair of eyes with a light and particles each, and a transform for firing them, so the prop can look lit and threatening rather than being one glowing object. The two eyes are indexed apart, with a light and a particle system belonging to each rather than to the pair.",
     "While it is doing this the room changes around it. The prop carries a low-pass filter for the walls, which is how a level can sound muffled while it is active instead of only looking different.",
     "It also gets hot. There is a looping sound for scorching and a separate sound for cooling down, which is how the prop tells you what stage it is in without you having to look at it.",
     "Being brought in is an event as well. There is a sound for being dragged in, so the prop arrives audibly rather than simply appearing in front of you.",
@@ -47,6 +47,10 @@
     {
       "claim": "It has a mesh of its own besides the head, a line drawn across it and a hurt collider.",
       "evidence": "identifiers: grunkaMeshRenderer, semiLine, hurtCollider"
+    },
+    {
+      "claim": "Its two eyes are kept separately, each with a light and a particle system of its own.",
+      "evidence": "identifiers: eye1, eye2, eye1Light, eye2Light, eye1Particles, eye2Particles"
     }
   ],
   "related": [
