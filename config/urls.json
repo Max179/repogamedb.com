@@ -3115,6 +3115,21 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/reference/collection.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/enemies.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/enums.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/index.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3345,9 +3360,24 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/search.html",
+      "url": "/reference/sources.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/tool.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/values.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/search.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/sources.html",

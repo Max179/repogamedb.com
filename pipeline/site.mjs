@@ -54,7 +54,7 @@ export const NAV = [
 ];
 
 /** Evidence layer: reachable from the footer and /reference/ only, never indexed. */
-export const REFERENCE_PATHS = new Set(['/collection.html', '/enemies.html', '/enums.html', '/values.html', '/tool.html', '/sources.html', '/search.html', '/reference/']);
+export const REFERENCE_PATHS = new Set(['/collection.html', '/enemies.html', '/enums.html', '/values.html', '/tool.html', '/sources.html', '/reference/']);
 export function isSchemaPage(path) {
   const p = String(path);
   return p.startsWith('/entity/') || p.startsWith('/reference/') || REFERENCE_PATHS.has(p);
@@ -273,7 +273,7 @@ export function build(inventoryPath, outDir) {
   indexable('tools/index.html', 'Tools', 'Search boxes and checkers for looking something up on this site.',
     '<h1>Tools</h1><p class="lead">The tools here run in your browser; nothing you type is sent anywhere.</p>\n<div class="grid">' +
     '<a class="card" href="/search.html"><strong>Search field names</strong><span class="dim">Search the field names the game writes, by name, type or the class that declares them.</span></a>' +
-    '<a class="card" href="/tool.html"><strong>Field lookup</strong><span class="dim">Ask which class declares a field.</span></a>' +
+    '<a class="card" href="/reference/tool.html"><strong>Field lookup</strong><span class="dim">Ask which class declares a field.</span></a>' +
     '<a class="card" href="/articles/"><strong>Guides</strong><span class="dim">Step-by-step write-ups for one job at a time.</span></a>' +
     '</div><p class="dim small">These utilities report what the game\'s files contain. They are not part of the player reference and carry no advice.</p>');
   indexable('updates.html', 'Updates', 'What has been added to this site, newest first.',
@@ -285,13 +285,13 @@ export function build(inventoryPath, outDir) {
   const classes = (inv.classes ?? []).slice().sort((a, b) => b.written - a.written);
   const used = new Set();
   const slugs = classes.map((c) => { const base = slug(c.name); let s = base, n = 2; while (used.has(s)) s = base + '-' + n++; used.add(s); return s; });
-  reference('collection.html', 'All names', 'Every P0 class with the fields the game writes.',
+  reference('reference/collection.html', 'All names', 'Every P0 class with the fields the game writes.',
     '<h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1><p class="dim">Reference pages. Each is marked noindex and kept out of the sitemap.</p><table><thead><tr><th>Name</th><th>Base</th><th>Written</th></tr></thead><tbody>' +
     classes.map((c, i) => '<tr><td><a href="/entity/' + slugs[i] + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') + '</tbody></table>');
   {
     const enemyEnums = (inv.enums ?? []).filter((e) => /enemy|state|type/i.test(e.name)).slice(0, 8);
     const enemyClasses = classes.filter((c) => /^Enemy/.test(c.name)).slice(0, 80);
-    reference('enemies.html', 'Enemies - types, states and classes', 'The enemy types and states the game defines.',
+    reference('reference/enemies.html', 'Enemies - types, states and classes', 'The enemy types and states the game defines.',
       '<h1>Enemies</h1><div class="note">The enum values below are read from the game\'s own assembly, so they are the game\'s own numbers. Per-instance numbers such as health and damage are listed only where this build decoded them; everything else is unknown rather than guessed.</div>' +
       enemyEnums.map((e) => '<h2 class="mono">' + esc(e.name) + ' <span class="dim">(' + e.members.length + ' values)</span></h2><table><tbody>' +
         e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join('') +
@@ -309,7 +309,7 @@ export function build(inventoryPath, outDir) {
       '</tbody></table>');
   }
   if ((inv.enums ?? []).length) {
-    reference('enums.html', 'Enums', 'Enumerations and their values, read from the game assembly.',
+    reference('reference/enums.html', 'Enums', 'Enumerations and their values, read from the game assembly.',
       '<h1>Enums <span class="dim">(' + inv.enums.length + ')</span></h1>' + inv.enums.map((e) =>
         '<h2 class="mono">' + esc(e.name) + ' <span class="dim">' + e.members.length + ' members</span></h2><table><tbody>' +
         e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join(''));
@@ -328,12 +328,12 @@ export function build(inventoryPath, outDir) {
         '<table><thead><tr><th>Object</th><th>Decoded fields</th></tr></thead><tbody>' +
         items.slice(0, 20).map((x) => '<tr><td class="mono dim">' + esc(x.pathId) + '</td><td class="mono">' + esc((x.values || []).map((v) => v.name + '=' + String(v.value)).join('  ')) + '</td></tr>').join('') + '</tbody></table>';
     }).join('');
-    reference('values.html', 'Decoded values', 'Field values decoded from the game\'s own files, one row per object.',
+    reference('reference/values.html', 'Decoded values', 'Field values decoded from the game\'s own files, one row per object.',
       '<h1>Decoded values <span class="dim">(' + list.length + ' objects)</span></h1>' +
       '<div class="note">Each row is one object read out of the game\'s own files. Its class was accepted only because the measured layout consumed that object\'s payload exactly, so these are the game\'s values rather than estimates.</div>' +
       (list.length === 0 ? '<p class="dim">No object in this build decoded yet.</p>' : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : '')));
   }
-  reference('search.html', 'Search', 'Search classes and fields.',
+  indexable('search.html', 'Search', 'Search every field name the game defines, in your browser.',
     '<h1>Search</h1><p class="dim">Client-side over ' + (inv.totals?.fields ?? 0) + ' fields. No network requests.</p>' +
     '<p><input id="q" type="search" placeholder="field or class" autocomplete="off"> <span id="status" class="dim"></span></p><ul id="out"></ul>' +
     '<script>var F=' + JSON.stringify(lookupFields(inv, '', 200)) + ';var q=document.getElementById("q"),o=document.getElementById("out"),s=document.getElementById("status");' +
@@ -341,14 +341,14 @@ export function build(inventoryPath, outDir) {
     's.textContent=v?(r.length+" match(es)"):("Showing first 50 of "+F.length+" indexed fields");' +
     'o.innerHTML=r.slice(0,50).map(function(x){return "<li>"+x.class+" <span class=dim>"+x.field+": "+x.type+"</span></li>"}).join("")};' +
     'var pre=new URLSearchParams(location.search).get("q");if(pre)q.value=pre;q.addEventListener("input",draw);draw();</script>');
-  reference('tool.html', 'Field lookup', 'Find which class declares a field.',
+  reference('reference/tool.html', 'Field lookup', 'Find which class declares a field.',
     '<h1>Field lookup</h1><p>Enter a field or type fragment; the tool searches the extracted field tables only, and never guesses a value.</p>' +
     '<p><input id="q" type="search" placeholder="field or type" autocomplete="off"> <span id="s" class="dim"></span></p><div id="o"></div>' +
     '<script>var F=' + JSON.stringify(lookupFields(inv, '', 200)) + ';var q=document.getElementById("q"),s=document.getElementById("s"),o=document.getElementById("o");' +
     'var draw=function(){var v=q.value.trim().toLowerCase();var rows=!v?F.slice(0,20):F.filter(function(x){return x.field.toLowerCase().indexOf(v)>=0||String(x.type).toLowerCase().indexOf(v)>=0});' +
     's.textContent=v?(rows.length+" match(es)"):"empty query - showing the first 20 indexed fields";' +
     'o.innerHTML=rows.slice(0,50).map(function(x){return "<div><span class=mono>"+x.field+"</span> <span class=dim>"+x.type+" - "+x.class+"</span></div>"}).join("")};q.addEventListener("input",draw);draw();</script>');
-  reference('sources.html', 'Sources', 'Where every number came from.',
+  reference('reference/sources.html', 'Sources', 'Where every number came from.',
     '<h1>Sources</h1><div class="note">Every value in this build traces to a file on the Windows machine that produced it. Nothing is community-sourced and nothing is estimated.</div>' +
     '<h2>Assembly</h2><p class="mono">' + esc(inv.source?.assembly ?? '') + '</p><h2>Extractor</h2><p class="mono">' + esc(inv.source?.extractor ?? '') + '</p>' +
     '<h2>Extracted at</h2><p class="mono">' + esc(inv.source?.extractedAt ?? '') + '</p><h2>Game version</h2><p>' + esc(inv.version ?? '') + '</p>' +
@@ -356,15 +356,15 @@ export function build(inventoryPath, outDir) {
     '<h2>Not extracted (unknown)</h2><p>' + esc(inv.provenance?.values ?? 'Per-field values are listed only where the object decoded; everything else is marked unknown.') + '</p>');
   reference('reference/index.html', 'Technical reference', 'Identifiers, tables and provenance for modders. Not indexed.',
     '<h1>Technical reference</h1><p class="lead">For modders and for checking our data. Deliberately kept out of search engines: it lists identifiers read from the game\'s files, which are useful to a modder but are not answers to a player\'s question.</p><ul>' +
-    '<li><a href="/collection.html">All names</a></li><li><a href="/enemies.html">Enemy types and states</a></li><li><a href="/enums.html">Enums</a></li>' +
-    '<li><a href="/values.html">Decoded values</a></li><li><a href="/search.html">Search</a></li><li><a href="/tool.html">Field lookup</a></li><li><a href="/sources.html">Sources and method</a></li>' +
+    '<li><a href="/reference/collection.html">All names</a></li><li><a href="/reference/enemies.html">Enemy types and states</a></li><li><a href="/reference/enums.html">Enums</a></li>' +
+    '<li><a href="/reference/values.html">Decoded values</a></li><li><a href="/search.html">Search</a></li><li><a href="/reference/tool.html">Field lookup</a></li><li><a href="/reference/sources.html">Sources and method</a></li>' +
     '<li><a href="/reference/notes/">Notes waiting for a confirmed picture</a></li></ul>' +
     '<p><a href="/entities/">Back to the player reference</a></p>');
 
   // ---- legal ---------------------------------------------------------------------------------------
   indexable('about.html', 'About', 'About this site and how it is built.',
     '<h1>About</h1><p>This site is a player-written reference for ' + esc(SITE.gameName) + '. It is generated by a static build; there is no database behind it.</p>' +
-    '<h2>Method</h2><p>No page on this site is hand-written from memory. Everything shown is produced by the build from the files listed on the <a href="/sources.html">sources page</a>. When the build cannot read something, it says so.</p>' +
+    '<h2>Method</h2><p>No page on this site is hand-written from memory. Everything shown is produced by the build from the files listed on the <a href="/reference/sources.html">sources page</a>. When the build cannot read something, it says so.</p>' +
     '<h2>What is on which layer</h2><p>The player reference — entities, guides, the game guide and the tools — is what the site is for. Identifiers, tables and extraction notes are an evidence layer behind the <a href="/reference/">technical reference</a>, kept out of search engines on purpose.</p>');
   indexable('contact.html', 'Contact', 'How to report a wrong value.',
     '<h1>Contact</h1><p>Corrections are welcome. Report the page, the claim and what the game actually does; corrections that cannot be checked against the game files cannot be used.</p><p>There is no form and no server behind this site.</p>');
@@ -379,6 +379,20 @@ export function build(inventoryPath, outDir) {
   write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p>Try the <a href="/entities/">entities</a> or the search box at the top of the page.</p>').replace('content="index, follow"', 'content="noindex, follow"'));
 
   // ---- machine-readable ------------------------------------------------------------------------------
+  // Old top-level addresses keep working: each is a noindex stub that points at the reference page now.
+  const stub = (oldRel, newPath, title) => {
+    const html = layout(title + ' (moved)', 'This page has moved into the technical reference.', '/' + oldRel,
+      '<h1>' + esc(title) + '</h1><p class="note">This page has moved into the <a href="' + newPath + '">technical reference</a>. The address was kept so an old link still lands somewhere useful.</p>')
+      .replace('content="index, follow"', 'content="noindex, follow"')
+      .replace('<link rel="canonical" href="' + SITE.url + '/' + oldRel + '">', '<link rel="canonical" href="' + SITE.url + newPath + '">')
+      .replace('<head>', '<head>\n<meta http-equiv="refresh" content="0; url=' + newPath + '">');
+    write(oldRel, html);
+  };
+  for (const [oldRel, name, title] of [
+    ['collection.html', 'collection', 'All names'], ['enemies.html', 'enemies', 'Enemy types and states'], ['enums.html', 'enums', 'Enums'],
+    ['values.html', 'values', 'Decoded values'], ['tool.html', 'tool', 'Field lookup'], ['sources.html', 'sources', 'Sources'],
+  ]) stub(oldRel, '/reference/' + name + '.html', title);
+
   write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     urls.map((u) => '  <loc>' + u + '</loc>\n').join('') + '</urlset>\n');
   write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n');

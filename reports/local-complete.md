@@ -254,3 +254,5 @@ git status --porcelain              -> 空
   4. **词条模板**：大图 + 标题 + 一行事实 + 导语 + At a glance（所属分类/图片来源/文档化版本/相关词条数）+ 游戏确认了什么 + In play + 相关卡片 + 版本与来源；攻略页把 because 里的标识符括号去掉，只留玩家语言的“为什么”。
   5. **图片绑定**：44 个无确认游戏图片的主题不再生成 /entries/，改为 /reference/notes/<id>.html（noindex，页首写明“尚无确认图片”），分类页仅以注记列出；sitemap 只收实体与攻略，**indexable 196→144**。
   6. **验收**：tests/site.test.mjs 更新为新契约，55 条全过；content-gate 0 违规、coverage 20/21（combos 已归档）、image-coverage 89 实图/44 注记、tsc exit 0。**截图**：reports/redesign-p0/{home,entities-monsters,entry}.png。
+
+- **P0 Phase 2：证据层迁入 /reference/ 并留 noindex 跳转桩（第 253 轮，本作，词条数不变 133 条）**：`collection.html`、`enemies.html`、`enums.html`、`values.html`、`tool.html`、`sources.html` 正文迁到 `/reference/<name>.html`，旧顶层地址保留为 noindex 跳转桩（meta refresh + canonical 指向新地址），不进 sitemap；页脚与 `/reference/` 仍是唯一入口，`/entity/` 类参考页保持原有 noindex 前缀。**例外**：`/search.html` 保留为玩家层工具（首页与页头搜索框落地页，indexable，Tools 可达）。同步修正 REFERENCE_PATHS（移除 search）与测试；pages=687、indexable=145、classification 145 keep / 536 noindex；tests 55 条全过、content-gate 0 违规、coverage 20/21、image-coverage 89 实图/44 注记、tsc exit 0。
