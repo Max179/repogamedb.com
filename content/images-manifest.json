@@ -1512,6 +1512,18 @@
       "height": 256,
       "bytes": 26075,
       "sha256": "e549d8193461cafdc3fcac1d0c99b9ad0279d3d23d38dc8bdd289eb1563418ef"
+    },
+    {
+      "entity": "the-cartoon-television",
+      "kind": "game",
+      "file": "mapped/the-cartoon-television-set.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Flat screen TV",
+      "note": "the game's own texture for the flat screen television the cartoon plays on",
+      "width": 512,
+      "height": 512,
+      "bytes": 13486,
+      "sha256": "3ea9f6ee2133631491ce1720913b8bd4bccc5620348359e85422f9c51bac6996"
     }
   ]
 }

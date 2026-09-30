@@ -198,6 +198,8 @@ MAPPINGS = [
   # The cosmetics entry names the cosmetic interfaces; these two icons are the pictures of its clothing and colour menus.
   {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'sharedassets0.assets', 'match': "clothes_icon", 'file': 'cosmetics-and-the-token-machine-clothes.png', 'note': "the icon the game uses for its clothing cosmetics", 'max': 256},
   {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'sharedassets0.assets', 'match': "color_icon", 'file': 'cosmetics-and-the-token-machine-color.png', 'note': "the icon the game uses for cosmetic colour", 'max': 256},
+  # The television entry names the set, its screen and its background; this asset is the set's own texture.
+  {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Flat screen TV", 'file': 'the-cartoon-television-set.jpg', 'note': "the game's own texture for the flat screen television the cartoon plays on", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

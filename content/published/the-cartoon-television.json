@@ -46,6 +46,10 @@
     {
       "claim": "The game ships the cartoon cat and the mouse as sheets of frames.",
       "evidence": "asset names: Cartoon Cat Texture, Cartoon Mouse Texture"
+    },
+    {
+      "claim": "The set itself has a texture of its own, a flat screen the build ships.",
+      "evidence": "asset name: Flat screen TV"
     }
   ],
   "related": [
@@ -53,6 +57,14 @@
     "valuables-that-fight-back"
   ],
   "images": [
+    {
+      "file": "mapped/the-cartoon-television-set.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own texture for the flat screen television the cartoon plays on, a dark set of panels and bezels.",
+        "zh": "游戏给播放卡通的平板电视准备的颜色贴图：深色的面板与边框。"
+      }
+    },
     {
       "file": "mapped/the-cartoon-television-cat.png",
       "kind": "game",
