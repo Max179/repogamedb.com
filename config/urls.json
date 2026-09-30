@@ -2945,6 +2945,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-eye-that-follows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-floater.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3376,11 +3381,6 @@
     },
     {
       "url": "/reference/notes/the-cart-cannon.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-eye-that-follows-you.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

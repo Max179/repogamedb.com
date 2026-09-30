@@ -650,6 +650,18 @@
       "sha256": "2b28d0289eccd4fd27b7bdd202dc23486e5ec47287ed4c48c55021d82a2f3054"
     },
     {
+      "entity": "the-eye-that-follows-you",
+      "kind": "game",
+      "file": "mapped/the-eye-that-follows-you-eye.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Enemy_Ceiling Eye_Albedo Engn 1",
+      "note": "the albedo texture the game ships for a monster eye, the eye the entry describes",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 114909,
+      "sha256": "e4e345f4bb2ea31373c9404751c0fa0339ef55ff524e90b205602d0063bacefb"
+    },
+    {
       "entity": "running-a-gun-dry",
       "kind": "game",
       "file": "mapped/running-a-gun-dry-shotgun.jpg",
