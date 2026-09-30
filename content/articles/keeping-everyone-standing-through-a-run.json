@@ -1,0 +1,69 @@
+{
+  "id": "keeping-everyone-standing-through-a-run",
+  "title": "Keeping everyone standing through a run",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use health packs, the truck's healer and the revive item in R.E.P.O. so that a bad moment costs the crew a detour rather than the run.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A crew of two or more",
+    "At least one health pack bought",
+    "A run already under way"
+  ],
+  "steps": [
+    {
+      "do": "Watch the health readout rather than counting hits, because health is a tracked number with a display of its own.",
+      "because": "a player's health is tracked and shown in its own interface (PlayerHealth, HealthUI)"
+    },
+    {
+      "do": "Carry a health pack before you need one, because recovery uses a carried pack rather than a command.",
+      "because": "recovery uses a carried health pack (ItemHealthPack)"
+    },
+    {
+      "do": "Treat the truck as a healer and not only as the way out, because it has a healer of its own.",
+      "because": "the truck has a healer of its own rather than only a drop-off point (TruckHealer)"
+    },
+    {
+      "do": "Do not count on every heal working, because the game has effects for a full heal and a separate one for a heal that failed.",
+      "because": "healing has its own effects, including one for a failed heal (fullHealParticle, fullHealSmokeParticle, failedHealParticles)"
+    },
+    {
+      "do": "Keep an eye on how many packs are around, since the game works out how many are available and keeps a count.",
+      "because": "the game works out how many health packs are available and keeps an amount (potentialItemHealthPacks, itemHealthPacksAmount)"
+    },
+    {
+      "do": "Decide when to stop hitting a monster by its health rather than by its looks, because it has a health total and a freeze time for dying.",
+      "because": "a monster carries a health total and a freeze time for dying (EnemyHealth, deathFreezeTime)"
+    },
+    {
+      "do": "Use weight deliberately, because a light, a medium and a heavy impact each do their own damage.",
+      "because": "impacts hurt a monster with separate damage for light, medium and heavy (impactHurt, impactLightDamage, impactMediumDamage, impactHeavyDamage)"
+    },
+    {
+      "do": "Remember that a kill can leave something behind, because a monster can be set to spawn a valuable up to a maximum.",
+      "because": "it can be set to leave a valuable behind up to a maximum number (spawnValuable, spawnValuableMax)"
+    },
+    {
+      "do": "Revive with the carried device rather than looking for a button: it is an item, and it shows what it is doing.",
+      "because": "reviving is done with a carried item that has lights, lines, particles and a shockwave (ItemReviveItem, lineRendererL, lineRendererR, shockwavePrefab)"
+    },
+    {
+      "do": "Spend upgrade money on health and stamina as a plan rather than a repair, because both are upgrades of their own.",
+      "because": "health and stamina can both be upgraded, each with its own wording (playerUpgradeHealth, playerUpgradeStamina, localizedUpgradeHealth, localizedUpgradeStamina)"
+    }
+  ],
+  "commonMistakes": [
+    "Leaving the health packs in the truck and meeting the first real monster without one.",
+    "Assuming a heal always lands, when a failed heal is a thing the game draws and plays.",
+    "Hitting a monster until it looks dead instead of reading its health and its dying freeze.",
+    "Treating reviving as a command and forgetting the device has to be carried and aimed."
+  ],
+  "relatedEntities": [
+    "health-and-recovery",
+    "the-revive-item",
+    "healing-at-the-truck"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}

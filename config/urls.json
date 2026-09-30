@@ -85,6 +85,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/keeping-everyone-standing-through-a-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/keeping-the-batteries-alive.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
