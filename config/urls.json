@@ -2910,6 +2910,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-tick-and-its-mouth.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-tricycle-rider.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2931,6 +2936,11 @@
     },
     {
       "url": "/entries/the-upscream.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-valuable-thrower.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

@@ -143,6 +143,8 @@ MAPPINGS = [
   {'entity': 'the-truck-screen', 'bundle': 'resources.assets', 'match': "Truck Screen_DefaultMaterial_BaseColor", 'file': 'the-truck-screen-texture.jpg', 'note': "the colour texture the game ships for the screen in the truck", 'max': 512, 'quality': 88},
   {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Cartoon Cat Texture", 'file': 'the-cartoon-television-cat.png', 'note': "the picture the game itself uses for the cat in the cartoon the television plays", 'max': 256},
   {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Cartoon Mouse Texture", 'file': 'the-cartoon-television-mouse.png', 'note': "the picture the game itself uses for the mouse in the cartoon the television plays", 'max': 256},
+  {'entity': 'the-tick-and-its-mouth', 'bundle': 'resources.assets', 'match': "Tick_basecolor", 'file': 'the-tick-and-its-mouth-texture.jpg', 'note': "the colour texture the game ships for the tick monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-valuable-thrower', 'bundle': 'resources.assets', 'match': "Valuable Thrower_Albedo", 'file': 'the-valuable-thrower-texture.jpg', 'note': "the colour texture the game ships for the monster that throws valuables", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

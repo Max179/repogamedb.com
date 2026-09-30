@@ -1008,6 +1008,30 @@
       "height": 64,
       "bytes": 8077,
       "sha256": "8ddca2af83adb3829b1e9084be82210df38813a1d303b627ad7013fb1b55523f"
+    },
+    {
+      "entity": "the-tick-and-its-mouth",
+      "kind": "game",
+      "file": "mapped/the-tick-and-its-mouth-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Tick_basecolor",
+      "note": "the colour texture the game ships for the tick monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 68979,
+      "sha256": "fb01c4fb3d46463994a20fcba217262d158f6892f6fc384f6d58c0a1a191b860"
+    },
+    {
+      "entity": "the-valuable-thrower",
+      "kind": "game",
+      "file": "mapped/the-valuable-thrower-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Valuable Thrower_Albedo",
+      "note": "the colour texture the game ships for the monster that throws valuables",
+      "width": 512,
+      "height": 512,
+      "bytes": 48345,
+      "sha256": "f898036568bc8ad77d45488123830b7cdc5dfc14bfd54bf8f61b7bd939271434"
     }
   ]
 }
