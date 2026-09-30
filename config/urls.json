@@ -2635,6 +2635,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/hitting-things-with-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-a-level-is-put-together.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2686,6 +2691,11 @@
     },
     {
       "url": "/entries/keycards-and-the-office.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/leaving-the-ground-in-a-vehicle.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
