@@ -2875,6 +2875,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-cart-as-an-object.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-cart-laser.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3341,11 +3346,6 @@
     },
     {
       "url": "/reference/notes/the-bullet-and-what-it-leaves-behind.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-cart-as-an-object.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

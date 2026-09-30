@@ -191,6 +191,8 @@ MAPPINGS = [
   # manor picture already belongs to the level-building entry, so it is not reused here.
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'sharedassets0.assets', 'match': "level arctic 01", 'file': 'the-level-themes-and-what-they-hold-arctic.jpg', 'note': "the game's own picture for its arctic level theme", 'max': 1024, 'quality': 84},
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'sharedassets0.assets', 'match': "level arena 01", 'file': 'the-level-themes-and-what-they-hold-arena.jpg', 'note': "the game's own picture for its arena level theme", 'max': 1024, 'quality': 84},
+  # The cart entry names the handle and its grab point; this asset is the arrow the game draws on that handle.
+  {'entity': 'the-cart-as-an-object', 'bundle': 'resources.assets', 'match': "cart handle arrow", 'file': 'the-cart-as-an-object-arrow.jpg', 'note': "the arrow the game draws on the cart's handle", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

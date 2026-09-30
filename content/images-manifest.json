@@ -1464,6 +1464,18 @@
       "height": 512,
       "bytes": 22612,
       "sha256": "61c95e1bacf06ac44063f1169ec660554b1a7165ba9f763447b1318859573f65"
+    },
+    {
+      "entity": "the-cart-as-an-object",
+      "kind": "game",
+      "file": "mapped/the-cart-as-an-object-arrow.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "cart handle arrow",
+      "note": "the arrow the game draws on the cart's handle",
+      "width": 512,
+      "height": 512,
+      "bytes": 31960,
+      "sha256": "1751e69277c44a35e454c1fed05a506e63ac40cc0d4419232b16b49e6fe7a88a"
     }
   ]
 }

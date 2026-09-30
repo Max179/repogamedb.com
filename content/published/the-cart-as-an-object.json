@@ -55,6 +55,14 @@
   ],
   "images": [
     {
+      "file": "mapped/the-cart-as-an-object-arrow.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The arrow the game draws on the cart's handle, a grey gradient arrow head on a striped field.",
+        "zh": "游戏画在手推车把手上的箭头：条纹底上一枚灰色渐变的箭头。"
+      }
+    },
+    {
       "file": "the-cart-as-an-object.svg",
       "kind": "diagram",
       "alt": {
@@ -67,5 +75,5 @@
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }
