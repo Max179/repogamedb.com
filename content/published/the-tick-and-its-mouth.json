@@ -6,6 +6,7 @@
   "body": [
     "The tick is a monster built around a mouth and an aura. It has lips that are modelled open and closed with a state between them, so what it is doing can be read from the mouth rather than from the whole body.",
     "Its head has two shapes. There is a flat head and a bloated head, and parts of the body bloat on springs of their own, which is how the monster can look starved and then swollen.",
+    "Its grip is measured rather than assumed. The tick has one grab force for when it is holding nothing and another for what cannot be grabbed, a point to grab from, and two colliders — a flat one and a bloated one — which is why the swollen shape changes how it holds on.",
     "It moves in several ways. There are loops for skittering, for walking and for running, so the same creature can travel slowly across a room or rush at you, and each has its own sound.",
     "It sucks. There is a suck loop and a bigger version of the sound, which is why the mouth is not only for show: the noise it makes is the warning for what the mouth is about to do.",
     "Its healing is an aura of its own with a health pool behind it. There are particles for the aura, particles for the moment the healing lands and smoke for that impact, along with a loop while the aura is running.",
@@ -47,6 +48,10 @@
     {
       "claim": "It has a maximum health and a flag for whether it has been full, with sounds for being hurt, dying, jumping, noticing and detaching.",
       "evidence": "identifiers: maxHealth, hasBeenFull, hurtSound, deathSound, jumpSound, noticeSound, detachSound"
+    },
+    {
+      "claim": "Its grab has a force for nothing held and a force for what cannot be grabbed, a point to grab from, and a flat and a bloated collider of its own.",
+      "evidence": "identifiers: EnemyTick, grabForceZero, grabForceUngrabbable, forceGrabPoint, flatCollider, bloatCollider"
     }
   ],
   "related": [
