@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Keeping your speed up a ramp and through a drift",
+    "url": "/articles/keeping-your-speed-up-a-ramp-and-through-a-drift.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The boosts a vehicle earns",
     "url": "/entries/the-boosts-a-vehicle-earns.html",
     "kind": "New entry"
@@ -63,12 +69,6 @@
     "date": "2026-10-01",
     "title": "Keeping everyone standing through a run",
     "url": "/articles/keeping-everyone-standing-through-a-run.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Keeping the crew in touch when the level splits you",
-    "url": "/articles/keeping-the-crew-in-touch-when-the-level-splits-you.html",
     "kind": "New guide"
   }
 ]
