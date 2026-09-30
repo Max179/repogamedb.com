@@ -45,6 +45,14 @@
     {
       "claim": "It keeps a state, an animator and a rotation spring of its own.",
       "evidence": "identifiers: currentState, enemyHiddenAnim, rotationSpring"
+    },
+    {
+      "claim": "An older copy of the hidden monster is still in the build, with a flag of its own for whether it is on the ground.",
+      "evidence": "identifiers: EnemyHiddenOld, grounded"
+    },
+    {
+      "claim": "That older copy keeps its own footstep particles, with a transform, smoke and a foot, as well as a walking sound and breath particles.",
+      "evidence": "identifiers: footstepParticlesTransform, footstepParticleSmoke, footstepParticleFoot, soundFootstepWalk, breathParticles"
     }
   ],
   "related": [
