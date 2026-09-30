@@ -1,0 +1,49 @@
+{
+  "id": "the-shop-between-runs",
+  "title": "The shop between runs",
+  "category": "Shop",
+  "tier": "published",
+  "summary": "R.E.P.O. is not only the levels: the game defines a shopkeeper, a shop manager, upgrade stands and cosmetic machines, which is where your takings turn into a stronger crew.",
+  "body": [
+    "Between runs the game gives you a shop to spend in, with someone keeping it and its own cost display rather than a bare menu.",
+    "Upgrades are bought at a stand and keep their own information, so an upgrade is a thing in the world rather than a checkbox you tick.",
+    "Cosmetics have their own machine, so changing how the crew looks is a separate decision from getting stronger.",
+    "What this entry does not tell you: prices, how many upgrades exist or what each one changes. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game has a shopkeeper and a shop manager for the between-run shop.",
+      "evidence": "identifiers: ShopKeeper, ShopManager"
+    },
+    {
+      "claim": "Shop costs are shown by the game rather than inferred.",
+      "evidence": "identifier: ShopCostUI"
+    },
+    {
+      "claim": "Upgrades are bought at a stand and carry their own information.",
+      "evidence": "identifiers: UpgradeStand, ItemUpgrade, UpgradeInfo"
+    },
+    {
+      "claim": "Cosmetics come from a separate machine.",
+      "evidence": "identifiers: CosmeticShopMachine, CosmeticShopMachineAnimator"
+    }
+  ],
+  "related": [
+    "gear-you-carry",
+    "weapons-you-can-bring"
+  ],
+  "images": [
+    {
+      "file": "the-shop-between-runs.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a run ends, you return to the shop, you buy an upgrade at the stand, and one cosmetic from the machine.",
+        "zh": "局间商店示意图：一局结束、回到商店、在升级台购买升级、从机器购买一件外观。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
