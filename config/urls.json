@@ -10,6 +10,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/choosing-what-to-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/first-run-what-to-expect.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

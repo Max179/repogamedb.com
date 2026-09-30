@@ -1,0 +1,44 @@
+{
+  "id": "choosing-what-to-carry",
+  "title": "Choosing what to carry into a level",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to decide what your crew brings, based on the gear and loot behaviour the game defines, so the run survives its own mistakes.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A crew and a level to enter",
+    "Access to the shop between runs",
+    "An agreed extraction point"
+  ],
+  "steps": [
+    {
+      "do": "Take a walkie-talkie before you take a second weapon.",
+      "because": "the walkie-talkie is its own item and is what keeps a split crew in contact (ItemWalkieTalkie)"
+    },
+    {
+      "do": "Bring one revive item even if it leaves a hand empty.",
+      "because": "reviving a crew member uses a dedicated item rather than a free action (ItemReviveItem)"
+    },
+    {
+      "do": "Decide in advance how many hands go to loot.",
+      "because": "valuables are individual objects of very different size and each one takes carrying attention (GumballValuable, BlenderValuable, TrafficLightValuable)"
+    },
+    {
+      "do": "Leave room for a boxed valuable, which is easy to walk past.",
+      "because": "at least one valuable comes in a box you can pick up (ItemValuableBox)"
+    }
+  ],
+  "commonMistakes": [
+    "Bringing weapons and no way to talk.",
+    "Assuming a revive will be available when it is needed.",
+    "Filling every hand with loot and losing the ability to fight at all."
+  ],
+  "relatedEntities": [
+    "gear-you-carry",
+    "weapons-you-can-bring",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
