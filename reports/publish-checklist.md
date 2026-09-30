@@ -41,3 +41,23 @@ credentials exist.
   uploads `web/dist` to Cloudflare Pages.
 - Live smoke to run afterwards: the home page, `/entries/`, `/topics/`, `/articles/`, one enemy or valuable page,
   `/sitemap.xml`, `/robots.txt`, the 404 page, and `/reference/` (which must stay `noindex` and out of the sitemap).
+
+## Missing — in the build, not external (measured 2026-10-01, 7a98df1)
+
+**The site is English-only. The agreed shape is eleven language versions, all fully switchable, with the English
+site on the bare domain (no `/en` prefix).** Measured on the built output and the generator:
+
+- Rendered pages are single-locale: `<html lang="en">`, and the only alternates on every page are
+  `<link rel="alternate" hreflang="en">` and `hreflang="x-default"` (`pipeline/site.mjs`, the `layout()` function).
+- There is no language switcher and no locale route: `web/dist` holds `/entries/`, `/articles/`, `/reference/`,
+  `/entities/`, `/tools/` with no locale segment, and no rendered page carries a language menu. A grep for a
+  switcher or a locale list in the page markup finds nothing.
+- The only second-language data in the content is Chinese: every entry file carries `zh` strings beside `en`
+  (142/142 entries), but the renderer prints `alt.en` and keeps the Chinese as a single `title=` tooltip on the
+  entry hero image. No third language exists anywhere in `content/`.
+- No document or config in the repository names the eleven languages, and there is no translation catalogue.
+
+This is a build-side gap, not a credentials gap, which is why it is listed apart from the external blockers above.
+It is template and content work — locale routing, per-locale rendering, the switcher, `hreflang`, per-locale
+sitemaps, and the translated copy — so it belongs with the site-design session rather than with the game-data work,
+which is why no game-data report claims it as done.
