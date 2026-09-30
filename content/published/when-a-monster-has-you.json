@@ -1,0 +1,45 @@
+{
+  "id": "when-a-monster-has-you",
+  "title": "When a monster has you",
+  "category": "Enemies",
+  "tier": "published",
+  "summary": "Being grabbed is a situation R.E.P.O. plans for: the game defines a monster built around holding a player, and reviving a crew member depends on carrying the right item.",
+  "body": [
+    "One of the monsters is built around latching onto a player rather than chasing and leaving, so being held is a state the game expects you to be in.",
+    "Getting free is not a free action: reviving a crew member uses a dedicated item, so whether a rescue is possible depends on what the crew brought.",
+    "Fighting back uses separate weapon objects, which is why a crew that brought weapons has an answer that a crew carrying only loot does not.",
+    "What this entry does not tell you: how long a hold lasts, how much damage follows, or the reach of any weapon. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A monster exists whose behaviour is built around holding a player.",
+      "evidence": "identifier: EnemyHeartHugger"
+    },
+    {
+      "claim": "Reviving a crew member requires a dedicated item.",
+      "evidence": "identifier: ItemReviveItem"
+    },
+    {
+      "claim": "Fighting back uses separate weapon objects.",
+      "evidence": "identifiers: ItemMelee, ItemGun"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "gear-you-carry"
+  ],
+  "images": [
+    {
+      "file": "when-a-monster-has-you.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a monster grabs a player, the crew reacts, a revive item is used, and the run continues.",
+        "zh": "被抓应对示意图：怪物抓住玩家、小队反应、使用复活道具、继续行动。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ]
+}

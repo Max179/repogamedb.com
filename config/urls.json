@@ -2475,6 +2475,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/when-a-monster-has-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/enums.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
