@@ -1,0 +1,65 @@
+{
+  "id": "staying-on-the-shopkeepers-good-side",
+  "title": "Staying on the shopkeeper's good side",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to behave in R.E.P.O.'s between-run shop: what the shopkeeper senses and how it warns you before it grabs, why a ruckus is what brings it over, and what its switch and its barrels tell you while the crew buys.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A finished run with takings to spend",
+    "The shop with its shopkeeper awake",
+    "An idea of what the crew is buying"
+  ],
+  "steps": [
+    {
+      "do": "Shop as a crew, with the whole purchase in view rather than one item at a time.",
+      "because": "the shop knows whether the player is a thief and keeps a total cost and a total currency of its own (isThief, totalCost, totalCurrency)"
+    },
+    {
+      "do": "Read the warning before the grab rather than after it.",
+      "because": "the shopkeeper's scan light runs through in, out and judging curves with separate colours for seeing and for grabbing (scanLight, scanLightInCurve, scanLightOutCurve, scanLightJudgeCurve, scanLightColorSee, scanLightColorGrab)"
+    },
+    {
+      "do": "Watch the line as well as the light.",
+      "because": "a line is drawn from a start point to the player, with a width curve of its own and separate colours for seeing and grabbing (lineRenderer, lineBetweenTwoPoints, lineStartPoint, lineRendererWidthCurve, lineColorSee, lineColorGrab)"
+    },
+    {
+      "do": "Treat the charging of the barrels as the last warning there is.",
+      "because": "it builds up before firing, with a charge curve, a charging light with a maximum intensity, particles with a maximum scale and a shake with an angle and a speed (judgeChargeCurve, judgeBuildUpLoop, barrelChargeLight, barrelChargeLightMaxIntensity, judgeChargeParticles, judgeChargeParticlesMaxScale, judgeGunShakeMaxAngle, judgeGunShakeSpeed)"
+    },
+    {
+      "do": "Put down anything you have not paid for while it is judging.",
+      "because": "it grabs and releases with sounds of its own, a loop whose pitch has a lowest and a highest value, and a colour while it is holding something (grabSound, releaseSound, grabLoop, grabLoopPitchMin, grabLoopPitchMax, emissionColorGrab)"
+    },
+    {
+      "do": "Keep the shop quiet while you decide.",
+      "because": "it waits out a ruckus over a distance and for a duration before reacting, and its voice is kept in separate sets for being angry, hurt, seeing, grabbing and judging (ruckusWaitDistance, ruckusWaitDuration, voiceBoxSoundClipsAngry, voiceBoxSoundClipsHurt, voiceBoxSoundClipsSee, voiceBoxSoundClipsGrab, voiceBoxSoundClipsJudge)"
+    },
+    {
+      "do": "Spread out instead of crowding one stand.",
+      "because": "it has a big sensor and a small one, each with its own curve and sound, and the small one carries a value and a speed (BigSensor, SmallSensor, BigSensorCurve, SmallSensorCurve, smallSensorSound, bigSensorSound, SmallSensorLerp, SmallSensorLerpSpeed)"
+    },
+    {
+      "do": "If it jams, let it push itself free rather than crowding it.",
+      "because": "it carries forces and durations for being pushed, being stuck and being dislodged (stuckPushForce, stuckPhaseDuration, dislodgeBackwardForce, dislodgeUpForce, dislodgeTorqueForce)"
+    },
+    {
+      "do": "Use its switch only if the crew means to work in peace.",
+      "because": "it can be switched on and off, with its own switch, light, curves and power sounds (OnOffSwitch, onOffSwitchLight, switchOnCurve, switchOffCurve, onOffSwitchSoundOn, onOffSwitchSoundOff)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating the scanner colour as decoration when it is saying whether you are being seen or grabbed.",
+    "Standing in front of a charging barrel after the warning has already started.",
+    "Making noise right across the shop and then wondering why it came over.",
+    "Crowding one display while the whole crew is trying to buy."
+  ],
+  "relatedEntities": [
+    "the-shopkeeper-and-what-it-watches",
+    "the-shop-between-runs",
+    "what-the-shop-puts-out"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

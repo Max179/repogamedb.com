@@ -135,6 +135,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/staying-on-the-shopkeepers-good-side.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/using-a-staff-without-losing-the-loot.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
