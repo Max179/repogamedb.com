@@ -120,6 +120,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/hurting-a-monster-with-what-you-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/index.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
