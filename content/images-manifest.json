@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-staffs",
+      "kind": "game",
+      "file": "mapped/the-staffs-antigrav.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Antigrav Staff_Albedo",
+      "note": "albedo texture of one of the staffs the crew can bring",
+      "width": 512,
+      "height": 512,
+      "bytes": 63993,
+      "sha256": "61ed4b29e6c08290aaa688bec874ba80d0255b1a40598ae4b6997a3e664de781"
+    },
+    {
       "entity": "the-drone",
       "kind": "game",
       "file": "mapped/the-drone-drone.jpg",

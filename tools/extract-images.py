@@ -67,6 +67,8 @@ MAPPINGS = [
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
   {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
    'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'the-staffs', 'bundle': 'resources.assets', 'match': "Antigrav Staff_Albedo",
+   'file': 'the-staffs-antigrav.jpg', 'note': 'albedo texture of one of the staffs the crew can bring', 'max': 512, 'quality': 88},
   {'entity': 'the-drone', 'bundle': 'resources.assets', 'match': "Drone",
    'file': 'the-drone-drone.jpg', 'note': 'albedo texture of the drone the crew can deploy', 'max': 512, 'quality': 88},
   {'entity': 'keycards-and-the-office', 'bundle': 'resources.assets', 'match': "shop office keycard_DefaultMaterial_BaseColor",

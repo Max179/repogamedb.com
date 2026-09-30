@@ -1,0 +1,47 @@
+{
+  "id": "using-a-staff-without-losing-the-loot",
+  "title": "Using a staff without losing the loot",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use a R.E.P.O. staff deliberately, given that the antigravity, void and torque staffs each move an object in a different way.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A staff in somebody's hands",
+    "A heavy object that has to move",
+    "A route out of the room"
+  ],
+  "steps": [
+    {
+      "do": "Decide how the object needs to move before picking a staff.",
+      "because": "the game ships three staffs as separate items rather than one with settings (ItemStaffZeroGravity)"
+    },
+    {
+      "do": "Reach for the antigravity staff when the problem is weight.",
+      "because": "it is an item in its own right with its own surfaces (Antigrav Staff_Albedo)"
+    },
+    {
+      "do": "Reach for the void staff when the problem is distance rather than weight.",
+      "because": "the void staff is a separate item from the antigravity one (ItemStaffVoid)"
+    },
+    {
+      "do": "Use torque when the object needs turning rather than lifting.",
+      "because": "the torque staff has an arrow of its own (Torque Staff-Arrow)"
+    },
+    {
+      "do": "Clear the route before you start moving something, not afterwards.",
+      "because": "every staff is still a carried item, so you have to walk the object out (ItemStaffTorque)"
+    }
+  ],
+  "commonMistakes": [
+    "Bringing one staff and hoping it covers every problem.",
+    "Lifting something before checking the doorway.",
+    "Treating a staff as a way of carrying more rather than of moving differently."
+  ],
+  "relatedEntities": [
+    "the-staffs",
+    "moving-loot-and-gear"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

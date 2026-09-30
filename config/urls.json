@@ -70,6 +70,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/using-a-staff-without-losing-the-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/using-a-stun-window.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2606,6 +2611,11 @@
     },
     {
       "url": "/entries/the-shop-between-runs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-staffs.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

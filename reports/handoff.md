@@ -21,8 +21,8 @@ This was verified from a clean clone: the same build, gates, typecheck and prefl
 game package and without `web/dist`.
 
 ## What the site contains
-- Published entries: 33; structured guides: 14.
-- Real images extracted from the game with a recorded mapping: 36. 33 of 33 published entries carry one; the other 0 are diagram-only and labelled as such. Per-entry origin is in reports/image-coverage.md.
+- Published entries: 34; structured guides: 15.
+- Real images extracted from the game with a recorded mapping: 37. 34 of 34 published entries carry one; the other 0 are diagram-only and labelled as such. Per-entry origin is in reports/image-coverage.md.
 - Content at handoff: 8 entries and 3 structured guides.
 - Build: `pages=512 indexable=19`. URL classification in `config/urls.json`: 19 keep, 485 noindex.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
