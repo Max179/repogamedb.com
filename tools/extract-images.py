@@ -131,6 +131,7 @@ MAPPINGS = [
   {'entity': 'the-runner', 'bundle': 'resources.assets', 'match': "Runner_substance01_Albedo", 'file': 'the-runner-texture.jpg', 'note': "the colour texture the game ships for the runner monster", 'max': 512, 'quality': 88},
   {'entity': 'the-thin-man', 'bundle': 'resources.assets', 'match': "Thin Man_Albedo", 'file': 'the-thin-man-texture.jpg', 'note': "the colour texture the game ships for the thin man monster", 'max': 512, 'quality': 88},
   {'entity': 'the-upscream', 'bundle': 'resources.assets', 'match': "upscream exp_Upscream_Legs_BaseColor", 'file': 'the-upscream-texture.jpg', 'note': "the colour texture the game ships for the upscream monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-elsa', 'bundle': 'resources.assets', 'match': "Elsa_Albedo", 'file': 'the-elsa-texture.jpg', 'note': "the colour texture the game ships for the elsa monster", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

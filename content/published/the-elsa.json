@@ -1,0 +1,74 @@
+{
+  "id": "the-elsa",
+  "title": "The elsa and everything that hangs off it",
+  "category": "Enemies",
+  "summary": "The elsa is a monster carried by springs: its head, its tails and its ears each have their own spring with a target, and it has a curve for getting angry rather than a single attack animation.",
+  "body": [
+    "The elsa is built out of parts that hang and swing. Its head is on a spring with a transform and a target, and its tails and ears have their own springs in the same way, which is why the monster keeps moving after it has stopped.",
+    "Two tails are separately sprung. There is a flying pivot with a spring for the first tail, then springs for two tails of their own, each with its transform and its target, so the back of the monster is a chain rather than one piece.",
+    "Its ears are sprung as well. Ear springs have their own transforms, so what looks like a pair of ears is animated by the same system as everything else.",
+    "It has a curve for getting angry. Being angry is a value the animator reads rather than a separate animation, which is how the same monster can be calm and then not, without switching between two models.",
+    "It keeps a state and a timer, and its body is measured with a separate transform for the visuals and one for the collider that hurts players, so what you can hit is not the same shape as what you can see.",
+    "Dying is two effects rather than one. There is a smaller and a larger particle effect, which is how a death can build rather than simply happen.",
+    "It carries a collider named for a bucket as well, which ties this monster to the game's own props rather than being a free-floating creation.",
+    "The image beside this entry is the game's own: the colour texture of the elsa.",
+    "What this entry does not tell you: how fast it moves, how much damage it does, or how long it takes to become angry. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Its head is on a spring with a transform and a target of its own.",
+      "evidence": "identifiers: headSpring, headTransform, headTransformTarget"
+    },
+    {
+      "claim": "Two tails are separately sprung, one on a flying pivot with its own spring, transform and target.",
+      "evidence": "identifiers: tailFlyingPivotSpring, tailFlyingPivotTransform, tailFlyingPivotTransformTarget, tail01Spring, tail01Transform, tail01TransformTarget, tail02Spring, tail02Transform, tail02TransformTarget"
+    },
+    {
+      "claim": "Its ears have springs with transforms of their own.",
+      "evidence": "identifiers: ear01Spring, ear01TransformL"
+    },
+    {
+      "claim": "Being angry is a curve the animator reads rather than a separate animation.",
+      "evidence": "identifier: angryCurve"
+    },
+    {
+      "claim": "It keeps a state and a timer, with the visuals and the hurt collider on separate transforms.",
+      "evidence": "identifiers: currentState, stateTimer, visualsTransform, hurtCollider"
+    },
+    {
+      "claim": "Dying uses a smaller and a larger particle effect.",
+      "evidence": "identifiers: deathParticlesSmall, deathParticlesBig"
+    },
+    {
+      "claim": "It has a collider named for a bucket, tying it to the game's own props.",
+      "evidence": "identifier: duckBucketCollider"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "the-runner"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-elsa-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the elsa monster.",
+        "zh": "游戏为该怪物提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-elsa.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the head, tails and ears hang on springs, an anger curve rises, and the monster dies in two sizes of effect.",
+        "zh": "示意图：头、尾与耳悬于弹簧，愤怒曲线上升，死亡分两种规模的效果。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

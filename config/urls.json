@@ -2740,6 +2740,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-elsa.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-exploding-rubber-duck.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

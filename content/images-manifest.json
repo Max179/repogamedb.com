@@ -864,6 +864,18 @@
       "height": 512,
       "bytes": 28913,
       "sha256": "ca30b98853845d7cea9918bedd9a877f06adc3abd69277b595730fbbb161eacb"
+    },
+    {
+      "entity": "the-elsa",
+      "kind": "game",
+      "file": "mapped/the-elsa-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Elsa_Albedo",
+      "note": "the colour texture the game ships for the elsa monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 65985,
+      "sha256": "02f088b5fd3156b0b480d8cbf0a43025f978b019c81df487f80bf649402c1e72"
     }
   ]
 }
