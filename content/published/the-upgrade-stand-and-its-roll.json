@@ -8,6 +8,7 @@
     "A roll has stages of its own. There are separate curves for the shake as the roll starts, for the roll itself and for the shake as it settles, with a start sound, a loop while it rolls and a sound for the end.",
     "The hatch is animated and loud. It has its own curve, a sound for opening and a different one for closing, plus separate impact sounds for each, and particles of its own.",
     "There is a reroll as well. It has sounds for starting, for each tick, for settling and for finishing, and the compartment it uses carries hurt colliders of its own.",
+    "The build-up is sounded and the hatch can hurt. The beep while it builds up and the squeak as the final roll settles are sounds of their own, and the hatch carries a hurt collider, which is why reaching into a moving stand is a physical thing rather than a menu.",
     "The button is a whole object. It has a renderer with a normal material and a deny material, a curve for the press and another for a refusal, springs for its rotation, and sounds for pressing, refusing and twisting up and down.",
     "The stand builds up before it rolls. It has stages to go through, a build-up light, an intro curve and an outro curve, build-up particles, a loop sound and a length for the build-up.",
     "It can catch fire. A fire light, a hurt collider for the fire, a looping fire particle, rubble for the button, a break particle and a break sound all belong to the stand, which is why a failed roll is more than a message.",
@@ -60,6 +61,10 @@
     {
       "claim": "The game ships colour artwork for the stand's button and its roller.",
       "evidence": "asset names: upgrade stand button_DefaultMaterial_BaseColor, upgrade stand roller_DefaultMaterial_BaseColor"
+    },
+    {
+      "claim": "The beep while the stand builds up and the squeak as the final roll settles are sounds of their own, and the hatch carries a hurt collider.",
+      "evidence": "identifiers: soundStageBeep, soundFinalRollSqueak, hatchHurtCollider"
     }
   ],
   "related": [
