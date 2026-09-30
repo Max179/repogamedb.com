@@ -2920,6 +2920,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-snow-bike-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-staffs.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3016,6 +3021,11 @@
     },
     {
       "url": "/entries/what-a-monster-is-doing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-being-grabbed-does-to-your-view.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

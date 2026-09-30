@@ -1,0 +1,67 @@
+{
+  "id": "the-snow-bike-valuable",
+  "title": "The snow bike you can ride out",
+  "category": "Valuables",
+  "summary": "One valuable in R.E.P.O. is a snow bike rather than a crate: the game gives it a seat, steering and a look-at point, an engine loop, a grab point and a state with its own timer.",
+  "body": [
+    "Not every valuable is a crate or a trinket. One of them is a snow bike, and the game builds it as a machine you can sit on rather than as an object you only carry.",
+    "It has a seat, a steering transform and a look-at point. Those three are the parts that turn a model into something rideable: where the player sits, where they steer from and where the view is aimed.",
+    "It has a state and a timer with a maximum, so what it is doing is a state with a duration rather than a single action. That is the same arrangement the monsters use for their own behaviour.",
+    "It carries a rigid body of its own, which is how a vehicle can be physical: it falls, it slides and it collides rather than only being drawn in the right place.",
+    "It has an engine loop. A loop rather than a one-off sound is what makes a running engine continue while the bike is moving rather than restarting with every action.",
+    "It has a grab point and a collider for being hurt, so a crew can pick it up to carry it as loot and can also lose it by being attacked while it is on the floor.",
+    "Its artwork carries an expedition marking. The texture the game ships for it is a set of panels with the team name printed on them, which is why two arctic bikes look like equipment rather than like scenery.",
+    "Put beside the car and the plane, it makes three valuables that are vehicles, and each one is built from the parts its own movement needs rather than from one shared vehicle system.",
+    "The image beside this entry is the game's own: the colour texture of the snow bike, with its expedition marking.",
+    "What this entry does not tell you: how fast it goes, what it is worth, or how much punishment it can take. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The snow bike has a state, a timer with a maximum and a rigid body of its own.",
+      "evidence": "identifiers: ValuableArcticSnowBike, currentState, stateTimer, stateTimerMax, rb"
+    },
+    {
+      "claim": "It has a seat, a look-at point and a steering transform.",
+      "evidence": "identifiers: seatTransform, lookAtTransform, steeringTransform"
+    },
+    {
+      "claim": "It has an engine loop sound.",
+      "evidence": "identifier: audioEngineLoop"
+    },
+    {
+      "claim": "It has a grab point and a collider for being hurt.",
+      "evidence": "identifiers: grabPoint, hurtCollider"
+    },
+    {
+      "claim": "The game ships a colour texture for it carrying an expedition marking.",
+      "evidence": "asset name: Arctic snow bike_DefaultMaterial_BaseColor"
+    }
+  ],
+  "related": [
+    "the-car-and-the-plane-you-can-carry",
+    "the-valuables-you-can-find"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-snow-bike-valuable-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the snow bike valuable, with its expedition team marking.",
+        "zh": "游戏为雪地摩托珍贵物提供的颜色贴图，上面印有探险队标记。"
+      }
+    },
+    {
+      "file": "the-snow-bike-valuable.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the bike has a seat, steering and a look-at point, runs an engine loop, and can be carried off as loot.",
+        "zh": "示意图：摩托有座位、转向与注视点，引擎持续循环，并可作为战利品搬走。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
