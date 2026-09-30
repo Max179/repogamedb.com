@@ -2465,6 +2465,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/enemies-that-move-differently.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/extraction-run.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
