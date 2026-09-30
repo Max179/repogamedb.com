@@ -1,0 +1,75 @@
+{
+  "id": "the-truck-screen",
+  "title": "The screen in the truck",
+  "category": "Interface",
+  "summary": "The screen in the R.E.P.O. truck is a machine of its own: the menu has antennas, panels, windows and a dish on springs, and the display reveals text, shows chat messages and changes its background.",
+  "body": [
+    "The screen in the truck is not a flat panel. The menu around it is animated: antennas, a front panel, two windows and a dish each have a spring with a target of their own, so the whole console moves as the truck does.",
+    "It has debris of its own. There are particles for skeleton bits and smoke at the start and again at the end, along with a loop and sounds for swerving, speeding up and slowing down, which is how the truck console reacts to being driven.",
+    "The display has settings for how text arrives. There is a reveal setting and a delay between one message and the next, so the text can be typed out rather than appearing all at once.",
+    "Messages are their own object. There is a screen type, a chat message with a loading bar and a result bar with a light of its own, so a message can be shown while it is being worked on and then resolved.",
+    "It has sounds for its own typing. There are separate sounds for typing, for emoji, for a new line, for a new page and a loop while a message is charging, along with custom emoji sounds, which is why the console can sound busy without anything being said.",
+    "A message can succeed or fail, and the screen has four background colours: its main one, an off one, an evil one and one used while it is changing.",
+    "Engine sounds belong to the screen as well. There is a transform for the engine sound, a rev sound and a success sound, which is how the audio of the truck is attached to what is on the display rather than to the vehicle alone.",
+    "Because the menu, the text and the sounds are all part of one object, the truck can be torn apart and put back together without the console losing what it was showing.",
+    "The image beside this entry is the game's own: the colour texture of the screen in the truck.",
+    "What this entry does not tell you: what any message says, how long a message takes, or what the success and failure states change. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The truck menu is animated, with antennas, a front panel, two windows and a dish each on a spring with a target.",
+      "evidence": "identifiers: TruckMenuAnimated, antennaMiddleSpring, frontPanelSpring, windowLeftSpring, windowRightSpring, dishSpring, antennaBackSpring"
+    },
+    {
+      "claim": "It has skeleton bit and smoke particles at the start and at the end, plus a loop and swerve, speed-up and slow-down sounds.",
+      "evidence": "identifiers: particleSkeletonBitsFirst, particleSkeletonSmokeFirst, particleSkeletonBitsLast, particleSkeletonSmokeLast, soundLoop, soundSwerve, soundSpeedUp, soundSlowDown"
+    },
+    {
+      "claim": "The display has a text reveal setting and a delay between messages.",
+      "evidence": "identifiers: TruckScreenText, textRevealNormalSetting, nextMessageDelayNormalSetting"
+    },
+    {
+      "claim": "A message has a screen type, a loading bar and a result bar with a light of its own.",
+      "evidence": "identifiers: screenType, chatMessage, chatMessageLoadingBar, chatMessageResultBar, chatMessageResultBarLight"
+    },
+    {
+      "claim": "It has typing, emoji, new line, new page and charge loop sounds, with custom emoji sounds of its own.",
+      "evidence": "identifiers: typingSound, emojiSound, newLineSound, newPageSound, chargeChatLoop, customEmojiSounds"
+    },
+    {
+      "claim": "A message can succeed or fail, and the screen has main, off, evil and transition background colours.",
+      "evidence": "identifiers: chatMessageResultSuccess, chatMessageResultFail, mainBackgroundColor, offBackgroundColor, evilBackgroundColor, transitionBackgroundColor"
+    },
+    {
+      "claim": "Engine sounds are attached to the screen as well.",
+      "evidence": "identifiers: engineSoundTransform, engineRevSound"
+    }
+  ],
+  "related": [
+    "the-shop-between-runs",
+    "the-save-and-your-run-record"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-truck-screen-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the screen in the truck.",
+        "zh": "游戏为卡车屏幕提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-truck-screen.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the truck console moves on its springs, a message is typed out with its own sounds, and it resolves into success or failure.",
+        "zh": "示意图：卡车控制台随弹簧晃动，信息逐字打出并有专属音效，随后以成功或失败收尾。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

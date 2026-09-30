@@ -139,6 +139,8 @@ MAPPINGS = [
   {'entity': 'the-slow-walker', 'bundle': 'resources.assets', 'match': "Slow Walker_Albedo", 'file': 'the-slow-walker-texture.jpg', 'note': "the colour texture the game ships for the slow walker monster", 'max': 512, 'quality': 88},
   {'entity': 'valuables-with-a-behaviour-of-their-own', 'bundle': 'resources.assets', 'match': "milk carton_DefaultMaterial_BaseColor", 'file': 'valuables-with-a-behaviour-milk.jpg', 'note': "the colour texture the game ships for the milk carton valuable", 'max': 512, 'quality': 88},
   {'entity': 'valuables-with-a-behaviour-of-their-own', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Scale_BaseColor", 'file': 'valuables-with-a-behaviour-scale.jpg', 'note': "the colour texture the game ships for the scale valuable", 'max': 512, 'quality': 88},
+  {'entity': 'the-car-and-the-plane-you-can-carry', 'bundle': 'resources.assets', 'match': "car_car_BaseColor", 'file': 'the-car-and-the-plane-car.jpg', 'note': "the colour texture the game ships for the car valuable", 'max': 512, 'quality': 88},
+  {'entity': 'the-truck-screen', 'bundle': 'resources.assets', 'match': "Truck Screen_DefaultMaterial_BaseColor", 'file': 'the-truck-screen-texture.jpg', 'note': "the colour texture the game ships for the screen in the truck", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

@@ -2735,6 +2735,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-car-and-the-plane-you-can-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-cart-and-its-boost-pads.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2906,6 +2911,11 @@
     },
     {
       "url": "/entries/the-truck-and-the-end-of-a-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-truck-screen.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

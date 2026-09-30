@@ -57,7 +57,8 @@
         "valuables-that-are-also-tools",
         "how-many-valuables-a-level-holds",
         "the-things-that-are-not-loot",
-        "valuables-with-a-behaviour-of-their-own"
+        "valuables-with-a-behaviour-of-their-own",
+        "the-car-and-the-plane-you-can-carry"
       ]
     },
     {
@@ -186,7 +187,8 @@
       ],
       "entries": [
         "the-readouts-you-play-by",
-        "how-a-run-is-scored"
+        "how-a-run-is-scored",
+        "the-truck-screen"
       ]
     },
     {

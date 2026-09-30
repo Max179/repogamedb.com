@@ -960,6 +960,30 @@
       "height": 512,
       "bytes": 46081,
       "sha256": "48ef689ed11cc2ef88575682f2eb0e9f98b05189f54bb5c617297b272f8719bc"
+    },
+    {
+      "entity": "the-car-and-the-plane-you-can-carry",
+      "kind": "game",
+      "file": "mapped/the-car-and-the-plane-car.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "car_car_BaseColor",
+      "note": "the colour texture the game ships for the car valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 70850,
+      "sha256": "1bc8c9395532e982f8f1f1068693b1fc9263f91db6a98a3c6147b4840e3556fd"
+    },
+    {
+      "entity": "the-truck-screen",
+      "kind": "game",
+      "file": "mapped/the-truck-screen-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Truck Screen_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the screen in the truck",
+      "width": 512,
+      "height": 512,
+      "bytes": 53993,
+      "sha256": "189f4b757e9d5145da86173747b426b2de8308a877a6edd4b6a64e464b33bd33"
     }
   ]
 }
