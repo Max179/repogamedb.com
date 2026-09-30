@@ -2755,6 +2755,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-heart-hugger.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-hunter.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

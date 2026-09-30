@@ -876,6 +876,18 @@
       "height": 512,
       "bytes": 65985,
       "sha256": "02f088b5fd3156b0b480d8cbf0a43025f978b019c81df487f80bf649402c1e72"
+    },
+    {
+      "entity": "the-heart-hugger",
+      "kind": "game",
+      "file": "mapped/the-heart-hugger-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "HeartHuggerBaseColor",
+      "note": "the colour texture the game ships for the heart hugger monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 53822,
+      "sha256": "aa2d819445d15ba4bbc1cd9277f9966e6fa05c0cdc09aeebeba2386aa6131595"
     }
   ]
 }
