@@ -1,0 +1,70 @@
+{
+  "id": "keeping-your-speed-up-a-ramp-and-through-a-drift",
+  "title": "Keeping your speed up a ramp and through a drift",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the two boosts a vehicle earns in R.E.P.O.: the push a slope in the right angle window gives you, and the three graded tiers of boost a held drift pays out.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A vehicle under you",
+    "Ground with a slope or room to slide",
+    "Enough straight ahead to use the speed once you have it"
+  ],
+  "steps": [
+    {
+      "do": "Treat a ramp as a place to gain speed rather than only as a way up, because the vehicle carries a boost that belongs to slopes alone.",
+      "because": "the ramp boost is a switch of its own on the vehicle (enableRampBoost)"
+    },
+    {
+      "do": "Read the slope before you commit, because only a certain window of angles pays out.",
+      "because": "the boost has a lowest and a highest slope angle (rampBoostMinSlopeAngle, rampBoostMaxSlopeAngle)"
+    },
+    {
+      "do": "Arrive with speed already built, because a slow crawl up a rise is not enough to start the boost.",
+      "because": "there is a lowest speed below which the boost does not apply (rampBoostMinSpeed)"
+    },
+    {
+      "do": "Expect the ground to do the pushing rather than the throttle, since the boost carries a force of its own.",
+      "because": "the boost has a force of its own (rampBoostForce)"
+    },
+    {
+      "do": "Turn with the speed you have instead of braking for the corner, because the vehicle sends existing speed in a new direction.",
+      "because": "the vehicle redirects the velocity it already has, with a strength of its own (velocityRedirectStrength)"
+    },
+    {
+      "do": "Watch the two ends of the vehicle when a slope begins, because the front and the back are checked separately for touching the ground.",
+      "because": "the front and the back have separate points for being on the ground (frontGroundedTransform, backGroundedTransform)"
+    },
+    {
+      "do": "Hold a slide to the end of your turn rather than straightening out early, because a drift boost is graded in three levels.",
+      "because": "drift boosts come in three levels, each reached at its own threshold (driftBoostLevel1Threshold, driftBoostLevel2Threshold, driftBoostLevel3Threshold)"
+    },
+    {
+      "do": "Keep the slide going while it is safe, because a higher level pushes harder than a lower one.",
+      "because": "each level carries its own forward boost and its own speed multiplier (driftBoostLevel1ForwardBoost, driftBoostLevel3SpeedBoostMultiplier)"
+    },
+    {
+      "do": "Use the effects to know which level you reached, because arriving at a level and holding it are drawn differently, and the light brightens with the level.",
+      "because": "each level has particles for reaching it and for holding it, and its own light brightness (driftBoostLevel1ReachedParticles, driftBoostLevel2Particles, boostLightIntensityLevel3)"
+    },
+    {
+      "do": "Plan where the boost ends, because a level lasts a set time rather than as long as you like.",
+      "because": "each level lasts for its own duration (driftBoostLevel2Duration)"
+    }
+  ],
+  "commonMistakes": [
+    "Crawling up a rise and expecting the boost, when it has a lowest speed.",
+    "Taking a slope that is too gentle or too steep, which sits outside the angle window.",
+    "Straightening out of a slide early and settling for the lowest level.",
+    "Braking into a corner instead of turning the speed you already have.",
+    "Spending the boost on open ground with nothing to reach."
+  ],
+  "relatedEntities": [
+    "the-boosts-a-vehicle-earns",
+    "drifting-a-vehicle",
+    "leaving-the-ground-in-a-vehicle"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
