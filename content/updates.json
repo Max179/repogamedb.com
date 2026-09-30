@@ -1,14 +1,38 @@
 [
   {
     "date": "2026-10-01",
-    "title": "Getting through the office door",
-    "url": "/articles/getting-through-the-office-door.html",
+    "title": "Reading the record the game keeps for you",
+    "url": "/articles/reading-the-record-the-game-keeps-for-you.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Hurting a monster with what you carry",
+    "url": "/articles/hurting-a-monster-with-what-you-carry.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Getting what you need from the between-run shop",
+    "url": "/articles/getting-what-you-need-from-the-between-run-shop.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Knowing when you are nearly out",
+    "url": "/articles/knowing-when-you-are-nearly-out.html",
     "kind": "New guide"
   },
   {
     "date": "2026-10-01",
     "title": "Expecting a monster to move like nothing else",
     "url": "/articles/expecting-a-monster-to-move-like-nothing-else.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Getting through the office door",
+    "url": "/articles/getting-through-the-office-door.html",
     "kind": "New guide"
   },
   {
@@ -57,30 +81,6 @@
     "date": "2026-10-01",
     "title": "Dealing with the monster that carries a bomb",
     "url": "/articles/dealing-with-the-monster-that-carries-a-bomb.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The eye that follows you",
-    "url": "/entries/the-eye-that-follows-you.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The bar that shows a charge",
-    "url": "/reference/notes/the-bar-that-shows-a-charge.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The monster that grabs heads",
-    "url": "/entries/the-monster-that-grabs-heads.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Hearing the hidden before you see it",
-    "url": "/articles/hearing-the-hidden-before-you-see-it.html",
     "kind": "New guide"
   }
 ]

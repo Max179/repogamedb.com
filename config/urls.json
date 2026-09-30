@@ -205,6 +205,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-the-record-the-game-keeps-for-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-the-run-record-instead-of-guessing.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
