@@ -1,0 +1,91 @@
+{
+  "id": "the-boosts-a-vehicle-earns",
+  "title": "The boosts a vehicle earns",
+  "category": "Physics",
+  "summary": "Extra speed in R.E.P.O. is not one thing: a vehicle can be boosted by the ground it drives up and by a slide it holds, and the slide boost comes in three graded levels with their own push, length, particles and light.",
+  "body": [
+    "A boost is not a single number on a vehicle. Speed from the ground and speed earned by a slide are kept apart, which is why a run can be fast for reasons that have nothing to do with how hard the throttle is held.",
+    "Ground pays out on its own. The vehicle has a switch for a ramp boost and a window of slope angles, so a gentle rise and a wall of a slope are not the same thing: one sits inside the window and the other does not.",
+    "It also has a strength and a floor. The ramp boost carries a force of its own and a speed below which it does not apply, which is why crawling up a slope does nothing while arriving at speed does.",
+    "Speed is steered rather than thrown away. The vehicle holds a strength for redirecting the velocity it already has, so a turn can send the speed you built somewhere new instead of losing it.",
+    "The vehicle knows which end is supported. There are separate points for the front and the back being on the ground, which is how a slope is felt as a slope rather than as flat ground.",
+    "A slide is graded rather than flat. Drift boosts come in three levels, each reached at its own threshold, so holding a slide longer pays more rather than paying once and stopping.",
+    "Every level carries its own push. A level has a forward boost and a speed multiplier of its own, plus a duration of its own, so the levels differ in how hard they push and in how long they last rather than in name alone.",
+    "The levels are drawn as well as given. Reaching a level has particles of its own, with one set for arriving at it and another for staying on it, so a longer slide looks different on the screen.",
+    "The light moves with them. There is a brightness for each boost level, which is why the vehicle brightens as the boost grows instead of holding one fixed glow.",
+    "What this entry does not tell you: how steep the window is, how much speed a ramp or a level adds, or how long a level lasts. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A ramp boost is a switch of its own, with a window of slope angles.",
+      "evidence": "identifiers: enableRampBoost, rampBoostMinSlopeAngle, rampBoostMaxSlopeAngle"
+    },
+    {
+      "claim": "The ramp boost has a force and a speed below which it does not apply.",
+      "evidence": "identifiers: rampBoostForce, rampBoostMinSpeed"
+    },
+    {
+      "claim": "The vehicle holds a strength for redirecting the velocity it already has.",
+      "evidence": "identifier: velocityRedirectStrength"
+    },
+    {
+      "claim": "The front and the back of the vehicle have separate points for being on the ground.",
+      "evidence": "identifiers: frontGroundedTransform, backGroundedTransform"
+    },
+    {
+      "claim": "Drift boosts come in three levels, each reached at its own threshold.",
+      "evidence": "identifiers: driftBoostLevel1Threshold, driftBoostLevel2Threshold, driftBoostLevel3Threshold"
+    },
+    {
+      "claim": "Each drift boost level carries its own forward boost and speed multiplier.",
+      "evidence": "identifiers: driftBoostLevel1ForwardBoost, driftBoostLevel1SpeedBoostMultiplier, driftBoostLevel3ForwardBoost, driftBoostLevel3SpeedBoostMultiplier"
+    },
+    {
+      "claim": "Each drift boost level lasts for its own duration.",
+      "evidence": "identifiers: driftBoostLevel1Duration, driftBoostLevel2Duration, driftBoostLevel3Duration"
+    },
+    {
+      "claim": "Reaching a level has particles of its own, kept apart from the particles of staying on it.",
+      "evidence": "identifiers: driftBoostLevel1ReachedParticles, driftBoostLevel2ReachedParticles, driftBoostLevel3ReachedParticles, driftBoostLevel1Particles, driftBoostLevel3Particles"
+    },
+    {
+      "claim": "There is a brightness for each boost level.",
+      "evidence": "identifiers: boostLightIntensityLevel1, boostLightIntensityLevel2, boostLightIntensityLevel3"
+    }
+  ],
+  "related": [
+    "drifting-a-vehicle",
+    "leaving-the-ground-in-a-vehicle"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-boosts-a-vehicle-earns-ramp.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The tread-plate texture the game puts on the truck ramp a vehicle drives up for its boost.",
+        "zh": "游戏给卡车跳板使用的花纹钢板贴图，车辆开上去可获得加速。"
+      }
+    },
+    {
+      "file": "mapped/the-boosts-a-vehicle-earns-boost-pad.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The game's own effect sheet for a race-track boost pad, drawn as a column of glowing arrows.",
+        "zh": "游戏自带的赛道加速板特效图集，画成一列发光的箭头。"
+      }
+    },
+    {
+      "file": "the-boosts-a-vehicle-earns.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a slope inside the angle window pays a boost, a held slide builds through three levels, and each level pushes harder, longer and brighter.",
+        "zh": "示意图：角度窗口内的斜坡给一次加速、持续漂移按三级累积、每一级推得更猛、更久、更亮。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

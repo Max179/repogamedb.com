@@ -1380,6 +1380,30 @@
       "height": 512,
       "bytes": 63800,
       "sha256": "cbc103b89ce3057ca956235bd3db69d11c20128df107c669087d8b6111c8a02c"
+    },
+    {
+      "entity": "the-boosts-a-vehicle-earns",
+      "kind": "game",
+      "file": "mapped/the-boosts-a-vehicle-earns-ramp.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Truck Ramp",
+      "note": "the colour texture the game ships for the truck ramp a vehicle drives up",
+      "width": 512,
+      "height": 512,
+      "bytes": 76962,
+      "sha256": "85c6b3a799a6faa703e313dbed005ab28a9e9041587ea8bb9938fc3cd44b035d"
+    },
+    {
+      "entity": "the-boosts-a-vehicle-earns",
+      "kind": "game",
+      "file": "mapped/the-boosts-a-vehicle-earns-boost-pad.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Arena Race Boost Pad",
+      "note": "the colour texture the game ships for the boost pad on the race track",
+      "width": 512,
+      "height": 512,
+      "bytes": 31945,
+      "sha256": "c96e9a17a3037c595f1e86c7af8957fd2f705ded0514006bc8c7e687de66c833"
     }
   ]
 }

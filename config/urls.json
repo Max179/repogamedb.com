@@ -2840,6 +2840,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-boosts-a-vehicle-earns.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-bowtie-monster.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

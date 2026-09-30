@@ -176,6 +176,10 @@ MAPPINGS = [
   # machine's own screen, which the entry describes as the thing that shows.
   {'entity': 'the-lights-and-beeps-on-a-vehicle', 'bundle': 'resources.assets', 'match': "truck lamp_DefaultMaterial_BaseColor", 'file': 'the-lights-and-beeps-on-a-vehicle-lamp.jpg', 'note': "the base colour texture the game ships for a lamp on the vehicle", 'max': 512, 'quality': 88},
   {'entity': 'the-token-machines-show', 'bundle': 'resources.assets', 'match': "cosmetic machine_CosmeticShopMachine___Screen_BaseColor", 'file': 'the-token-machines-show-screen.jpg', 'note': "the base colour texture of the cosmetic machine's own screen", 'max': 512, 'quality': 88},
+  # The boost entry names the ground a vehicle drives up and the pad that pushes it. Both textures name
+  # their subject outright, so the mapping needs no interpretation.
+  {'entity': 'the-boosts-a-vehicle-earns', 'bundle': 'resources.assets', 'match': "Truck Ramp", 'file': 'the-boosts-a-vehicle-earns-ramp.jpg', 'note': "the colour texture the game ships for the truck ramp a vehicle drives up", 'max': 512, 'quality': 88},
+  {'entity': 'the-boosts-a-vehicle-earns', 'bundle': 'resources.assets', 'match': "Arena Race Boost Pad", 'file': 'the-boosts-a-vehicle-earns-boost-pad.jpg', 'note': "the colour texture the game ships for the boost pad on the race track", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
