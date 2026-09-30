@@ -2525,6 +2525,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-museum-and-its-props.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-shop-between-runs.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
