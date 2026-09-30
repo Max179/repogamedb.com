@@ -80,6 +80,14 @@ a bag exists there either; `Toggle_Switch_Off_Frame` is a flat purple disc with 
 `T_CategorySign_AlbedoTransparency` is the blank plate the category signs are printed on, with no category anywhere
 on it. Each mapping was deleted and each entry kept another picture or its diagram.
 
+### A note on transparent art and JPEG
+
+A JPEG cannot carry alpha. Where a mapped texture has a transparent field, the exported file keeps the colour the
+game stores under that field, which in this build runs from near-black to near-white depending on the sheet. Every
+JPEG mapping was opened as the page receives it, not as a viewer that ignores alpha would show it, and each one
+reads: the review ledger holds the verdict for each record (`reports/image-reviews.md`). The plate colour behind an
+icon sheet is a design question, not a mapping error.
+
 ## The rule this audit applies
 
 A mapping is evidence only when the texture name states the subject **and** opening the file shows that subject.
