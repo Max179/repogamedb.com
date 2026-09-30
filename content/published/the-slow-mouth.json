@@ -42,6 +42,14 @@
     {
       "claim": "There are plain sounds as well as the voice lines.",
       "evidence": "identifiers: soundDetach, soundStunLoopVO"
+    },
+    {
+      "claim": "Attaching itself is a step of its own: it keeps its tentacles and both jaws, the transform its particles sit on, the avatar it is aiming for, a local copy of the player's jaw, and a sound for the attach.",
+      "evidence": "identifiers: EnemySlowMouthAttaching, tentaclesTransform, topJaw, bottomJaw, particleTransform, targetPlayerAvatar, localPlayerJaw, soundAttachVO, soundAttach"
+    },
+    {
+      "claim": "Once attached it sits on a local parent with an intro and outro curve, and it carries a puke capsule with its own transform and renderer, puke particles, and a second set of jaw and mouth transforms for the other side.",
+      "evidence": "identifiers: EnemySlowMouthAttached, localParentTransform, curveIntroOutro, pukeCapsuleTransform, pukeCapsuleRenderer, pukeParticles, otherSemiPuke, otherTopJawTransform, otherBotJawTransform"
     }
   ],
   "related": [
