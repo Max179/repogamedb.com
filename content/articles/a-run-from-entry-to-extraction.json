@@ -1,0 +1,44 @@
+{
+  "id": "a-run-from-entry-to-extraction",
+  "title": "A run, from entry to extraction",
+  "tier": "published",
+  "kind": "article",
+  "target": "What a R.E.P.O. run contains in order, and the decisions at each stage, based on behaviour the game's own files establish.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A crew and a level",
+    "Gear chosen before leaving",
+    "An agreed meeting point"
+  ],
+  "steps": [
+    {
+      "do": "Expect the level to differ from the last one.",
+      "because": "levels are produced by a generator and each one defines its own valuables (LevelGenerator, LevelValuables)"
+    },
+    {
+      "do": "Assume the monsters know roughly where you are.",
+      "because": "the game tracks the room a player is in and the distance to them (EnemyPlayerRoom, EnemyPlayerDistance)"
+    },
+    {
+      "do": "Pick up the loot you can carry back rather than the best loot you can find.",
+      "because": "valuables are physical objects of very different size (GumballValuable, TrafficLightValuable)"
+    },
+    {
+      "do": "Bank an extraction before you push further in.",
+      "because": "completed extractions are recorded and extraction happens at tracked points (ExtractionsDoneState, ExtractionPoint)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating every level as the same layout.",
+    "Assuming you are hidden when you are in the next room.",
+    "Never banking an extraction."
+  ],
+  "relatedEntities": [
+    "extraction-run",
+    "choosing-when-to-leave",
+    "enemies-and-their-behaviour"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
