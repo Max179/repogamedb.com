@@ -1,0 +1,70 @@
+{
+  "id": "pushing-the-cart-without-losing-the-load",
+  "title": "Pushing the cart without losing the load",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the hauling cart in R.E.P.O. actually behaves: the handle and grab points, the surface materials it carries, the stabilising force, the two cart modes and the screen and sounds that tell you what it is doing.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A cart in reach",
+    "A load worth moving",
+    "A route back to the truck"
+  ],
+  "steps": [
+    {
+      "do": "Push by the handle rather than the body, because the cart has a handle point and a grab point of its own.",
+      "because": "the cart has a handle point and a grab point (handlePoint, cartGrabPoint)"
+    },
+    {
+      "do": "Use the grab mesh to steady what is already loaded, because the cart has a component for grabbing what is in it.",
+      "because": "it has a mesh used for grabbing and a component for grabbing what is already in the cart (grabMesh, physGrabInCart)"
+    },
+    {
+      "do": "Know which cart you are pushing, because the small one has a hurt collider of its own.",
+      "because": "the cart knows whether it is the small kind, which has its own hurt collider (isSmallCart, smallCartHurtCollider)"
+    },
+    {
+      "do": "Expect the floor to matter, because the cart carries four surface materials it can be switched between.",
+      "because": "it carries slippery, sticky, a little slippery and normal surface materials (physMaterialSlippery, physMaterialSticky, physMaterialALilSlippery, physMaterialNormal)"
+    },
+    {
+      "do": "Let the stabilising force settle the load instead of fighting it.",
+      "because": "it has a stabilisation force of its own (stabilizationForce)"
+    },
+    {
+      "do": "Pick the cart mode that suits the trip, because there is a strong and a weak mode.",
+      "because": "it has a strong and a weak cart mode, each with a localised name (localizedCartModeStrong, localizedCartModeWeak)"
+    },
+    {
+      "do": "Read the value screen rather than adding the load up in your head.",
+      "because": "it carries a value screen (valueScreen)"
+    },
+    {
+      "do": "Listen to the cart: being locked, dragged and handled each sound different.",
+      "because": "it has separate sounds for being locked, dragged and handled (soundLocked, soundDragged, soundHandled)"
+    },
+    {
+      "do": "Use the thrust effect when you need a push, and the button object when you need to act on the cart.",
+      "because": "it has a thrust effect and a button object (thrustEffect, buttonObject)"
+    },
+    {
+      "do": "Check the load at the truck before you leave, because the cart keeps its own grab component for what is inside it.",
+      "because": "the cart knows what is in it through its own grab component (physGrabInCart)"
+    }
+  ],
+  "commonMistakes": [
+    "Pushing the cart by the body and losing the load on the first turn.",
+    "Fighting the stabilising force instead of letting it settle.",
+    "Treating the small cart like the big one when it takes a hit.",
+    "Ignoring the value screen and carrying less than a full load.",
+    "Leaving the cart locked or dragged without noticing the sound."
+  ],
+  "relatedEntities": [
+    "the-cart-as-an-object",
+    "carts-grabbing-and-physics",
+    "the-cart-and-its-boost-pads"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
