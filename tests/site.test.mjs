@@ -8,7 +8,7 @@ import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, SITE, NAV, REFERENCE_PATHS } from '../pipeline/site.mjs';
+import { build, lookupFields, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
 let pass = 0, fail = 0;
@@ -38,7 +38,7 @@ try {
 
   const html = readdirSync(join(dir, 'entity')).slice(0, 25).map((f) => readFileSync(join(dir, 'entity', f), 'utf8'));
   ok('every sampled entity page carries a canonical URL', html.every((h) => h.includes('<link rel="canonical" href="' + SITE.url + '/entity/')));
-  ok('every sampled entity page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
+  ok('every sampled reference page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
   const f0 = inv.classes[0].fields[0];
   const confidences = new Set();
   let extracted = 0;
@@ -182,21 +182,29 @@ try {
   })() === true);
 
   const published = readdirSync('content/published').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'published', x), 'utf8')));
-  const missingPages = published.filter((e) => !existsSync(join(dir, 'entries', e.id + '.html')));
-  ok('every published entry has a page', missingPages.length === 0, missingPages.map((e) => e.id).join(', '));
+  // Entities with a confirmed game picture are published under /entries/. A subject with no confirmed picture is a
+  // noindex note in the evidence layer, out of the sitemap, never dressed up as a finished entry.
+  const entityFile = (e) => (e.imageTier === 'game-image' ? join(dir, 'entries', e.id + '.html') : join(dir, 'reference', 'notes', e.id + '.html'));
+  const missingPages = published.filter((e) => !existsSync(entityFile(e)));
+  ok('every published subject has a page: entities under /entries/, picture-less subjects as notes', missingPages.length === 0, missingPages.map((e) => e.id).join(', '));
+  const misSitemapped = published.filter((e) => (e.imageTier === 'game-image'
+    ? !sitemap.includes(SITE.url + '/entries/' + e.id + '.html')
+    : sitemap.includes(SITE.url + '/reference/notes/' + e.id + '.html')));
+  ok('the sitemap lists entities only, and keeps picture-less subjects out of it', misSitemapped.length === 0, misSitemapped.map((e) => e.id).join(', '));
   const thin = [];
   for (const e of published) {
-    const h = readFileSync(join(dir, 'entries', e.id + '.html'), 'utf8');
+    const h = readFileSync(entityFile(e), 'utf8');
     if (!h.includes(e.title) || !h.includes(e.summary)) thin.push(e.id + ':text');
-    if (!h.includes('What is established') || !h.includes('Version and source')) thin.push(e.id + ':structure');
+    if (e.imageTier === 'game-image') {
+      if (!h.includes('What the game establishes') || !h.includes('Version and sources')) thin.push(e.id + ':structure');
+    } else if (!h.includes('No confirmed picture from the game yet')) thin.push(e.id + ':note-label');
     if (!/<img[^>]+alt="[^"]+"/.test(h)) thin.push(e.id + ':image');
     // Only code-style names count as a leak: a plain English word such as "Shelf" is also the subject of the entry.
     const ids = (e.facts ?? []).flatMap((x) => String(x.evidence).replace(/^identifiers?:?\s*/, '').split(/[,\s]+/))
       .filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
     for (const id of ids) if (h.includes(id)) thin.push(e.id + ': leaks ' + id + ' to players');
-    if (!sitemap.includes(SITE.url + '/entries/' + e.id + '.html')) thin.push(e.id + ':not in sitemap');
   }
-  ok('every entry page carries its text, structure and image, leaks no identifier and is in the sitemap', thin.length === 0, thin.slice(0, 6).join(', '));
+  ok('every entity page carries its text, structure and image, leaks no identifier; every note says why it is a note', thin.length === 0, thin.slice(0, 6).join(', '));
   const badRefPages = [...REFERENCE_PATHS].filter((rel) => {
     const file = rel.endsWith('/') ? join(dir, rel.slice(1), 'index.html') : join(dir, rel.slice(1));
     const h = readFileSync(file, 'utf8');
@@ -208,20 +216,35 @@ try {
   // its picture came from the game or is an original diagram, and most entries must actually carry a game image.
   const unlabelled = [];
   for (const e of published) {
-    const h = readFileSync(join(dir, 'entries', e.id + '.html'), 'utf8');
+    const h = readFileSync(entityFile(e), 'utf8');
     const hasGame = (e.images ?? []).some((i) => i.kind === 'game');
-    if (hasGame && !h.includes('Illustrated with an image taken from the game.')) unlabelled.push(e.id + ':game');
-    if (!hasGame && !h.includes('Illustrated with an original diagram only.')) unlabelled.push(e.id + ':diagram');
+    if (hasGame && !h.includes('Picture taken from the game')) unlabelled.push(e.id + ':game');
+    if (!hasGame && !h.includes('No confirmed picture from the game yet')) unlabelled.push(e.id + ':diagram');
   }
-  ok('every entry page states whether its picture came from the game or is an original diagram', unlabelled.length === 0, unlabelled.slice(0, 5).join(', '));
+  ok('every page says whether its picture came from the game or is a diagram note', unlabelled.length === 0, unlabelled.slice(0, 5).join(', '));
 
   const illustrated = published.filter((e) => (e.images ?? []).some((i) => i.kind === 'game'));
   ok('at least half of the published entries carry an image taken from the game',
     illustrated.length * 2 >= published.length, illustrated.length + ' of ' + published.length + ' entries');
 
-  ok('the player navigation puts entries and topics before the technical reference',
-    NAV.some(([h]) => h === '/entries/') && NAV.some(([h]) => h === '/topics/') &&
-    NAV.findIndex(([h]) => h === '/reference/') > NAV.findIndex(([h]) => h === '/entries/'));
+  // The five player sections, in order; the technical reference lives in the footer only.
+  const expectedNav = ['/guide.html', '/entities/', '/articles/', '/tools/', '/updates.html'];
+  ok('the top navigation is exactly the five player sections, in order',
+    NAV.length === expectedNav.length && NAV.every(([h], i) => h === expectedNav[i]) &&
+    !NAV.some(([h]) => h === '/reference/' || h === '/collection.html'), NAV.map(([h]) => h).join(' '));
+  ok('the home page leads with the game, not with build statistics or internal terminology', (() => {
+    const h = readFileSync(join(dir, 'index.html'), 'utf8').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
+    return !/\b(schema|il2cpp|assembly-csharp|metadata|namespace|class|classes|field|fields)\b/i.test(h) && !/gameClasses|engineClasses/.test(h);
+  })());
+  const catPages = CATEGORIES.filter((c) => published.some((e) => c.src.includes(e.category) && e.imageTier === 'game-image'));
+  const badCatPages = catPages.filter((c) => {
+    const rel = 'entities/' + c.key + '.html';
+    if (!existsSync(join(dir, rel)) || !sitemap.includes(SITE.url + '/' + rel)) return true;
+    const h = readFileSync(join(dir, rel), 'utf8');
+    return !/<figure class="banner">[\s\S]*?<img/.test(h) || !/id="f"/.test(h) || !/class="card"/.test(h);
+  });
+  ok('every player category has an indexable page with a cover picture, a filter and cards',
+    catPages.length > 0 && badCatPages.length === 0, badCatPages.map((c) => c.key).join(', '));
 
   const articles = readdirSync('content/articles').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'articles', x), 'utf8')));
   ok('every published article has a page', articles.every((a) => existsSync(join(dir, 'articles', a.id + '.html'))));
@@ -229,7 +252,7 @@ try {
   for (const a of articles) {
     const h = readFileSync(join(dir, 'articles', a.id + '.html'), 'utf8');
     for (const section of ['Applies to', 'Before you start', 'Steps', 'Common mistakes', 'Related entries', 'Sources']) if (!h.includes(section)) thinArticles.push(a.id + ':' + section);
-    if (!/<ol>/.test(h) || (a.steps ?? []).length < 3) thinArticles.push(a.id + ':steps');
+    if (!/<ol[\s>]/.test(h) || (a.steps ?? []).length < 3) thinArticles.push(a.id + ':steps');
     if (!sitemap.includes(SITE.url + '/articles/' + a.id + '.html')) thinArticles.push(a.id + ':not in sitemap');
     const ids = (a.steps ?? []).flatMap((s) => String(s.because).split(/[(),\s]+/)).filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
     for (const id of ids) if (h.includes(id)) thinArticles.push(a.id + ': leaks ' + id);

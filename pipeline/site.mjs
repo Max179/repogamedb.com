@@ -1,23 +1,27 @@
 #!/usr/bin/env node
 /**
- * Static site generator (Windows-side build).
+ * Static site generator for repogamedb.com (Windows-side build).
  *
- * Indexability policy, enforced here rather than hoped for:
- *   - a page whose content is only a class's schema (field names, no extracted values) is a reference, not an answer
- *     to a query a player typed. Those pages are emitted with `noindex, follow` and are NOT listed in sitemap.xml;
- *     they stay reachable and linked from the collection page.
- *   - the pages that answer a question (home, search, collection, enemies, guide, tool, sources, about, contact,
- *     disclaimer, privacy, terms) are indexable and listed.
- * Nothing is estimated: a value this build does not have is rendered as "unknown".
+ * Two layers, kept apart on purpose:
+ *   - Player layer: home, game guide, entity hub + player category pages, entity pages, guides, tools, updates.
+ *   - Evidence layer: class/field/enum/value tables and provenance, under /reference/ and /entity/, marked noindex.
+ * A subject with no confirmed game picture is not published as an entity page: it becomes a noindex note under
+ * /reference/notes/ and is listed on its category page as a note.
  */
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 export const SITE = {
-  name: 'R.E.P.O. Database',
+  name: 'R.E.P.O. Wiki',
+  gameName: 'R.E.P.O.',
   domain: 'repogamedb.com',
   url: 'https://repogamedb.com',
-  tagline: 'Weapons, valuables, enemies and extraction data - read from the game files',
+  accent: '#ff5c5c',
+  tagline: 'Monsters, valuables, gear, maps and the run from entry to extraction',
+  searchPlaceholder: 'Search monsters, valuables, gear or guides',
+  versionBadge: 'R.E.P.O. v0.4.0 · as installed',
+  heroImage: 'mapped/the-truck-and-the-end-of-a-run-healer.jpg',
+  heroAlt: 'The colour texture the game ships for the healer inside the truck.',
 };
 
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -40,256 +44,419 @@ export function lookupFields(inventory, query, limit = 50) {
   return out;
 }
 
-export const NAV = [['/', 'Home'], ['/entries/', 'Start here'], ['/topics/', 'Topics'], ['/articles/', 'Guides'], ['/guide.html', 'Guide'],
-  ['/about.html', 'About'], ['/contact.html', 'Contact'], ['/disclaimer.html', 'Disclaimer'], ['/privacy.html', 'Privacy'],
-  ['/terms.html', 'Terms'], ['/reference/', 'Technical reference']];
+/** The five player-facing sections. */
+export const NAV = [
+  ['/guide.html', 'Game guide'],
+  ['/entities/', 'Entities'],
+  ['/articles/', 'Guides'],
+  ['/tools/', 'Tools'],
+  ['/updates.html', 'Updates'],
+];
 
-/** A schema page is a reference; it is generated and linked, but not offered to a search engine. */
-/** A page that duplicates a query-answering page keeps its URL but is not indexed: the audit in round 76 found
- *  /tool.html sharing 98.8% of its main content with /search.html, so /tool.html is a noindex convenience page. */
-export function isNoindexPage(path) { return isSchemaPage(path) || path === '/tool.html'; }
-
-/** Technical reference: identifiers and tables kept reachable for modders but never offered to a search engine. */
-export const REFERENCE_PATHS = new Set(['/collection.html', '/enemies.html', '/enums.html', '/values.html', '/tool.html', '/sources.html', '/reference/']);
+/** Evidence layer: reachable from the footer and /reference/ only, never indexed. */
+export const REFERENCE_PATHS = new Set(['/collection.html', '/enemies.html', '/enums.html', '/values.html', '/tool.html', '/sources.html', '/search.html', '/reference/']);
 export function isSchemaPage(path) {
   const p = String(path);
-  return p.startsWith('/entity/') || REFERENCE_PATHS.has(p) || p.startsWith('/reference/');
+  return p.startsWith('/entity/') || p.startsWith('/reference/') || REFERENCE_PATHS.has(p);
 }
+export function isNoindexPage(path) { return isSchemaPage(path) || path === '/tool.html'; }
 
-function layout(title, description, path, body, inv) {
-  const noindex = isNoindexPage(path);
-  const nav = NAV.map(([h, txt]) => '<a href="' + h + '">' + txt + '</a>').join('');
-  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
-    '<title>' + esc(title) + '</title><meta name="description" content="' + esc(description) + '">' +
-    '<link rel="canonical" href="' + SITE.url + path + '">'  + '\n<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
-    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
-    (noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">') +
-    '<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
-    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
-    '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description) + '">' +
-    '<meta property="og:url" content="' + SITE.url + path + '">' +
-    '<style>:root{--bg:#0d1117;--fg:#e6edf3;--dim:#8b949e;--line:#21262d;--accent:#58a6ff}' +
-    'body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,Segoe UI,Roboto,sans-serif}' +
-    'header,footer{border-bottom:1px solid var(--line);padding:14px 20px}footer{border-top:1px solid var(--line);border-bottom:0;color:var(--dim);font-size:13px}' +
-    'main{max-width:1000px;margin:0 auto;padding:22px 20px}nav a{color:var(--accent);margin-right:14px;text-decoration:none;font-size:14px}' +
-    'h1{font-size:26px;margin:6px 0 14px}h2{font-size:19px;margin-top:26px}table{border-collapse:collapse;width:100%;font-size:14px}' +
-    'th,td{border-bottom:1px solid var(--line);text-align:left;padding:6px 8px}.mono{font-family:ui-monospace,Consolas,monospace}' +
-    '.dim{color:var(--dim)}.note{border-left:3px solid var(--accent);padding:8px 12px;background:#161b22;margin:14px 0}</style></head><body>' +
-    '<header><strong>' + esc(SITE.name) + '</strong><nav style="margin-top:8px">' + nav + '</nav></header><main>' + body + '</main>' +
-    '<footer>Source: <span class="mono">' + esc(inv.source.assembly) + '</span> · Game version: ' + esc(inv.version) +
-    ' · Extracted: ' + esc(inv.source.extractedAt) +
-    ' · Confidence: read from the game&apos;s own assembly. Values not extracted are marked unknown - nothing is invented.<br>' +
-    'Not affiliated with the game&apos;s developer. Some images are taken from the game to identify items; those images remain the property of the developer.</footer></body></html>';
-}
+/** Player categories: what someone is dealing with in a run. */
+export const CATEGORIES = [
+  { key: 'monsters', name: 'Monsters', src: ['Enemies'], blurb: 'What is out there, how it moves, and how to read it before it reaches you.' },
+  { key: 'valuables', name: 'Valuables', src: ['Valuables'], blurb: 'What is worth carrying out, and the ones that fight back or lie about it.' },
+  { key: 'gear', name: 'Gear and items', src: ['Items', 'Medical', 'Cosmetics'], blurb: 'What you carry in, what you spend, and what you wear.' },
+  { key: 'weapons', name: 'Weapons and ammunition', src: ['Weapons', 'Ammunition', 'Ammo'], blurb: 'Guns, melee weapons, staffs and what they fire.' },
+  { key: 'maps', name: 'Maps and levels', src: ['Maps'], blurb: 'The level you are in, its themes, and how a run is laid out.' },
+  { key: 'extraction', name: 'Extraction and the shop', src: ['Extraction', 'Shop'], blurb: 'Getting the haul out, and spending the takings between runs.' },
+  { key: 'behaviour', name: 'How the game behaves', src: ['Behaviour', 'Physics'], blurb: 'Grabbing, carrying, falling and the rules the world runs on.' },
+  { key: 'interface', name: 'Interface and readouts', src: ['Interface'], blurb: 'The screens, panels and readouts you work with while you play.' },
+  { key: 'crew', name: 'Playing with a crew', src: ['Co-op', 'Comms'], blurb: 'Splitting up, talking, and finishing a run together.' },
+  { key: 'hazards', name: 'Hazards and events', src: ['Events'], blurb: 'Mines, traps, lasers and the set pieces a level can put in your way.' },
+  { key: 'basics', name: 'Basics and answers', src: ['FAQ', 'Glossary', 'Versions'], blurb: 'Common questions, the words this site uses, and which build it documents.' },
+];
+
+const groupOf = (category) => (CATEGORIES.find((c) => c.src.includes(category)) ?? CATEGORIES[CATEGORIES.length - 1]);
 
 export function build(inventoryPath, outDir) {
   const inv = JSON.parse(readFileSync(inventoryPath, 'utf8'));
+  const srcLine = 'Source: read from the installed game · version ' + (inv.version ?? 'unknown') + ' · nothing invented';
+  let manifest = { records: [] };
+  try { manifest = JSON.parse(readFileSync(join(process.cwd(), 'content', 'images-manifest.json'), 'utf8')); } catch { /* none yet */ }
+
   rmSync(outDir, { recursive: true, force: true });
-  mkdirSync(join(outDir, 'entity'), { recursive: true });
+  mkdirSync(outDir, { recursive: true });
   const pages = new Map();
+  const urls = [];
+  const layout = (title, description, path, body) => '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>' + esc(title.includes(SITE.name) ? title : title + ' · ' + SITE.name) + '</title>\n' +
+    '<meta name="description" content="' + esc(description) + '">\n<meta name="robots" content="' + (isNoindexPage(path) ? 'noindex, follow' : 'index, follow') + '">\n' +
+    '<link rel="canonical" href="' + SITE.url + path + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
+    '<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
+    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
+    '<meta property="og:title" content="' + esc(title) + '"><meta property="og:type" content="website">\n' +
+    '<meta property="og:description" content="' + esc(description) + '">\n' +
+    '<style>:root{--accent:' + SITE.accent + '}</style>\n<link rel="stylesheet" href="/style.css">\n</head>\n<body>\n' +
+    '<a class="skip" href="#main">Skip to content</a>\n' +
+    '<header class="top">\n<div class="wrap bar">\n' +
+    '<a class="brand" href="/"><img src="/brand.svg" alt="' + esc(SITE.gameName) + '" width="34" height="34"><span>' + esc(SITE.gameName) + '<em>wiki</em></span></a>\n' +
+    '<nav class="main" aria-label="Sections">' + NAV.map(([h, t]) =>
+      '<a href="' + h + '"' + (path === h || (h !== '/' && path.startsWith(h.replace(/\.html$/, '').replace(/index\.html$/, ''))) ? ' class="on"' : '') + '>' + esc(t) + '</a>').join('') + '</nav>\n' +
+    '<form class="hsearch" action="/search.html" method="get" role="search"><input type="search" name="q" placeholder="' + esc(SITE.searchPlaceholder) + '" aria-label="Search this site"><button type="submit">Search</button></form>\n' +
+    '</div>\n</header>\n<main id="main" class="wrap">\n' + body + '\n</main>\n' +
+    '<footer class="foot"><div class="wrap">\n<p class="dim">' + esc(srcLine) + '</p>\n' +
+    '<p class="dim">A diagram is always labelled as a diagram. A number we could not verify is not printed.</p>\n' +
+    '<p class="dim"><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · ' +
+    '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/reference/">Technical reference</a></p>\n' +
+    '</div></footer>\n</body>\n</html>\n';
+  const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
+  const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + '/' + rel); };
+  const reference = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); };
+
+  // ---- content --------------------------------------------------------------------------------
+  const entriesDir = join(process.cwd(), 'content', 'published');
+  const entries = existsSync(entriesDir)
+    ? readdirSync(entriesDir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join(entriesDir, f), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title))
+    : [];
+  const entities = entries.filter((e) => e.imageTier === 'game-image');
+  const notes = entries.filter((e) => e.imageTier !== 'game-image');
+  const byId = new Map(entries.map((e) => [e.id, e]));
+  const imgOf = (e) => (e.images ?? []).find((i) => i.kind === 'game') ?? (e.images ?? [])[0];
+  const entryHref = (id) => (byId.get(id)?.imageTier === 'game-image' ? '/entries/' + id + '.html' : '/reference/notes/' + id + '.html');
+  const oneLine = (e) => ((e.facts ?? [])[0]?.claim ?? e.summary ?? '');
+  const whyOf = (because) => String(because ?? '').replace(/\s*\([^()]*\)\s*$/, '').trim();
+  const card = (e) => {
+    const img = imgOf(e);
+    return '<a class="card" href="' + entryHref(e.id) + '">' +
+      (img ? '<img loading="lazy" src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" width="480" height="300">' : '') +
+      '<span class="chip">' + esc(groupOf(e.category).name) + '</span>' +
+      '<strong>' + esc(e.title) + '</strong><span class="dim">' + esc(oneLine(e)) + '</span></a>';
+  };
+  const noteRow = (e) => '<li><a href="/reference/notes/' + esc(e.id) + '.html">' + esc(e.title) + '</a> <span class="dim small">— note, no confirmed game picture yet</span></li>';
+
+  let articles = [];
+  try { articles = readdirSync(join(process.cwd(), 'content', 'articles')).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(process.cwd(), 'content', 'articles', x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* none yet */ }
+  let updates = [];
+  try { updates = JSON.parse(readFileSync(join(process.cwd(), 'content', 'updates.json'), 'utf8')); } catch { /* none yet */ }
+  let questions = {};
+  try { questions = JSON.parse(readFileSync(join(process.cwd(), 'data', 'guide-questions.json'), 'utf8')); } catch { /* none yet */ }
+  const playerUpdates = updates.filter((u) => !String(u.url ?? '').startsWith('/reference/'));
+
+  // ---- home ------------------------------------------------------------------------------------
+  const featured = (SITE.featured ?? []).map((id) => byId.get(id)).filter((e) => e && e.imageTier === 'game-image');
+  const featuredList = (featured.length ? featured : entities).slice(0, 8);
+  const questionCards = articles.filter((a) => questions[a.id]).slice(0, 6);
+  indexable('index.html', SITE.gameName + ' guide and reference', SITE.tagline + ' — a player-written reference built from what the game itself establishes.',
+    '<section class="hero">\n<div class="heroText">\n' +
+    '<p class="kicker">' + esc(SITE.versionBadge) + '</p>\n' +
+    '<h1>' + esc(SITE.gameName) + ' — what is in the level, what it is worth and how you get out</h1>\n' +
+    '<p class="lead">' + esc(SITE.tagline) + '. Every entry says what the game itself establishes, and nothing here is estimated.</p>\n' +
+    '<form class="heroSearch" action="/search.html" method="get" role="search"><input type="search" name="q" placeholder="' + esc(SITE.searchPlaceholder) + '" aria-label="Search this site"><button type="submit">Search</button></form>\n' +
+    '<p class="ctas"><a class="btn primary" href="/entries/">Start here</a> <a class="btn" href="/entities/">Browse entities</a> <a class="btn" href="/articles/">Read the guides</a></p>\n' +
+    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="800" height="500"><figcaption class="dim small">Picture taken from the game itself.</figcaption></figure>\n</section>\n' +
+    '<section class="block">\n<h2>What this game is</h2>\n<p>' + esc(SITE.gameName) + ' is a co-op horror run: you and up to five others enter a level, find things worth money, carry them back to the extraction point and spend the takings on the shop between runs. "Monsters" here are the things that object to that plan.</p>\n' +
+    '<p class="dim small">Documented build: ' + esc(inv.version ?? 'unknown') + '. Where the game changes between builds, the entry says which one it was checked against.</p>\n</section>\n' +
+    '<section class="block">\n<h2>Popular entities</h2>\n<p class="dim">A curated starting set, each with a picture taken from the game.</p>\n<div class="grid">' + featuredList.map(card).join('') + '</div>\n<p><a href="/entities/">All entities by part of the run &rarr;</a></p>\n</section>\n' +
+    '<section class="block">\n<h2>The question you probably have</h2>\n<div class="qgrid">' + questionCards.map((a) =>
+      '<a class="qcard" href="/articles/' + esc(a.id) + '.html"><strong>' + esc(questions[a.id]) + '</strong><span class="dim">' + esc(a.title) + '</span></a>').join('') +
+    '</div>\n<p><a href="/articles/">All guides &rarr;</a></p>\n</section>\n' +
+    '<section class="block">\n<h2>Latest updates</h2>\n' + (playerUpdates.length
+      ? '<ul class="updates">' + playerUpdates.slice(0, 6).map((u) => '<li><span class="when">' + esc(u.date) + '</span> <a href="' + esc(u.url) + '">' + esc(u.title) + '</a> <span class="dim small">' + esc(u.kind ?? '') + '</span></li>').join('') + '</ul>'
+      : '<p class="dim">No update notes yet.</p>') +
+    '\n<p><a href="/updates.html">All updates &rarr;</a></p>\n</section>\n' +
+    '<section class="block">\n<h2>Where the pictures and facts come from</h2>\n' +
+    '<p>Pictures are taken from the installed game itself, each one recorded with the asset it came from; a diagram drawn for this site is always labelled as a diagram and is never passed off as a screenshot. Facts are read from the game\'s own files, not from a wiki or a forum. The build this site documents is <strong>' + esc(inv.version ?? 'unknown') + '</strong>.</p>\n' +
+    '<p class="dim small">The raw identifiers, tables and extraction notes are kept in a technical reference, reachable from the footer of every page and kept out of search engines on purpose.</p>\n</section>\n');
+
+  // ---- game guide ------------------------------------------------------------------------------
+  indexable('guide.html', 'Game guide', 'How a run works in R.E.P.O., and what to do first.',
+    '<h1>Game guide</h1><p class="lead">A short path through a run, with a link to the entries behind each step.</p>\n' +
+    '<h2>1. Get in and read the level</h2><p>What the level holds and where the way out is: <a href="/entities/maps.html">maps and levels</a>.</p>\n' +
+    '<h2>2. Work out what is after you</h2><p>Monsters, how they move and how to read them: <a href="/entities/monsters.html">monsters</a>.</p>\n' +
+    '<h2>3. Find what is worth carrying</h2><p>Valuables, including the ones that fight back: <a href="/entities/valuables.html">valuables</a>.</p>\n' +
+    '<h2>4. Carry it, or fight for it</h2><p>Gear, weapons and the physics of hauling: <a href="/entities/gear.html">gear</a> and <a href="/entities/weapons.html">weapons</a>.</p>\n' +
+    '<h2>5. Get out and spend it</h2><p>Extraction, the shop and upgrades: <a href="/entities/extraction.html">extraction and the shop</a>.</p>\n' +
+    '<h2>How to use this site</h2><p>Use the search box, browse <a href="/entities/">entities by part of the run</a>, or read a <a href="/articles/">guide</a> that walks through one job from start to finish. Pictures come from the game; a diagram is always labelled as a diagram.</p>');
+
+  // ---- entity hub and category pages ------------------------------------------------------------
+  indexable('entities/index.html', 'Entities', 'Every part of the run this site documents, with pictures taken from the game.',
+    '<h1>Entities</h1><p class="lead">Browse by what you are dealing with in a run. Each entry says what the game itself establishes, and carries a picture taken from the game.</p>\n' +
+    '<div class="grid">' + CATEGORIES.map((c) => {
+      const list = entities.filter((e) => groupOf(e.category).key === c.key);
+      const cover = list.map(imgOf).find(Boolean);
+      if (!list.length) return '';
+      return '<a class="card" href="/entities/' + c.key + '.html">' +
+        (cover ? '<img loading="lazy" src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="480" height="300">' : '') +
+        '<strong>' + esc(c.name) + '</strong><span class="dim">' + esc(c.blurb) + '</span>' +
+        '<span class="chip">' + list.length + ' entries</span></a>';
+    }).join('') + '</div>\n' +
+    '<p class="dim small">' + notes.length + ' further subjects exist only as notes so far, because no picture has been confirmed from the game for them. They are listed on their category page and kept out of search engines.</p>');
+  for (const c of CATEGORIES) {
+    const list = entities.filter((e) => groupOf(e.category).key === c.key);
+    const onlyNotes = notes.filter((e) => groupOf(e.category).key === c.key);
+    if (!list.length && !onlyNotes.length) continue;
+    const cover = list.map(imgOf).find(Boolean);
+    indexable('entities/' + c.key + '.html', c.name + ' in ' + SITE.gameName, c.blurb + ' ' + list.map((e) => e.title).join(', ') + '.',
+      '<h1>' + esc(c.name) + '</h1><p class="lead">' + esc(c.blurb) + '</p>\n' +
+      (cover ? '<figure class="banner"><img src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="900" height="380"><figcaption class="dim small">Picture taken from the game itself.</figcaption></figure>' : '') +
+      (list.length ? '<div class="filter"><label for="f">Filter ' + esc(c.name.toLowerCase()) + '</label> <input id="f" type="search" placeholder="Type a word" autocomplete="off"> <span id="count" class="dim small"></span></div>\n' +
+      '<div class="grid" id="cards">' + list.map(card).join('') + '</div>\n' : '') +
+      (onlyNotes.length ? '<section class="block notes"><h2>Notes without a confirmed picture</h2><p class="dim">These subjects rest on the same verified facts, but no picture from the game has been confirmed for them yet, so they are notes rather than finished entries.</p><ul>' + onlyNotes.map(noteRow).join('') + '</ul></section>' : '') +
+      '<p><a href="/entities/">Back to all entities</a></p>\n' +
+      '<script>var f=document.getElementById("f");if(f){var cards=Array.prototype.slice.call(document.querySelectorAll("#cards .card")),c=document.getElementById("count");' +
+      'var run=function(){var q=f.value.trim().toLowerCase(),n=0;cards.forEach(function(el){var hit=!q||el.textContent.toLowerCase().indexOf(q)>=0;el.style.display=hit?"":"none";if(hit)n++;});c.textContent=n+" shown";};' +
+      'f.addEventListener("input",run);run();}</script>');
+  }
+
+  // ---- entities and notes ----------------------------------------------------------------------
+  for (const e of entities) {
+    const img = imgOf(e);
+    const related = (e.related ?? []).filter((id) => byId.has(id));
+    indexable('entries/' + e.id + '.html', e.title, e.summary,
+      '<article class="entry">\n' +
+      (img ? '<figure class="heroimg"><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" title="' + esc(img.alt?.zh ?? '') + '" width="900" height="520"><figcaption class="dim small">Picture taken from the game to identify this item; it remains the property of the developer.</figcaption></figure>' : '') +
+      '<p class="kicker">' + esc(groupOf(e.category).name) + ' · ' + esc(SITE.versionBadge) + '</p>\n<h1>' + esc(e.title) + '</h1>\n' +
+      '<p class="oneline">' + esc(oneLine(e)) + '</p>\n<p class="lead">' + esc(e.summary) + '</p>\n' +
+      '<aside class="facts"><h2>At a glance</h2><dl>' +
+      '<dt>Part of the run</dt><dd><a href="/entities/' + groupOf(e.category).key + '.html">' + esc(groupOf(e.category).name) + '</a></dd>' +
+      '<dt>Picture</dt><dd>taken from the game itself</dd>' +
+      '<dt>Documented build</dt><dd>' + esc(inv.version ?? 'unknown') + '</dd>' +
+      '<dt>Related entries</dt><dd>' + related.length + '</dd>' +
+      '</dl></aside>\n' +
+      '<h2>What the game establishes</h2><ul class="verified">' + (e.facts ?? []).map((f) => '<li>' + esc(f.claim) + ' <span class="dim small">(checked against the game\'s own files)</span></li>').join('') + '</ul>\n' +
+      '<h2>In play</h2>' + (e.body ?? []).map((p) => '<p>' + esc(p) + '</p>').join('') + '\n' +
+      (related.length ? '<h2>Related</h2><div class="grid">' + related.map((id) => card(byId.get(id))).join('') + '</div>' : '') +
+      '<h2>Version and sources</h2><p class="dim small">' + esc((e.sources ?? []).join(' ')) + ' Documented build: ' + esc(inv.version ?? 'unknown') + '.</p>\n' +
+      '</article>');
+  }
+  indexable('entries/index.html', 'Start here', 'How to use this site, and where to begin with a run.',
+    '<h1>Start here</h1><p class="lead">This site is a player-written reference for ' + esc(SITE.gameName) + '. It does not try to be a full wiki: every entry states what the game itself establishes, and says plainly when something has not been verified.</p>\n' +
+    '<h2>The four things you can do</h2><ul>' +
+    '<li><strong>Browse <a href="/entities/">entities</a></strong> by the part of the run you are dealing with.</li>' +
+    '<li><strong>Follow the <a href="/guide.html">game guide</a></strong> through a run.</li>' +
+    '<li><strong>Read a <a href="/articles/">guide</a></strong> that walks through one job from start to finish.</li>' +
+    '<li><strong>Search</strong> from the box at the top of any page.</li></ul>\n' +
+    '<h2>What the pictures are</h2><p>Where a picture could be taken from the game, it is; each one is labelled on the entry. Where no picture has been confirmed, the subject is kept as a note rather than dressed up as a finished entry.</p>\n' +
+    '<h2>What we will never do</h2><p>We do not print a number we could not verify, we do not fill a gap with a guess, and a diagram is always labelled as a diagram.</p>');
+  for (const e of notes) {
+    const img = imgOf(e);
+    reference('reference/notes/' + e.id + '.html', e.title + ' (note)', e.summary,
+      '<h1>' + esc(e.title) + '</h1>\n<p class="note"><strong>No confirmed picture from the game yet.</strong> This subject is kept as a note for now: the facts below are verified against the game\'s own files, but no image has been confirmed for it, so it is not published as a finished entry and is kept out of search engines.</p>\n' +
+      (img ? '<figure><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" width="720" height="420"><figcaption class="dim small">' + esc(img.disclaimer ?? 'Original diagram drawn for this site. It is not a screenshot of the game.') + '</figcaption></figure>' : '') +
+      '<h2>What the game establishes</h2><ul class="verified">' + (e.facts ?? []).map((f) => '<li>' + esc(f.claim) + '</li>').join('') + '</ul>\n' +
+      '<h2>In play</h2>' + (e.body ?? []).map((p) => '<p>' + esc(p) + '</p>').join('') + '\n' +
+      '<p><a href="/entities/">Back to the entities</a> · <a href="/reference/">Technical reference</a></p>');
+  }
+  reference('reference/notes/index.html', 'Notes', 'Subjects waiting for a confirmed picture from the game.',
+    '<h1>Notes</h1><p class="lead">These subjects are documented from the game\'s own files, but no picture has been confirmed for them yet, so they are notes rather than finished entries.</p><ul>' +
+    notes.map(noteRow).join('') + '</ul><p><a href="/reference/">Technical reference</a></p>');
+
+  // ---- guides ------------------------------------------------------------------------------------
+  for (const a of articles) {
+    const related = (a.relatedEntities ?? []).filter((id) => byId.has(id));
+    indexable('articles/' + a.id + '.html', a.title, a.target,
+      '<article class="entry"><p class="kicker">Guide</p>\n<h1>' + esc(a.title) + '</h1>\n<p class="lead">' + esc(a.target) + '</p>\n' +
+      '<h2>Applies to</h2><p class="dim">' + esc(a.version ?? SITE.versionBadge) + '</p>\n' +
+      '<h2>Before you start</h2><ul>' + (a.prerequisites ?? []).map((p) => '<li>' + esc(p) + '</li>').join('') + '</ul>\n' +
+      '<h2>Steps</h2><ol class="steps">' + (a.steps ?? []).map((s) => '<li><strong>' + esc(s.do) + '</strong><br><span class="dim small">' + esc(whyOf(s.because)) + '</span></li>').join('') + '</ol>\n' +
+      '<h2>Common mistakes</h2><ul>' + (a.commonMistakes ?? []).map((m) => '<li>' + esc(m) + '</li>').join('') + '</ul>\n' +
+      (related.length ? '<h2>Related entries</h2><div class="grid">' + related.map((id) => card(byId.get(id))).join('') + '</div>' : '') +
+      '<h2>Sources</h2><p class="dim small">' + esc((a.sources ?? []).join(' ')) + '</p></article>');
+  }
+  indexable('articles/index.html', 'Guides', 'Step-by-step guides for a run, each grounded in what the game itself establishes.',
+    '<h1>Guides</h1><p class="lead">Each guide has a goal, the build it applies to, what you need first, the steps and the mistakes people make. Every step says why it works.</p>\n' +
+    '<div class="grid">' + articles.map((a) => '<a class="card qcard" href="/articles/' + esc(a.id) + '.html">' +
+      (questions[a.id] ? '<strong>' + esc(questions[a.id]) + '</strong><span>' + esc(a.title) + '</span>' : '<strong>' + esc(a.title) + '</strong>') +
+      '<span class="dim">' + esc(a.target) + '</span></a>').join('') + '</div>');
+
+  // ---- tools and updates -------------------------------------------------------------------------
+  indexable('tools/index.html', 'Tools', 'Search boxes and checkers for looking something up on this site.',
+    '<h1>Tools</h1><p class="lead">The tools here run in your browser; nothing you type is sent anywhere.</p>\n<div class="grid">' +
+    '<a class="card" href="/search.html"><strong>Search field names</strong><span class="dim">Search the field names the game writes, by name, type or the class that declares them.</span></a>' +
+    '<a class="card" href="/tool.html"><strong>Field lookup</strong><span class="dim">Ask which class declares a field.</span></a>' +
+    '<a class="card" href="/articles/"><strong>Guides</strong><span class="dim">Step-by-step write-ups for one job at a time.</span></a>' +
+    '</div><p class="dim small">These utilities report what the game\'s files contain. They are not part of the player reference and carry no advice.</p>');
+  indexable('updates.html', 'Updates', 'What has been added to this site, newest first.',
+    '<h1>Updates</h1><p class="lead">What has been added, newest first. Entries are added only when a fact has been checked against the game or a picture confirmed.</p>\n' +
+    (playerUpdates.length ? '<ul class="updates">' + playerUpdates.map((u) => '<li><span class="when">' + esc(u.date) + '</span> <a href="' + esc(u.url) + '">' + esc(u.title) + '</a> <span class="dim small">' + esc(u.kind ?? '') + '</span></li>').join('') + '</ul>' : '<p class="dim">No update notes yet.</p>') +
+    '<p class="dim small">Notes for subjects that have no confirmed picture yet are listed in the technical reference, which is reachable from the footer.</p>');
+
+  // ---- evidence layer (unchanged content, footer only) --------------------------------------------
   const classes = (inv.classes ?? []).slice().sort((a, b) => b.written - a.written);
   const used = new Set();
-  const slugs = classes.map((c) => {
-    const base = slug(c.name);
-    let s = base, n = 2;
-    while (used.has(s)) s = base + '-' + n++;
-    used.add(s);
-    return s;
-  });
-  const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
-
-  write('index.html', layout(SITE.name + ' - ' + SITE.tagline, SITE.tagline, '/',
-    '<h1>R.E.P.O. database</h1><div class="note">This build covers the <strong>schema layer</strong>: classes, the fields Unity writes and the game&apos;s own enums, extracted from <span class="mono">Assembly-CSharp.dll</span>. Per-field <em>values</em> are not extracted yet (the container is Unity 6 / SerializedFile v22) and are marked <strong>unknown</strong>. The class reference pages are deliberately <span class="mono">noindex</span>: they are a reference, not an answer.</div>' +
-    '<p>' + inv.totals.types + ' types · ' + inv.totals.fields + ' fields · ' + classes.length + ' P0 classes · ' + (inv.enums ?? []).length + ' enums.</p>' +
-    '<p><a href="/collection.html">Browse classes</a> · <a href="/enemies.html">Enemies</a> · <a href="/tool.html">Field lookup tool</a> · <a href="/sources.html">Sources</a></p>', inv));
-
-  write('collection.html', layout('P0 classes', 'Every P0 class with the fields Unity writes.', '/collection.html',
-    '<h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1><p class="dim">Reference pages. Each is marked noindex and kept out of the sitemap.</p><table><thead><tr><th>Class</th><th>Base</th><th>Written fields</th></tr></thead><tbody>' +
-    classes.map((c, i) => '<tr><td><a href="/entity/' + slugs[i] + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') +
-    '</tbody></table>', inv));
-
-  // ---- a page that answers a question, from verified enum values
+  const slugs = classes.map((c) => { const base = slug(c.name); let s = base, n = 2; while (used.has(s)) s = base + '-' + n++; used.add(s); return s; });
+  reference('collection.html', 'All names', 'Every P0 class with the fields the game writes.',
+    '<h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1><p class="dim">Reference pages. Each is marked noindex and kept out of the sitemap.</p><table><thead><tr><th>Name</th><th>Base</th><th>Written</th></tr></thead><tbody>' +
+    classes.map((c, i) => '<tr><td><a href="/entity/' + slugs[i] + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') + '</tbody></table>');
   {
     const enemyEnums = (inv.enums ?? []).filter((e) => /enemy|state|type/i.test(e.name)).slice(0, 8);
     const enemyClasses = classes.filter((c) => /^Enemy/.test(c.name)).slice(0, 80);
-    const body = '<h1>Enemies</h1>' +
-      '<div class="note">The enum values below are read from the game&apos;s own assembly, so they are the game&apos;s own numbers. Per-instance numbers such as health, damage and speed are known only where this build decoded them (see the values page) and are <strong>unknown</strong> otherwise and are not estimated.</div>' +
+    reference('enemies.html', 'Enemies - types, states and classes', 'The enemy types and states the game defines.',
+      '<h1>Enemies</h1><div class="note">The enum values below are read from the game\'s own assembly, so they are the game\'s own numbers. Per-instance numbers such as health and damage are listed only where this build decoded them; everything else is unknown rather than guessed.</div>' +
       enemyEnums.map((e) => '<h2 class="mono">' + esc(e.name) + ' <span class="dim">(' + e.members.length + ' values)</span></h2><table><tbody>' +
         e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join('') +
-      (enemyClasses.length ? '<h2>Enemy classes <span class="dim">(' + enemyClasses.length + ')</span></h2><table><thead><tr><th>Class</th><th>Written fields</th></tr></thead><tbody>' +
-        enemyClasses.map((c) => '<tr><td class="mono">' + esc(c.name) + '</td><td>' + c.written + '</td></tr>').join('') + '</tbody></table>' : '');
-    write('enemies.html', layout('Enemies - types, states and classes', 'The enemy types and states the game defines, with the verified enum values, and the enemy classes the build declares.', '/enemies.html', body, inv));
+      (enemyClasses.length ? '<h2>Enemy classes <span class="dim">(' + enemyClasses.length + ')</span></h2><table><thead><tr><th>Name</th><th>Written fields</th></tr></thead><tbody>' +
+        enemyClasses.map((c) => '<tr><td class="mono">' + esc(c.name) + '</td><td>' + c.written + '</td></tr>').join('') + '</tbody></table>' : ''));
   }
-
   for (let ci = 0; ci < classes.length; ci++) {
     const c = classes[ci];
-    write('entity/' + slugs[ci] + '.html', layout(c.name + ' - class reference', c.name + ': ' + c.written + ' written fields read from the game assembly.', '/entity/' + slugs[ci] + '.html',
-      '<h1 class="mono">' + esc(c.name) + '</h1><div class="note">This is a <strong>class reference</strong>, marked noindex: it lists what the class declares and which of it Unity writes. Field <em>values</em> are unknown in this build (Unity 6 / SerializedFile v22 not parsed yet).</div>' +
-      '<p class="dim">namespace <span class="mono">' + esc(c.namespace || '-') + '</span> · base <span class="mono">' + esc(c.base || '-') + '</span> · declared ' + c.declared + ' · Unity writes ' + c.written + '</p>' +
+    reference('entity/' + slugs[ci] + '.html', c.name + ' - reference', c.name + ': ' + c.written + ' written fields read from the game assembly.',
+      '<h1 class="mono">' + esc(c.name) + '</h1><div class="note">This is a <strong>reference page</strong>, marked noindex: it lists what the class declares and which of it the game writes at runtime. It is material for checking our entries, not a player-facing answer.</div>' +
+      '<p class="dim">namespace <span class="mono">' + esc(c.namespace || '-') + '</span> · base <span class="mono">' + esc(c.base || '-') + '</span> · declared ' + c.declared + ' · written ' + c.written + '</p>' +
+      '<p class="dim small">Read from <span class="mono">' + esc(inv.source?.assembly ?? '') + '</span> · game version ' + esc(inv.version ?? '') + '</p>' +
       '<h2>Written fields</h2><table><thead><tr><th>Field</th><th>Type</th><th>Kind</th><th>Confidence</th><th>Value</th></tr></thead><tbody>' +
-      c.fields.map((f) => '<tr><td class="mono">' + esc(f.name) + '</td><td class="mono dim">' + esc(f.type) + '</td><td class="dim">' + esc(f.kind) + '</td><td class="dim">' + esc(f.confidence ?? 'unknown') + '</td><td class="dim">' + (f.value == null ? 'unknown' : esc(String(f.value))) + '</td></tr>').join('') +
-      '</tbody></table>', inv));
+      c.fields.map((f) => '<tr><td class="mono">' + esc(f.name) + '</td><td class="mono dim">' + esc(f.type) + '</td><td class="dim">' + esc(f.kind) + '</td><td class="dim">' + esc(f.confidence ?? '-') + '</td><td class="mono dim">' + esc(f.value === null || f.value === undefined ? 'unknown' : String(f.value)) + '</td></tr>').join('') +
+      '</tbody></table>');
   }
-
   if ((inv.enums ?? []).length) {
-    write('enums.html', layout('Enums', 'Enumerations and their values, read from the game assembly.', '/enums.html',
+    reference('enums.html', 'Enums', 'Enumerations and their values, read from the game assembly.',
       '<h1>Enums <span class="dim">(' + inv.enums.length + ')</span></h1>' + inv.enums.map((e) =>
         '<h2 class="mono">' + esc(e.name) + ' <span class="dim">' + e.members.length + ' members</span></h2><table><tbody>' +
-        e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join(''), inv));
+        e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join(''));
   }
-
-  // Values decoded from the games' own bytes, one row per object. Kept plain (no type annotations) because this
-  // file is checked as JavaScript.
   {
-    var instPath = inventoryPath.replace('p0-inventory.json', 'p0-instances.json');
-    var inst = null;
+    const instPath = inventoryPath.replace('p0-inventory.json', 'p0-instances.json');
+    let inst = null;
     try { inst = JSON.parse(readFileSync(instPath, 'utf8')); } catch (e) { inst = null; }
-    var list = (inst && inst.instances) ? inst.instances : [];
-    var grouped = {};
-    for (var gi = 0; gi < list.length; gi++) {
-      var it = list[gi];
-      if (!grouped[it.class]) grouped[it.class] = [];
-      grouped[it.class].push(it);
-    }
-    var names = Object.keys(grouped);
-    var rows = names.slice(0, 40).map(function (cls) {
-      var items = grouped[cls];
+    const list = (inst && inst.instances) ? inst.instances : [];
+    const grouped = {};
+    for (const it of list) { if (!grouped[it.class]) grouped[it.class] = []; grouped[it.class].push(it); }
+    const names = Object.keys(grouped);
+    const rows = names.slice(0, 40).map((cls) => {
+      const items = grouped[cls];
       return '<h2 class="mono">' + esc(cls) + ' <span class="dim">(' + items.length + ')</span></h2>' +
         '<table><thead><tr><th>Object</th><th>Decoded fields</th></tr></thead><tbody>' +
-        items.slice(0, 20).map(function (x) {
-          var vals = (x.values || []).map(function (v) { return v.name + '=' + String(v.value); }).join('  ');
-          return '<tr><td class="mono dim">' + esc(x.pathId) + '</td><td class="mono">' + esc(vals) + '</td></tr>';
-        }).join('') + '</tbody></table>';
+        items.slice(0, 20).map((x) => '<tr><td class="mono dim">' + esc(x.pathId) + '</td><td class="mono">' + esc((x.values || []).map((v) => v.name + '=' + String(v.value)).join('  ')) + '</td></tr>').join('') + '</tbody></table>';
     }).join('');
-    var vbody = '<h1>Decoded values <span class="dim">(' + list.length + ' objects)</span></h1>' +
-      '<div class="note">Each row is one object read out of the game&apos;s own files. Its class was accepted only because the measured layout consumed that object&apos;s payload exactly, so these are the game&apos;s values rather than estimates. A field a decode did not produce is simply absent.</div>' +
-      (list.length === 0
-        ? '<p class="dim">No object in this build decoded yet: the classes present are either not in this assembly or hold field types whose sizes are not measured. Everything else on this site says <span class="mono">unknown</span> rather than guessing.</p>'
-        : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : ''));
-    write('values.html', layout('Decoded values', 'Field values decoded from the games own files, one row per object.', '/values.html', vbody, inv));
+    reference('values.html', 'Decoded values', 'Field values decoded from the game\'s own files, one row per object.',
+      '<h1>Decoded values <span class="dim">(' + list.length + ' objects)</span></h1>' +
+      '<div class="note">Each row is one object read out of the game\'s own files. Its class was accepted only because the measured layout consumed that object\'s payload exactly, so these are the game\'s values rather than estimates.</div>' +
+      (list.length === 0 ? '<p class="dim">No object in this build decoded yet.</p>' : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : '')));
   }
-
-  write('search.html', layout('Search', 'Search classes and fields.', '/search.html',
-    '<h1>Search</h1><p class="dim">Client-side over ' + inv.totals.fields + ' fields. No network requests.</p>' +
-    '<input id="q" placeholder="field or class" style="width:100%;padding:10px;background:#0d1117;color:var(--fg);border:1px solid var(--line)">' +
-    '<p id="status" class="dim">Type to search.</p><ul id="out"></ul>' +
+  reference('search.html', 'Search', 'Search classes and fields.',
+    '<h1>Search</h1><p class="dim">Client-side over ' + (inv.totals?.fields ?? 0) + ' fields. No network requests.</p>' +
+    '<p><input id="q" type="search" placeholder="field or class" autocomplete="off"> <span id="status" class="dim"></span></p><ul id="out"></ul>' +
     '<script>var F=' + JSON.stringify(lookupFields(inv, '', 200)) + ';var q=document.getElementById("q"),o=document.getElementById("out"),s=document.getElementById("status");' +
-    'var draw=function(){var v=q.value.trim().toLowerCase();var r=!v?F.slice(0,50):F.filter(function(x){return x.field.toLowerCase().indexOf(v)>=0||x.class.toLowerCase().indexOf(v)>=0});' +
+    'var draw=function(){var v=q.value.trim().toLowerCase();var r=!v?F.slice(0,50):F.filter(function(x){return x.field.toLowerCase().indexOf(v)>=0||x.class.toLowerCase().indexOf(v)>=0||String(x.type).toLowerCase().indexOf(v)>=0});' +
     's.textContent=v?(r.length+" match(es)"):("Showing first 50 of "+F.length+" indexed fields");' +
-    'o.innerHTML=r.slice(0,50).map(function(x){return "<li>"+x.class+" <span class=dim>"+x.field+": "+x.type+"</span></li>"}).join("")};q.addEventListener("input",draw);draw();</script>' +
-    '<noscript>The data this page searches is embedded in the page source.</noscript>', inv));
-
-  write('tool.html', layout('Field lookup tool', 'Find which class declares a field.', '/tool.html',
+    'o.innerHTML=r.slice(0,50).map(function(x){return "<li>"+x.class+" <span class=dim>"+x.field+": "+x.type+"</span></li>"}).join("")};' +
+    'var pre=new URLSearchParams(location.search).get("q");if(pre)q.value=pre;q.addEventListener("input",draw);draw();</script>');
+  reference('tool.html', 'Field lookup', 'Find which class declares a field.',
     '<h1>Field lookup</h1><p>Enter a field or type fragment; the tool searches the extracted field tables only, and never guesses a value.</p>' +
-    '<input id="q" placeholder="field or type" style="padding:10px;width:100%;background:#0d1117;color:var(--fg);border:1px solid var(--line)">' +
-    '<p id="s" class="dim"></p><div id="o"></div>' +
+    '<p><input id="q" type="search" placeholder="field or type" autocomplete="off"> <span id="s" class="dim"></span></p><div id="o"></div>' +
     '<script>var F=' + JSON.stringify(lookupFields(inv, '', 200)) + ';var q=document.getElementById("q"),s=document.getElementById("s"),o=document.getElementById("o");' +
-    'var draw=function(){var v=q.value.trim().toLowerCase();var rows=!v?F.slice(0,20):F.filter(function(x){return x.field.toLowerCase().indexOf(v)>=0||x.type.toLowerCase().indexOf(v)>=0});' +
+    'var draw=function(){var v=q.value.trim().toLowerCase();var rows=!v?F.slice(0,20):F.filter(function(x){return x.field.toLowerCase().indexOf(v)>=0||String(x.type).toLowerCase().indexOf(v)>=0});' +
     's.textContent=v?(rows.length+" match(es)"):"empty query - showing the first 20 indexed fields";' +
-    'o.innerHTML=rows.slice(0,50).map(function(x){return "<div><span class=mono>"+x.field+"</span> <span class=dim>"+x.type+" - "+x.class+"</span></div>"}).join("")};q.addEventListener("input",draw);draw();</script>' +
-    '<noscript>The data this tool searches is embedded in the page source.</noscript>', inv));
-
-  const src = '<div class="note">Every value in this build traces to a file on the Windows machine that produced it. Nothing is community-sourced and nothing is estimated.</div>' +
-    '<h2>Assembly</h2><p class="mono">' + esc(inv.source.assembly) + '</p><h2>Extractor</h2><p class="mono">' + esc(inv.source.extractor) + '</p>' +
-    '<h2>Extracted at</h2><p class="mono">' + esc(inv.source.extractedAt) + '</p><h2>Game version</h2><p>' + esc(inv.version) + '</p>' +
+    'o.innerHTML=rows.slice(0,50).map(function(x){return "<div><span class=mono>"+x.field+"</span> <span class=dim>"+x.type+" - "+x.class+"</span></div>"}).join("")};q.addEventListener("input",draw);draw();</script>');
+  reference('sources.html', 'Sources', 'Where every number came from.',
+    '<h1>Sources</h1><div class="note">Every value in this build traces to a file on the Windows machine that produced it. Nothing is community-sourced and nothing is estimated.</div>' +
+    '<h2>Assembly</h2><p class="mono">' + esc(inv.source?.assembly ?? '') + '</p><h2>Extractor</h2><p class="mono">' + esc(inv.source?.extractor ?? '') + '</p>' +
+    '<h2>Extracted at</h2><p class="mono">' + esc(inv.source?.extractedAt ?? '') + '</p><h2>Game version</h2><p>' + esc(inv.version ?? '') + '</p>' +
     '<h2>Per-field provenance</h2><p>' + esc(inv.provenance?.fields ?? 'source, version, checkedAt, confidence, value') + '</p>' +
-    '<h2>Not extracted (unknown)</h2><p>Per-field values: the serialized assets are Unity 6 / SerializedFile v22. This pipeline parses the MonoBehaviour payloads it can consume exactly and publishes every decoded value on the values page, with its object and field; a payload it cannot consume exactly is left unknown rather than estimated. See <span class="mono">reports/v22-header.md</span> and <span class="mono">reports/v22-object-table.md</span>.</p>';
-  write('sources.html', layout('Sources', 'Where every number came from.', '/sources.html', '<h1>Sources</h1>' + src, inv));
-  write('guide.html', layout('Guide', 'How to read this database.', '/guide.html',
-    '<h1>How to read this database</h1><h2>What is verified</h2><p>Class names, field names, field types, the write order Unity uses, and enum values are read from the game&apos;s own managed assembly.</p>' +
-    '<h2>What is unknown</h2><p>Field <em>values</em> (prices, health, damage, weights) are known only where this build decoded them - every decoded object and field is listed on the values page. Everything the decoder could not consume exactly is marked <strong>unknown</strong> in this build.</p>' +
-    '<h2>Which pages are indexed</h2><p>The pages that answer a question are indexable. Class reference pages are marked <span class="mono">noindex, follow</span> and kept out of the sitemap, because a schema is not an answer to a search.</p>', inv));
-  const simple = (rel, title, desc, body) => write(rel, layout(title, desc, '/' + rel, '<h1>' + title + '</h1>' + body, inv));
-  simple('about.html', 'About', 'About this database and its Windows-side pipeline.',
-    '<p>This site is generated from the game&apos;s own files on a Windows machine. It is an independent reference and is not affiliated with the developer.</p><p>Stack: Node extraction, dependency-free static generation, deterministic tests, and a gate that refuses to publish when the build is incomplete.</p>');
-  simple('contact.html', 'Contact', 'How to report a wrong value.', '<p>Corrections are welcome. Report the page, the field and the expected value; corrections that cannot be traced to a game file are recorded as unverified rather than applied.</p>');
-  simple('disclaimer.html', 'Disclaimer', 'No affiliation; no game assets redistributed.',
-    '<p>Not affiliated with, endorsed by, or sponsored by the game&apos;s developer or publisher. Game names and marks belong to their owners. No game assets, models, audio or code are redistributed; only facts and numbers read from the files.</p>');
-  simple('privacy.html', 'Privacy', 'No cookies, no tracking, no third-party requests.',
-    '<p>This static build sets no cookies, runs no analytics and makes no third-party requests. The search and lookup tools run entirely in the browser over data embedded in the page.</p>');
-  simple('terms.html', 'Terms', 'Use of this database.', '<p>Provided as-is for personal reference. Data may change as the game patches; each build records the version it was extracted from.</p>');
-  write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p><a href="/">Back to the index</a></p>', inv));
+    '<h2>Not extracted (unknown)</h2><p>' + esc(inv.provenance?.values ?? 'Per-field values are listed only where the object decoded; everything else is marked unknown.') + '</p>');
+  reference('reference/index.html', 'Technical reference', 'Identifiers, tables and provenance for modders. Not indexed.',
+    '<h1>Technical reference</h1><p class="lead">For modders and for checking our data. Deliberately kept out of search engines: it lists identifiers read from the game\'s files, which are useful to a modder but are not answers to a player\'s question.</p><ul>' +
+    '<li><a href="/collection.html">All names</a></li><li><a href="/enemies.html">Enemy types and states</a></li><li><a href="/enums.html">Enums</a></li>' +
+    '<li><a href="/values.html">Decoded values</a></li><li><a href="/search.html">Search</a></li><li><a href="/tool.html">Field lookup</a></li><li><a href="/sources.html">Sources and method</a></li>' +
+    '<li><a href="/reference/notes/">Notes waiting for a confirmed picture</a></li></ul>' +
+    '<p><a href="/entities/">Back to the player reference</a></p>');
 
-  // Player-facing entries: rendered from content/published, which the content gate has already checked. Identifiers
-  // are deliberately NOT printed here - a player page states what is established and links to the reference for proof.
-  const entriesDir = join(process.cwd(), 'content', 'published');
-  let entries = [];
-  try { entries = readdirSync(entriesDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(entriesDir, x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* no entries yet */ }
-  for (const e of entries) {
-    const imgHtml = (e.images ?? []).map((img) => '<img class="hero" src="/' + esc(img.file) + '" alt="' + esc(img.alt.en) + '" width="960" height="200">' +
-      (img.kind === 'diagram'
-        ? '<p class="dim small">' + esc(img.disclaimer ?? '') + '</p>'
-        : '<p class="dim small">Image taken from the game itself to identify this item; it remains the property of the developer.</p>')).join('');
-    // An entry with no image taken from the game is labelled as diagram-only on its own page and demoted out of the
-    // featured list, so an original illustration can never stand in for a screenshot without saying so.
-    const tierNote = e.imageTier === 'diagram-only'
-      ? '<p class="note"><strong>Illustrated with an original diagram only.</strong> No image has been taken from the game for this entry yet, so the picture below is an illustration and is not a screenshot of the game.</p>'
-      : '<p class="dim small"><strong>Illustrated with an image taken from the game.</strong> The picture below identifies the item and remains the property of the developer.</p>';
-    const facts = (e.facts ?? []).map((x) => '<li>' + esc(x.claim) + ' <span class="dim small">(verified against the game&apos;s own files)</span></li>').join('');
-    const related = (e.related ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
-    write('entries/' + e.id + '.html', layout(e.title, e.summary, '/entries/' + e.id + '.html',
-      '<h1>' + esc(e.title) + '</h1><p class="lead">' + esc(e.summary) + '</p>' + tierNote + imgHtml +
-      '<h2>What is established</h2><ul>' + facts + '</ul>' +
-      '<h2>How it works in play</h2>' + (e.body ?? []).map((p) => '<p>' + esc(p) + '</p>').join('') +
-      (related ? '<h2>Related</h2><ul>' + related + '</ul>' : '') +
-      '<h2>Version and source</h2><p class="dim">' + esc((e.sources ?? []).join(' ')) + '</p>' +
-      '<p><a href="/reference/">How each fact was verified</a></p>', inv));
-  }
-  write('entries/index.html', layout('Start here', 'How to use this site: what the entries are, what they avoid, and where to begin.', '/entries/index.html',
-    '<h1>Start here</h1><p class="lead">This site is a small, honest reference for players. It does not try to be a full wiki: ' +
-    'every entry states what the game itself establishes, and says plainly when something has not been verified.</p>' +
-    '<h2>How the site is organised</h2><ul>' +
-    '<li><strong>Entries</strong> answer one question each, in plain language, with a diagram and a note on the version.</li>' +
-    '<li><strong>Topics</strong> group the entries by what you are dealing with in the game.</li>' +
-    '<li><strong>Technical reference</strong> holds the raw identifiers for modders. It is kept out of search engines on purpose.</li></ul>' +
-    '<h2>Where to begin</h2><p>If you are new, the safest reading order is a single round of the game: what you are up against, then what you are carrying, then how you finish the run. ' +
-    'Pick your topic from the <a href="/topics/">topic list</a>.</p>' +
-    '<h2>What we will never do</h2><p>We do not print a number we could not verify, we do not fill gaps with guesses, and a diagram is always labelled as a diagram rather than passed off as a picture of the game.</p>', inv));
-  const topics = [...new Set(entries.map((e) => e.category).filter(Boolean))].sort();
-  const topicSlug = (t) => String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  for (const t of topics) {
-    const list = entries.filter((e) => e.category === t);
-    write('topics/' + topicSlug(t) + '.html', layout(t, 'What this site has on ' + t.toLowerCase() + '.', '/topics/' + topicSlug(t) + '.html',
-      '<h1>' + esc(t) + '</h1><p class="lead">' + list.length + ' entr' + (list.length === 1 ? 'y' : 'ies') + ' on this part of the game.</p>' +
-      list.map((e) => '<h2><a href="/entries/' + esc(e.id) + '.html">' + esc(e.title) + '</a>' + (e.imageTier === 'diagram-only' ? ' <span class="dim small">(original diagram only)</span>' : '') + '</h2><p>' + esc(e.summary) + '</p>' +
-        '<ul><li>' + esc((e.facts ?? [])[0]?.claim ?? '') + '</li></ul>').join(''), inv));
-  }
-  write('topics/index.html', layout('Topics', 'The parts of the game this site covers so far.', '/topics/index.html',
-    '<h1>Topics</h1><ul>' + topics.map((t) => '<li><a href="/topics/' + topicSlug(t) + '.html">' + esc(t) + '</a></li>').join('') + '</ul>', inv));
-  write('reference/index.html', layout('Technical reference', 'Identifiers, tables and provenance for modders. Not indexed.', '/reference/index.html',
-    '<h1>Technical reference</h1><p class="lead">For modders and for checking our data. Deliberately kept out of search engines: it lists identifiers read from the game&apos;s files.</p><ul>' +
-    '<li><a href="/collection.html">All identifiers</a></li><li><a href="/enemies.html">Enemies</a></li><li><a href="/enums.html">Settings and states</a></li>' +
-    '<li><a href="/values.html">Decoded values</a></li><li><a href="/tool.html">Lookup tool</a></li><li><a href="/sources.html">Sources and method</a></li></ul>' +
-    '<p><a href="/entries/">Back to the player-facing entries</a></p>', inv));
-  // copy the entry images into the build (text formats only, so a binary screenshot needs a one-line addition here)
-  for (const e of entries) for (const img of e.images ?? []) {
-    try { write(img.file, readFileSync(join(process.cwd(), 'content', 'assets', img.file))); } catch { /* missing asset: the content gate already fails this case */ }
-  }
+  // ---- legal ---------------------------------------------------------------------------------------
+  indexable('about.html', 'About', 'About this site and how it is built.',
+    '<h1>About</h1><p>This site is a player-written reference for ' + esc(SITE.gameName) + '. It is generated by a static build; there is no database behind it.</p>' +
+    '<h2>Method</h2><p>No page on this site is hand-written from memory. Everything shown is produced by the build from the files listed on the <a href="/sources.html">sources page</a>. When the build cannot read something, it says so.</p>' +
+    '<h2>What is on which layer</h2><p>The player reference — entities, guides, the game guide and the tools — is what the site is for. Identifiers, tables and extraction notes are an evidence layer behind the <a href="/reference/">technical reference</a>, kept out of search engines on purpose.</p>');
+  indexable('contact.html', 'Contact', 'How to report a wrong value.',
+    '<h1>Contact</h1><p>Corrections are welcome. Report the page, the claim and what the game actually does; corrections that cannot be checked against the game files cannot be used.</p><p>There is no form and no server behind this site.</p>');
+  indexable('disclaimer.html', 'Disclaimer', 'No affiliation; game images are used only to identify items.',
+    '<h1>Disclaimer</h1><p>Not affiliated with, endorsed by, or sponsored by the game\'s developer or publisher. Game names and marks belong to their owners.</p>' +
+    '<p>Some images are taken from the game to identify the item they belong to; those images remain the property of the developer. Diagrams drawn for this site are labelled as diagrams and are not screenshots.</p>');
+  indexable('privacy.html', 'Privacy', 'No cookies, no tracking, no third-party requests.',
+    '<h1>Privacy</h1><p>This static build sets no cookies, runs no analytics and makes no third-party requests. The search and lookup tools run entirely in your browser over data embedded in the page or fetched from this site.</p>');
+  indexable('terms.html', 'Terms', 'Use of this site.',
+    '<h1>Terms</h1><p>Provided as-is for personal reference. Data may change as the game patches; each build records the version it was read from.</p>');
 
-  const artDir = join(process.cwd(), 'content', 'articles');
-  let articles = [];
-  try { articles = readdirSync(artDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(artDir, x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* no articles yet */ }
-  for (const a of articles) {
-    const related = (a.relatedEntities ?? []).map((id) => '<li><a href="/entries/' + esc(id) + '.html">' + esc((entries.find((y) => y.id === id) ?? {}).title ?? id) + '</a></li>').join('');
-    write('articles/' + a.id + '.html', layout(a.title, a.target, '/articles/' + a.id + '.html',
-      '<h1>' + esc(a.title) + '</h1><p class="lead">' + esc(a.target) + '</p>' +
-      '<h2>Applies to</h2><p class="dim">' + esc(a.version) + '</p>' +
-      '<h2>Before you start</h2><ul>' + (a.prerequisites ?? []).map((p) => '<li>' + esc(p) + '</li>').join('') + '</ul>' +
-      '<h2>Steps</h2><ol>' + (a.steps ?? []).map((s) => '<li>' + esc(s.do) + ' <span class="dim small">(this works because the game provides that behaviour; see the technical reference)</span></li>').join('') + '</ol>' +
-      '<h2>Common mistakes</h2><ul>' + (a.commonMistakes ?? []).map((m) => '<li>' + esc(m) + '</li>').join('') + '</ul>' +
-      (related ? '<h2>Related entries</h2><ul>' + related + '</ul>' : '') +
-      '<h2>Sources</h2><p class="dim">' + esc((a.sources ?? []).join(' ')) + '</p>', inv));
-  }
-  write('articles/index.html', layout('Guides', 'Step-by-step guides, each grounded in what the game itself establishes.', '/articles/index.html',
-    '<h1>Guides</h1><p class="lead">Short guides with a goal, a version, prerequisites, steps and the mistakes people make. Every step says why it works.</p><ul>' +
-    articles.map((a) => '<li><a href="/articles/' + esc(a.id) + '.html"><strong>' + esc(a.title) + '</strong></a> - ' + esc(a.target) + '</li>').join('') + '</ul>', inv));
+  write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p>Try the <a href="/entities/">entities</a> or the search box at the top of the page.</p>').replace('content="index, follow"', 'content="noindex, follow"'));
 
-  // The sitemap lists what a search engine should offer: question-answering pages, not every schema page.
-  const urls = [...pages.keys()].filter((p) => p.endsWith('.html') && p !== '/404.html' && !isNoindexPage(p));
-  write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
-    urls.map((p) => '<url><loc>' + SITE.url + p + '</loc></url>').join('') + '</urlset>');
+  // ---- machine-readable ------------------------------------------------------------------------------
+  write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    urls.map((u) => '  <loc>' + u + '</loc>\n').join('') + '</urlset>\n');
   write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n');
-  return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length };
+  write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="6"/></svg>' + String.fromCharCode(10));
+  write('brand.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="' + esc(SITE.gameName) + '"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="5"/><circle cx="32" cy="30" r="4" fill="#0f1116"/><path d="M20 50h24" stroke="#0f1116" stroke-width="5" stroke-linecap="round"/></svg>\n');
+
+  write('style.css', [
+    ':root{--bg:#0f1116;--panel:#171a21;--panel2:#1c202a;--line:#262b36;--ink:#e9edf5;--dim:#9aa3b2;--accent:#ff5c5c}',
+    '*{box-sizing:border-box}',
+    'body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}',
+    'a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}',
+    '.wrap{max-width:68rem;margin:0 auto;padding:0 1.1rem}',
+    '.skip{position:absolute;left:-9999px}',
+    'header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,22,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}',
+    '.bar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.7rem 1.1rem}',
+    '.brand{display:flex;align-items:center;gap:.55rem;color:var(--ink);font-weight:700;letter-spacing:.2px}',
+    '.brand em{color:var(--dim);font-style:normal;font-weight:500}.brand span{white-space:nowrap}',
+    'nav.main{display:flex;gap:.9rem;flex:1 1 auto;flex-wrap:wrap;font-size:.95rem}',
+    'nav.main a{color:var(--dim);padding:.25rem 0;border-bottom:2px solid transparent}',
+    'nav.main a.on{color:var(--ink);border-bottom-color:var(--accent)}',
+    '.hsearch{display:flex;gap:.4rem}',
+    'input[type=search]{padding:.5rem .6rem;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:9px;min-width:12rem}',
+    'button{padding:.5rem .8rem;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:9px;cursor:pointer}',
+    'button:hover{border-color:var(--accent)}',
+    'main{padding:1.4rem 1.1rem 3rem}',
+    'h1{font-size:2rem;line-height:1.2;margin:.4rem 0 .6rem}h2{font-size:1.25rem;margin:2rem 0 .6rem}',
+    '.lead{font-size:1.08rem;color:#cfd6e4;max-width:46rem}',
+    '.dim{color:var(--dim)}.small{font-size:.85rem}.mono{font-family:ui-monospace,monospace}',
+    '.kicker{color:var(--accent);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .2rem}',
+    '.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:center;padding:1.2rem 0 1.8rem;border-bottom:1px solid var(--line)}',
+    '.heroArt img,.banner img,.heroimg img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}',
+    '.heroSearch{display:flex;gap:.5rem;margin:1rem 0 .7rem}.heroSearch input{flex:1 1 auto}',
+    '.ctas{display:flex;gap:.6rem;flex-wrap:wrap}',
+    '.btn{display:inline-block;padding:.55rem .95rem;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink)}',
+    '.btn.primary{background:var(--accent);color:#0f1116;border-color:transparent;font-weight:600}',
+    '.block{margin:2.2rem 0}',
+    '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem}',
+    '.card{display:flex;flex-direction:column;gap:.4rem;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.7rem;color:var(--ink)}',
+    '.card:hover{border-color:var(--accent);text-decoration:none}',
+    '.card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:#000}',
+    '.card strong{font-size:1rem}.card .dim{font-size:.9rem}',
+    '.chip{align-self:flex-start;font-size:.72rem;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:.1rem .5rem}',
+    '.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1rem}',
+    '.qcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.9rem;display:flex;flex-direction:column;gap:.35rem}',
+    '.filter{display:flex;gap:.6rem;align-items:center;margin:1rem 0}',
+    '.updates{list-style:none;padding:0}.updates li{padding:.45rem 0;border-bottom:1px solid var(--line)}.when{color:var(--dim);font-size:.85rem;margin-right:.5rem}',
+    '.entry{max-width:46rem}.entry h2{margin-top:2rem}',
+    '.heroimg{margin:0 0 1rem}.banner{margin:0 0 1rem}',
+    '.oneline{font-size:1.12rem;background:var(--panel);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.7rem .9rem;max-width:46rem}',
+    '.facts{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;max-width:46rem}',
+    '.facts dl{display:grid;grid-template-columns:max-content 1fr;gap:.3rem 1rem;margin:.3rem 0 0}.facts dt{color:var(--dim)}.facts dd{margin:0}',
+    '.verified li{margin:.4rem 0}.steps li{margin:.6rem 0}',
+    '.note{border-left:3px solid var(--accent);background:var(--panel);padding:.8rem 1rem;border-radius:0 10px 10px 0;max-width:46rem}',
+    'footer.foot{border-top:1px solid var(--line);padding:1.4rem 0 2.4rem;margin-top:2rem}',
+    'footer.foot p{margin:.35rem 0}',
+    'table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:.3rem .5rem;text-align:left}',
+    '@media(max-width:720px){.hero{grid-template-columns:1fr}.hsearch{width:100%}.hsearch input{flex:1 1 auto;min-width:0}}',
+  ].join('\n') + '\n');
+
+  // ---- assets -----------------------------------------------------------------------------------------
+  let assetCount = 0;
+  const mappedCount = { n: 0 };
+  const copyDir = (src, rel) => {
+    if (!existsSync(src)) return;
+    for (const entry of readdirSync(src, { withFileTypes: true })) {
+      const child = join(src, entry.name);
+      const childRel = rel ? rel + '/' + entry.name : entry.name;
+      if (entry.isDirectory()) { copyDir(child, childRel); continue; }
+      if (entry.name === 'README.txt') continue;
+      const dest = join(outDir, childRel);
+      mkdirSync(dirname(dest), { recursive: true });
+      writeFileSync(dest, readFileSync(child));
+      assetCount++;
+      if (childRel.startsWith('mapped/')) mappedCount.n++;
+    }
+  };
+  for (const root of ['web/assets', 'content/assets']) copyDir(join(process.cwd(), root), '');
+  return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length, assets: assetCount, mappedImages: mappedCount.n, entities: entities.length, notes: notes.length };
 }
 
 if (process.argv[1] && process.argv[1].endsWith('site.mjs')) {
