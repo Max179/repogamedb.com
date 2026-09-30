@@ -1,0 +1,65 @@
+{
+  "id": "the-readouts-you-play-by",
+  "title": "The readouts you play by",
+  "category": "Interface",
+  "summary": "R.E.P.O. does not leave you guessing at your own state: the game keeps separate readouts for health, the haul, the goal, item details, what things are worth and the shop, each as its own part of the interface.",
+  "body": [
+    "The game does not leave your own state to be guessed at. It keeps a readout of its own for the things you need while a run is going on, and each of those readouts is a separate part rather than one panel with everything in it.",
+    "Your health has a readout of its own, and it is drawn with artwork the game ships rather than being plain text. The screen also carries a picture for the player themselves, which is how the game marks whose health it is showing.",
+    "The haul is tracked separately. There is a readout for what the crew is carrying, which is a different question from how much money the run has made.",
+    "The goal is shown as well. A run has an objective readout, so the game can tell you what it is asking for without you opening a menu.",
+    "Item details have two readouts rather than one. There is the ordinary description of what you are looking at, and a second one for the extra detail, which is why some items can show more than a name and a price.",
+    "What things are worth is read from its own screen element, so value is presented as something the game decides rather than something you work out from the numbers on a shelf.",
+    "The shop has readouts too: what something will cost you, and how the shop itself is growing. Those belong to the interface rather than the level, which is why they are visible outside a run.",
+    "What this entry does not tell you: what any readout displays in a given situation, how the numbers are worked out, or how the interface is arranged on screen. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game keeps a readout of its own for the state you play by.",
+      "evidence": "identifier: HUD"
+    },
+    {
+      "claim": "Health, the haul, the goal and item details each have a readout of their own.",
+      "evidence": "identifiers: HealthUI, HaulUI, GoalUI, ItemInfoUI"
+    },
+    {
+      "claim": "Item details have a second readout for extra information.",
+      "evidence": "identifier: ItemInfoExtraUI"
+    },
+    {
+      "claim": "What something is worth has its own screen element.",
+      "evidence": "identifier: ValueScreen"
+    },
+    {
+      "claim": "The shop has readouts for what it costs and how it is growing.",
+      "evidence": "identifiers: ShopCostUI, ShopIncreaseUI"
+    },
+    {
+      "claim": "There are readouts for the level and for the run record.",
+      "evidence": "identifiers: LevelUI, StatsUI"
+    },
+    {
+      "claim": "The health readout is drawn with artwork the game ships, and the interface has a player picture of its own.",
+      "evidence": "asset names: PlayerAvatar_Health-bar_Shadow, Icon_Player"
+    }
+  ],
+  "related": [
+    "health-and-recovery",
+    "the-save-and-your-run-record"
+  ],
+  "images": [
+    {
+      "file": "the-readouts-you-play-by.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: health, the haul, the goal, item details, value and the shop each have their own readout.",
+        "zh": "示意图：生命、战利品、目标、物品详情、价值与商店各有独立读数。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
