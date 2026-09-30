@@ -3170,6 +3170,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/what-decides-whether-a-monster-appears.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/what-happens-when-the-head-catches-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
