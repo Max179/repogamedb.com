@@ -1,0 +1,70 @@
+{
+  "id": "dealing-with-the-monster-that-comes-apart",
+  "title": "Dealing with the monster that comes apart",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to read the bomb thrower in R.E.P.O. before it acts: the head that grows and comes off, the tell before it goes off, and the screaming heads on its body that open before they bite.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "Sound you can hear over the level",
+    "A way out of the room it is walking into"
+  ],
+  "steps": [
+    {
+      "do": "Watch the head rather than the body, because the head is grown rather than swapped and the growing is played.",
+      "because": "the head is grown, with three sounds for the growing (headGrownVisually, soundHeadGrow01, soundHeadGrow02, soundHeadGrow03)"
+    },
+    {
+      "do": "Treat the laugh as the start of trouble rather than as noise, because the head has a laugh of its own and a separate tell before it goes off.",
+      "because": "the head has a sound for laughing and one for the moment before the explosion (soundLaugh, soundExplosionTell)"
+    },
+    {
+      "do": "When the head leaves the body, get clear, because coming away and going off are two separate moments with their own sounds and particles.",
+      "because": "the head has a sound for detaching and particles for it, and a separate sound for the explosion (soundHeadDetach, headDetachParticles, soundExplosion)"
+    },
+    {
+      "do": "Listen to the torso as well as the head, because the heads on the body open before they do anything.",
+      "because": "the torso heads open with one sound for a single victim and one for several at once (soundTorsoHeadsOpenSolo, soundTorsoHeadsOpenMultiple)"
+    },
+    {
+      "do": "Know that a bite is heard twice, once by whoever is caught and once by the crew.",
+      "because": "the torso's melee has a local sound and a global one (soundTorsoHeadsMelee, soundTorsoHeadsMeleeGlobal)"
+    },
+    {
+      "do": "Do not relax when the screaming stops for a moment, because the noise is cut and resumed rather than played once.",
+      "because": "the screaming is broken up by a set of breakers (soundTorsoHeadsBreaker00, soundTorsoHeadsBreaker05, soundTorsoHeadsBreaker11)"
+    },
+    {
+      "do": "Read its feet when you cannot see it, because bare skin and boots sound different and both have a light and a heavy step.",
+      "because": "the feet have separate points for skin and boot, with light and heavy footsteps for each (footSkinTransform, footBootTransform, soundFootstepSkinLight, soundFootstepSkinHeavy, soundFootstepBootLight, soundFootstepBootHeavy)"
+    },
+    {
+      "do": "Treat its arrival and departure as a warning of their own, because both are drawn and sounded.",
+      "because": "there are teleport particles and a sound for arriving and for leaving (teleportParticles, soundTeleportIn, soundTeleportOut)"
+    },
+    {
+      "do": "Break line of sight early if you can, because the head is aimed at a point it tracks rather than fixed forward.",
+      "because": "the head looks at a transform and a position, with an eye target of its own (headLookTransform, headLookPositionTransform, eyeLookAt)"
+    },
+    {
+      "do": "Check that it is finished rather than merely quiet, because its death is drawn with particles of its own.",
+      "because": "the death has particles of its own (deathParticles)"
+    }
+  ],
+  "commonMistakes": [
+    "Watching the body and missing the head that is growing above it.",
+    "Treating the laugh as idle noise instead of the beginning of the attack.",
+    "Standing still when the head comes away, which is the moment before it goes off.",
+    "Waiting for the screaming to stop before moving, when the noise is only broken up.",
+    "Assuming silence means it has gone, without checking for the teleport it leaves on."
+  ],
+  "relatedEntities": [
+    "the-bomb-thrower",
+    "enemies-and-their-behaviour",
+    "what-a-monster-is-doing"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
