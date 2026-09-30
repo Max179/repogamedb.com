@@ -2765,6 +2765,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-music-of-a-level.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-orb.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2796,6 +2801,11 @@
     },
     {
       "url": "/entries/the-staffs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tricycle-rider.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

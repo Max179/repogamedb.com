@@ -756,6 +756,18 @@
       "height": 512,
       "bytes": 66316,
       "sha256": "2c1f6e66d9bfa116e619b5b828d63a45a0afab9d2152e097537c5985c3c0e742"
+    },
+    {
+      "entity": "the-tricycle-rider",
+      "kind": "game",
+      "file": "mapped/the-tricycle-rider-bike.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "tricycle_bike_Albedo",
+      "note": "the colour texture the game ships for the tricycle the rider arrives on",
+      "width": 512,
+      "height": 512,
+      "bytes": 62464,
+      "sha256": "a9f4e6b04ef1eb83ab2188c1bd7bdd61475efacf6fb89bf9853c52fb4bd1ac4d"
     }
   ]
 }

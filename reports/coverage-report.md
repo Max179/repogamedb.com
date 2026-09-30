@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 62
+- published entries: 64
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 27
@@ -14,15 +14,15 @@ the reason it is still a draft.
 
 | target column | what it covers | published | draft | reference |
 | --- | --- | --- | --- | --- |
-| enemies | Enemies and their variants | 9 | 0 | 0 |
-| behaviour | Behaviour and how to answer it | 9 | 0 | 0 |
+| enemies | Enemies and their variants | 10 | 0 | 0 |
+| behaviour | Behaviour and how to answer it | 10 | 0 | 0 |
 | valuables | Valuables and value grades | 6 | 0 | 0 |
 | extraction | Hauling and extraction | 3 | 0 | 0 |
 | items | Items you can carry | 12 | 0 | 0 |
 | weapons | Weapons | 6 | 0 | 0 |
 | ammo | Ammunition and charge | 3 | 0 | 0 |
 | medical | Medical help and reviving | 3 | 0 | 0 |
-| maps | Maps, levels and themes | 4 | 0 | 0 |
+| maps | Maps, levels and themes | 5 | 0 | 0 |
 | events | Events and set pieces | 2 | 0 | 0 |
 | shop | The shop between runs | 6 | 0 | 0 |
 | coop | Playing with a crew | 3 | 0 | 0 |

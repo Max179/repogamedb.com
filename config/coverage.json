@@ -10,7 +10,8 @@
       ],
       "entries": [
         "the-floater",
-        "the-beamer"
+        "the-beamer",
+        "the-tricycle-rider"
       ]
     },
     {
@@ -89,6 +90,9 @@
       "label": "Maps, levels and themes",
       "categories": [
         "Maps"
+      ],
+      "entries": [
+        "the-music-of-a-level"
       ]
     },
     {
