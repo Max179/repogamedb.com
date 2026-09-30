@@ -42,6 +42,18 @@
     {
       "claim": "It carries a collider of its own for being hurt.",
       "evidence": "identifier: hurtCollider"
+    },
+    {
+      "claim": "Its footsteps come in a short and a long version, and it has a sound for leaving.",
+      "evidence": "identifiers: soundFootstepShort, soundFootstepLong, soundLeaveStart"
+    },
+    {
+      "claim": "Reloading has two sounds, and starting to aim has a local and a global version.",
+      "evidence": "identifiers: soundReload01, soundReload02, soundAimStart, soundAimStartGlobal"
+    },
+    {
+      "claim": "Its gun has a long and a short report, and its arrival is drawn by a teleport effect.",
+      "evidence": "identifiers: soundGunLong, soundGunShort, teleportEffects"
     }
   ],
   "related": [
