@@ -2815,6 +2815,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-cart-as-an-object.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-cart-cannon.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
