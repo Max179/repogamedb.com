@@ -16,6 +16,8 @@ node <22>/node_modules/typescript/bin/tsc --noEmit -p tsconfig.json
 node tools/content-gate.mjs                              # content model: entries and articles
 node tools/classify-urls.mjs                             # refresh config/urls.json
 node tools/deploy-check.mjs                              # local readiness vs external blockers
+node tools/smoke.mjs                                     # the built artefact, the way a reader arrives at it
+node tools/smoke.mjs https://<domain>                     # after publishing: every kept URL, live
 ```
 
 This was verified from a clean clone: the same build, gates, typecheck and preflight results reproduce without any
