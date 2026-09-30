@@ -2610,6 +2610,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/healing-at-the-truck.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/health-and-recovery.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2941,6 +2946,11 @@
     },
     {
       "url": "/topics/maps.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/topics/medical.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

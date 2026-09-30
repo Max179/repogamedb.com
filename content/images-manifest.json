@@ -684,6 +684,18 @@
       "height": 512,
       "bytes": 52968,
       "sha256": "686eed3ac393a27aebed9033598439abe9307c03ad31e79bd2083a64c3267a00"
+    },
+    {
+      "entity": "healing-at-the-truck",
+      "kind": "game",
+      "file": "mapped/healing-at-the-truck-healer.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Truck Healer_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the healer in the truck",
+      "width": 512,
+      "height": 512,
+      "bytes": 64405,
+      "sha256": "9a1a49c0bd4e84f639096748bc5d134be0dd44db42f6731b690608f342ffe94a"
     }
   ]
 }

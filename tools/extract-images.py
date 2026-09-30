@@ -116,6 +116,7 @@ MAPPINGS = [
   {'entity': 'the-wizard-valuables', 'bundle': 'resources.assets', 'match': "Valuable Wizard Sword_DefaultMaterial_BaseColor", 'file': 'the-wizard-valuables-sword.jpg', 'note': "the colour texture the game ships for the wizard's sword valuable", 'max': 512, 'quality': 88},
   {'entity': 'mines-traps-and-lasers', 'bundle': 'resources.assets', 'match': "Explosive mine_DefaultMaterial_BaseColor", 'file': 'mines-traps-and-lasers-mine.jpg', 'note': "the colour texture the game ships for an explosive mine found in a level", 'max': 512, 'quality': 88},
   {'entity': 'mines-traps-and-lasers', 'bundle': 'resources.assets', 'match': "Stun trap_DefaultMaterial_BaseColor", 'file': 'mines-traps-and-lasers-trap.jpg', 'note': "the colour texture the game ships for a stun trap", 'max': 512, 'quality': 88},
+  {'entity': 'healing-at-the-truck', 'bundle': 'resources.assets', 'match': "Truck Healer_DefaultMaterial_BaseColor", 'file': 'healing-at-the-truck-healer.jpg', 'note': "the colour texture the game ships for the healer in the truck", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
