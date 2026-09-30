@@ -1,0 +1,49 @@
+{
+  "id": "moving-loot-and-gear",
+  "title": "Moving loot and gear around",
+  "category": "Valuables",
+  "tier": "published",
+  "summary": "Getting loot out of a level is a physical job in R.E.P.O.: the game defines boxed valuables, a rideable vehicle and a ladder, so distance and height are part of the problem.",
+  "body": [
+    "Some loot arrives packaged in a box, which changes how easily it can be moved compared with an object you carry in your hands.",
+    "Height is a real obstacle rather than decoration, which is why the game provides a ladder as its own item.",
+    "A rideable vehicle exists to move things across ground, so a crew can choose between hands and hardware.",
+    "What this entry does not tell you: how much a vehicle carries, how fast it moves or how much the ladder costs. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "At least one valuable is packaged in a box you can move.",
+      "evidence": "identifier: ItemValuableBox"
+    },
+    {
+      "claim": "A rideable vehicle is its own item.",
+      "evidence": "identifier: ItemVehicle"
+    },
+    {
+      "claim": "A ladder exists as its own item for reaching height.",
+      "evidence": "identifier: ItemLadder"
+    },
+    {
+      "claim": "The level decides which valuables are available to move at all.",
+      "evidence": "identifier: LevelValuables"
+    }
+  ],
+  "related": [
+    "valuables-and-looting",
+    "gear-you-carry"
+  ],
+  "images": [
+    {
+      "file": "moving-loot-and-gear.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: loot is found, boxed or loose, moved by hand or with a vehicle, and carried to the extraction point.",
+        "zh": "搬运示意图：发现战利品、装箱或散装、徒手或用载具搬运、送到撤离点。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
