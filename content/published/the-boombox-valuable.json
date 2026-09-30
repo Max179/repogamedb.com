@@ -9,7 +9,7 @@
     "It glitches as well. There is a glitch sound of its own, which is how the music can break up rather than run cleanly to the end of the clip.",
     "Its music is named oddly. The clip the boombox uses is named after the robed monster rather than after the boombox, which suggests the same piece of music is shared between them rather than written twice.",
     "It has two speakers and two lights, kept as separate parts, so the case can glow while it plays without the speakers being the thing that is lit.",
-    "The game ships an emissive map for it, and that map is what decides where the light appears: the image beside this entry is that map, and the bright spots on it are the speakers as the game lights them.",
+    "The case is a picture of the item; the light map is a picture of where it lights up. The game ships an emissive map for it, and that map is what decides where the light appears: the bright spots on it are the speakers as the game lights them.",
     "It is not the same object as the radio the shop can play. The shop radio is documented under its own entry, and it carries a music list rather than a single clip, which is why the two are separate things to buy.",
     "The picture beside this entry is the game's own: the emissive map for the boombox valuable, which lights its two speakers.",
     "What this entry does not tell you: what the music is, how long the clip is, or how much the boombox is worth. We have not verified those, so we do not print them."
@@ -45,6 +45,14 @@
     "valuables-that-are-also-tools"
   ],
   "images": [
+    {
+      "file": "mapped/the-boombox-valuable-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the boombox valuable: its case, tape deck and speaker.",
+        "zh": "游戏为手提音响珍贵物提供的颜色贴图：外壳、磁带仓与喇叭。"
+      }
+    },
     {
       "file": "mapped/the-boombox-valuable-lights.png",
       "kind": "game",

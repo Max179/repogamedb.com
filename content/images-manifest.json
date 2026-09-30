@@ -1060,6 +1060,18 @@
     {
       "entity": "the-boombox-valuable",
       "kind": "game",
+      "file": "mapped/the-boombox-valuable-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Boombox_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the boombox valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 78855,
+      "sha256": "8f0d57bf299a8c0ca8bc246cd3cf26a1843205499443dd4a48a495e8661ce8c0"
+    },
+    {
+      "entity": "the-boombox-valuable",
+      "kind": "game",
       "file": "mapped/the-boombox-valuable-lights.png",
       "sourceBundle": "resources.assets",
       "assetName": "Boombox_DefaultMaterial_Emissive",
