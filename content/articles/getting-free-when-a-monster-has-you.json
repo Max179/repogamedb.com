@@ -1,0 +1,62 @@
+{
+  "id": "getting-free-when-a-monster-has-you",
+  "title": "Getting free when a monster has you",
+  "tier": "published",
+  "kind": "article",
+  "target": "What to do in R.E.P.O. when a monster has hold of you or a crew mate: the two kinds built around holding a player, why the picture and the sound are not yours while you are held, and how the crew gets you back on your feet.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A monster that can hold a player somewhere in the level",
+    "A revive device somewhere in the crew",
+    "Roughly where the crew is standing when it happens"
+  ],
+  "steps": [
+    {
+      "do": "Work out which kind of monster has hold of you before you plan around it.",
+      "because": "one monster is built around holding a player, and the grabbing kind gives the player it holds a camera of their own, so the game treats the two separately (EnemyHeartHugger, EnemyHeadGrabber, EnemyHeadGrabberLocalCamera)"
+    },
+    {
+      "do": "Do not guide yourself by the picture on your screen while you are held.",
+      "because": "the held player is looking through the grabbing monster's own camera rather than their own, so what is on the screen is not where your head is (EnemyHeadGrabberLocalCamera)"
+    },
+    {
+      "do": "Keep your bearings through the tilt and the muffled sound instead of treating them as damage.",
+      "because": "the game feeds camera tilt into an audio mixer that distorts, lowers and shifts the pitch, each with its own maximum and speed, so the change is presentation rather than a second injury (CameraTilt, camTilt, MixerEffects, DistortionTiltMax, LowpassTiltMax, PitchTiltMax)"
+    },
+    {
+      "do": "Read being held as a state your condition is tied to, not as a separate bar.",
+      "because": "a player's condition is tied to the grabbing mechanic itself (PlayerHealthGrab)"
+    },
+    {
+      "do": "Put the fight into the monster, not into your crew mate.",
+      "because": "fighting back uses separate weapon objects of its own rather than an unarmed struggle (ItemMelee, ItemGun)"
+    },
+    {
+      "do": "Make sure a revive device is in the crew before the run needs it.",
+      "because": "reviving depends on a carried device with hands, a face, lights, two line renderers and a shockwave, so it is equipment rather than a command (ItemReviveItem)"
+    },
+    {
+      "do": "Watch the revive device's own readouts rather than the body on the floor.",
+      "because": "the device carries spot, point and healing lights and keeps line renderers of its own between it and the target (spotLight, pointLight, healingLight, lineRendererL, lineRendererR)"
+    },
+    {
+      "do": "Check the health readout before deciding to push on after a grab.",
+      "because": "players have tracked health of their own, shown in an interface of its own, and recovery uses a pack you carry (PlayerHealth, HealthUI, ItemHealthPack)"
+    }
+  ],
+  "commonMistakes": [
+    "Trying to steer by the picture while you are held, when the view belongs to the monster holding you.",
+    "Leaving the revive device behind because reviving feels like an action rather than an item.",
+    "Swinging or shooting at the crew mate instead of at the monster that has them.",
+    "Reading the tilted camera and the muffled sound as damage that has already been taken."
+  ],
+  "relatedEntities": [
+    "when-a-monster-has-you",
+    "what-being-grabbed-feels-like",
+    "what-being-grabbed-does-to-your-view",
+    "the-revive-item"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
