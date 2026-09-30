@@ -11,6 +11,7 @@
     "Those heads open and close. There are separate sounds for opening for one victim and for several, and the same pair for closing, so what the torso does is played rather than merely animated.",
     "They also bite. There is a melee sound for the torso heads, and a global version of it, which is how the same attack can be heard by whoever is caught and by everyone else.",
     "The screaming is broken up. The game keeps twelve breakers for the torso heads, which is why the noise is cut and resumed rather than played as one long sound.",
+    "The breakers are ordinary parts of the set. They are kept one by one under their own names, which is why the same scream can be assembled in a different order instead of being one fixed recording.",
     "The feet change. There are separate points for the bare skin and for a boot, and footsteps differ between light and heavy for both, so what the monster wears is audible.",
     "Its parts hang rather than bolt on. Both arms and the torso of heads are carried on springs of their own, which is why the body swings while the head does the work.",
     "Even the detachment is announced. The moment the head comes away has a tell of its own, separate from the sound it makes as it leaves.",
@@ -66,6 +67,10 @@
     {
       "claim": "The moment the head comes away has a tell of its own.",
       "evidence": "identifier: soundHeadDetachTell"
+    },
+    {
+      "claim": "The other breakers of the same set are kept one by one under their own names.",
+      "evidence": "identifiers: soundTorsoHeadsBreaker01, soundTorsoHeadsBreaker02, soundTorsoHeadsBreaker03, soundTorsoHeadsBreaker04, soundTorsoHeadsBreaker06, soundTorsoHeadsBreaker07, soundTorsoHeadsBreaker08, soundTorsoHeadsBreaker09, soundTorsoHeadsBreaker10"
     },
     {
       "claim": "It has an idle loop and sounds for landing, jumping, a short and a long move, being hurt and dying.",

@@ -9,6 +9,7 @@
     "It draws its own line. The drone keeps a line between two points, which is how it shows what it is working on instead of leaving you to guess.",
     "It runs on a battery. The drone carries a battery drain setting along with a slippery material of its own, so it works for a while and then stops rather than going forever.",
     "It has a sound for every step. Starting, ending, deploying, retracting and its idle loop each have their own sound, so the drone tells you where it is in its routine.",
+    "The list of sounds is wider than the routine. It also names a beam loop, so the noise of a drone working is kept apart from the noises of it being moved about.",
     "It can be aimed at a player. Because players are on the targeting list, a drone is not only a tool for the loot, which is why the crew should agree before one goes out.",
     "What this entry does not tell you: how long a battery lasts, what a drone costs, or what it can carry. We have not verified those numbers, so we do not print them."
   ],
@@ -36,6 +37,10 @@
     {
       "claim": "It has a teleport effect of its own.",
       "evidence": "identifier: teleportParticles"
+    },
+    {
+      "claim": "Its sounds also name an end, a retract, an idle loop and a beam loop.",
+      "evidence": "identifiers: DroneEnd, DroneRetract, DroneLoop, DroneBeamLoop"
     }
   ],
   "related": [
