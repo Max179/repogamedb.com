@@ -107,4 +107,5 @@ git status --porcelain              -> 空
 - 站点规模（第 148 轮）：pages=604 indexable=59，门禁 52 条全过，tsc exit 0。
 - 图片覆盖（第 149 轮继续追图）：词条 28 条，其中 28 条带真实游戏图片（100%），0 条为已标注的 diagram-only；images-manifest 记录 31 条，无未使用、无缺失。仍缺真实图片的词条：（无）——已在页面顶部标注"仅为原创示意图/非游戏截图"并移出精选列表。站点规模：pages=606 indexable=59，门禁 52 条全过，tsc exit 0。
 - 计数（第 149 轮内容）：词条 29 条、文章 11 篇、真实映射图 29 条（100%），diagram-only 0 条；pages=610 indexable=61，门禁 52 条全过，tsc exit 0。
+- 计数（第 151 轮）：词条 30 条、文章 12 篇、真实映射图 30 条（100%）、diagram-only 0 条；images-manifest 33 条，无未使用、无缺失。pages=613 indexable=62，门禁 52 条全过，tsc exit 0。
 

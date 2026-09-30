@@ -15,6 +15,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/choosing-upgrades-as-a-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/choosing-what-to-carry.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2586,6 +2591,11 @@
     },
     {
       "url": "/entries/the-truck-and-the-end-of-a-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-upgrades-you-find.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

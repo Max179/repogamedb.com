@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-upgrades-you-find",
+      "kind": "game",
+      "file": "mapped/the-upgrades-you-find-energy.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Upgrade_Energy_Albedo",
+      "note": "albedo texture of one of the player upgrades the game ships",
+      "width": 512,
+      "height": 512,
+      "bytes": 50209,
+      "sha256": "7ba995b68fddac26bb910dc6679f811fc50b254d1e722ce3b81ac972fbf85419"
+    },
+    {
       "entity": "what-the-map-shows-you",
       "kind": "game",
       "file": "mapped/what-the-map-shows-you-valuablemap.jpg",

@@ -1,0 +1,47 @@
+{
+  "id": "choosing-upgrades-as-a-crew",
+  "title": "Choosing upgrades as a crew",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to choose between R.E.P.O. upgrades when each one is an item with its own purpose, rather than a simple number going up for everyone.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "An upgrade found or bought",
+    "An upgrade stand in the shop",
+    "A crew that will actually use it"
+  ],
+  "steps": [
+    {
+      "do": "Read the upgrade's name before deciding who gets it.",
+      "because": "each upgrade carries a display name of its own (UpgradeInfo)"
+    },
+    {
+      "do": "Work out whether it improves the player or the gear before you carry it anywhere.",
+      "because": "an upgrade records whether it is a player upgrade (isPlayerUpgrade)"
+    },
+    {
+      "do": "Put it on the stand rather than leaving it loose in the van.",
+      "because": "upgrades are placed on a stand and cached with their position (CachedUpgrade)"
+    },
+    {
+      "do": "Give the ability-specific ones to whoever actually uses that ability.",
+      "because": "some upgrades change one particular ability (ItemUpgradePlayerTumbleWingsLogic)"
+    },
+    {
+      "do": "Agree who is taking it before the next level starts.",
+      "because": "an upgrade is an item somebody has to carry and apply (ItemUpgrade)"
+    }
+  ],
+  "commonMistakes": [
+    "Carrying an upgrade around instead of putting it on the stand.",
+    "Assuming every upgrade helps the whole crew equally.",
+    "Grabbing an ability upgrade that nobody uses."
+  ],
+  "relatedEntities": [
+    "the-upgrades-you-find",
+    "how-upgrades-are-kept-track-of"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
