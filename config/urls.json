@@ -2640,6 +2640,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/items-you-switch-carry-or-unlock.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/keycards-and-the-office.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

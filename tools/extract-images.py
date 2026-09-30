@@ -119,6 +119,8 @@ MAPPINGS = [
   {'entity': 'healing-at-the-truck', 'bundle': 'resources.assets', 'match': "Truck Healer_DefaultMaterial_BaseColor", 'file': 'healing-at-the-truck-healer.jpg', 'note': "the colour texture the game ships for the healer in the truck", 'max': 512, 'quality': 88},
   {'entity': 'the-floater', 'bundle': 'resources.assets', 'match': "enemy floater_Material_BaseColor", 'file': 'the-floater-texture.jpg', 'note': "the colour texture the game ships for the floater monster", 'max': 512, 'quality': 88},
   {'entity': 'running-a-gun-dry', 'bundle': 'resources.assets', 'match': "shotgun_DefaultMaterial_BaseColor", 'file': 'running-a-gun-dry-shotgun.jpg', 'note': "the colour texture the game ships for one of its guns", 'max': 512, 'quality': 88},
+  {'entity': 'items-you-switch-carry-or-unlock', 'bundle': 'resources.assets', 'match': "Walkie_Basecolor RED", 'file': 'items-you-switch-carry-or-unlock-walkie.jpg', 'note': "the colour texture the game ships for the red walkie-talkie", 'max': 512, 'quality': 88},
+  {'entity': 'items-you-switch-carry-or-unlock', 'bundle': 'resources.assets', 'match': "shockwave grenade_DefaultMaterial_BaseColor", 'file': 'items-you-switch-carry-or-unlock-grenade.jpg', 'note': "the colour texture the game ships for the shockwave grenade", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

@@ -52,6 +52,9 @@
       "label": "Items you can carry",
       "categories": [
         "Items"
+      ],
+      "entries": [
+        "items-you-switch-carry-or-unlock"
       ]
     },
     {

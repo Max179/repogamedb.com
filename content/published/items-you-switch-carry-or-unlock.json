@@ -1,0 +1,87 @@
+{
+  "id": "items-you-switch-carry-or-unlock",
+  "title": "Items you switch on, carry or unlock",
+  "category": "Items",
+  "summary": "Not every item in R.E.P.O. is simply picked up: the game gives items a state of their own, lets some be toggled, gives some a light or a sound level, and keeps one kind switched off until a level is reached.",
+  "body": [
+    "Not every item in R.E.P.O. is only picked up and put down. Items have a state of their own with a manager behind them, which is why two things that look similar in the cart can behave differently the moment they are in your hands.",
+    "Some items are switches. There is an item that toggles on and off, with a state for the toggle, a sound when it changes and a rule about switching itself off when it is put away, so leaving something running by accident is a thing the game has thought about.",
+    "Some items carry a light. An item can have a light of its own with an intensity curve, and a setting for whether it stays on all the time. The light belongs to the item rather than floating beside it, which is why it moves with your hand.",
+    "Some items carry a sound level of their own, and the game has a type for the items that come from its secret shop. That is how one thing you carry can be quieter than another without the game writing a special case for it.",
+    "There are items whose shape matters when you hold them. An equippable item is held through a cube that can be obstructed, which is the game deciding whether there is room to raise it rather than checking the item in mid-air.",
+    "One item pushes instead of hitting. The shockwave has its own wave, spark and lightning effects, its own explosion sound and a camera shake, so what it does to a room is the point of it rather than the damage of a single hit.",
+    "Some items arrive in pairs. There is a box for the walkie-talkies with two spawn points and both radio items behind it, along with the materials for the radios themselves, so one thing on the shelf can arm two members of the crew.",
+    "Some things cannot be used yet. There is a kind of item that stays switched off until a level is reached, which is how the game holds something back without hiding it from you.",
+    "The images beside this entry are the game's own: the colour texture of the red walkie-talkie and of the shockwave grenade.",
+    "What this entry does not tell you: how strong a shockwave is, how long a light lasts, or which level any item unlocks at. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Items have a state of their own with a manager behind them.",
+      "evidence": "identifiers: ItemState, ItemManager, ItemAttributes"
+    },
+    {
+      "claim": "An item can be toggled, with a toggle state, a sound and a rule about switching off when put away.",
+      "evidence": "identifiers: ItemToggle, toggleState, playSound, autoTurnOffWhenEquipped, onToggle"
+    },
+    {
+      "claim": "An item can carry a light of its own with an intensity curve and a setting for staying on.",
+      "evidence": "identifiers: ItemLight, itemLight, lightIntensityCurve, alwaysActive"
+    },
+    {
+      "claim": "An item carries a sound level of its own, and there is a type for items from the secret shop.",
+      "evidence": "identifiers: ItemVolume, itemVolume, volumes, itemSecretShopType"
+    },
+    {
+      "claim": "An equippable item is held through a cube that can be obstructed.",
+      "evidence": "identifiers: ItemEquippable, ItemEquipCube, isObstructed"
+    },
+    {
+      "claim": "The shockwave item has wave, spark and lightning effects, its own explosion sound and a camera shake.",
+      "evidence": "identifiers: ItemShockwave, particleSystemWave, particleSystemSparks, particleSystemLightning, cameraShake"
+    },
+    {
+      "claim": "The walkie box has two spawn points and both radio items behind it, with materials of its own.",
+      "evidence": "identifiers: ItemWalkieBox, walkie1SpawnPoint, walkie2SpawnPoint, walkieTalkieItem, walkieMaterials"
+    },
+    {
+      "claim": "A kind of item stays switched off until a level is reached.",
+      "evidence": "identifier: ItemDeactivatedUntilLevel"
+    }
+  ],
+  "related": [
+    "gear-you-carry",
+    "moving-loot-and-gear"
+  ],
+  "images": [
+    {
+      "file": "mapped/items-you-switch-carry-or-unlock-walkie.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the red walkie-talkie.",
+        "zh": "游戏为红色对讲机提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mapped/items-you-switch-carry-or-unlock-grenade.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the shockwave grenade.",
+        "zh": "游戏为冲击波手雷提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "items-you-switch-carry-or-unlock.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: an item can be toggled, carry a light or a sound level, be held through a cube, or stay locked until a level.",
+        "zh": "示意图：物品可开关、自带灯光或音量、通过方块持握，或在等级达成前锁定。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

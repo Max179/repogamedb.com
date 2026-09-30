@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 59
+- published entries: 60
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 27
@@ -18,7 +18,7 @@ the reason it is still a draft.
 | behaviour | Behaviour and how to answer it | 8 | 0 | 0 |
 | valuables | Valuables and value grades | 6 | 0 | 0 |
 | extraction | Hauling and extraction | 3 | 0 | 0 |
-| items | Items you can carry | 11 | 0 | 0 |
+| items | Items you can carry | 12 | 0 | 0 |
 | weapons | Weapons | 6 | 0 | 0 |
 | ammo | Ammunition and charge | 3 | 0 | 0 |
 | medical | Medical help and reviving | 3 | 0 | 0 |

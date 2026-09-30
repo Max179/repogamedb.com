@@ -720,6 +720,30 @@
       "height": 512,
       "bytes": 43769,
       "sha256": "73c37be76960384a35bb440626893482d6593905a8876ccb324c284d44962dd0"
+    },
+    {
+      "entity": "items-you-switch-carry-or-unlock",
+      "kind": "game",
+      "file": "mapped/items-you-switch-carry-or-unlock-walkie.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Walkie_Basecolor RED",
+      "note": "the colour texture the game ships for the red walkie-talkie",
+      "width": 512,
+      "height": 512,
+      "bytes": 62184,
+      "sha256": "ce20f8614b477cd37bd729705252e1207702b8e00da555d32eef0e44e6379f38"
+    },
+    {
+      "entity": "items-you-switch-carry-or-unlock",
+      "kind": "game",
+      "file": "mapped/items-you-switch-carry-or-unlock-grenade.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "shockwave grenade_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the shockwave grenade",
+      "width": 512,
+      "height": 512,
+      "bytes": 56177,
+      "sha256": "94c1450a5d7cb5fc9beace152c48e8097393946cacc8c64c3766feffadd56ebd"
     }
   ]
 }
