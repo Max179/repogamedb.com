@@ -1236,6 +1236,18 @@
       "height": 512,
       "bytes": 41207,
       "sha256": "89c0a90500615b7a1a47f58dd85c94ff25ee4e74f22e11bd063496a53fc4ef27"
+    },
+    {
+      "entity": "the-walkie-talkie-and-what-it-answers",
+      "kind": "game",
+      "file": "mapped/the-walkie-talkie-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Walkie_Basecolor RED",
+      "note": "the colour texture the game ships for the walkie-talkie the crew talks through",
+      "width": 512,
+      "height": 512,
+      "bytes": 62184,
+      "sha256": "ce20f8614b477cd37bd729705252e1207702b8e00da555d32eef0e44e6379f38"
     }
   ]
 }
