@@ -1,0 +1,88 @@
+{
+  "id": "the-museums-laser",
+  "title": "The museum's laser",
+  "category": "Events",
+  "summary": "The laser in R.E.P.O.'s museum level is a machine with a beam of its own: an outer and an inner beam, power-up and shutdown curves, a spinner, a hit position and hit visuals, three kinds of sparks, three audio sources and seven sounds for running, being near, hitting, overloading and shutting down.",
+  "body": [
+    "Some of what hurts you in a level is built rather than alive. The museum's laser is a machine of its own with a state to run through, which is why it can be reasoned about by the level instead of being scenery that happens to glow.",
+    "It comes up and goes down on curves. There is a curve for powering up and another for shutting down, so the laser is never simply on or off but always in one of two transitions.",
+    "Its beam has two layers. An outer beam and an inner beam are drawn separately, which is why a laser can look like a core inside a glow rather than one flat line.",
+    "It has its own visuals for being hit. There is a visual for the beam, a visual for where the beam lands and an inner version of that landing, along with a position for the hit, so the point of contact is a place in the object rather than a spot worked out by the renderer.",
+    "It spins. A spinner belongs to it, which is what turns a static beam into something that sweeps across a room.",
+    "It carries its own hurt collider, so what the laser damages is a shape that travels with it rather than a rule applied to everything nearby.",
+    "It sparks in three ways. There is an ordinary spark, a second set for the overloaded state, and a third for the moment the beam lands on something, each with a transform to sit at.",
+    "It has three audio sources. One belongs to the laser itself, one to being near it and one to a hit, which is why the sound changes with how close you are rather than only with what is happening.",
+    "That gives it seven sounds: a running loop, a near loop, a hit loop, a power-up, an overload, a shutdown and sparks, each covering a different part of its behaviour rather than one noise repeated.",
+    "The image beside this entry is the game's own: the base colour texture the game ships for the security laser, showing its housing and the two circular emitters the beam comes from.",
+    "What this entry does not tell you: how much damage the beam does, how long its cycle is, or whether it can be turned off. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The laser is a machine of its own with a state dedicated to it.",
+      "evidence": "identifiers: MuseumLaserLogic, currentState, MuseumLaserState"
+    },
+    {
+      "claim": "It powers up and shuts down on curves rather than switching instantly.",
+      "evidence": "identifiers: animationCurvePowerUp, animationCurveShutdown"
+    },
+    {
+      "claim": "The beam is drawn as an outer and an inner layer.",
+      "evidence": "identifiers: beamMeshRenderer, beamInnerMeshRenderer"
+    },
+    {
+      "claim": "It has a beam visual, a hit visual, an inner hit visual and a hit position.",
+      "evidence": "identifiers: laserBeamVisualTransform, laserBeamVisualHitTransform, laserBeamVisualHitInnerTransform, laserHitPosTransform"
+    },
+    {
+      "claim": "It has a spinner of its own.",
+      "evidence": "identifier: spinnerTransform"
+    },
+    {
+      "claim": "It carries a hurt collider.",
+      "evidence": "identifier: hurtColliderTransform"
+    },
+    {
+      "claim": "It sparks in three ways: an ordinary spark, one for the overloaded state and one for a hit, each with a transform.",
+      "evidence": "identifiers: particleSparksParticleSystem, particleOverloadedSparksParticleSystem, particleLaserHitParticleSystem, particleSparksTransform"
+    },
+    {
+      "claim": "It has three audio sources: one for the laser, one for being near it and one for a hit.",
+      "evidence": "identifiers: audioSourceTransform, audioSourceCloseTransform, audioSourceHitTransform"
+    },
+    {
+      "claim": "It carries seven sounds: a running loop, a near loop, a hit loop, a power-up, an overload, a shutdown and sparks.",
+      "evidence": "identifiers: soundLoop, soundNearLoop, soundHitLoop, soundPowerUp, soundOverload, soundShutdown, soundSparks"
+    },
+    {
+      "claim": "The game ships a base colour texture for the security laser.",
+      "evidence": "asset name: security laser _DefaultMaterial_BaseColor"
+    }
+  ],
+  "related": [
+    "mines-traps-and-lasers",
+    "the-museum-and-its-props"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-museums-laser-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture the game ships for the security laser, showing its housing and its circular emitters.",
+        "zh": "游戏为安保激光提供的基础色贴图，可见外壳与圆形发射端。"
+      }
+    },
+    {
+      "file": "the-museums-laser.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the laser powers up on a curve, its spinner sweeps the beam, the outer and inner beams burn, and it overloads and shuts down.",
+        "zh": "示意图：激光按曲线启动、旋转器带动光束扫过、内外两层光束燃烧、随后过载并关闭。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

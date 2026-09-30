@@ -1224,6 +1224,18 @@
       "height": 512,
       "bytes": 49547,
       "sha256": "97592d565c82554a8bba947bab3460aaee73c68bd60ffe48d64b0b6d8165fc09"
+    },
+    {
+      "entity": "the-museums-laser",
+      "kind": "game",
+      "file": "mapped/the-museums-laser-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "security laser _DefaultMaterial_BaseColor",
+      "note": "the base colour texture the game ships for the security laser",
+      "width": 512,
+      "height": 512,
+      "bytes": 41207,
+      "sha256": "89c0a90500615b7a1a47f58dd85c94ff25ee4e74f22e11bd063496a53fc4ef27"
     }
   ]
 }

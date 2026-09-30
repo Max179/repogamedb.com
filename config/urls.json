@@ -2880,6 +2880,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-museums-laser.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-music-of-a-level.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

@@ -161,6 +161,7 @@ MAPPINGS = [
   {'entity': 'the-upgrade-stand-and-its-roll', 'bundle': 'resources.assets', 'match': "upgrade stand roller_DefaultMaterial_BaseColor", 'file': 'the-upgrade-stand-roller.jpg', 'note': "the colour texture the game ships for the upgrade stand's roller", 'max': 512, 'quality': 88},
   {'entity': 'the-shopkeeper-and-what-it-watches', 'bundle': 'resources.assets', 'match': "shopkeeper_DefaultMaterial_BaseColor", 'file': 'the-shopkeeper-texture.jpg', 'note': "the colour texture the game ships for the shopkeeper", 'max': 512, 'quality': 88},
   {'entity': 'the-charging-station-and-its-beam', 'bundle': 'resources.assets', 'match': "Charging station new_DefaultMaterial_BaseColor", 'file': 'the-charging-station-panel.jpg', 'note': "the base colour texture the game ships for the charging station", 'max': 512, 'quality': 88},
+  {'entity': 'the-museums-laser', 'bundle': 'resources.assets', 'match': "security laser _DefaultMaterial_BaseColor", 'file': 'the-museums-laser-texture.jpg', 'note': "the base colour texture the game ships for the security laser", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
