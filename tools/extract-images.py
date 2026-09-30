@@ -193,6 +193,8 @@ MAPPINGS = [
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'sharedassets0.assets', 'match': "level arena 01", 'file': 'the-level-themes-and-what-they-hold-arena.jpg', 'note': "the game's own picture for its arena level theme", 'max': 1024, 'quality': 84},
   # The cart entry names the handle and its grab point; this asset is the arrow the game draws on that handle.
   {'entity': 'the-cart-as-an-object', 'bundle': 'resources.assets', 'match': "cart handle arrow", 'file': 'the-cart-as-an-object-arrow.jpg', 'note': "the arrow the game draws on the cart's handle", 'max': 512, 'quality': 88},
+  # The cosmetics entry names the overlays laid over the avatar; this asset is the bandage overlay the game ships.
+  {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'resources.assets', 'match': "cosmetic bandages_DefaultMaterial_BaseColor", 'file': 'cosmetics-and-the-token-machine-bandages.jpg', 'note': "the bandage overlay the game ships for the avatar, named as a cosmetic", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

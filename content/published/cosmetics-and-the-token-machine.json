@@ -34,6 +34,10 @@
     {
       "claim": "A cosmetic can be hidden again, and the game keeps its own interface for tokens and cosmetic objects.",
       "evidence": "identifiers: CosmeticHideCondition, CosmeticTokenUI, CosmeticWorldObjectUI, PlayerAvatarMenu"
+    },
+    {
+      "claim": "Bandages are an overlay of their own, named as a cosmetic among the layers the avatar wears.",
+      "evidence": "identifier: cosmetic bandages_DefaultMaterial_BaseColor"
     }
   ],
   "related": [
@@ -41,6 +45,14 @@
     "how-upgrades-are-kept-track-of"
   ],
   "images": [
+    {
+      "file": "mapped/cosmetics-and-the-token-machine-bandages.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The bandage overlay the game ships for the avatar, a mottled sheet of pale wraps and dark straps.",
+        "zh": "游戏给角色准备的绷带层贴图：浅色包扎与深色绑带的斑驳图面。"
+      }
+    },
     {
       "file": "mapped/cosmetics-and-the-token-machine-token.jpg",
       "kind": "game",

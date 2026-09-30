@@ -1476,6 +1476,18 @@
       "height": 512,
       "bytes": 31960,
       "sha256": "1751e69277c44a35e454c1fed05a506e63ac40cc0d4419232b16b49e6fe7a88a"
+    },
+    {
+      "entity": "cosmetics-and-the-token-machine",
+      "kind": "game",
+      "file": "mapped/cosmetics-and-the-token-machine-bandages.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "cosmetic bandages_DefaultMaterial_BaseColor",
+      "note": "the bandage overlay the game ships for the avatar, named as a cosmetic",
+      "width": 512,
+      "height": 512,
+      "bytes": 68891,
+      "sha256": "dec019df738583f5124772ad25d62f7bfaa2bc1ebaa03ebc9a753ae96328215c"
     }
   ]
 }
