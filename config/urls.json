@@ -3030,6 +3030,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-thrown-grenade.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-tick-and-its-mouth.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3050,12 +3055,22 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-tricycle-riders-rig.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-truck-and-the-end-of-a-run.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/entries/the-truck-screen.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tumble-wings-upgrade.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3360,22 +3375,7 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/reference/notes/the-thrown-grenade.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
       "url": "/reference/notes/the-token-machines-show.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-tricycle-riders-rig.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-tumble-wings-upgrade.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

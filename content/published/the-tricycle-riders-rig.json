@@ -40,6 +40,14 @@
   ],
   "images": [
     {
+      "file": "mapped/the-tricycle-riders-rig-tricycle.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The albedo texture taken from the game of the tricycle the rider monster arrives on.",
+        "zh": "取自游戏的骑行怪物所乘三轮车的反照率贴图。"
+      }
+    },
+    {
       "file": "the-tricycle-riders-rig.svg",
       "kind": "diagram",
       "alt": {
@@ -52,5 +60,5 @@
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

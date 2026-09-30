@@ -1380,6 +1380,42 @@
       "height": 64,
       "bytes": 1611,
       "sha256": "6abd1c3e75af477986513535c004d6a5c612ec3364fbbf6575edb29de8b9173e"
+    },
+    {
+      "entity": "the-thrown-grenade",
+      "kind": "game",
+      "file": "mapped/the-thrown-grenade-grenade.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Grenades Base",
+      "note": "the base colour texture the game ships for the grenade the player throws",
+      "width": 512,
+      "height": 512,
+      "bytes": 33712,
+      "sha256": "a083e86f5a2f7ed25c8a6cd2c489fbdfa0ec00716599585e4b596c15d24e604b"
+    },
+    {
+      "entity": "the-tricycle-riders-rig",
+      "kind": "game",
+      "file": "mapped/the-tricycle-riders-rig-tricycle.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "tricycle_bike_Albedo",
+      "note": "the albedo texture of the tricycle the rider monster arrives on",
+      "width": 512,
+      "height": 512,
+      "bytes": 62464,
+      "sha256": "a9f4e6b04ef1eb83ab2188c1bd7bdd61475efacf6fb89bf9853c52fb4bd1ac4d"
+    },
+    {
+      "entity": "the-tumble-wings-upgrade",
+      "kind": "game",
+      "file": "mapped/the-tumble-wings-upgrade-wings.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Upgrade_Tumble-Wings_Albedo",
+      "note": "the albedo texture the game ships for the tumble wings upgrade",
+      "width": 512,
+      "height": 512,
+      "bytes": 48169,
+      "sha256": "c294a972e9a6a2c1f88b392da612d70439274804b09254a869025156e33ff6be"
     }
   ]
 }
