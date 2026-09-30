@@ -135,6 +135,7 @@ MAPPINGS = [
   {'entity': 'the-heart-hugger', 'bundle': 'resources.assets', 'match': "HeartHuggerBaseColor", 'file': 'the-heart-hugger-texture.jpg', 'note': "the colour texture the game ships for the heart hugger monster", 'max': 512, 'quality': 88},
   {'entity': 'the-slow-mouth', 'bundle': 'resources.assets', 'match': "enemy slow mouth player mouth", 'file': 'the-slow-mouth-texture.jpg', 'note': "the mouth texture the game puts on the player when the slow mouth attaches", 'max': 512, 'quality': 88},
   {'entity': 'the-animal', 'bundle': 'resources.assets', 'match': "Animal_Albedo", 'file': 'the-animal-texture.jpg', 'note': "the colour texture the game ships for the animal monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-duck-monster', 'bundle': 'resources.assets', 'match': "duckckckck_Enemy_Duck_BaseColor", 'file': 'the-duck-monster-texture.jpg', 'note': "the colour texture the game ships for the duck monster", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

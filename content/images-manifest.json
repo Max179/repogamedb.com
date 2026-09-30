@@ -912,6 +912,18 @@
       "height": 512,
       "bytes": 40451,
       "sha256": "4f49108635c2dc3e7e11e052259402a1c24bfbe230e5c2a9f7d0ead8a390236f"
+    },
+    {
+      "entity": "the-duck-monster",
+      "kind": "game",
+      "file": "mapped/the-duck-monster-texture.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "duckckckck_Enemy_Duck_BaseColor",
+      "note": "the colour texture the game ships for the duck monster",
+      "width": 512,
+      "height": 512,
+      "bytes": 56774,
+      "sha256": "925a45a3ae88657f03a7b1a77e427d59a44003f57829c3d57516b7c67dd10c66"
     }
   ]
 }

@@ -1,0 +1,83 @@
+{
+  "id": "the-duck-monster",
+  "title": "The duck monster and its mouth",
+  "category": "Enemies",
+  "summary": "The duck monster in R.E.P.O. floats, flaps and bites: the game springs its body and head, extends and retracts its mouth with sounds of its own, and gives it feather particles when it is hit.",
+  "body": [
+    "The duck monster is built like the other floating creatures. Its body and its head each hang on a spring with a target of their own, so it drifts and turns rather than moving as one rigid shape.",
+    "It keeps a rotation spring and a collider named for a bucket. The spring is what gives the body its weight when it turns, and the collider ties it to the game's own props rather than being a shape invented for it.",
+    "It follows an offset rather than a point. That is how a monster can hover a little above and in front of where it is heading, which is what makes a floating creature look like it is flying rather than being dragged along the floor.",
+    "Hitting it produces feathers. There is a feather particle of its own, so the duck comes apart in the material it is made of rather than in generic pieces.",
+    "Its mouth is the part that matters. Extending and retracting the mouth each have a sound, which is why the moment before a bite can be heard as the beak coming out.",
+    "It can fly as well as hover. There are flap and loop sounds for flying, so a duck that has decided to move is audible the whole time it is in the air, not only when it starts.",
+    "It quacks, steps, jumps and transforms. Alongside the quack there are sounds for a footstep, a jump and a change of form, and it has a sound for noticing a player.",
+    "Being stunned has a start and a stop, being hurt has a sound with a pause timer of its own, and dying has its own sound, so the duck is audible at every stage of an encounter.",
+    "The image beside this entry is the game's own: the colour texture of the duck monster.",
+    "What this entry does not tell you: how much damage a bite does, how high it flies, or how often one appears. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Its body and its head each hang on a spring with a target of their own.",
+      "evidence": "identifiers: bodySpring, bodyTransform, bodyTargetTransform, headLookAtSpring, headLookAtTarget, headLookAtSource"
+    },
+    {
+      "claim": "It has a rotation spring and a collider named for a bucket.",
+      "evidence": "identifiers: rotationSpring, duckBucketCollider"
+    },
+    {
+      "claim": "It follows a target with an offset of its own.",
+      "evidence": "identifiers: followOffsetTransform, enemy"
+    },
+    {
+      "claim": "Being hit produces feather particles of its own.",
+      "evidence": "identifier: featherParticles"
+    },
+    {
+      "claim": "Extending and retracting its mouth each have a sound.",
+      "evidence": "identifiers: mouthExtendSound, mouthRetractSound"
+    },
+    {
+      "claim": "It has flap and loop sounds for flying.",
+      "evidence": "identifiers: flyFlapSound, flyLoopSound"
+    },
+    {
+      "claim": "It quacks and has sounds for a footstep, a jump, a change of form and noticing a player.",
+      "evidence": "identifiers: quackSound, footstepSound, jumpSound, transformSound, noticeSound"
+    },
+    {
+      "claim": "Being stunned has a start and a stop, being hurt has its own sound with a pause timer, and dying has its own sound.",
+      "evidence": "identifiers: stunSound, stunStopSound, hurtSound, soundHurtPauseTimer, deathSound"
+    },
+    {
+      "claim": "Biting and its attack loop have sounds of their own.",
+      "evidence": "identifiers: biteSound, attackLoopSound"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "the-exploding-rubber-duck"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-duck-monster-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the duck monster.",
+        "zh": "游戏为鸭子怪提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "the-duck-monster.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the duck drifts on its springs, extends its mouth, flaps to fly, bites, and comes apart into feathers.",
+        "zh": "示意图：鸭子以弹簧漂浮、伸出嘴部、振翅飞行、咬击，并散成羽毛。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
