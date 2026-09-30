@@ -6,7 +6,8 @@
   "body": [
     "Valuables are not all the same kind of object. The wizard level's things are named in the game's own data as separate kinds of valuable, which is why they behave as loot rather than as scenery you walk past.",
     "A broom is one of them. The game names a broom as a valuable in its own right, so it can be picked up, thrown into the cart and sold with the rest of the haul.",
-    "An hourglass is another. There is a valuable for the wizard's time glass, and the game ships a colour texture for it: that texture is the first image beside this entry.",
+    "An hourglass is another. There is a valuable for the wizard's time glass, and the game ships a colour texture for it: that texture is the first image beside this entry. The glass also carries its own effects — a transform for its particles with one system for swirl and another for glitter, a material and a light of its own, and a looping sound.",
+
     "A staff is the third one the game names. The wizard's staff is its own kind of valuable as well, which matters because the level is also full of props that look expensive but are not named as loot at all.",
     "The level holds more wizard objects than those three. The game ships artwork for a cube of knowledge, a goblin head, a sword and a power crystal, and the files also group a set of small wizard valuables together, so the themed loot is wider than the three kinds named above.",
     "What that means in practice: what you can carry is decided by what the game names, not by what looks valuable, and the wizard level is where that difference is easiest to see. If you are unsure whether something is loot, the test is whether it can be picked up.",
@@ -32,6 +33,10 @@
     {
       "claim": "The files group a set of small wizard valuables together.",
       "evidence": "asset name: tiny pack_Wizard tiny valuables_Normal"
+    },
+    {
+      "claim": "The time glass keeps a transform for its particles with one system for swirl and one for glitter, its own material and light, and a looping sound.",
+      "evidence": "identifiers: particleSystemTransform, particleSystemSwirl, particleSystemGlitter, timeGlassMaterial, timeGlassLight, soundTimeGlassLoop"
     },
     {
       "claim": "Whether an object counts as loot is decided by the game's own naming rather than by how it looks.",

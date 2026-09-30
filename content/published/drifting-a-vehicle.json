@@ -14,6 +14,7 @@
     "The drift is lit and drawn. There are drifting particles with a transform of their own, and a drift light with settings that differ by drift level, so the effect changes as the drift gets harder rather than staying one colour.",
     "It has a loop of its own. The drift sound loop runs between a lowest and a highest pitch, which is why the noise rises with the slide instead of repeating flatly.",
     "Staying fast rewards it. There are separate boost times for full speed and for low speed, a threshold for what counts as full speed, and rates for how the boost grows over time and at hyper speed.",
+    "Each level of a drift is set up separately. The settings hold a roll angle and a yaw offset, along with offsets for how the mesh sits sideways, how far it is turned and how far it drops forward, which is how a harder slide can look different from a light one.",
     "The drift is drawn at more than one strength. There are drifting particles for three levels, with a particle set aside for the moment the first boost level is reached, so a light slide and a hard one do not throw the same effect.",
     "The vehicle is configured around the drift as well. The boost has a forward push and a speed multiplier of its own, and the body carries a force multiplier, an extra turn angle you may take by hand and the colliders it is made of.",
     "It is felt as well as seen. There are rumble strengths for position and rotation, a rumble speed and a multiplier when the boost is active, so a drift reaches the controller rather than only the screen.",
@@ -71,6 +72,10 @@
     {
       "claim": "The boost has a forward push and a speed multiplier of its own, and the vehicle records a force multiplier, an extra turn angle it may take by hand and its own colliders.",
       "evidence": "identifiers: driftBoostLevel2ForwardBoost, driftBoostLevel2SpeedBoostMultiplier, forceMultiplier, manualTurnExtraAngle, vehicleColliders"
+    },
+    {
+      "claim": "Each drift level carries settings of its own: a roll angle, a yaw offset and offsets for how the mesh sits horizontally, how far it is turned, and how far it drops forward.",
+      "evidence": "identifiers: DriftLevelSettings, rollAngle, yawOffset, meshHorizontalOffset, meshYRotationOffset, meshDownOffset, meshForwardOffset"
     }
   ],
   "related": [
