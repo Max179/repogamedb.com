@@ -1,0 +1,69 @@
+{
+  "id": "reading-the-music-and-the-radio",
+  "title": "Reading the music and the radio",
+  "tier": "published",
+  "kind": "article",
+  "target": "How music works in R.E.P.O.: the shop's radio is an object with its own clips, while a level's music is run by a manager whose states tell you whether something is near, has seen you or has you, with ambience that can be broken by named interruptions.",
+  "version": "R.E.P.O. 0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A run in progress",
+    "A shop visit between runs",
+    "A moment to listen"
+  ],
+  "steps": [
+    {
+      "do": "Treat the shop's radio as an object rather than a settings toggle, because it has a music source, a speaker and a set of clips of its own.",
+      "because": "the radio is an object with a music source of its own and its own set of clips (ShopRadio, musicSource, speaker, shopMusic, shopMusicClips)"
+    },
+    {
+      "do": "Expect the radio to misbehave as part of its behaviour, because it has a glitch sound and a loop for it.",
+      "because": "it has its own glitch sound and a loop for it (soundGlitch, glitchLoop)"
+    },
+    {
+      "do": "Watch it as well as listen, because it can spark and smoke.",
+      "because": "it can spark and smoke as part of its behaviour (spark, smoke)"
+    },
+    {
+      "do": "Treat the level's music as information rather than atmosphere, because it is run by a manager with states of its own, including a scare-only state.",
+      "because": "the music is run by a manager with states for on, off and scare-only (MusicManager, MusicMixerOn, MusicMixerOff, MusicMixerScareOnly)"
+    },
+    {
+      "do": "Learn the three warning states: something being near, being sighted and catching someone are separate pieces of music.",
+      "because": "a monster being near, being sighted and catching someone are three separate musical states (MusicEnemyNear, MusicEnemySighting, MusicEnemyCatch)"
+    },
+    {
+      "do": "Do not expect the level's music to run continuously, because it is played with a fade and a wait between pieces.",
+      "because": "level music is played with a fade curve and a shortest and longest wait between pieces (LevelMusic, fadeCurve, cooldownTimeMin, cooldownTimeMax)"
+    },
+    {
+      "do": "Know that a level's background sound is data of its own: a looping clip at a volume.",
+      "because": "a level's ambience is its own data: a looping clip and a volume (LevelAmbience, loopClip, loopVolume)"
+    },
+    {
+      "do": "Expect that ambience to be interrupted, because it keeps a list of breakers.",
+      "because": "the ambience carries a list of breakers (breakers)"
+    },
+    {
+      "do": "When the background sound stops, look for the cause: a breaker is a named interruption with its own sound and volume.",
+      "because": "a breaker is a named interruption with its own sound and volume (LevelAmbienceBreaker, name, sound, volume)"
+    },
+    {
+      "do": "In the shop, decide what the radio is for knowing that its clips are its own set rather than the level's, so shop music says nothing about a monster.",
+      "because": "the shop radio carries its own set of music clips (shopMusic, shopMusicClips)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating the level's music as background and missing the piece that means something has seen you.",
+    "Assuming silence means safety, when the ambience is broken by named interruptions.",
+    "Expecting continuous music when the level fades out and waits between pieces.",
+    "Reading the shop radio as a monster warning, when its clips are a set of its own."
+  ],
+  "relatedEntities": [
+    "the-shop-radio",
+    "the-music-of-a-level",
+    "enemies-and-their-behaviour"
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each step is listed on the technical reference pages; nothing here is estimated."
+  ]
+}
