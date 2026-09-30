@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Dealing with the monster that comes apart",
+    "url": "/articles/dealing-with-the-monster-that-comes-apart.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The bomb thrower",
     "url": "/entries/the-bomb-thrower.html",
     "kind": "New entry"
@@ -63,12 +69,6 @@
     "date": "2026-10-01",
     "title": "The baby head that keeps waking up",
     "url": "/entries/the-baby-head-valuable.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The traffic light that is also a trap",
-    "url": "/entries/the-traffic-light-valuable.html",
     "kind": "New entry"
   }
 ]
