@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Protecting a haul in the valuables box",
+    "url": "/articles/protecting-a-haul-in-the-valuables-box.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Watching a run after you go down",
+    "url": "/articles/watching-a-run-after-you-go-down.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Using a vehicle as a weapon without wrecking it",
+    "url": "/articles/using-a-vehicle-as-a-weapon-without-wrecking-it.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Spending tokens without regretting it",
+    "url": "/articles/spending-tokens-without-regretting-it.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Dealing with the monster that carries a bomb",
     "url": "/articles/dealing-with-the-monster-that-carries-a-bomb.html",
     "kind": "New guide"
@@ -8,7 +32,7 @@
   {
     "date": "2026-10-01",
     "title": "The eye that follows you",
-    "url": "/reference/notes/the-eye-that-follows-you.html",
+    "url": "/entries/the-eye-that-follows-you.html",
     "kind": "New entry"
   },
   {
@@ -20,7 +44,7 @@
   {
     "date": "2026-10-01",
     "title": "The monster that grabs heads",
-    "url": "/reference/notes/the-monster-that-grabs-heads.html",
+    "url": "/entries/the-monster-that-grabs-heads.html",
     "kind": "New entry"
   },
   {
@@ -58,17 +82,5 @@
     "title": "The boosts a vehicle earns",
     "url": "/entries/the-boosts-a-vehicle-earns.html",
     "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Reading the music and the radio",
-    "url": "/articles/reading-the-music-and-the-radio.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Following the game's own hints to loot",
-    "url": "/articles/following-the-hints-to-loot.html",
-    "kind": "New guide"
   }
 ]

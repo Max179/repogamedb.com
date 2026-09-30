@@ -233,6 +233,13 @@ try {
   ok('the top navigation is exactly the five player sections, in order',
     NAV.length === expectedNav.length && NAV.every(([h], i) => h === expectedNav[i]) &&
     !NAV.some(([h]) => h === '/reference/' || h === '/collection.html'), NAV.map(([h]) => h).join(' '));
+
+  // The "what's new" list is a set of internal links, so a stale URL there is a broken link on a player page.
+  const updates = JSON.parse(readFileSync('content/updates.json', 'utf8'));
+  const badUpdates = updates.filter((u) => !u.date || !u.title || !u.kind || !u.url || !existsSync(join(dir, String(u.url).replace(/^\//, ''))));
+  ok('every item on the updates page has a date, a title, a kind and a link that exists',
+    Array.isArray(updates) && updates.length > 0 && badUpdates.length === 0,
+    badUpdates.slice(0, 4).map((u) => u.url).join(', '));
   ok('the home page leads with the game, not with build statistics or internal terminology', (() => {
     const h = readFileSync(join(dir, 'index.html'), 'utf8').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
     return !/\b(schema|il2cpp|assembly-csharp|metadata|namespace|class|classes|field|fields)\b/i.test(h) && !/gameClasses|engineClasses/.test(h);
