@@ -8,6 +8,7 @@
     "The handover is staged rather than instant. The machine has its own animation and a confetti effect for the moment a cosmetic is revealed, and the reveal runs on a screen that spins up, then settles.",
     "Wearing a cosmetic is about the avatar rather than the whole character. The player figure is split into parts that each carry a default surface, and a cosmetic is laid over those surfaces, which is why a hat lands on the head instead of covering the body.",
     "You are not stuck with what you pull. A cosmetic can be hidden again, and the game keeps a menu for your avatar as well as its own interface for the tokens and for cosmetic objects in the world.",
+    "The machine's own parts are recorded too. It has a transform for what it hands over, with a curve for the cosmetic arriving and another for it leaving, a screen with plain and new text and a localised asset behind that text, and debug settings that name a cosmetic and its asset, which is how the reveal can be looked at without spending anything.",
     "What this entry does not tell you: what a spin costs, the odds of each grade, or how many cosmetics the game ships. We have not verified those numbers, so we do not print them."
   ],
   "facts": [
@@ -42,6 +43,10 @@
     {
       "claim": "The cosmetic side ships icons of its own for clothing and for colour.",
       "evidence": "identifiers: clothes_icon, color_icon"
+    },
+    {
+      "claim": "The machine carries its own transform with a curve going in and a curve going out, text for its screen in plain and new versions with a localised asset, and debug settings for a cosmetic and its asset.",
+      "evidence": "identifiers: cosmeticTransform, cosmeticTransformCurveIn, cosmeticTransformCurveOut, screenCosmeticTexts, screenCosmeticTextsNew, screenCosmeticTextsNewLocalizedAsset, debugCosmetic, debugCosmeticAsset"
     }
   ],
   "related": [
