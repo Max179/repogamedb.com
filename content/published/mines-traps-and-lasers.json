@@ -59,14 +59,6 @@
       }
     },
     {
-      "file": "mapped/mines-traps-and-lasers-trap.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for a stun trap.",
-        "zh": "游戏为眩晕陷阱提供的颜色贴图。"
-      }
-    },
-    {
       "file": "mines-traps-and-lasers.svg",
       "kind": "diagram",
       "alt": {
