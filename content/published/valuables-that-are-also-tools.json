@@ -1,0 +1,91 @@
+{
+  "id": "valuables-that-are-also-tools",
+  "title": "Valuables that are also tools",
+  "category": "Valuables",
+  "summary": "Several of the valuables in R.E.P.O. are devices rather than ornaments: a flamethrower and an extinguisher run on fuel, a jackhammer makes dust, and the ice saw and the barrel trap anyone who disturbs them.",
+  "body": [
+    "Not every valuable in R.E.P.O. only sits there waiting to be carried. Several of them are tools, and the game keeps them as valuables with a device inside, so what makes one worth money is also what makes it useful.",
+    "A flamethrower is one of them. It has a fuel timer, a trigger mesh and emitters that mark where the flame ends, along with a sound for when it runs empty, which is why it can be spent rather than only carried around.",
+    "A fire extinguisher works the same way. It uses the same kinds of parts — a fuel timer, a trigger and flame emitters — so putting out a fire depends on how much is left in the device rather than on a switch that is on or off.",
+    "A jackhammer is a valuable that makes a mess. It has its own start, end and looping sounds with an impact loop, a collider, and particles for dirt and for dust, so breaking something open is a noisy job the game has modelled rather than a single animation.",
+    "Some of them are traps as well as loot. The ice saw is a trap that happens to be worth taking: it has a triggered state and an active state, a timer that turns it on, a blade with a curve and a speed of its own, spark particles, a collider that hurts, and a level of rarity that decides how likely it is to go off at all.",
+    "A barrel is in the same position. It is a trap valuable rather than a plain object, which is why disturbing one is a decision rather than a formality.",
+    "Others play music. There is a musical valuable with a set of keys, an octave range, a volume and a pitch shift, so a valuable can be something you play rather than only something you carry.",
+    "One of them is a way of looking around. The crystal ball keeps a looping sound, an aim direction and a camera position of its own.",
+    "The images beside this entry are the game's own: the jackhammer and the fire extinguisher that the game itself files as valuables.",
+    "What this entry does not tell you: what any of these is worth, how much fuel one holds, or how likely a trap valuable is to trigger. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A flamethrower is a valuable with a fuel timer, a trigger and flame emitters, and a sound for running empty.",
+      "evidence": "identifiers: FlamethrowerValuable, fuelTimer, triggerMesh, semiFlames, soundFlameEmpty"
+    },
+    {
+      "claim": "The fire extinguisher uses the same kinds of parts as the flamethrower.",
+      "evidence": "identifiers: FireExtinguisherValuable, fuelTimer, triggerMesh, Center, flameEndSquirt"
+    },
+    {
+      "claim": "The jackhammer has start, end and looping sounds with an impact loop, a collider and particles for dirt and dust.",
+      "evidence": "identifiers: JackhammerValuable, soundStart, soundEnd, soundLoop, soundImpactLoop, dirtParticles, dustParticles"
+    },
+    {
+      "claim": "The ice saw is a trap as well as a valuable, with triggered and active states, a timer and a rarity level for triggering.",
+      "evidence": "identifiers: IceSawValuable, trapTriggered, trapActive, triggerOnTimer, trapActivateRarityLevel"
+    },
+    {
+      "claim": "The ice saw has a blade with its own curve and speed, spark particles and a collider that hurts.",
+      "evidence": "identifiers: blade, bladeCurve, bladeSpeed, sparkParticles, hurtCollider, sawTimer"
+    },
+    {
+      "claim": "A barrel is also a trap valuable rather than a plain object.",
+      "evidence": "identifiers: BarrelValuable, trapTriggered, trapActive, triggerOnTimer"
+    },
+    {
+      "claim": "The musical valuable keeps its own keys, octave range, volume and pitch shift.",
+      "evidence": "identifiers: MusicalValuableLogic, musicKeys, numberOfOctaves, hasPitchShift, pitchShiftAmount, volume"
+    },
+    {
+      "claim": "The crystal ball keeps a looping sound, an aim direction and a camera position of its own.",
+      "evidence": "identifiers: CrystalBallValuable, soundLoop, aimTransform, cameraPositionTransform"
+    },
+    {
+      "claim": "The game files the jackhammer and the fire extinguisher as valuables in its own asset names.",
+      "evidence": "asset names: new valaubles_Valuable Arctic Jackhammer_BaseColor, new valaubles_Arctic Valuable Fire Extinguisher_BaseColor"
+    }
+  ],
+  "related": [
+    "the-valuables-you-can-find",
+    "valuables-that-fight-back"
+  ],
+  "images": [
+    {
+      "file": "mapped/valuables-that-are-also-tools-jackhammer.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the valuable jackhammer.",
+        "zh": "游戏为“珍贵物”电锤提供的颜色贴图。"
+      }
+    },
+    {
+      "file": "mapped/valuables-that-are-also-tools-extinguisher.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the valuable fire extinguisher, with its instruction labels.",
+        "zh": "游戏为“珍贵物”灭火器提供的颜色贴图，含使用说明标签。"
+      }
+    },
+    {
+      "file": "valuables-that-are-also-tools.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a tool valuable can run on fuel, make dust, play music, or be a trap that triggers when disturbed.",
+        "zh": "示意图：工具类珍贵物可消耗燃料、产生灰尘、演奏音乐，或作为触发式陷阱。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

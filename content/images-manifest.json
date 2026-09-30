@@ -768,6 +768,30 @@
       "height": 512,
       "bytes": 62464,
       "sha256": "a9f4e6b04ef1eb83ab2188c1bd7bdd61475efacf6fb89bf9853c52fb4bd1ac4d"
+    },
+    {
+      "entity": "valuables-that-are-also-tools",
+      "kind": "game",
+      "file": "mapped/valuables-that-are-also-tools-jackhammer.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "new valaubles_Valuable Arctic Jackhammer_BaseColor",
+      "note": "the colour texture the game ships for the valuable jackhammer",
+      "width": 512,
+      "height": 512,
+      "bytes": 48829,
+      "sha256": "da778eeb06594aae4e33fa11dd555fd4871b55a0eb3f2934adecec3d3d2f48c8"
+    },
+    {
+      "entity": "valuables-that-are-also-tools",
+      "kind": "game",
+      "file": "mapped/valuables-that-are-also-tools-extinguisher.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "new valaubles_Arctic Valuable Fire Extinguisher_BaseColor",
+      "note": "the colour texture the game ships for the valuable fire extinguisher",
+      "width": 512,
+      "height": 512,
+      "bytes": 59089,
+      "sha256": "2b5209f586266d97bb2c2d571c2d9239922514cc18163a92c84f1b76897abc28"
     }
   ]
 }

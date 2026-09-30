@@ -2840,6 +2840,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/valuables-that-are-also-tools.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/valuables-that-fight-back.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
