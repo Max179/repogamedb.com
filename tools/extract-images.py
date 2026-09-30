@@ -35,8 +35,7 @@ MAPPINGS = [
    'max': 1024, 'quality': 84},
   {'entity': 'carts-grabbing-and-physics', 'bundle': 'resources.assets', 'match': "cart handle_DefaultMaterial_BaseColor",
    'file': 'carts-grabbing-and-physics-handle.jpg', 'note': "base colour texture of the cart handle the crew grabs", 'max': 1024, 'quality': 84},
-  {'entity': 'choosing-when-to-leave', 'bundle': 'resources.assets', 'match': "Grandfather Clock_Albedo",
-   'file': 'choosing-when-to-leave-clock.jpg', 'note': "albedo texture of the shop clock the run is measured against", 'max': 1024, 'quality': 84},
+
   {'entity': 'enemies-that-move-differently', 'bundle': 'resources.assets', 'match': "Gnome_Albedo",
    'file': 'enemies-that-move-differently-gnome.jpg', 'note': "albedo texture of the gnome monster, one of the enemies that moves unlike the others", 'max': 1024, 'quality': 84},
   {'entity': 'extraction-run', 'bundle': 'resources.assets', 'match': "extraction point_DefaultMaterial_BaseColor",

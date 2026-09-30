@@ -170,18 +170,6 @@
       "sha256": "9071c170d172a9dbf5aea92b8416c4e54f2adb70dda7be8077db857df71d0153"
     },
     {
-      "entity": "choosing-when-to-leave",
-      "kind": "game",
-      "file": "mapped/choosing-when-to-leave-clock.jpg",
-      "sourceBundle": "resources.assets",
-      "assetName": "Grandfather Clock_Albedo",
-      "note": "albedo texture of the shop clock the run is measured against",
-      "width": 512,
-      "height": 512,
-      "bytes": 40433,
-      "sha256": "195cb7aa0d9546f62eab65394bcaab85c715416680fc04255f9a972649712653"
-    },
-    {
       "entity": "enemies-that-move-differently",
       "kind": "game",
       "file": "mapped/enemies-that-move-differently-gnome.jpg",
