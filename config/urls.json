@@ -2505,6 +2505,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/what-being-grabbed-feels-like.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/when-a-monster-has-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
