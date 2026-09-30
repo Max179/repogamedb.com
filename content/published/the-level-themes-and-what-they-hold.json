@@ -40,14 +40,6 @@
   ],
   "images": [
     {
-      "file": "mapped/the-level-themes-and-what-they-hold-arctic.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The base colour texture taken from the game of a valuable belonging to one of its level themes.",
-        "zh": "取自游戏的某关卡主题贵重物品基础色贴图。"
-      }
-    },
-    {
       "file": "the-level-themes-and-what-they-hold.svg",
       "kind": "diagram",
       "alt": {
@@ -60,5 +52,5 @@
   "sources": [
     "This installation of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "diagram-only"
 }

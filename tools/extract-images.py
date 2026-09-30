@@ -85,8 +85,6 @@ MAPPINGS = [
    'file': 'the-valuable-tracker-device.jpg', 'note': 'the base colour texture of the valuable tracker the crew carries', 'max': 512, 'quality': 88},
   {'entity': 'the-valuables-you-can-find', 'bundle': 'resources.assets', 'match': "lots of valuables_Valuable Crystal Ball Glass_BaseColor",
    'file': 'the-valuables-you-can-find-crystal.jpg', 'note': 'the base colour texture of one of the valuable families the game ships', 'max': 512, 'quality': 88},
-  {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Valuable Arctic Laptop_DefaultMaterial_BaseColor",
-   'file': 'the-level-themes-and-what-they-hold-arctic.jpg', 'note': 'the base colour texture of a valuable belonging to one of the level themes', 'max': 512, 'quality': 88},
   {'entity': 'the-save-and-your-run-record', 'bundle': 'sharedassets0.assets', 'match': "result screen_truck background",
    'file': 'the-save-and-your-run-record-background.jpg', 'note': 'the background the game itself uses for its end-of-run result screen', 'max': 1024, 'quality': 86},
   {'entity': 'batteries-and-charging', 'bundle': 'resources.assets', 'match': "Charging station new_DefaultMaterial_BaseColor",
