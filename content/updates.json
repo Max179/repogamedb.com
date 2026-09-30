@@ -1,6 +1,30 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Dealing with the monster that carries a bomb",
+    "url": "/articles/dealing-with-the-monster-that-carries-a-bomb.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The eye that follows you",
+    "url": "/reference/notes/the-eye-that-follows-you.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The bar that shows a charge",
+    "url": "/reference/notes/the-bar-that-shows-a-charge.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The monster that grabs heads",
+    "url": "/reference/notes/the-monster-that-grabs-heads.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Hearing the hidden before you see it",
     "url": "/articles/hearing-the-hidden-before-you-see-it.html",
     "kind": "New guide"
@@ -46,29 +70,5 @@
     "title": "Following the game's own hints to loot",
     "url": "/articles/following-the-hints-to-loot.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Reading a monster before it strikes",
-    "url": "/articles/reading-a-monster-before-it-strikes.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The tray that carries several valuables",
-    "url": "/entries/the-tray-valuable.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The gumball machine that hypnotises you",
-    "url": "/entries/the-gumball-machine-that-hypnotises.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The blender valuable and its bill soup",
-    "url": "/entries/the-blender-valuable.html",
-    "kind": "New entry"
   }
 ]
