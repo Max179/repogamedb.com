@@ -1,0 +1,56 @@
+{
+  "id": "dealing-with-a-monster-that-teleports",
+  "title": "Dealing with a monster that teleports",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to work in R.E.P.O. when a monster keeps arriving without walking: it covers what the game actually does before a monster teleports, what it does while you can see it, and how to make a room safe anyway.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A level where you have already met a monster",
+    "Something worth carrying out of that level",
+    "A crew that is still in contact"
+  ],
+  "steps": [
+    {
+      "do": "Treat a missing monster as a question about where it will be next, not about where it is.",
+      "because": "a monster that has lost you keeps moving through a roaming state of its own rather than standing still (EnemyStateRoaming)"
+    },
+    {
+      "do": "Expect it to leave a room without using the door.",
+      "because": "the roaming state carries a chance of teleporting rather than only walking (RoamingTeleportChance)"
+    },
+    {
+      "do": "Watch and listen for the arrival, because it is a staged event rather than a pop.",
+      "because": "the game keeps a teleport transform with an out and an in, each with its own curve, its own particles and its own sound (teleportTransform, animationCurveTeleportOut, animationCurveTeleportIn, particlesTeleportOut, particlesTeleportIn, audioTeleportOut, audioTeleportIn)"
+    },
+    {
+      "do": "Do not treat an empty screen as a safe room.",
+      "because": "the roaming state tracks how long a monster will stay on screen and a cooldown after that (RoamingOnScreenTime, RoamingOnScreenCooldown)"
+    },
+    {
+      "do": "Listen for the music rather than waiting to see it, and keep the crew close enough to hear the same thing.",
+      "because": "each monster has a stinger for being sighted and its own music for being near (sightingStinger, enemyNearMusic)"
+    },
+    {
+      "do": "Before choosing to fight, work out whether it is investigating or already chasing.",
+      "because": "the game keeps separate states for investigating, chasing and roaming (EnemyStateInvestigate, EnemyStateChase, EnemyStateRoaming)"
+    },
+    {
+      "do": "Move the loot before you move yourself.",
+      "because": "one of the monsters acts on what it can pick up off the floor, so anything left lying about is something it can use (EnemyValuableThrower)"
+    }
+  ],
+  "commonMistakes": [
+    "Assuming a monster that vanished has left the level.",
+    "Standing still to listen for it while the valuables are still on the floor.",
+    "Splitting up until only one member of the crew can hear the warning.",
+    "Fighting a monster that was only investigating, and giving away the room."
+  ],
+  "relatedEntities": [
+    "what-a-monster-does-when-it-has-not-seen-you",
+    "how-monsters-find-you"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

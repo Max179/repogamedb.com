@@ -23,7 +23,7 @@ game package and without `web/dist`.
 ## What the site contains
 - Published entries: 96; structured guides: 28. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
 - Real images extracted from the game with a recorded mapping: 88. 78 published entries carry one; the other 18 are diagram-only and labelled "original diagram, not a screenshot". Per-entry origin is in reports/image-coverage.md.
-- Build: `pages=825 indexable=153`. URL classification in `config/urls.json`: 153 keep.
+- Build: `pages=826 indexable=154`. URL classification in `config/urls.json`: 154 keep.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
 
 ## Publishing (not done, and why)
@@ -35,9 +35,4 @@ to Cloudflare Pages with `secrets.CLOUDFLARE_API_TOKEN` / `secrets.CLOUDFLARE_AC
 
 `node tools/deploy-check.mjs` prints exactly these as external blockers and reports 0 local failures.
 
-## Content breadth at handoff
-- Published entries: 28; structured guides: 10.
-- Real images extracted from the game with a recorded mapping: 29. 26 of 28 published entries carry one of those images; the other 2 are diagram-only, labelled as such on their own page and demoted out of the featured list. Per-entry origin (bundle, asset name, size, bytes, sha256) is in reports/image-coverage.md.
-- Build: `pages=588 indexable=59` (485 reference pages stay noindex); gates: 50 all passing; typecheck: exit 0.
-- Categories covered: Enemies, Extraction, Valuables, Items, Shop, Maps, Comms, Weapons, Physics, Cosmetics.
-- Every entry carries facts with grounding, a labelled diagram (or a game image recorded in `content/images-manifest.json`), related links and sources.
+Every entry and guide carries facts with grounding, a real game image or a labelled original diagram, related links and sources; the counts above are the current state.
