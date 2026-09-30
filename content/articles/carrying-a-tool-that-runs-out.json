@@ -1,0 +1,47 @@
+{
+  "id": "carrying-a-tool-that-runs-out",
+  "title": "Carrying a tool that runs out",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to plan around R.E.P.O. gear that discharges or wears out, given that different tools fail in different ways.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "Tools in the crew",
+    "Spare batteries or a charging station",
+    "A route you intend to finish"
+  ],
+  "steps": [
+    {
+      "do": "Work out which of your gear uses battery before you set out.",
+      "because": "tools such as the leaf blower carry a drain rate of their own (batteryDrainRate)"
+    },
+    {
+      "do": "Expect hitting something to cost more charge than using a tool as intended.",
+      "because": "the leaf blower drains separately when it hits a monster (batteryDrainOnEnemyHit)"
+    },
+    {
+      "do": "Watch gear that wears out as well as gear that runs down.",
+      "because": "melee weapons drain durability when they hit (durabilityDrainOnEnemiesAndPVP)"
+    },
+    {
+      "do": "Carry spares rather than relying on one item.",
+      "because": "batteries are carried items rather than a shared pool (ItemBattery)"
+    },
+    {
+      "do": "Leave a charging station where you will come back through it.",
+      "because": "the charging station is an object you place (ChargingStation)"
+    }
+  ],
+  "commonMistakes": [
+    "Setting out with no spare battery.",
+    "Using a tool as a weapon and being surprised by the drain.",
+    "Never checking a melee weapon after a fight."
+  ],
+  "relatedEntities": [
+    "the-leaf-blower",
+    "batteries-and-charging"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

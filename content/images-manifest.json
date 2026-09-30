@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-leaf-blower",
+      "kind": "game",
+      "file": "mapped/the-leaf-blower-blower.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "leafblower_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the leaf blower the crew carries",
+      "width": 512,
+      "height": 512,
+      "bytes": 85245,
+      "sha256": "90a4ce23fce4dae63e43ebef61df550dd4bfa1286651588a4fa04c5f085e7278"
+    },
+    {
       "entity": "melee-weapons",
       "kind": "game",
       "file": "mapped/melee-weapons-sword.jpg",

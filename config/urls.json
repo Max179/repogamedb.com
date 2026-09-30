@@ -15,6 +15,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/carrying-a-tool-that-runs-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/carrying-an-orb-without-draining-it.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2676,6 +2681,11 @@
     },
     {
       "url": "/entries/the-ladder.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-leaf-blower.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
