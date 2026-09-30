@@ -1,0 +1,60 @@
+{
+ "id": "the-player-list-and-what-a-row-shows",
+ "title": "The player list and what a row shows",
+ "category": "Co-op",
+ "summary": "Before a R.E.P.O. run starts the crew is a list: the game gives each listed player a name, a head of their own and a ping figure, and can put a crown on one side of a row and a second crown on the other.",
+ "body": [
+  "Every listed player is a row of its own. The game keeps the name it shows and the head it draws for that player, so the list is built from per-player information rather than from one string of text.",
+  "The row carries a connection figure as text. There is a ping readout beside the name, which is how the list can show how well each player is connected rather than only that they are there.",
+  "A row can be crowned. There is a crown on the left of the row and another on the right, so a player can be marked on either side rather than only with one badge.",
+  "A crown can also be forced. The game has a way to put a crown on a row rather than only letting it be chosen, which is how the list can show something the players did not pick themselves.",
+  "A name can be drawn bright, which is why one row can stand out from the rest without the row being a different row.",
+  "Each row also has hover and animation states of its own, so the list is a set of interfaces rather than a block of text that appears at once.",
+  "What this entry does not tell you: what a crown means, who decides it, or what the ping figure counts. We have not verified those points, so we do not print them."
+ ],
+ "facts": [
+  {
+   "claim": "Each listed player has a name and a head of their own.",
+   "evidence": "identifiers: playerName, playerHead"
+  },
+  {
+   "claim": "A row carries a ping figure as text.",
+   "evidence": "identifier: pingText"
+  },
+  {
+   "claim": "A row can be crowned on the left and on the right.",
+   "evidence": "identifiers: leftCrown, rightCrown"
+  },
+  {
+   "claim": "A crown can be forced onto a row rather than only chosen.",
+   "evidence": "identifier: forceCrown"
+  },
+  {
+   "claim": "A listed name can be drawn bright.",
+   "evidence": "identifier: brightName"
+  },
+  {
+   "claim": "A row has hover and animation states of its own.",
+   "evidence": "identifiers: MenuElementHover, MenuElementAnimations"
+  }
+ ],
+ "related": [
+  "the-lobby-and-spectating",
+  "staying-in-touch-with-the-crew"
+ ],
+ "images": [
+  {
+   "file": "the-player-list-and-what-a-row-shows.svg",
+   "kind": "diagram",
+   "alt": {
+    "en": "Diagram: a row of the player list carries a name and a head, a ping figure, crowns on the left and the right, and a bright name.",
+    "zh": "示意图：玩家列表的一行包含名字与头像、延迟数字、左右两侧的皇冠标记，以及高亮显示的名字。"
+   },
+   "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+  }
+ ],
+ "sources": [
+  "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+ ],
+ "imageTier": "diagram-only"
+}
