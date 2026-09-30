@@ -58,6 +58,7 @@ MAPPINGS = [
    'file': 'staying-in-touch-with-the-crew-radio.jpg', 'note': "base colour texture of the radio the crew uses to talk", 'max': 1024, 'quality': 84},
   {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Painting H 01",
    'file': 'the-museum-and-its-props-painting.jpg', 'note': "one of the paintings the game places in the museum level", 'max': 1024, 'quality': 84},
+  {'entity': 'the-money-head-in-the-museum', 'bundle': 'resources.assets', 'match': "moneyhead grungle_DefaultMaterial_BaseColor", 'file': 'the-money-head-in-the-museum-head.jpg', 'note': "the colour texture the game ships for the money-head museum prop", 'max': 512, 'quality': 88},
   {'entity': 'the-shop-between-runs', 'bundle': 'resources.assets', 'match': "Truck Depot_DefaultMaterial_BaseColor",
    'file': 'the-shop-between-runs-depot.jpg', 'note': "base colour texture of the depot the shop sits in between runs", 'max': 1024, 'quality': 84},
   {'entity': 'weapons-you-can-bring', 'bundle': 'resources.assets', 'match': "Guns_DefaultMaterial_BaseColor",

@@ -302,6 +302,18 @@
       "sha256": "c1beaaaa2d26f7ea88ee3bbbc94d2a0c7c06c0a72eb6d8ddab2ba7a9ecd76aef"
     },
     {
+      "entity": "the-money-head-in-the-museum",
+      "kind": "game",
+      "file": "mapped/the-money-head-in-the-museum-head.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "moneyhead grungle_DefaultMaterial_BaseColor",
+      "note": "the colour texture the game ships for the money-head museum prop",
+      "width": 512,
+      "height": 512,
+      "bytes": 40621,
+      "sha256": "7b7cfbfed3be65dfefc763fca7e2dae0b4c959985279083e6a05d3289e45f8c5"
+    },
+    {
       "entity": "the-shop-between-runs",
       "kind": "game",
       "file": "mapped/the-shop-between-runs-depot.jpg",

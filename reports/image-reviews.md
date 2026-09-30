@@ -54,12 +54,13 @@ compared against its note, and kept.
 | 2026-09-30 | mapped/the-exploding-rubber-duck-duck.jpg | rubber duck_DefaultMaterial_BaseColor | the-exploding-rubber-duck | ok with a note — a mostly flat yellow sheet, which is what a rubber duck looks like: the eyes, beak and leg are the readable parts |
 | 2026-09-30 | mapped/the-spinny-texture.jpg | Spinny_Albedo | the-spinny | ok with a note — the game's own colour sheet for the spinny: a mottled grey-brown atlas with a few distinctly coloured patches (a pink star, orange and brown wedges) and dark spots. It is an atlas rather than a portrait, and the low spread is the mottled ground; it is the game's own picture for this monster, so it is kept |
 | 2026-09-30 | mapped/the-elsa-in-two-sizes-fur.jpg | Elsa Fur Big | the-elsa-in-two-sizes | ok with a note — a small 64x64 greyscale fur card (a tuft of fur on a dark field), the game's own fur picture for the big size; kept because it is exactly the subject the entry names, with the size recorded here |
+| 2026-09-30 | mapped/the-money-head-in-the-museum-head.jpg | moneyhead grungle_DefaultMaterial_BaseColor | the-money-head-in-the-museum | ok with a note — a blue-grey atlas for the prop: a blotched face area with dark eye and mouth sockets in the upper half and flat UV bands below. It is an atlas rather than a portrait, but it is the game's own colour texture for this prop and was not flagged by the sanity pass |
 
 Nothing in any of the five batches was rejected, so no mapping or file was removed and the manifest still holds 104 records.
 
 ## Sanity pass before the eye check (tools/image-sanity.py)
 
-`tools/image-sanity.py` measures every exported file first: greyscale, with transparent pictures composited on the dark page background, flagging a file when it carries almost no variation (stddev below 12) or when more than 90% of its pixels sit within 6 of the median. The run for this build flagged 4 of 107 records:
+`tools/image-sanity.py` measures every exported file first: greyscale, with transparent pictures composited on the dark page background, flagging a file when it carries almost no variation (stddev below 12) or when more than 90% of its pixels sit within 6 of the median. The run for this build flagged 4 of 108 records:
 
 - **moving-loot-and-gear-crate.png** (stddev 10.3) — the wooden crate sheet, already opened above: planks and battens are visible, the low spread is because the wood is one tone. Kept.
 - **when-the-chat-box-will-not-open-emojis.jpg** (90%) — the emoji sheet the game uses with its chat box; the emoji sit on the game's own black field. Kept.
