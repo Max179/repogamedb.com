@@ -180,6 +180,11 @@ MAPPINGS = [
   {'entity': 'the-thrown-grenade', 'bundle': 'resources.assets', 'match': "Grenades Base", 'file': 'the-thrown-grenade-grenade.jpg', 'note': "the base colour texture the game ships for the grenade the player throws", 'max': 512, 'quality': 88},
   {'entity': 'the-tricycle-riders-rig', 'bundle': 'resources.assets', 'match': "tricycle_bike_Albedo", 'file': 'the-tricycle-riders-rig-tricycle.jpg', 'note': "the albedo texture of the tricycle the rider monster arrives on", 'max': 512, 'quality': 88},
   {'entity': 'the-tumble-wings-upgrade', 'bundle': 'resources.assets', 'match': "Upgrade_Tumble-Wings_Albedo", 'file': 'the-tumble-wings-upgrade-wings.jpg', 'note': "the albedo texture the game ships for the tumble wings upgrade", 'max': 512, 'quality': 88},
+  # The entry names a front and a back light with their own renderers, and the
+  # game ships a lamp texture for the vehicle; the other is the cosmetic
+  # machine's own screen, which the entry describes as the thing that shows.
+  {'entity': 'the-lights-and-beeps-on-a-vehicle', 'bundle': 'resources.assets', 'match': "truck lamp_DefaultMaterial_BaseColor", 'file': 'the-lights-and-beeps-on-a-vehicle-lamp.jpg', 'note': "the base colour texture the game ships for a lamp on the vehicle", 'max': 512, 'quality': 88},
+  {'entity': 'the-token-machines-show', 'bundle': 'resources.assets', 'match': "cosmetic machine_CosmeticShopMachine___Screen_BaseColor", 'file': 'the-token-machines-show-screen.jpg', 'note': "the base colour texture of the cosmetic machine's own screen", 'max': 512, 'quality': 88},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

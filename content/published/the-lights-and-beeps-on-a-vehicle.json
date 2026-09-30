@@ -54,6 +54,14 @@
   ],
   "images": [
     {
+      "file": "mapped/the-lights-and-beeps-on-a-vehicle-lamp.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The base colour texture taken from the game of a lamp on the vehicle.",
+        "zh": "取自游戏的车灯基础色贴图。"
+      }
+    },
+    {
       "file": "the-lights-and-beeps-on-a-vehicle.svg",
       "kind": "diagram",
       "alt": {
@@ -66,5 +74,5 @@
   "sources": [
     "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

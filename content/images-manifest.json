@@ -1416,6 +1416,30 @@
       "height": 512,
       "bytes": 48169,
       "sha256": "c294a972e9a6a2c1f88b392da612d70439274804b09254a869025156e33ff6be"
+    },
+    {
+      "entity": "the-lights-and-beeps-on-a-vehicle",
+      "kind": "game",
+      "file": "mapped/the-lights-and-beeps-on-a-vehicle-lamp.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "truck lamp_DefaultMaterial_BaseColor",
+      "note": "the base colour texture the game ships for a lamp on the vehicle",
+      "width": 512,
+      "height": 512,
+      "bytes": 36706,
+      "sha256": "9c03e42becd250c469ef97f2d75aa6feee1fcc6d7ef6b9884b6940cfac8debc5"
+    },
+    {
+      "entity": "the-token-machines-show",
+      "kind": "game",
+      "file": "mapped/the-token-machines-show-screen.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "cosmetic machine_CosmeticShopMachine___Screen_BaseColor",
+      "note": "the base colour texture of the cosmetic machine's own screen",
+      "width": 512,
+      "height": 512,
+      "bytes": 63800,
+      "sha256": "cbc103b89ce3057ca956235bd3db69d11c20128df107c669087d8b6111c8a02c"
     }
   ]
 }

@@ -2930,6 +2930,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-lights-and-beeps-on-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-money-head-in-the-museum.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3036,6 +3041,11 @@
     },
     {
       "url": "/entries/the-tick-and-its-mouth.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-token-machines-show.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3330,11 +3340,6 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/reference/notes/the-lights-and-beeps-on-a-vehicle.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
       "url": "/reference/notes/the-lobby-and-spectating.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3371,11 +3376,6 @@
     },
     {
       "url": "/reference/notes/the-things-that-are-not-loot.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-token-machines-show.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
