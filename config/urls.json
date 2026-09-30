@@ -50,6 +50,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/keeping-the-batteries-alive.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-a-level-before-you-commit.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2498,6 +2503,11 @@
       "url": "/entity/worldspaceuivaluelost.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entries/batteries-and-charging.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/entries/carts-grabbing-and-physics.html",

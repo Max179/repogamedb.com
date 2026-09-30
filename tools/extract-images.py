@@ -67,6 +67,8 @@ MAPPINGS = [
    'file': 'when-a-monster-has-you-bite.jpg', 'note': "albedo texture of the monster mouth that grabs a player", 'max': 1024, 'quality': 84},
   {'entity': 'what-being-grabbed-feels-like', 'bundle': 'resources.assets', 'match': "HeadGrabberBaseColor",
    'file': 'what-being-grabbed-feels-like-grabber.jpg', 'note': "albedo texture of the head-grabber monster, the enemy that takes hold of a player", 'max': 1024, 'quality': 84},
+  {'entity': 'batteries-and-charging', 'bundle': 'resources.assets', 'match': "Charging station new_DefaultMaterial_BaseColor",
+   'file': 'batteries-and-charging-station.jpg', 'note': 'base colour texture of the charging station the crew can use', 'max': 1024, 'quality': 84},
   {'entity': 'the-staffs', 'bundle': 'resources.assets', 'match': "Antigrav Staff_Albedo",
    'file': 'the-staffs-antigrav.jpg', 'note': 'albedo texture of one of the staffs the crew can bring', 'max': 512, 'quality': 88},
   {'entity': 'the-drone', 'bundle': 'resources.assets', 'match': "Drone",

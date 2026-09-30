@@ -1,0 +1,47 @@
+{
+  "id": "keeping-the-batteries-alive",
+  "title": "Keeping the batteries alive",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to keep the battery-powered gear in R.E.P.O. running across a run, using the batteries and the charging station the game already provides.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "Battery-powered gear in the crew",
+    "A charging station in the shop",
+    "Enough room to carry spares"
+  ],
+  "steps": [
+    {
+      "do": "Check what is running down before you leave the shop.",
+      "because": "battery-powered equipment has a visual state for its charge (BatteryVisualLogic)"
+    },
+    {
+      "do": "Take spares rather than one battery between you.",
+      "because": "batteries are carried items rather than a shared resource (ItemBattery)"
+    },
+    {
+      "do": "Leave the charging station where you will come back to it.",
+      "because": "the station is an object you place in the shop (ChargingStation)"
+    },
+    {
+      "do": "Work out which of your gear drains fastest and plan around it.",
+      "because": "equipment carries its own drain setting (batteryDrainPreset)"
+    },
+    {
+      "do": "Treat a battery upgrade as gear rather than a consumable.",
+      "because": "one of the upgrades is a battery itself (Upgrade_Death-Head-Battery_Albedo)"
+    }
+  ],
+  "commonMistakes": [
+    "Setting out with one battery between the whole crew.",
+    "Leaving gear switched on when nobody is using it.",
+    "Forgetting the charging station is in the shop rather than in the level."
+  ],
+  "relatedEntities": [
+    "batteries-and-charging",
+    "the-drone"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

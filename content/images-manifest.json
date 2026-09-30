@@ -362,6 +362,18 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "batteries-and-charging",
+      "kind": "game",
+      "file": "mapped/batteries-and-charging-station.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Charging station new_DefaultMaterial_BaseColor",
+      "note": "base colour texture of the charging station the crew can use",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 130553,
+      "sha256": "ccd7b6a9bcb01b5d6517bcd6551bc33861016d7a40188b9a04583ab75f1e03f6"
+    },
+    {
       "entity": "the-staffs",
       "kind": "game",
       "file": "mapped/the-staffs-antigrav.jpg",
