@@ -2755,6 +2755,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-cartoon-television.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-drone.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2976,6 +2981,11 @@
     },
     {
       "url": "/entries/what-being-grabbed-feels-like.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-game-records-about-each-monster.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

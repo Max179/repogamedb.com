@@ -1,0 +1,62 @@
+{
+  "id": "what-the-game-records-about-each-monster",
+  "title": "The record the game keeps for each monster",
+  "category": "Behaviour",
+  "summary": "Monsters in R.E.P.O. are described before they are placed: each one has a record with a name, a difficulty, a type, its health, its music cues and the presets for its own body.",
+  "body": [
+    "A monster in R.E.P.O. is described before it is put in a level. There is a checklist record for each one, and it carries the monster's name, a difficulty and a type, so the game knows what it is dealing with as data rather than in code.",
+    "The record fixes where the monster is centred and what it looks at when it kills. Keeping both on the record is how the game can line up a finishing blow without every monster needing its own script for it.",
+    "It carries the monster's music cues. There is a stinger for being sighted and a separate piece of music for when the monster is near, which is why the soundtrack can react before anything is visible.",
+    "It carries the monster's health. There is a maximum, a mesh the health is shown on, and a set of health objects for being hurt, for dying and for an impact, so what happens when a monster is damaged is configured rather than assumed.",
+    "It says whether the monster has a body of its own. A flag decides that, and the record goes on to give it a physics preset and an audio preset, which is how two monsters can sound and fall differently while sharing one system.",
+    "It lists the colliders that body uses and how it follows things: a follow behaviour, a custom gravity, a way of being grabbed, and position and rotation following. That is the whole vocabulary for making a monster move physically.",
+    "Because the record includes the difficulty and the type, the same body and the same music can be reused with a different setting, which is why the monsters can be tuned without being rebuilt.",
+    "None of this is the monster itself. The record is the description and the creature in the level is an instance of it, which is why a monster can be taken out and put back without forgetting what it is.",
+    "What this entry does not tell you: how much health any monster has, what its difficulty is set to, or what its music sounds like. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Each monster has a record with a name, a difficulty and a type.",
+      "evidence": "identifiers: EnemyChecklist, name, difficulty, type"
+    },
+    {
+      "claim": "The record holds where the monster is centred and what it looks at when it kills.",
+      "evidence": "identifiers: center, killLookAt"
+    },
+    {
+      "claim": "It holds a stinger for a sighting and the music for when the monster is near.",
+      "evidence": "identifiers: sightingStinger, enemyNearMusic"
+    },
+    {
+      "claim": "It holds health: a maximum, the mesh the health is shown on, and objects for being hurt, dying and an impact.",
+      "evidence": "identifiers: healthMax, healthMeshParent, healthOnHurt, healthOnDeath, healthImpact, healthObject"
+    },
+    {
+      "claim": "It says whether the monster has a rigid body and gives it physics and audio presets.",
+      "evidence": "identifiers: hasRigidbody, rigidbodyPhysAttribute, rigidbodyAudioPreset"
+    },
+    {
+      "claim": "It lists the body's colliders and its follow behaviours, including custom gravity, grabbing, position following and rotation following.",
+      "evidence": "identifiers: rigidbodyColliders, rigidbodyFollow, rigidbodyCustomGravity, rigidbodyGrab, rigidbodyPositionFollow, rigidbodyRotationFollow"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "what-a-monster-is-doing"
+  ],
+  "images": [
+    {
+      "file": "what-the-game-records-about-each-monster.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a record names the monster, sets its difficulty and health, chooses its music cues and describes the body it will be given.",
+        "zh": "示意图：记录为怪物命名、设定难度与生命值、选择音乐提示，并描述它将获得的身体。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

@@ -984,6 +984,30 @@
       "height": 512,
       "bytes": 53993,
       "sha256": "189f4b757e9d5145da86173747b426b2de8308a877a6edd4b6a64e464b33bd33"
+    },
+    {
+      "entity": "the-cartoon-television",
+      "kind": "game",
+      "file": "mapped/the-cartoon-television-cat.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Cartoon Cat Texture",
+      "note": "the picture the game itself uses for the cat in the cartoon the television plays",
+      "width": 256,
+      "height": 128,
+      "bytes": 22111,
+      "sha256": "625f304209734ed16128fb0530d2cd296e597e138666cdfab8c726ad26b03709"
+    },
+    {
+      "entity": "the-cartoon-television",
+      "kind": "game",
+      "file": "mapped/the-cartoon-television-mouse.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Cartoon Mouse Texture",
+      "note": "the picture the game itself uses for the mouse in the cartoon the television plays",
+      "width": 128,
+      "height": 64,
+      "bytes": 8077,
+      "sha256": "8ddca2af83adb3829b1e9084be82210df38813a1d303b627ad7013fb1b55523f"
     }
   ]
 }
