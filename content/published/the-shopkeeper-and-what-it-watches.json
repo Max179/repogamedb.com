@@ -1,0 +1,102 @@
+{
+  "id": "the-shopkeeper-and-what-it-watches",
+  "title": "The shopkeeper and what it watches",
+  "category": "Shop",
+  "summary": "The shopkeeper in R.E.P.O. is a machine with a job: it has a detection sphere, sensors with their own curves and sounds, a scan light and a line across the shop, a gun with two barrels that charge before it fires, a voice box with separate sets of lines, and forces for pushing itself free when it is stuck.",
+  "body": [
+    "The shopkeeper is a machine rather than a shop assistant. It is animated by a spring-driven pose system, and it carries a detection sphere with a collider for being awake and another for being asleep, so it is either watching or not rather than being a permanent overseer.",
+    "It has two sensors. A big one and a small one each have a curve of their own and a sound, and the small sensor has a value and a speed for how far it has moved, which is why the machine can be seen leaning towards what it has noticed.",
+    "It shows you what it sees. A scan light runs through an in, an out and a judging curve, with separate colours for seeing and for grabbing, while a line is drawn between two points from a start point to the player, with a width curve and its own colours.",
+    "It has a gun. There is a big barrel and a small one, a tip for each, an arm, and a cog on a spring, with curves for the barrel going out and coming back in. Where it aims is a horizontal and a vertical transform, so the gun tracks rather than pointing at a fixed spot.",
+    "It can be switched off. The machine has an on-off switch with its own light and sounds, separate curves for switching on and off, sounds for powering up and down and for its lights going on and off, and sensor lights and glowing body parts to go with them.",
+    "It grabs as well as shoots. There are grab and release sounds and a grab loop whose pitch has a lowest and a highest value, along with a colour for the emission while it is holding something.",
+    "Before it fires, it judges. A charge curve drives a light whose intensity has a maximum, particles whose scale has a maximum, a build-up loop whose pitch and volume each run between a lowest and a highest, and a shake on the gun measured by an angle and a speed.",
+    "Firing and hitting are their own events. There is a shooting sound for you and a second one for everyone, a shock wave, a flash with its own sound, lights for shooting and for hitting, and separate effects and transforms for the big and small shots and for the hit.",
+    "It talks. There is a voice box with a sound and its own source, and the clips are kept in separate sets for being angry, hurt, seeing, grabbing and judging, with a text mesh alongside them for the words.",
+    "It moves and it can be knocked about. There are small and big movement sounds, horizontal and vertical loops and an idle loop, and the machine carries forces and durations for being pushed, for a phase of being stuck, and for pushing itself backward, upward and around to get free.",
+    "It also waits things out. There is a distance and a duration for letting a ruckus settle, which is why the machine does not react to everything the moment it happens.",
+    "The image beside this entry is the game's own: the colour texture for the shopkeeper, showing its panels, vents and thruster parts.",
+    "What this entry does not tell you: how much damage its gun does, how long it takes to charge, or what it does when it catches you. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The shopkeeper is animated by a spring pose system and carries a detection sphere with an awake and a sleep collider.",
+      "evidence": "identifiers: ShopKeeper, pose, BotSystemSpringPoseAnimator, detectionSphere, awakeCollider, sleepCollider"
+    },
+    {
+      "claim": "It has a big and a small sensor, each with its own curve and sound, and the small sensor has a value and a speed.",
+      "evidence": "identifiers: BigSensor, SmallSensor, BigSensorCurve, SmallSensorCurve, smallSensorSound, bigSensorSound, SmallSensorLerp, SmallSensorLerpSpeed"
+    },
+    {
+      "claim": "A scan light runs through in, out and judging curves with separate colours for seeing and grabbing.",
+      "evidence": "identifiers: scanLight, scanLightInCurve, scanLightOutCurve, scanLightJudgeCurve, scanLightColorSee, scanLightColorGrab, scanSound"
+    },
+    {
+      "claim": "A line is drawn between two points from a start point to the player, with a width curve and colours for seeing and grabbing.",
+      "evidence": "identifiers: lineRenderer, linerendererSmall, lineRendererWidthCurve, lineBetweenTwoPoints, lineStartPoint, lineColorSee, lineColorGrab"
+    },
+    {
+      "claim": "It has a gun with a big and a small barrel, a tip for each, an arm, a cog on a spring and curves for the barrel moving out and in.",
+      "evidence": "identifiers: gunArm, gunCog, gunCogSpring, gunBarrelBig, gunBarrelSmall, gunTipBigTransform, gunTipSmallTransform, barrelCurveOut, barrelCurveIn, aimHorizontal, aimVertical"
+    },
+    {
+      "claim": "It can be switched on and off, with its own switch, light, curves, power and light sounds, sensor lights and glowing body parts.",
+      "evidence": "identifiers: OnOffSwitch, onOffSwitchLight, switchOnCurve, switchOffCurve, onOffSwitchSoundOn, onOffSwitchSoundOff, powerOn, powerDown, lightsOn, lightsOff, sensorLights, emissiveBodyParts, skeletonSkull, sparks"
+    },
+    {
+      "claim": "It grabs and releases with sounds and a loop whose pitch has a lowest and a highest value, plus an emission colour while holding.",
+      "evidence": "identifiers: grabSound, releaseSound, grabLoop, grabLoopSource, grabLoopPitchMin, grabLoopPitchMax, emissionColorGrab"
+    },
+    {
+      "claim": "It builds up before firing, with a charge curve, a light with a maximum intensity, particles with a maximum scale, pitch and volume ranges, and a gun shake with an angle and a speed.",
+      "evidence": "identifiers: judgeChargeCurve, judgeBuildUpLoop, barrelChargeLight, barrelChargeLightMaxIntensity, judgeChargeParticles, judgeChargeParticlesMaxScale, judgeBuildUpPitchMin, judgeBuildUpPitchMax, judgeBuildUpVolumeMin, judgeBuildUpVolumeMax, judgeGunShakeMaxAngle, judgeGunShakeSpeed, gunBarrelEmissionCharged"
+    },
+    {
+      "claim": "Firing and hitting have their own lights, effects and transforms, with a shooting sound split between you and everyone.",
+      "evidence": "identifiers: soundShoot, soundShootGlobal, shockWave, Flash, FlashSound, shootLight, hitLight, soundHit, shootEffectTransform, shootEffects, shootEffectSmallTransform, shootEffectsSmall, hitEffectTransform, hitEffects"
+    },
+    {
+      "claim": "Its voice lines are kept in separate sets for being angry, hurt, seeing, grabbing and judging, with a voice box, a source and a text mesh.",
+      "evidence": "identifiers: VoiceBox, voiceBoxSound, voiceBoxSoundClips, voiceBoxSoundClipsAngry, voiceBoxSoundClipsHurt, voiceBoxSoundClipsSee, voiceBoxSoundClipsGrab, voiceBoxSoundClipsJudge, voiceBoxSource, textMesh"
+    },
+    {
+      "claim": "It has movement and idle loops and forces and durations for being pushed, stuck and dislodged.",
+      "evidence": "identifiers: moveSmall, moveBig, moveLoopHorizontal, moveLoopVertical, idleLoop, stuckPushForce, stuckPhaseDuration, dislodgeBackwardForce, dislodgeUpForce, dislodgeTorqueForce"
+    },
+    {
+      "claim": "It waits out a ruckus over a distance and for a duration before reacting.",
+      "evidence": "identifiers: ruckusWaitDistance, ruckusWaitDuration"
+    },
+    {
+      "claim": "The game ships a colour texture for the shopkeeper.",
+      "evidence": "asset name: shopkeeper_DefaultMaterial_BaseColor"
+    }
+  ],
+  "related": [
+    "the-shop-between-runs",
+    "how-monsters-find-you"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-shopkeeper-texture.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The colour texture the game ships for the shopkeeper, with its panels, vents and thruster parts.",
+        "zh": "游戏为店主机器人提供的颜色贴图，可见面板、通风口与推进部件。"
+      }
+    },
+    {
+      "file": "the-shopkeeper-and-what-it-watches.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the shopkeeper's sensors wake it, it scans and speaks, it grabs or judges, and the gun charges before it fires.",
+        "zh": "示意图：店主的传感器将其唤醒、它扫描并发声、抓取或审判，枪在开火前蓄能。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
