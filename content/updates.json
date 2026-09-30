@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-09-30",
+    "title": "The money head in the museum",
+    "url": "/entries/the-money-head-in-the-museum.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-09-30",
     "title": "The elsa at two sizes",
     "url": "/entries/the-elsa-in-two-sizes.html",
     "kind": "New entry"
@@ -62,11 +68,5 @@
     "title": "Making the shop visit count",
     "url": "/articles/making-the-shop-visit-count.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-09-30",
-    "title": "How your own condition is shown",
-    "url": "/reference/notes/how-your-own-condition-is-shown.html",
-    "kind": "New entry"
   }
 ]
