@@ -7,11 +7,6 @@
   },
   {
     "date": "2026-10-01",
-    "url": "/reference/notes/data/normalized/repo-object-names.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
     "title": "The tray that carries several valuables",
     "url": "/entries/the-tray-valuable.html",
     "kind": "New entry"
@@ -68,6 +63,12 @@
     "date": "2026-09-30",
     "title": "The elsa at two sizes",
     "url": "/entries/the-elsa-in-two-sizes.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-09-30",
+    "title": "The spinny and the wheel it spins",
+    "url": "/entries/the-spinny.html",
     "kind": "New entry"
   }
 ]
