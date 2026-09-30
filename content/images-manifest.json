@@ -362,6 +362,30 @@
       "sha256": "df5c7ae989f2195f86069ffe17755975b0dfaf158b34ed20245a235035dc5535"
     },
     {
+      "entity": "the-ladder",
+      "kind": "game",
+      "file": "mapped/the-ladder-ladder.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "ladder_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the extending ladder the crew carries",
+      "width": 512,
+      "height": 512,
+      "bytes": 33450,
+      "sha256": "d9a8e4c5ebc44635a9f7d5b3875aaeb119ff92fd7eaa76c728b27012a5c34d3a"
+    },
+    {
+      "entity": "the-shop-radio",
+      "kind": "game",
+      "file": "mapped/the-shop-radio-boombox.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Boombox_DefaultMaterial_BaseColor",
+      "note": "the base colour texture of the music player in the shop",
+      "width": 512,
+      "height": 512,
+      "bytes": 78855,
+      "sha256": "8f0d57bf299a8c0ca8bc246cd3cf26a1843205499443dd4a48a495e8661ce8c0"
+    },
+    {
       "entity": "the-revive-item",
       "kind": "game",
       "file": "mapped/the-revive-item-reviver.jpg",

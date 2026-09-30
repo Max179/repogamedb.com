@@ -105,6 +105,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/using-the-ladder-without-wasting-the-battery.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/using-the-map-instead-of-your-memory.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2645,6 +2650,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-ladder.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-level-themes-and-what-they-hold.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2671,6 +2681,11 @@
     },
     {
       "url": "/entries/the-shop-between-runs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-shop-radio.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

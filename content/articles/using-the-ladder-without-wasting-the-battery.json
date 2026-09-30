@@ -1,0 +1,47 @@
+{
+  "id": "using-the-ladder-without-wasting-the-battery",
+  "title": "Using the ladder without wasting the battery",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get up to something in R.E.P.O. with the extending ladder, given that using it costs battery and it has to be placed against something real.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "The ladder in the crew",
+    "Battery charge to spare",
+    "Something solid at the far end"
+  ],
+  "steps": [
+    {
+      "do": "Check the far end before extending, not after.",
+      "because": "the ladder has collision checks and an end collider of its own (collisionCheck)"
+    },
+    {
+      "do": "Extend it against something solid rather than into open air.",
+      "because": "it extends a bridge rather than resting on a wall (plasmaBridgePivot)"
+    },
+    {
+      "do": "Retract it when you are done.",
+      "because": "extended and unextended are states it can be put back from (extendSound)"
+    },
+    {
+      "do": "Spend the battery deliberately, since extending is what drains it.",
+      "because": "extension drains the battery at its own rate (extensionBatteryDrain)"
+    },
+    {
+      "do": "Leave it where it will hold rather than on a smooth surface.",
+      "because": "the ladder has sticky material settings of its own (littleStickyMaterial)"
+    }
+  ],
+  "commonMistakes": [
+    "Extending into nothing and losing the extension.",
+    "Leaving it extended for the rest of the run.",
+    "Setting out with a flat battery."
+  ],
+  "relatedEntities": [
+    "the-ladder",
+    "gear-you-carry"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
