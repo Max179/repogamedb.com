@@ -42,6 +42,18 @@
     {
       "claim": "It has a collider named for a bucket, tying it to the game's own props.",
       "evidence": "identifier: duckBucketCollider"
+    },
+    {
+      "claim": "A second pair of ears is sprung as well, with two transforms and two targets of its own.",
+      "evidence": "identifiers: ear02Spring, ear02TransformL, ear02TransformR, ear02TransformLTarget, ear02TransformRTarget"
+    },
+    {
+      "claim": "It has a jaw on a spring, a head that idles and wiggles, a rotation spring and a pair of feet, with a small and a big collider placed apart from the visuals.",
+      "evidence": "identifiers: jawSpring, jawTransform, jawTransformTarget, headIdleTransform, headWiggleTransform, rotationSpring, feetTransform, smallColliderTransform, bigColliderTransform, headMesh"
+    },
+    {
+      "claim": "Beyond voice lines it has sound sources of its own for barking, for a stun loop and for panting.",
+      "evidence": "identifiers: barkSource, stunLoopSource, pantingSmallSource"
     }
   ],
   "related": [
