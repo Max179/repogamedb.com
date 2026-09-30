@@ -1,0 +1,47 @@
+{
+  "id": "using-a-stun-window",
+  "title": "Using a stun window instead of winning a fight",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use a stun in R.E.P.O. so the crew gets through a room instead of standing and fighting a monster it had no reason to beat.",
+  "version": "R.E.P.O. v0.4.0, as installed for this build (see the sources page for the exact version string)",
+  "prerequisites": [
+    "A stun item in someone's hands",
+    "A monster you have already seen coming",
+    "Somewhere you intend to go next"
+  ],
+  "steps": [
+    {
+      "do": "Carry something that stuns as well as something that kills.",
+      "because": "the game ships weapons built specifically to stun (ItemStunBaton)"
+    },
+    {
+      "do": "Choose the delivery that fits the room: held, thrown, or left behind.",
+      "because": "a stun arrives as a baton, a grenade and a mine (ItemGrenadeStun)"
+    },
+    {
+      "do": "Move during the stun rather than after it, and treat it as a window.",
+      "because": "a stunned monster runs on a timer with a defined start and end (EnemyStateStunned)"
+    },
+    {
+      "do": "Check what will set a mine off before you leave it behind you.",
+      "because": "a mine is told whether enemies, players, objects or forces trigger it (triggeredByEnemies)"
+    },
+    {
+      "do": "Get the loot out of reach before anyone throws an explosive.",
+      "because": "the game separates stun mines from explosive and shockwave ones (MineType)"
+    }
+  ],
+  "commonMistakes": [
+    "Killing the monster instead of walking past it while it is down.",
+    "Leaving a mine on the route your own crew uses.",
+    "Throwing an explosive into a room holding the loot you came for."
+  ],
+  "relatedEntities": [
+    "stunning-instead-of-killing",
+    "weapons-you-can-bring"
+  ],
+  "sources": [
+    "This installation of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

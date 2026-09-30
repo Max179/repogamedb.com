@@ -96,6 +96,30 @@
       "height": 512,
       "bytes": 26363,
       "sha256": "6586323eb8d58758fdd3d6532fedc0e096df321f217d9e5dee980111142e123d"
+    },
+    {
+      "entity": "stunning-instead-of-killing",
+      "kind": "game",
+      "file": "mapped/stunning-instead-of-killing-baton.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Stun baton_DefaultMaterial_BaseColor",
+      "note": "albedo texture of the stun baton the game ships",
+      "width": 512,
+      "height": 512,
+      "bytes": 44107,
+      "sha256": "ed301bb02c8d33edfa7eaa842abdeb1d4c8be8f4b325d3c1b33d116a4c934b6d"
+    },
+    {
+      "entity": "the-cart-and-its-boost-pads",
+      "kind": "game",
+      "file": "mapped/the-cart-and-its-boost-pads-cart.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "PORTABLE CART_Cart Base.001_BaseColor",
+      "note": "albedo texture of the portable cart the crew hauls loot with",
+      "width": 512,
+      "height": 512,
+      "bytes": 40356,
+      "sha256": "d2d253e485d62ccb18b5bde2701c1af355f29e68067957613a4b5f9194775727"
     }
   ]
 }

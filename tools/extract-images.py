@@ -18,6 +18,12 @@ MAPPINGS = [
   {'entity': 'cosmetics-and-the-token-machine', 'bundle': 'resources.assets', 'match': 'Witch hat_Albedo',
    'file': 'cosmetics-and-the-token-machine-hat.jpg', 'note': 'albedo texture of one wearable cosmetic the game ships',
    'max': 1024, 'quality': 84},
+  {'entity': 'stunning-instead-of-killing', 'bundle': 'resources.assets', 'match': 'Stun baton_DefaultMaterial_BaseColor',
+   'file': 'stunning-instead-of-killing-baton.jpg', 'note': 'albedo texture of the stun baton the game ships',
+   'max': 1024, 'quality': 84},
+  {'entity': 'the-cart-and-its-boost-pads', 'bundle': 'resources.assets', 'match': 'PORTABLE CART_Cart Base.001_BaseColor',
+   'file': 'the-cart-and-its-boost-pads-cart.jpg', 'note': 'albedo texture of the portable cart the crew hauls loot with',
+   'max': 1024, 'quality': 84},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
