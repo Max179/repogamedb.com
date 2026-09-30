@@ -1,0 +1,70 @@
+{
+  "id": "the-boombox-valuable",
+  "title": "The boombox that is also loot",
+  "category": "Valuables",
+  "summary": "One of the valuables in R.E.P.O. is a boombox that plays music and is also a trap: the game gives it start, stop and music sounds, a glitch, two speakers and two lights, and its own trigger states.",
+  "body": [
+    "A boombox in this game can be loot as well as equipment. The valuable one is its own kind of object, and it is built as a trap with the usual trigger states and a rarity level for going off.",
+    "It plays music while it is there. There are sounds for starting, for stopping and for the music itself, so a boombox is something you can hear before you see it, which is what makes it a useful thing for a monster to be near.",
+    "It glitches as well. There is a glitch sound of its own, which is how the music can break up rather than run cleanly to the end of the clip.",
+    "Its music is named oddly. The clip the boombox uses is named after the robed monster rather than after the boombox, which suggests the same piece of music is shared between them rather than written twice.",
+    "It has two speakers and two lights, kept as separate parts, so the case can glow while it plays without the speakers being the thing that is lit.",
+    "The game ships an emissive map for it, and that map is what decides where the light appears: the image beside this entry is that map, and the bright spots on it are the speakers as the game lights them.",
+    "It is not the same object as the radio the shop can play. The shop radio is documented under its own entry, and it carries a music list rather than a single clip, which is why the two are separate things to buy.",
+    "The picture beside this entry is the game's own: the emissive map for the boombox valuable, which lights its two speakers.",
+    "What this entry does not tell you: what the music is, how long the clip is, or how much the boombox is worth. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The boombox valuable is a trap, with trigger states and a rarity level for going off.",
+      "evidence": "identifiers: ValuableBoombox, trapTriggered, trapActive, triggerOnTimer, trapActivateRarityLevel, enemyInvestigate"
+    },
+    {
+      "claim": "It has sounds for starting, stopping and playing music.",
+      "evidence": "identifiers: soundBoomboxStart, soundBoomboxStop, soundBoomboxMusic"
+    },
+    {
+      "claim": "It has a glitch sound of its own.",
+      "evidence": "identifier: soundGlitch"
+    },
+    {
+      "claim": "Its music clip is named after the robed monster rather than after the boombox.",
+      "evidence": "identifier: audioClipMusicRobe"
+    },
+    {
+      "claim": "It carries two speakers and two lights as separate parts.",
+      "evidence": "identifiers: speaker1, speaker2, light1, light2"
+    },
+    {
+      "claim": "The game ships an emissive map for it that lights its two speakers.",
+      "evidence": "asset name: Boombox_DefaultMaterial_Emissive"
+    }
+  ],
+  "related": [
+    "the-shop-radio",
+    "valuables-that-are-also-tools"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-boombox-valuable-lights.png",
+      "kind": "game",
+      "alt": {
+        "en": "The emissive map the game ships for the boombox valuable, brightening its two speaker lights.",
+        "zh": "游戏为手提音响珍贵物提供的自发光贴图，点亮两侧喇叭。"
+      }
+    },
+    {
+      "file": "the-boombox-valuable.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the boombox is loot and a trap; it starts playing, its speakers light up, and its music can glitch before it goes off.",
+        "zh": "示意图：音响既是战利品又是陷阱；开始播放、喇叭亮起，音乐可能故障后触发。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "This installation of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

@@ -2745,6 +2745,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-boombox-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-bowtie-monster.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

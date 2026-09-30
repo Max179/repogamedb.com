@@ -147,6 +147,7 @@ MAPPINGS = [
   {'entity': 'the-valuable-thrower', 'bundle': 'resources.assets', 'match': "Valuable Thrower_Albedo", 'file': 'the-valuable-thrower-texture.jpg', 'note': "the colour texture the game ships for the monster that throws valuables", 'max': 512, 'quality': 88},
   {'entity': 'the-bowtie-monster', 'bundle': 'resources.assets', 'match': "bowtie_BaseColor", 'file': 'the-bowtie-monster-texture.jpg', 'note': "the colour texture the game ships for the bowtie monster", 'max': 512, 'quality': 88},
   {'entity': 'the-robed-monster', 'bundle': 'resources.assets', 'match': "robey01", 'file': 'the-robed-monster-texture.jpg', 'note': "the colour texture the game ships for the robed monster", 'max': 512, 'quality': 88},
+  {'entity': 'the-boombox-valuable', 'bundle': 'resources.assets', 'match': "Boombox_DefaultMaterial_Emissive", 'file': 'the-boombox-valuable-lights.png', 'note': "the emissive map the game ships for the boombox valuable, showing the two speaker lights it carries", 'max': 512},
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []
