@@ -103,7 +103,8 @@
       "label": "Playing with a crew",
       "entries": [
         "staying-in-touch-with-the-crew",
-        "when-the-chat-box-will-not-open"
+        "when-the-chat-box-will-not-open",
+        "the-lobby-and-spectating"
       ],
       "status": "multiplayer is networked; documented through comms and lobby entries"
     },

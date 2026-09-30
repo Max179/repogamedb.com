@@ -2725,6 +2725,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-lobby-and-spectating.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-museum-and-its-props.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2878,6 +2883,11 @@
       "url": "/tool.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/topics/co-op.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/topics/comms.html",
