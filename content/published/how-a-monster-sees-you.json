@@ -37,6 +37,10 @@
     {
       "claim": "Vision keeps counts of what has triggered and what is currently triggering, and calls out when it happens.",
       "evidence": "identifiers: VisionsTriggered, VisionTriggered, onVisionTriggered"
+    },
+    {
+      "claim": "The eyes have look-at targets of their own, named one per eyeball.",
+      "evidence": "asset names: LOOK AT eyeball_L, LOOK AT eyeball_R, LOOK AT TARGET eyeball_L, LOOK AT TARGET eyeball_R"
     }
   ],
   "related": [
