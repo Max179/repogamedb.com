@@ -72,6 +72,10 @@
     {
       "claim": "The arctic theme names signs of its own, for a bathroom, a research lab and an exotic materials division.",
       "evidence": "asset names: Arctic Sign Bathroom, Arctic Sign Research Lab, Arctic Sign Exotic Materials Division"
+    },
+    {
+      "claim": "The arctic set has its own valuables, named one by one: a camera, a centrifuge, a cup, an eraser, a phone, a smart watch, a stapler, a USB stick and a VHS among them.",
+      "evidence": "asset names: Arctic Valuable Camera, Arctic Valuable Centrifuge, Arctic Valuable Cup, Arctic Valuable Eraser, Arctic Valuable Phone, Arctic Valuable Smart Watch, Arctic Valuable Stapler, Arctic Valuable Usb stick, Arctic Valuable VHS"
     }
   ],
   "related": [
