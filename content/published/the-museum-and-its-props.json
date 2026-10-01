@@ -38,6 +38,10 @@
     {
       "claim": "Its artwork is hung rather than built in: the museum ships painting stands and dirty paintings of its own.",
       "evidence": "asset names: Museum Painting Stand, DirtyPainting"
+    },
+    {
+      "claim": "The painting stands come in more than one build.",
+      "evidence": "asset names: Museum Painting Stand H, Museum Painting Stand sss"
     }
   ],
   "related": [
