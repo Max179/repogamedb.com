@@ -46,6 +46,10 @@
     {
       "claim": "The laser has a second pair of hatches, two warning lights that each have a mesh and a light, a transform for its shooting particles and one for its animation event.",
       "evidence": "identifiers: hatch2Right, hatch2Left, hatchRight, hatchLeft, warningLight1MeshRenderer, warningLight2MeshRenderer, warningLight1Light, warningLight2Light, shootParticlesTransform, animationEventTransform"
+    },
+    {
+      "claim": "The cart's laser is named piece by piece as well: a material, an inside, a meter, smoke, sparks and a warning light.",
+      "evidence": "asset names: Cart Laser Material, Cart Laser Inside, Cart Laser Meter, Cart Laser Smoke, Cart Laser Spark, Cart Laser Warning Light"
     }
   ],
   "related": [
