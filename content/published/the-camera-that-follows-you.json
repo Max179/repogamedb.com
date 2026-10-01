@@ -23,6 +23,10 @@
     {
       "claim": "It drives a camera controller and smooths the position it arrives at.",
       "evidence": "identifiers: camController, positionSmooth"
+    },
+    {
+      "claim": "The camera has named movements of its own: a bob, a shake and a zoom, with separate positions for crouching and crawling.",
+      "evidence": "asset names: CameraBob, CameraShake, CameraZoom, CameraCrouchPosition, CameraCrawlPosition"
     }
   ],
   "related": [
