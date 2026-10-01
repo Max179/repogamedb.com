@@ -1,0 +1,57 @@
+{
+  "id": "the-furniture-a-level-is-fitted-with",
+  "title": "The furniture a level is fitted with",
+  "category": "Maps",
+  "summary": "A level in R.E.P.O. is furnished as well as built: the build names chairs, tables, lamps and a television of its own, and even the fish in a room is filed as a valuable.",
+  "body": [
+    "Rooms in R.E.P.O. are furnished rather than left bare. The build names chairs of its own, an armchair and a plain and a big version among them, so a room reads as a place someone used rather than as a box with loot in it.",
+    "Tables are named by room as well as by size. There are arctic tables of more than one size, which is why the same level can hold a big table in one room and a small one in the next without either looking out of place.",
+    "The lighting is part of the set. The build names lamps for the rooms, including a small arctic ceiling lamp, and it even carries two spellings of the same piece, which is the kind of thing this project does not tidy up on the game's behalf.",
+    "A room can hold a screen. There is a flat-screen television of its own, named both with and without a space, so a furnished room is not only tables and chairs.",
+    "Furniture is scenery you can still break. The pieces carry their own reactions, which is why a chair can be thrown across a room and come apart rather than passing through everything.",
+    "Not everything on a table is decoration. The build files fish as a valuable of its own, with a mesh and a material beside it and a museum version for the museum, so what looks like room dressing can be worth carrying out.",
+    "That is why furniture matters beyond how a room looks: it tells you which theme you are standing in, it gives you something to hide behind, and it can be the thing the run is scored on.",
+    "What this entry does not tell you: what any piece of furniture is worth, how much damage it takes, or which rooms hold which pieces. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Chairs are named in kinds: an armchair, a plain chair, a big chair and a camp chair among them.",
+      "evidence": "asset names: Armchair, Chair, Chair Big, Camp Chair"
+    },
+    {
+      "claim": "Tables are named by room and by size, including an arctic round table and a small arctic one.",
+      "evidence": "asset names: Arctic Round Table, Arctic Small Table"
+    },
+    {
+      "claim": "Lamps are named for the rooms as well, a small arctic ceiling lamp among them, and the build even carries two spellings of that piece.",
+      "evidence": "asset names: Arctic Ceiling Lamp Small, Arctic Celing Lamp Small"
+    },
+    {
+      "claim": "A furnished room can hold a television of its own, named both with and without a space.",
+      "evidence": "asset names: Flat screen TV, FlatScreenTV"
+    },
+    {
+      "claim": "Fish are filed as a valuable of their own, with a mesh and a material beside them and a museum version.",
+      "evidence": "asset names: Fish valuable, Valuable Fish, Valuable Museum Fish, FishMesh, FishMaterial"
+    }
+  ],
+  "related": [
+    "how-a-level-is-put-together",
+    "the-level-themes-and-what-they-hold"
+  ],
+  "images": [
+    {
+      "file": "the-furniture-a-level-is-fitted-with.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a level's chairs, its tables and lamps, a television, and a fish that is filed as a valuable rather than as decoration.",
+        "zh": "示意图：关卡里的椅子、桌与灯、一台电视，以及被归档为贵重物品而非装饰的鱼。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

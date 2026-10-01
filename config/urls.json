@@ -230,6 +230,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-a-room-by-its-furniture.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-a-theme-before-you-fill-your-arms.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3596,6 +3601,11 @@
     },
     {
       "url": "/reference/notes/the-cart-cannon.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/notes/the-furniture-a-level-is-fitted-with.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

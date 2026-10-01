@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Reading a room by its furniture",
+    "url": "/articles/reading-a-room-by-its-furniture.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The tutorial level",
     "url": "/entries/the-tutorial-level.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "The machines that are also traps",
     "url": "/articles/the-machines-that-are-also-traps.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The small monsters and their tricks",
-    "url": "/articles/the-small-monsters-and-their-tricks.html",
     "kind": "New guide"
   }
 ]

@@ -6,10 +6,10 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 159
+- published entries: 160
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
-- published guides (articles): 79
+- published guides (articles): 80
 - columns investigated and found absent in the game: 1
 - quality failures: 0
 
@@ -23,7 +23,7 @@ the reason it is still a draft.
 | weapons | Weapons | 6 | 0 | 0 |
 | ammo | Ammunition and charge | 3 | 0 | 0 |
 | medical | Medical help and reviving | 3 | 0 | 0 |
-| maps | Maps, levels and themes | 7 | 0 | 0 |
+| maps | Maps, levels and themes | 8 | 0 | 0 |
 | events | Events and set pieces | 3 | 0 | 0 |
 | shop | The shop between runs | 9 | 0 | 0 |
 | coop | Playing with a crew | 4 | 0 | 0 |
@@ -35,7 +35,7 @@ the reason it is still a draft.
 | faq | Answers to the questions players ask most | 1 | 0 | 0 |
 | glossary | Glossary of the terms this site uses | 1 | 0 | 0 |
 | versions | Which version this site documents | 1 | 0 | 0 |
-| guides | Step-by-step run guides | 79 | 0 | 0 |
+| guides | Step-by-step run guides | 80 | 0 | 0 |
 
 ## Columns with nothing published yet
 

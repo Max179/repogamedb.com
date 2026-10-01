@@ -1,0 +1,48 @@
+{
+  "id": "reading-a-room-by-its-furniture",
+  "title": "Reading a room by its furniture",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the furniture in an R.E.P.O. room as information, given that chairs, tables and lamps are named per room, that a furnished room can hold a screen, and that even a fish is filed as a valuable.",
+  "version": "0.4.0 (see the sources page)",
+  "prerequisites": [
+    "A torch and enough battery to keep it on",
+    "One hand free for the cart",
+    "A crew that will not wander off in the dark"
+  ],
+  "steps": [
+    {
+      "do": "Work out which room you are in from its furniture before you start loading the cart.",
+      "because": "tables are named by room and by size, an arctic round table and a small arctic one among them (Arctic Round Table, Arctic Small Table)"
+    },
+    {
+      "do": "Use the big pieces as landmarks when the lights are out.",
+      "because": "chairs are named in kinds, an armchair, a plain chair, a big chair and a camp chair among them (Armchair, Chair, Chair Big, Camp Chair)"
+    },
+    {
+      "do": "Let the lamps tell you which rooms are worth searching.",
+      "because": "lamps are named for the rooms, a small arctic ceiling lamp among them (Arctic Ceiling Lamp Small, Arctic Celing Lamp Small)"
+    },
+    {
+      "do": "Check the screen in a furnished room instead of walking past it.",
+      "because": "a furnished room can hold a flat-screen television of its own (Flat screen TV, FlatScreenTV)"
+    },
+    {
+      "do": "Do not write a fish off as decoration: on this site it is filed as a valuable.",
+      "because": "fish are named as a valuable of their own, with a mesh and a material beside them and a museum version (Fish valuable, Valuable Fish, Valuable Museum Fish, FishMesh, FishMaterial)"
+    }
+  ],
+  "commonMistakes": [
+    "Reading a room by its loot while the furniture has already told you which theme it is.",
+    "Walking into a dark room without noting the landmarks you will need on the way back.",
+    "Leaving a fish behind because it looked like scenery.",
+    "Packing the cart before you know which part of the level you are standing in."
+  ],
+  "relatedEntities": [
+    "the-furniture-a-level-is-fitted-with",
+    "the-level-themes-and-what-they-hold"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
