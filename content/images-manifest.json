@@ -1872,6 +1872,30 @@
       "height": 512,
       "bytes": 164484,
       "sha256": "7f3629a62c3d8d0796fbf81e7d9a2af4995da0b2ea37a76001f51a871084b5e4"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-welcome-banner.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Welcome Banner",
+      "note": "the blue welcome banner the wizard theme hangs",
+      "width": 512,
+      "height": 64,
+      "bytes": 30415,
+      "sha256": "0a16060c09ddf55ba15f6cfaf20e1143b5a97e3f7f3c13c90c1dfeb955bdb956"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-exhibition-banner.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 01",
+      "note": "a tall exhibition banner the museum hangs, a moose-fighting poster",
+      "width": 128,
+      "height": 512,
+      "bytes": 95537,
+      "sha256": "1882fcb660801ce314789e0f476eb82c193b886736dc799adfe5b0f17c6ee938"
     }
   ]
 }

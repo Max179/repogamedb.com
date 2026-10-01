@@ -88,6 +88,10 @@
     {
       "claim": "The arctic theme ships a sign of its own as a sheet, a specimen-research sign with an atom on it.",
       "evidence": "asset name: Arctic Sign Specimen"
+    },
+    {
+      "claim": "The wizard theme hangs a welcome banner of its own, with a back for it and a blue wall flag.",
+      "evidence": "asset names: Wizard Welcome Banner, Wizard Welcome Banner Back, Wizard Wall Flag_blue"
     }
   ],
   "related": [
@@ -150,6 +154,14 @@
       "alt": {
         "en": "A sign the arctic theme hangs on its walls: a white plaque reading Specimen Research beside an orange atom.",
         "zh": "极地主题挂在墙上的标牌：白色牌面写着 Specimen Research，旁边是橙色原子图案。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-welcome-banner.png",
+      "kind": "game",
+      "alt": {
+        "en": "A banner the wizard theme hangs: a blue ribbon lettered Welcome New Students between two dark marks.",
+        "zh": "巫师主题挂出的横幅：蓝色缎带上写着 Welcome New Students，两端各有一个深色符号。"
       }
     },
     {

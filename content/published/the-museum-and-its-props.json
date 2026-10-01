@@ -150,6 +150,14 @@
       }
     },
     {
+      "file": "mapped/the-museum-and-its-props-exhibition-banner.png",
+      "kind": "game",
+      "alt": {
+        "en": "A banner the museum hangs: a tall poster for a Moose Fighting exhibition, with a moose head and the line Witness the Carnage.",
+        "zh": "博物馆挂出的横幅：一张瘦长的「Moose Fighting」展览海报，画着驼鹿头，写着 Witness the Carnage。"
+      }
+    },
+    {
       "file": "the-museum-and-its-props.svg",
       "kind": "diagram",
       "alt": {
