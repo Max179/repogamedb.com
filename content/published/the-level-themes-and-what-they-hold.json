@@ -116,6 +116,10 @@
     {
       "claim": "The wizard bookshelf is named with its doors as well, and in a version that holds no valuables.",
       "evidence": "asset names: Wizard Bookshelf Blocked - No Valuables, Wizard Bookshelf Door01, Wizard Bookshelf Door02, Wizard Bookshelf n"
+    },
+    {
+      "claim": "The build carries a library sign and a robot company sign of its own among its level signage.",
+      "evidence": "asset names: Library Sign, Robot Company Sign"
     }
   ],
   "related": [
