@@ -112,6 +112,10 @@
     {
       "claim": "The arctic theme names barrels of its own, in more than one version.",
       "evidence": "asset names: Arctic Bareel, Arctic Bareel.002"
+    },
+    {
+      "claim": "The wizard bookshelf is named with its doors as well, and in a version that holds no valuables.",
+      "evidence": "asset names: Wizard Bookshelf Blocked - No Valuables, Wizard Bookshelf Door01, Wizard Bookshelf Door02, Wizard Bookshelf n"
     }
   ],
   "related": [
