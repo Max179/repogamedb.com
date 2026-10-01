@@ -1,0 +1,63 @@
+{
+  "id": "the-valuables-that-go-off-by-themselves",
+  "title": "The valuables that go off by themselves",
+  "tier": "published",
+  "kind": "article",
+  "target": "The trap valuables in R.E.P.O. as one family: a boombox, a cartoon television, an egg and a baby's head share the same trap state and announce themselves in four different ways.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A load of valuables you have not identified yet",
+    "A route that keeps the noise away from the crew",
+    "A hand free to put something down in a hurry"
+  ],
+  "steps": [
+    {
+      "do": "Treat the set that plays music, the cartoon television, the egg and the baby's head as one family rather than four odd finds.",
+      "because": "they share the same trap state of triggered, active and started, the same switch for triggering on a timer and the same rarity level at which they go off (trapTriggered, trapActive, trapStart, triggerOnTimer, trapActivateRarityLevel)"
+    },
+    {
+      "do": "Listen before you lift, because one of them announces itself with sound.",
+      "because": "the boombox has sounds for starting, stopping and playing music, and a glitch sound of its own (soundBoomboxStart, soundBoomboxStop, soundBoomboxMusic, soundGlitch)"
+    },
+    {
+      "do": "Watch a television's screen instead of standing in front of it.",
+      "because": "the television has static with a curve, a time, a timer and an outro, and a screen, a background and a light of its own (TVStatic, TVStaticCurve, TVStaticTime, TVStaticOutro, TVScreen, TVBackground, TVLight)"
+    },
+    {
+      "do": "Read the cartoon as two performers rather than one animation.",
+      "because": "the cat and the mouse are objects of their own, each with a talking time, a pause, a count, a starting and an ending scale and sounds of their own (TVCartoonController, CatObject, MouseObject, catTalkTime, mouseTalkTime)"
+    },
+    {
+      "do": "Do not trust an egg to stay an egg.",
+      "because": "it has a length of time before it goes off and a rest after cracking, and it grows arms and legs with a range each (explosionTime, crackRestTime, armRange, legRange)"
+    },
+    {
+      "do": "Watch the head's eyes, because awake and asleep are two positions rather than two looks.",
+      "because": "being awake and asleep are two eyelid rotations with a head angle and a speed to move between them, and each takes its own time (awakeEyelidRotation, asleepEyelidRotation, headAwakeAngle, eyeLerpSpeed, awakeTransitionTime, asleepTransitionTime)"
+    },
+    {
+      "do": "Expect any of them to bring a monster to the noise.",
+      "because": "all of them can be made a thing monsters investigate (enemyInvestigate)"
+    },
+    {
+      "do": "Put one down before the extractor rather than carrying it all the way.",
+      "because": "the egg shakes the camera when it goes, with a length, a strength and bounds of its own (cameraShakeTime, cameraShakeStrength, cameraShakeBounds)"
+    }
+  ],
+  "commonMistakes": [
+    "Picking up a boombox or a television and carrying it while it plays.",
+    "Reading the baby's head as asleep simply because the eyes look still.",
+    "Assuming the egg is inert because it has not moved yet.",
+    "Standing over one when it goes off instead of putting it down first."
+  ],
+  "relatedEntities": [
+    "the-baby-head-valuable",
+    "the-boombox-valuable",
+    "the-cartoon-television",
+    "the-egg-valuable-that-cracks",
+    "valuables-with-a-behaviour-of-their-own"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
