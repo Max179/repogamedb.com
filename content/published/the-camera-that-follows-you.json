@@ -27,6 +27,10 @@
     {
       "claim": "The camera has named movements of its own: a bob, a shake and a zoom, with separate positions for crouching and crawling.",
       "evidence": "asset names: CameraBob, CameraShake, CameraZoom, CameraCrouchPosition, CameraCrawlPosition"
+    },
+    {
+      "claim": "The camera knows when it is blocked: the build names a blocked and an unblocked state for each side.",
+      "evidence": "asset names: Camera Collision Blocked L, Camera Collision Blocked R, Camera Collision Unblocked L, Camera Collision Unblocked R"
     }
   ],
   "related": [
