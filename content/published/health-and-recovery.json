@@ -35,6 +35,10 @@
     {
       "claim": "A hard fall throws particles of its own, and being hurt draws a vignette over the view.",
       "evidence": "asset names: Fall Damage Particles, Hurt Vignette"
+    },
+    {
+      "claim": "Damage is named by source as well: a hatch, a death pit, a fall and a vacuum each have a collider of their own.",
+      "evidence": "asset names: Hatch Hurt Collider, Hurt Collider - Death Pit, Hurt Collider - Fall Damage, Attack Vacuum Hurt Collider"
     }
   ],
   "related": [
