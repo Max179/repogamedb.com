@@ -43,6 +43,10 @@
     {
       "claim": "A cue for a nearby monster carries an on-screen distance, a fade speed and its own tracks.",
       "evidence": "identifiers: MusicEnemyNear, OnScreenDistance, FadeSpeed, Tracks"
+    },
+    {
+      "claim": "The build ships a state-variable filter for audio, with a frequency, a resonance, a drive and an additive gain.",
+      "evidence": "identifiers: AudioEffectStateVariableFilter, _frequency, _resonance, _drive, _additiveGain"
     }
   ],
   "related": [

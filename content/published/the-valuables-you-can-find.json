@@ -28,6 +28,10 @@
     {
       "claim": "Valuables carry separate glass and metallic surfaces.",
       "evidence": "identifiers: Valuable Arctic Sample Cooler_DefaultMaterial_Metallic, Valuable Arctic Sample Cooler_DefaultMaterial_BaseColor"
+    },
+    {
+      "claim": "A valuable also carries a volume type of its own, with a debug volume and debug meshes.",
+      "evidence": "identifiers: ValuableObject, volumeType, debugVolume, debugValuableMeshes"
     }
   ],
   "related": [
