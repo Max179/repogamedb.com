@@ -1752,6 +1752,18 @@
       "height": 128,
       "bytes": 23224,
       "sha256": "a2070214bb508a105b2a3374680ce36cae0c754e6c2612041aa715b166ebf80e"
+    },
+    {
+      "entity": "the-beamer",
+      "kind": "game",
+      "file": "mapped/the-beamer-smoke.png",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "Beamer Smoke Particle",
+      "note": "the soft smoke puff the game's beamer gives off, from its own particle sheet",
+      "width": 512,
+      "height": 512,
+      "bytes": 52931,
+      "sha256": "b285b73ce25e7d1ff905851567ea58e5d1b19e3276e146fa8e60dd90ca7b0799"
     }
   ]
 }
