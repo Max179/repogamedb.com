@@ -44,6 +44,10 @@
     {
       "claim": "A theme brings its own fittings as well: the manor ships a sauna with an oven and a shower, and a fridge with a base and doors.",
       "evidence": "asset names: Sauna Oven, Shower Albedo, Fridge_base, Fridge_door01"
+    },
+    {
+      "claim": "The arctic theme carries ambience of its own, including a water facility and distant machinery.",
+      "evidence": "asset names: Ambience Loop Arctic Water Facility, Ambience Loop Arctic Distant Mechanical, Ambience Loop Arctic Generic Machinery2"
     }
   ],
   "related": [

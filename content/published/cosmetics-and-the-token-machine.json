@@ -65,6 +65,10 @@
     {
       "claim": "A cosmetic object in the world carries a health display with a transform and a renderer, a rotation helper and a forward transform, a grab icon with colours for being inactive and active, and a button transform.",
       "evidence": "identifiers: CosmeticWorldObjectHealth, healthTransform, healthRenderer, rotationHelperTransform, forwardTransform, grabIconRenderer, grabIconColorInactive, grabIconColorActive, buttonTransform"
+    },
+    {
+      "claim": "The cosmetics include hats, among them a spiked mohawk hair piece and a spiked band.",
+      "evidence": "asset names: Cosmetic - Hat - Hair Mohawk Spikes, Cosmetic - Hat - Spike band"
     }
   ],
   "related": [
