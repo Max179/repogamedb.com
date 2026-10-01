@@ -100,6 +100,10 @@
     {
       "claim": "The wizard theme fits its rooms with pieces of its own: a bookshelf, an arch and a big lecture podium.",
       "evidence": "asset names: Wizard Bookshelf, Wizard Arch, Wizard Big Lecture Podium"
+    },
+    {
+      "claim": "The wizard theme fits its rooms with doors and bookshelves of its own, including blocked and double versions.",
+      "evidence": "asset names: Wizard Door, Wizard Door Blocked, Wizard Door Double, Wizard Door Double Frame, Wizard Bookshelf, Wizard Bookshelf Blocked"
     }
   ],
   "related": [
