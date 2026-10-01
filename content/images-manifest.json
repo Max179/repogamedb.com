@@ -2042,6 +2042,30 @@
       "sha256": "76038092a5288c9f3849dc778cc1b6b6c724858299829019acd63d9654723536"
     },
     {
+      "entity": "the-things-that-are-not-loot",
+      "kind": "game",
+      "file": "mapped/the-things-that-are-not-loot-success-poster.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "sign pack extra",
+      "note": "the success poster the game puts on a wall, a framed picture of a man in a Rob's cap",
+      "width": 512,
+      "height": 512,
+      "bytes": 106831,
+      "sha256": "b7f3c7774b6bd7148400cd8eb0dbec414e963f44e6e437964002f14fae2622d3"
+    },
+    {
+      "entity": "the-things-that-are-not-loot",
+      "kind": "game",
+      "file": "mapped/the-things-that-are-not-loot-shop-signs.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "sign pack",
+      "note": "the sheet of shop signs the game ships, dollar deals, a charging sign and a slushie board among them",
+      "width": 512,
+      "height": 512,
+      "bytes": 326010,
+      "sha256": "6d55c62a74d7475f1c2949e9885b5fd8f98f2d8823473fef63c4e5050f8dff62"
+    },
+    {
       "entity": "the-rooms-the-wizard-school-signs",
       "kind": "game",
       "file": "mapped/the-rooms-the-wizard-school-signs-dining-hall.png",

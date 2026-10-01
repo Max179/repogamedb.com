@@ -246,6 +246,10 @@ MAPPINGS = [
   {'entity': 'the-signs-that-name-a-station', 'bundle': 'resources.assets', 'match': "arctic sign cafeteria", 'file': 'the-signs-that-name-a-station-cafeteria.png', 'note': "the Cafeteria plate the arctic level hangs", 'max': 512},
   {'entity': 'the-signs-that-name-a-station', 'bundle': 'resources.assets', 'match': "arctic sign research lab", 'file': 'the-signs-that-name-a-station-research-lab.png', 'note': "the Research Lab plate the arctic level hangs", 'max': 512},
   {'entity': 'the-signs-that-name-a-station', 'bundle': 'resources.assets', 'match': "arctic sign infirmary", 'file': 'the-signs-that-name-a-station-infirmary.png', 'note': "the Infirmary plate the arctic level hangs", 'max': 512},
+  # The not-loot entry names the pieces of a level that are not treasure; these two sheets are shop signage and a
+  # poster the game paints onto walls.
+  {'entity': 'the-things-that-are-not-loot', 'bundle': 'resources.assets', 'match': "sign pack extra", 'file': 'the-things-that-are-not-loot-success-poster.png', 'note': "the success poster the game puts on a wall, a framed picture of a man in a Rob's cap", 'max': 512},
+  {'entity': 'the-things-that-are-not-loot', 'bundle': 'resources.assets', 'match': "sign pack", 'file': 'the-things-that-are-not-loot-shop-signs.png', 'note': "the sheet of shop signs the game ships, dollar deals, a charging sign and a slushie board among them", 'max': 512},
   # The wizard school entry names the rooms the level signs; these three are that artwork.
   {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Dining Hall", 'file': 'the-rooms-the-wizard-school-signs-dining-hall.png', 'note': "the gold plaque reading Dining Hall that the school hangs", 'max': 512},
   {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Potions And Spells", 'file': 'the-rooms-the-wizard-school-signs-potions.png', 'note': "the gold plaque reading Potions and Spells", 'max': 512},

@@ -93,6 +93,22 @@
         "zh": "示意图：物件可以是可破坏物而非战利品；珍贵物可藏在道具后；被发现时有专属配色与音效。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    },
+    {
+      "file": "mapped/the-things-that-are-not-loot-shop-signs.png",
+      "kind": "game",
+      "alt": {
+        "en": "The sheet of shop signs the game ships: dollar deals, a charging sign, a slushie board, a hot-dog price sign, an octopus security sign and a member board.",
+        "zh": "游戏自带的店招合集：美元促销、充电牌、冰沙牌、热狗价牌、章鱼安保牌与会员牌。"
+      }
+    },
+    {
+      "file": "mapped/the-things-that-are-not-loot-success-poster.png",
+      "kind": "game",
+      "alt": {
+        "en": "A framed poster the game hangs on a wall: a smiling man in a Rob's cap above the word Success.",
+        "zh": "游戏挂在墙上的一幅带框海报：戴 Rob's 帽子的笑脸男子，上方写着 Success。"
+      }
     }
   ],
   "sources": [
