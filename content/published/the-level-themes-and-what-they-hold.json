@@ -48,6 +48,10 @@
     {
       "claim": "The arctic theme carries ambience of its own, including a water facility and distant machinery.",
       "evidence": "asset names: Ambience Loop Arctic Water Facility, Ambience Loop Arctic Distant Mechanical, Ambience Loop Arctic Generic Machinery2"
+    },
+    {
+      "claim": "Themes bring their own furniture as well: the manor ships a grandfather clock with its own glass.",
+      "evidence": "asset names: Grandfather Clock, Clock Glass, Clock_Material_BaseColor"
     }
   ],
   "related": [
