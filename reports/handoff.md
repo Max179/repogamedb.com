@@ -7,6 +7,18 @@ Windows machine that read the game files.
 The repository as committed. Raw game packages are **not** included and are not needed: the normalized data that the
 site is built from is committed under `data/normalized/`.
 
+## What the Mac side needs from this tree
+Everything needed to build and publish is committed; the clean-clone check above is what proves it. The files that move
+most often, and that the Mac side should expect to pull with each update, are:
+- `config/urls.json` — the keep/noindex split the classifier writes;
+- `content/images-manifest.json` — every mapped game image with its source bundle, size and hash;
+- `content/updates.json` — the rows behind `/updates.html`;
+- `data/guide-questions.json` — the player questions that pair one-to-one with the guides;
+- `reports/status.json` — the machine-readable counts the preflight checks;
+- `reports/coverage-report.md`, `reports/image-coverage.md`, `reports/image-sanity.md`, `reports/image-reviews.md` — the gates' own output, including the verdict on every image;
+- `reports/handoff.md` (this file) and `reports/local-complete.md` (the running record, newest last).
+Raw game packages stay on the Windows machine. Nothing in the tree is generated at publish time that is not committed here.
+
 ## How to build and verify
 ```
 node pipeline/site.mjs                                   # production build
