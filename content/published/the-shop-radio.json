@@ -28,6 +28,10 @@
     {
       "claim": "It can spark and smoke as part of its behaviour.",
       "evidence": "identifiers: spark, smoke"
+    },
+    {
+      "claim": "More than one radio is named in the build, with a trap radio and a valuable radio beside the shop's own.",
+      "evidence": "asset names: Trap Radio, Valuable Radio, Radio Mesh"
     }
   ],
   "related": [
