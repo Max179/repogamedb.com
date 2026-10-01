@@ -1,0 +1,56 @@
+{
+  "id": "a-vehicle-that-is-wrecked-and-its-box",
+  "title": "A vehicle that is wrecked, and the box on it",
+  "category": "Physics",
+  "tier": "published",
+  "summary": "What happens to a vehicle in R.E.P.O. when it is destroyed: the wreck runs through states, fire with its own intensity and flicker, an explosion at a position of its own, particles for being repaired, and the box of valuables it carries, which can break and come back.",
+  "body": [
+    "A destroyed vehicle is not switched off. It runs through states of its own, and each change of state has particles, so a wreck is something the game plays out rather than a model that stops moving.",
+    "A wreck burns. It carries fire with an intensity and a flicker amount of its own, which is why the light on a wreck is not a constant glow but something that moves.",
+    "The explosion happens somewhere specific rather than somewhere unspecified. There is a transform for where it goes off, and being repaired is drawn with particles as well, so the machine has a picture for both ends of its life.",
+    "The vehicle can also be carrying something. The box of valuables on it is part of the vehicle's own object rather than a separate thing that happens to be resting there, which is why the loss and the wreck are the same event from the player's side.",
+    "That box can break, and the break is staged. There is a buildup for it and a particle for the buildup, and there is a separate particle for the box coming back, so a broken box is not simply gone.",
+    "What this entry does not tell you: how much damage a vehicle takes, how long each state lasts, or what the box is worth. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A vehicle being destroyed runs through states rather than being one event.",
+      "evidence": "identifiers: destructionStates, stateChangeParticles"
+    },
+    {
+      "claim": "A wreck carries fire of its own, with an intensity and a flicker amount.",
+      "evidence": "identifiers: fireLightIntensity, fireLightFlickerAmount"
+    },
+    {
+      "claim": "The explosion goes off at a position of its own, and being repaired has particles as well.",
+      "evidence": "identifiers: explosionPosTransform, vehicleFixParticles"
+    },
+    {
+      "claim": "A vehicle can be carrying a box of valuables as part of its own object.",
+      "evidence": "identifier: valuableBox"
+    },
+    {
+      "claim": "That box can break and can come back, each with a particle of its own.",
+      "evidence": "identifiers: valuableBoxBreakBuildup, valuableBoxBreakBuildupParticle, valuableBoxComebackParticle"
+    }
+  ],
+  "related": [
+    "hitting-things-with-a-vehicle",
+    "valuables-and-looting"
+  ],
+  "images": [
+    {
+      "file": "a-vehicle-that-is-wrecked-and-its-box.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a hit lands, the vehicle runs through its destruction states, fire and an explosion follow, and the valuable box on it either breaks or comes back.",
+        "zh": "车辆报废示意图：受到撞击、车辆走完报废状态、起火并爆炸、车上的贵重品箱破裂或复原。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
