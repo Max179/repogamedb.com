@@ -47,6 +47,10 @@
     {
       "claim": "The build ships a state-variable filter for audio, with a frequency, a resonance, a drive and an additive gain.",
       "evidence": "identifiers: AudioEffectStateVariableFilter, _frequency, _resonance, _drive, _additiveGain"
+    },
+    {
+      "claim": "The build keeps further ambience loops of its own, a creep whisper, an underground one, one for driving the truck and ones for a shop harbour and a dead forest among them.",
+      "evidence": "asset names: Ambience Loop Creep Whisper Close, Ambience Loop Underground, Ambience Loop Truck Driving, Ambience Loop Shop Harbor, Ambience Loop Shop Dead Forest"
     }
   ],
   "related": [
