@@ -54,6 +54,10 @@
     {
       "claim": "The museum also ships shadow decals of its own, a round one and a square one.",
       "evidence": "asset names: Museum Decal Shadow Round, Museum Decal Shadow Square"
+    },
+    {
+      "claim": "The museum ships decals of its own: paper, dirt and hanging dust.",
+      "evidence": "asset names: Museum Decal Paper01, Museum Decal Dirt01, Museum Decal Hanging Dust Alpha01"
     }
   ],
   "related": [
