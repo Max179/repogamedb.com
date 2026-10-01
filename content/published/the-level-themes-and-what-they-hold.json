@@ -80,6 +80,10 @@
     {
       "claim": "The wizard set names valuables of its own, a goblin arm, a sword, a small green potion, a tiny pack and a bug for the arachnophobes, while the museum set names a horse and a milk among its own.",
       "evidence": "asset names: Wizard Valuable Goblin Arm, Wizard Valuable Sword, Wizard valuable small potion green, Wizard valuable tiny pack, Wizard Valuable Bug (Arachnophobia), Museum Valuable Horse, Museum valuable milk"
+    },
+    {
+      "claim": "The wizard theme names a sign for each of its rooms, more than twenty of them, from a common room and a dormatory to the great library and the sludge pits.",
+      "evidence": "asset names: Wizard Sign Common Room, Wizard Sign Dormatory, Wizard Sign The Great Library, Wizard Sign Sludge Pits, Wizard Sign East Wing Lobby"
     }
   ],
   "related": [
@@ -102,6 +106,38 @@
       "alt": {
         "en": "The game's own picture for its arena level theme: a barn beside a dark trail of watching eyes.",
         "zh": "游戏自带的竞技场关卡主题图：谷仓旁边是一条布满窥视眼睛的暗色路径。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-common-room-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "A sign the wizard theme hangs on its walls: a gold plaque on a wooden arch, reading Common Room.",
+        "zh": "巫师主题挂在墙上的标牌：木弧形托着的金色铭牌，写着 Common Room。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-dormatory-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "A second wizard sign, reading Dormatory.",
+        "zh": "第二块巫师主题标牌，写着 Dormatory。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-library-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "A third wizard sign, reading The Great Library.",
+        "zh": "第三块巫师主题标牌，写着 The Great Library。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-sludge-pits-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "A fourth wizard sign, reading Sludge Pits of Truth.",
+        "zh": "第四块巫师主题标牌，写着 Sludge Pits of Truth。"
       }
     },
     {

@@ -1668,6 +1668,54 @@
       "height": 512,
       "bytes": 203885,
       "sha256": "2edd9c84710c56d964d3223a0ae71970d01af1d8d2ac0be83603469de64a845b"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-common-room-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Common Room",
+      "note": "a sign the wizard level hangs: a gold plaque reading Common Room",
+      "width": 512,
+      "height": 128,
+      "bytes": 39362,
+      "sha256": "4d7b880928539f3d8fa1edd4a46c48fc7ebef3739f72971f420d2fe34613e8bc"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-dormatory-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Dormatory",
+      "note": "a second wizard level sign, reading Dormatory",
+      "width": 512,
+      "height": 128,
+      "bytes": 38359,
+      "sha256": "59fa59d21ae1c4a8dfa4b3e3a74d3d9ab5dfc84b311dd3e58314a255133b109d"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-library-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign The Great Library",
+      "note": "a third wizard level sign, reading The Great Library",
+      "width": 512,
+      "height": 128,
+      "bytes": 40011,
+      "sha256": "4b9d459824836df8d2c9fd45343a502f0517a4b505089e0a7f15aae1a50663fc"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-sludge-pits-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Sludge Pits",
+      "note": "a fourth wizard level sign, reading Sludge Pits of Truth",
+      "width": 512,
+      "height": 128,
+      "bytes": 40835,
+      "sha256": "a8ed6b5dfacd7315949fdf14def0b0bbaee5f187cf4a6636806e5448475acac3"
     }
   ]
 }
