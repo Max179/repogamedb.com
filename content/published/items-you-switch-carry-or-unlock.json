@@ -63,6 +63,10 @@
     {
       "claim": "Grenades are shipped in kinds: a shockwave one, a stun one and a duct-taped cluster, with a base model and emissive and normal sheets.",
       "evidence": "asset names: Shockwave Grenade, Stun Grenade Updated, Ducktaped Grenades, Grenade Base, Grenades Emissive"
+    },
+    {
+      "claim": "Items have a stand and an information panel of their own, with a second information panel beside it.",
+      "evidence": "asset names: ITEM STANDS, Item Stand New, Item Info, Item Info Extra"
     }
   ],
   "related": [
