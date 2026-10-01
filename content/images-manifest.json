@@ -1992,6 +1992,18 @@
       "height": 512,
       "bytes": 257453,
       "sha256": "bd4fc091360c30fd087e82b4c2cc93b54abad648f2f9e68643897f5ba28a35fa"
+    },
+    {
+      "entity": "the-storage-rooms-and-their-fittings",
+      "kind": "game",
+      "file": "mapped/the-storage-rooms-and-their-fittings-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Storage Room",
+      "note": "the gold plaque the wizard theme hangs on a storage room door",
+      "width": 512,
+      "height": 128,
+      "bytes": 39154,
+      "sha256": "d746a1ba072eabba7d79760a6d6e0941812ba022cc487760151beb160b3972a4"
     }
   ]
 }

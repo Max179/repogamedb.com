@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The storage rooms and their fittings",
+    "url": "/entries/the-storage-rooms-and-their-fittings.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The fences and the railings a level is closed in with",
     "url": "/entries/the-fences-and-railings.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "A vehicle that is wrecked, and the box on it",
     "url": "/reference/notes/a-vehicle-that-is-wrecked-and-its-box.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The sounds a vehicle makes",
-    "url": "/reference/notes/the-sounds-a-vehicle-makes.html",
     "kind": "New entry"
   }
 ]

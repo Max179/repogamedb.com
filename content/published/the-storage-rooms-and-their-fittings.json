@@ -1,0 +1,66 @@
+{
+  "id": "the-storage-rooms-and-their-fittings",
+  "title": "The storage rooms and their fittings",
+  "category": "Maps",
+  "tier": "published",
+  "summary": "Storage in R.E.P.O. is a room the build fits out: a metal shelf, an art divider and a big pipe, archive boxes, a broom and a bucket, ceiling pipes, and a gold plaque that says Storage Room.",
+  "body": [
+    "Storage in R.E.P.O. is a room the build fits out rather than a bare corner. The museum storage room is named as a set of its own, with floors, ceilings and walls named for it, so the room can be cut to the space a level has left.",
+    "The room carries fittings of its own: a metal storage shelf, an art divider and a big pipe, which is why a storage room reads as somewhere things are kept rather than as empty floor.",
+    "The boxes are named one by one and then as a group. Three archive boxes are named separately and an archive box set is named beside them, so what a player sees stacked in the corner is a set of pieces rather than one crate repeated.",
+    "There is a cleaning corner as well: a broom, a bucket and the bucket's own items are named for the storage room, which is why the room can be kept tidy without borrowing a shop's fittings.",
+    "The ceiling is fitted, too. Ceiling pipes are named for the room beside its other pieces, so the top of a storage space is built rather than left as the underside of the floor above.",
+    "Not everything stored there is a box. A bust and a cone are named for the storage room as well, so a player searching one can find an ornament or a traffic cone standing where the crates are.",
+    "The rooms are signed and they are not all the same room. The wizard theme hangs a gold plaque reading Storage Room, and it names a cauldron storage of its own beside it, while a shop module can be a storage room in its own right. That is why storage is worth reading by theme: what is kept there changes with the level.",
+    "What this entry does not tell you: how much a storage room holds, which valuables spawn in one, or how many the generator places. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The museum storage room is named as a set of its own, with floors, ceilings and walls named for it.",
+      "evidence": "asset names: Museum Dirty Walls Storage, Floor_Museum_Concrete_Bright World Space STORAGE"
+    },
+    {
+      "claim": "The room has fittings of its own: a metal storage shelf, an art divider and a big pipe.",
+      "evidence": "asset names: Metal Storage Shelf, Museum Storage Art Divider, Museum Storage Big Pipe"
+    },
+    {
+      "claim": "Three archive boxes are named separately, with an archive box set named beside them.",
+      "evidence": "asset names: Museum Storage Archive Box1, Museum Storage Archive Box2, Museum Storage Archive Box3, Museum Storage Archive Boxes"
+    },
+    {
+      "claim": "The storage room has a cleaning corner of its own: a broom, a bucket and the bucket's items.",
+      "evidence": "asset names: Museum Storage Broom, Museum Storage Bucket, Museum Storage Bucket Items"
+    },
+    {
+      "claim": "Ceiling pipes are named for the storage room.",
+      "evidence": "asset name: Museum Storage Ceiling Pipes"
+    },
+    {
+      "claim": "A bust and a cone are named for the storage room as well.",
+      "evidence": "asset names: Museum Storage Bust, Museum Storage Cone"
+    },
+    {
+      "claim": "A shop module can be a storage room of its own, and the wizard theme names a cauldron storage beside its storage-room sign.",
+      "evidence": "asset names: Module - Shop - DE - Storage, Wizard Sign Cauldron Storage"
+    }
+  ],
+  "related": [
+    "the-things-that-are-not-loot",
+    "how-a-level-is-put-together",
+    "the-level-themes-and-what-they-hold"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-storage-rooms-and-their-fittings-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The storage room sign the game ships: a gold arched plaque reading Storage Room on a wooden board.",
+        "zh": "游戏自带的储藏室标牌：木板上一条金色拱形铭牌，写着 Storage Room。"
+      }
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
