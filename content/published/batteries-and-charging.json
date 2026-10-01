@@ -30,6 +30,10 @@
       "evidence": "identifier: batteryDrainPreset"
     },
     {
+      "claim": "The build names the charge, the drain and the low-battery beep of a battery as separate objects.",
+      "evidence": "asset names: Battery Charge, Battery Drain, Battery Low Beep"
+    },
+    {
       "claim": "One of the upgrades is a battery itself.",
       "evidence": "identifier: Upgrade_Death-Head-Battery_Albedo"
     }
