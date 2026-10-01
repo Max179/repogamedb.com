@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Searching a storage room",
+    "url": "/articles/searching-a-storage-room.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The storage rooms and their fittings",
     "url": "/entries/the-storage-rooms-and-their-fittings.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "The sparks a vehicle throws",
     "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "A vehicle that is wrecked, and the box on it",
-    "url": "/reference/notes/a-vehicle-that-is-wrecked-and-its-box.html",
     "kind": "New entry"
   }
 ]

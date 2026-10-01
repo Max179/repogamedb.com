@@ -1,0 +1,53 @@
+{
+  "id": "searching-a-storage-room",
+  "title": "Searching a storage room",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to work through a storage room in R.E.P.O. without missing what is in it, given that the room is fitted with its own shelf, boxes and cleaning corner.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A way into the room",
+    "Enough hands to carry what you find",
+    "A light source of your own"
+  ],
+  "steps": [
+    {
+      "do": "Open the archive boxes before you touch anything else.",
+      "because": "three archive boxes are named separately and an archive box set is named beside them (Museum Storage Archive Box1, Museum Storage Archive Box2, Museum Storage Archive Box3, Museum Storage Archive Boxes)"
+    },
+    {
+      "do": "Check the metal shelf and the far side of the art divider.",
+      "because": "the room carries a metal storage shelf and an art divider of its own (Metal Storage Shelf, Museum Storage Art Divider)"
+    },
+    {
+      "do": "Look behind and under the big pipe.",
+      "because": "a big pipe is named among the room's fittings (Museum Storage Big Pipe)"
+    },
+    {
+      "do": "Do not walk past the props standing on the floor.",
+      "because": "a bust and a cone are named for the storage room as well (Museum Storage Bust, Museum Storage Cone)"
+    },
+    {
+      "do": "Read the sign before you commit to a room.",
+      "because": "the wizard theme hangs a storage room plaque and names a cauldron storage beside it (Wizard Sign Storage Room, Wizard Sign Cauldron Storage)"
+    },
+    {
+      "do": "Leave the cleaning corner alone until the room has been searched.",
+      "because": "the room has its own broom, bucket and bucket items (Museum Storage Broom, Museum Storage Bucket, Museum Storage Bucket Items)"
+    }
+  ],
+  "commonMistakes": [
+    "Walking through the room to the next door because it looks empty.",
+    "Treating the box set as scenery rather than stock to open.",
+    "Picking up the broom first and filling a hand with it.",
+    "Assuming every storage room holds the same things."
+  ],
+  "relatedEntities": [
+    "the-storage-rooms-and-their-fittings",
+    "the-things-that-are-not-loot",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; nothing here is estimated."
+  ]
+}
