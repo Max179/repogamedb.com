@@ -22,6 +22,10 @@
     {
       "claim": "The look itself lasts between a shortest and a longest time.",
       "evidence": "identifiers: LookTimerMin, LookTimerMax"
+    },
+    {
+      "claim": "Looking under something is an animation in three parts, an intro, a loop and an outro, named for the big monster, and the attacking version has a hurt collider of its own.",
+      "evidence": "asset names: BIG LookUnder Intro, BIG LookUnder Loop, BIG LookUnder Outro, Hurt Collider - LookUnderAttack"
     }
   ],
   "related": [
