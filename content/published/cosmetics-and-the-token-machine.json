@@ -69,6 +69,14 @@
     {
       "claim": "The cosmetics include hats, among them a spiked mohawk hair piece and a spiked band.",
       "evidence": "asset names: Cosmetic - Hat - Hair Mohawk Spikes, Cosmetic - Hat - Spike band"
+    },
+    {
+      "claim": "The machine's screen carries icons of its own, a money bag and a taxman, over a gradient background with scanlines across it.",
+      "evidence": "asset names: Cosmetic Shop Machine - Screen Icon - Money Bag, Cosmetic Shop Machine - Screen Icon - Taxman, Cosmetic Shop Machine - Screen Background Gradient, Cosmetic Shop Machine - Screen Scanlines"
+    },
+    {
+      "claim": "The plate the machine shows has its own animation in three parts, an intro, a loop and an outro, with an off state beside them.",
+      "evidence": "asset names: Cosmetic Shop Machine - Plate On Intro, Cosmetic Shop Machine - Plate On Loop, Cosmetic Shop Machine - Plate On Outro, Cosmetic Shop Machine - Plate Off"
     }
   ],
   "related": [
