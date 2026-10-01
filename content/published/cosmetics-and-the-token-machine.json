@@ -19,6 +19,10 @@
       "evidence": "identifier: CosmeticShopMachine"
     },
     {
+      "claim": "The build names animations for its token, including one for a token being inserted.",
+      "evidence": "asset names: ANIM TOKEN, ANIM TOKEN INSERTED, ANIM TOKEN TWINKLE"
+    },
+    {
       "claim": "Cosmetics are handed over as tokens, and the game keeps tokens in four grades.",
       "evidence": "identifiers: CosmeticShopToken_Basecolor_Common, CosmeticShopToken_Basecolor_Uncommon, CosmeticShopToken_Basecolor_Rare, CosmeticShopToken_Basecolor_UltraRare"
     },
