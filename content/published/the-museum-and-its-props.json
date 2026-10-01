@@ -90,6 +90,14 @@
     {
       "claim": "A coffee maker is named with a glass sheet and an emission sheet beside it.",
       "evidence": "asset names: Coffee Maker, Coffee Maker Glass, Coffee Maker Emission"
+    },
+    {
+      "claim": "The museum's cafe carries boxes of its own, and the desk has pumps named for it.",
+      "evidence": "asset names: Cafe box1, Cafe box2, Cafe box3, Cafe desk pumps"
+    },
+    {
+      "claim": "The museum's small props have an emission switch named for them.",
+      "evidence": "asset name: Museum Small Props Emission OFF"
     }
   ],
   "related": [

@@ -42,6 +42,10 @@
     {
       "claim": "A shop module can be a storage room of its own, and the wizard theme names a cauldron storage beside its storage-room sign.",
       "evidence": "asset names: Module - Shop - DE - Storage, Wizard Sign Cauldron Storage"
+    },
+    {
+      "claim": "The build carries a test version of the storage walls and a second spelling of the archive box.",
+      "evidence": "asset names: Museum Dirty Walls Storage Test, Museum Storage Archivebox1"
     }
   ],
   "related": [
