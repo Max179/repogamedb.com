@@ -245,6 +245,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-the-fences.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-the-music-and-the-radio.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -276,6 +281,11 @@
     },
     {
       "url": "/articles/running-a-level-with-a-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/searching-a-bathroom.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

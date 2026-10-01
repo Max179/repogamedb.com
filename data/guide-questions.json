@@ -81,5 +81,7 @@
   "reading-a-room-by-its-furniture": "How do I read a room from its furniture?",
   "cleaning-up-what-a-run-leaves-behind": "What does cleaning actually do in a level?",
   "searching-a-storage-room": "How should I search a storage room?",
-  "searching-a-kitchen": "How should I search a kitchen?"
+  "searching-a-kitchen": "How should I search a kitchen?",
+  "searching-a-bathroom": "How should I search a bathroom?",
+  "reading-the-fences": "How do I read the fences a level closes with?"
 }
