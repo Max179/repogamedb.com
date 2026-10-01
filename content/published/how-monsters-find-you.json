@@ -22,6 +22,10 @@
     {
       "claim": "Monsters are physical objects, so contact is a collision.",
       "evidence": "identifier: EnemyRigidbody"
+    },
+    {
+      "claim": "The build names a detection sphere of its own, along with the noise a crouch makes.",
+      "evidence": "asset names: Detection Sphere, Crouch Noise"
     }
   ],
   "related": [
