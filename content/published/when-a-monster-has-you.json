@@ -22,6 +22,10 @@
     {
       "claim": "Fighting back uses separate weapon objects.",
       "evidence": "identifiers: ItemMelee, ItemGun"
+    },
+    {
+      "claim": "Being held has a camera of its own for the local player, and both hands have an animation for it.",
+      "evidence": "asset names: Enemy - Head Grabber Local Camera, ANIM_hand_grabbed_L, ANIM_hand_grabbed_R"
     }
   ],
   "related": [
