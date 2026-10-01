@@ -32,7 +32,7 @@ node tools/smoke.mjs                                     # the built artefact, t
 node tools/smoke.mjs https://<domain>                     # after publishing: every kept URL, live
 ```
 
-Re-verified on 2026-10-01 (round 561): a fresh `git clone` of this repository built the site (pages=776 indexable=230), ran every gate (63 passing), the portable typecheck, the artefact smoke test and the preflight (11/11), all from the committed files alone and with no game package present. The clone's own `deploy-check` reported 8 ready, 0 local failures and 2 external blockers (a clone carries a remote, so only the two Cloudflare secrets are missing there).
+Re-verified on 2026-10-01 (round 564): a fresh `git clone` of this repository built the site (pages=776 indexable=230), ran every gate (63 passing), the portable typecheck, the artefact smoke test and the preflight (11/11), all from the committed files alone and with no game package present. The clone's own `deploy-check` reported 8 ready, 0 local failures and 2 external blockers (a clone carries a remote, so only the two Cloudflare secrets are missing there).
 This was verified from a clean clone: the same build, gates, typecheck and preflight results reproduce without any
 game package and without `web/dist`.
 
