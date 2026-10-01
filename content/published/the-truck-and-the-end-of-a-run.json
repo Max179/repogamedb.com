@@ -40,6 +40,10 @@
     {
       "claim": "The healer's effect line has a target, a wobble curve and a width curve of its own, and the healer slams with its own sound.",
       "evidence": "identifiers: TruckHealerLine, lineTarget, wobbleCurve, widthCurve, soundSlam"
+    },
+    {
+      "claim": "The truck's own pieces are named in the build: a door, a ramp and a wall among them.",
+      "evidence": "asset names: Truck Door, Truck Ramp, Truck Wall01"
     }
   ],
   "related": [
