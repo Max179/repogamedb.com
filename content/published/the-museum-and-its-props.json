@@ -58,6 +58,10 @@
     {
       "claim": "The museum ships decals of its own: paper, dirt and hanging dust.",
       "evidence": "asset names: Museum Decal Paper01, Museum Decal Dirt01, Museum Decal Hanging Dust Alpha01"
+    },
+    {
+      "claim": "The decals are numbered in sets, with dirt two and three and paper two among them.",
+      "evidence": "asset names: Museum Decal Dirt02, Museum Decal Dirt03, Museum Decal Paper02"
     }
   ],
   "related": [
