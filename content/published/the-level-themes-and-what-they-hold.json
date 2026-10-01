@@ -18,6 +18,10 @@
       "evidence": "identifiers: level arctic 01, level manor 01, level museum 01, level shop forest 01"
     },
     {
+      "claim": "Each theme also has ambience of its own, kept as loops per theme and per part of the level.",
+      "evidence": "asset names: Ambience Loop Arctic Default, Ambience Loop Manor Default, Ambience Loop Manor Outside Crickets"
+    },
+    {
       "claim": "A theme brings its own props and valuables, named for that theme.",
       "evidence": "identifiers: Valuable Arctic Laptop_DefaultMaterial_BaseColor, Valuable Arctic Server Rack_DefaultMaterial_BaseColor, Valuable Arctic Sample Cooler_DefaultMaterial_BaseColor"
     },
