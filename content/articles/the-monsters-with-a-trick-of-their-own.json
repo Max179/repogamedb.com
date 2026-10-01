@@ -1,0 +1,80 @@
+{
+  "id": "the-monsters-with-a-trick-of-their-own",
+  "title": "The monsters with a trick of their own",
+  "tier": "published",
+  "kind": "article",
+  "target": "The monsters in R.E.P.O. that each do one unusual thing: balloons as a weapon, a laser rather than a grab, two bodies in one, a spotlight instead of eyes, hands you hear coming, and a tongue that takes your head.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level that has one of these monsters in it",
+    "A crew that calls out what it can see",
+    "A route with more than one way out of the room"
+  ],
+  "steps": [
+    {
+      "do": "Do not read the balloons around a monster as decoration.",
+      "because": "it keeps a maximum number of balloons, a prefab and the points they spawn at, and it has a state for blowing one up (maxBalloons, balloonPrefab, balloonSpawnPoints, blowing)"
+    },
+    {
+      "do": "Expect a popped balloon to be an event of its own.",
+      "because": "a balloon popping has an effect of its own, and the monster checks collisions for a balloon, for standing up and for a door (balloonPopEffect, balloonCollisionChecker, standUpCollisionChecker, doorCollisionChecker)"
+    },
+    {
+      "do": "Expect the tall one with the nose to shoot rather than to grab.",
+      "because": "the beamer has a laser with a start point and a ray of its own, and its aim uses a vertical transform with a curve, a spread and a speed (laser, laserStartTransform, laserRayTransform, aimVerticalTransform, aimHorizontalSpread, aimHorizontalSpeed)"
+    },
+    {
+      "do": "Treat a heart hugger as more than one monster, because it has more than one body.",
+      "because": "it has a set of normal meshes and a set of horror meshes, each kept as lists with a base scale and a target (normalMesh1, normalMesh2, horrorMesh1, horrorMesh2, meshTransforms, cuteMeshTransforms)"
+    },
+    {
+      "do": "Listen for its gas before you ever see the second face.",
+      "because": "its gas has a start, a tell and a stop, and it has a gas checker, gas particles and a loop of its own (soundGasStart, soundGasTell, soundGasStop, gasChecker, gasParticles, soundGasLoop)"
+    },
+    {
+      "do": "Understand that the oogly sees with a light rather than with eyes.",
+      "because": "it sees with a spotlight and a point light of its own, with a maximum intensity (visionTransform, visionSpotlight, visionPointLight, pointLightMaxIntensity)"
+    },
+    {
+      "do": "Stay out of its cone rather than merely out of its sight.",
+      "because": "the spotlight fades in and out on its own curves and durations, and it has sounds for switching on and off (animationCurveSpotlightIntro, animationCurveSpotlightOutro, spotlightIntroDuration, spotlightOutroDuration, audioSpotlightOn, audioSpotlightOff)"
+    },
+    {
+      "do": "Listen for a robed monster's hands, because they are audible on their own.",
+      "because": "its hands have an idle sound and an aggressive one, each with a flag for whether it is playing, and it has an attack from underneath as well as an ordinary one (sfxHandIdle, sfxHandAggressive, sfxAttack, sfxAttackUnder, sfxAttackUnderGlobal)"
+    },
+    {
+      "do": "Know that its eye is placed on its own rather than set in a head.",
+      "because": "its eye has a location of its own, it turns on a rotation spring, and its end piece trails on a spring with a source and a target (eyeLocation, rotationSpring, endPieceSpring, endPieceSource, endPieceTarget)"
+    },
+    {
+      "do": "Expect the last one to come at your head rather than your body.",
+      "because": "its head, torso and tongue hang on springs with sources and targets, and the tongue keeps separate middle and tip parts (springHeadTalk, springTorsoTalk, springTongueMiddle, springTongueTip, springTongueMiddleTransform, springTongueTipTarget)"
+    },
+    {
+      "do": "Listen for the grab and the release, because both are sounded.",
+      "because": "grabbing a head and releasing it each have their own sound, and the release has a start and an end (soundGrabHead, soundReleaseHeadStart, soundReleaseHeadEnd)"
+    },
+    {
+      "do": "Read its dropkick before it lands, because it is staged.",
+      "because": "a dropkick is staged in four sounds: a tell, a start, an end and a hit (soundDropkickTell, soundDropkickStart, soundDropkickEnd, soundDropkickHit)"
+    }
+  ],
+  "commonMistakes": [
+    "Walking through a room full of balloons as if they were scenery.",
+    "Treating the beamer's nose as a face rather than as an aiming rig.",
+    "Meeting a heart hugger's cute form and assuming that is the whole monster.",
+    "Standing in the oogly's light because nothing has looked at you yet."
+  ],
+  "relatedEntities": [
+    "the-balloon-monster",
+    "the-beamer",
+    "the-heart-hugger",
+    "the-oogly",
+    "the-robed-monster",
+    "the-monster-that-grabs-heads"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
