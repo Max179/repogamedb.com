@@ -200,6 +200,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/racing-the-arena-course.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-a-level-before-you-commit.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

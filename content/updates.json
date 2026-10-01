@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Racing the arena course",
+    "url": "/articles/racing-the-arena-course.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The arena and its race",
     "url": "/entries/the-arena-and-its-race.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "Drifting and leaving the ground",
     "url": "/articles/drifting-and-leaving-the-ground.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The messages that do not wait for you",
-    "url": "/articles/the-messages-that-do-not-wait-for-you.html",
     "kind": "New guide"
   }
 ]
