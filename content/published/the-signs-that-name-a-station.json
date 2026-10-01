@@ -38,6 +38,10 @@
     {
       "claim": "The build carries further sign sheets: a robot company sign, a library sign, a museum no-smoking sign and two sign packs.",
       "evidence": "asset names: Robot company sign, library sign_DefaultMaterial_BaseColor, museum sign no smoking, sign pack, sign pack extra"
+    },
+    {
+      "claim": "The station signs an epsilon station of its own beside its other rooms.",
+      "evidence": "asset name: Arctic Sign Epsilon Station"
     }
   ],
   "related": [
