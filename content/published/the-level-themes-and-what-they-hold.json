@@ -165,6 +165,14 @@
       }
     },
     {
+      "file": "mapped/the-level-themes-and-what-they-hold-bathroom-rug.png",
+      "kind": "game",
+      "alt": {
+        "en": "A piece of the manor theme's bathroom: its round purple rug. A rug is a flat mat, so the sheet is plain by design.",
+        "zh": "庄园主题浴室的一件陈设：圆形紫色地毯。地毯本就是平面织物，贴图素净是应然。"
+      }
+    },
+    {
       "file": "the-level-themes-and-what-they-hold.svg",
       "kind": "diagram",
       "alt": {

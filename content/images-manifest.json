@@ -1896,6 +1896,30 @@
       "height": 512,
       "bytes": 95537,
       "sha256": "1882fcb660801ce314789e0f476eb82c193b886736dc799adfe5b0f17c6ee938"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-magic-banner.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 05",
+      "note": "a tall exhibition banner the museum hangs, headed Ancient Magic Artifacts",
+      "width": 128,
+      "height": 512,
+      "bytes": 87853,
+      "sha256": "9571b543b7e642042fa917c134173ffa422674b9bda825e50f85177b1abc997c"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-bathroom-rug.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Bathroom Rug",
+      "note": "the round purple rug the manor theme's bathroom uses",
+      "width": 512,
+      "height": 512,
+      "bytes": 255630,
+      "sha256": "88e7650faad932a5756ee46b531b53dbbb17281eccc030069a72223f30ed7033"
     }
   ]
 }

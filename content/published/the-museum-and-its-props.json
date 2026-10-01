@@ -158,6 +158,14 @@
       }
     },
     {
+      "file": "mapped/the-museum-and-its-props-magic-banner.png",
+      "kind": "game",
+      "alt": {
+        "en": "A second exhibition banner the museum hangs: a tall poster headed Ancient Magic Artifacts, with a bandaged hand holding a glowing eye over candle flames.",
+        "zh": "博物馆挂出的第二张展览横幅：瘦长海报，标题 Ancient Magic Artifacts，绷带手托着一只发光眼睛，下面是烛火。"
+      }
+    },
+    {
       "file": "the-museum-and-its-props.svg",
       "kind": "diagram",
       "alt": {
