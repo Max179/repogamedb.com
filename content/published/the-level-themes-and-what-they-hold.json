@@ -40,6 +40,10 @@
     {
       "claim": "The themes are not limited to the four best known: an arena has level artwork of its own alongside the arctic, manor, museum and forest pictures.",
       "evidence": "identifiers: level arena 01, level arctic 01"
+    },
+    {
+      "claim": "A theme brings its own fittings as well: the manor ships a sauna with an oven and a shower, and a fridge with a base and doors.",
+      "evidence": "asset names: Sauna Oven, Shower Albedo, Fridge_base, Fridge_door01"
     }
   ],
   "related": [
