@@ -30,6 +30,10 @@
     {
       "claim": "A broken statue and a broken artwork are named among the museum's props.",
       "evidence": "asset names: Broken statue, Broken Artwork Broken Statue"
+    },
+    {
+      "claim": "The museum has ambience of its own, kept as separate loops including one for its elevator shaft.",
+      "evidence": "asset names: Ambience Loop Museum Elevator Shaft, Ambience Loop Museum Maint, Ambience Loop Museum Hell"
     }
   ],
   "related": [
