@@ -42,6 +42,10 @@
     {
       "claim": "The painting stands come in more than one build.",
       "evidence": "asset names: Museum Painting Stand H, Museum Painting Stand sss"
+    },
+    {
+      "claim": "The paintings have a back of their own, with a colour sheet kept for it.",
+      "evidence": "asset names: Museum Painting Back, Museum Painting_Back_Albedo"
     }
   ],
   "related": [
