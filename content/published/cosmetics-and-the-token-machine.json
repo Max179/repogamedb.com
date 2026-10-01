@@ -19,6 +19,10 @@
       "evidence": "identifier: CosmeticShopMachine"
     },
     {
+      "claim": "The build ships cosmetic textures of its own, including ones named for a banana and a bandana.",
+      "evidence": "asset names: Banana Cosmetic Texture, Bandana Material Cosmetic"
+    },
+    {
       "claim": "The build names animations for its token, including one for a token being inserted.",
       "evidence": "asset names: ANIM TOKEN, ANIM TOKEN INSERTED, ANIM TOKEN TWINKLE"
     },
