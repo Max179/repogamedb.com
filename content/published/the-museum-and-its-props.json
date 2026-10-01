@@ -174,6 +174,14 @@
       }
     },
     {
+      "file": "mapped/the-museum-and-its-props-furniture-banner.png",
+      "kind": "game",
+      "alt": {
+        "en": "A fourth exhibition banner the museum hangs: a tall poster headed Mildly Disturbing Furniture, with a red chair and a pale arm reaching over it.",
+        "zh": "博物馆挂出的第四张展览横幅：瘦长海报，标题 Mildly Disturbing Furniture，红椅子上一只苍白手臂探出。"
+      }
+    },
+    {
       "file": "the-museum-and-its-props.svg",
       "kind": "diagram",
       "alt": {

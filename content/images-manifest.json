@@ -1922,6 +1922,18 @@
       "sha256": "e44517d9ebc829736a180306ae7f3687573867c8ff30718fca99aba41d8d3df1"
     },
     {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-furniture-banner.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 02",
+      "note": "a tall exhibition banner the museum hangs, headed Mildly Disturbing Furniture",
+      "width": 128,
+      "height": 512,
+      "bytes": 77442,
+      "sha256": "114880528571f041edb4a074414549bd10a2e3b0585fd5d5ad0d752cf17e2d67"
+    },
+    {
       "entity": "the-level-themes-and-what-they-hold",
       "kind": "game",
       "file": "mapped/the-level-themes-and-what-they-hold-bathroom-rug.png",
