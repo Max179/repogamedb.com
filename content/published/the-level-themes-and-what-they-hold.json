@@ -52,6 +52,10 @@
     {
       "claim": "Themes bring their own furniture as well: the manor ships a grandfather clock with its own glass.",
       "evidence": "asset names: Grandfather Clock, Clock Glass, Clock_Material_BaseColor"
+    },
+    {
+      "claim": "Manor ambience has outside variants of its own, including one by a window, one of creaky metal and one of crickets.",
+      "evidence": "asset names: Ambience Loop Manor Outside By Window, Ambience Loop Manor Outside Creaky Metal, Ambience Loop Manor Outside Crickets"
     }
   ],
   "related": [
