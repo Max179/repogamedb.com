@@ -18,6 +18,10 @@
     {
       "claim": "The game records how many extractions have been completed.",
       "evidence": "identifier: ExtractionsDoneState"
+    },
+    {
+      "claim": "The build names the extraction point's pipe and the emoji material it uses.",
+      "evidence": "asset names: Extraction Point - Pipe, EmojiMaterial Extraction Point"
     }
   ],
   "related": [

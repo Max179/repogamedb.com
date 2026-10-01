@@ -1,6 +1,36 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The monsters with a trick of their own",
+    "url": "/articles/the-monsters-with-a-trick-of-their-own.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "What the game puts over your view",
+    "url": "/articles/what-the-game-puts-over-your-view.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The monsters that search for you",
+    "url": "/articles/the-monsters-that-search-for-you.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The machines that are also traps",
+    "url": "/articles/the-machines-that-are-also-traps.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The small monsters and their tricks",
+    "url": "/articles/the-small-monsters-and-their-tricks.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Getting a valuable to the extraction point",
     "url": "/articles/getting-a-valuable-to-the-extraction-point.html",
     "kind": "New guide"
@@ -51,36 +81,6 @@
     "date": "2026-10-01",
     "title": "Charging up and catching your fall",
     "url": "/articles/charging-up-and-catching-your-fall.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Reading the record the game keeps for you",
-    "url": "/articles/reading-the-record-the-game-keeps-for-you.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Hurting a monster with what you carry",
-    "url": "/articles/hurting-a-monster-with-what-you-carry.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Getting what you need from the between-run shop",
-    "url": "/articles/getting-what-you-need-from-the-between-run-shop.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Knowing when you are nearly out",
-    "url": "/articles/knowing-when-you-are-nearly-out.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Expecting a monster to move like nothing else",
-    "url": "/articles/expecting-a-monster-to-move-like-nothing-else.html",
     "kind": "New guide"
   }
 ]

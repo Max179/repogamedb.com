@@ -18,6 +18,10 @@
     {
       "claim": "A walkie-talkie is a carried item rather than a built-in ability.",
       "evidence": "identifier: ItemWalkieTalkie"
+    },
+    {
+      "claim": "The build names its chat manager and a local chat object, along with a push-to-talk button.",
+      "evidence": "asset names: Chat Manager, Chat Local, AudioButtonPushToTalk"
     }
   ],
   "related": [
