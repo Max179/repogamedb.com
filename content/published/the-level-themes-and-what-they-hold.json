@@ -60,6 +60,10 @@
     {
       "claim": "The arctic theme ships building pieces of its own, including door signs and window frames.",
       "evidence": "asset names: Arctic Door Sign, Arctic Window Frame"
+    },
+    {
+      "claim": "It also ships an outdoor unit of its own, a portable toilet with a door and a locked state.",
+      "evidence": "asset names: Arctic Bajamaja, Arctic Bajamaja Door, Arctic Bajamaja Locked"
     }
   ],
   "related": [
