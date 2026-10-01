@@ -9,7 +9,7 @@ the reason it is still a draft.
 - published entries: 152
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
-- published guides (articles): 64
+- published guides (articles): 65
 - columns investigated and found absent in the game: 1
 - quality failures: 0
 
@@ -35,7 +35,7 @@ the reason it is still a draft.
 | faq | Answers to the questions players ask most | 1 | 0 | 0 |
 | glossary | Glossary of the terms this site uses | 1 | 0 | 0 |
 | versions | Which version this site documents | 1 | 0 | 0 |
-| guides | Step-by-step run guides | 64 | 0 | 0 |
+| guides | Step-by-step run guides | 65 | 0 | 0 |
 
 ## Columns with nothing published yet
 
