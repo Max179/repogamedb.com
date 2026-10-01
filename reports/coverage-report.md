@@ -6,7 +6,7 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 155
+- published entries: 156
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
 - published guides (articles): 75
@@ -29,7 +29,7 @@ the reason it is still a draft.
 | coop | Playing with a crew | 4 | 0 | 0 |
 | solo | Solo strategy | 2 | 0 | 0 |
 | combos | Item combinations | 0 | 1 | 0 |
-| physics | Physics, grabbing and the cart | 13 | 0 | 0 |
+| physics | Physics, grabbing and the cart | 14 | 0 | 0 |
 | cosmetics | Cosmetics and the avatar | 3 | 0 | 0 |
 | interface | Screens and run records | 12 | 0 | 0 |
 | faq | Answers to the questions players ask most | 1 | 0 | 0 |

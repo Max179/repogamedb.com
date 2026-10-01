@@ -51,6 +51,10 @@
     {
       "claim": "A honk is its own sound, and the effect volume is set separately for the player riding and for everyone else.",
       "evidence": "identifiers: honkSound, soundEffectVolumeForMountedPlayer, soundEffectVolumeForOthers"
+    },
+    {
+      "claim": "A wobble, a fall and a tumble each have a sound of their own, and a turn has a loop.",
+      "evidence": "identifiers: wobbleImpactSound, fallDamageSound, tumbleSound, turnLoopSound"
     }
   ],
   "related": [
