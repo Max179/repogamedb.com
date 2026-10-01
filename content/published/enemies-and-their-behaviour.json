@@ -54,6 +54,10 @@
     {
       "claim": "Another opens and closes its mouth, can drop and trap a player, and has a walk cycle of its own.",
       "evidence": "asset names: Enemy Spinny, Enemy Spinny - Open Mouth, Enemy Spinny - Close Mouth Drop Player, Enemy Spinny - Trap Player, Enemy Spinny - Walk cycle"
+    },
+    {
+      "claim": "The slow mouth can be attached to a player, with a top piece and a bot piece, and it carries camera visuals of its own.",
+      "evidence": "asset names: Enemy Slow Mouth On Player Bot, Enemy Slow Mouth On Player Top, Enemy Slow Mouth Camera Visuals"
     }
   ],
   "related": [
