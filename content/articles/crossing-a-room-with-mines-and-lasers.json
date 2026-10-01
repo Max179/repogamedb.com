@@ -1,0 +1,47 @@
+{
+  "id": "crossing-a-room-with-mines-and-lasers",
+  "title": "Crossing a room with mines and lasers",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get through a trapped room in R.E.P.O., given that the game ships more than one kind of mine, a trap whose activation level follows how rare its valuable is, and museum lasers kept as a system of their own.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A crew that can keep clear of each other",
+    "Something that can be thrown",
+    "A way back out of the room"
+  ],
+  "steps": [
+    {
+      "do": "Find out which kind of mine you are looking at before you touch it.",
+      "because": "the game ships more than one kind, with a plain mine, a stun mine and a trigger of their own (MineType, ItemMine, ItemMineStun, ItemMineTrigger)"
+    },
+    {
+      "do": "Expect the trap near the best valuable to be the worst one.",
+      "because": "a trap's activation level follows how rare the valuable it guards is (TrapActivateRarityLevel)"
+    },
+    {
+      "do": "Set a mine off with something thrown rather than with a body.",
+      "because": "a mine can be set off by rigid bodies and by forces (triggeredByRigidBodies, triggeredByForces)"
+    },
+    {
+      "do": "Listen for the arming and disarming beeps rather than watching for a light.",
+      "because": "a mine names its arming, armed and disarming sounds separately (soundArmingBeep, soundArmedBeep, soundDisarmingBeep)"
+    },
+    {
+      "do": "Treat the museum's lasers as one system rather than as separate beams.",
+      "because": "the museum keeps its security lasers as a system with a state and logic of their own (MuseumLaserState, MuseumLaserLogic)"
+    }
+  ],
+  "commonMistakes": [
+    "Walking into a room before reading which mines are in it.",
+    "Throwing the valuable straight at the trap that guards it.",
+    "Assuming the lasers stop when a single beam is broken."
+  ],
+  "relatedEntities": [
+    "mines-traps-and-lasers",
+    "the-valuables-you-can-find"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

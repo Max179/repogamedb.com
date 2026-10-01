@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Crossing a room with mines and lasers",
+    "url": "/articles/crossing-a-room-with-mines-and-lasers.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Racing the arena course",
     "url": "/articles/racing-the-arena-course.html",
     "kind": "New guide"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "The museum and what is in it",
     "url": "/articles/the-museum-and-what-is-in-it.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Drifting and leaving the ground",
-    "url": "/articles/drifting-and-leaving-the-ground.html",
     "kind": "New guide"
   }
 ]

@@ -60,6 +60,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/crossing-a-room-with-mines-and-lasers.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/dealing-with-a-monster-that-teleports.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
