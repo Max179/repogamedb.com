@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The tutorial level",
+    "url": "/entries/the-tutorial-level.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Taking the tutorial before a real run",
     "url": "/articles/taking-the-tutorial-before-a-real-run.html",
     "kind": "New guide"
@@ -27,12 +33,6 @@
     "date": "2026-10-01",
     "title": "The arena and its race",
     "url": "/entries/the-arena-and-its-race.html",
-    "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The tutorial level",
-    "url": "/reference/notes/the-tutorial-level.html",
     "kind": "New entry"
   },
   {

@@ -1644,6 +1644,30 @@
       "height": 256,
       "bytes": 57348,
       "sha256": "f90d88019523783575c202f6b727578caff6a55e7170881c41a9adc38501a905"
+    },
+    {
+      "entity": "the-tutorial-level",
+      "kind": "game",
+      "file": "mapped/the-tutorial-level-broken-wall.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "broken wall_Tutorial_Wall_Blank_BaseColor",
+      "note": "the sheet the game uses for the tutorial's deliberately broken wall",
+      "width": 512,
+      "height": 512,
+      "bytes": 289362,
+      "sha256": "50e91003893068f3981898ce90333c96ff14ceb3e9282950c3e30f1d24089f14"
+    },
+    {
+      "entity": "the-tutorial-level",
+      "kind": "game",
+      "file": "mapped/the-tutorial-level-door.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Tutorial Door_DefaultMaterial_BaseColor",
+      "note": "the sheet the game uses for the tutorial level's own door",
+      "width": 512,
+      "height": 512,
+      "bytes": 203885,
+      "sha256": "2edd9c84710c56d964d3223a0ae71970d01af1d8d2ac0be83603469de64a845b"
     }
   ]
 }

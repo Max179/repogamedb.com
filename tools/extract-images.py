@@ -212,6 +212,8 @@ MAPPINGS = [
   {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Painting_S_Tree", 'file': 'the-museum-and-its-props-tree-painting.png', 'note': "one of the game's own paintings: a lone tree bending over a flat field under a dark sky", 'max': 512, 'quality': 88},
   {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Painting_V_jannk", 'file': 'the-museum-and-its-props-jannk-painting.png', 'note': "one of the game's own paintings: a portrait of a bearded man in glasses, shirt and tie", 'max': 512, 'quality': 88},
   {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Painting_S_Creep", 'file': 'the-museum-and-its-props-creep-painting.png', 'note': "one of the game's own paintings: a dark canvas with a pale grinning face", 'max': 512, 'quality': 88},
+  {'entity': 'the-tutorial-level', 'bundle': 'resources.assets', 'match': "broken wall_Tutorial_Wall_Blank_BaseColor", 'file': 'the-tutorial-level-broken-wall.png', 'note': "the sheet the game uses for the tutorial's deliberately broken wall", 'max': 512},
+  {'entity': 'the-tutorial-level', 'bundle': 'resources.assets', 'match': "Tutorial Door_DefaultMaterial_BaseColor", 'file': 'the-tutorial-level-door.png', 'note': "the sheet the game uses for the tutorial level's own door", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal

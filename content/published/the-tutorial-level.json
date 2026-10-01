@@ -41,6 +41,10 @@
     {
       "claim": "A button in the menu leads into the tutorial.",
       "evidence": "asset name: Menu Button - Tutorial"
+    },
+    {
+      "claim": "Its broken wall and its door are textured by the build, each with a sheet named for it.",
+      "evidence": "asset names: broken wall_Tutorial_Wall_Blank_BaseColor, Tutorial Door_DefaultMaterial_BaseColor"
     }
   ],
   "related": [
@@ -48,6 +52,22 @@
     "levels-and-the-way-out"
   ],
   "images": [
+    {
+      "file": "mapped/the-tutorial-level-broken-wall.png",
+      "kind": "game",
+      "alt": {
+        "en": "The sheet the game uses for the tutorial's broken wall: dark planks with a hole broken through them.",
+        "zh": "游戏用于教学关破损墙面的贴图：深色木板上破开一个洞。"
+      }
+    },
+    {
+      "file": "mapped/the-tutorial-level-door.png",
+      "kind": "game",
+      "alt": {
+        "en": "The sheet the game uses for the tutorial's door: panelled metal with vents and hazard stripes.",
+        "zh": "游戏用于教学关那道门的贴图：带通风口与警示条纹的金属门板。"
+      }
+    },
     {
       "file": "the-tutorial-level.svg",
       "kind": "diagram",
@@ -61,5 +81,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }
