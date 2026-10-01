@@ -59,6 +59,10 @@
     {
       "claim": "Some come in parts: the ladder has its own beam, ends, handle and screen, and the torque staff its own arrow, crystal and screen.",
       "evidence": "asset names: Item Ladder Beam, Item Ladder End, Item Ladder Handle, Item Ladder Screen, Item Torque Staff - Arrow, Item Torque Staff - Crystal, Item Torque Staff - Screen"
+    },
+    {
+      "claim": "Grenades are shipped in kinds: a shockwave one, a stun one and a duct-taped cluster, with a base model and emissive and normal sheets.",
+      "evidence": "asset names: Shockwave Grenade, Stun Grenade Updated, Ducktaped Grenades, Grenade Base, Grenades Emissive"
     }
   ],
   "related": [
