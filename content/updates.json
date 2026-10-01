@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The tutorial level",
+    "url": "/reference/notes/the-tutorial-level.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The sparks a vehicle throws",
     "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "Firing a staff without wrecking the room",
     "url": "/articles/firing-a-staff-without-wrecking-the-room.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Letting the orb and the drone work for you",
-    "url": "/articles/letting-the-orb-and-the-drone-work-for-you.html",
     "kind": "New guide"
   }
 ]
