@@ -51,6 +51,14 @@
     {
       "claim": "Upgrades are named one by one, with a clip upgrade, a glitch effect upgrade, a particle upgrade and a camera glitch upgrade in two steps.",
       "evidence": "asset names: ClipUpgrade, Glitch Effect Upgrade, Item Upgrade Particle Effects, CameraGlitchUpgrade01, CameraGlitchUpgrade02"
+    },
+    {
+      "claim": "Items are named one by one: an extendable ladder, a leaf blower, a magic staff and a tracker are among them.",
+      "evidence": "asset names: Item Extendable Ladder, Item LeafBlower, Item Magic Staff, Item Tracker"
+    },
+    {
+      "claim": "Some come in parts: the ladder has its own beam, ends, handle and screen, and the torque staff its own arrow, crystal and screen.",
+      "evidence": "asset names: Item Ladder Beam, Item Ladder End, Item Ladder Handle, Item Ladder Screen, Item Torque Staff - Arrow, Item Torque Staff - Crystal, Item Torque Staff - Screen"
     }
   ],
   "related": [
