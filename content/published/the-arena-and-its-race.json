@@ -39,6 +39,10 @@
     {
       "claim": "The arena also names a scale, a light warning and a start area of its own.",
       "evidence": "asset names: Arena Scale, Arena Light Warning, Arena Start Stuff"
+    },
+    {
+      "claim": "The arena's pedestal has a spinner, and the arena has a temporary platform with lit materials of its own.",
+      "evidence": "asset names: Arena Pedestal Spinner, Arena Playform Temp, Arena Temp_Diffuse, Arena Temp_Emissive"
     }
   ],
   "related": [
