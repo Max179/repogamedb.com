@@ -1,0 +1,61 @@
+{
+  "id": "firing-a-staff-without-wrecking-the-room",
+  "title": "Firing a staff without wrecking the room",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the three staffs in R.E.P.O. charge, refuse and fire, so a spell is used deliberately rather than by mashing the button.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A staff in the crew's hands",
+    "Something worth aiming at",
+    "Room to be wrong in"
+  ],
+  "steps": [
+    {
+      "do": "Know which of the three staffs you are holding.",
+      "because": "all three staffs carry particles for being loaded, refused and charged up, and a state of their own (ItemStaffZeroGravity, ItemStaffVoid, ItemStaffTorque, loadedParticles, denyParticles, chargeUpParticles, currentState)"
+    },
+    {
+      "do": "Read a refusal, which is announced twice.",
+      "because": "a refused staff shows particles and plays a sound for the world and a separate sound for the interface (denyParticles, denySound, denySoundUI)"
+    },
+    {
+      "do": "Give it time to charge, and listen while it does.",
+      "because": "charging up has its own sound and a loop that runs while it does (chargeUpSound, chargeUpSoundLoop)"
+    },
+    {
+      "do": "Listen to a loaded staff, because it changes as it fills.",
+      "because": "a loaded staff has a quiet loop for a low charge and a different loop for a high one (loadedLowSoundLoop, loadedHighSoundLoop)"
+    },
+    {
+      "do": "Expect the shot to sound like two things at once.",
+      "because": "firing plays a cast sound and a lightning sound, with two choir sounds belonging to the effect (castSound, lightning01Sound, choir01Sound, choir02Sound)"
+    },
+    {
+      "do": "Know that a fired staff leaves a projectile rather than only an effect.",
+      "because": "each staff fires a projectile from a prefab and a spawn point of its own (projectilePrefab, projectileSpawnPoint)"
+    },
+    {
+      "do": "Aim the void staff, because what it creates depends on where the shot lands.",
+      "because": "the void staff names a prefab to create when its shot lands, and keeps loaded particles that stay active (ItemStaffVoid, prefabToInstantiateOnHit, loadedActiveParticles)"
+    },
+    {
+      "do": "Give the antigravity staff room, because it ignores some colliders on purpose.",
+      "because": "the antigravity staff has a left and a right wing driven by a curve, and a list of colliders to ignore (wingTransformL, wingTransformR, wingAnimationCurve, ignoreColliders)"
+    }
+  ],
+  "commonMistakes": [
+    "Pressing again because a charge was not heard.",
+    "Reading a refusal as a misfire when it is announced in the world and on screen.",
+    "Firing the void staff at nothing, because what it makes depends on the landing.",
+    "Expecting the antigravity staff to be stopped by the furniture it ignores."
+  ],
+  "relatedEntities": [
+    "how-the-staffs-are-fired",
+    "items-you-switch-carry-or-unlock",
+    "the-thrown-grenade"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

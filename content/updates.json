@@ -1,6 +1,36 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Firing a staff without wrecking the room",
+    "url": "/articles/firing-a-staff-without-wrecking-the-room.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Letting the orb and the drone work for you",
+    "url": "/articles/letting-the-orb-and-the-drone-work-for-you.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "What a shot leaves behind",
+    "url": "/articles/what-a-shot-leaves-behind.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The odds and ends a level hides",
+    "url": "/articles/the-odds-and-ends-a-level-hides.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "Charging up and catching your fall",
+    "url": "/articles/charging-up-and-catching-your-fall.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Reading the record the game keeps for you",
     "url": "/articles/reading-the-record-the-game-keeps-for-you.html",
     "kind": "New guide"
@@ -51,36 +81,6 @@
     "date": "2026-10-01",
     "title": "Reading what a level will hold",
     "url": "/articles/reading-what-a-level-will-hold.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Protecting a haul in the valuables box",
-    "url": "/articles/protecting-a-haul-in-the-valuables-box.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Watching a run after you go down",
-    "url": "/articles/watching-a-run-after-you-go-down.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Using a vehicle as a weapon without wrecking it",
-    "url": "/articles/using-a-vehicle-as-a-weapon-without-wrecking-it.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Spending tokens without regretting it",
-    "url": "/articles/spending-tokens-without-regretting-it.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Dealing with the monster that carries a bomb",
-    "url": "/articles/dealing-with-the-monster-that-carries-a-bomb.html",
     "kind": "New guide"
   }
 ]

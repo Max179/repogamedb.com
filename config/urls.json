@@ -90,6 +90,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/firing-a-staff-without-wrecking-the-room.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/first-run-what-to-expect.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
