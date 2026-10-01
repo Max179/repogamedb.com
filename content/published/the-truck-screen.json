@@ -65,6 +65,10 @@
     {
       "claim": "The screen itself has both a colour texture and a normal map of its own.",
       "evidence": "asset names: Truck Screen_DefaultMaterial_BaseColor, Truck Screen_DefaultMaterial_Normal"
+    },
+    {
+      "claim": "The truck has side hatches, a top hatch and a door with their own animations.",
+      "evidence": "asset names: ANIM SIDE HATCH LEFT, ANIM SIDE HATCH RIGHT, ANIM TOP HATCH, ANIM TRUCK DOOR"
     }
   ],
   "related": [

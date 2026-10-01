@@ -35,6 +35,10 @@
     {
       "claim": "The claw a player grabs with is named in the build, with a left and a right mesh of its own.",
       "evidence": "asset names: player_grabber_claw, L Claw (mesh), R Claw (mesh)"
+    },
+    {
+      "claim": "The cart is built from named parts: a mesh, a handle, a grab point, cables, a thruster and a wall collider, and the carts come in sizes with a long and a big long one among them.",
+      "evidence": "asset names: Cart Mesh, Cart Handle, Cart Grab Point, Cart Cables, Cart Thrust, Cart Wall Collider, Cart Long, Cart Big Long"
     }
   ],
   "related": [
