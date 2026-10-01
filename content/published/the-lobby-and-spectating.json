@@ -45,6 +45,10 @@
     {
       "claim": "The lobby has its own camera menu and buttons for stepping to the next and the previous player being watched, and it ships lobbies of its own such as a forest one.",
       "evidence": "asset names: CameraLobbyMenu, Big Button Spectate Next, Big Button Spectate Previous, Lobby Forest"
+    },
+    {
+      "claim": "The lobby is a scene of its own, with a forest, a landscape, a ditch, a road, a wooden barrier and signs for a closed road and for no stopping.",
+      "evidence": "asset names: Lobby - Forest, Lobby Landscape, Lobby Ditch, Lobby Road, Lobby Wooden Barrier, Lobby Sign - Closed Road, Lobby Sign - No stopping"
     }
   ],
   "related": [

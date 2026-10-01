@@ -44,6 +44,10 @@
     {
       "claim": "The map draws cosmetic markers of its own, for things inside and for things outside.",
       "evidence": "asset names: Map Icon Cosmetic Inside, Map Icon Cosmetic Outside"
+    },
+    {
+      "claim": "The map's pieces are named one by one, down to a background with a disabled version, a floor, walls, doors, stairs, room volumes with outlines, an overlay, a grid, fog and scanlines.",
+      "evidence": "asset names: Dirt Finder Map - Background, Dirt Finder Map - Disabled Background, Dirt Finder Map - Floor, Dirt Finder Map - Room Volume Outline, Dirt Finder Map - Overlay, Dirt Finder Map - Grid, Dirt Finder Map - Fog, Dirt Finder Map - Scanlines"
     }
   ],
   "related": [
