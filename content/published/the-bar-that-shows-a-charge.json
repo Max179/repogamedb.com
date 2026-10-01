@@ -41,6 +41,10 @@
     {
       "claim": "A battery has a place on the model, a life, a colour and a drain rate, and can be set to drain on its own or to show only when the item is toggled on.",
       "evidence": "identifiers: batteryTransform, upOffset, batteryLife, batteryColor, batteryDrainRate, autoDrain, onlyShowWhenItemToggleIsOn"
+    },
+    {
+      "claim": "The bar is built from named pieces of its own: a bar effect, a background, a border and its shadow, beeps for charging and draining, an out state with a line, and a bars container behind them.",
+      "evidence": "asset names: Battery Bar Effect, Battery BG, Battery Border, Battery Border Shadow, Battery Charge Beep, Battery Drain Beep, Battery Out, Battery Out Line, BatteryBarsContainer"
     }
   ],
   "related": [
