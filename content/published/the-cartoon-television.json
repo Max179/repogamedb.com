@@ -48,7 +48,7 @@
       "evidence": "asset names: Cartoon Cat Texture, Cartoon Mouse Texture"
     },
     {
-      "claim": "The set itself has a texture of its own, a flat screen the build ships.",
+      "claim": "The set itself has a surface texture of its own in the build.",
       "evidence": "asset name: Flat screen TV"
     }
   ],
