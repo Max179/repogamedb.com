@@ -1572,6 +1572,78 @@
       "height": 256,
       "bytes": 18083,
       "sha256": "b27603d71ca461e983c969451851174b5e362f29d47c0ba664a7bdc2cfbf777a"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-landscape-painting.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_H_Landscape",
+      "note": "one of the game's own paintings: a wide landscape with a river, wooded hills and a small barn on a green field",
+      "width": 512,
+      "height": 256,
+      "bytes": 125765,
+      "sha256": "aa1dbaa5ddc95103cdcf83808bf5f7b088ee9ddfd91052fb69fd9104a6c4131d"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-portrait-painting.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_V_Furman",
+      "note": "one of the game's own paintings: a dark portrait of a man in glasses with a hand raised to his chin",
+      "width": 256,
+      "height": 512,
+      "bytes": 105660,
+      "sha256": "a032cae7e754d5bde0d8c2d4b85d5b928a0c8ad594b663f172f31c60608f5c38"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-surrealist-painting.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_V_surrealistic",
+      "note": "one of the game's own paintings: a red apple with an eye in it, floating over dark hills",
+      "width": 256,
+      "height": 512,
+      "bytes": 123329,
+      "sha256": "be5e90e7373c2bbc00cd3e616681742a855c160b9913c00813770ecc8d1b9268"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-tree-painting.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_S_Tree",
+      "note": "one of the game's own paintings: a lone tree bending over a flat field under a dark sky",
+      "width": 512,
+      "height": 512,
+      "bytes": 271113,
+      "sha256": "dc305f62a0cf385a54edf7c41165e7fc19599d4bd2a6a2439099422fbe05cbd3"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-jannk-painting.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_V_jannk",
+      "note": "one of the game's own paintings: a portrait of a bearded man in glasses, shirt and tie",
+      "width": 256,
+      "height": 512,
+      "bytes": 100055,
+      "sha256": "3c72e28a8b2cde08036f6f514fe8c8ee1f437c9ff777192a7d2b8b1493c011e2"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-creep-painting.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_S_Creep",
+      "note": "one of the game's own paintings: a dark canvas with a pale grinning face",
+      "width": 256,
+      "height": 256,
+      "bytes": 57348,
+      "sha256": "f90d88019523783575c202f6b727578caff6a55e7170881c41a9adc38501a905"
     }
   ]
 }

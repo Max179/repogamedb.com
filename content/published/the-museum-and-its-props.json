@@ -66,6 +66,14 @@
     {
       "claim": "The paper and dirt decals run to at least five each.",
       "evidence": "asset names: Museum Decal Paper05, Museum Decal Dirt05"
+    },
+    {
+      "claim": "The paintings are a set of their own, with a wide landscape, a portrait and a surrealist canvas among them.",
+      "evidence": "asset names: Painting_H_Landscape, Painting_V_Furman, Painting_V_surrealistic, Painting_S_Tree"
+    },
+    {
+      "claim": "The set runs to a signed portrait and a grinning canvas as well.",
+      "evidence": "asset names: Painting_V_jannk, Painting_S_Creep"
     }
   ],
   "related": [
@@ -87,6 +95,54 @@
       "alt": {
         "en": "A second painting the game itself hangs in the museum: a crow's head in purple and black on a warm red ground.",
         "zh": "游戏自己挂在博物馆里的第二幅画：暖红底上的紫黑色乌鸦头部。"
+      }
+    },
+    {
+      "file": "mapped/the-museum-and-its-props-landscape-painting.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own paintings: a wide landscape with a river, wooded hills and a small barn on a green field.",
+        "zh": "游戏自带的画作之一：一幅横幅风景画，河湾、林坡与绿地上的小谷仓。"
+      }
+    },
+    {
+      "file": "mapped/the-museum-and-its-props-portrait-painting.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own paintings: a dark portrait of a man in glasses with a hand raised to his chin.",
+        "zh": "游戏自带的画作之一：深色肖像画，戴眼镜的男子一手托着下巴。"
+      }
+    },
+    {
+      "file": "mapped/the-museum-and-its-props-surrealist-painting.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own paintings: a surreal canvas of a red apple with an eye in it, floating over dark hills.",
+        "zh": "游戏自带的画作之一：超现实画作，一只嵌着眼睛的红苹果悬在暗色山丘之上。"
+      }
+    },
+    {
+      "file": "mapped/the-museum-and-its-props-tree-painting.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own paintings: a lone tree bending over a flat field under a dark sky.",
+        "zh": "游戏自带的画作之一：暗色天空下，旷野上一棵倾斜的孤树。"
+      }
+    },
+    {
+      "file": "mapped/the-museum-and-its-props-jannk-painting.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own paintings: a portrait of a bearded man in glasses, a shirt and a tie.",
+        "zh": "游戏自带的画作之一：留胡子的男子肖像，戴眼镜、穿着衬衫与领带。"
+      }
+    },
+    {
+      "file": "mapped/the-museum-and-its-props-creep-painting.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the game's own paintings: a dark canvas with a pale grinning face in it.",
+        "zh": "游戏自带的画作之一：暗色画布上浮现一张苍白的咧嘴笑脸。"
       }
     },
     {
