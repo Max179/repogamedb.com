@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Reading the signs of a level",
+    "url": "/articles/reading-the-signs-of-a-level.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The signs that name a station's rooms",
     "url": "/entries/the-signs-that-name-a-station.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "Taking the tutorial before a real run",
     "url": "/articles/taking-the-tutorial-before-a-real-run.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Getting a vehicle to feel right",
-    "url": "/articles/getting-a-vehicle-to-feel-right.html",
     "kind": "New guide"
   }
 ]

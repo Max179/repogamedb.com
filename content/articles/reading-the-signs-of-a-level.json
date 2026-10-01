@@ -1,0 +1,53 @@
+{
+  "id": "reading-the-signs-of-a-level",
+  "title": "Reading the signs of a level",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the plates a level hangs on its doors in R.E.P.O., given that the arctic station names its own rooms and its own departments.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with signs on its doors",
+    "Enough light to read a plate",
+    "A reason to choose a room"
+  ],
+  "steps": [
+    {
+      "do": "Read the plate on a door before committing to the room.",
+      "because": "the arctic station signs its own rooms, a cafeteria, a research lab and an infirmary among them (arctic sign cafeteria, arctic sign research lab, arctic sign infirmary)"
+    },
+    {
+      "do": "Use the working names to find where things are moved.",
+      "because": "the working side is signed too: a loading dock, a cargo processing area, a staging area and a vehicle maintenance bay (arctic sign loading dock, arctic sign cargo processing, arctic sign staging area)"
+    },
+    {
+      "do": "Learn the plant rooms as well.",
+      "because": "a cooling center and a ventilation chamber each have a plate (arctic sign cooling center, arctic sign ventilation chamber)"
+    },
+    {
+      "do": "Read the departments rather than only the rooms.",
+      "because": "accounting, botanical research and an exotic materials division are named on plates (arctic sign accounting, arctic sign botanical research, arctic sign exotic materials division)"
+    },
+    {
+      "do": "Do not skip the living side.",
+      "because": "living quarters, an observation platform, a recreation room and a testing lab are all signed (arctic sign living quarters, arctic sign observation platform, arctic sign recreation)"
+    },
+    {
+      "do": "Expect other themes to ship other sign sheets.",
+      "because": "a robot company sign, a library sign and a museum no-smoking sign are carried beside the arctic plates (Robot company sign, library sign_DefaultMaterial_BaseColor)"
+    }
+  ],
+  "commonMistakes": [
+    "Opening signed doors at random because the plates look alike.",
+    "Treating the plant rooms as part of the working side and skipping them.",
+    "Assuming every level uses the same plates as the arctic one.",
+    "Walking past a named room because it is small."
+  ],
+  "relatedEntities": [
+    "the-signs-that-name-a-station",
+    "the-level-themes-and-what-they-hold",
+    "how-a-level-is-put-together"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; nothing here is estimated."
+  ]
+}
