@@ -22,6 +22,10 @@
     {
       "claim": "The build names the extraction point's pipe and the emoji material it uses.",
       "evidence": "asset names: Extraction Point - Pipe, EmojiMaterial Extraction Point"
+    },
+    {
+      "claim": "The extraction point is dressed as a set of its own, with a hole that carries walls and a pipe of its own.",
+      "evidence": "asset names: Extraction Hole Walls, Extraction Pipe"
     }
   ],
   "related": [
