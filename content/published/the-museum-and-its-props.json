@@ -98,6 +98,10 @@
     {
       "claim": "The museum's small props have an emission switch named for them.",
       "evidence": "asset name: Museum Small Props Emission OFF"
+    },
+    {
+      "claim": "The museum carries signs of its own: a museum sign, a no-smoking sign and artist signs numbered from the first.",
+      "evidence": "asset names: Museum Sign, Museum Sign No Smoking, Museum Artistsign01, Artistsign01"
     }
   ],
   "related": [
