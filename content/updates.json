@@ -1,6 +1,24 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The sparks a vehicle throws",
+    "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "A vehicle that is wrecked, and the box on it",
+    "url": "/reference/notes/a-vehicle-that-is-wrecked-and-its-box.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
+    "title": "The sounds a vehicle makes",
+    "url": "/reference/notes/the-sounds-a-vehicle-makes.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The monsters with a trick of their own",
     "url": "/articles/the-monsters-with-a-trick-of-their-own.html",
     "kind": "New guide"
@@ -63,24 +81,6 @@
     "date": "2026-10-01",
     "title": "Letting the orb and the drone work for you",
     "url": "/articles/letting-the-orb-and-the-drone-work-for-you.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "What a shot leaves behind",
-    "url": "/articles/what-a-shot-leaves-behind.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The odds and ends a level hides",
-    "url": "/articles/the-odds-and-ends-a-level-hides.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Charging up and catching your fall",
-    "url": "/articles/charging-up-and-catching-your-fall.html",
     "kind": "New guide"
   }
 ]

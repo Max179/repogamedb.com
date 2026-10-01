@@ -1,0 +1,51 @@
+{
+  "id": "the-sparks-a-vehicle-throws",
+  "title": "The sparks a vehicle throws",
+  "category": "Physics",
+  "tier": "published",
+  "summary": "A scrape on a vehicle in R.E.P.O. is a system rather than a single effect: each side has its own transform, particles, collider and light, each side has a loop, and the sound is scaled between a minimum and a maximum for speed, pitch and gain.",
+  "body": [
+    "Sparks are built per side. The left and the right each have a transform of their own, so a scrape can be drawn where it is happening instead of in the middle of the vehicle.",
+    "Each side carries the whole effect, not only a picture. There are particles, a collider and a light for the left and the same for the right, which is why a scrape can be seen, can mark the body and can throw light on what is next to it.",
+    "The effect is a loop rather than a burst. Each side has a loop of its own, so the sparks last as long as the scrape does instead of being fired once at the moment of contact.",
+    "The sound is scaled rather than fixed. It runs between a minimum and a maximum for how fast the vehicle is going, for its pitch and for its gain, so the same scrape sounds different at speed and at a crawl.",
+    "What this entry does not tell you: how many sparks are drawn, how bright the light is, or how loud the loop gets. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "Sparks come as a left set and a right set, each with a transform of its own.",
+      "evidence": "identifiers: sparkTransformLeft, sparkTransformRight"
+    },
+    {
+      "claim": "Each side also has particles, a collider and a light of its own.",
+      "evidence": "identifiers: sparkParticlesLeft, sparkParticlesRight, sparkColliderLeft, sparkColliderRight, sparkLightLeft, sparkLightRight"
+    },
+    {
+      "claim": "The effect loops on each side rather than firing once.",
+      "evidence": "identifiers: sparkLoopLeft, sparkLoopRight"
+    },
+    {
+      "claim": "The scrape's sound is scaled between a minimum and a maximum for speed, for pitch and for gain.",
+      "evidence": "identifiers: sparkMinSpeed, sparkMaxSpeed, sparkMinPitch, sparkMaxPitch, sparkMinGain, sparkMaxGain"
+    }
+  ],
+  "related": [
+    "hitting-things-with-a-vehicle",
+    "the-lights-and-beeps-on-a-vehicle"
+  ],
+  "images": [
+    {
+      "file": "the-sparks-a-vehicle-throws.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a scrape starts on one side, that side has its own transform with particles, a collider and a light, the loop runs while the scrape lasts, and the sound is scaled between a minimum and a maximum.",
+        "zh": "车辆火花示意图：某一侧开始刮擦、该侧有自己的变换/粒子/碰撞体/灯光、刮擦期间循环播放、声音在最小与最大之间按速度音高增益缩放。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
