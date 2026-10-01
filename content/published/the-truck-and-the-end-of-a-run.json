@@ -60,6 +60,22 @@
       }
     },
     {
+      "file": "mapped/the-truck-and-the-end-of-a-run-door.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the truck's own pieces: the ribbed metal sheet its door is made from.",
+        "zh": "卡车自带的部件之一：车门所用的横向瓦楞金属面。"
+      }
+    },
+    {
+      "file": "mapped/the-truck-and-the-end-of-a-run-wall.png",
+      "kind": "game",
+      "alt": {
+        "en": "A second piece of the truck: a grey interior wall panel with vents in it.",
+        "zh": "卡车的第二个部件：带通风口的灰色内壁面板。"
+      }
+    },
+    {
       "file": "the-truck-and-the-end-of-a-run.svg",
       "kind": "diagram",
       "alt": {

@@ -74,6 +74,10 @@
     {
       "claim": "The set runs to a signed portrait and a grinning canvas as well.",
       "evidence": "asset names: Painting_V_jannk, Painting_S_Creep"
+    },
+    {
+      "claim": "The decals are numbered further than five: the dirt set reaches seven and the paper set six.",
+      "evidence": "asset names: Museum Decal Dirt06, Museum Decal Dirt07, Museum Decal Paper06"
     }
   ],
   "related": [
