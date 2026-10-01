@@ -54,6 +54,10 @@
     {
       "claim": "The head's own clips are named in the build: idling and chasing, a bite inside the chase, a head bot with closed and half-open versions, and a teleport particle, with skeleton skulls named beside them.",
       "evidence": "asset names: Enemy Head - Idle, Enemy Head - Chase, Enemy Head - Chase Bite, Enemy Head Bot - Closed, Enemy Head Bot - Half Open, Enemy Head Teleport Particle, Skeleton Skull, Skeleton Worker Skull"
+    },
+    {
+      "claim": "The head's tilt and lean are named of their own: a tilt for the head, one for its eye and one for the head bot, and a lean for the head and for its hair.",
+      "evidence": "asset names: EnemyHeadTilt, EnemyHeadEyeTilt, EnemyHeadBotTilt, EnemyHeadLean, EnemyHeadHairLean"
     }
   ],
   "related": [
