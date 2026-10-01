@@ -77,6 +77,10 @@
     {
       "claim": "The plate the machine shows has its own animation in three parts, an intro, a loop and an outro, with an off state beside them.",
       "evidence": "asset names: Cosmetic Shop Machine - Plate On Intro, Cosmetic Shop Machine - Plate On Loop, Cosmetic Shop Machine - Plate On Outro, Cosmetic Shop Machine - Plate Off"
+    },
+    {
+      "claim": "The machine's screen also names a background and a text background gradient.",
+      "evidence": "asset names: Cosmetic Shop Machine - Screen Background, Cosmetic Shop Machine - Text Background Gradient"
     }
   ],
   "related": [
