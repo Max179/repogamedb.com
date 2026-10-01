@@ -62,6 +62,10 @@
     {
       "claim": "The stun mine has a jaw opened by a curve, with a transform for each half, and a flash and lightning particles with an electricity sound of their own.",
       "evidence": "identifiers: ItemMineStun, jawAnimationCurve, jaw1Tranform, jaw2Tranform, particleFlash, particleLightning, soundElectricity"
+    },
+    {
+      "claim": "The traps are named one by one, from a bottle, a fan, a frog, a clown and a chomp book to a grandfather clock, a music box and a propane tank.",
+      "evidence": "asset names: BottleTrap, FanTrap, FrogTrap, ClownTrap, ChompBookTrap, GrandfatherClockTrap, Music Box Trap, PropaneTankTrap"
     }
   ],
   "related": [

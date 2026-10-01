@@ -26,6 +26,10 @@
     {
       "claim": "Bullets are their own object rather than a hidden counter.",
       "evidence": "identifier: ItemGunBullet"
+    },
+    {
+      "claim": "The stun baton is one of the weapons the build ships, and it has a variant of its own.",
+      "evidence": "asset names: Item Stun Baton, Item Stun Baton Variant"
     }
   ],
   "related": [
