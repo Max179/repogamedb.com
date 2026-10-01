@@ -36,6 +36,10 @@
     {
       "claim": "The map has scanning of its own.",
       "evidence": "identifier: DirtFinderMapScanlines"
+    },
+    {
+      "claim": "The build ships map icons at more than one size, including a head and a small one.",
+      "evidence": "asset names: Map Icon Large, Map Icon Head, Map Icon Small"
     }
   ],
   "related": [
