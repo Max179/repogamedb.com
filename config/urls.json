@@ -370,6 +370,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/what-the-game-puts-over-your-view.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/what-the-run-record-is-for.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
