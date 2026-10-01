@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The rooms the wizard school signs",
+    "url": "/entries/the-rooms-the-wizard-school-signs.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Reading the signs of a level",
     "url": "/articles/reading-the-signs-of-a-level.html",
     "kind": "New guide"
@@ -76,11 +82,5 @@
     "title": "The tutorial level",
     "url": "/entries/the-tutorial-level.html",
     "kind": "New entry"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Taking the tutorial before a real run",
-    "url": "/articles/taking-the-tutorial-before-a-real-run.html",
-    "kind": "New guide"
   }
 ]

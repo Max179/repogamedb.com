@@ -1,0 +1,78 @@
+{
+  "id": "the-rooms-the-wizard-school-signs",
+  "title": "The rooms the wizard school signs",
+  "category": "Maps",
+  "tier": "published",
+  "summary": "The wizard level in R.E.P.O. is a school that hangs a gold plaque on each of its rooms: a dining hall, a lecture hall, a dungeon, the subject rooms, the headmaster's study and the wings.",
+  "body": [
+    "The wizard level in R.E.P.O. is a school rather than a set of corridors. Every room of it carries a gold plaque, so a player can read a door and know whether it opens onto a kitchen, a classroom or something worse.",
+    "The rooms where people gather are named first. A dining hall and a lecture hall are both signed, with a dungeon kept below them, so the level has a floor plan a player can learn rather than a maze to memorise.",
+    "The subjects are named too. Potions and spells, sorcery, the dark arts and a school of magic plants each have a plaque, which is why the school reads as somewhere that teaches rather than as a decorated house.",
+    "The building has an administration. A headmaster's study and a thinking chamber are signed, so the level's own order is part of the place rather than only the loot inside it.",
+    "It also has its hazards, and they are signed as plainly as the teaching rooms. An enchanted lava room, a deathpit corridor and the sludge pits each carry a plaque, which is how the level warns a player with a name rather than with a sign that reads danger.",
+    "The wings are named by direction and by what grows in them: a west wing garden, a courtyard and a gnome alley are all signed, and a relaxation room is named among the quiet corners.",
+    "That is why the school is worth walking with an eye on the doors. These are the same plates the level hangs in play, so a room named on a door is a room the generator built and filled, and the name is what it is.",
+    "What this entry does not tell you: how many rooms a wizard level holds, which of them spawn a valuable, or whether every signed room is reachable. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The wizard level signs its gathering rooms: a dining hall and a lecture hall, with a dungeon below them.",
+      "evidence": "asset names: Wizard Sign Dining Hall, Wizard Sign Lecture Hall, Wizard Sign Dungeon"
+    },
+    {
+      "claim": "The subjects are signed too: potions and spells, sorcery, the dark arts and a school of magic plants.",
+      "evidence": "asset names: Wizard Sign Potions And Spells, Wizard Sign Sorcery Class, Wizard Sign Dark Arts, Wizard Sign Magic Plant School"
+    },
+    {
+      "claim": "The school signs an administration of its own: a headmaster's study and a thinking chamber.",
+      "evidence": "asset names: Wizard Sign Headmasters Study, Wizard Sign Thinking Chamber"
+    },
+    {
+      "claim": "The hazards are signed as plainly as the teaching rooms: an enchanted lava room, a deathpit corridor and the sludge pits.",
+      "evidence": "asset names: Wizard Sign Enchanted Lava Room, Wizard Sign Deathpit Corridor, Wizard Sign Sludge Pits of Joy"
+    },
+    {
+      "claim": "The wings are named by direction and by what is in them: a west wing garden, a courtyard and a gnome alley.",
+      "evidence": "asset names: Wizard Sign West Wing Garden, Wizard Sign Courtyard, Wizard Sign Gnome Alley"
+    },
+    {
+      "claim": "A relaxation room is named among the school's rooms.",
+      "evidence": "asset name: Wizard Sign Relaxation Room"
+    }
+  ],
+  "related": [
+    "the-level-themes-and-what-they-hold",
+    "the-signs-that-name-a-station",
+    "how-a-level-is-put-together"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-rooms-the-wizard-school-signs-dining-hall.png",
+      "kind": "game",
+      "alt": {
+        "en": "A plaque the wizard school hangs: a gold arched sign reading Dining Hall on a wooden board.",
+        "zh": "巫师学校挂出的铭牌：木板上金色拱形牌，写着 Dining Hall。"
+      }
+    },
+    {
+      "file": "mapped/the-rooms-the-wizard-school-signs-potions.png",
+      "kind": "game",
+      "alt": {
+        "en": "A second plaque from the same set, reading Potions and Spells.",
+        "zh": "同一套里的第二块铭牌，写着 Potions and Spells。"
+      }
+    },
+    {
+      "file": "mapped/the-rooms-the-wizard-school-signs-dungeon.png",
+      "kind": "game",
+      "alt": {
+        "en": "A third plaque from the same set, reading Storage Dungeon.",
+        "zh": "同一套里的第三块铭牌，写着 Storage Dungeon。"
+      }
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

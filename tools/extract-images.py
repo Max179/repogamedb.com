@@ -246,6 +246,10 @@ MAPPINGS = [
   {'entity': 'the-signs-that-name-a-station', 'bundle': 'resources.assets', 'match': "arctic sign cafeteria", 'file': 'the-signs-that-name-a-station-cafeteria.png', 'note': "the Cafeteria plate the arctic level hangs", 'max': 512},
   {'entity': 'the-signs-that-name-a-station', 'bundle': 'resources.assets', 'match': "arctic sign research lab", 'file': 'the-signs-that-name-a-station-research-lab.png', 'note': "the Research Lab plate the arctic level hangs", 'max': 512},
   {'entity': 'the-signs-that-name-a-station', 'bundle': 'resources.assets', 'match': "arctic sign infirmary", 'file': 'the-signs-that-name-a-station-infirmary.png', 'note': "the Infirmary plate the arctic level hangs", 'max': 512},
+  # The wizard school entry names the rooms the level signs; these three are that artwork.
+  {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Dining Hall", 'file': 'the-rooms-the-wizard-school-signs-dining-hall.png', 'note': "the gold plaque reading Dining Hall that the school hangs", 'max': 512},
+  {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Potions And Spells", 'file': 'the-rooms-the-wizard-school-signs-potions.png', 'note': "the gold plaque reading Potions and Spells", 'max': 512},
+  {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Dungeon", 'file': 'the-rooms-the-wizard-school-signs-dungeon.png', 'note': "the gold plaque reading Storage Dungeon", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal

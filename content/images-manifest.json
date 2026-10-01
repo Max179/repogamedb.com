@@ -2040,6 +2040,42 @@
       "height": 64,
       "bytes": 32160,
       "sha256": "76038092a5288c9f3849dc778cc1b6b6c724858299829019acd63d9654723536"
+    },
+    {
+      "entity": "the-rooms-the-wizard-school-signs",
+      "kind": "game",
+      "file": "mapped/the-rooms-the-wizard-school-signs-dining-hall.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Dining Hall",
+      "note": "the gold plaque reading Dining Hall that the school hangs",
+      "width": 512,
+      "height": 128,
+      "bytes": 38361,
+      "sha256": "3c2a45b0fabfc4c2b28bc7fc6731d3637637e703361667cc2b070b49667dcbc5"
+    },
+    {
+      "entity": "the-rooms-the-wizard-school-signs",
+      "kind": "game",
+      "file": "mapped/the-rooms-the-wizard-school-signs-potions.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Potions And Spells",
+      "note": "the gold plaque reading Potions and Spells",
+      "width": 512,
+      "height": 128,
+      "bytes": 40332,
+      "sha256": "fa3a2364ca93eb577991e882d1cfe532348bc183291b0aaa8c850a82a74944d3"
+    },
+    {
+      "entity": "the-rooms-the-wizard-school-signs",
+      "kind": "game",
+      "file": "mapped/the-rooms-the-wizard-school-signs-dungeon.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wizard Sign Dungeon",
+      "note": "the gold plaque reading Storage Dungeon",
+      "width": 512,
+      "height": 128,
+      "bytes": 40140,
+      "sha256": "f9d0c7382da5d659de39e0361c6cd102709d3c8a02370526c3d9a20882ae40fc"
     }
   ]
 }
