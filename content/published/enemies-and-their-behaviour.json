@@ -26,6 +26,10 @@
     {
       "claim": "A monster can latch onto and hold a player.",
       "evidence": "identifier: EnemyHeartHugger"
+    },
+    {
+      "claim": "Attack colliders are named one by one, with a swipe, a melee, a dropkick and a wave among them.",
+      "evidence": "asset names: Hurt Collider Swipe, Hurt Collider Melee, Hurt Collider Dropkick, Hurt Collider Wave"
     }
   ],
   "related": [
