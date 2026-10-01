@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 220" width="980" height="220" role="img" aria-label="The sounds a vehicle makes">
+  <rect width="980" height="220" fill="#12141a"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#8ecbff"/></marker></defs>
+  <rect x="20" y="46" width="220" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="78" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">engine</text>
+  <text x="38" y="106" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Start, stop, pitch</text>
+  <rect x="260" y="46" width="220" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="278" y="78" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">moving</text>
+  <text x="278" y="106" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Speed and air loops</text>
+  <rect x="500" y="46" width="220" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="518" y="78" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">a turn</text>
+  <text x="518" y="106" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Drift in three stages</text>
+  <rect x="740" y="46" width="220" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="758" y="78" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">a hit</text>
+  <text x="758" y="106" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Impact by size</text>
+  <rect x="20" y="150" width="300" height="52" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="181" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Losing control: a warning, then a tumble</text>
+  <rect x="340" y="150" width="300" height="52" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="358" y="181" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Damage: smoke loop, then fire loop</text>
+  <rect x="660" y="150" width="300" height="52" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="678" y="181" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Sparks left and right, plus a honk</text>
+</svg>

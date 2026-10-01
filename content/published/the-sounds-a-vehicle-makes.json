@@ -1,0 +1,76 @@
+{
+  "id": "the-sounds-a-vehicle-makes",
+  "title": "The sounds a vehicle makes",
+  "category": "Physics",
+  "tier": "published",
+  "summary": "A vehicle in R.E.P.O. is heard before it is seen: the game gives it an engine with a start, a stop and a pitch range, loops for speed and for being in the air, a drift heard in three stages, impacts and hits in sizes, a warning before a tumble, damage that gets louder, and a honk of its own.",
+  "body": [
+    "A vehicle makes its own noise rather than borrowing a generic engine. It has a start and a stop of its own, and a pitch that runs between a minimum and a maximum, which is why two vehicles at the same speed can sound different.",
+    "Some of what it does is a loop rather than a hit. Going fast and being in the air each have a loop of their own, so the vehicle can be heard to be moving quickly or to be off the ground without anything being struck.",
+    "A drift is heard in stages. It has a sound for starting and one for ending, a loop for each level it builds through, and a sound for each boost level it reaches, so a long drift is a rising chain rather than one repeated noise.",
+    "Impact is graded. Striking the world and striking something living both come in sizes, and the largest hit on something living has a version played for everyone rather than only for those nearby.",
+    "Losing control is announced. There is a sound for a nosedive and a heavier one, sounds for a tumble beginning and ending, and a warning beep before it happens, which is the vehicle telling you to correct rather than only reporting the crash.",
+    "Wear is audible. Damage has a loop for smoke and another for fire, so a damaged vehicle gets louder as it gets worse, and there are separate sounds for being broken and for being fixed.",
+    "Sparks are part of the sound as well as the picture. There is a loop for the left and for the right, with a start and an end, so a scrape is heard on the side it is happening on.",
+    "The honk is its own sound, and the effect volume is set separately for the player doing the riding and for everyone else, which is why what you hear from the seat is not the same as what the crew hears.",
+    "What this entry does not tell you: how loud any of it is, how far each sound carries, or which sounds a particular vehicle uses. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A vehicle's engine has a start and a stop of its own, with a pitch that runs between a minimum and a maximum.",
+      "evidence": "identifiers: engineStartSound, engineStopSound, minEnginePitch, maxEnginePitch"
+    },
+    {
+      "claim": "Going fast and being in the air each have a loop of their own.",
+      "evidence": "identifiers: hyperSpeedLoop, airborneWindLoop"
+    },
+    {
+      "claim": "A drift is heard in stages, with a loop for each level and a sound for each boost it reaches.",
+      "evidence": "identifiers: driftStartSound, driftLoopLevel1Sound, driftLoopLevel2Sound, driftLoopLevel3Sound, driftBoostLevel1Sound, driftEndSound"
+    },
+    {
+      "claim": "Impacts and hits on something living both come in sizes rather than one sound.",
+      "evidence": "identifiers: impactSoundSmall, impactSoundMedium, impactSoundBig, entityHitSoundSmall, entityHitSoundMedium, entityHitSoundBig"
+    },
+    {
+      "claim": "The largest hit on something living has a version played for everyone, not only for those nearby.",
+      "evidence": "identifier: entityHitSoundBigGlobal"
+    },
+    {
+      "claim": "Losing control is announced, including a warning beep before a tumble.",
+      "evidence": "identifiers: nosediveSound, nosediveSoundHeavy, tumbleStartSound, tumbleEndSound, tumbleWarningBeep"
+    },
+    {
+      "claim": "Damage is audible as it gets worse, and the vehicle has sounds for being broken and for being fixed.",
+      "evidence": "identifiers: damageSmokeLoopSound, damageFireLoopSound, vehicleBreakSound, vehicleFixSound"
+    },
+    {
+      "claim": "Sparks have a loop for each side along with a start and an end.",
+      "evidence": "identifiers: sparkLoopLeft, sparkLoopRight, sparkStartSound, sparkEndSound"
+    },
+    {
+      "claim": "A honk is its own sound, and the effect volume is set separately for the player riding and for everyone else.",
+      "evidence": "identifiers: honkSound, soundEffectVolumeForMountedPlayer, soundEffectVolumeForOthers"
+    }
+  ],
+  "related": [
+    "the-lights-and-beeps-on-a-vehicle",
+    "drifting-a-vehicle",
+    "driving-a-vehicle-and-staying-upright"
+  ],
+  "images": [
+    {
+      "file": "the-sounds-a-vehicle-makes.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: the engine starts, loops for speed and air, a drift in three stages, an impact by size, a tumble warning, damage going from smoke to fire, and sparks on each side.",
+        "zh": "车辆声响示意图：引擎启停、速度与滞空循环、三段漂移、分级撞击、翻滚预警、损伤从冒烟到起火、左右两侧火花。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

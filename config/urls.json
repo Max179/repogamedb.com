@@ -3605,6 +3605,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-sounds-a-vehicle-makes.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-things-that-are-not-loot.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
