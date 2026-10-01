@@ -68,6 +68,10 @@
     {
       "claim": "The manor theme fits out a bathroom of its own, with a floor and rugs among its pieces.",
       "evidence": "asset names: Bathroom, Bathroom Floor, Bathroom Rug"
+    },
+    {
+      "claim": "The arctic theme names signs of its own, for a bathroom, a research lab and an exotic materials division.",
+      "evidence": "asset names: Arctic Sign Bathroom, Arctic Sign Research Lab, Arctic Sign Exotic Materials Division"
     }
   ],
   "related": [
