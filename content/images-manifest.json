@@ -1934,6 +1934,18 @@
       "sha256": "114880528571f041edb4a074414549bd10a2e3b0585fd5d5ad0d752cf17e2d67"
     },
     {
+      "entity": "the-cleaning-tools-and-effects",
+      "kind": "game",
+      "file": "mapped/the-cleaning-tools-and-effects-sheet.png",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "Clean Effect Sprite Sheet",
+      "note": "the sprite sheet the game's clean effect is cut from, puffs and sparkles",
+      "width": 1024,
+      "height": 819,
+      "bytes": 20053,
+      "sha256": "f60e3ca38aa807c26001efcdc8f89a9f094eec3d3a21070c2d9c418f9da87c57"
+    },
+    {
       "entity": "the-level-themes-and-what-they-hold",
       "kind": "game",
       "file": "mapped/the-level-themes-and-what-they-hold-bathroom-rug.png",

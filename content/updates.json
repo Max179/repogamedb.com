@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Cleaning up what a run leaves behind",
+    "url": "/articles/cleaning-up-what-a-run-leaves-behind.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Reading a room by its furniture",
     "url": "/articles/reading-a-room-by-its-furniture.html",
     "kind": "New guide"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "The monsters that search for you",
     "url": "/articles/the-monsters-that-search-for-you.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The machines that are also traps",
-    "url": "/articles/the-machines-that-are-also-traps.html",
     "kind": "New guide"
   }
 ]

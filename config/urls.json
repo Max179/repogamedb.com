@@ -55,6 +55,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/cleaning-up-what-a-run-leaves-behind.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/clearing-the-museum-without-setting-it-off.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3096,6 +3101,11 @@
     },
     {
       "url": "/entries/the-charging-station-and-its-beam.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cleaning-tools-and-effects.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },

@@ -6,10 +6,10 @@ the reason it is still a draft.
 
 - target columns: 21
 - columns with at least one published entry: 20
-- published entries: 160
+- published entries: 161
 - draft entries (not built, not indexed): 1
 - reference pages (technical, noindex): 0
-- published guides (articles): 80
+- published guides (articles): 81
 - columns investigated and found absent in the game: 1
 - quality failures: 0
 
@@ -19,7 +19,7 @@ the reason it is still a draft.
 | behaviour | Behaviour and how to answer it | 40 | 0 | 0 |
 | valuables | Valuables and value grades | 23 | 0 | 0 |
 | extraction | Hauling and extraction | 4 | 0 | 0 |
-| items | Items you can carry | 16 | 0 | 0 |
+| items | Items you can carry | 17 | 0 | 0 |
 | weapons | Weapons | 6 | 0 | 0 |
 | ammo | Ammunition and charge | 3 | 0 | 0 |
 | medical | Medical help and reviving | 3 | 0 | 0 |
@@ -35,7 +35,7 @@ the reason it is still a draft.
 | faq | Answers to the questions players ask most | 1 | 0 | 0 |
 | glossary | Glossary of the terms this site uses | 1 | 0 | 0 |
 | versions | Which version this site documents | 1 | 0 | 0 |
-| guides | Step-by-step run guides | 80 | 0 | 0 |
+| guides | Step-by-step run guides | 81 | 0 | 0 |
 
 ## Columns with nothing published yet
 
