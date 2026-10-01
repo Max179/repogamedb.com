@@ -35,6 +35,10 @@
     {
       "claim": "A boost on the course comes from a pad of its own.",
       "evidence": "asset name: Arena Race Boost Pad"
+    },
+    {
+      "claim": "The arena also names a scale, a light warning and a start area of its own.",
+      "evidence": "asset names: Arena Scale, Arena Light Warning, Arena Start Stuff"
     }
   ],
   "related": [
