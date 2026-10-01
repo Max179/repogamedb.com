@@ -45,6 +45,10 @@
     {
       "claim": "Its sounds also name an end, a retract, an idle loop and a beam loop.",
       "evidence": "identifiers: DroneEnd, DroneRetract, DroneLoop, DroneBeamLoop"
+    },
+    {
+      "claim": "The build names the drone's parts as well, including a base, a boot, a close state and an emission.",
+      "evidence": "asset names: Drone Base, Drone Boot, Drone Close, Drone Emission"
     }
   ],
   "related": [
