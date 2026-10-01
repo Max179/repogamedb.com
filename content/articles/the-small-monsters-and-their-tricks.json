@@ -1,0 +1,66 @@
+{
+  "id": "the-small-monsters-and-their-tricks",
+  "title": "The small monsters and their tricks",
+  "tier": "published",
+  "kind": "article",
+  "target": "What the smaller monsters in R.E.P.O. are built around: a face on springs, limbs on springs with a staged attack, a spinning wheel that decides what happens to you, and a body built for reaching.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with the smaller monsters in it",
+    "A crew that calls out which one it is",
+    "Room to back away rather than trade blows"
+  ],
+  "steps": [
+    {
+      "do": "Do not read one small monster as a variation of another.",
+      "because": "the floater has a controller and an animator of its own rather than sharing another monster's (EnemyFloater, EnemyFloaterAnim)"
+    },
+    {
+      "do": "Watch the face of an upscream, because it hangs on springs.",
+      "because": "its head and both eyes each have a spring, an idle position and a target (headSpring, headIdleTransform, eyeLeftSpring, eyeLeftIdle, eyeRightSpring, eyeRightTarget)"
+    },
+    {
+      "do": "Expect its pauses to vary rather than to follow one rhythm.",
+      "because": "its idle time has a shortest and a longest value rather than one fixed pause, and it keeps both a current and a previous state (idleBreakTimeMin, idleBreakTimeMax, currentState, previousState)"
+    },
+    {
+      "do": "Treat a floater's attack as staged rather than instant.",
+      "because": "the attack runs through named states with a timer beside the current one, and it has separate sounds for charging, for the delay before the hit and for the strike going up and coming down (FloaterAttackState, stateTimer, sfxChargeAttackStart, sfxDelayAttackLocal, sfxAttackUpLocal, sfxAttackDownLocal)"
+    },
+    {
+      "do": "Expect a floater to leave something behind where it struck.",
+      "because": "the area effect its attack leaves behind has states of its own (FloaterSphereEffectState)"
+    },
+    {
+      "do": "Know that some of those noises are for the whole crew rather than only for you.",
+      "because": "the delay before the hit and the strike going up and down have versions played for everyone rather than only nearby (sfxDelayAttackGlobal, sfxAttackUpGlobal, sfxAttackDownGlobal)"
+    },
+    {
+      "do": "Expect the spinny to settle something on a wheel.",
+      "because": "it carries a spinning wheel with a target angle, a spin duration and a count of extra spins, and each colour on it has a jingle of its own (spinnyWheel, targetAngleDegrees, spinDurationSeconds, extraSpins, jingleGreen, jingleRed)"
+    },
+    {
+      "do": "Mind the tongue, because that is what the spinny attacks with.",
+      "because": "its head is a mouth over a tongue, with a pivot for closed and one for open and springs for the base and the top of the tongue (mouthOpened, closedHeadPivot, openHeadPivot, springTopTongue, SpringBaseTongueQuaternion)"
+    },
+    {
+      "do": "Keep out of reach of a thin man, because reaching is what it is built for.",
+      "because": "it has three tentacles on each side plus an extended set, and they are eased between positions rather than moved directly (tentacleR1, tentacleL1, extendedTentacles, tentacleLerp)"
+    }
+  ],
+  "commonMistakes": [
+    "Standing still in front of an upscream because its idle looks like a pause.",
+    "Treating a floater's wind-up as the attack and staying in range for the strike.",
+    "Watching the spinny's wheel instead of the tongue it attacks with.",
+    "Walking between a thin man and where it is reaching."
+  ],
+  "relatedEntities": [
+    "the-upscream",
+    "the-floater",
+    "the-spinny",
+    "the-thin-man"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

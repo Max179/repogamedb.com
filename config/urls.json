@@ -300,6 +300,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/the-small-monsters-and-their-tricks.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/the-valuables-that-go-off-by-themselves.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
