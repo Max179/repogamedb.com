@@ -40,6 +40,10 @@
     {
       "claim": "The battery readout is built from named pieces: a battery bar with an effect, a low-battery warning, a bar for the inventory battery and a set of drain presets.",
       "evidence": "asset names: Battery Bar, BatteryBarEffect, Battery Low Warning, InventoryBattery, Battery Drain Presets"
+    },
+    {
+      "claim": "The batteries are named as items of their own: an ordinary one, one for the drone and one for the orb.",
+      "evidence": "asset names: Item Battery, Item Drone Battery, Item Orb Battery"
     }
   ],
   "related": [
