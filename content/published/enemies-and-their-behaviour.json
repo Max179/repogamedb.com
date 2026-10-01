@@ -46,6 +46,14 @@
     {
       "claim": "Another monster is a hunter that aims, shoots and can leave.",
       "evidence": "asset names: Enemy Hunter, Enemy Hunter - Aim, Enemy Hunter - Shoot, Enemy Hunter - Leave Start"
+    },
+    {
+      "claim": "One monster is a slow mouth, with its own attack, a hive attack, a tentacle and an eye.",
+      "evidence": "asset names: Enemy Slow Mouth, Enemy Slow Mouth Attack, Enemy Slow Mouth Hive Attack, Enemy Slow Mouth Tentacle, Enemy Slow Mouth eye"
+    },
+    {
+      "claim": "Another opens and closes its mouth, can drop and trap a player, and has a walk cycle of its own.",
+      "evidence": "asset names: Enemy Spinny, Enemy Spinny - Open Mouth, Enemy Spinny - Close Mouth Drop Player, Enemy Spinny - Trap Player, Enemy Spinny - Walk cycle"
     }
   ],
   "related": [
