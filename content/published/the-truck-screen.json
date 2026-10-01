@@ -61,6 +61,10 @@
     {
       "claim": "The screen's text carries a static grab collider, the chat message it shows, a callback for when a message arrives, an engine success sound of its own and a test line kept for building.",
       "evidence": "identifiers: TruckScreenText, staticGrabCollider, chatMessageString, onChatMessage, engineSuccessSound, testingText"
+    },
+    {
+      "claim": "The screen itself has both a colour texture and a normal map of its own.",
+      "evidence": "asset names: Truck Screen_DefaultMaterial_BaseColor, Truck Screen_DefaultMaterial_Normal"
     }
   ],
   "related": [
