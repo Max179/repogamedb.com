@@ -1,0 +1,70 @@
+{
+  "id": "the-vehicles-in-the-level",
+  "title": "The vehicles in the level, loot or not",
+  "tier": "published",
+  "kind": "article",
+  "target": "The vehicles in R.E.P.O. and which of them are loot: a car and a plane that are valuables, a snow bike built to be ridden out, and a tricycle that arrives as a monster with a rider.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A route back to the extractor that a vehicle can take",
+    "A crew that knows which of you is driving",
+    "Room to put a plane down again"
+  ],
+  "steps": [
+    {
+      "do": "Expect some vehicles in a level to be valuables you can carry out.",
+      "because": "the car, the plane and the snow bike are each defined as a valuable, with the usual trap states and rarity level for going off (ValuableCar, ValuablePlane, ValuableArcticSnowBike, trapTriggered, trapActivateRarityLevel)"
+    },
+    {
+      "do": "Look at a car's parts before you decide how to move it.",
+      "because": "it has a body, front and rear wheels, a driver with a body and arms, and a curve for each of them (carBody, wheelsFront, wheelsBack, driverBody, driverArms, carBodyCurve)"
+    },
+    {
+      "do": "Listen to a car before you trust it to sit still.",
+      "because": "it has sounds for the horn and for starting, stopping and running (sfxCarHorn, sfxCarStart, sfxCarStop, sfxCarLoop)"
+    },
+    {
+      "do": "Expect a car to handle differently once it is moving.",
+      "because": "it carries two physical materials, one for standing still and one for moving (defaultPhysicMaterial, movingPhysicMaterial)"
+    },
+    {
+      "do": "Do not expect a plane to stay on the ground if it is going fast.",
+      "because": "the plane takes off according to speed, with a lift per unit of speed and a maximum lift force, and it has a cruising speed and a flight speed (takeOffSpeed, liftPerSpeed, maxLiftForce, cruiseSpeed, flightSpeed)"
+    },
+    {
+      "do": "Look for the seat if you intend to ride a snow bike out.",
+      "because": "the snow bike has a seat, a look-at point and a steering transform (seatTransform, lookAtTransform, steeringTransform)"
+    },
+    {
+      "do": "Expect a snow bike to keep a state and a timer, like the machines.",
+      "because": "it has a state, a timer with a maximum and a rigid body of its own, along with an engine loop (currentState, stateTimer, stateTimerMax, audioEngineLoop)"
+    },
+    {
+      "do": "Treat a tricycle as a monster rather than as loot.",
+      "because": "the tricycle arrives with a rider and the game keeps the two together as one monster (EnemyTricycle, bikeRiderTransforms, visuals)"
+    },
+    {
+      "do": "Know that its approach is announced, including a bell heard across the level.",
+      "because": "it has a bell, a bell heard across the level, a final build-up and a warning given before it acts (audioBell, audioBellGlobal, audioFinalBellBuildup, audioTell, audioTellGlobal)"
+    },
+    {
+      "do": "Watch the rider's rig, because the wheels shake on a spring of their own.",
+      "because": "the rig has wheels and handlebars kept as their own kind of object, with a body, a bell and a pedal crank transform, and the wheels shake on a spring with its own speed and damping (wheels, TricycleHandlebars, pedalCrankTransform, wheelShakeSpringSpeed, wheelShakeSpringDamping)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating a car or a plane as a crate and finding out what it does when it starts.",
+    "Assuming a snow bike is scenery when it has a seat and steering.",
+    "Trying to carry the tricycle out instead of getting out of its way.",
+    "Ignoring the bell, which is the monster telling you where it is."
+  ],
+  "relatedEntities": [
+    "the-car-and-the-plane-you-can-carry",
+    "the-snow-bike-valuable",
+    "the-tricycle-rider",
+    "the-tricycle-riders-rig"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
