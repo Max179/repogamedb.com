@@ -56,6 +56,10 @@
     {
       "claim": "Manor ambience has outside variants of its own, including one by a window, one of creaky metal and one of crickets.",
       "evidence": "asset names: Ambience Loop Manor Outside By Window, Ambience Loop Manor Outside Creaky Metal, Ambience Loop Manor Outside Crickets"
+    },
+    {
+      "claim": "The arctic theme ships building pieces of its own, including door signs and window frames.",
+      "evidence": "asset names: Arctic Door Sign, Arctic Window Frame"
     }
   ],
   "related": [
