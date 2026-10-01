@@ -108,6 +108,10 @@
     {
       "claim": "The manor theme names a bed of its own, with a colour sheet, a metallic sheet and a normal map beside it.",
       "evidence": "asset names: Manor Bed New, Manor Bed New_BaseColor, Manor Bed New_Metallic, Manor Bed New_Normal"
+    },
+    {
+      "claim": "The arctic theme names barrels of its own, in more than one version.",
+      "evidence": "asset names: Arctic Bareel, Arctic Bareel.002"
     }
   ],
   "related": [
