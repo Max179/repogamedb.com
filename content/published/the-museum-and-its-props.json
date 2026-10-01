@@ -46,6 +46,10 @@
     {
       "claim": "The paintings have a back of their own, with a colour sheet kept for it.",
       "evidence": "asset names: Museum Painting Back, Museum Painting_Back_Albedo"
+    },
+    {
+      "claim": "The paintings have a back, a vertical frame and stands with their own sheets.",
+      "evidence": "asset names: Museum Painting_Back_Albedo, Painting Frame Vertical_Normal, Painting stands_DefaultMaterial_Normal"
     }
   ],
   "related": [
