@@ -36,6 +36,10 @@
     {
       "claim": "The manor's own valuables include a coffin with a separate lid.",
       "evidence": "asset names: Valuable Manor Coffin, Valuable Coffin, Valuable Coffin Lid"
+    },
+    {
+      "claim": "A trophy is a valuable of its own, with a manor version shipped beside it.",
+      "evidence": "asset names: Valuable Trophy, Valuable Manor Trophy"
     }
   ],
   "related": [
