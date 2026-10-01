@@ -50,6 +50,10 @@
     {
       "claim": "The paintings have a back, a vertical frame and stands with their own sheets.",
       "evidence": "asset names: Museum Painting_Back_Albedo, Painting Frame Vertical_Normal, Painting stands_DefaultMaterial_Normal"
+    },
+    {
+      "claim": "The museum also ships shadow decals of its own, a round one and a square one.",
+      "evidence": "asset names: Museum Decal Shadow Round, Museum Decal Shadow Square"
     }
   ],
   "related": [
