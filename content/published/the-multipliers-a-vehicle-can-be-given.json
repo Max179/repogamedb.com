@@ -1,0 +1,47 @@
+{
+  "id": "the-multipliers-a-vehicle-can-be-given",
+  "title": "The multipliers a vehicle can be given",
+  "category": "Physics",
+  "tier": "published",
+  "summary": "A vehicle in R.E.P.O. can be tuned after it is built: the game keeps a multiplier for the force it applies as a bumper car, one for a side tackle, and a catch-up multiplier that can help a vehicle that has fallen behind.",
+  "body": [
+    "A vehicle is not only a fixed machine. It carries multipliers of its own that change how hard it pushes, which is how the same vehicle can behave differently in a mode built around bumping into each other.",
+    "One of them is the force it applies as a bumper car. It is a multiplier rather than a flat number, so the effect is scaled against whatever the vehicle is already doing.",
+    "A side tackle is separate. It has its own multiplier rather than sharing the bumper figure, so a hit from the side can be tuned apart from a hit from the front.",
+    "A vehicle that is behind can be helped. There is a catch-up multiplier, which is how the game can let a crew member who has fallen behind keep up, and it sits on the vehicle as a setting rather than as a rule about the level.",
+    "What this entry does not tell you: how large any of these multipliers is, when the game applies them, or whether every mode uses them. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A vehicle can be given a multiplier for the force it applies as a bumper car.",
+      "evidence": "identifier: bumperCarForceMultiplier"
+    },
+    {
+      "claim": "A side tackle has a multiplier of its own rather than sharing the bumper figure.",
+      "evidence": "identifier: bumperCarSideTackleMultiplier"
+    },
+    {
+      "claim": "A vehicle that is behind can be helped by a catch-up multiplier of its own.",
+      "evidence": "identifier: catchUpMultiplier"
+    }
+  ],
+  "related": [
+    "hitting-things-with-a-vehicle",
+    "the-boosts-a-vehicle-earns"
+  ],
+  "images": [
+    {
+      "file": "the-multipliers-a-vehicle-can-be-given.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: bumper force, a side tackle value and a catch-up value are each settings on the vehicle rather than rules of the room.",
+        "zh": "车辆乘数示意图：碰撞力度、侧面撞击数值与追赶数值分别是车辆自身的设置，而不是房间规则。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}

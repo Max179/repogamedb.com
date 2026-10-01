@@ -20,14 +20,14 @@ node tools/smoke.mjs                                     # the built artefact, t
 node tools/smoke.mjs https://<domain>                     # after publishing: every kept URL, live
 ```
 
-Re-verified on 2026-10-01 (round 382): a fresh `git clone` of this repository built the site (pages=749 indexable=206), ran every gate (63 passing), the portable typecheck, the artefact smoke test and the preflight (11/11), all from the committed files alone and with no game package present.
+Re-verified on 2026-10-01 (round 392): a fresh `git clone` of this repository built the site (pages=753 indexable=206), ran every gate (63 passing), the portable typecheck, the artefact smoke test and the preflight (11/11), all from the committed files alone and with no game package present.
 This was verified from a clean clone: the same build, gates, typecheck and preflight results reproduce without any
 game package and without `web/dist`.
 
 ## What the site contains
-- Published subjects: 156 — 107 entities with a confirmed game picture under `/entries/`, 49 picture-less subjects kept as noindex notes under `/reference/notes/`; structured guides: 75. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
-- Real images extracted from the game with a recorded mapping: 129. 107 entities carry one; the other 49 subjects are notes and are labelled "no confirmed picture from the game yet". A diagram is never passed off as a screenshot. Per-entry origin is in reports/image-coverage.md.
-- Build: `pages=753 indexable=206`. URL classification in `config/urls.json`: 206 keep, 541 noindex (the remaining noindex pages are the evidence layer's own tables, which the classifier does not track). The evidence layer lives under `/reference/`; the old top-level addresses are noindex stubs that point there. Player layer: home, game guide, `/entities/` and 10 category pages, 107 entity pages, 75 guides, `/tools/`, `/updates.html`; evidence layer: `/reference/`, `/entity/` and the tables.
+- Published subjects: 157 — 107 entities with a confirmed game picture under `/entries/`, 50 picture-less subjects kept as noindex notes under `/reference/notes/`; structured guides: 75. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
+- Real images extracted from the game with a recorded mapping: 129. 107 entities carry one; the other 50 subjects are notes and are labelled "no confirmed picture from the game yet". A diagram is never passed off as a screenshot. Per-entry origin is in reports/image-coverage.md.
+- Build: `pages=754 indexable=206`. URL classification in `config/urls.json`: 206 keep, 542 noindex (the remaining noindex pages are the evidence layer's own tables, which the classifier does not track). The evidence layer lives under `/reference/`; the old top-level addresses are noindex stubs that point there. Player layer: home, game guide, `/entities/` and 10 category pages, 107 entity pages, 75 guides, `/tools/`, `/updates.html`; evidence layer: `/reference/`, `/entity/` and the tables.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
 
 ## Publishing (not done, and why)
