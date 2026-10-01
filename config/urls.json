@@ -275,6 +275,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/reading-the-wizard-school-rooms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/reading-what-a-level-will-hold.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

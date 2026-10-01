@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Reading the wizard school's rooms",
+    "url": "/articles/reading-the-wizard-school-rooms.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The rooms the wizard school signs",
     "url": "/entries/the-rooms-the-wizard-school-signs.html",
     "kind": "New entry"
@@ -76,11 +82,5 @@
     "title": "Reading a room by its furniture",
     "url": "/articles/reading-a-room-by-its-furniture.html",
     "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "The tutorial level",
-    "url": "/entries/the-tutorial-level.html",
-    "kind": "New entry"
   }
 ]
