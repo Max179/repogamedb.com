@@ -20,7 +20,7 @@ node tools/smoke.mjs                                     # the built artefact, t
 node tools/smoke.mjs https://<domain>                     # after publishing: every kept URL, live
 ```
 
-Re-verified on 2026-10-01 (round 423): a fresh `git clone` of this repository built the site (pages=755 indexable=206), ran every gate (63 passing), the portable typecheck, the artefact smoke test and the preflight (11/11), all from the committed files alone and with no game package present.
+Re-verified on 2026-10-01 (round 432): a fresh `git clone` of this repository built the site (pages=755 indexable=206), ran every gate (63 passing), the portable typecheck, the artefact smoke test and the preflight (11/11), all from the committed files alone and with no game package present.
 This was verified from a clean clone: the same build, gates, typecheck and preflight results reproduce without any
 game package and without `web/dist`.
 
