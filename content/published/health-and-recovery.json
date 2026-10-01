@@ -31,6 +31,10 @@
     {
       "claim": "The health pack carries an amount it heals, a particle for a rejected use, a light of its own, and separate sounds for using it and for refusing to.",
       "evidence": "identifiers: healAmount, rejectParticles, propLight, soundUse, soundReject"
+    },
+    {
+      "claim": "A hard fall throws particles of its own, and being hurt draws a vignette over the view.",
+      "evidence": "asset names: Fall Damage Particles, Hurt Vignette"
     }
   ],
   "related": [
