@@ -17,4 +17,4 @@ near-white (above 235). A flag is not a verdict: it means the file has to be loo
 | mapped/when-the-chat-box-will-not-open-emojis.jpg | emojis | 42.8 | 90% | 0 | 90% of pixels within 6 of the median |
 | mapped/the-level-themes-and-what-they-hold-arena.jpg | level arena 01 | 43.1 | 91% | 0 | 91% of pixels within 6 of the median |
 
-Totals: 167 records, 8 flagged.
+Totals: 170 records, 8 flagged.

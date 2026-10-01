@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The signs that name a station's rooms",
+    "url": "/entries/the-signs-that-name-a-station.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Searching a bathroom",
     "url": "/articles/searching-a-bathroom.html",
     "kind": "New guide"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "Getting a vehicle to feel right",
     "url": "/articles/getting-a-vehicle-to-feel-right.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Crossing a room with mines and lasers",
-    "url": "/articles/crossing-a-room-with-mines-and-lasers.html",
     "kind": "New guide"
   }
 ]

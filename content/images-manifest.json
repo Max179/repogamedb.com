@@ -2004,6 +2004,42 @@
       "height": 128,
       "bytes": 39154,
       "sha256": "d746a1ba072eabba7d79760a6d6e0941812ba022cc487760151beb160b3972a4"
+    },
+    {
+      "entity": "the-signs-that-name-a-station",
+      "kind": "game",
+      "file": "mapped/the-signs-that-name-a-station-cafeteria.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "arctic sign cafeteria",
+      "note": "the Cafeteria plate the arctic level hangs",
+      "width": 512,
+      "height": 64,
+      "bytes": 30804,
+      "sha256": "8ab1a87c7bdc9b6a5c7d4cfa885425f168dbb68d9a32116f9877d34a90dbc214"
+    },
+    {
+      "entity": "the-signs-that-name-a-station",
+      "kind": "game",
+      "file": "mapped/the-signs-that-name-a-station-research-lab.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "arctic sign research lab",
+      "note": "the Research Lab plate the arctic level hangs",
+      "width": 512,
+      "height": 64,
+      "bytes": 30875,
+      "sha256": "a85568b98c684ffd53197beec59063218600e41df6ae7c820dc192dc8b2687d5"
+    },
+    {
+      "entity": "the-signs-that-name-a-station",
+      "kind": "game",
+      "file": "mapped/the-signs-that-name-a-station-infirmary.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "arctic sign infirmary",
+      "note": "the Infirmary plate the arctic level hangs",
+      "width": 512,
+      "height": 64,
+      "bytes": 32160,
+      "sha256": "76038092a5288c9f3849dc778cc1b6b6c724858299829019acd63d9654723536"
     }
   ]
 }
