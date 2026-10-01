@@ -1812,6 +1812,18 @@
       "height": 256,
       "bytes": 36205,
       "sha256": "c97b62f95737323251b1c207948c64a6fe3237db2da05239de783efe748d9203"
+    },
+    {
+      "entity": "the-hidden",
+      "kind": "game",
+      "file": "mapped/the-hidden-footprint.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Enemy Hidden Foot",
+      "note": "the picture of a bare footprint pair the hidden monster leaves on the floor",
+      "width": 512,
+      "height": 512,
+      "bytes": 10639,
+      "sha256": "09dcda98a9ab2d3f36ecbbffd906ba99e08cde576889fad29e710eebffed305b"
     }
   ]
 }

@@ -3150,6 +3150,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-hidden.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-hunter.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3601,11 +3606,6 @@
     },
     {
       "url": "/reference/notes/the-heads-eyes-hair-and-teeth.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-hidden.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

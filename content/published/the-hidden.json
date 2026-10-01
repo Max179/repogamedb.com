@@ -53,6 +53,10 @@
     {
       "claim": "That older copy keeps its own footstep particles, with a transform, smoke and a foot, as well as a walking sound and breath particles.",
       "evidence": "identifiers: footstepParticlesTransform, footstepParticleSmoke, footstepParticleFoot, soundFootstepWalk, breathParticles"
+    },
+    {
+      "claim": "The footprint the monster leaves is drawn from a picture of its own, a pair of bare footprints.",
+      "evidence": "asset name: Enemy Hidden Foot"
     }
   ],
   "related": [
@@ -60,6 +64,14 @@
     "how-a-monster-sees-you"
   ],
   "images": [
+    {
+      "file": "mapped/the-hidden-footprint.png",
+      "kind": "game",
+      "alt": {
+        "en": "The footprint the hidden monster leaves: a pair of white bare footprints, the toes and the heel drawn separately, on transparency.",
+        "zh": "隐者留下的脚印贴图：一对白色赤脚印，脚趾与脚跟分开绘制，背景透明。"
+      }
+    },
     {
       "file": "the-hidden.svg",
       "kind": "diagram",
@@ -73,5 +85,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }
