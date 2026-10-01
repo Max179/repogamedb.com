@@ -40,6 +40,10 @@
     {
       "claim": "The build ships map icons at more than one size, including a head and a small one.",
       "evidence": "asset names: Map Icon Large, Map Icon Head, Map Icon Small"
+    },
+    {
+      "claim": "The map draws cosmetic markers of its own, for things inside and for things outside.",
+      "evidence": "asset names: Map Icon Cosmetic Inside, Map Icon Cosmetic Outside"
     }
   ],
   "related": [
