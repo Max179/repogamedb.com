@@ -50,6 +50,18 @@
     {
       "claim": "The build names pieces of a level that are not loot at all, a storage-room door and a wet-floor sign among them, each with a texture of its own.",
       "evidence": "asset names: Door Shop Storage Texture, Wet Floor Sign Albedo"
+    },
+    {
+      "claim": "The storage rooms are signed as well: the arctic theme names a sign for a storage yard and a sign for a warehouse, the second of them under two spellings.",
+      "evidence": "asset names: Arctic Sign Storage Yard, Arctic Sign Warehouse, arctic sign warehouse2"
+    },
+    {
+      "claim": "A theme can start a run in a storage room: a museum storage room and a wizard storage room are both named.",
+      "evidence": "asset names: Start Room - Museum - Storage Room, Wizard Sign Storage Room"
+    },
+    {
+      "claim": "A storage shelf can be named as filled, and a lab storage bin is a piece of its own.",
+      "evidence": "asset names: Filled storage shelf, Lab Storage Bin"
     }
   ],
   "related": [
