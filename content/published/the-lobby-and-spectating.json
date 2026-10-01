@@ -49,6 +49,10 @@
     {
       "claim": "The lobby is a scene of its own, with a forest, a landscape, a ditch, a road, a wooden barrier and signs for a closed road and for no stopping.",
       "evidence": "asset names: Lobby - Forest, Lobby Landscape, Lobby Ditch, Lobby Road, Lobby Wooden Barrier, Lobby Sign - Closed Road, Lobby Sign - No stopping"
+    },
+    {
+      "claim": "Those two signs are drawn from sheets of their own, one for the closed road and one for no stopping.",
+      "evidence": "asset names: Sign_Closed Road_Albedo, Sign_No stopping_Albedo"
     }
   ],
   "related": [
@@ -56,6 +60,22 @@
     "extraction-run"
   ],
   "images": [
+    {
+      "file": "mapped/the-lobby-and-spectating-closed-road-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The lobby's closed-road sign: a weathered orange board lettered Avstangd vag.",
+        "zh": "大厅里的封路标牌：风化的橙色牌面，写着 Avstangd vag。"
+      }
+    },
+    {
+      "file": "mapped/the-lobby-and-spectating-no-stopping-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The lobby's no-stopping sign: a yellow board with a blue oval crossed through in red.",
+        "zh": "大厅里的禁止停车标牌：黄色牌面，蓝色椭圆被红色斜线划掉。"
+      }
+    },
     {
       "file": "the-lobby-and-spectating.svg",
       "kind": "diagram",
@@ -69,5 +89,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

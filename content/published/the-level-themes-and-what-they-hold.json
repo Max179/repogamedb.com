@@ -84,6 +84,10 @@
     {
       "claim": "The wizard theme names a sign for each of its rooms, more than twenty of them, from a common room and a dormatory to the great library and the sludge pits.",
       "evidence": "asset names: Wizard Sign Common Room, Wizard Sign Dormatory, Wizard Sign The Great Library, Wizard Sign Sludge Pits, Wizard Sign East Wing Lobby"
+    },
+    {
+      "claim": "The arctic theme ships a sign of its own as a sheet, a specimen-research sign with an atom on it.",
+      "evidence": "asset name: Arctic Sign Specimen"
     }
   ],
   "related": [
@@ -138,6 +142,14 @@
       "alt": {
         "en": "A fourth wizard sign, reading Sludge Pits of Truth.",
         "zh": "第四块巫师主题标牌，写着 Sludge Pits of Truth。"
+      }
+    },
+    {
+      "file": "mapped/the-level-themes-and-what-they-hold-specimen-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "A sign the arctic theme hangs on its walls: a white plaque reading Specimen Research beside an orange atom.",
+        "zh": "极地主题挂在墙上的标牌：白色牌面写着 Specimen Research，旁边是橙色原子图案。"
       }
     },
     {

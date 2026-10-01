@@ -218,6 +218,9 @@ MAPPINGS = [
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Wizard Sign Dormatory", 'file': 'the-level-themes-and-what-they-hold-dormatory-sign.png', 'note': "a second wizard level sign, reading Dormatory", 'max': 512},
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Wizard Sign The Great Library", 'file': 'the-level-themes-and-what-they-hold-library-sign.png', 'note': "a third wizard level sign, reading The Great Library", 'max': 512},
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Wizard Sign Sludge Pits", 'file': 'the-level-themes-and-what-they-hold-sludge-pits-sign.png', 'note': "a fourth wizard level sign, reading Sludge Pits of Truth", 'max': 512},
+  {'entity': 'the-lobby-and-spectating', 'bundle': 'resources.assets', 'match': "Sign_Closed Road_Albedo", 'file': 'the-lobby-and-spectating-closed-road-sign.png', 'note': "the lobby's closed-road sign, a weathered orange board", 'max': 512},
+  {'entity': 'the-lobby-and-spectating', 'bundle': 'resources.assets', 'match': "Sign_No stopping_Albedo", 'file': 'the-lobby-and-spectating-no-stopping-sign.png', 'note': "the lobby's no-stopping sign, a yellow board with a crossed-out blue oval", 'max': 512},
+  {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Arctic Sign Specimen", 'file': 'the-level-themes-and-what-they-hold-specimen-sign.png', 'note': "the arctic theme's specimen-research sign, a white plaque beside an atom", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal

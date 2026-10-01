@@ -1716,6 +1716,42 @@
       "height": 128,
       "bytes": 40835,
       "sha256": "a8ed6b5dfacd7315949fdf14def0b0bbaee5f187cf4a6636806e5448475acac3"
+    },
+    {
+      "entity": "the-lobby-and-spectating",
+      "kind": "game",
+      "file": "mapped/the-lobby-and-spectating-closed-road-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Sign_Closed Road_Albedo",
+      "note": "the lobby's closed-road sign, a weathered orange board",
+      "width": 512,
+      "height": 512,
+      "bytes": 313261,
+      "sha256": "d9aca392df1f25eb6edb22711890a140361125595e52659280c255ccd63e39c2"
+    },
+    {
+      "entity": "the-lobby-and-spectating",
+      "kind": "game",
+      "file": "mapped/the-lobby-and-spectating-no-stopping-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Sign_No stopping_Albedo",
+      "note": "the lobby's no-stopping sign, a yellow board with a crossed-out blue oval",
+      "width": 512,
+      "height": 512,
+      "bytes": 80726,
+      "sha256": "7fdd28be45444277510492a46681c38e1231e3de8d1eefd0a48822d7676be723"
+    },
+    {
+      "entity": "the-level-themes-and-what-they-hold",
+      "kind": "game",
+      "file": "mapped/the-level-themes-and-what-they-hold-specimen-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Arctic Sign Specimen",
+      "note": "the arctic theme's specimen-research sign, a white plaque beside an atom",
+      "width": 512,
+      "height": 128,
+      "bytes": 23224,
+      "sha256": "a2070214bb508a105b2a3374680ce36cae0c754e6c2612041aa715b166ebf80e"
     }
   ]
 }
