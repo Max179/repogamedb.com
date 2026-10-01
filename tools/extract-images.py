@@ -204,6 +204,8 @@ MAPPINGS = [
   {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Flat screen TV", 'file': 'the-cartoon-television-set.jpg', 'note': "the game's own texture for the flat screen television the cartoon plays on", 'max': 512, 'quality': 88},
   # The arena entry names the race and its win screen; this asset is the crown the game itself draws for the winner.
   {'entity': 'the-arena-and-its-race', 'bundle': 'sharedassets0.assets', 'match': "Arena Crown", 'file': 'the-arena-and-its-race-crown.jpg', 'note': "the crown the game itself draws for the arena winner", 'max': 256, 'quality': 92},
+  # This asset is one of the paintings the game itself hangs in the museum, opened before it was accepted.
+  {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Painting_H_crow", 'file': 'the-museum-and-its-props-crow-painting.jpg', 'note': "a painting the game itself hangs in the museum, a crow's head on a warm ground", 'max': 512, 'quality': 88},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal

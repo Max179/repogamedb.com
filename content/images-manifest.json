@@ -1560,6 +1560,18 @@
       "height": 256,
       "bytes": 6964,
       "sha256": "3d37757be277798f9507bb2de551402f5a3f9bfec976bb6f0bc1cbd150000e5e"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-crow-painting.jpg",
+      "sourceBundle": "resources.assets",
+      "assetName": "Painting_H_crow",
+      "note": "a painting the game itself hangs in the museum, a crow's head on a warm ground",
+      "width": 512,
+      "height": 256,
+      "bytes": 18083,
+      "sha256": "b27603d71ca461e983c969451851174b5e362f29d47c0ba664a7bdc2cfbf777a"
     }
   ]
 }

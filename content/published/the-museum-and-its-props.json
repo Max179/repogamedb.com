@@ -62,6 +62,14 @@
       }
     },
     {
+      "file": "mapped/the-museum-and-its-props-crow-painting.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "A second painting the game itself hangs in the museum: a crow's head in purple and black on a warm red ground.",
+        "zh": "游戏自己挂在博物馆里的第二幅画：暖红底上的紫黑色乌鸦头部。"
+      }
+    },
+    {
       "file": "the-museum-and-its-props.svg",
       "kind": "diagram",
       "alt": {
