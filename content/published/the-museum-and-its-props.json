@@ -26,6 +26,10 @@
     {
       "claim": "The build names the museum's own floors in wood and in concrete, including a floor piece made for hiding.",
       "evidence": "asset names: Floor Museum Wood, Floor Museum Concrete Bright NEW, Floor_1x0.5 museum hidey"
+    },
+    {
+      "claim": "A broken statue and a broken artwork are named among the museum's props.",
+      "evidence": "asset names: Broken statue, Broken Artwork Broken Statue"
     }
   ],
   "related": [
