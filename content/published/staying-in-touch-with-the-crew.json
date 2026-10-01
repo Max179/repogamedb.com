@@ -22,6 +22,14 @@
     {
       "claim": "The build names its chat manager and a local chat object, along with a push-to-talk button.",
       "evidence": "asset names: Chat Manager, Chat Local, AudioButtonPushToTalk"
+    },
+    {
+      "claim": "Chat is a client of its own, with a channel, a prompt and a text field.",
+      "evidence": "asset names: ChatClient, ChatChannel, ChatPrompt, Chat Text"
+    },
+    {
+      "claim": "Voice has a volume slider for how close you are and a whisper voice of its own.",
+      "evidence": "asset names: Slider - proximity voice volume, Voice Whisper, PlayerVoiceChat"
     }
   ],
   "related": [
