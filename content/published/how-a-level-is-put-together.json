@@ -84,6 +84,10 @@
     {
       "claim": "The build ships debug modules of its own, named with people's names, one of them a museum and one an outside test.",
       "evidence": "asset names: Module - Debug Axel, Module - Debug Builder, Module - Debug Monika, Module - Debug Ruben - Museum, Module - Debug Ruben - outside"
+    },
+    {
+      "claim": "Decals are named by the surface they sit on: floor decals and ceiling decals, with a dirt decal and a set of grime decals among them.",
+      "evidence": "asset names: Floor Decals, Ceiling Decals, Dirt Decal, Grime Decals"
     }
   ],
   "related": [
