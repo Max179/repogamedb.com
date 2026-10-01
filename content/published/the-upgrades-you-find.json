@@ -36,6 +36,10 @@
     {
       "claim": "Some upgrades change one particular ability rather than a general statistic.",
       "evidence": "identifier: ItemUpgradePlayerTumbleWingsLogic"
+    },
+    {
+      "claim": "The grab has upgrades of its own, one for strength and one for reach.",
+      "evidence": "asset names: Upgrade_Grab-Strength_Albedo, Upgrade_Grab-Range_Albedo"
     }
   ],
   "related": [
@@ -49,6 +53,22 @@
       "alt": {
         "en": "The albedo texture taken from the game of one of the upgrades it ships.",
         "zh": "取自游戏的升级道具反照率贴图之一。"
+      }
+    },
+    {
+      "file": "mapped/the-upgrades-you-find-grab-strength.png",
+      "kind": "game",
+      "alt": {
+        "en": "The crate the game ships the grab-strength upgrade in: an orange Upgrade+++ box whose character lifts a dumb-bell.",
+        "zh": "游戏为抓取力量升级提供的箱体：橙色 Upgrade+++ 包装，箱上角色举起哑铃。"
+      }
+    },
+    {
+      "file": "mapped/the-upgrades-you-find-grab-range.png",
+      "kind": "game",
+      "alt": {
+        "en": "The grab-range upgrade's own crate, the same orange box with the character reaching out.",
+        "zh": "抓取距离升级的箱体：同一款橙色包装，箱上角色向外伸手。"
       }
     },
     {

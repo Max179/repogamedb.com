@@ -1824,6 +1824,30 @@
       "height": 512,
       "bytes": 10639,
       "sha256": "09dcda98a9ab2d3f36ecbbffd906ba99e08cde576889fad29e710eebffed305b"
+    },
+    {
+      "entity": "the-upgrades-you-find",
+      "kind": "game",
+      "file": "mapped/the-upgrades-you-find-grab-strength.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Upgrade_Grab-Strength_Albedo",
+      "note": "the crate the game ships the grab-strength upgrade in",
+      "width": 512,
+      "height": 512,
+      "bytes": 93466,
+      "sha256": "90546a1f33fdc08be034ea7b1b2fb03028b7072b33b75ac512a5fca6afe7a4c7"
+    },
+    {
+      "entity": "the-upgrades-you-find",
+      "kind": "game",
+      "file": "mapped/the-upgrades-you-find-grab-range.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Upgrade_Grab-Range_Albedo",
+      "note": "the crate the game ships the grab-range upgrade in",
+      "width": 512,
+      "height": 512,
+      "bytes": 88580,
+      "sha256": "6f556e8cdf1111198ba2052f1fe3ce208b7130903c57163f67c9888c29fe62dd"
     }
   ]
 }
