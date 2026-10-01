@@ -36,6 +36,10 @@
     {
       "claim": "One of the upgrades is a battery itself.",
       "evidence": "identifier: Upgrade_Death-Head-Battery_Albedo"
+    },
+    {
+      "claim": "The battery readout is built from named pieces: a battery bar with an effect, a low-battery warning, a bar for the inventory battery and a set of drain presets.",
+      "evidence": "asset names: Battery Bar, BatteryBarEffect, Battery Low Warning, InventoryBattery, Battery Drain Presets"
     }
   ],
   "related": [

@@ -30,6 +30,10 @@
     {
       "claim": "The stun baton is one of the weapons the build ships, and it has a variant of its own.",
       "evidence": "asset names: Item Stun Baton, Item Stun Baton Variant"
+    },
+    {
+      "claim": "The staff family is named in the build: a void staff with its own arrow and crystal, and a zero-gravity staff with arrow, crystal and wings.",
+      "evidence": "asset names: Item Void Staff, Item Void Staff - Arrow, Item Void Staff - Crystal, Item Zero Gravity Staff, Item Zero Gravity Staff - Wings, Item Zero Gravity Staff - Crystal"
     }
   ],
   "related": [
