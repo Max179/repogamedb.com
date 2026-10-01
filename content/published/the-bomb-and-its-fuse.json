@@ -61,6 +61,10 @@
     {
       "claim": "The director can draw its own debug shapes, can be set to run one unit only and has a flag for running without fuse progress.",
       "evidence": "identifiers: debugDraw, debugOneOnly, debugNoFuseProgress"
+    },
+    {
+      "claim": "The build ships the bomb's parts as named pieces, including dynamite in an eye and a version with several sticks.",
+      "evidence": "asset names: Enemy Bang Skull Bomb, Enemy Bang Skull Dynamite in eye, Enemy Bang Skull Multiple Sticks"
     }
   ],
   "related": [
