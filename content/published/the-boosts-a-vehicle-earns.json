@@ -25,6 +25,10 @@
       "evidence": "identifiers: rampBoostForce, rampBoostMinSpeed"
     },
     {
+      "claim": "The build names boost pads for a race and for an arena, along with a boost light, a boost audio source and a boost particle.",
+      "evidence": "asset names: Arena Boost Pad Black, Boost Light, Vehicle Boost Particle"
+    },
+    {
       "claim": "The vehicle holds a strength for redirecting the velocity it already has.",
       "evidence": "identifier: velocityRedirectStrength"
     },
