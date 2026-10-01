@@ -280,6 +280,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/the-machines-that-are-also-traps.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/the-messages-that-do-not-wait-for-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
