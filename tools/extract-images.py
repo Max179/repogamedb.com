@@ -204,6 +204,10 @@ MAPPINGS = [
   {'entity': 'the-cartoon-television', 'bundle': 'resources.assets', 'match': "Flat screen TV", 'file': 'the-cartoon-television-set.jpg', 'note': "the game's own texture for the flat screen television the cartoon plays on", 'max': 512, 'quality': 88},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
+  # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal
+  # loop rather than a head or a player, so it does not read as the head the player-list entry describes. The same
+  # asset was being cited as "a player picture of its own" in the readouts entry; that half of the claim was removed
+  # as unsupported when this file was opened.
 ]
 os.makedirs(OUT_DIR, exist_ok=True)
 records = []

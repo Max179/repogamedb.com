@@ -44,8 +44,8 @@
       "evidence": "identifiers: transformOffset, textNumber, objectMoon, textMoon, iconMoon"
     },
     {
-      "claim": "The health readout is drawn with artwork the game ships, and the interface has a player picture of its own.",
-      "evidence": "asset names: PlayerAvatar_Health-bar_Shadow, Icon_Player"
+      "claim": "The health readout is drawn with artwork the game ships.",
+      "evidence": "asset name: PlayerAvatar_Health-bar_Shadow"
     }
   ],
   "related": [
