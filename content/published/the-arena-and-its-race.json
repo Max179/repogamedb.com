@@ -1,0 +1,58 @@
+{
+  "id": "the-arena-and-its-race",
+  "title": "The arena and its race",
+  "category": "Maps",
+  "summary": "The arena is a mode of its own in R.E.P.O.: a race over a track built from a start, an end and pieces between them, a timer and a pulsing arrow on the interface, a crown for the winner, a win screen with its own background and text, and arena fittings from a platform and a pedestal to a beam and a light.",
+  "body": [
+    "The arena is a place with a race in it. There is a track, and the track is built from a start piece, an end piece and pieces between them, which is why a course can be put together rather than being one fixed shape.",
+    "The race is timed. There is a timer of its own on the interface, and an arrow that pulses, so the screen shows both how long you have been going and which way the course turns.",
+    "Winning is shown rather than announced. The build names a crown for the winner and a separate crown for the player, so the prize is a thing in the level rather than only a line of text.",
+    "The win has a screen of its own, with a background and a text, which is why the result is presented rather than left to a message on its own.",
+    "The arena itself is put together from parts: a platform, a pedestal with a screen, a beam and a light, so the mode has fittings of its own rather than borrowing a level's.",
+    "What this entry does not tell you: how long a race is, how a winner is decided, or what the boost pad does to your speed. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The race runs on a track built from a start, an end and pieces between them.",
+      "evidence": "asset names: ArenaRaceTrackPieceStart, ArenaRaceTrackPieceEnd, ArenaRaceTrackPiece"
+    },
+    {
+      "claim": "The race has a timer on the interface and an arrow that pulses.",
+      "evidence": "asset names: ArenaRaceTimerUI, ArenaRaceArrowPulsate"
+    },
+    {
+      "claim": "The winner is given a crown, and the player's own crown is a separate piece.",
+      "evidence": "asset names: Arena Crown, Arena Crown Player"
+    },
+    {
+      "claim": "The win has a screen of its own, with a background and a text.",
+      "evidence": "asset names: Arena Win Background, Arena Win Text, ArenaMessageWinUI"
+    },
+    {
+      "claim": "The arena is built from a platform, a pedestal with a screen, a beam, a light and its own colliders.",
+      "evidence": "asset names: Arena Platform, Arena Pedestal, Arena Pedistal Screen, ArenaBeam, ArenaLight, Arena Colliders"
+    },
+    {
+      "claim": "A boost on the course comes from a pad of its own.",
+      "evidence": "asset name: Arena Race Boost Pad"
+    }
+  ],
+  "related": [
+    "the-level-themes-and-what-they-hold",
+    "how-a-level-is-put-together"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-arena-and-its-race-crown.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "The crown the game itself draws for the arena winner: a gold crown with a band beneath it.",
+        "zh": "游戏自己为竞技场赢家画的王冠：一顶金色王冠，下面有一条冠带。"
+      }
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. Identifiers used to verify each fact are kept on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

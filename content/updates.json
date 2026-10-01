@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "The arena and its race",
+    "url": "/entries/the-arena-and-its-race.html",
+    "kind": "New entry"
+  },
+  {
+    "date": "2026-10-01",
     "title": "The tutorial level",
     "url": "/reference/notes/the-tutorial-level.html",
     "kind": "New entry"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "The messages that do not wait for you",
     "url": "/articles/the-messages-that-do-not-wait-for-you.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Firing a staff without wrecking the room",
-    "url": "/articles/firing-a-staff-without-wrecking-the-room.html",
     "kind": "New guide"
   }
 ]

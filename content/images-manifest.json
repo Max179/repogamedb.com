@@ -1548,6 +1548,18 @@
       "height": 512,
       "bytes": 13486,
       "sha256": "3ea9f6ee2133631491ce1720913b8bd4bccc5620348359e85422f9c51bac6996"
+    },
+    {
+      "entity": "the-arena-and-its-race",
+      "kind": "game",
+      "file": "mapped/the-arena-and-its-race-crown.jpg",
+      "sourceBundle": "sharedassets0.assets",
+      "assetName": "Arena Crown",
+      "note": "the crown the game itself draws for the arena winner",
+      "width": 256,
+      "height": 256,
+      "bytes": 6964,
+      "sha256": "3d37757be277798f9507bb2de551402f5a3f9bfec976bb6f0bc1cbd150000e5e"
     }
   ]
 }
