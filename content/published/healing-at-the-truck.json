@@ -24,6 +24,10 @@
       "evidence": "identifiers: fullHealParticle, fullHealSmokeParticle, failedHealParticles"
     },
     {
+      "claim": "The build names a heal sphere and a set of heal particles beside the failed-heal effects.",
+      "evidence": "asset names: Heal Sphere, Heal Particles, Failed Heal Effects"
+    },
+    {
       "claim": "Health and stamina can both be upgraded, each with its own wording.",
       "evidence": "identifiers: playerUpgradeHealth, localizedUpgradeHealth, playerUpgradeStamina, localizedUpgradeStamina"
     },
