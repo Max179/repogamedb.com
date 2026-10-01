@@ -46,6 +46,10 @@
     {
       "claim": "The wizard's broom is a valuable of its own, with a timer and plank particles, and a sound for its box breaking.",
       "evidence": "identifiers: WizardBroomValuable, broomTimer, plankParticles, broomBoxBreakSound"
+    },
+    {
+      "claim": "The wizard's set also includes an alchemy station kept as a valuable.",
+      "evidence": "asset name: Valuable Wizard Alchemy Station"
     }
   ],
   "related": [
