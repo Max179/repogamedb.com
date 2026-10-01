@@ -43,6 +43,10 @@
     {
       "claim": "The arena's pedestal has a spinner, and the arena has a temporary platform with lit materials of its own.",
       "evidence": "asset names: Arena Pedestal Spinner, Arena Playform Temp, Arena Temp_Diffuse, Arena Temp_Emissive"
+    },
+    {
+      "claim": "The arena's pedestal screen and its message screen are named as objects of their own.",
+      "evidence": "asset names: Arena Pedistal Screen, ArenaMessageUI"
     }
   ],
   "related": [
