@@ -50,6 +50,10 @@
     {
       "claim": "Its float is driven by curves: a curve, a speed and an amount for its position, and the same three for its rotation.",
       "evidence": "identifiers: EnemyHeadFloat, CurvePos, SpeedPos, AmountPos, CurveRot, SpeedRot, AmountRot"
+    },
+    {
+      "claim": "The head's own clips are named in the build: idling and chasing, a bite inside the chase, a head bot with closed and half-open versions, and a teleport particle, with skeleton skulls named beside them.",
+      "evidence": "asset names: Enemy Head - Idle, Enemy Head - Chase, Enemy Head - Chase Bite, Enemy Head Bot - Closed, Enemy Head Bot - Half Open, Enemy Head Teleport Particle, Skeleton Skull, Skeleton Worker Skull"
     }
   ],
   "related": [
