@@ -1,0 +1,62 @@
+{
+  "id": "the-bathrooms-and-their-fittings",
+  "title": "The bathrooms and their fittings",
+  "category": "Maps",
+  "tier": "published",
+  "summary": "R.E.P.O. keeps bathrooms as a room set of their own: a floor, a sink and a stall of their own, a worn and a broken wall for the shop's version, numbered pipework, and a signed door.",
+  "body": [
+    "R.E.P.O. keeps a bathroom as a room set of its own rather than as a corner of another room. The build names the room, a floor for it, a sink and a stall, so a level can drop the whole set wherever a theme calls for one.",
+    "The set is not only the big pieces. A normal map is named beside the floor itself, a pipe is named as the clean one, and the sink has a collider object of its own, which is why a player bumps into the basin instead of walking through it.",
+    "The shop's bathroom is fitted separately from the plain set. It has a sink and a toilet named for the shop rather than for the room type, so the two versions can sit in one level without sharing a name.",
+    "The shop walls are where the wear shows. The same wall is carried as a worn one and as a broken one, and the worn version exists under two different orders of the same words, which is the kind of naming this project reports rather than tidies up on the game's behalf.",
+    "The pipework is numbered. Three shop bathroom pipes are named in order, and the first of them is carried in a big version as well, so a level can have a full run of pipes and a heavier one where the wall needs it.",
+    "The door is signed. The game ships a metal plate reading BATHROOM, and it is legible across a room, which is how a player knows the room is there before opening the door.",
+    "That is why a bathroom rewards a second look rather than a glance. It is a small room with its own sink, stall and pipework, and the shop's version adds the wear and the broken pieces that tell a player the theme is a shop rather than a manor.",
+    "What this entry does not tell you: which themes place a bathroom, how many stalls a room holds, or whether anything is kept behind the wear. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A bathroom is a room set of its own, with a floor, a sink, a stall and a clean pipe named beside it.",
+      "evidence": "asset names: Bathroom, Bathroom Floor, Bathroom Sink, Bathroom Stall, Bathroom Pipe Clean"
+    },
+    {
+      "claim": "The set carries more than its big pieces: the floor has a normal map beside it and the sink has a collider object of its own.",
+      "evidence": "asset names: Bathroom Floor Normal, Bathroom Sink_collider"
+    },
+    {
+      "claim": "The shop's bathroom is fitted separately from the plain one, with a sink and a toilet of its own.",
+      "evidence": "asset names: Shop Bathroom Sink, Shop Toilet"
+    },
+    {
+      "claim": "The shop bathroom walls come in a worn version and a broken one, and the worn wall is carried under two different orders of the same words.",
+      "evidence": "asset names: Shop Bathroom Wall Grimey, Shop Bathroom Grimey Wall, Shop Bathroom Wall Broken"
+    },
+    {
+      "claim": "The shop bathroom pipes are numbered to three, and the first is also carried in a big version.",
+      "evidence": "asset names: Shop Bathroom Pipe1, Shop Bathroom Pipe2, Shop Bathroom Pipe3, Shop Bathroom Pipe1 Big"
+    },
+    {
+      "claim": "The bathroom has a sign of its own: a metal plate reading BATHROOM.",
+      "evidence": "asset names: arctic sign bathroom"
+    }
+  ],
+  "related": [
+    "how-a-level-is-put-together",
+    "the-cleaning-tools-and-effects",
+    "the-level-themes-and-what-they-hold"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-bathrooms-and-their-fittings-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The bathroom sign the game ships: a worn metal plate with the word BATHROOM in raised letters between four screws.",
+        "zh": "游戏自带的洗手间标牌：一块磨损的金属牌，四个螺丝之间是凸起的 BATHROOM 字样。"
+      }
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

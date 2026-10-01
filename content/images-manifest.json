@@ -1956,6 +1956,18 @@
       "height": 512,
       "bytes": 255630,
       "sha256": "88e7650faad932a5756ee46b531b53dbbb17281eccc030069a72223f30ed7033"
+    },
+    {
+      "entity": "the-bathrooms-and-their-fittings",
+      "kind": "game",
+      "file": "mapped/the-bathrooms-and-their-fittings-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "arctic sign bathroom",
+      "note": "the worn metal plate the game signs a bathroom door with",
+      "width": 512,
+      "height": 64,
+      "bytes": 30380,
+      "sha256": "b72a9d8915348e4d05dbe6fbb54bd69240e23ffaf91cd66cc811bc7665e10a7a"
     }
   ]
 }

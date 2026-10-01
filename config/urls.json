@@ -3040,6 +3040,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-bathrooms-and-their-fittings.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-beamer.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
