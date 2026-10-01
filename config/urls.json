@@ -280,6 +280,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/searching-a-kitchen.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/searching-a-storage-room.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

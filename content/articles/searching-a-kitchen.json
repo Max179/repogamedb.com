@@ -1,0 +1,53 @@
+{
+  "id": "searching-a-kitchen",
+  "title": "Searching a kitchen",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to work through a kitchen in R.E.P.O. without leaving anything behind, given that the room is fitted with its own counter, sink and fridge.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A way into the room",
+    "A free hand",
+    "Enough light to see the counter"
+  ],
+  "steps": [
+    {
+      "do": "Start at the sink.",
+      "because": "the sink is named for the room and carries a collider object of its own (Kitchen Sink, Kitchen Sink_collider)"
+    },
+    {
+      "do": "Work along the counter before you open anything.",
+      "because": "each piece carries its own sheet, named after the piece (Kitchen Counter_Kitchen_Counter_BaseColor, Kitchen Sink_Kitchen_Sink_BaseColor)"
+    },
+    {
+      "do": "Open the fridge last, once the room is quiet.",
+      "because": "the fridge is named for the room as well, and again for the arctic version of it (Kitchen Fridge, Kitchen Fridge Arctic)"
+    },
+    {
+      "do": "Read the sign on the door before you commit to the room.",
+      "because": "the game signs a kitchen with a metal plate of its own (arctic sign kitchen)"
+    },
+    {
+      "do": "Expect the arctic version of the same room to be fitted differently.",
+      "because": "the arctic set names its own counter, sink and fridge (Kitchen Counter Arctic, Kitchen Sink Arctic)"
+    },
+    {
+      "do": "Do not treat a kitchen as a side room you can skip.",
+      "because": "the game names a start room of its own for a kitchen dining room (Start Room - Manor - Kitchen Dining Room)"
+    }
+  ],
+  "commonMistakes": [
+    "Walking past the sink because it looks like part of the wall.",
+    "Opening the fridge first and drawing attention to the noisiest piece.",
+    "Assuming the arctic kitchen holds the same pieces as the manor one.",
+    "Leaving the counter unsearched because a box was already in the way."
+  ],
+  "relatedEntities": [
+    "the-kitchens-and-their-fittings",
+    "the-storage-rooms-and-their-fittings",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; nothing here is estimated."
+  ]
+}
