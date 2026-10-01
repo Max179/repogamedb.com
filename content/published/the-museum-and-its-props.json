@@ -62,6 +62,10 @@
     {
       "claim": "The decals are numbered in sets, with dirt two and three and paper two among them.",
       "evidence": "asset names: Museum Decal Dirt02, Museum Decal Dirt03, Museum Decal Paper02"
+    },
+    {
+      "claim": "The paper and dirt decals run to at least five each.",
+      "evidence": "asset names: Museum Decal Paper05, Museum Decal Dirt05"
     }
   ],
   "related": [
