@@ -1,0 +1,47 @@
+{
+  "id": "taking-the-tutorial-before-a-real-run",
+  "title": "Taking the tutorial before a real run",
+  "tier": "published",
+  "kind": "article",
+  "target": "What the tutorial level in R.E.P.O. actually is, given that the game ships a level of its own for it, runs it with a director, builds it from its own floors, walls and doors, and ends it at the truck.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A fresh copy of the game",
+    "A crew that has not played it before",
+    "A few minutes to spare"
+  ],
+  "steps": [
+    {
+      "do": "Start it from the menu rather than from a real level.",
+      "because": "a button in the menu leads into the tutorial, and the game ships a tutorial level of its own (Menu Button - Tutorial, Start Room - Tutorial)"
+    },
+    {
+      "do": "Expect a director to guide you through it.",
+      "because": "the tutorial is run by a director of its own (Tutorial Director)"
+    },
+    {
+      "do": "Treat its rooms as the tutorial's own rather than as a sample of a real level.",
+      "because": "the tutorial is built from its own floors, walls and doors (Tutorial Floor, Tutorial Wall, Tutorial Door)"
+    },
+    {
+      "do": "Look at the damaged part rather than going around it.",
+      "because": "part of it is deliberately damaged and ships a broken wall, with its own text container (Tutorial Broken Wall, Tutorial Text Container)"
+    },
+    {
+      "do": "Finish at the truck, through the trigger the tutorial uses.",
+      "because": "the tutorial ends at the truck through a trigger of its own (TutorialTruckTrigger, Truck Tutorial, Tutorial Truck Trigger)"
+    }
+  ],
+  "commonMistakes": [
+    "Skipping it and learning the controls in the middle of a real run.",
+    "Assuming the tutorial's rooms behave like a generated level.",
+    "Leaving before the truck trigger and missing the end of the lesson."
+  ],
+  "relatedEntities": [
+    "the-tutorial-level",
+    "how-a-level-is-put-together"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -290,6 +290,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/taking-the-tutorial-before-a-real-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/the-head-and-what-it-does.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

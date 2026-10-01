@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-10-01",
+    "title": "Taking the tutorial before a real run",
+    "url": "/articles/taking-the-tutorial-before-a-real-run.html",
+    "kind": "New guide"
+  },
+  {
+    "date": "2026-10-01",
     "title": "Getting a vehicle to feel right",
     "url": "/articles/getting-a-vehicle-to-feel-right.html",
     "kind": "New guide"
@@ -75,12 +81,6 @@
     "date": "2026-10-01",
     "title": "The small monsters and their tricks",
     "url": "/articles/the-small-monsters-and-their-tricks.html",
-    "kind": "New guide"
-  },
-  {
-    "date": "2026-10-01",
-    "title": "Getting a valuable to the extraction point",
-    "url": "/articles/getting-a-valuable-to-the-extraction-point.html",
     "kind": "New guide"
   }
 ]
