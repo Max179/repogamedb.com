@@ -55,10 +55,6 @@
     {
       "claim": "The melee set is named weapon by weapon: a sledgehammer item carries its own swing, hit, bob and controller.",
       "evidence": "asset names: Item Melee Sledgehammer, SledgehammerSwing, SledgehammerHit, SledgehammerBob, SledgehammerController"
-    },
-    {
-      "claim": "The guns are named one by one, with a shotgun, a hunter gun, a stun gun, a tranq gun and a shockwave gun among them.",
-      "evidence": "asset names: Item Shotgun, Hunter Gun, Stun Gun, Tranq Gun, Shockwave Gun"
     }
   ],
   "related": [

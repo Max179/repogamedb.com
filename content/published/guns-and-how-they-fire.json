@@ -57,6 +57,10 @@
     {
       "claim": "The laser gun has parts of its own, including a build-up particle and an initial crack sound, a muzzle flash, a build-up impulse curve, a latch curve for going back, two transforms for its energy and overheat latch, and a transform for a back pling-plong.",
       "evidence": "identifiers: ItemGunLaser, particleBuildUp, particleInitialCrack, muzzleFlashParticle, soundInitialCrack, buildupImpulseCurve, backLatchCurve, transformGunEnergyPlop, transformOverHeatLatch, transformBackPlingPlong"
+    },
+    {
+      "claim": "The guns are named one by one, with a shotgun, a hunter gun, a stun gun, a tranq gun and a shockwave gun among them.",
+      "evidence": "asset names: Item Shotgun, Hunter Gun, Stun Gun, Tranq Gun, Shockwave Gun"
     }
   ],
   "related": [
