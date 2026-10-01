@@ -82,6 +82,14 @@
     {
       "claim": "The statuary is a set of its own: a golden statue and a marble one, a bust with its own sheets, and broken sculptures with a colour sheet and a normal map, beside a cubic sculpture material.",
       "evidence": "asset names: Golden Statue, Marble Statue, Axel Bust_DefaultMaterial_BaseColor, Broken Artwork Broken Sculptures, Broken Sculptures_DefaultMaterial_BaseColor, Broken Sculptures_DefaultMaterial_Normal, Cubic sculpture material"
+    },
+    {
+      "claim": "The museum keeps a cafe bar of its own: a desk with pumps, a menu, a keg, a fridge and the hinge named for that fridge's door.",
+      "evidence": "asset names: Museum Cafe Bar Desk, Museum Cafe Bar Pumps, Museum Cafe Bar Menu, Museum  Cafe Bar Keg, Museum Cafe Bar Fridge, Hinge Template - Cafe Bar Fridge Door"
+    },
+    {
+      "claim": "A coffee maker is named with a glass sheet and an emission sheet beside it.",
+      "evidence": "asset names: Coffee Maker, Coffee Maker Glass, Coffee Maker Emission"
     }
   ],
   "related": [
