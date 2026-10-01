@@ -32,6 +32,10 @@
     {
       "claim": "More than one radio is named in the build, with a trap radio and a valuable radio beside the shop's own.",
       "evidence": "asset names: Trap Radio, Valuable Radio, Radio Mesh"
+    },
+    {
+      "claim": "The radio's display has an on state and an off state of its own.",
+      "evidence": "asset names: Radio Display - On, Radio Display - Off"
     }
   ],
   "related": [
