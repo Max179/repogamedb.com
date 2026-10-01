@@ -30,6 +30,14 @@
     {
       "claim": "Attack colliders are named one by one, with a swipe, a melee, a dropkick and a wave among them.",
       "evidence": "asset names: Hurt Collider Swipe, Hurt Collider Melee, Hurt Collider Dropkick, Hurt Collider Wave"
+    },
+    {
+      "claim": "Each monster line brings its own animations, from spawning and idling through moving, attacking, being stunned and despawning.",
+      "evidence": "asset names: Enemy - Bang Spawn, Enemy - Bang Idle, Enemy - Bang Move, Enemy Beamer - Attack, Enemy Beamer - Stun, Enemy Bomb Thrower - Back Away, Enemy Bomb Thrower - Attack"
+    },
+    {
+      "claim": "One monster's head can come off and grow.",
+      "evidence": "asset names: Enemy Bomb Thrower - Body Head - Detach, Enemy Bomb Thrower - Body Head - Grow, Enemy Bomb Thrower - Body Head - Idle"
     }
   ],
   "related": [
