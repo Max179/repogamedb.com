@@ -250,6 +250,10 @@ MAPPINGS = [
   # poster the game paints onto walls.
   {'entity': 'the-things-that-are-not-loot', 'bundle': 'resources.assets', 'match': "sign pack extra", 'file': 'the-things-that-are-not-loot-success-poster.png', 'note': "the success poster the game puts on a wall, a framed picture of a man in a Rob's cap", 'max': 512},
   {'entity': 'the-things-that-are-not-loot', 'bundle': 'resources.assets', 'match': "sign pack", 'file': 'the-things-that-are-not-loot-shop-signs.png', 'note': "the sheet of shop signs the game ships, dollar deals, a charging sign and a slushie board among them", 'max': 512},
+  # The exhibition entry names the banners the museum hangs; these three are that artwork.
+  {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Banner 03", 'file': 'the-exhibitions-the-museum-advertises-mittens.png', 'note': "a tall exhibition banner headed Gregory Mittens", 'max': 512},
+  {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Banner 07", 'file': 'the-exhibitions-the-museum-advertises-good-dogs.png', 'note': "a tall exhibition banner headed Good Dogs Taped on Bad Walls", 'max': 512},
+  {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Banner 11", 'file': 'the-exhibitions-the-museum-advertises-silverdance.png', 'note': "a tall exhibition banner headed Silverdance", 'max': 512},
   # The wizard school entry names the rooms the level signs; these three are that artwork.
   {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Dining Hall", 'file': 'the-rooms-the-wizard-school-signs-dining-hall.png', 'note': "the gold plaque reading Dining Hall that the school hangs", 'max': 512},
   {'entity': 'the-rooms-the-wizard-school-signs', 'bundle': 'resources.assets', 'match': "Wizard Sign Potions And Spells", 'file': 'the-rooms-the-wizard-school-signs-potions.png', 'note': "the gold plaque reading Potions and Spells", 'max': 512},

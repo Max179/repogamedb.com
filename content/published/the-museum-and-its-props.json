@@ -213,6 +213,30 @@
         "zh": "博物馆与道具示意图：回到商店、从机器购买外观、摆放道具、其状态被记录。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    },
+    {
+      "file": "mapped/the-exhibitions-the-museum-advertises-mittens.png",
+      "kind": "game",
+      "alt": {
+        "en": "A further exhibition banner the museum hangs: a figure in a sheet skirt under the repeated word Bravery, headed Gregory Mittens.",
+        "zh": "博物馆挂出的又一张展览横幅：身裹床单的人物，背景反复写着 Bravery，标题 Gregory Mittens。"
+      }
+    },
+    {
+      "file": "mapped/the-exhibitions-the-museum-advertises-good-dogs.png",
+      "kind": "game",
+      "alt": {
+        "en": "A further exhibition banner: a dog taped to a wall, headed Good Dogs Taped on Bad Walls and presented by a museum of human art.",
+        "zh": "又一张展览横幅：被胶带粘在墙上的狗，标题 Good Dogs Taped on Bad Walls，署名 human art 博物馆。"
+      }
+    },
+    {
+      "file": "mapped/the-exhibitions-the-museum-advertises-silverdance.png",
+      "kind": "game",
+      "alt": {
+        "en": "A further exhibition banner: a face behind pink type reading Silverdance, a collection of wax dolls portraying the richest man alive.",
+        "zh": "又一张展览横幅：粉色字体 Silverdance 之后的特写面孔，副题是「以蜡像演绎世上最富有的人」。"
+      }
     }
   ],
   "sources": [

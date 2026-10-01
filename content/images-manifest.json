@@ -2066,6 +2066,42 @@
       "sha256": "6d55c62a74d7475f1c2949e9885b5fd8f98f2d8823473fef63c4e5050f8dff62"
     },
     {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-exhibitions-the-museum-advertises-mittens.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 03",
+      "note": "a tall exhibition banner headed Gregory Mittens",
+      "width": 128,
+      "height": 512,
+      "bytes": 89803,
+      "sha256": "4e5cefbde5c4bdfa34dffca6fe8757665d3ca5d4f3dacbeeba36a3e179d9f151"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-exhibitions-the-museum-advertises-good-dogs.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 07",
+      "note": "a tall exhibition banner headed Good Dogs Taped on Bad Walls",
+      "width": 128,
+      "height": 512,
+      "bytes": 85603,
+      "sha256": "f7035a590d38b623b5534aace2373052f2b1fc4a4f0938df15b1ca24369094c9"
+    },
+    {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-exhibitions-the-museum-advertises-silverdance.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 11",
+      "note": "a tall exhibition banner headed Silverdance",
+      "width": 128,
+      "height": 512,
+      "bytes": 77057,
+      "sha256": "822998b3a3622f3478927576849b0dfed42db73f7c0b610fdc82b69ce93baec3"
+    },
+    {
       "entity": "the-rooms-the-wizard-school-signs",
       "kind": "game",
       "file": "mapped/the-rooms-the-wizard-school-signs-dining-hall.png",
