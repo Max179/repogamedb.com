@@ -1910,6 +1910,18 @@
       "sha256": "9571b543b7e642042fa917c134173ffa422674b9bda825e50f85177b1abc997c"
     },
     {
+      "entity": "the-museum-and-its-props",
+      "kind": "game",
+      "file": "mapped/the-museum-and-its-props-folklore-banner.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Museum Banner 09",
+      "note": "a tall exhibition banner the museum hangs, headed The Creatures of Folklore",
+      "width": 128,
+      "height": 512,
+      "bytes": 89323,
+      "sha256": "e44517d9ebc829736a180306ae7f3687573867c8ff30718fca99aba41d8d3df1"
+    },
+    {
       "entity": "the-level-themes-and-what-they-hold",
       "kind": "game",
       "file": "mapped/the-level-themes-and-what-they-hold-bathroom-rug.png",

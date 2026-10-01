@@ -166,6 +166,14 @@
       }
     },
     {
+      "file": "mapped/the-museum-and-its-props-folklore-banner.png",
+      "kind": "game",
+      "alt": {
+        "en": "A third exhibition banner the museum hangs: a tall poster headed The Creatures of Folklore, with a grinning skull above a red tentacle and a many-eyed mass.",
+        "zh": "博物馆挂出的第三张展览横幅：瘦长海报，标题 The Creatures of Folklore，咧嘴骷髅下方是红色触手与满布眼睛的一团。"
+      }
+    },
+    {
       "file": "the-museum-and-its-props.svg",
       "kind": "diagram",
       "alt": {

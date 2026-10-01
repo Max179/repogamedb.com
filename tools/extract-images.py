@@ -234,6 +234,7 @@ MAPPINGS = [
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Wizard Welcome Banner", 'file': 'the-level-themes-and-what-they-hold-welcome-banner.png', 'note': "the blue welcome banner the wizard theme hangs", 'max': 512},
   {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Banner 01", 'file': 'the-museum-and-its-props-exhibition-banner.png', 'note': "a tall exhibition banner the museum hangs, a moose-fighting poster", 'max': 512},
   {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Banner 05", 'file': 'the-museum-and-its-props-magic-banner.png', 'note': "a tall exhibition banner the museum hangs, headed Ancient Magic Artifacts", 'max': 512},
+  {'entity': 'the-museum-and-its-props', 'bundle': 'resources.assets', 'match': "Museum Banner 09", 'file': 'the-museum-and-its-props-folklore-banner.png', 'note': "a tall exhibition banner the museum hangs, headed The Creatures of Folklore", 'max': 512},
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Bathroom Rug", 'file': 'the-level-themes-and-what-they-hold-bathroom-rug.png', 'note': "the round purple rug the manor theme's bathroom uses", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
