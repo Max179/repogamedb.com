@@ -265,6 +265,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/the-messages-that-do-not-wait-for-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/the-odds-and-ends-a-level-hides.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

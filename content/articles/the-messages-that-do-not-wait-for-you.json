@@ -1,0 +1,61 @@
+{
+  "id": "the-messages-that-do-not-wait-for-you",
+  "title": "The messages that do not wait for you",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the readouts and messages in R.E.P.O. appear and disappear, so a number that vanished can be told apart from one that never arrived.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run in progress",
+    "Something worth reading on screen",
+    "More than one thing happening at once"
+  ],
+  "steps": [
+    {
+      "do": "Know that the readouts share a base rather than each being built separately.",
+      "because": "the readouts share a base with a text, a transform, a show position and a hide position (SemiUI, uiText, textRectTransform, showPosition, hidePosition)"
+    },
+    {
+      "do": "Expect a readout to have a place it comes from and a place it goes to.",
+      "because": "each has a show position and a hide position rather than appearing in place (showPosition, hidePosition)"
+    },
+    {
+      "do": "Read it while it is there, because each has a hide timer of its own.",
+      "because": "each has a default hide timer and a hidden flag (defaultHideTimer, isHidden)"
+    },
+    {
+      "do": "Watch the shrink rather than the disappearance, because leaving is animated.",
+      "because": "they shrink on an animation curve and raise an event when the shrink completes (animationCurveShrink, shrinkComplete)"
+    },
+    {
+      "do": "Expect some messages to animate the whole object and not only the text.",
+      "because": "they can animate the whole object rather than only the text (animateTheEntireObject)"
+    },
+    {
+      "do": "Know that some readouts are kept from being switched off.",
+      "because": "they can be kept from being disabled (doNotDisable)"
+    },
+    {
+      "do": "Know which fixed readout answers what, because not everything fades.",
+      "because": "health, the haul, the goal and item details each have a readout of their own under one state readout (HUD, HealthUI, HaulUI, GoalUI, ItemInfoUI)"
+    },
+    {
+      "do": "Look for the second item readout when the first is not enough.",
+      "because": "item details have a second readout for extra information (ItemInfoExtraUI)"
+    }
+  ],
+  "commonMistakes": [
+    "Missing a message that had a hide timer and was gone before you looked.",
+    "Reading a shrink as a miss rather than as the readout leaving.",
+    "Waiting for a fixed readout to disappear when it is kept on purpose.",
+    "Reading only the first line of item detail."
+  ],
+  "relatedEntities": [
+    "the-readouts-that-fade-away",
+    "the-readouts-you-play-by",
+    "the-numbers-that-float-over-things"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
