@@ -47,6 +47,10 @@
     {
       "claim": "A kind of item stays switched off until a level is reached.",
       "evidence": "identifier: ItemDeactivatedUntilLevel"
+    },
+    {
+      "claim": "Upgrades are named one by one, with a clip upgrade, a glitch effect upgrade, a particle upgrade and a camera glitch upgrade in two steps.",
+      "evidence": "asset names: ClipUpgrade, Glitch Effect Upgrade, Item Upgrade Particle Effects, CameraGlitchUpgrade01, CameraGlitchUpgrade02"
     }
   ],
   "related": [
