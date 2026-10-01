@@ -76,6 +76,10 @@
     {
       "claim": "The arctic set has its own valuables, named one by one: a camera, a centrifuge, a cup, an eraser, a phone, a smart watch, a stapler, a USB stick and a VHS among them.",
       "evidence": "asset names: Arctic Valuable Camera, Arctic Valuable Centrifuge, Arctic Valuable Cup, Arctic Valuable Eraser, Arctic Valuable Phone, Arctic Valuable Smart Watch, Arctic Valuable Stapler, Arctic Valuable Usb stick, Arctic Valuable VHS"
+    },
+    {
+      "claim": "The wizard set names valuables of its own, a goblin arm, a sword, a small green potion, a tiny pack and a bug for the arachnophobes, while the museum set names a horse and a milk among its own.",
+      "evidence": "asset names: Wizard Valuable Goblin Arm, Wizard Valuable Sword, Wizard valuable small potion green, Wizard valuable tiny pack, Wizard Valuable Bug (Arachnophobia), Museum Valuable Horse, Museum valuable milk"
     }
   ],
   "related": [
