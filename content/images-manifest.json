@@ -1980,6 +1980,18 @@
       "height": 64,
       "bytes": 30784,
       "sha256": "51b1946f693a1530224097d1f3e279bf921cf16632ddd03f14a5b9e4c507d5dd"
+    },
+    {
+      "entity": "the-fences-and-railings",
+      "kind": "game",
+      "file": "mapped/the-fences-and-railings-fence.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Fence 01_Albedo",
+      "note": "the wire fence sheet the game ships, a diamond mesh on a dark ground",
+      "width": 512,
+      "height": 512,
+      "bytes": 257453,
+      "sha256": "bd4fc091360c30fd087e82b4c2cc93b54abad648f2f9e68643897f5ba28a35fa"
     }
   ]
 }

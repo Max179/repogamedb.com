@@ -1,0 +1,62 @@
+{
+  "id": "the-fences-and-railings",
+  "title": "The fences and the railings a level is closed in with",
+  "category": "Maps",
+  "tier": "published",
+  "summary": "A level in R.E.P.O. is closed in as well as built: the build names a plain fence, ceiling fences for two themes, catwalk railings, a wizard stairs railing and the barriers that mark the arena's own track.",
+  "body": [
+    "A level in R.E.P.O. is closed in as well as built. The game names a plain fence of its own, so the edge of a space can be a piece the generator places rather than a wall that happens to be there.",
+    "Fencing is carried per theme as well. A ceiling fence is named for the ordinary level and a second one for the arctic theme, which is why the same kind of barrier can read as a manor fitting or as an arctic one.",
+    "Railings are named for the catwalk rather than for the room. An arctic catwalk railing and a catwalk railing with its own colour, metallic and normal sheets are both named, so a walkway has a guard rail that belongs to it.",
+    "The stairs have railings of their own, named by the theme they belong to: one for the manor stair, one for the catwalk stair and one for the wizard stair, the last of them with a normal map beside it.",
+    "The build even keeps its own misspelling. One arctic stairs railing is named with a second spelling of arctic, which is the kind of thing this project reports rather than tidies up on the game's behalf.",
+    "The arena closes its track differently. Barriers are named for the places the race turns, splits, drops away, crosses a stream and opens a gap, so the course is fenced where a driver could go wrong rather than only around its edge.",
+    "That is why the fencing is worth reading: it tells a player where the level intends them to go, and in the arena it also tells them where the track is about to change shape.",
+    "What this entry does not tell you: which themes place which fence, how tall any of them stands, or how much damage a barrier takes. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A level names a plain fence of its own, with a ceiling fence for the ordinary theme and a second one for the arctic theme.",
+      "evidence": "asset names: Fence, Fence - Ceiling, Fence - Ceiling Arctic"
+    },
+    {
+      "claim": "An arctic catwalk railing is named beside a catwalk railing that carries its own colour, metallic and normal sheets.",
+      "evidence": "asset names: Arctic Catwalk Railing, Catwalk Railing_DefaultMaterial_BaseColor3, Catwalk Railing_DefaultMaterial_Metallic, Catwalk Railing_DefaultMaterial_Normal"
+    },
+    {
+      "claim": "The stairs carry railings named by theme: a manor stair railing and a catwalk stair railing.",
+      "evidence": "asset names: Stair Manor Railing_DefaultMaterial_BaseColor, Stairs Catwalk Railing_DefaultMaterial_BaseColor"
+    },
+    {
+      "claim": "The wizard theme names a stairs railing of its own with a normal map beside it.",
+      "evidence": "asset names: Wizard Stairs Railing, Wizard Stairs Railing Normal"
+    },
+    {
+      "claim": "The build names an arctic stairs railing with a second spelling of arctic.",
+      "evidence": "asset name: Arctiv Stairs Railing2"
+    },
+    {
+      "claim": "The arena's track carries barriers of its own for the places it turns, splits, drops, crosses a stream and opens a gap.",
+      "evidence": "asset names: Arena Race Track Piece Barrier Turn, Arena Race Track Piece Barrier Split Path, Arena Race Track Piece Barrier Downramp, Arena Race Track Piece Barrier Crossed Streams, Arena Race Track Piece Barrier Danger Gap"
+    }
+  ],
+  "related": [
+    "how-a-level-is-put-together",
+    "the-level-themes-and-what-they-hold",
+    "the-arena-and-its-race"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-fences-and-railings-fence.png",
+      "kind": "game",
+      "alt": {
+        "en": "The wire fence sheet the game ships: a diamond mesh drawn on a dark ground.",
+        "zh": "游戏自带的铁丝网贴图：深色底上画出的菱形网眼。"
+      }
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}
