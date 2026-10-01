@@ -1788,6 +1788,30 @@
       "height": 512,
       "bytes": 56755,
       "sha256": "c81c440638e3f55216e1fc08e2efb9007f672b5187643a821f454b6ca7ff38b5"
+    },
+    {
+      "entity": "the-things-that-are-not-loot",
+      "kind": "game",
+      "file": "mapped/the-things-that-are-not-loot-storage-door.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Door Shop Storage Texture",
+      "note": "the grey steel storage-room door of a level, lettered Storage",
+      "width": 512,
+      "height": 512,
+      "bytes": 139467,
+      "sha256": "e5941ed646385c48bd7058e2dab5b6c34706ed8c459f3aa665242067f6e95cba"
+    },
+    {
+      "entity": "the-things-that-are-not-loot",
+      "kind": "game",
+      "file": "mapped/the-things-that-are-not-loot-wet-floor-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "Wet Floor Sign Albedo",
+      "note": "the yellow Caution, Wet Floor sign the level uses",
+      "width": 256,
+      "height": 256,
+      "bytes": 36205,
+      "sha256": "c97b62f95737323251b1c207948c64a6fe3237db2da05239de783efe748d9203"
     }
   ]
 }

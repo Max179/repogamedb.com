@@ -46,6 +46,10 @@
     {
       "claim": "Discovery can be customised with a wait time, corner and middle colours, and its own sound and map.",
       "evidence": "identifiers: ValuableDiscoverCustom, waitTime, colorCorner, colorMiddle, hasCustomSound, customSound, hasCustomMap, customMap"
+    },
+    {
+      "claim": "The build names pieces of a level that are not loot at all, a storage-room door and a wet-floor sign among them, each with a texture of its own.",
+      "evidence": "asset names: Door Shop Storage Texture, Wet Floor Sign Albedo"
     }
   ],
   "related": [
@@ -53,6 +57,22 @@
     "valuables-that-fight-back"
   ],
   "images": [
+    {
+      "file": "mapped/the-things-that-are-not-loot-storage-door.png",
+      "kind": "game",
+      "alt": {
+        "en": "One of the level's own fittings, and not loot: the grey steel door of a storage room, lettered Storage.",
+        "zh": "关卡自带的固定物、并非战利品：灰钢色的储藏室门，门上写着 Storage。"
+      }
+    },
+    {
+      "file": "mapped/the-things-that-are-not-loot-wet-floor-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "Another fitting that is not loot: a yellow folding sign reading Caution, Wet Floor beside a slipping figure.",
+        "zh": "另一件并非战利品的固定物：黄色折叠警示牌，写着 Caution, Wet Floor，旁边是滑倒的小人图案。"
+      }
+    },
     {
       "file": "the-things-that-are-not-loot.svg",
       "kind": "diagram",
@@ -66,5 +86,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

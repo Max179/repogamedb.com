@@ -224,6 +224,8 @@ MAPPINGS = [
   {'entity': 'the-beamer', 'bundle': 'sharedassets0.assets', 'match': "Beamer Smoke Particle", 'file': 'the-beamer-smoke.png', 'note': "the soft smoke puff the game's beamer gives off, from its own particle sheet", 'max': 512},
   {'entity': 'the-valuables-you-can-find', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Calculator_BaseColor", 'file': 'the-valuables-you-can-find-calculator.png', 'note': "the face of the pocket calculator the arctic set files as a valuable", 'max': 512},
   {'entity': 'the-valuables-you-can-find', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Keycard_BaseColor", 'file': 'the-valuables-you-can-find-keycard.png', 'note': "the printed keycard the arctic set files as a valuable", 'max': 512},
+  {'entity': 'the-things-that-are-not-loot', 'bundle': 'resources.assets', 'match': "Door Shop Storage Texture", 'file': 'the-things-that-are-not-loot-storage-door.png', 'note': "the grey steel storage-room door of a level, lettered Storage", 'max': 512},
+  {'entity': 'the-things-that-are-not-loot', 'bundle': 'resources.assets', 'match': "Wet Floor Sign Albedo", 'file': 'the-things-that-are-not-loot-wet-floor-sign.png', 'note': "the yellow Caution, Wet Floor sign the level uses", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal

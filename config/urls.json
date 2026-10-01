@@ -3280,6 +3280,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-things-that-are-not-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-thrown-grenade.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3656,11 +3661,6 @@
     },
     {
       "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-things-that-are-not-loot.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
