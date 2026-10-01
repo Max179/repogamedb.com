@@ -64,6 +64,10 @@
     {
       "claim": "The generator has a flag for having generated and separate parents for the level and for the items it creates.",
       "evidence": "identifiers: Generated, LevelParent, ItemParent"
+    },
+    {
+      "claim": "A level is fitted out with ordinary pieces of its own as well: vent hatches, giant pipes, small lamps and oil lamps are named among them.",
+      "evidence": "asset names: Vent hatch Alb, Giant Pipe_DefaultMaterial_BaseColor, Small Lamp, Oil Lamp"
     }
   ],
   "related": [
