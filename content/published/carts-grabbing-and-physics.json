@@ -31,6 +31,10 @@
     {
       "claim": "A fixed grab target carries its own collider, the spot its prompt sits at, the words it shows, and whether a player is holding it.",
       "evidence": "identifiers: StaticGrabObject, colliderTransform, uiPosition, hoverText, playerGrabbing"
+    },
+    {
+      "claim": "The claw a player grabs with is named in the build, with a left and a right mesh of its own.",
+      "evidence": "asset names: player_grabber_claw, L Claw (mesh), R Claw (mesh)"
     }
   ],
   "related": [
