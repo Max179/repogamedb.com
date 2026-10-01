@@ -64,6 +64,10 @@
     {
       "claim": "It also ships an outdoor unit of its own, a portable toilet with a door and a locked state.",
       "evidence": "asset names: Arctic Bajamaja, Arctic Bajamaja Door, Arctic Bajamaja Locked"
+    },
+    {
+      "claim": "The manor theme fits out a bathroom of its own, with a floor and rugs among its pieces.",
+      "evidence": "asset names: Bathroom, Bathroom Floor, Bathroom Rug"
     }
   ],
   "related": [
