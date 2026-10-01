@@ -25,9 +25,9 @@ This was verified from a clean clone: the same build, gates, typecheck and prefl
 game package and without `web/dist`.
 
 ## What the site contains
-- Published subjects: 152 — 107 entities with a confirmed game picture under `/entries/`, 45 picture-less subjects kept as noindex notes under `/reference/notes/`; structured guides: 72. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
+- Published subjects: 152 — 107 entities with a confirmed game picture under `/entries/`, 45 picture-less subjects kept as noindex notes under `/reference/notes/`; structured guides: 73. Target columns for this title: 21, of which 20 hold at least one published entry (reports/coverage-report.md).
 - Real images extracted from the game with a recorded mapping: 129. 107 entities carry one; the other 45 subjects are notes and are labelled "no confirmed picture from the game yet". A diagram is never passed off as a screenshot. Per-entry origin is in reports/image-coverage.md.
-- Build: `pages=746 indexable=203`. URL classification in `config/urls.json`: 203 keep, 537 noindex (the remaining noindex pages are the evidence layer's own tables, which the classifier does not track). The evidence layer lives under `/reference/`; the old top-level addresses are noindex stubs that point there. Player layer: home, game guide, `/entities/` and 10 category pages, 107 entity pages, 72 guides, `/tools/`, `/updates.html`; evidence layer: `/reference/`, `/entity/` and the tables.
+- Build: `pages=747 indexable=204`. URL classification in `config/urls.json`: 204 keep, 537 noindex (the remaining noindex pages are the evidence layer's own tables, which the classifier does not track). The evidence layer lives under `/reference/`; the old top-level addresses are noindex stubs that point there. Player layer: home, game guide, `/entities/` and 10 category pages, 107 entity pages, 73 guides, `/tools/`, `/updates.html`; evidence layer: `/reference/`, `/entity/` and the tables.
 - Technical reference is reachable from every page but marked `noindex` and excluded from `sitemap.xml`.
 
 ## Publishing (not done, and why)

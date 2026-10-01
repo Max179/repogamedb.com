@@ -1,0 +1,67 @@
+{
+  "id": "the-monsters-that-search-for-you",
+  "title": "The monsters that search for you",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the searching monsters in R.E.P.O. work: a state for looking under things on two timers, a slow walker with a mace on three springs, a hunter that investigates with a ray and shoots, and two monsters that give themselves away by sound and debris.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level where hiding is possible",
+    "A crew that reports what it hears",
+    "A place to break line of sight"
+  ],
+  "steps": [
+    {
+      "do": "Expect a monster to stop chasing and start looking.",
+      "because": "one of the monsters' states is for looking under things, and it is a state of its own (EnemyStateLookUnder)"
+    },
+    {
+      "do": "Use the waiting time, because the search runs on two timers.",
+      "because": "the state waits for between a shortest and a longest time before looking, and the look itself lasts between a shortest and a longest time (WaitTimerMin, WaitTimerMax, LookTimerMin, LookTimerMax)"
+    },
+    {
+      "do": "Listen for a slow walker's look-under, because it has a sound for each part of it.",
+      "because": "it looks under things with an intro, an attack and an outro of its own, and carries a stun loop (sfxLookUnderIntro, sfxLookUnderAttack, sfxLookUnderOutro, sfxStunnedLoop)"
+    },
+    {
+      "do": "Do not judge a slow walker by its walking, because it swings a mace on a neck of springs.",
+      "because": "its neck is three springs each with a target and a source, its mace has a transform and a spark effect of its own, and its swings come in a short and a long version (springNeck01, springNeck01Target, springNeck01Source, maceTransform, slowWalkerSparkEffect, sfxSwingShort, sfxSwingLong)"
+    },
+    {
+      "do": "Expect a hunter to find you with a ray rather than with its eyes.",
+      "because": "it investigates with a ray of its own, drawn as a line with a width curve (investigateRayTransform, lineRenderer, lineRendererWidthCurve)"
+    },
+    {
+      "do": "Watch a hunter aim, because its aim sits on two springs.",
+      "because": "its gun has separate transforms for aiming the weapon and for the tip of the barrel, and the aim is carried on a horizontal and a vertical spring (gunAimTransform, gunTipTransform, horizontalAimSpring, verticalAimSpring)"
+    },
+    {
+      "do": "Know that a hunter's shot is heard by the whole crew rather than only by you.",
+      "because": "it has a sound for shooting and one for a shot heard across the level (soundShoot, soundShootGlobal)"
+    },
+    {
+      "do": "Track an animal by ear, because sound and debris are all it gives you.",
+      "because": "its moving sounds include a step, a stomp, a short move and a long move, jumping and landing are separate sounds, and it has particles for impact, for bits from its legs and for digging (stepSound, stompSound, moveShortSound, jumpSound, landSound, particleImpact, particleLegBits, particleDig)"
+    },
+    {
+      "do": "Expect a runner to come apart as you hurt it.",
+      "because": "it keeps a head on a spring with a source and a target, its whole body turns on a rotation spring, and hay and pieces are thrown in two sizes and over two distances (headSpring, rotationSpring, hayParticlesBig, hayParticlesSmall, bitsParticlesFar, bitsParticlesShort)"
+    }
+  ],
+  "commonMistakes": [
+    "Breaking cover the moment a monster stops chasing instead of waiting out its search.",
+    "Trading blows with a slow walker because it moves slowly.",
+    "Standing in the open where a hunter's ray is already sweeping.",
+    "Reading a hunter's aim as harmless because nothing has been fired yet."
+  ],
+  "relatedEntities": [
+    "when-a-monster-looks-under-something",
+    "the-slow-walker",
+    "the-hunter",
+    "the-animal",
+    "the-runner"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
