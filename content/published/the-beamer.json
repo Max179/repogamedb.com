@@ -56,6 +56,10 @@
     {
       "claim": "It has a sound of its own for being stunned.",
       "evidence": "identifier: soundStunIntro"
+    },
+    {
+      "claim": "Its laser has materials of its own, including a variant.",
+      "evidence": "asset names: Beamer Laser Material, Beamer Laser Material Variant, Beamer Laser Inside Material"
     }
   ],
   "related": [
