@@ -27,8 +27,8 @@
       "evidence": "asset names: Tutorial Floor, Tutorial Wall, Tutorial Door"
     },
     {
-      "claim": "Part of the tutorial is deliberately damaged, with a broken wall and a broken ceiling.",
-      "evidence": "asset names: Tutorial Broken Wall, Tutorial Broken Ceiling 0.5"
+      "claim": "Part of the tutorial is deliberately damaged, and it ships a broken wall of its own.",
+      "evidence": "asset name: Tutorial Broken Wall"
     },
     {
       "claim": "The tutorial ends at the truck, through a trigger of its own.",

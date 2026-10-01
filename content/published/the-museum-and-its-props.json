@@ -34,6 +34,10 @@
     {
       "claim": "The museum has ambience of its own, kept as separate loops including one for its elevator shaft.",
       "evidence": "asset names: Ambience Loop Museum Elevator Shaft, Ambience Loop Museum Maint, Ambience Loop Museum Hell"
+    },
+    {
+      "claim": "Its artwork is hung rather than built in: the museum ships painting stands and dirty paintings of its own.",
+      "evidence": "asset names: Museum Painting Stand, DirtyPainting"
     }
   ],
   "related": [
