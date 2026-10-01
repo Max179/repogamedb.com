@@ -1764,6 +1764,30 @@
       "height": 512,
       "bytes": 52931,
       "sha256": "b285b73ce25e7d1ff905851567ea58e5d1b19e3276e146fa8e60dd90ca7b0799"
+    },
+    {
+      "entity": "the-valuables-you-can-find",
+      "kind": "game",
+      "file": "mapped/the-valuables-you-can-find-calculator.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "new valaubles_Valuable Arctic Calculator_BaseColor",
+      "note": "the face of the pocket calculator the arctic set files as a valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 15052,
+      "sha256": "11c955681916f3dbc1d89f1c70dd4bb38e8d4a69ec86b9ca09f7cf0b38104aec"
+    },
+    {
+      "entity": "the-valuables-you-can-find",
+      "kind": "game",
+      "file": "mapped/the-valuables-you-can-find-keycard.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "new valaubles_Valuable Arctic Keycard_BaseColor",
+      "note": "the printed keycard the arctic set files as a valuable",
+      "width": 512,
+      "height": 512,
+      "bytes": 56755,
+      "sha256": "c81c440638e3f55216e1fc08e2efb9007f672b5187643a821f454b6ca7ff38b5"
     }
   ]
 }

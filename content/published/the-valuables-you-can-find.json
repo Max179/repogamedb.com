@@ -40,6 +40,10 @@
     {
       "claim": "A trophy is a valuable of its own, with a manor version shipped beside it.",
       "evidence": "asset names: Valuable Trophy, Valuable Manor Trophy"
+    },
+    {
+      "claim": "The arctic set's own valuables include a calculator, a keycard and a flashlight, and its tools are filed as valuables too, an icepick and a jackhammer among them.",
+      "evidence": "asset names: new valaubles_Valuable Arctic Calculator_BaseColor, new valaubles_Valuable Arctic Keycard_BaseColor, new valaubles_Valuable Arctic Flashlight_BaseColor, new valaubles_Valuable Arctic Icepick_BaseColor, new valaubles_Valuable Arctic Jackhammer_BaseColor"
     }
   ],
   "related": [
@@ -53,6 +57,22 @@
       "alt": {
         "en": "The base colour texture taken from the game of one of its valuable families.",
         "zh": "取自游戏的一类贵重物品基础色贴图。"
+      }
+    },
+    {
+      "file": "mapped/the-valuables-you-can-find-calculator.png",
+      "kind": "game",
+      "alt": {
+        "en": "The texture the game ships for one of the arctic valuables: the face of a pocket calculator, its number and function keys in colour.",
+        "zh": "游戏为极地关卡某件贵重物品提供的贴图：一台袖珍计算器的正面，数字键与功能键带颜色。"
+      }
+    },
+    {
+      "file": "mapped/the-valuables-you-can-find-keycard.png",
+      "kind": "game",
+      "alt": {
+        "en": "Another arctic valuable: a printed keycard badge with a photograph, a barcode and a division name on it.",
+        "zh": "另一件极地贵重物品：印有照片、条码与部门名的门禁卡牌。"
       }
     },
     {

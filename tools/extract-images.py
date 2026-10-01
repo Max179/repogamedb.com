@@ -222,6 +222,8 @@ MAPPINGS = [
   {'entity': 'the-lobby-and-spectating', 'bundle': 'resources.assets', 'match': "Sign_No stopping_Albedo", 'file': 'the-lobby-and-spectating-no-stopping-sign.png', 'note': "the lobby's no-stopping sign, a yellow board with a crossed-out blue oval", 'max': 512},
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Arctic Sign Specimen", 'file': 'the-level-themes-and-what-they-hold-specimen-sign.png', 'note': "the arctic theme's specimen-research sign, a white plaque beside an atom", 'max': 512},
   {'entity': 'the-beamer', 'bundle': 'sharedassets0.assets', 'match': "Beamer Smoke Particle", 'file': 'the-beamer-smoke.png', 'note': "the soft smoke puff the game's beamer gives off, from its own particle sheet", 'max': 512},
+  {'entity': 'the-valuables-you-can-find', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Calculator_BaseColor", 'file': 'the-valuables-you-can-find-calculator.png', 'note': "the face of the pocket calculator the arctic set files as a valuable", 'max': 512},
+  {'entity': 'the-valuables-you-can-find', 'bundle': 'resources.assets', 'match': "new valaubles_Valuable Arctic Keycard_BaseColor", 'file': 'the-valuables-you-can-find-keycard.png', 'note': "the printed keycard the arctic set files as a valuable", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal
