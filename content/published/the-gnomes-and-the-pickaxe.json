@@ -50,6 +50,10 @@
     {
       "claim": "A gnome keeps a state, a rotation spring, death effects and sounds for being hurt and dying.",
       "evidence": "identifiers: currentState, rotationSpring, deathEffects, soundHurt, soundDeath"
+    },
+    {
+      "claim": "Its animations are named one by one: idle, attack, despawn, falling, idle breaker, jump, land, move and a move outro, with a pickaxe animation beside them.",
+      "evidence": "asset names: Enemy Gnome Idle, Enemy Gnome Attack, Enemy Gnome Despawn, Enemy Gnome Falling, Enemy Gnome Idle Breaker, Enemy Gnome Jump, Enemy Gnome Land, Enemy Gnome Move, Enemy Gnome Move Outro, ANIM PICKAXE"
     }
   ],
   "related": [
