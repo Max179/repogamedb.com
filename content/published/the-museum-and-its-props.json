@@ -78,6 +78,10 @@
     {
       "claim": "The decals are numbered further than five: the dirt set reaches seven and the paper set six.",
       "evidence": "asset names: Museum Decal Dirt06, Museum Decal Dirt07, Museum Decal Paper06"
+    },
+    {
+      "claim": "The statuary is a set of its own: a golden statue and a marble one, a bust with its own sheets, and broken sculptures with a colour sheet and a normal map, beside a cubic sculpture material.",
+      "evidence": "asset names: Golden Statue, Marble Statue, Axel Bust_DefaultMaterial_BaseColor, Broken Artwork Broken Sculptures, Broken Sculptures_DefaultMaterial_BaseColor, Broken Sculptures_DefaultMaterial_Normal, Cubic sculpture material"
     }
   ],
   "related": [
