@@ -3180,6 +3180,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-kitchens-and-their-fittings.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-ladder.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

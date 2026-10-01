@@ -1,0 +1,66 @@
+{
+  "id": "the-kitchens-and-their-fittings",
+  "title": "The kitchens and their fittings",
+  "category": "Maps",
+  "tier": "published",
+  "summary": "A kitchen in R.E.P.O. is a room set of its own: a counter, a sink and a fridge with sheets of their own, an arctic version of each, a wall with its own normal map and a signed door.",
+  "body": [
+    "A kitchen in R.E.P.O. is a room set rather than a corner of another room. The game names a counter, a sink and a fridge for it, so a level can drop the whole set in wherever a theme calls for a kitchen.",
+    "The set travels with the theme as well. The arctic level names its own counter, sink and fridge, which is why the same room can look different from one level to the next without the game inventing a second kind of furniture.",
+    "The fittings are not only shapes. The sink carries a collider object of its own, so a player bumps into the basin instead of walking through it.",
+    "Each piece carries its own sheet, named after the piece, which is why a counter, a fridge and a sink each read as their own surface rather than sharing one texture between them.",
+    "The kitchen wall has a sheet and a normal map of its own, so the room has a wall treatment separate from the pieces standing in it.",
+    "The door is signed. The game ships a metal plate reading KITCHEN, and it is legible from across a room, which is how a player knows what is behind a door before opening it.",
+    "A level can place a kitchen as a whole room. The game names a start room of its own for a kitchen dining room, so the kitchen can be the place a run begins rather than a side chamber.",
+    "What this entry does not tell you: which themes place a kitchen, how many counters a room holds, or what any of it is worth. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "A kitchen is a room set of its own, with a counter, a sink and a fridge named for it.",
+      "evidence": "asset names: Kitchen Counter, Kitchen Sink, Kitchen Fridge"
+    },
+    {
+      "claim": "The set is carried for the arctic theme as well, where the counter, the sink and the fridge are each named again.",
+      "evidence": "asset names: Kitchen Counter Arctic, Kitchen Sink Arctic, Kitchen Fridge Arctic"
+    },
+    {
+      "claim": "The kitchen sink has a collider object of its own.",
+      "evidence": "asset name: Kitchen Sink_collider"
+    },
+    {
+      "claim": "Each kitchen piece carries its own sheet, named after the piece.",
+      "evidence": "asset names: Kitchen Counter_Kitchen_Counter_BaseColor, Kitchen Fridge_Kitchen_Fridge_BaseColor, Kitchen Sink_Kitchen_Sink_BaseColor"
+    },
+    {
+      "claim": "The kitchen wall has a sheet and a normal map of its own.",
+      "evidence": "asset names: KITCHENsss_Material.006_BaseColor, KITCHENsss_Material.006_Normal"
+    },
+    {
+      "claim": "The kitchen is signed with a plate of its own, a metal plate reading KITCHEN.",
+      "evidence": "asset name: arctic sign kitchen"
+    },
+    {
+      "claim": "A level can place a kitchen as a whole room: the game names a start room of its own for a kitchen dining room.",
+      "evidence": "asset name: Start Room - Manor - Kitchen Dining Room"
+    }
+  ],
+  "related": [
+    "the-bathrooms-and-their-fittings",
+    "how-a-level-is-put-together",
+    "the-furniture-a-level-is-fitted-with"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-kitchens-and-their-fittings-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The kitchen sign the game ships: a worn metal plate with the word KITCHEN in raised letters between four screws.",
+        "zh": "游戏自带的厨房标牌：一块磨损的金属牌，四个螺丝之间是凸起的 KITCHEN 字样。"
+      }
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

@@ -1968,6 +1968,18 @@
       "height": 64,
       "bytes": 30380,
       "sha256": "b72a9d8915348e4d05dbe6fbb54bd69240e23ffaf91cd66cc811bc7665e10a7a"
+    },
+    {
+      "entity": "the-kitchens-and-their-fittings",
+      "kind": "game",
+      "file": "mapped/the-kitchens-and-their-fittings-sign.png",
+      "sourceBundle": "resources.assets",
+      "assetName": "arctic sign kitchen",
+      "note": "the worn metal plate the game signs a kitchen door with",
+      "width": 512,
+      "height": 64,
+      "bytes": 30784,
+      "sha256": "51b1946f693a1530224097d1f3e279bf921cf16632ddd03f14a5b9e4c507d5dd"
     }
   ]
 }

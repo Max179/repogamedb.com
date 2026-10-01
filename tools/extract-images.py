@@ -239,6 +239,7 @@ MAPPINGS = [
   {'entity': 'the-cleaning-tools-and-effects', 'bundle': 'sharedassets0.assets', 'match': "Clean Effect Sprite Sheet", 'file': 'the-cleaning-tools-and-effects-sheet.png', 'note': "the sprite sheet the game's clean effect is cut from, puffs and sparkles", 'max': 1024},
   {'entity': 'the-level-themes-and-what-they-hold', 'bundle': 'resources.assets', 'match': "Bathroom Rug", 'file': 'the-level-themes-and-what-they-hold-bathroom-rug.png', 'note': "the round purple rug the manor theme's bathroom uses", 'max': 512},
   {'entity': 'the-bathrooms-and-their-fittings', 'bundle': 'resources.assets', 'match': "arctic sign bathroom", 'file': 'the-bathrooms-and-their-fittings-sign.png', 'note': "the worn metal plate the game signs a bathroom door with", 'max': 512},
+  {'entity': 'the-kitchens-and-their-fittings', 'bundle': 'resources.assets', 'match': "arctic sign kitchen", 'file': 'the-kitchens-and-their-fittings-sign.png', 'note': "the worn metal plate the game signs a kitchen door with", 'max': 512},
   # Rejected after opening: "Item Orb_Albedo" and "Item Orb_Emission" are named for the orb item, but the art shows a
   # hazard-striped panel and white outlines rather than anything that reads as the orb, so neither mapping was kept.
   # Rejected after opening: "Icon_Player" is named for a player picture, but the art is a flame inside a hexagonal
