@@ -285,6 +285,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/the-monsters-that-hang-on-springs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/the-museum-and-what-is-in-it.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"

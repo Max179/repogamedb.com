@@ -1,0 +1,70 @@
+{
+  "id": "the-monsters-that-hang-on-springs",
+  "title": "The monsters that hang on springs",
+  "tier": "published",
+  "kind": "article",
+  "target": "Why a family of monsters in R.E.P.O. wobbles: their heads, ears, tails and eyes hang on springs with targets of their own, and the game keeps a whole second set of sounds for when they change size.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with one of the spring-built monsters in it",
+    "A crew spread out enough to hear which sound came from where",
+    "Room to back off rather than stand your ground"
+  ],
+  "steps": [
+    {
+      "do": "Expect some monsters to be built as parts that hang on springs rather than as one rigid body.",
+      "because": "the elsa's head, tails and ears each have a spring with a transform and a target of their own (headSpring, headTransform, tail01Spring, tail01TransformTarget, ear01Spring, ear01TransformL)"
+    },
+    {
+      "do": "Read a swinging part as the spring doing its work rather than as an animation.",
+      "because": "its jaw, feet and idle and wiggle transforms are sprung separately from the head (jawSpring, jawTransform, feetTransform, headIdleTransform, headWiggleTransform)"
+    },
+    {
+      "do": "Expect the whole set of springs to move together, because they share two multipliers.",
+      "because": "the hanging parts share a speed multiplier and a damping multiplier (springSpeedMultiplier, springDampingMultiplier)"
+    },
+    {
+      "do": "Do not judge a monster's size from the model alone, because it carries two colliders.",
+      "because": "it keeps a collider for its small size and one for its big size, placed apart from the visuals (smallColliderTransform, bigColliderTransform)"
+    },
+    {
+      "do": "Expect the game to keep different art for the two sizes.",
+      "because": "it ships one fur texture for the small size and a different one for the big size (Elsa Fur Small, Elsa Fur Big)"
+    },
+    {
+      "do": "Listen for the change between sizes, because it is staged with its own sounds.",
+      "because": "the change has a start, a stinger, limbs breaking, the head looking up and a landing, each with a sound of its own (transformStartSound, transformStingerSound, transformLimbBreakSound, transformHeadLookUpSound, transformLandSound)"
+    },
+    {
+      "do": "Expect each of its noises to exist twice, small and big.",
+      "because": "barks, footsteps, hurt, jump, landing, death and panting are each kept in a small version and a big version (barkSmallSound, barkBigSoundLocal, footstepSmallSound, hurtSmallSound, landBigSound, deathBigSound)"
+    },
+    {
+      "do": "Know that a big bark is not always just for you.",
+      "because": "one of its big barks has a version for nearby players and a version for everyone (barkBigSoundLocal, barkBigSoundGlobal)"
+    },
+    {
+      "do": "Expect another monster to be built the same way, with its own change of form.",
+      "because": "the duck monster's body and head each hang on a spring with a target of their own, and it has a sound for a change of form (bodySpring, bodyTransform, headLookAtSpring, transformSound)"
+    },
+    {
+      "do": "Watch a bowtie monster's whole body turn rather than only its head.",
+      "because": "its head and both eyes are sprung with targets of their own, and the body turns on a horizontal and a vertical spring (headSpring, eyeRightSpring, horizontalRotationSpring, verticalRotationSpring)"
+    }
+  ],
+  "commonMistakes": [
+    "Reading a spring-built monster as stiff and standing next to it.",
+    "Judging which size you are facing from the artwork rather than from how it behaves.",
+    "Treating a change of size as silent when the change has a whole set of sounds.",
+    "Assuming a big bark is only for the players close enough to see it."
+  ],
+  "relatedEntities": [
+    "the-elsa",
+    "the-elsa-in-two-sizes",
+    "the-duck-monster",
+    "the-bowtie-monster"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
