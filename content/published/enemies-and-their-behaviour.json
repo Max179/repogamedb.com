@@ -38,6 +38,14 @@
     {
       "claim": "One monster's head can come off and grow.",
       "evidence": "asset names: Enemy Bomb Thrower - Body Head - Detach, Enemy Bomb Thrower - Body Head - Grow, Enemy Bomb Thrower - Body Head - Idle"
+    },
+    {
+      "claim": "One monster is a duck, built from a beak, a body, a head, a wing and legs, with animations for walking, flying, slashing and being stunned.",
+      "evidence": "asset names: Enemy Duck, Duck Beak, Duck Body, Duck Head, Duck Wing, Duck Fly, Duck Walk, Duck Slash, Duck Stun"
+    },
+    {
+      "claim": "Another monster is a hunter that aims, shoots and can leave.",
+      "evidence": "asset names: Enemy Hunter, Enemy Hunter - Aim, Enemy Hunter - Shoot, Enemy Hunter - Leave Start"
     }
   ],
   "related": [
