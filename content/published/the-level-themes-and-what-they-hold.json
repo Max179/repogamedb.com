@@ -104,6 +104,10 @@
     {
       "claim": "The wizard theme fits its rooms with doors and bookshelves of its own, including blocked and double versions.",
       "evidence": "asset names: Wizard Door, Wizard Door Blocked, Wizard Door Double, Wizard Door Double Frame, Wizard Bookshelf, Wizard Bookshelf Blocked"
+    },
+    {
+      "claim": "The manor theme names a bed of its own, with a colour sheet, a metallic sheet and a normal map beside it.",
+      "evidence": "asset names: Manor Bed New, Manor Bed New_BaseColor, Manor Bed New_Metallic, Manor Bed New_Normal"
     }
   ],
   "related": [
