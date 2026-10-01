@@ -27,6 +27,10 @@
       "evidence": "identifiers: lineBetweenTwoPoints, lineStartPoint"
     },
     {
+      "claim": "The build names the drone's deployment and its beam loop, and ships its own icons for a battery charge, a magnet and zero gravity.",
+      "evidence": "asset names: Drone Deploy, Drone Beam Loop, Drone Icon - Battery Charge, Drone Icon - Magnet, Drone Icon - Zero Gravity"
+    },
+    {
       "claim": "It runs on a battery and has an icon of its own.",
       "evidence": "identifiers: batteryDrainPreset, droneIcon"
     },
