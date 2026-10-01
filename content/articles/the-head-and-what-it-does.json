@@ -1,0 +1,67 @@
+{
+  "id": "the-head-and-what-it-does",
+  "title": "The head and what it does",
+  "tier": "published",
+  "kind": "article",
+  "target": "What the head in R.E.P.O. is made of before it reaches you: a controller driving hair, eyes and teeth, a float on curves, a staring eye with a beam, and a mouth that attaches.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with a living head in it",
+    "A crew that will say which way it went",
+    "A place to hide that is not directly under it"
+  ],
+  "steps": [
+    {
+      "do": "Expect the head to be a machine with parts rather than one model.",
+      "because": "a controller brings together its visual, its animation system and the transform it looks at (EnemyHeadController, Visual, AnimationSystem, LookAtTransform)"
+    },
+    {
+      "do": "Watch its hair, because it moves on springs of its own.",
+      "because": "the hair has a parent, a target and its own position and rotation speeds, and a separate part tilts it with a random range and random times (EnemyHeadHair, HairParent, PositionSpeed, RotationSpeed, EnemyHeadHairTilt, RandomMin, RandomMax)"
+    },
+    {
+      "do": "Read its eyes, because they carry a target and a pupil that changes size.",
+      "because": "its eyes carry a target of their own, and the pupil keeps a size with a multiplier, a speed and a smallest and a largest size (EnemyHeadEye, EyeTarget, PupilSizeMultiplier, PupilSizeSpeed, PupilMinSize, PupilMaxSize)"
+    },
+    {
+      "do": "Learn the states you can catch it in, because the game names each one.",
+      "because": "the animation system has separate entries for beginning a chase, the chase and its second loop, returning to idle, spawning, despawning and being hurt (ChaseBegin, ChaseLoop, ChaseToIdle, Spawn, Despawn, Hurt)"
+    },
+    {
+      "do": "Listen for the teeth, because it chatters them while it waits.",
+      "because": "it chatters its teeth, with a shortest and a longest idle time for it (TeethChatter, IdleTeethTimeMin, IdleTeethTimeMax)"
+    },
+    {
+      "do": "Expect it to float and to look under things rather than to stand on the floor.",
+      "because": "its float is driven by a curve, a speed and an amount for its position and the same three for its rotation, and it can look under something with an offset (EnemyHeadFloat, CurvePos, SpeedPos, CurveRot, SpeedRot, LookUnderOffset)"
+    },
+    {
+      "do": "Do not assume distance keeps a mouth off you.",
+      "because": "the slow mouth attaches to a player with separate pieces for the top and the bottom of the face and uses a mouth in place of the player's own view (enemySlowMouthOnPlayerTop, enemySlowMouthOnPlayerBot, localCameraMouthPrefab)"
+    },
+    {
+      "do": "Watch an eye creature for a beam rather than only for a look.",
+      "because": "it carries a beam for each eye with particles of their own, and it has a sound for starting to stare and a loop while it stares (eyeBeamLeft, eyeBeamRight, eyeBeamParticles, sfxStaringStart, sfxStareLoop)"
+    },
+    {
+      "do": "Treat a mouth that heals as the one to keep away from the crew.",
+      "because": "the tick has a mouth with two lips and a state for them, and its healing is an aura with a health pool, its own particles and a loop (EnemyTickAnim, lipsClosed, lipsOpen, lipsState, EnemyTickHealAura, healthPool, auraLoop)"
+    }
+  ],
+  "commonMistakes": [
+    "Standing under a head that floats, because floating is what it does rather than falling.",
+    "Reading still hair as a head that is idle when the hair moves on its own.",
+    "Treating the slow mouth as a melee attacker when it attaches to the face.",
+    "Assuming an eye that is only looking at you cannot also fire a beam."
+  ],
+  "relatedEntities": [
+    "the-heads-eyes-hair-and-teeth",
+    "the-eye-that-follows-you",
+    "the-tick-and-its-mouth",
+    "the-slow-mouth",
+    "what-happens-when-the-head-catches-you"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

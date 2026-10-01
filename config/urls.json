@@ -275,6 +275,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/the-head-and-what-it-does.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/the-messages-that-do-not-wait-for-you.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
