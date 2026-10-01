@@ -88,6 +88,14 @@
     {
       "claim": "Decals are named by the surface they sit on: floor decals and ceiling decals, with a dirt decal and a set of grime decals among them.",
       "evidence": "asset names: Floor Decals, Ceiling Decals, Dirt Decal, Grime Decals"
+    },
+    {
+      "claim": "The arctic theme fits its rooms with containers and doors of its own: a container with no doors and one with two, a plain door, a blocked door, a frame and a handle.",
+      "evidence": "asset names: Arctic Container, Arctic Container No Doors, Arctic Container Two Doors, Arctic Door, Arctic Door Blocked, Arctic Door Frame, Arctic Door Handle"
+    },
+    {
+      "claim": "An arctic shelf can be named for the triple valuables it holds, and the theme carries its own beam, bulb and round table.",
+      "evidence": "asset names: Arctic Shelf, Arctic Shelf Triple Valuables, Arctic Beam, Arctic Bulb, Arctic Round Table"
     }
   ],
   "related": [
