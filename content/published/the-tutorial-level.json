@@ -1,0 +1,65 @@
+{
+  "id": "the-tutorial-level",
+  "title": "The tutorial level",
+  "category": "Maps",
+  "tier": "published",
+  "summary": "R.E.P.O. teaches its controls on a level of its own: the tutorial has its own rooms, floors, walls and doors, a director that runs its steps, a deliberately broken wall and ceiling, a menu button that leads into it, and a truck trigger that ends it.",
+  "body": [
+    "The tutorial is a level rather than a set of prompts on a real one. It has its own start room, its own floors, walls and doors, and a truck of its own, which is why the first thing a new crew sees is built for teaching rather than borrowed from a run.",
+    "Its steps are run by a director. There is a director object for the tutorial, so what happens next is decided by the game rather than by the room you happen to be standing in.",
+    "Part of it is broken on purpose. There is a broken wall and a broken ceiling in the tutorial's own set, which is how the game can show a collapse without needing a level that actually falls down.",
+    "It writes to you as well as talks at you. There is a text container of its own, so the tutorial prints its instructions rather than leaving them to be guessed from the room.",
+    "It ends at the truck. There is a trigger for the truck in the tutorial, which is the point the game treats as the end of the teaching.",
+    "You reach it from the menu. There is a menu button for the tutorial, so a crew can go back through it rather than only meeting it on a first run.",
+    "What this entry does not tell you: how long it takes, what it says step by step, or whether it changes between versions. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game ships a tutorial level of its own rather than teaching on a real level.",
+      "evidence": "asset names: Start Room - Tutorial, Truck Tutorial, Tutorial"
+    },
+    {
+      "claim": "The tutorial is run by a director of its own.",
+      "evidence": "asset name: Tutorial Director"
+    },
+    {
+      "claim": "The tutorial is built from its own floors, walls and doors.",
+      "evidence": "asset names: Tutorial Floor, Tutorial Wall, Tutorial Door"
+    },
+    {
+      "claim": "Part of the tutorial is deliberately damaged, with a broken wall and a broken ceiling.",
+      "evidence": "asset names: Tutorial Broken Wall, Tutorial Broken Ceiling 0.5"
+    },
+    {
+      "claim": "The tutorial ends at the truck, through a trigger of its own.",
+      "evidence": "identifier: TutorialTruckTrigger"
+    },
+    {
+      "claim": "The tutorial's own pieces include a truck trigger and a text container.",
+      "evidence": "asset names: Tutorial Truck Trigger, Tutorial Text Container"
+    },
+    {
+      "claim": "A button in the menu leads into the tutorial.",
+      "evidence": "asset name: Menu Button - Tutorial"
+    }
+  ],
+  "related": [
+    "how-a-level-is-put-together",
+    "levels-and-the-way-out"
+  ],
+  "images": [
+    {
+      "file": "the-tutorial-level.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a menu button leads into the tutorial, which has its own rooms and walls, a broken wall and ceiling, a director running its steps, and a truck trigger that ends it.",
+        "zh": "教学关卡示意图：菜单按钮进入教学关、自有房间与墙体、刻意的破损墙与天花板、由导演对象推进步骤、以卡车触发器结束。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "diagram-only"
+}
