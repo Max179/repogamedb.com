@@ -41,6 +41,10 @@
     {
       "claim": "There is a flag for a player spectating rather than playing.",
       "evidence": "identifier: isSpectate"
+    },
+    {
+      "claim": "The lobby has its own camera menu and buttons for stepping to the next and the previous player being watched, and it ships lobbies of its own such as a forest one.",
+      "evidence": "asset names: CameraLobbyMenu, Big Button Spectate Next, Big Button Spectate Previous, Lobby Forest"
     }
   ],
   "related": [
