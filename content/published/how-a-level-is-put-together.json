@@ -68,6 +68,22 @@
     {
       "claim": "A level is fitted out with ordinary pieces of its own as well: vent hatches, giant pipes, small lamps and oil lamps are named among them.",
       "evidence": "asset names: Vent hatch Alb, Giant Pipe_DefaultMaterial_BaseColor, Small Lamp, Oil Lamp"
+    },
+    {
+      "claim": "A level is assembled from named modules, and one of them is kept as a template.",
+      "evidence": "asset name: Module - N - Template"
+    },
+    {
+      "claim": "The shop's module family names the rooms a shop building can hold: a diner, a bunker, a car service, an upper office, an attic above the diner, a barricaded door, a big bathroom, drink machines and a painting secret shop.",
+      "evidence": "asset names: Module - Shop - DE - Diner, Module - Shop - DE - Bunker, Module - Shop - DE - Car Service, Module - Shop - DE - Upper Office, Module - Shop - DE - Attic above diner, Module - Shop - DE - Barricaded Door, Module - Shop - DE - Big Bathroom, Module - Shop - DE - Drink Machines, Module - Shop - DE - Painting Secret Shop"
+    },
+    {
+      "claim": "Stands and an extraction centre are modules of their own.",
+      "evidence": "asset names: Module - Shop - N - Center Extract, Module - Shop - N - Corner Stands, Module - Shop - N - Middle Stands"
+    },
+    {
+      "claim": "The build ships debug modules of its own, named with people's names, one of them a museum and one an outside test.",
+      "evidence": "asset names: Module - Debug Axel, Module - Debug Builder, Module - Debug Monika, Module - Debug Ruben - Museum, Module - Debug Ruben - outside"
     }
   ],
   "related": [
