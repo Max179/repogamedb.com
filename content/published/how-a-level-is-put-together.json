@@ -96,6 +96,14 @@
     {
       "claim": "An arctic shelf can be named for the triple valuables it holds, and the theme carries its own beam, bulb and round table.",
       "evidence": "asset names: Arctic Shelf, Arctic Shelf Triple Valuables, Arctic Beam, Arctic Bulb, Arctic Round Table"
+    },
+    {
+      "claim": "The shop building has an attic of its own, with a ceiling, a floor and a wall named separately.",
+      "evidence": "asset names: Shop Attic Ceiling, Shop Attic Floor, Shop Attic Wall"
+    },
+    {
+      "claim": "The shop's tiling is named as its own set, with a normal map beside the tiles.",
+      "evidence": "asset names: Shop Bath Wall Tiles, Shop Bath Wall Tiles Normal"
     }
   ],
   "related": [
