@@ -92,6 +92,10 @@
     {
       "claim": "The wizard theme hangs a welcome banner of its own, with a back for it and a blue wall flag.",
       "evidence": "asset names: Wizard Welcome Banner, Wizard Welcome Banner Back, Wizard Wall Flag_blue"
+    },
+    {
+      "claim": "A garden is fitted with pieces of its own: garden props, a rock bench, tombstones, a roof and a wall planter, with a greenhouse that carries an opaque material and a transparent one.",
+      "evidence": "asset names: Garden Props, Garden Rock Bench, Garden Tombstones, Garden Roof, Garden Wall Planter, Greenhouse material OPAQUE, Greenhouse material TRANSPARENT"
     }
   ],
   "related": [
