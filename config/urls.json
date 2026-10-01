@@ -75,6 +75,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/articles/drifting-and-leaving-the-ground.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/articles/expecting-a-monster-to-move-like-nothing-else.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
