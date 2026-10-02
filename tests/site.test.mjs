@@ -340,19 +340,29 @@ ok('every game image used in an entry has a manifest record and exists in the bu
 // --- Unity 6 (v22) header reader: the measured relations, checked against real game files
 {
   const v22 = await import('../pipeline/serialized-v22.mjs');
-  const samples = [
-    'C:/uTorria/Downloads/TCG Card Shop Simulator/Card Shop Simulator_Data/level1',
-    'C:/Users/CHEN/Desktop/repo/data/raw/R.E.P.O.v0.4.0/REPO/REPO_Data/level0',
-  ];
-  let seen = 0;
-  for (const path of samples) {
-    try {
-      const buf = readFileSync(path);
-      const h = v22.readHeaderV22(buf);
-      if (h && v22.headerIsValid(h, buf.length) && h.version === 22) seen++;
-    } catch { /* file not on this machine */ }
+  // The raw level files are game data and stay on the extraction host, so the check uses whichever of these is in
+  // front of it: the file itself when this tree carries it, and the committed byte record of its first bytes when it
+  // does not (pipeline/v22_sample_record.mjs writes that record on the host that has the game package). A tree with
+  // neither is reported as unreadable rather than passing a check it did not run.
+  const recordPath = join('data', 'normalized', 'v22-header-samples.json');
+  const record = existsSync(recordPath) ? JSON.parse(readFileSync(recordPath, 'utf8')) : { samples: [] };
+  const unreadable = [];
+  let checked = 0;
+  let valid = 0;
+  for (const s of record.samples ?? []) {
+    const onDisk = [s.relative, s.source].find((p) => typeof p === 'string' && existsSync(p)) ?? null;
+    let buf = null;
+    let actualSize = null;
+    if (onDisk) { buf = readFileSync(onDisk); actualSize = buf.length; }
+    else if (typeof s.headHex === 'string' && s.headBytes === s.headHex.length / 2) { buf = Buffer.from(s.headHex, 'hex'); actualSize = s.fileBytes; }
+    if (!buf) { unreadable.push(s.source ?? 'unrecorded'); continue; }
+    checked++;
+    const h = v22.readHeaderV22(buf);
+    if (h && v22.headerIsValid(h, actualSize) && h.version === 22) valid++;
   }
-  ok('the measured v22 header validates against real game files', seen >= 1, seen + ' of ' + samples.length);
+  ok('the measured v22 header validates against real game files or their committed byte record',
+    checked > 0 && valid === checked && unreadable.length === 0,
+    'checked=' + checked + ' valid=' + valid + (unreadable.length ? ' unreadable=' + unreadable.join(', ') : ''));
   const synthetic = Buffer.alloc(64);
   synthetic.writeUInt32BE(22, 8);
   synthetic.writeBigUInt64BE(1000n, 16);

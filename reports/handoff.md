@@ -17,18 +17,18 @@ Two ways to move this tree to the Mac side:
 
 ## The package, measured
 
-640 files, 17,555,420 bytes (16.7 MiB) when this file was last built. Rebuilding the package after any edit to this
+642 files, 17,562,605 bytes (16.7 MiB) when this file was last built. Rebuilding the package after any edit to this
 file moves the total by the size of that edit, so `reports/mac-handoff-manifest.json` inside the package is the
 authoritative list; the summary below is the measurement.
 
 | Group | Files | Bytes | What it is |
 | --- | --- | --- | --- |
 | images | 329 | 13,232,483 | 181 mapped game images (12,947,456 B) + 148 per-entry diagrams in `content/assets/*.svg` (285,027 B) |
-| data | 4 | 2,632,267 | `p0-inventory.json` 1,719,175, `repo-object-names.json` 860,328, `p0-instances.json` 45,321, `guide-questions.json` 7,443 |
+| data | 5 | 2,635,199 | `p0-inventory.json` 1,719,175, `repo-object-names.json` 860,328, `p0-instances.json` 45,321, `guide-questions.json` 7,443, `v22-header-samples.json` 2,932 |
 | published | 167 | 804,420 | the entry JSON, one file per published subject |
 | articles | 87 | 248,607 | the structured guide JSON, one file per guide |
 | source | 37 | 432,941 | `pipeline/`, `tools/`, `tests/`, `config/`, `docs/`, `.github/` |
-| reports | 7 | 113,860 | `handoff.md` (this file), `status.json`, `coverage-report.md`, `image-coverage.md`, `image-sanity.md`, `image-reviews.md`, and the compact `local-complete.md` |
+| reports | 7 | 114,749 | `handoff.md` (this file), `status.json`, `coverage-report.md`, `image-coverage.md`, `image-sanity.md`, `image-reviews.md`, and the compact `local-complete.md` |
 | content root | 3 | 89,159 | `content/images-manifest.json` 83,757, `content/updates.json` 2,323, `content/README.md` |
 | draft | 1 | 667 | `content/draft/item-combinations.json` — the honest "absent" record the coverage gate reads |
 | shell | 5 | 1,016 | the five root config files (`.gitattributes`, `.gitignore`, `tsconfig.json`, `tsconfig.ci.json`, `wrangler.toml`) |
@@ -69,6 +69,12 @@ Nothing has to be replaced for this title, and that is the honest difference fro
 value layer here, `data/normalized/p0-instances.json` (45,321 B), is small and is read by the build itself for the
 `/reference/values.html` table, so it travels; the citation universe is built from `repo-object-names.json` and
 `p0-inventory.json`, which travel as well. No derived value or citation index is needed and none is claimed.
+
+One check used to read the raw level files by absolute path, which meant it passed on the extraction host by reading the
+original tree and failed on any other machine. It now uses the tree's own file when it has one and the committed byte
+record `data/normalized/v22-header-samples.json` (2,932 B: both files' real length, their sha256 and their first 512
+bytes) when it does not, and reports the check as unreadable rather than passing it when neither is present. That is
+also what the independent run on the Mac side found and why the record is in the package.
 
 ## Design-owned files: merge, do not overwrite
 

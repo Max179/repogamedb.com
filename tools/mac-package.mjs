@@ -25,7 +25,7 @@ const site = String(status.site ?? 'site');
 const out = resolve(process.cwd(), process.argv[3] ?? join('mac-handoff', site));
 
 const SKIP_DIRS = new Set(['.git', 'node_modules', 'web/dist', 'dist', '.next', '__pycache__', 'data/raw']);
-const DATA_KEEP = /^(p0-inventory|p0-instances|[a-z0-9-]*object-names|value-index|citation-index)\.json$/;
+const DATA_KEEP = /^(p0-inventory|p0-instances|[a-z0-9-]*object-names|v22-header-samples|value-index|citation-index)\.json$/;
 const SKIP_FILES = new Map([['HARNESS-NEXT-ACTION.md', 'a process note for the extraction host, not site content']]);
 const REPORTS_KEEP = new Set(['handoff.md', 'status.json', 'coverage-report.md', 'image-coverage.md', 'image-sanity.md', 'image-reviews.md']);
 const whyReport = (rel) => (rel.startsWith('reports/redesign-p0/')
