@@ -45,7 +45,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy web/dist --project-name=repogamedb --branch=main
+          command: pages deploy web/dist --project-name=repogamedb-com --branch=main
 
 # Not automated here on purpose: adding the custom domain (repogamedb.com) and any DNS record is a dashboard/API
 # action that belongs to the account owner. This workflow only uploads the files.

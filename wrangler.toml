@@ -1,4 +1,4 @@
 # Cloudflare Pages project for repogamedb.com. The domain is attached in the Cloudflare dashboard, not here.
-name = "repogamedb"
+name = "repogamedb-com"
 pages_build_output_dir = "web/dist"
 compatibility_date = "2025-06-01"
