@@ -19,6 +19,7 @@
 ## 2026-10-05 verified art pass
 
 - Installed `reverse-skill-router` from `zhaoxuya520/reverse-skill` and inspected its Unity route and scope rules.
-- Used the Windows image audit as the source of truth and copied six verified local exports into the preview: duck, bomb thrower, extraction point, walkie, crate and level art.
-- Category cards now show their mapped game asset; the featured guide shows the duck asset. `media-manifest.json` records the Windows source directory and reuse boundary.
-- Ego desktop and mobile screenshots show zero broken images and no horizontal overflow.
+- Rejected the unreadable texture-atlas exports (duck, bomb thrower, extraction point and walkie) after visual inspection; removed them from the public asset set instead of presenting them as screenshots.
+- Kept only the readable crate and level exports, the official Steam banner and a clearly labeled original route illustration. `media-manifest.json` records the Windows source directory and reuse boundary.
+- Threat cards now render an image and honest alt text on every card. Ego screenshot acceptance shows zero broken images on `/enemies.html`.
+- Full one-to-one sync for the Windows image mapping is pending because the Windows MCP endpoint currently returns 503; no completion claim is made for that catalog.
