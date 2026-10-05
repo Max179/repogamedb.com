@@ -23,3 +23,9 @@
 - Kept only the readable crate and level exports, the official Steam banner and a clearly labeled original route illustration. `media-manifest.json` records the Windows source directory and reuse boundary.
 - Threat cards now render an image and honest alt text on every card. Ego screenshot acceptance shows zero broken images on `/enemies.html`.
 - Full one-to-one sync for the Windows image mapping is pending because the Windows MCP endpoint currently returns 503; no completion claim is made for that catalog.
+
+## 2026-10-05 HUD simplification pass
+
+- Removed the route SVG from the public homepage and deleted the asset; the feature panel now uses a readable crate export.
+- Reworked the shell toward a compact game HUD: square controls, uppercase navigation labels, hard-edged panels, warning-yellow frame line and denser category cards.
+- Ego acceptance after rebuild: 0 broken images, 0 SVG images on the homepage and 0 horizontal overflow.
