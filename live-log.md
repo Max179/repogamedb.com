@@ -15,3 +15,10 @@
 - Existing automated site tests pass (38). Browser visual acceptance remains pending: Ego TaskSpace 10 disappeared during this turn and cannot be resumed. No new screenshot is claimed.
 - Search and lookup destinations still expose technical records; this change is not a declaration of completed player content or interaction parity with Dave.
 - No deployment or remote push performed.
+
+## 2026-10-05 verified art pass
+
+- Installed `reverse-skill-router` from `zhaoxuya520/reverse-skill` and inspected its Unity route and scope rules.
+- Used the Windows image audit as the source of truth and copied six verified local exports into the preview: duck, bomb thrower, extraction point, walkie, crate and level art.
+- Category cards now show their mapped game asset; the featured guide shows the duck asset. `media-manifest.json` records the Windows source directory and reuse boundary.
+- Ego desktop and mobile screenshots show zero broken images and no horizontal overflow.
