@@ -8,12 +8,6 @@
       "rightsReview": "Official Steam marketing asset. Ownership remains with the game rightsholder; reuse permission is not established. Local preview only pending publication review."
     },
     {
-      "file": "hero-repo-schematic.svg",
-      "source": "Original editorial illustration",
-      "type": "schematic, not a game map or gameplay screenshot",
-      "createdAt": "2026-10-05"
-    },
-    {
       "file": "crate.png, level.jpg",
       "source": "Windows verified asset export: C:\\Users\\CHEN\\Desktop\\repo\\content\\assets\\mapped",
       "type": "game texture exports mapped to published entries",
