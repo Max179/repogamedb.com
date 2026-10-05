@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-labelledby="title desc">
+  <title id="title">R.E.P.O. extraction route schematic</title>
+  <desc id="desc">Original non-gameplay illustration of a crew route, warning markers and a recovery crate.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183842"/><stop offset="1" stop-color="#071115"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f0b35c" stop-opacity="0"/><stop offset=".5" stop-color="#f0b35c" stop-opacity=".42"/><stop offset="1" stop-color="#df704d" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#b9d8d4" stroke-width="2"><path d="M0 160h1280M0 320h1280M0 480h1280M0 640h1280"/><path d="M160 0v800M320 0v800M480 0v800M640 0v800M800 0v800M960 0v800M1120 0v800"/></g>
+  <path d="M80 620 C260 510 360 610 510 450 S790 220 1190 170" fill="none" stroke="#f0b35c" stroke-width="8" stroke-dasharray="22 18"/>
+  <path d="M120 110 L1160 110" stroke="url(#beam)" stroke-width="42" opacity=".55"/>
+  <g fill="#091217" stroke="#9ec5c4" stroke-width="4"><path d="M205 612l42-116 42 116z"/><circle cx="247" cy="456" r="36"/><path d="M495 480l45-126 45 126z"/><circle cx="540" cy="322" r="38"/><path d="M835 338l48-132 48 132z"/><circle cx="883" cy="166" r="39"/></g>
+  <g fill="#df704d"><circle cx="510" cy="452" r="13"/><circle cx="904" cy="265" r="13"/><circle cx="1098" cy="192" r="13"/></g>
+  <g transform="translate(980 475)"><rect width="190" height="126" rx="12" fill="#c8883f"/><rect x="18" y="18" width="154" height="90" rx="8" fill="#6a472b"/><path d="M34 52h122M95 18v90" stroke="#f0b35c" stroke-width="9"/></g>
+  <g fill="#d6e6df" font-family="ui-monospace,monospace"><text x="66" y="72" font-size="22" letter-spacing="4">FIELD ROUTE // ORIGINAL SCHEMATIC</text><text x="66" y="730" font-size="18" fill="#f0b35c">SCOUT</text><text x="470" y="730" font-size="18" fill="#f0b35c">HAUL</text><text x="1030" y="730" font-size="18" fill="#f0b35c">EXTRACT</text></g>
+</svg>

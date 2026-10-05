@@ -1,0 +1,17 @@
+{
+  "assets": [
+    {
+      "file": "hero-repo.jpg",
+      "source": "https://cdn.akamai.steamstatic.com/steam/apps/3241660/library_hero.jpg",
+      "type": "official promotional artwork, not gameplay screenshot",
+      "downloadedAt": "2026-10-05",
+      "rightsReview": "Official Steam marketing asset. Ownership remains with the game rightsholder; reuse permission is not established. Local preview only pending publication review."
+    },
+    {
+      "file": "hero-repo-schematic.svg",
+      "source": "Original editorial illustration",
+      "type": "schematic, not a game map or gameplay screenshot",
+      "createdAt": "2026-10-05"
+    }
+  ]
+}
