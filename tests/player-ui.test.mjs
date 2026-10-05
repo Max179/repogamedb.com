@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { searchPage, checklistPage, playerPages } from '../pipeline/player-ui.mjs';
+assert.equal(playerPages.length, 5);
+assert.ok(playerPages.every(p=>p.href.startsWith('/') && p.title && p.text));
+assert.equal(new Set(playerPages.map(p=>p.href)).size, playerPages.length);
+assert.match(searchPage(), /URLSearchParams/);
+assert.match(searchPage(), /No matching published page/);
+assert.match(searchPage(), /aria-pressed/);
+assert.match(checklistPage(), /sessionStorage/);
+assert.match(checklistPage(), /id="reset"/);
+assert.equal((checklistPage().match(/type="checkbox"/g)||[]).length, 5);
+assert.ok(!searchPage().includes('Assembly-CSharp'));
+console.log('Player UI: 10 assertions passed');
