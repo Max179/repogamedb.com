@@ -18,6 +18,13 @@
       "source": "Windows verified asset export: C:\\Users\\CHEN\\Desktop\\repo\\content\\assets\\mapped",
       "type": "game texture exports mapped to published entries",
       "rightsReview": "Extracted from the user-owned local game build for the companion site; do not redistribute the original package."
+    },
+    {
+      "file": "generated/repo-hero-generated.png, generated/icon-threats.png, generated/icon-valuables.png, generated/icon-gear.png, generated/icon-extraction.png",
+      "source": "OpenAI built-in image generation",
+      "type": "original UI artwork for banner and category navigation",
+      "createdAt": "2026-10-05",
+      "rightsReview": "Generated original artwork; no game logos, screenshots or competitor assets used."
     }
   ]
 }
