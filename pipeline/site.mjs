@@ -21,7 +21,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { playerCSS, searchPage, checklistPage } from './player-ui.mjs';
+import { playerCSS, baseCSS, searchPage, checklistPage } from './player-ui.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -236,7 +236,7 @@ export function build(inventoryPath, outDir, options = {}) {
       altPath(rel) +
       '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description) + '">' +
       '<meta property="og:url" content="' + SITE.url + '/' + locale + '/' + rel + '"><meta property="og:locale" content="' + i18n.locales[locale].htmlLang + '">' +
-      '<style>:root{--bg:#111316;--fg:#f2f4f0;--dim:#a4aaa8;--line:#34393b;--accent:#f2a65a;--panel:#1a1e20}*{box-sizing:border-box}</style><style>' + playerCSS + '</style></head><body>' +
+      '<style>:root{--panel:#1a1e20;--panel-2:#29292b;--line:#3b3b3d;--text:#f4f4ec;--muted:#b8b8b4;--accent:#dfc652}</style><style>' + baseCSS + '</style><style>' + playerCSS + '</style></head><body>' +
       '<a class="skip-link" href="#content">' + esc(T('nav.home')) + '</a>' +
       '<header class="top"><div class="bar"><a class="brand" href="/' + locale + '/index.html"><span class="mark">R</span><span>' + esc(SITE.name) + '</span></a>' +
       '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav">' + nav + '</nav></div></header>' +
