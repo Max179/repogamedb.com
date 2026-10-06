@@ -7,8 +7,8 @@ export const playerPages = [
 ];
 
 export function searchPage() {
-  return `<section class="page-shell"><p class="eyebrow">Find your next answer</p><h1>Search the wiki</h1>
-  <label for="q">Search guides and tools</label><input class="search-input" id="q" type="search" placeholder="Try extraction or gear" maxlength="120">
+  return `<section class="page-shell"><p class="eyebrow">Wiki search</p><h1>Search</h1>
+    <label for="q">Find a threat, gear or valuable</label><input class="search-input" id="q" type="search" placeholder="Threat, gear or valuable" maxlength="120">
   <div class="filter-row" aria-label="Content type">${['All','Guides','Tools','Threats'].map(x=>`<button class="filter" data-kind="${x}" aria-pressed="${x==='All'}">${x}</button>`).join('')}</div>
   <p id="result-count" role="status"></p><div id="results" class="search-results"></div><noscript>${playerPages.map(p=>`<p><a href="${p.href}">${p.title}</a></p>`).join('')}</noscript></section>
   <script>const catalog=${JSON.stringify(playerPages)};const input=document.getElementById('q');let kind='All';input.value=new URLSearchParams(location.search).get('q')||'';
@@ -18,7 +18,7 @@ export function searchPage() {
 
 export function checklistPage() {
   const checks=['Agree on a return route','Assign a carrier and a spotter','Check equipment before leaving','Keep a fallback route open','Confirm the crew is ready to extract'];
-  return `<section class="page-shell"><p class="eyebrow">Crew preparation</p><h1>Before you leave</h1><p class="lead">Your run checklist</p><p id="progress" role="status">0 of 5 ready</p><progress id="meter" max="5" value="0"></progress><div class="checklist">${checks.map((c,i)=>`<label><input type="checkbox" data-check="${i}"><span>${c}</span></label>`).join('')}</div><button class="button" id="reset">Reset checklist</button><p><a href="/guide.html">Read the extraction playbook →</a></p></section>
+  return `<section class="page-shell"><p class="eyebrow">Run tool</p><h1>Before extraction</h1><p id="progress" role="status">0 of 5 ready</p><progress id="meter" max="5" value="0"></progress><div class="checklist">${checks.map((c,i)=>`<label><input type="checkbox" data-check="${i}"><span>${c}</span></label>`).join('')}</div><button class="button" id="reset">Reset</button><p><a href="/guide.html">Open guide →</a></p></section>
   <script>const boxes=[...document.querySelectorAll('[data-check]')];let saved=[];try{saved=JSON.parse(sessionStorage.getItem('repo-checklist')||'[]')}catch{}if(Array.isArray(saved))boxes.forEach((b,i)=>b.checked=saved[i]===true);function update(){const done=boxes.filter(b=>b.checked).length;document.getElementById('progress').textContent=done+' of '+boxes.length+' ready';document.getElementById('meter').value=done;try{sessionStorage.setItem('repo-checklist',JSON.stringify(boxes.map(b=>b.checked)))}catch{}}boxes.forEach(b=>b.addEventListener('change',update));document.getElementById('reset').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);update()});update();</script>`;
 }
 
