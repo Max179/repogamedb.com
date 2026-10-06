@@ -36,3 +36,9 @@
 - Threat detail pages now have image, verified name, version/source facts, field notes, response steps and related links.
 - Added unique per-entry field notes so the new indexable pages are not template duplicates.
 - Desktop and 390px mobile Ego checks show zero broken images and zero horizontal overflow.
+
+## 2026-10-06 catalog expansion pass
+
+- Expanded the player-facing catalog from 24 threat entries to 24 threats + 38 valuables + 28 gear entries.
+- Added `/valuables.html`, `/gear.html` and 66 dedicated entry pages with image, verified name, version/source facts, field notes and related links.
+- Technical classes remain Reference/noindex; the new catalog is built only from curated player-facing names present in the verified inventory.
