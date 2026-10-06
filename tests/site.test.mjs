@@ -11,6 +11,7 @@
  *   - 82-94% of main text shared between two entity pages, because the game ships a name and nothing else.
  */
 import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { build, lookupFields, SITE, NAV, isNoindexPage } from '../pipeline/site.mjs';
@@ -18,6 +19,7 @@ import { build, lookupFields, SITE, NAV, isNoindexPage } from '../pipeline/site.
 const INV = 'data/normalized/p0-inventory.json';
 const ENT = 'data/canonical/entities.json';
 const I18N = 'data/canonical/i18n.json';
+const MEDIA = 'data/canonical/media.json';
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = '') => { if (cond) { pass++; console.log('  PASS ' + name); } else { fail++; console.log('  FAIL ' + name + (detail ? ' :: ' + detail : '')); } };
 
@@ -197,6 +199,55 @@ try {
     }
   }
   ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.slice(0, 5).join(', '));
+
+  // --- image mappings: a mapped sheet must exist, hash to what the manifest recorded, and be described
+  {
+    const media = JSON.parse(readFileSync(MEDIA, 'utf8'));
+    const tracked = media.entries ?? {};
+    const keys = Object.keys(tracked);
+    ok('the image mapping covers at least the enemies and stops short of claiming levels',
+      keys.length > 40 && keys.length < 120 && media.summary.levelsMapped === 0, String(keys.length));
+
+    const knownKey = new Set([...ent.enemies, ...ent.items, ...ent.levels].map((e) => e.key));
+    const unknown = keys.filter((k) => !knownKey.has(k));
+    ok('every image mapping is keyed to a canonical entity', unknown.length === 0, unknown.slice(0, 5).join(', '));
+
+    // A mapping is only evidence when the name states the subject AND the file shows it. The hash proves the
+    // file on disk is the exact one that was opened, so a later swap cannot silently invalidate a verdict.
+    let hashBad = 0, missingFile = 0;
+    for (const [k, e] of Object.entries(tracked)) {
+      const p = join('web', 'assets', e.file);
+      if (!existsSync(p)) { missingFile++; continue; }
+      if (createHash('sha256').update(readFileSync(p)).digest('hex') !== e.sha256) hashBad++;
+    }
+    ok('every mapped image exists on disk', missingFile === 0, missingFile + ' missing');
+    ok('every mapped image still hashes to the verdict it was reviewed under', hashBad === 0, hashBad + ' changed');
+
+    // The page must say which kind of picture it is, never imply a photograph.
+    const readsKinds = new Set(Object.values(tracked).map((e) => e.reads));
+    ok('every mapping records how legible the sheet is',
+      [...readsKinds].every((r) => ['legible', 'partial', 'shared', 'footprint'].includes(r)), [...readsKinds].join(', '));
+
+    // An entity with no mapped sheet must keep its icon and say so.
+    const chef = readFileSync(join(dir, 'en-US', 'enemy', 'chef.html'), 'utf8');
+    ok('an entity with no mapped texture keeps an icon and explains why',
+      !tracked['ENEMY.TUMBLER'] && /No texture in the build depicts this entity/.test(chef), 'ENEMY.TUMBLER');
+    ok('that page still points at a generated icon rather than a game sheet',
+      chef.includes('/assets/generated/icon-threats.png'));
+
+    // A mapped entity page shows the sheet and prints the asset name it came from.
+    const oogly = readFileSync(join(dir, 'en-US', 'enemy', 'oogly.html'), 'utf8');
+    ok('a mapped entity page shows the game sheet', oogly.includes('/assets/game/the-oogly-texture.jpg'));
+    ok('a mapped entity page prints the asset name it was exported from', oogly.includes('Oogly_Albedo'));
+    ok('a mapped entity page describes what the sheet shows rather than asserting a screenshot',
+      /UV layout|colour sheet|sheet/.test(oogly) && !/screenshot/i.test(oogly));
+
+    // The disclaimer must not claim no game assets are used, because the site now shows texture sheets.
+    const disc = readFileSync(join(dir, 'en-US', 'disclaimer.html'), 'utf8');
+    ok('the disclaimer no longer claims that no game assets are used',
+      !/No game assets, models, audio or code are redistributed/.test(disc));
+    ok('the disclaimer states what is actually redistributed', /texture sheets?/i.test(disc));
+  }
 
   // --- the reference pages still say what they do not know
   const sample = readdirSync(join(dir, i18n.defaultLocale, 'entity')).slice(0, 25)

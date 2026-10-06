@@ -109,8 +109,10 @@ export function build(inventoryPath, outDir, options = {}) {
   const inv = readJson(inventoryPath);
   const entitiesPath = options.entities || join(ROOT, 'data', 'canonical', 'entities.json');
   const i18nPath = options.i18n || join(ROOT, 'data', 'canonical', 'i18n.json');
+  const mediaPath = options.media || join(ROOT, 'data', 'canonical', 'media.json');
   const ent = readJson(entitiesPath);
   const i18n = readJson(i18nPath);
+  const media = existsSync(mediaPath) ? readJson(mediaPath) : { entries: {} };
 
   const LOCALES = Object.keys(i18n.locales);
   const DEFAULT = i18n.defaultLocale;
@@ -134,6 +136,21 @@ export function build(inventoryPath, outDir, options = {}) {
       copied.add(name);
     }
     return '/assets/' + name;
+  };
+  /**
+   * Copies a game texture named in media.json. The file lives under web/assets/game/; media.json keeps the
+   * provenance (bundle, asset name, dims, sha256) for each one so a gate can re-check the file against it.
+   */
+  const mediaAsset = (rel) => {
+    const dest = join(outDir, 'assets', rel);
+    if (!copied.has(rel)) {
+      const src = join(assetRoot, rel);
+      if (!existsSync(src)) throw new Error('media: missing source file web/assets/' + rel);
+      mkdirSync(dirname(dest), { recursive: true });
+      copyFileSync(src, dest);
+      copied.add(rel);
+    }
+    return '/assets/' + rel;
   };
   const generatedHeroImage = asset('generated/repo-hero-generated.png');
   const threatIcon = asset('generated/icon-threats.png');
@@ -283,6 +300,20 @@ export function build(inventoryPath, outDir, options = {}) {
     const icon = kind === 'item' ? itemsIcon : kind === 'level' ? levelsIcon : threatIcon;
     const cls = e.classHint ? classByName.get(e.classHint) : null;
     const lev = kind === 'enemy' ? levelLinksFor(e.name) : [];
+    /**
+     * A mapped game texture is shown as what it is: the game's own colour sheet, with the sheet described and
+     * the asset name printed. An entity with no mapped texture keeps its generated icon and the page says why,
+     * rather than being given a picture that would read as something it is not.
+     */
+    const m = media.entries[e.key];
+    const figure = m
+      ? '<figure class="entry-media"><img src="' + mediaAsset(m.file) + '" alt="' + esc(e.name + ' — ' + (m.assetName || 'game texture sheet')) + '" width="' + m.width + '" height="' + m.height + '" loading="lazy" decoding="async">' +
+        '<figcaption><strong>' + esc(T('entry.image.label')) + '</strong><span>' + esc(T('entry.image.' + m.reads)) + '</span>' +
+        '<span class="mono dim">' + esc(m.assetName || '') + '</span>' +
+        '<span class="dim">' + esc(T('entry.image.shows')) + ': ' + esc(m.whatTheSheetShows) + '</span>' +
+        '<span class="dim">' + esc(T('entry.image.provenance')) + '</span></figcaption></figure>'
+      : '<figure class="entry-media"><img src="' + icon + '" alt="' + esc(K.alt) + '" loading="lazy" decoding="async">' +
+        '<figcaption><strong>' + esc(T('entry.image.label')) + '</strong><span>' + esc(T('entry.image.none')) + '</span></figcaption></figure>';
     const facts = [
       [T('entry.category'), T('nav.' + K.navKey)],
       [T('entry.version'), ent.version],
@@ -308,7 +339,7 @@ export function build(inventoryPath, outDir, options = {}) {
         '<span class="dim">· ' + esc(String(cls.declared)) + ' / ' + esc(String(cls.written)) + '</span></p>' +
         '<p class="dim">' + esc(T('entry.internalClass.note')) + '</p>'
       : '';
-    const body = '<article class="entry-page"><div class="entry-hero"><img src="' + icon + '" alt="' + K.alt + '"><div>' +
+    const body = '<article class="entry-page"><div class="entry-hero">' + figure + '<div>' +
       '<p class="eyebrow">' + esc(T('entry.displayName')) + '</p><h1>' + esc(e.name) + '</h1>' +
       '<p class="entry-lead">' + esc(T('entry.notTranslated')) + '</p></div></div>' +
       '<div class="entry-facts">' + facts.map(([k, v]) => '<div><span>' + esc(k) + '</span><strong>' + esc(v) + '</strong></div>').join('') + '</div>' +

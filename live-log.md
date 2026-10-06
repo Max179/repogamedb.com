@@ -78,3 +78,29 @@
   23 assertions across 6 locales.
 - Not done and not claimed: no push, no deploy, no Search Console submission, no AdSense. Behaviour, damage,
   health, speed, spawn rates and prices are absent from the string tables and are therefore not published.
+
+## 2026-10-06 entity images and one honest disclaimer
+
+- Synced the game texture exports from the Windows build (181 files on branch `assets/entity-images`, pushed by the
+  Windows agent). The Mac repo keeps only the 52 that a page actually shows; the 181 raw exports stay on that
+  branch rather than adding 13 MB of unused art to this history.
+- Added `data/canonical/media.json`: 28 of 29 enemies and 31 of 60 items have a sheet. Every entry is keyed to the
+  game's own entity key, carries the asset name, bundle, dimensions and sha256 of the file that was opened, and
+  records how legible the sheet reads.
+- Reused the Windows review ledger instead of re-deciding it: 221 reviewed rows, 37 rejections. Three sheets were
+  opened here as a spot check and matched their ledger verdict, so the verdicts were accepted rather than redone.
+- A mapped sheet is shown as what it is: the game's own colour sheet, a UV layout in most cases, with the asset
+  name and a plain description of what the sheet shows. Nothing is captioned as a screenshot or as official art.
+  Where several entities genuinely share one in-game atlas (five drones, four grenades) the page says so.
+- `ENEMY.TUMBLER` (Chef) has no sheet in the build and keeps its icon; `ENEMY.HIDDEN` maps to a footprint, which
+  the page labels as a footprint rather than as the body. Levels keep icons: the bundles hold level prop and
+  signage textures, but no sheet depicts a level.
+- Corrected a statement that the images made false. The footer and disclaimer claimed "no game assets are
+  redistributed"; entity pages now show texture sheets, so both say instead that names come from the game's own
+  string tables and the sheets are exported from a locally owned copy for identification, with the package,
+  models, audio and code not redistributed.
+- Gate added: every mapping must be keyed to a canonical entity, exist on disk, still hash to the verdict it was
+  reviewed under, record its legibility, and its page must not claim a screenshot. Measured 59/59 sha256 match.
+- `tests/site.test.mjs` 54 passed / 0 failed; `tests/player-ui.test.mjs` 23 assertions across 6 locales.
+- Image bytes are published unmodified. Re-encoding to save bytes would make the published file differ from the
+  file that was opened and reviewed, which is the one thing the sha256 record exists to prevent.
