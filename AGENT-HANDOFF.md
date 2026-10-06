@@ -83,13 +83,6 @@ python3 -m http.server 4186 --directory web/dist
 
 浏览器操作统一使用 Ego Browser。截图验收至少检查桌面和 390px 移动端：破图数、SVG 数、横向溢出、搜索和按钮布局。
 
-## 接手后的优先级
+## 交接边界
 
-1. 恢复 Windows MCP 8765：通过 3090 Harness 的 PowerShell 检查 `Get-NetTCPConnection -LocalPort 8765`、`Get-Process node`，定位并按 Windows 侧启动脚本重启 `win-mcp-server.js`。不要杀掉全部 node 进程。
-2. 从 Windows 已验证素材清单建立实体到图片的一对一映射，并更新 `media-manifest.json`；原始游戏包不得复制到 Git。
-3. 重新构建并执行全部测试/Preflight，桌面和移动截图验收。
-4. 若要发布，再检查 GitHub Actions/Cloudflare 凭据；本地完成不代表已推送或已部署。
-
-## 提交纪律
-
-每次代码、文案或素材映射改动完成后立即本地提交。不要提交 `data/raw/**`、`web/dist/**`、游戏包或 payload 临时文件。不要把 Windows MCP 未恢复误报为素材同步完成。
+本文仅记录当前状态，不包含后续执行方案。原始游戏包、Windows payload 和构建产物不在 Mac Git 仓库中；Windows MCP 当前不可用，素材一对一映射尚未完成。发布状态为未发布。
