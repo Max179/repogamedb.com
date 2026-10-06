@@ -29,3 +29,10 @@
 - Removed the route SVG from the public homepage and deleted the asset; the feature panel now uses a readable crate export.
 - Reworked the shell toward a compact game HUD: square controls, uppercase navigation labels, hard-edged panels, warning-yellow frame line and denser category cards.
 - Ego acceptance after rebuild: 0 broken images, 0 SVG images on the homepage and 0 horizontal overflow.
+
+## 2026-10-06 wiki entry architecture pass
+
+- Added a Featured entries rail to the homepage and linked every published threat card to a dedicated `/threat/<slug>.html` page.
+- Threat detail pages now have image, verified name, version/source facts, field notes, response steps and related links.
+- Added unique per-entry field notes so the new indexable pages are not template duplicates.
+- Desktop and 390px mobile Ego checks show zero broken images and zero horizontal overflow.
