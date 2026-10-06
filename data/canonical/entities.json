@@ -1,0 +1,769 @@
+{
+  "schemaVersion": "repo-entities@1.0.0",
+  "game": "R.E.P.O.",
+  "version": "0.4.0",
+  "generatedAt": "2026-10-06",
+  "provenance": {
+    "displayNames": {
+      "file": "data/normalized/localization-en-us.json",
+      "collections": {
+        "enemies": "HUD",
+        "items": "HUD",
+        "levels": "Menu"
+      },
+      "engine": "Unity Localization SharedTableData + StringTable, extracted from the game's own addressable bundles",
+      "verifiedAgainst": "C:\\Users\\CHEN\\Desktop\\repo\\data\\normalized\\localization-en-us.json",
+      "verificationMethod": "ordinal, case-sensitive key-and-value comparison of the full ENEMY.*, ITEM.* and LEVEL.NAME.* sets",
+      "verificationResult": "29 enemies / 62 item keys / 6 levels — zero differences, zero missing keys, zero extra keys",
+      "note": "These values are strings the game ships in its own English string table. The extractor decodes bytes only and adds no prefix. Which on-screen surface each string appears on is NOT stated by the data and is therefore not asserted anywhere on the site."
+    },
+    "internalClassNames": {
+      "file": "data/normalized/p0-inventory.json",
+      "note": "Unity class names. They are a DIFFERENT naming layer from the display names above and do not match them in most cases. Entity class hints are cross-references derived from naming correspondence, not proven runtime links. Recorded so a reader can see the underlying class, never as player-facing text.",
+      "itemHintBasis": "item class hints are inferred from name correspondence and are labelled as cross-references on the page"
+    }
+  },
+  "locales": [
+    {
+      "code": "en-US",
+      "englishName": "English",
+      "isDefault": true,
+      "source": "game string table (authoritative)"
+    },
+    {
+      "code": "da-DK",
+      "englishName": "Danish",
+      "isDefault": false,
+      "source": "game string table (3 of 566 entries genuinely localized)"
+    },
+    {
+      "code": "fi-FI",
+      "englishName": "Finnish",
+      "isDefault": false,
+      "source": "game string table (0 of 566 entries genuinely localized)"
+    },
+    {
+      "code": "pt-BR",
+      "englishName": "Portuguese (Brazil)",
+      "isDefault": false,
+      "source": "game string table (0 of 566 entries genuinely localized)"
+    },
+    {
+      "code": "pt-PT",
+      "englishName": "Portuguese (Portugal)",
+      "isDefault": false,
+      "source": "game string table (0 of 566 entries genuinely localized)"
+    },
+    {
+      "code": "sv-SE",
+      "englishName": "Swedish",
+      "isDefault": false,
+      "source": "game string table (20 of 566 entries genuinely localized)"
+    }
+  ],
+  "enemies": [
+    {
+      "key": "ENEMY.ANIMAL",
+      "name": "Animal",
+      "slug": "animal",
+      "classHint": "EnemyAnimal"
+    },
+    {
+      "key": "ENEMY.BANG",
+      "name": "Banger",
+      "slug": "banger",
+      "classHint": "EnemyBang"
+    },
+    {
+      "key": "ENEMY.BEAMER",
+      "name": "Clown",
+      "slug": "clown",
+      "classHint": "EnemyBeamer"
+    },
+    {
+      "key": "ENEMY.BIRTHDAY_BOY",
+      "name": "Birthday Boy",
+      "slug": "birthday-boy",
+      "classHint": "EnemyBirthdayBoy"
+    },
+    {
+      "key": "ENEMY.BOMB_THROWER",
+      "name": "Cleanup Crew",
+      "slug": "cleanup-crew",
+      "classHint": "EnemyBombThrower"
+    },
+    {
+      "key": "ENEMY.BOWTIE",
+      "name": "Bowtie",
+      "slug": "bowtie",
+      "classHint": "EnemyBowtie"
+    },
+    {
+      "key": "ENEMY.CEILING_EYE",
+      "name": "Peeper",
+      "slug": "peeper",
+      "classHint": "EnemyCeilingEye"
+    },
+    {
+      "key": "ENEMY.DUCK",
+      "name": "Apex Predator",
+      "slug": "apex-predator",
+      "classHint": "EnemyDuck"
+    },
+    {
+      "key": "ENEMY.ELSA",
+      "name": "Elsa",
+      "slug": "elsa",
+      "classHint": "EnemyElsa"
+    },
+    {
+      "key": "ENEMY.FLOATER",
+      "name": "Mentalist",
+      "slug": "mentalist",
+      "classHint": "EnemyFloater"
+    },
+    {
+      "key": "ENEMY.GNOME",
+      "name": "Gnome",
+      "slug": "gnome",
+      "classHint": "EnemyGnome"
+    },
+    {
+      "key": "ENEMY.HEAD",
+      "name": "Headman",
+      "slug": "headman",
+      "classHint": "EnemyHeadController"
+    },
+    {
+      "key": "ENEMY.HEAD_GRABBER",
+      "name": "Headgrab",
+      "slug": "headgrab",
+      "classHint": "EnemyHeadGrabber"
+    },
+    {
+      "key": "ENEMY.HEART_HUGGER",
+      "name": "Heart Hugger",
+      "slug": "heart-hugger",
+      "classHint": "EnemyHeartHugger"
+    },
+    {
+      "key": "ENEMY.HIDDEN",
+      "name": "Hidden",
+      "slug": "hidden",
+      "classHint": "EnemyHidden"
+    },
+    {
+      "key": "ENEMY.HUNTER",
+      "name": "Huntsman",
+      "slug": "huntsman",
+      "classHint": "EnemyHunter"
+    },
+    {
+      "key": "ENEMY.OOGLY",
+      "name": "Oogly",
+      "slug": "oogly",
+      "classHint": "EnemyOogly"
+    },
+    {
+      "key": "ENEMY.ROBE",
+      "name": "Robe",
+      "slug": "robe",
+      "classHint": "EnemyRobe"
+    },
+    {
+      "key": "ENEMY.RUNNER",
+      "name": "Reaper",
+      "slug": "reaper",
+      "classHint": "EnemyRunner"
+    },
+    {
+      "key": "ENEMY.SHADOW",
+      "name": "Loom",
+      "slug": "loom",
+      "classHint": "EnemyShadow"
+    },
+    {
+      "key": "ENEMY.SLOW_MOUTH",
+      "name": "Spewer",
+      "slug": "spewer",
+      "classHint": "EnemySlowMouth"
+    },
+    {
+      "key": "ENEMY.SLOW_WALKER",
+      "name": "Trudge",
+      "slug": "trudge",
+      "classHint": "EnemySlowWalker"
+    },
+    {
+      "key": "ENEMY.SPINNY",
+      "name": "Gambit",
+      "slug": "gambit",
+      "classHint": "EnemySpinny"
+    },
+    {
+      "key": "ENEMY.THIN_MAN",
+      "name": "Shadow Child",
+      "slug": "shadow-child",
+      "classHint": "EnemyThinMan"
+    },
+    {
+      "key": "ENEMY.TICK",
+      "name": "Tick",
+      "slug": "tick",
+      "classHint": "EnemyTick"
+    },
+    {
+      "key": "ENEMY.TRICYCLE",
+      "name": "Bella",
+      "slug": "bella",
+      "classHint": "EnemyTricycle"
+    },
+    {
+      "key": "ENEMY.TUMBLER",
+      "name": "Chef",
+      "slug": "chef",
+      "classHint": "EnemyTumbler"
+    },
+    {
+      "key": "ENEMY.UPSCREAM",
+      "name": "Upscream",
+      "slug": "upscream",
+      "classHint": "EnemyUpscream"
+    },
+    {
+      "key": "ENEMY.VALUABLE_THROWER",
+      "name": "Rugrat",
+      "slug": "rugrat",
+      "classHint": "EnemyValuableThrower"
+    }
+  ],
+  "items": [
+    {
+      "key": "ITEM.CART_CANNON",
+      "name": "C.A.R.T. Cannon",
+      "slug": "cart-cannon",
+      "group": "cart",
+      "classHint": "ItemCartCannon",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.CART_LASER",
+      "name": "C.A.R.T. Laser",
+      "slug": "cart-laser",
+      "group": "cart",
+      "classHint": "ItemCartLaser",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.CART_MEDIUM",
+      "name": "C.A.R.T.",
+      "slug": "cart",
+      "group": "cart",
+      "classHint": "ItemVehicle",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.CART_SMALL",
+      "name": "POCKET C.A.R.T.",
+      "slug": "pocket-cart",
+      "group": "cart",
+      "classHint": "ItemVehicle",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.DRONE_BATTERY",
+      "name": "Recharge Drone",
+      "slug": "recharge-drone",
+      "group": "drone",
+      "classHint": "ItemDrone",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.DRONE_FEATHER",
+      "name": "Feather Drone",
+      "slug": "feather-drone",
+      "group": "drone",
+      "classHint": "ItemDrone",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.DRONE_INDESTRUCTIBLE",
+      "name": "Indestructible Drone",
+      "slug": "indestructible-drone",
+      "group": "drone",
+      "classHint": "ItemDrone",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.DRONE_TORQUE",
+      "name": "Roll Drone",
+      "slug": "roll-drone",
+      "group": "drone",
+      "classHint": "ItemDrone",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.DRONE_ZERO_GRAVITY",
+      "name": "Zero Gravity Drone",
+      "slug": "zero-gravity-drone",
+      "group": "drone",
+      "classHint": "ItemDrone",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.DUCK_BUCKET",
+      "name": "Duck Bucket",
+      "slug": "duck-bucket",
+      "group": "tool",
+      "classHint": "ItemDuckBucket",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.EXTRACTION_TRACKER",
+      "name": "Extraction Tracker",
+      "slug": "extraction-tracker",
+      "group": "tracker",
+      "classHint": "ItemTracker",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GRENADE_DUCT_TAPED",
+      "name": "Duct Taped Grenades",
+      "slug": "duct-taped-grenades",
+      "group": "grenade",
+      "classHint": "ItemGrenadeDuctTaped",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GRENADE_EXPLOSIVE",
+      "name": "Grenade",
+      "slug": "grenade",
+      "group": "grenade",
+      "classHint": "ItemGrenade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GRENADE_HUMAN",
+      "name": "Human Grenade",
+      "slug": "human-grenade",
+      "group": "grenade",
+      "classHint": "ItemGrenadeHuman",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GRENADE_SHOCKWAVE",
+      "name": "Shockwave Grenade",
+      "slug": "shockwave-grenade",
+      "group": "grenade",
+      "classHint": "ItemGrenadeShockwave",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GRENADE_STUN",
+      "name": "Stun Grenade",
+      "slug": "stun-grenade",
+      "group": "grenade",
+      "classHint": "ItemGrenadeStun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GUN_HANDGUN",
+      "name": "Gun",
+      "slug": "gun",
+      "group": "gun",
+      "classHint": "ItemGun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GUN_LASER",
+      "name": "Photon Blaster",
+      "slug": "photon-blaster",
+      "group": "gun",
+      "classHint": "ItemGunLaser",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GUN_SHOCKWAVE",
+      "name": "Pulse Pistol",
+      "slug": "pulse-pistol",
+      "group": "gun",
+      "classHint": "ItemGun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GUN_SHOTGUN",
+      "name": "Shotgun",
+      "slug": "shotgun",
+      "group": "gun",
+      "classHint": "ItemGun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GUN_STUN",
+      "name": "Boltzap",
+      "slug": "boltzap",
+      "group": "gun",
+      "classHint": "ItemGun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.GUN_TRANQ",
+      "name": "Tranq Gun",
+      "slug": "tranq-gun",
+      "group": "gun",
+      "classHint": "ItemGun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.HEALTH_PACK_LARGE",
+      "name": "Large Health Pack (100)",
+      "slug": "large-health-pack",
+      "group": "health",
+      "classHint": "ItemHealthPack",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.HEALTH_PACK_MEDIUM",
+      "name": "Medium Health Pack (50)",
+      "slug": "medium-health-pack",
+      "group": "health",
+      "classHint": "ItemHealthPack",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.HEALTH_PACK_SMALL",
+      "name": "Small Health Pack (25)",
+      "slug": "small-health-pack",
+      "group": "health",
+      "classHint": "ItemHealthPack",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.LEAF_BLOWER",
+      "name": "Leaf Blower",
+      "slug": "leaf-blower",
+      "group": "tool",
+      "classHint": "ItemLeafBlower",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MELEE_BASEBALL_BAT",
+      "name": "Baseball Bat",
+      "slug": "baseball-bat",
+      "group": "melee",
+      "classHint": "ItemMelee",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MELEE_FRYING_PAN",
+      "name": "Frying Pan",
+      "slug": "frying-pan",
+      "group": "melee",
+      "classHint": "ItemMelee",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MELEE_INFLATABLE_HAMMER",
+      "name": "Inflatable Hammer",
+      "slug": "inflatable-hammer",
+      "group": "melee",
+      "classHint": "ItemMelee",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MELEE_SLEDGE_HAMMER",
+      "name": "Sledge Hammer",
+      "slug": "sledge-hammer",
+      "group": "melee",
+      "classHint": "ItemMelee",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MELEE_STUN_BATON",
+      "name": "Prodzap",
+      "slug": "prodzap",
+      "group": "melee",
+      "classHint": "ItemStunBaton",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MELEE_SWORD",
+      "name": "Sword",
+      "slug": "sword",
+      "group": "melee",
+      "classHint": "ItemMelee",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MINE_EXPLOSIVE",
+      "name": "Explosive Mine",
+      "slug": "explosive-mine",
+      "group": "mine",
+      "classHint": "ItemMine",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MINE_SHOCKWAVE",
+      "name": "Shockwave Mine",
+      "slug": "shockwave-mine",
+      "group": "mine",
+      "classHint": "ItemMine",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.MINE_STUN",
+      "name": "Trapzap",
+      "slug": "trapzap",
+      "group": "mine",
+      "classHint": "ItemMineStun",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.ORB_ZERO_GRAVITY",
+      "name": "Zero Gravity Orb",
+      "slug": "zero-gravity-orb",
+      "group": "tool",
+      "classHint": "ItemOrb",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.PHASE_BRIDGE",
+      "name": "Phase Bridge",
+      "slug": "phase-bridge",
+      "group": "tool"
+    },
+    {
+      "key": "ITEM.POWER_CRYSTAL",
+      "name": "Energy Crystal",
+      "slug": "energy-crystal",
+      "group": "tool"
+    },
+    {
+      "key": "ITEM.REVIVE_ITEM",
+      "name": "Defibro",
+      "slug": "defibro",
+      "group": "support",
+      "classHint": "ItemReviveItem",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.RUBBER_DUCK",
+      "name": "Rubber Duck",
+      "slug": "rubber-duck",
+      "group": "tool",
+      "classHint": "ItemRubberDuck",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.STAFF_TORQUE",
+      "name": "Roll Staff",
+      "slug": "roll-staff",
+      "group": "staff",
+      "classHint": "ItemStaffTorque",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.STAFF_VOID",
+      "name": "Void Staff",
+      "slug": "void-staff",
+      "group": "staff",
+      "classHint": "ItemStaffVoid",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.STAFF_ZERO_GRAVITY",
+      "name": "Zero Gravity Staff",
+      "slug": "zero-gravity-staff",
+      "group": "staff",
+      "classHint": "ItemStaffZeroGravity",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_DEATH_HEAD_BATTERY",
+      "name": "Death Head Battery Upgrade",
+      "slug": "death-head-battery-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemBattery",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_MAP_PLAYER_COUNT",
+      "name": "Map Player Count Upgrade",
+      "slug": "map-player-count-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_CROUCH_REST",
+      "name": "Crouch Rest Upgrade",
+      "slug": "crouch-rest-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_ENERGY",
+      "name": "Stamina Upgrade",
+      "slug": "stamina-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_EXTRA_JUMP",
+      "name": "Extra Jump Upgrade",
+      "slug": "extra-jump-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_GRAB_RANGE",
+      "name": "Range Upgrade",
+      "slug": "range-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_GRAB_STRENGTH",
+      "name": "Strength Upgrade",
+      "slug": "strength-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_HEALTH",
+      "name": "Health Upgrade",
+      "slug": "health-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_SPRINT_SPEED",
+      "name": "Sprint Speed Upgrade",
+      "slug": "sprint-speed-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_TUMBLE_CLIMB",
+      "name": "Tumble Climb Upgrade",
+      "slug": "tumble-climb-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_TUMBLE_LAUNCH",
+      "name": "Tumble Launch Upgrade",
+      "slug": "tumble-launch-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgrade",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.UPGRADE_PLAYER_TUMBLE_WINGS",
+      "name": "Tumble Wings Upgrade",
+      "slug": "tumble-wings-upgrade",
+      "group": "upgrade",
+      "classHint": "ItemUpgradePlayerTumbleWingsLogic",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.VALUABLE_TRACKER",
+      "name": "Valuable Tracker",
+      "slug": "valuable-tracker",
+      "group": "tracker",
+      "classHint": "ItemTracker",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.VEHICLE_SEMISCOOTER",
+      "name": "Hauler",
+      "slug": "hauler",
+      "group": "vehicle",
+      "classHint": "ItemVehicle",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.VEHICLE_SEMISCOOTER_SMALL",
+      "name": "Scout",
+      "slug": "scout",
+      "group": "vehicle",
+      "classHint": "ItemVehicle",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.WALKIE_TALKIE",
+      "name": "Semibot Walkie",
+      "slug": "semibot-walkie",
+      "group": "tool",
+      "classHint": "ItemWalkieTalkie",
+      "classHintBasis": "name-correspondence"
+    },
+    {
+      "key": "ITEM.WALKIE_TALKIE_BOX",
+      "name": "Semibot Walkies",
+      "slug": "semibot-walkies",
+      "group": "tool",
+      "classHint": "ItemWalkieBox",
+      "classHintBasis": "name-correspondence"
+    }
+  ],
+  "itemUiLabelsExcluded": [
+    {
+      "key": "ITEM.CART.MODE_STRONG",
+      "value": "Mode: Strong",
+      "reason": "HUD mode label for the C.A.R.T., not a distinct item"
+    },
+    {
+      "key": "ITEM.CART.MODE_WEAK",
+      "value": "Mode: Weak",
+      "reason": "HUD mode label for the C.A.R.T., not a distinct item"
+    }
+  ],
+  "levels": [
+    {
+      "key": "LEVEL.NAME.ARCTIC",
+      "name": "McJannek Station",
+      "slug": "mcjannek-station"
+    },
+    {
+      "key": "LEVEL.NAME.ARENA",
+      "name": "Disposal Arena",
+      "slug": "disposal-arena"
+    },
+    {
+      "key": "LEVEL.NAME.MANOR",
+      "name": "Headman Manor",
+      "slug": "headman-manor"
+    },
+    {
+      "key": "LEVEL.NAME.MUSEUM",
+      "name": "Museum of Human Art",
+      "slug": "museum-of-human-art"
+    },
+    {
+      "key": "LEVEL.NAME.SHOP",
+      "name": "Service Station",
+      "slug": "service-station"
+    },
+    {
+      "key": "LEVEL.NAME.WIZARD",
+      "name": "Swiftbroom Academy",
+      "slug": "swiftbroom-academy"
+    }
+  ],
+  "unverified": {
+    "valuables": {
+      "count": 38,
+      "status": "no player-facing display name found",
+      "detail": "The game's string tables contain no VALUABLE.* name keys. The 38 names currently on the site (Gumball, Blender, …) were derived from Unity class names such as GumballValuable and are NOT verified as player-facing text. Until a source is found they must not be presented as in-game names."
+    }
+  }
+}

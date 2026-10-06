@@ -24,6 +24,8 @@ try {
     classes: (inv.classes ?? []).length,
     fields: inv.totals?.fields ?? 0,
     version: inv.version ?? 'unknown',
+    locales: stats.locales,
+    entities: { enemies: stats.enemies, items: stats.items, levels: stats.levels },
     generatedBy: 'pipeline/status.mjs',
     // head is the commit this file was GENERATED from; committing the file itself moves HEAD one step on, so a
     // reader must compare it against the commit that introduced reports/status.json, not against the tip.

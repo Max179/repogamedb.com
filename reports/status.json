@@ -1,19 +1,25 @@
 {
   "site": "repogamedb.com",
-  "head": "86df068",
-  "commits": 26,
-  "pages": 587,
-  "indexable": 101,
-  "noindex": 486,
+  "head": "00b05ef",
+  "commits": 29,
+  "pages": 1135,
+  "indexable": 78,
+  "noindex": 1057,
   "classes": 478,
   "fields": 19505,
   "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+  "locales": 6,
+  "entities": {
+    "enemies": 29,
+    "items": 60,
+    "levels": 6
+  },
   "generatedBy": "pipeline/status.mjs",
   "headNote": "generated from this commit; the commit that adds this file is one step later",
   "handoff": {
-    "trackedFiles": 59,
+    "trackedFiles": 60,
     "byTop": {
-      "(root)": 7,
+      "(root)": 8,
       ".github": 1,
       "data": 2,
       "pipeline": 21,

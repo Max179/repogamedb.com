@@ -42,3 +42,39 @@
 - Expanded the player-facing catalog from 24 threat entries to 24 threats + 38 valuables + 28 gear entries.
 - Added `/valuables.html`, `/gear.html` and 66 dedicated entry pages with image, verified name, version/source facts, field notes and related links.
 - Technical classes remain Reference/noindex; the new catalog is built only from curated player-facing names present in the verified inventory.
+
+## 2026-10-06 canonical entity names + six-locale rebuild
+
+- Removed `data/community/` (97 files) in full. It held machine-written filler and two invented numbers
+  ("estimated 5+ second stun", "<30% health") that were reused across entries, which made them look
+  cross-verified when they were only self-copied. Nothing read that directory: the generator loads only
+  `p0-inventory.json` and `p0-instances.json`, so the whole set was dead weight.
+- Found the published threat names came from a hardcoded list of Unity internal class names (24 entries). The
+  game's own string table says the player-facing names are different: BombThrower is "Cleanup Crew", Duck is
+  "Apex Predator", Runner is "Reaper", Tricycle is "Bella", Hunter is "Huntsman", Beamer is "Clown" and four
+  more. Two entries (Checklist, HiddenOld) are internal classes with no player-facing enemy at all, and seven
+  real enemies were missing. 8 of 24 names were correct.
+- Added `data/canonical/entities.json`: 29 enemies, 60 items and 6 levels named from the game's own English
+  string table. Key-by-key and value-by-value comparison of the full ENEMY.*, ITEM.* and LEVEL.NAME.* sets
+  against the extracted table returned zero differences. Internal class names are kept as a labelled
+  cross-reference layer, never as player-facing text.
+- Added `data/canonical/i18n.json`: authored strings for the six locales the game itself ships (en-US, da-DK,
+  fi-FI, pt-BR, pt-PT, sv-SE). The game's own tables cannot supply translations: 543 of their 566 entries are
+  English placeholders, and only da-DK (3 entries) and sv-SE (20) carry real translations.
+- Retired the invented page copy: the `Profile: quiet door.` sentence, the identical three-step "Quick response"
+  block and the repeated catalog sentences are gone.
+- Stopped publishing the 38 haul names. The string tables contain no name key for them, so the catalog names
+  were class-derived and unverified; the pages now say so instead of presenting them as in-game names.
+- Per-entity pages are noindex cross-references. The game ships exactly one string per entity and no description
+  key, so two enemy pages measured 82% identical and two item pages 94%. The substance moved into the three
+  catalog tables (name, string key, internal class, declared/written field counts), which are now the indexed
+  answer.
+- Fixed four defects found by measurement, each now covered by a gate: hreflang on the English-only reference
+  pointing at locale URLs that were never generated; a language switcher linking to pages that do not exist;
+  522 dead links from catalog cards pointing at `/threat/` while entries were written to `/enemy/`; and the home
+  page keyed as a directory and silently dropped from `sitemap.xml`.
+- Rebuilt: 1135 pages across 6 locales, 78 indexable, 0 dead links in 26158 checked, 0 indexable page pairs
+  above 90% main-text containment. `tests/site.test.mjs` 42 passed / 0 failed; `tests/player-ui.test.mjs`
+  23 assertions across 6 locales.
+- Not done and not claimed: no push, no deploy, no Search Console submission, no AdSense. Behaviour, damage,
+  health, speed, spawn rates and prices are absent from the string tables and are therefore not published.

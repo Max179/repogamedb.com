@@ -1,28 +1,39 @@
 #!/usr/bin/env node
 /**
- * Static site generator (Windows-side build).
+ * Static site generator.
  *
- * Indexability policy, enforced here rather than hoped for:
- *   - a page whose content is only a class's schema (field names, no extracted values) is a reference, not an answer
- *     to a query a player typed. Those pages are emitted with `noindex, follow` and are NOT listed in sitemap.xml;
- *     they stay reachable and linked from the collection page.
- *   - the pages that answer a question (home, search, collection, enemies, guide, tool, sources, about, contact,
- *     disclaimer, privacy, terms) are indexable and listed.
- * Nothing is estimated: a value this build does not have is rendered as "unknown".
+ * Naming policy, enforced here rather than hoped for:
+ *   - every player-facing entity name is read from data/canonical/entities.json, which records the game's own
+ *     Unity Localization string tables. Internal Unity class names are a DIFFERENT layer and never reach a page
+ *     as a player-facing name.
+ *   - an entity whose display name could not be verified against a string table is not published as an entity.
+ *     The haul items have no string-table name key, so they have no entry pages at all rather than invented ones.
+ *
+ * Locale policy:
+ *   - every indexable page exists in all six locales the game itself ships, under its own URL prefix.
+ *   - no page falls back to another language: a locale missing a string fails the build instead of silently
+ *     rendering English.
+ *   - entity names stay in English in every locale because the game's own tables keep them in English; the page
+ *     says so rather than pretending otherwise.
+ *
+ * Nothing is estimated. A fact this build does not have is absent, not guessed.
  */
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { playerCSS, searchPage, checklistPage } from './player-ui.mjs';
 
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
 export const SITE = {
-  name: 'R.E.P.O. Wiki',
+  name: 'R.E.P.O. Database',
   domain: 'repogamedb.com',
   url: 'https://repogamedb.com',
-  tagline: 'Learn the threats, carry the right gear and get your crew home with the valuable haul',
 };
 
-const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const slug = (s) => String(s).toLowerCase()
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 /** Pure, fixture-tested: field search across the inventory. */
@@ -42,226 +53,432 @@ export function lookupFields(inventory, query, limit = 50) {
   return out;
 }
 
-export const NAV = [['/', 'Wiki'], ['/enemies.html', 'Threats'], ['/guide.html', 'Guides'],
-  ['/search.html', 'Search'], ['/tool.html', 'Tools'], ['/sources.html', 'Reference']];
+/** Kept for callers that want the default-locale navigation. */
+export const NAV = [['/', 'Home'], ['/enemies.html', 'Threats'], ['/items.html', 'Gear'],
+  ['/levels.html', 'Levels'], ['/guide.html', 'Guides'], ['/search.html', 'Search'],
+  ['/tool.html', 'Tools'], ['/sources.html', 'Sources']];
 
-/** A schema page is a reference; it is generated and linked, but not offered to a search engine. */
-/** A page that duplicates a query-answering page keeps its URL but is not indexed: the audit in round 76 found
- *  /tool.html sharing 98.8% of its main content with /search.html, so /tool.html is a noindex convenience page. */
+/**
+ * Technical reference and per-entity cross-reference pages are English-only and never offered to a search engine.
+ *
+ * Why the entity pages are noindex rather than indexable: the game's string tables give exactly one string per
+ * entity (its display name) and no description, lore or stat companion key. Measured on this build, two enemy
+ * pages shared 82% of their main text and two item pages 94%, because there is no per-entity prose to differ on.
+ * A per-entity page is therefore a cross-reference, not an answer to a query, and the coverage that a searcher
+ * actually wants lives in the catalog tables.
+ */
+const NOINDEX_PAGES = ['collection.html', 'enums.html', 'values.html'];
+
+export function localeOf(path) {
+  const m = /^\/([A-Za-z-]+)\//.exec(String(path));
+  return m ? m[1] : null;
+}
+
 export function isNoindexPage(path) {
-  return isSchemaPage(path) || ['/tool.html', '/collection.html', '/values.html', '/enums.html', '/search.html'].includes(path);
+  // Callers pass both '/en-US/enemy/x.html' and the bare map key 'en-US/enemy/x.html'; normalise before matching,
+  // otherwise the locale strip below silently fails and every page is reported as indexable.
+  const raw = String(path);
+  const p = raw.startsWith('/') ? raw : '/' + raw;
+  if (p === '/404.html' || /\/404\.html$/.test(p)) return true;
+  const rest = p.replace(/^\/[A-Za-z-]+\//, '/');
+  if (rest.startsWith('/entity/')) return true;
+  // per-entity cross-reference pages
+  if (/^\/(enemy|item|level)\//.test(rest)) return true;
+  return NOINDEX_PAGES.includes(rest.replace(/^\//, ''));
 }
 
 export function isSchemaPage(path) {
-  return String(path).startsWith('/entity/');
+  return String(path).replace(/^\/[A-Za-z-]+\//, '/').startsWith('/entity/');
 }
 
-const ENHANCED_CSS = `
-:root{color-scheme:dark;--bg:#071015;--shell:#101c22;--panel:#14252d;--panel-2:#1b3039;--text:#f3f6f2;--muted:#9aadae;--dim:#718688;--line:rgba(205,232,229,.14);--accent:#f0b35c;--accent-2:#df704d;--focus:#8dc5ff}
-html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);font-family:Arial,"Helvetica Neue",sans-serif;letter-spacing:0}a{color:inherit;text-decoration:none}a:hover{text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.skip-link{position:fixed;left:12px;top:-80px;z-index:20;padding:10px 14px;background:#fff;color:#111}.skip-link:focus{top:12px}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 75% -10%,rgba(61,111,131,.28),transparent 36rem),linear-gradient(180deg,#13242b 0%,var(--bg) 48%,#050a0d 100%);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.skip-link{position:fixed;left:12px;top:-80px;z-index:20;padding:10px 14px;background:var(--accent);color:#071015}.skip-link:focus{top:12px}.top{position:sticky;top:0;z-index:10;background:rgba(7,16,21,.88);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.bar{max-width:1280px;margin:auto;padding:14px 28px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:10px;color:var(--text);font-weight:800;letter-spacing:.04em}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:linear-gradient(145deg,var(--accent),var(--accent-2));color:#10171a;font-weight:950;box-shadow:0 8px 22px rgba(240,179,92,.18)}nav{display:flex;gap:8px;align-items:center}nav a{padding:9px 14px;border-radius:999px;color:var(--muted);font-size:14px;font-weight:750;transition:.2s}nav a:hover,nav a[aria-current="page"]{background:var(--panel-2);color:var(--text)}.nav-toggle{display:none;margin-left:auto;padding:9px 12px;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:999px}.hero{max-width:1280px;margin:auto;padding:40px 28px 34px;display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:34px;align-items:center}.eyebrow{color:var(--accent);font:800 11px/1.2 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px}.hero h1{margin:0 0 14px;color:var(--text);font-size:clamp(4rem,8vw,7.6rem);font-weight:900;line-height:.82;letter-spacing:-.06em}.lead{max-width:34rem;color:var(--muted);font-size:1.04rem;line-height:1.65}.hero-search{display:flex;max-width:560px;margin:24px 0 14px;padding:5px;background:rgba(7,16,21,.72);border:1px solid var(--line);border-radius:12px}.hero-search input{min-width:0;flex:1;padding:12px 14px;background:transparent;border:0;color:var(--text);font:inherit}.hero-search button,.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border:1px solid transparent;border-radius:10px;background:var(--panel-2);color:var(--text);font-weight:800;cursor:pointer;transition:.2s}.hero-search button:hover,.button:hover{transform:translateY(-2px);background:var(--accent);color:#10171a}.primary{background:var(--accent);color:#10171a}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.hero-media{position:relative;min-height:0;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#18343f,#0b151a);box-shadow:0 24px 70px rgba(0,0,0,.34)}.hero-media img{display:block;width:100%;height:100%;object-fit:cover;image-rendering:auto;filter:saturate(1.12) contrast(1.04)}.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(3,8,10,.82))}.hero-media figcaption,.feature-card figcaption{position:absolute;z-index:1;left:18px;right:18px;bottom:16px;color:#e8efeb;font-size:.8rem}.section{max-width:1280px;margin:auto;padding:36px 28px;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:20px}.section-head h2,.section h2{margin:3px 0;color:var(--text);font-size:clamp(1.8rem,3vw,3rem);font-weight:850;line-height:1.02;letter-spacing:-.03em}.section-head>a{color:var(--accent);font-weight:800}.category-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.category{min-height:178px;padding:18px;background:linear-gradient(145deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;transition:.2s}.category:hover{transform:translateY(-4px);border-color:rgba(240,179,92,.55);box-shadow:0 18px 38px rgba(0,0,0,.24)}.category .icon{font-size:30px;color:var(--accent)}.category strong{margin-top:auto;font-size:1.25rem}.category span{margin-top:6px;color:var(--muted);font-size:.9rem}.category b{color:var(--dim);font:700 10px ui-monospace,monospace}.mission-board{display:grid;grid-template-columns:.78fr 1.22fr;gap:28px;align-items:start}.mission-copy{position:sticky;top:90px}.feature-card{position:relative;overflow:hidden;aspect-ratio:16/10;margin-top:20px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.feature-card img{width:100%;height:100%;object-fit:cover}.mission-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.mission-tab{padding:9px 13px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;cursor:pointer}.mission-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#10171a}.mission-panel{min-height:300px;padding:28px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,var(--panel-2),var(--panel));color:var(--text)}.mission-panel h3{max-width:16ch;margin:4px 0 12px;font-size:2.25rem;line-height:.98}.mission-panel p{max-width:56ch;color:var(--muted)}.steps{display:grid;gap:8px;margin-top:24px}.step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:13px 14px;background:rgba(5,12,15,.42);border:1px solid var(--line);border-radius:10px}.step b{color:var(--accent);font:800 12px ui-monospace,monospace}.step strong{display:block}.step span{color:var(--muted);font-size:.9rem}.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{padding:8px 12px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:999px;cursor:pointer}.filter.is-active{background:var(--accent);border-color:var(--accent);color:#10171a}.guide-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}.guide-card{grid-column:span 4;min-height:220px;padding:20px;background:linear-gradient(145deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;transition:.2s}.guide-card:nth-child(1),.guide-card:nth-child(5){grid-column:span 8}.guide-card:hover{transform:translateY(-4px);border-color:rgba(240,179,92,.5)}.guide-card[hidden]{display:none}.guide-card .tag{color:var(--accent);font:800 10px ui-monospace,monospace;text-transform:uppercase}.guide-card h3{margin:12px 0 8px;font-size:1.3rem;line-height:1.15}.guide-card p{color:var(--muted)}.guide-card .arrow{margin-top:auto;color:var(--accent);font-size:1.4rem}.utility-band{display:grid;grid-template-columns:1fr 1fr;gap:12px}.utility{min-height:170px;padding:24px;background:linear-gradient(145deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:14px;color:var(--text)}.utility:hover{border-color:rgba(240,179,92,.55)}.utility b{display:block;margin-bottom:28px;color:var(--accent);font:800 10px ui-monospace,monospace}.utility h3{margin:0 0 8px;font-size:1.25rem}.utility p{color:var(--muted)}.page-shell{max-width:920px;padding:48px 28px 70px;margin:auto}.page-shell>h1,main>h1{margin:20px 0;color:var(--text);font-size:clamp(3rem,7vw,5.5rem);font-weight:900;line-height:.9;letter-spacing:-.05em}.note,table{background:var(--panel);border:1px solid var(--line);color:var(--text)}.note{border-left:4px solid var(--accent);padding:16px;border-radius:10px}.dim{color:var(--muted)}footer{margin:0;background:#050b0e;color:var(--muted);border-top:1px solid var(--line);padding:38px 28px}.footer-inner{max-width:1224px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}.footer-title{color:var(--text);font-size:1.5rem;font-weight:900}.footer-links{display:flex;gap:12px 18px;flex-wrap:wrap}.footer-links a{color:var(--text)}.footer-note{grid-column:1/-1;padding-top:18px;border-top:1px solid var(--line);font-size:.83rem}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.hero-media{max-width:760px;width:100%}.category-rail{grid-template-columns:1fr 1fr}.mission-board{grid-template-columns:1fr}.mission-copy{position:static}.guide-card,.guide-card:nth-child(1),.guide-card:nth-child(5){grid-column:span 6}}
-@media(max-width:720px){.bar{padding:10px 16px}.nav-toggle{display:block}.top nav{display:none;position:absolute;left:0;right:0;top:63px;padding:12px 16px;background:rgba(7,16,21,.98);border-bottom:1px solid var(--line)}.top nav.is-open{display:grid}.top nav a{padding:12px}main{padding-bottom:30px}.hero{padding:34px 16px 28px;gap:22px}.hero h1{font-size:clamp(4rem,19vw,6rem)}.hero-search{display:grid;grid-template-columns:1fr;gap:5px}.hero-search button{width:100%}.actions{display:grid;grid-template-columns:1fr;gap:8px}.actions .button{width:100%}.section{padding:30px 16px}.category-rail{grid-template-columns:1fr}.category{min-height:140px}.mission-board{gap:22px}.guide-card,.guide-card:nth-child(1),.guide-card:nth-child(5){grid-column:1/-1}.utility-band{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}.footer-note{grid-column:auto}}
-/* The game banner follows the Dave reference: artwork first, compact wiki below. */
-*{letter-spacing:0!important}.hero{position:relative;display:flex;align-items:end;max-width:none;min-height:390px;padding:38px max(24px,calc((100% - 1224px)/2));isolation:isolate;overflow:hidden}.banner-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,11,.87),rgba(8,10,11,.25) 70%);z-index:-1}.banner-copy{max-width:590px}.hero h1{font-size:64px;line-height:1.05}.hero .lead{color:#e4e6e4}.hero-search{border-radius:8px}.section h2{font-size:30px}.category,.guide-card,.utility,.mission-panel,.feature-card,.step{border-radius:8px}body{background:#111414}.section{border-color:#303634}.category,.guide-card,.utility,.mission-panel{background:#1c2322}.hero .actions{margin-bottom:0}.page-shell>h1,main>h1{font-size:48px}.section-head h2{max-width:30ch}table{width:100%;border-collapse:collapse}th,td{padding:10px;text-align:left;border-bottom:1px solid var(--line)}main>h1,main>p,main>table,main>.note{max-width:1224px;margin-left:auto;margin-right:auto}
-@media(max-width:720px){.hero{min-height:400px;padding:28px 16px}.hero h1{font-size:48px}.hero-search{display:grid;grid-template-columns:1fr;gap:6px}.hero-search input{width:100%;min-width:0}.hero-search button{width:100%}.hero .actions{display:grid;grid-template-columns:1fr;gap:8px}.hero .actions .button{width:100%}.hero .lead{font-size:15px}.section h2{font-size:26px}.category-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.category{padding:14px}.section-head{align-items:start;flex-direction:column;gap:12px}.banner-art{object-position:64% center}.footer-inner{gap:24px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-`;
-
-function layout(title, description, path, body, inv) {
-  const noindex = isNoindexPage(path);
-  const nav = NAV.map(([h, txt]) => '<a href="' + h + '"' + (path === h ? ' aria-current="page"' : '') + '>' + txt + '</a>').join('');
-  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
-    '<title>' + esc(title) + '</title><meta name="description" content="' + esc(description) + '">' +
-    '<link rel="canonical" href="' + SITE.url + path + '">' +
-    (noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">') +
-    '<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
-    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
-    '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description) + '">' +
-    '<meta property="og:url" content="' + SITE.url + path + '">' +
-    '<style>:root{--bg:#111316;--fg:#f2f4f0;--dim:#a4aaa8;--line:#34393b;--accent:#f2a65a;--panel:#1a1e20}*{box-sizing:border-box}</style><style>' + ENHANCED_CSS + playerCSS + '</style></head><body>' +
-    '<a class="skip-link" href="#content">Skip to content</a><header class="top"><div class="bar"><a class="brand" href="/"><span class="mark">R</span><span>' + esc(SITE.name) + '</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav">' + nav + '</nav></div></header><main>' + body + '</main>' +
-    '<footer><div class="footer-inner"><div><div class="footer-title">R.E.P.O. Wiki</div><p>An independent field guide for crews who want to identify threats, protect the haul and make extraction.</p></div><div><strong>Explore</strong><div class="footer-links"><a href="/enemies.html">Threats</a><a href="/guide.html">Guides</a><a href="/search.html">Search</a><a href="/tool.html">Tools</a></div></div><div><strong>About</strong><div class="footer-links"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div><div class="footer-note">Source: ' + (isSchemaPage(path) || path === '/sources.html' ? '<span class="mono">' + esc(inv.source.assembly) + '</span>' : 'verified game build') + ' · Game version ' + esc(inv.version) + '. Unofficial fan reference; technical provenance is available under <a href="/sources.html">Reference</a>.</div></div></footer>' +
-    '<script>(function(){var b=document.querySelector(".nav-toggle"),n=document.getElementById("site-nav");if(b){b.addEventListener("click",function(){var open=n.classList.toggle("is-open");b.setAttribute("aria-expanded",String(open));});}})();</script></body></html>';
+function readJson(p) {
+  return JSON.parse(readFileSync(p, 'utf8'));
 }
 
-export function build(inventoryPath, outDir) {
-  const inv = JSON.parse(readFileSync(inventoryPath, 'utf8'));
+/** Fails loudly on a missing key: an unstranslated label must not silently render as another language. */
+function makeT(strings, locale) {
+  return (key, vars) => {
+    let s = strings[key];
+    if (typeof s !== 'string') throw new Error('i18n: missing key "' + key + '" for locale ' + locale);
+    if (vars) for (const [k, v] of Object.entries(vars)) s = s.split('{' + k + '}').join(String(v));
+    return s;
+  };
+}
+
+export function build(inventoryPath, outDir, options = {}) {
+  const inv = readJson(inventoryPath);
+  const entitiesPath = options.entities || join(ROOT, 'data', 'canonical', 'entities.json');
+  const i18nPath = options.i18n || join(ROOT, 'data', 'canonical', 'i18n.json');
+  const ent = readJson(entitiesPath);
+  const i18n = readJson(i18nPath);
+
+  const LOCALES = Object.keys(i18n.locales);
+  const DEFAULT = i18n.defaultLocale;
+  if (!LOCALES.includes(DEFAULT)) throw new Error('i18n: defaultLocale ' + DEFAULT + ' is not in locales');
+
+  // Every locale must carry exactly the same key set. A short locale would ship half-translated pages.
+  const keySets = LOCALES.map((l) => Object.keys(i18n.locales[l]).filter((k) => k !== 'htmlLang' && k !== 'hreflang' && k !== 'name').sort());
+  const base = keySets[0].join('\u0000');
+  LOCALES.forEach((l, i) => { if (keySets[i].join('\u0000') !== base) throw new Error('i18n: locale ' + l + ' has a different key set'); });
+
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(join(outDir, 'entity'), { recursive: true });
-  const assetRoot = join(dirname(fileURLToPath(import.meta.url)), '..', 'web', 'assets');
-  const asset = (name) => { const dest = join(outDir, 'assets', name); mkdirSync(dirname(dest), { recursive: true }); copyFileSync(join(assetRoot, name), dest); return '/assets/' + name; };
-  const heroImage = asset('hero-repo.jpg');
+
+  const assetRoot = join(ROOT, 'web', 'assets');
+  const copied = new Set();
+  const asset = (name) => {
+    const dest = join(outDir, 'assets', name);
+    if (!copied.has(name)) {
+      mkdirSync(dirname(dest), { recursive: true });
+      copyFileSync(join(assetRoot, name), dest);
+      copied.add(name);
+    }
+    return '/assets/' + name;
+  };
   const generatedHeroImage = asset('generated/repo-hero-generated.png');
-  const crateImage = asset('crate.png');
   const threatIcon = asset('generated/icon-threats.png');
+  const itemsIcon = asset('generated/icon-gear.png');
+  const levelsIcon = asset('generated/icon-extraction.png');
   const valuablesIcon = asset('generated/icon-valuables.png');
-  const gearIcon = asset('generated/icon-gear.png');
-  const extractionIcon = asset('generated/icon-extraction.png');
+
   const pages = new Map();
+  /** Keys are the emitted paths relative to the output root, e.g. `en-US/index.html`. */
+  const write = (rel, html) => {
+    const f = join(outDir, rel);
+    mkdirSync(dirname(f), { recursive: true });
+    writeFileSync(f, html, 'utf8');
+    pages.set(rel, html);
+  };
+
   const classes = (inv.classes ?? []).slice().sort((a, b) => b.written - a.written);
-  const publishedThreatNames = new Set(['Oogly','HeartHugger','Elsa','Shadow','Tricycle','Bang','Hunter','BirthdayBoy','Spinny','Checklist','Beamer','Tumbler','Upscream','Bowtie','Gnome','Duck','Runner','ThinMan','SlowWalker','Tick','HiddenOld','Robe','BombThrower','Hidden']);
-  const enemyNames = classes
-    .map((c) => c.name.match(/^Enemy([A-Z][A-Za-z]+)/)?.[1])
-    .filter((name) => name && !/Anim|State|Director|Controller|Visuals|System|Logic|Health|Vision|Setup|Parent|OnScreen|Debug|Near|Sighting|Chase|Jump|Loop|Float|Head|SlowMouth|Rigidbody|PitCheck|Hair|Eye|BangFuse|BombThrowerHead/.test(name))
-    .filter((name) => publishedThreatNames.has(name))
-    .filter((name, i, all) => all.indexOf(name) === i)
-    .slice(0, 24);
+  const classByName = new Map(classes.map((c) => [c.name, c]));
   const used = new Set();
-  const slugs = classes.map((c) => {
-    const base = slug(c.name);
-    let s = base, n = 2;
-    while (used.has(s)) s = base + '-' + n++;
+  const classSlugs = classes.map((c) => {
+    const b = slug(c.name);
+    let s = b, n = 2;
+    while (used.has(s)) s = b + '-' + n++;
     used.add(s);
     return s;
   });
-  const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
 
-  const enemyCount = enemyNames.length;
-  const threatImages = [threatIcon, heroImage];
-  const threatAlts = ['Generated threat radar badge', 'Official R.E.P.O. promotional artwork'];
-  const threatSlugs = enemyNames.map((name) => slug(name));
-  const valuableNames = ['Gumball','TrafficLight','Blender','Egg','BabyHead','Plane','Car','Milk','IceSaw','Boombox','Scale','Cocktail','ArcticSnowBike','Tray','Phone','Barrel','Flamethrower','Jackhammer','FireExtinguisher','Flashlight','CauldronBox','SpiderPotion','WizardTimeGlass','StarWand','TeethBot','EyeOfOrpigox','PowerCrystal','CrystalBall','SmallPotion','Pills','Camera','WizardStaff','Money','CubeBall','ScreamDoll','ForeverCandle','LevitationPotion','LovePotion'];
-  const gearNames = ['WalkieTalkie','Gun','ReviveItem','Ladder','Melee','CartLaser','StaffZeroGravity','StaffVoid','Mine','CartCannon','StaffTorque','Orb','GunLaser','Tracker','Drone','LeafBlower','Battery','Grenade','HealthPack','MineStun','Shockwave','StunBaton','GrenadeDuctTaped','GrenadeHuman','GrenadeStun','GrenadeShockwave','EquipCube','DuckBucket'];
-  const threatNotes = [
-    'Keep a clean sightline and do not let the first carrier become the only route marker.',
-    'Leave the noisy lane first; the safest answer is usually the doorway the crew can still see.',
-    'Use the room edges as cover and call the turn before the haul crosses the threshold.',
-    'One player watches the rear while the carrier moves; do not stack the whole crew in one doorway.',
-    'If the route narrows, set the valuable down and reset the formation instead of forcing the carry.',
-    'Scout the next room before the group commits; a short retreat is cheaper than a split extraction.',
-    'Keep the fallback visible and avoid crossing the alarm line with the full crew.',
-    'Mark the pressure point, then move the haul through the widest lane while the spotter stays back.',
-    'Do not chase a shortcut after the room changes; return to the last safe landmark and regroup.',
-    'The carrier should move second, after the spotter confirms the exit is still open.',
-    'Treat the first warning as a route change, not a reason to sprint deeper into the level.',
-    'Count the crew at the door and leave the last risky pickup for another run.'
-  ];
-  const homeBody = '<section class="hero" id="content"><img class="banner-art" src="' + generatedHeroImage + '" width="2172" height="724" alt="Original R.E.P.O. inspired extraction scene"><div class="banner-copy"><p class="eyebrow">Independent player wiki</p><h1>R.E.P.O.</h1><p class="lead">' + esc(SITE.tagline) + '.</p>' +
-    '<form class="hero-search" action="/search.html"><input name="q" type="search" placeholder="Threat, gear or valuable"><button>Search</button></form>' +
-    '<p class="actions"><a class="button primary" href="/guide.html">Run plan</a><a class="button" href="/enemies.html">Threats</a></p></div>' +
-    '</section>' +
-    '<section class="section"><div class="section-head"><div><p class="eyebrow">Explore the wiki</p><h2>R.E.P.O. Wiki</h2></div><a href="/guide.html">View all guides →</a></div><div class="category-rail">' +
-    [['◈','Threats',enemyCount + ' entries','/enemies.html',threatIcon,'Generated threat radar badge'],['▣','Valuables',valuableNames.length + ' haul entries','/valuables.html',valuablesIcon,'Generated salvage crate badge'],['⌁','Gear',gearNames.length + ' equipment entries','/gear.html',gearIcon,'Generated gear scanner badge'],['↗','Extraction','Scout, carry, leave.','/guide.html',extractionIcon,'Generated extraction doorway badge']].map(([i,t,d,h,img,alt])=>'<a class="category" href="'+h+'"><img src="'+img+'" alt="'+alt+'" class="category-art"><span class="icon">'+i+'</span><strong>'+t+'</strong><span>'+d+'</span></a>').join('') + '</div></section>' +
-    '<section class="section"><div class="mission-board"><div class="mission-copy"><p class="eyebrow">Run plan</p><h2>Scout → carry → extract</h2><figure class="feature-card"><img src="' + valuablesIcon + '" alt="Generated valuables icon"><figcaption>Valuable haul</figcaption></figure></div><div><div class="mission-tabs" role="tablist" aria-label="Run phases"><button class="mission-tab" type="button" role="tab" aria-selected="true" data-phase="scout">01 Scout</button><button class="mission-tab" type="button" role="tab" aria-selected="false" data-phase="haul">02 Carry</button><button class="mission-tab" type="button" role="tab" aria-selected="false" data-phase="extract">03 Extract</button></div><div class="mission-panel" data-phase-panel="scout"><p class="eyebrow">Scout</p><h3>Pick the exit</h3><div class="steps"><div class="step"><b>01</b><div><strong>Find the return line</strong><span>Keep it visible.</span></div></div><div class="step"><b>02</b><div><strong>Mark the pressure point</strong><span>Assign a spotter.</span></div></div></div></div><div class="mission-panel" data-phase-panel="haul" hidden><p class="eyebrow">Carry</p><h3>Protect the haul</h3><div class="steps"><div class="step"><b>01</b><div><strong>Stay together</strong><span>Carrier, spotter, fallback.</span></div></div><div class="step"><b>02</b><div><strong>Drop before panic</strong><span>Reset the route.</span></div></div></div></div><div class="mission-panel" data-phase-panel="extract" hidden><p class="eyebrow">Extract</p><h3>Leave early</h3><div class="steps"><div class="step"><b>01</b><div><strong>Call the turn</strong><span>Move as one crew.</span></div></div><div class="step"><b>02</b><div><strong>Count the crew</strong><span>Then cross the door.</span></div></div></div></div></div></div></section>' +
-    '<section class="section"><div class="section-head"><div><p class="eyebrow">Featured threats</p><h2>Threats to know</h2></div><a href="/enemies.html">Open threat index →</a></div><div class="entry-rail">' + enemyNames.slice(0, 4).map((name, i) => '<a class="entry-tile" href="/threat/' + threatSlugs[i] + '.html"><img src="' + threatImages[i % threatImages.length] + '" alt="' + threatAlts[i % threatAlts.length] + '"><div><span class="tag">Threat ' + String(i + 1).padStart(2, '0') + '</span><strong>' + esc(name) + '</strong><span>Read the tell</span></div></a>').join('') + '</div></section>' +
-    '<section class="section"><div class="section-head"><div><p class="eyebrow">Guides</p><h2>Next actions</h2></div><a href="/search.html">Search →</a></div><div class="guide-grid"><a class="guide-card" href="/guide.html"><span class="tag">Guide</span><h3>First extraction</h3><p>Roles, route, exit.</p><span class="arrow">Open →</span></a><a class="guide-card" href="/enemies.html"><span class="tag">Threats</span><h3>Read the tell</h3><p>Find the pressure lane.</p><span class="arrow">Open →</span></a><a class="guide-card" href="/valuables.html"><span class="tag">Valuables</span><h3>Choose the haul</h3><p>Carry only what fits.</p><span class="arrow">Open →</span></a><a class="guide-card" href="/gear.html"><span class="tag">Gear</span><h3>Pick equipment</h3><p>Match tool to route.</p><span class="arrow">Open →</span></a></div></section>' +
-    '<section class="section"><div class="section-head"><div><p class="eyebrow">Tools</p><h2>Quick actions</h2></div></div><div class="utility-band"><a class="utility" href="/search.html"><b>SEARCH</b><h3>Find an entry</h3><p>Threats, valuables, gear.</p></a><a class="utility" href="/tool.html"><b>CHECKLIST</b><h3>Before you leave</h3><p>Route, gear, crew.</p></a></div></section>' +
-    '<script>(function(){var tabs=[].slice.call(document.querySelectorAll("[data-phase]"));var panels=[].slice.call(document.querySelectorAll("[data-phase-panel]"));tabs.forEach(function(t){t.addEventListener("click",function(){tabs.forEach(function(x){x.setAttribute("aria-selected",String(x===t));});panels.forEach(function(p){p.hidden=p.dataset.phasePanel!==t.dataset.phase;});});});})();</script>';
-  write('index.html', layout(SITE.name + ' - ' + SITE.tagline, SITE.tagline, '/', homeBody, inv));
+  const enemies = ent.enemies ?? [];
+  const items = ent.items ?? [];
+  const levels = ent.levels ?? [];
 
-  write('collection.html', layout('P0 classes', 'Every P0 class with the fields Unity writes.', '/collection.html',
-    '<h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1><p class="dim">Reference pages. Each is marked noindex and kept out of the sitemap.</p><table><thead><tr><th>Class</th><th>Base</th><th>Written fields</th></tr></thead><tbody>' +
-    classes.map((c, i) => '<tr><td><a href="/entity/' + slugs[i] + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') +
-    '</tbody></table>', inv));
+  /** A level whose display name contains an enemy's display name is a name-level observation, not a claim about spawns. */
+  const levelLinksFor = (enemyName) => levels
+    .filter((l) => l.name.toLowerCase().includes(enemyName.toLowerCase()))
+    .map((l) => l.slug);
+  const namesakes = (enemySlug, enemyName) => enemies
+    .filter((e) => e.slug !== enemySlug && e.name.toLowerCase() === enemyName.toLowerCase());
 
-  // ---- a page that answers a question, from verified enum values
-  {
-    const body = '<section class="page-shell" id="content"><p class="eyebrow">Threat field guide</p><h1>Threats</h1><p class="lead">Verified names. Practical responses.</p><div class="guide-grid">' +
-      enemyNames.map((name, i) => { const image = threatImages[i % threatImages.length]; const alt = threatAlts[i % threatAlts.length]; return '<a class="guide-card" href="/threat/' + threatSlugs[i] + '.html"><img class="entry-art" src="' + image + '" alt="' + alt + '"><span class="tag">Threat ' + String(i + 1).padStart(2, '0') + '</span><h3>' + esc(name) + '</h3><p>Verified enemy reference. Check the route first, keep a fallback open and avoid carrying the haul into a closed lane.</p><span class="arrow">Open entry ↗</span></a>'; }).join('') +
-      '</div><div class="note"><strong>How to use this page.</strong> Enemy names are published only when they are confirmed in the installed game build. Strategy notes describe the player decision around the encounter and do not invent damage, speed or drop values.</div></section>';
-    write('enemies.html', layout('Threats - R.E.P.O. field guide', 'A player-facing R.E.P.O. threat field guide with verified enemy names and practical extraction decisions.', '/enemies.html', body, inv));
-    enemyNames.forEach((name, i) => {
-      const image = threatImages[i % threatImages.length];
-      const alt = threatAlts[i % threatAlts.length];
-      const note = threatNotes[i % threatNotes.length] + ' Profile: ' + ['quiet','loud','heavy','fragile','bright','awkward','long','short','cold','hot','slow','fast'][i % 12] + ' ' + ['door','lift','stairs','hall','corner','bridge','yard','room','lane','ramp','shaft','dock'][Math.floor(i / 12)] + '. Card THR-' + String(i + 1).padStart(2, '0') + '.';
-      const threatBody = '<article class="entry-page"><div class="entry-hero"><img src="' + image + '" alt="' + alt + '"><div><p class="eyebrow">Threat · verified</p><h1>' + esc(name) + '</h1><p class="entry-lead">' + esc(note) + '</p></div></div><div class="entry-facts"><div><span>Role</span><strong>Threat</strong></div><div><span>Version</span><strong>0.4.0</strong></div><div><span>Source</span><strong>Game build</strong></div></div><div class="entry-columns"><section><p class="eyebrow">Quick response</p><ol class="entry-steps"><li><b>01</b><span>Spot the pressure lane.</span></li><li><b>02</b><span>Keep one fallback open.</span></li><li><b>03</b><span>Extract as a crew.</span></li></ol></section><aside class="entry-aside"><p class="eyebrow">Related</p><a href="/enemies.html">Threats →</a><a href="/guide.html">Guide →</a><a href="/tool.html">Checklist →</a></aside></div></article>';
-      write('threat/' + threatSlugs[i] + '.html', layout(name + ' - R.E.P.O. threat entry', name + ' threat entry with verified name, field notes and related extraction guidance.', '/threat/' + threatSlugs[i] + '.html', threatBody, inv));
-    });
+  const enemySlugs = new Map(enemies.map((e) => [e.key, e.slug]));
+  const itemSlugs = new Map(items.map((i) => [i.key, i.slug]));
+  const levelSlugs = new Map(levels.map((l) => [l.key, l.slug]));
+
+  /**
+   * Every rel path that exists in EVERY locale. Only these may carry hreflang alternates: pointing hreflang at a
+   * URL that was never generated tells a search engine about pages that 404. The technical reference is
+   * English-only, so it is deliberately absent from this set and gets no alternates at all.
+   */
+  const LOCALIZED_RELS = new Set([
+    'index.html', 'enemies.html', 'items.html', 'levels.html', 'search.html', 'tool.html',
+    'sources.html', 'guide.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html',
+    'disclaimer.html', '404.html',
+    ...enemies.map((e) => 'threat/' + e.slug + '.html'),
+    ...items.map((e) => 'item/' + e.slug + '.html'),
+    ...levels.map((e) => 'level/' + e.slug + '.html'),
+  ]);
+
+  const altPath = (rel) => !LOCALIZED_RELS.has(rel) ? '' :
+    LOCALES.map((l) => '<link rel="alternate" hreflang="' + i18n.locales[l].hreflang + '" href="' + SITE.url + '/' + l + '/' + rel + '">').join('') +
+    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + '/' + DEFAULT + '/' + rel + '">';
+
+  const layout = (locale, rel, title, description, body) => {
+    const T = makeT(i18n.locales[locale], locale);
+    const nav = NAV.map(([h, txt]) => {
+      const key = 'nav.' + ({ 'Home': 'home', 'Threats': 'enemies', 'Gear': 'items', 'Levels': 'levels', 'Guides': 'guide', 'Search': 'search', 'Tools': 'tools', 'Sources': 'sources' })[txt];
+      const href = '/' + locale + (h === '/' ? '/index.html' : h);
+      const here = rel === h.replace(/^\//, '') || (h === '/' && rel === 'index.html');
+      return '<a href="' + href + '"' + (here ? ' aria-current="page"' : '') + '>' + esc(T(key)) + '</a>';
+    }).join('');
+    const langbar = LOCALIZED_RELS.has(rel)
+      ? LOCALES.map((l) => {
+          const href = '/' + l + '/' + rel;
+          const cur = l === locale;
+          return '<a href="' + href + '" hreflang="' + i18n.locales[l].hreflang + '"' + (cur ? ' aria-current="true"' : '') + '>' + esc(i18n.locales[l].name) + '</a>';
+        }).join('')
+      : '<span>' + esc(i18n.locales[locale].name) + '</span>' +
+        '<span class="dim">' + esc(T('entry.notTranslated')) + '</span>';
+    const noindex = isNoindexPage('/' + locale + '/' + rel);
+    return '<!doctype html><html lang="' + i18n.locales[locale].htmlLang + '"><head><meta charset="utf-8">' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+      '<title>' + esc(title) + '</title><meta name="description" content="' + esc(description) + '">' +
+      '<link rel="canonical" href="' + SITE.url + '/' + locale + '/' + rel + '">' +
+      (noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow">') +
+      altPath(rel) +
+      '<meta property="og:title" content="' + esc(title) + '"><meta property="og:description" content="' + esc(description) + '">' +
+      '<meta property="og:url" content="' + SITE.url + '/' + locale + '/' + rel + '"><meta property="og:locale" content="' + i18n.locales[locale].htmlLang + '">' +
+      '<style>:root{--bg:#111316;--fg:#f2f4f0;--dim:#a4aaa8;--line:#34393b;--accent:#f2a65a;--panel:#1a1e20}*{box-sizing:border-box}</style><style>' + playerCSS + '</style></head><body>' +
+      '<a class="skip-link" href="#content">' + esc(T('nav.home')) + '</a>' +
+      '<header class="top"><div class="bar"><a class="brand" href="/' + locale + '/index.html"><span class="mark">R</span><span>' + esc(SITE.name) + '</span></a>' +
+      '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav">' + nav + '</nav></div></header>' +
+      '<div class="langbar" role="navigation" aria-label="Language">' + langbar + '</div>' +
+      '<main>' + body + '</main>' +
+      '<footer><div class="footer-inner"><div><div class="footer-title">' + esc(SITE.name) + '</div><p>' + esc(T('site.tagline')) + '.</p></div>' +
+      '<div><strong>' + esc(T('footer.explore')) + '</strong><div class="footer-links">' +
+      '<a href="/' + locale + '/enemies.html">' + esc(T('nav.enemies')) + '</a>' +
+      '<a href="/' + locale + '/items.html">' + esc(T('nav.items')) + '</a>' +
+      '<a href="/' + locale + '/levels.html">' + esc(T('nav.levels')) + '</a>' +
+      '<a href="/' + locale + '/search.html">' + esc(T('nav.search')) + '</a></div></div>' +
+      '<div><strong>' + esc(T('footer.about')) + '</strong><div class="footer-links">' +
+      '<a href="/' + locale + '/about.html">' + esc(T('policy.about.h1')) + '</a>' +
+      '<a href="/' + locale + '/contact.html">' + esc(T('policy.contact.h1')) + '</a>' +
+      '<a href="/' + locale + '/privacy.html">' + esc(T('policy.privacy.h1')) + '</a>' +
+      '<a href="/' + locale + '/terms.html">' + esc(T('policy.terms.h1')) + '</a></div></div>' +
+      '<div class="footer-note">' + esc(T('footer.note')) + ' · ' + esc(T('entry.version')) + ' ' + esc(ent.version) + '</div></div></footer>' +
+      '<script>(function(){var b=document.querySelector(".nav-toggle"),n=document.getElementById("site-nav");if(b){b.addEventListener("click",function(){var o=n.classList.toggle("is-open");b.setAttribute("aria-expanded",String(o));});}})();</script></body></html>';
+  };
+
+  // ---------------------------------------------------------------- catalog pages
+  /** dir is the URL segment an entry lives under; indexRel is the catalog page it belongs to. */
+  const KINDS = {
+    enemy: { dir: 'enemy', indexRel: 'enemies.html', navKey: 'enemies', icon: 'threatIcon', alt: 'Generated threat radar badge' },
+    item: { dir: 'item', indexRel: 'items.html', navKey: 'items', icon: 'itemsIcon', alt: 'Generated gear scanner badge' },
+    level: { dir: 'level', indexRel: 'levels.html', navKey: 'levels', icon: 'levelsIcon', alt: 'Generated extraction doorway badge' },
+  };
+
+  const catalogPage = (locale, kind, list, rel, heading, lead, count) => {
+    const T = makeT(i18n.locales[locale], locale);
+    const K = KINDS[kind];
+    const cols = kind === 'item'
+      ? [T('entry.displayName'), T('entry.stringKey'), T('entry.internalClass'), T('entry.fields')]
+      : [T('entry.displayName'), T('entry.stringKey'), T('entry.internalClass'), T('entry.fields')];
+    const rows = list.map((e) => {
+      const cls = e.classHint ? classByName.get(e.classHint) : null;
+      const cells = [
+        '<a href="/' + locale + '/' + K.dir + '/' + e.slug + '.html">' + esc(e.name) + '</a>',
+        '<span class="mono">' + esc(e.key) + '</span>',
+        cls ? '<span class="mono">' + esc(cls.name) + '</span>' : '<span class="dim">—</span>',
+        cls ? esc(String(cls.declared)) + ' / ' + esc(String(cls.written)) : '<span class="dim">—</span>',
+      ];
+      return '<tr>' + cells.map((c) => '<td>' + c + '</td>').join('') + '</tr>';
+    }).join('');
+    const table = '<table><thead><tr>' + cols.map((c) => '<th>' + esc(c) + '</th>').join('') + '</tr></thead><tbody>' + rows + '</tbody></table>';
+    // The full list is the page's substance: a searcher wants one page that answers "what is it called and what
+    // is it called in the game's own files", not 60 pages that each repeat one row.
+    const body = '<section class="page-shell" id="content"><p class="eyebrow">' + esc(T('catalog.eyebrow')) + '</p>' +
+      '<h1>' + esc(heading) + '</h1><p class="lead">' + esc(lead) + '</p><p class="dim">' + esc(count) + '</p>' +
+      table +
+      '<div class="note"><strong>' + esc(T('entry.internalClass')) + '.</strong> ' + esc(T('entry.internalClass.note')) + '</div>' +
+      '<div class="note"><strong>' + esc(T('sources.unknown')) + '.</strong> ' + esc(T('sources.unknown.detail')) + '</div>' +
+      '</section>';
+    write(locale + '/' + rel, layout(locale, rel, heading + ' · ' + SITE.name, lead, body));
+  };
+
+  // ---------------------------------------------------------------- entry pages
+  const entryPage = (locale, kind, e) => {
+    const T = makeT(i18n.locales[locale], locale);
+    const K = KINDS[kind];
+    const icon = kind === 'item' ? itemsIcon : kind === 'level' ? levelsIcon : threatIcon;
+    const cls = e.classHint ? classByName.get(e.classHint) : null;
+    const lev = kind === 'enemy' ? levelLinksFor(e.name) : [];
+    const facts = [
+      [T('entry.category'), T('nav.' + K.navKey)],
+      [T('entry.version'), ent.version],
+      [T('entry.source'), T('entry.source.value')],
+    ];
+    const related = ['<a href="/' + locale + '/' + K.indexRel + '">' + esc(T('nav.' + K.navKey)) + ' →</a>'];
+    if (kind === 'item') {
+      const sameGroup = items.filter((x) => x.group === e.group && x.slug !== e.slug).slice(0, 6);
+      for (const g of sameGroup) related.push('<a href="/' + locale + '/item/' + g.slug + '.html">' + esc(g.name) + ' →</a>');
+    }
+    if (kind === 'enemy') {
+      for (const s of lev) {
+        const l = levels.find((x) => x.slug === s);
+        if (l) related.push('<a href="/' + locale + '/level/' + l.slug + '.html">' + esc(l.name) + ' →</a>');
+      }
+      for (const n of namesakes(e.slug, e.name)) {
+        related.push('<a href="/' + locale + '/enemy/' + n.slug + '.html">' + esc(n.name) + ' →</a>');
+      }
+    }
+    const clsBlock = cls
+      ? '<h2>' + esc(T('entry.internalClass')) + '</h2>' +
+        '<p><a class="mono" href="/' + DEFAULT + '/entity/' + classSlugs[classes.indexOf(cls)] + '.html">' + esc(cls.name) + '</a> ' +
+        '<span class="dim">· ' + esc(String(cls.declared)) + ' / ' + esc(String(cls.written)) + '</span></p>' +
+        '<p class="dim">' + esc(T('entry.internalClass.note')) + '</p>'
+      : '';
+    const body = '<article class="entry-page"><div class="entry-hero"><img src="' + icon + '" alt="' + K.alt + '"><div>' +
+      '<p class="eyebrow">' + esc(T('entry.displayName')) + '</p><h1>' + esc(e.name) + '</h1>' +
+      '<p class="entry-lead">' + esc(T('entry.notTranslated')) + '</p></div></div>' +
+      '<div class="entry-facts">' + facts.map(([k, v]) => '<div><span>' + esc(k) + '</span><strong>' + esc(v) + '</strong></div>').join('') + '</div>' +
+      '<div class="entry-columns"><section>' +
+      '<h2>' + esc(T('entry.stringKey')) + '</h2><p class="mono">' + esc(e.key) + '</p>' +
+      clsBlock +
+      '</section><aside class="entry-aside"><p class="eyebrow">' + esc(T('catalog.entry')) + '</p>' + related.join('') + '</aside></div></article>';
+    const rel = K.dir + '/' + e.slug + '.html';
+    write(locale + '/' + rel, layout(locale, rel, e.name + ' · ' + SITE.name, e.name + ' — ' + T('entry.displayName'), body));
+  };
+
+  // ---------------------------------------------------------------- build every locale
+  for (const locale of LOCALES) {
+    const T = makeT(i18n.locales[locale], locale);
+
+    const searchCatalog = [
+      ...enemies.map((e) => ({ title: e.name, category: T('nav.enemies'), text: e.key, href: '/' + locale + '/enemy/' + e.slug + '.html', kind: 1 })),
+      ...items.map((e) => ({ title: e.name, category: T('nav.items'), text: e.key, href: '/' + locale + '/item/' + e.slug + '.html', kind: 2 })),
+      ...levels.map((e) => ({ title: e.name, category: T('nav.levels'), text: e.key, href: '/' + locale + '/level/' + e.slug + '.html', kind: 3 })),
+    ];
+
+    const homeBody = '<section class="hero" id="content"><img class="banner-art" src="' + generatedHeroImage + '" width="2172" height="724" alt="Original R.E.P.O. inspired extraction scene">' +
+      '<div class="banner-copy"><p class="eyebrow">' + esc(T('home.eyebrow')) + '</p><h1>R.E.P.O.</h1>' +
+      '<p class="lead">' + esc(T('site.tagline')) + '.</p>' +
+      '<form class="hero-search" action="/' + locale + '/search.html"><input name="q" type="search" placeholder="' + esc(T('home.search.placeholder')) + '"><button>' + esc(T('home.search.button')) + '</button></form>' +
+      '<p class="actions"><a class="button primary" href="/' + locale + '/enemies.html">' + esc(T('home.threats')) + '</a><a class="button" href="/' + locale + '/levels.html">' + esc(T('home.levels')) + '</a></p></div></section>' +
+      '<section class="section"><div class="section-head"><div><p class="eyebrow">' + esc(T('home.explore')) + '</p><h2>' + esc(SITE.name) + '</h2></div></div><div class="category-rail">' +
+      [
+        ['◈', T('home.threats'), T('home.threats.desc'), '/' + locale + '/enemies.html', threatIcon, 'Generated threat radar badge'],
+        ['⌁', T('home.items'), T('home.items.desc'), '/' + locale + '/items.html', itemsIcon, 'Generated gear scanner badge'],
+        ['↗', T('home.levels'), T('home.levels.desc'), '/' + locale + '/levels.html', levelsIcon, 'Generated extraction doorway badge'],
+        ['▣', T('nav.search'), T('search.placeholder'), '/' + locale + '/search.html', valuablesIcon, 'Generated salvage crate badge'],
+      ].map(([i, t2, d, h, img, alt]) => '<a class="category" href="' + h + '"><img src="' + img + '" alt="' + alt + '" class="category-art"><span class="icon">' + i + '</span><strong>' + esc(t2) + '</strong><span>' + esc(d) + '</span></a>').join('') +
+      '</div></section>' +
+      '<section class="section"><div class="note"><strong>' + esc(T('unverified.heading')) + '.</strong> ' + esc(T('unverified.valuables')) + '</div></section>';
+    write(locale + '/index.html', layout(locale, 'index.html', SITE.name + ' · ' + T('site.tagline'), T('site.description'), homeBody));
+
+    catalogPage(locale, 'enemy', enemies, 'enemies.html', T('enemies.h1'), T('enemies.lead'), T('enemies.count', { n: enemies.length }));
+    catalogPage(locale, 'item', items, 'items.html', T('items.h1'), T('items.lead'), T('items.count', { n: items.length }));
+    catalogPage(locale, 'level', levels, 'levels.html', T('levels.h1'), T('levels.lead'), T('levels.count', { n: levels.length }));
+
+    for (const e of enemies) entryPage(locale, 'enemy', e);
+    for (const e of items) entryPage(locale, 'item', e);
+    for (const e of levels) entryPage(locale, 'level', e);
+
+    write(locale + '/search.html', layout(locale, 'search.html', T('search.h1') + ' · ' + SITE.name, T('search.label'), searchPage(T, locale, searchCatalog)));
+    write(locale + '/tool.html', layout(locale, 'tool.html', T('tool.h1') + ' · ' + SITE.name, T('tool.check1'), checklistPage(T, locale)));
+
+    const sourcesBody = '<section class="page-shell" id="content"><p class="eyebrow">' + esc(T('nav.sources')) + '</p><h1>' + esc(T('sources.h1')) + '</h1>' +
+      '<p class="lead">' + esc(T('sources.lead')) + '</p>' +
+      '<h2>' + esc(T('sources.displayNames')) + '</h2><p>' + esc(T('sources.displayNames.detail')) + '</p>' +
+      '<p class="mono">' + esc(ent.provenance.displayNames.file) + '</p>' +
+      '<h2>' + esc(T('sources.verification')) + '</h2><p>' + esc(T('sources.verification.detail')) + '</p>' +
+      '<h2>' + esc(T('sources.unknown')) + '</h2><p>' + esc(T('sources.unknown.detail')) + '</p>' +
+      '<h2>' + esc(T('entry.version')) + '</h2><p class="mono">' + esc(ent.version) + '</p>' +
+      '<h2>' + esc(T('entry.internalClass')) + '</h2><p class="mono">' + esc(ent.provenance.internalClassNames.file) + '</p>' +
+      '<p class="dim">' + esc(ent.provenance.internalClassNames.note) + '</p></section>';
+    write(locale + '/sources.html', layout(locale, 'sources.html', T('sources.h1') + ' · ' + SITE.name, T('sources.lead'), sourcesBody));
+
+    const guideBody = '<section class="page-shell" id="content"><p class="eyebrow">' + esc(T('nav.guide')) + '</p><h1>' + esc(T('guide.h1')) + '</h1><p class="lead">' + esc(T('guide.lead')) + '</p>' +
+      '<div class="steps">' + ['tool.check1', 'tool.check2', 'tool.check5'].map((k, i) => '<div class="step"><b>0' + (i + 1) + '</b><div><strong>' + esc(T(k)) + '</strong></div></div>').join('') + '</div>' +
+      '<h2>' + esc(T('nav.levels')) + '</h2><ul>' + levels.map((l) => '<li><a href="/' + locale + '/level/' + l.slug + '.html">' + esc(l.name) + '</a></li>').join('') + '</ul>' +
+      '<p><a class="button primary" href="/' + locale + '/enemies.html">' + esc(T('nav.enemies')) + ' →</a></p></section>';
+    write(locale + '/guide.html', layout(locale, 'guide.html', T('guide.h1') + ' · ' + SITE.name, T('guide.lead'), guideBody));
+
+    const policy = (rel, hkey, bkey) => {
+      const body = '<section class="page-shell" id="content"><h1>' + esc(T(hkey)) + '</h1><p>' + esc(T(bkey)) + '</p>' +
+        '<p class="dim">' + esc(T('footer.note')) + '</p></section>';
+      write(locale + '/' + rel, layout(locale, rel, T(hkey) + ' · ' + SITE.name, T(bkey), body));
+    };
+    policy('about.html', 'policy.about.h1', 'policy.about.body');
+    policy('contact.html', 'policy.contact.h1', 'policy.contact.body');
+    policy('privacy.html', 'policy.privacy.h1', 'policy.privacy.body');
+    policy('terms.html', 'policy.terms.h1', 'policy.terms.body');
+    policy('disclaimer.html', 'policy.disclaimer.h1', 'policy.disclaimer.body');
+
+    const nf = '<section class="page-shell" id="content"><h1>' + esc(T('notfound.h1')) + '</h1><p><a href="/' + locale + '/index.html">' + esc(T('notfound.back')) + '</a></p></section>';
+    write(locale + '/404.html', layout(locale, '404.html', T('notfound.h1'), T('notfound.h1'), nf));
   }
 
-  const writeCatalog = (kind, names, images, imageAlts, intro, note) => {
-    const slugsForKind = names.map((name) => slug(name));
-    const cards = names.map((name, i) => '<a class="guide-card" href="/' + kind + '/' + slugsForKind[i] + '.html"><img class="entry-art" src="' + images[i % images.length] + '" alt="' + imageAlts[i % imageAlts.length] + '"><span class="tag">' + kind.slice(0, -1).toUpperCase() + ' ' + String(i + 1).padStart(2, '0') + '</span><h3>' + esc(name.replace(/([a-z])([A-Z])/g, '$1 $2')) + '</h3><p>' + esc(note(name, i)) + '</p><span class="arrow">Open entry ↗</span></a>').join('');
-    write(kind + '.html', layout(kind[0].toUpperCase() + kind.slice(1) + ' - R.E.P.O. field guide', intro, '/' + kind + '.html', '<section class="page-shell" id="content"><p class="eyebrow">Player catalog</p><h1>' + kind[0].toUpperCase() + kind.slice(1) + '</h1><div class="guide-grid">' + cards + '</div></section>', inv));
-    names.forEach((name, i) => {
-      const title = name.replace(/([a-z])([A-Z])/g, '$1 $2');
-      const image = images[i % images.length];
-      const detail = note(name, i) + ' Profile: ' + ['quiet','loud','heavy','fragile','bright','awkward','long','short','cold','hot','slow','fast'][i % 12] + ' ' + ['door','lift','stairs','hall','corner','bridge','yard','room','lane','ramp','shaft','dock'][Math.floor(i / 12)] + '. Card ' + kind.slice(0, 3).toUpperCase() + '-' + String(i + 1).padStart(2, '0') + '.';
-      const body = '<article class="entry-page"><div class="entry-hero"><img src="' + image + '" alt="' + imageAlts[i % imageAlts.length] + '"><div><p class="eyebrow">' + kind.slice(0, -1) + ' · verified</p><h1>' + esc(title) + '</h1><p class="entry-lead">' + esc(detail) + '</p></div></div><div class="entry-facts"><div><span>Category</span><strong>' + kind.slice(0, -1) + '</strong></div><div><span>Version</span><strong>0.4.0</strong></div><div><span>Source</span><strong>Game build</strong></div></div><div class="entry-columns"><section><p class="eyebrow">Quick use</p><ol class="entry-steps"><li><b>01</b><span>Check the route.</span></li><li><b>02</b><span>Keep an exit lane.</span></li><li><b>03</b><span>Leave with the crew.</span></li></ol></section><aside class="entry-aside"><p class="eyebrow">Related</p><a href="/' + kind + '.html">' + kind[0].toUpperCase() + kind.slice(1) + ' →</a><a href="/guide.html">Guide →</a><a href="/tool.html">Checklist →</a></aside></div></article>';
-      write(kind + '/' + slugsForKind[i] + '.html', layout(title + ' - R.E.P.O. ' + kind.slice(0, -1), title + ' player entry with verified name, image and route notes.', '/' + kind + '/' + slugsForKind[i] + '.html', body, inv));
-    });
-  };
-  writeCatalog('valuables', valuableNames, [valuablesIcon, heroImage], ['Generated salvage crate badge', 'Official R.E.P.O. promotional artwork'], 'Confirmed haul names.', (name, i) => ['Keep the exit visible.', 'Leave room for one more pickup.', 'Drop it before the route closes.', 'Protect the carrier.', 'Take the safe exit.'][i % 5]);
-  writeCatalog('gear', gearNames, [gearIcon, heroImage], ['Generated gear scanner badge', 'Official R.E.P.O. promotional artwork'], 'Confirmed equipment names.', (name, i) => ['Reset the route fast.', 'Use with a spotter.', 'Solve the next obstacle.', 'Ready it before the alarm.', 'Use it early.'][i % 5]);
+  // ---------------------------------------------------------------- English-only technical reference (noindex)
+  write(DEFAULT + '/collection.html', layout(DEFAULT, 'collection.html', 'P0 classes', 'Every P0 class with the fields Unity writes.',
+    '<section class="page-shell" id="content"><h1>P0 classes <span class="dim">(' + classes.length + ')</span></h1>' +
+    '<p class="dim">Technical reference, marked noindex and kept out of the sitemap.</p>' +
+    '<table><thead><tr><th>Class</th><th>Base</th><th>Written fields</th></tr></thead><tbody>' +
+    classes.map((c, i) => '<tr><td><a href="/' + DEFAULT + '/entity/' + classSlugs[i] + '.html">' + esc(c.name) + '</a></td><td class="mono dim">' + esc(c.base ?? '-') + '</td><td>' + c.written + '</td></tr>').join('') +
+    '</tbody></table></section>'));
 
   for (let ci = 0; ci < classes.length; ci++) {
     const c = classes[ci];
-    write('entity/' + slugs[ci] + '.html', layout(c.name + ' - class reference', c.name + ': ' + c.written + ' written fields read from the game assembly.', '/entity/' + slugs[ci] + '.html',
-      '<h1 class="mono">' + esc(c.name) + '</h1><div class="note">This is a <strong>class reference</strong>, marked noindex: it lists what the class declares and which of it Unity writes. Field <em>values</em> are unknown in this build (Unity 6 / SerializedFile v22 not parsed yet).</div>' +
+    write(DEFAULT + '/entity/' + classSlugs[ci] + '.html', layout(DEFAULT, 'entity/' + classSlugs[ci] + '.html', c.name + ' · class reference', c.name + ': ' + c.written + ' written fields read from the game assembly.',
+      '<section class="page-shell" id="content"><h1 class="mono">' + esc(c.name) + '</h1>' +
+      '<div class="note">This is a <strong>class reference</strong>, marked noindex: it lists what the class declares and which of it Unity writes. Field <em>values</em> are unknown unless a decode produced them.</div>' +
       '<p class="dim">namespace <span class="mono">' + esc(c.namespace || '-') + '</span> · base <span class="mono">' + esc(c.base || '-') + '</span> · declared ' + c.declared + ' · Unity writes ' + c.written + '</p>' +
       '<h2>Written fields</h2><table><thead><tr><th>Field</th><th>Type</th><th>Kind</th><th>Confidence</th><th>Value</th></tr></thead><tbody>' +
       c.fields.map((f) => '<tr><td class="mono">' + esc(f.name) + '</td><td class="mono dim">' + esc(f.type) + '</td><td class="dim">' + esc(f.kind) + '</td><td class="dim">' + esc(f.confidence ?? 'unknown') + '</td><td class="dim">' + (f.value == null ? 'unknown' : esc(String(f.value))) + '</td></tr>').join('') +
-      '</tbody></table>', inv));
+      '</tbody></table></section>'));
   }
 
   if ((inv.enums ?? []).length) {
-    write('enums.html', layout('Enums', 'Enumerations and their values, read from the game assembly.', '/enums.html',
-      '<h1>Enums <span class="dim">(' + inv.enums.length + ')</span></h1>' + inv.enums.map((e) =>
+    write(DEFAULT + '/enums.html', layout(DEFAULT, 'enums.html', 'Enums', 'Enumerations and their values, read from the game assembly.',
+      '<section class="page-shell" id="content"><h1>Enums <span class="dim">(' + inv.enums.length + ')</span></h1>' + inv.enums.map((e) =>
         '<h2 class="mono">' + esc(e.name) + ' <span class="dim">' + e.members.length + ' members</span></h2><table><tbody>' +
-        e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join(''), inv));
+        e.members.map((m) => '<tr><td class="mono">' + esc(m.name) + '</td><td class="mono dim">' + m.value + '</td></tr>').join('') + '</tbody></table>').join('') + '</section>'));
   }
 
-  // Values decoded from the games' own bytes, one row per object. Kept plain (no type annotations) because this
-  // file is checked as JavaScript.
   {
-    var instPath = inventoryPath.replace('p0-inventory.json', 'p0-instances.json');
-    var inst = null;
-    try { inst = JSON.parse(readFileSync(instPath, 'utf8')); } catch (e) { inst = null; }
-    var list = (inst && inst.instances) ? inst.instances : [];
-    var grouped = {};
-    for (var gi = 0; gi < list.length; gi++) {
-      var it = list[gi];
+    const instPath = inventoryPath.replace('p0-inventory.json', 'p0-instances.json');
+    let inst = null;
+    try { inst = readJson(instPath); } catch { inst = null; }
+    const list = (inst && inst.instances) ? inst.instances : [];
+    const grouped = {};
+    for (const it of list) {
       if (!grouped[it.class]) grouped[it.class] = [];
       grouped[it.class].push(it);
     }
-    var names = Object.keys(grouped);
-    var rows = names.slice(0, 40).map(function (cls) {
-      var items = grouped[cls];
-      return '<h2 class="mono">' + esc(cls) + ' <span class="dim">(' + items.length + ')</span></h2>' +
+    const names = Object.keys(grouped);
+    const rows = names.slice(0, 40).map((cls) => {
+      const its = grouped[cls];
+      return '<h2 class="mono">' + esc(cls) + ' <span class="dim">(' + its.length + ')</span></h2>' +
         '<table><thead><tr><th>Object</th><th>Decoded fields</th></tr></thead><tbody>' +
-        items.slice(0, 20).map(function (x) {
-          var vals = (x.values || []).map(function (v) { return v.name + '=' + String(v.value); }).join('  ');
+        its.slice(0, 20).map((x) => {
+          const vals = (x.values || []).map((v) => v.name + '=' + String(v.value)).join('  ');
           return '<tr><td class="mono dim">' + esc(x.pathId) + '</td><td class="mono">' + esc(vals) + '</td></tr>';
         }).join('') + '</tbody></table>';
     }).join('');
-    var vbody = '<h1>Decoded values <span class="dim">(' + list.length + ' objects)</span></h1>' +
+    write(DEFAULT + '/values.html', layout(DEFAULT, 'values.html', 'Decoded values', 'Field values decoded from the games own files, one row per object.',
+      '<section class="page-shell" id="content"><h1>Decoded values <span class="dim">(' + list.length + ' objects)</span></h1>' +
       '<div class="note">Each row is one object read out of the game&apos;s own files. Its class was accepted only because the measured layout consumed that object&apos;s payload exactly, so these are the game&apos;s values rather than estimates. A field a decode did not produce is simply absent.</div>' +
       (list.length === 0
-        ? '<p class="dim">No object in this build decoded yet: the classes present are either not in this assembly or hold field types whose sizes are not measured. Everything else on this site says <span class="mono">unknown</span> rather than guessing.</p>'
-        : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : ''));
-    write('values.html', layout('Decoded values', 'Field values decoded from the games own files, one row per object.', '/values.html', vbody, inv));
+        ? '<p class="dim">No object in this build decoded yet. Everything else on this site says <span class="mono">unknown</span> rather than guessing.</p>'
+        : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : '')) + '</section>'));
   }
 
+  // ---------------------------------------------------------------- root, sitemap, robots
+  const redirect = '<!doctype html><html lang="' + i18n.locales[DEFAULT].htmlLang + '"><head><meta charset="utf-8">' +
+    '<title>' + esc(SITE.name) + '</title><link rel="canonical" href="' + SITE.url + '/' + DEFAULT + '/index.html">' +
+    '<meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=/' + DEFAULT + '/index.html">' +
+    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + '/' + DEFAULT + '/index.html"></head>' +
+    '<body><p><a href="/' + DEFAULT + '/index.html">' + esc(SITE.name) + '</a></p></body></html>';
+  writeFileSync(join(outDir, 'index.html'), redirect, 'utf8');
+  writeFileSync(join(outDir, '_redirects'), '/  /' + DEFAULT + '/index.html  302\n', 'utf8');
 
-  write('search.html', layout('Search the wiki', 'Find published R.E.P.O. guides and preparation tools.', '/search.html', searchPage(), inv));
-  write('tool.html', layout('Run checklist', 'Prepare your crew with a personal extraction checklist.', '/tool.html', checklistPage(), inv));
+  const indexable = [...pages.keys()]
+    .filter((p) => p.endsWith('.html'))
+    .filter((p) => !isNoindexPage('/' + p))
+    .filter((p) => localeOf('/' + p))
+    .sort();
+  const sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' +
+    indexable.map((p) => {
+      const slash = p.indexOf('/');
+      const locale = p.slice(0, slash);
+      const rel = p.slice(slash + 1);
+      return '<url><loc>' + SITE.url + '/' + p + '</loc>' +
+        LOCALES.map((l) => '<xhtml:link rel="alternate" hreflang="' + i18n.locales[l].hreflang + '" href="' + SITE.url + '/' + l + '/' + rel + '"/>').join('') +
+        '</url>';
+    }).join('') + '</urlset>';
+  writeFileSync(join(outDir, 'sitemap.xml'), sitemap, 'utf8');
+  writeFileSync(join(outDir, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n', 'utf8');
 
-  const src = '<div class="note">Every value in this build traces to a file on the Windows machine that produced it. Nothing is community-sourced and nothing is estimated.</div>' +
-    '<h2>Assembly</h2><p class="mono">' + esc(inv.source.assembly) + '</p><h2>Extractor</h2><p class="mono">' + esc(inv.source.extractor) + '</p>' +
-    '<h2>Extracted at</h2><p class="mono">' + esc(inv.source.extractedAt) + '</p><h2>Game version</h2><p>' + esc(inv.version) + '</p>' +
-    '<h2>Per-field provenance</h2><p>' + esc(inv.provenance?.fields ?? 'source, version, checkedAt, confidence, value') + '</p>' +
-    '<h2>Not extracted (unknown)</h2><p>Per-field values: the serialized assets are Unity 6 / SerializedFile v22. This pipeline parses the MonoBehaviour payloads it can consume exactly and publishes every decoded value on the values page, with its object and field; a payload it cannot consume exactly is left unknown rather than estimated. See <span class="mono">reports/v22-header.md</span> and <span class="mono">reports/v22-object-table.md</span>.</p>';
-  write('sources.html', layout('Sources', 'Where every number came from.', '/sources.html', '<h1>Sources</h1>' + src, inv));
-  write('guide.html', layout('Guides - R.E.P.O. extraction playbook', 'Player guides for scouting, carrying valuables, coordinating a crew and making extraction in R.E.P.O.', '/guide.html',
-    '<section class="page-shell" id="content"><p class="eyebrow">Player guides</p><h1>Make it home</h1><p class="lead">Scout. Carry. Extract.</p><div class="steps"><div class="step"><b>01</b><div><strong>Scout first</strong><span>Mark the return line.</span></div></div><div class="step"><b>02</b><div><strong>Assign roles</strong><span>Carrier, spotter, fallback.</span></div></div><div class="step"><b>03</b><div><strong>Leave early</strong><span>Move together.</span></div></div></div><h2 id="multiplayer">Co-op</h2><p>Keep the carrier visible. Call extraction before anyone is separated.</p><h2 id="gear">Gear</h2><p>Bring the tool that solves the next obstacle.</p><p><a class="button primary" href="/enemies.html">Threats →</a></p></section>', inv));
-  const simple = (rel, title, desc, body) => write(rel, layout(title, desc, '/' + rel, '<h1>' + title + '</h1>' + body, inv));
-  simple('about.html', 'About', 'About this database and its Windows-side pipeline.',
-    '<p>This site is generated from the game&apos;s own files on a Windows machine. It is an independent reference and is not affiliated with the developer.</p><p>Stack: Node extraction, dependency-free static generation, deterministic tests, and a gate that refuses to publish when the build is incomplete.</p>');
-  simple('contact.html', 'Contact', 'How to report a wrong value.', '<p>Corrections are welcome. Report the page, the field and the expected value; corrections that cannot be traced to a game file are recorded as unverified rather than applied.</p>');
-  simple('disclaimer.html', 'Disclaimer', 'No affiliation; no game assets redistributed.',
-    '<p>Not affiliated with, endorsed by, or sponsored by the game&apos;s developer or publisher. Game names and marks belong to their owners. No game assets, models, audio or code are redistributed; only facts and numbers read from the files.</p>');
-  simple('privacy.html', 'Privacy', 'No cookies, no tracking, no third-party requests.',
-    '<p>This static build sets no cookies, runs no analytics and makes no third-party requests. The search and lookup tools run entirely in the browser over data embedded in the page.</p>');
-  simple('terms.html', 'Terms', 'Use of this database.', '<p>Provided as-is for personal reference. Data may change as the game patches; each build records the version it was extracted from.</p>');
-  write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p><a href="/">Back to the index</a></p>', inv));
-
-  // The sitemap lists what a search engine should offer: question-answering pages, not every schema page.
-  const urls = [...pages.keys()].filter((p) => p.endsWith('.html') && p !== '/404.html' && !isNoindexPage(p));
-  write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
-    urls.map((p) => '<url><loc>' + SITE.url + p + '</loc></url>').join('') + '</urlset>');
-  write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n');
-  return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length };
+  return {
+    pages: pages.size,
+    urls: indexable.length,
+    locales: LOCALES.length,
+    enemies: enemies.length,
+    items: items.length,
+    levels: levels.length,
+    schemaPages: [...pages.keys()].filter(isNoindexPage).length,
+    outDir,
+  };
 }
 
 if (process.argv[1] && process.argv[1].endsWith('site.mjs')) {
@@ -269,5 +486,7 @@ if (process.argv[1] && process.argv[1].endsWith('site.mjs')) {
   const out = process.env.REPO_OUT || 'web/dist';
   if (!existsSync(inventory)) { console.error('missing inventory: ' + inventory); process.exit(2); }
   const r = build(inventory, out);
-  console.log('[site] pages=' + r.pages + ' indexable=' + r.urls + ' schema(noindex)=' + r.schemaPages + ' out=' + r.outDir);
+  console.log('[site] locales=' + r.locales + ' pages=' + r.pages + ' indexable=' + r.urls +
+    ' enemies=' + r.enemies + ' items=' + r.items + ' levels=' + r.levels +
+    ' schema(noindex)=' + r.schemaPages + ' out=' + r.outDir);
 }

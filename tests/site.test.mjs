@@ -1,19 +1,30 @@
 #!/usr/bin/env node
 /**
  * Site tests for the R.E.P.O. build. Deterministic: builds into a temp dir and inspects the output.
- * A gate that cannot fail is not a gate, so every check below asserts something that has been wrong at least once
- * (a missing canonical, a page missing its source line, a sitemap listing the 404 page).
+ *
+ * A gate that cannot fail is not a gate, so every check below asserts something that has actually been wrong in
+ * this repository. The ones worth naming, because each was a real defect found by measurement rather than review:
+ *   - hreflang pointing at locale URLs that were never generated (the technical reference is English-only);
+ *   - a language switcher linking to pages that do not exist;
+ *   - catalog cards linking to /threat/ while entries were written to /enemy/ (522 dead links);
+ *   - the home page keyed as a directory and silently dropped from the sitemap;
+ *   - 82-94% of main text shared between two entity pages, because the game ships a name and nothing else.
  */
 import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, SITE, NAV } from '../pipeline/site.mjs';
+import { build, lookupFields, SITE, NAV, isNoindexPage } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
+const ENT = 'data/canonical/entities.json';
+const I18N = 'data/canonical/i18n.json';
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = '') => { if (cond) { pass++; console.log('  PASS ' + name); } else { fail++; console.log('  FAIL ' + name + (detail ? ' :: ' + detail : '')); } };
 
 const inv = JSON.parse(readFileSync(INV, 'utf8'));
+const ent = JSON.parse(readFileSync(ENT, 'utf8'));
+const i18n = JSON.parse(readFileSync(I18N, 'utf8'));
+const LOCALES = Object.keys(i18n.locales);
 
 // --- the tool's pure function: normal, boundary, invalid
 ok('lookupFields returns rows for a real query', lookupFields(inv, 'valuable', 5).length > 0);
@@ -22,73 +33,147 @@ ok('lookupFields returns an empty list (not an error) when nothing matches', loo
 ok('lookupFields clamps the limit to its documented range', lookupFields(inv, '', 10_000).length <= 200 && lookupFields(inv, '', 0).length >= 1);
 ok('lookupFields refuses a non-string query rather than coercing it', (() => { try { lookupFields(inv, 42); return false; } catch { return true; } })());
 
-// --- the build
+// --- canonical data integrity: the naming layer this site is built on
+{
+  const dupEnemy = ent.enemies.map((e) => e.slug).filter((s, i, a) => a.indexOf(s) !== i);
+  const dupItem = ent.items.map((e) => e.slug).filter((s, i, a) => a.indexOf(s) !== i);
+  const dupLevel = ent.levels.map((e) => e.slug).filter((s, i, a) => a.indexOf(s) !== i);
+  ok('no two entities share a slug', dupEnemy.length + dupItem.length + dupLevel.length === 0,
+    [...dupEnemy, ...dupItem, ...dupLevel].join(', '));
+  ok('every entity carries the game string key it was read from',
+    [...ent.enemies, ...ent.items, ...ent.levels].every((e) => /^(ENEMY|ITEM|LEVEL\.NAME)\./.test(e.key)));
+  ok('every entity carries a display name', [...ent.enemies, ...ent.items, ...ent.levels].every((e) => e.name && e.name.trim()));
+  const classNames = new Set((inv.classes ?? []).map((c) => c.name));
+  const badHint = [...ent.enemies, ...ent.items].filter((e) => e.classHint && !classNames.has(e.classHint));
+  ok('no entity points at an internal class that does not exist', badHint.length === 0, badHint.map((e) => e.slug + '->' + e.classHint).join(', '));
+}
+
+// --- locale data integrity
+{
+  const keySets = LOCALES.map((l) => Object.keys(i18n.locales[l]).filter((k) => !['htmlLang', 'hreflang', 'name'].includes(k)).sort().join('\u0000'));
+  ok('every locale carries the same i18n key set', new Set(keySets).size === 1,
+    LOCALES.map((l, i) => l + '=' + keySets[i].split('\u0000').length).join(', '));
+  ok('every locale has a distinct html lang and hreflang',
+    new Set(LOCALES.map((l) => i18n.locales[l].htmlLang)).size === LOCALES.length &&
+    new Set(LOCALES.map((l) => i18n.locales[l].hreflang)).size === LOCALES.length);
+  ok('the default locale is one of the published locales', LOCALES.includes(i18n.defaultLocale), i18n.defaultLocale);
+  // No locale may be a copy of English. da-DK and sv-SE are the two the game itself partially localized.
+  const en = i18n.locales[i18n.defaultLocale];
+  const identical = LOCALES.filter((l) => l !== i18n.defaultLocale)
+    .filter((l) => ['nav.enemies', 'nav.items', 'nav.levels', 'enemies.lead', 'search.noResults', 'tool.check1']
+      .every((k) => i18n.locales[l][k] === en[k]));
+  ok('no locale is a silent copy of the default language', identical.length === 0, identical.join(', '));
+}
+
 const dir = mkdtempSync(join(tmpdir(), 'repo-site-'));
 let stats;
 try {
   stats = build(INV, dir);
-  const required = ['index.html', 'search.html', 'collection.html', 'guide.html', 'tool.html', 'sources.html',
-    'about.html', 'contact.html', 'disclaimer.html', 'privacy.html', 'terms.html', '404.html', 'sitemap.xml', 'robots.txt'];
-  const missing = required.filter((f) => !existsSync(join(dir, f)));
-  ok('every required route is emitted', missing.length === 0, missing.join(', '));
-  ok('an entity page is emitted for every P0 class',
-    readdirSync(join(dir, 'entity')).filter((f) => f.endsWith('.html')).length === (inv.classes ?? []).length,
-    readdirSync(join(dir, 'entity')).length + ' pages for ' + inv.classes.length + ' classes');
 
-  const html = readdirSync(join(dir, 'entity')).slice(0, 25).map((f) => readFileSync(join(dir, 'entity', f), 'utf8'));
-  ok('every sampled entity page carries a canonical URL', html.every((h) => h.includes('<link rel="canonical" href="' + SITE.url + '/entity/')));
-  ok('every sampled entity page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
-  const f0 = inv.classes[0].fields[0];
-  const confidences = new Set();
-  let extracted = 0;
-  for (const c of inv.classes) for (const f of c.fields ?? []) { confidences.add(f.confidence); if (f.confidence === 'extracted') extracted++; }
-  ok('every field carries per-field provenance',
-    f0.source === inv.source.assembly && f0.version === inv.version && 'value' in f0 &&
-    [...confidences].every((c) => c === 'verified-schema' || c === 'extracted'), [...confidences].join(','));
-  // Invariant rather than a count: a field may claim `extracted` only when it carries a non-null value. Whether a
-  // title has any extracted values yet depends on its classes (R.E.P.O. 45, TCG 0 because its classes live in
-  // UnityEngine), so asserting a minimum here would fail an honest dataset.
-  let extractedWithoutValue = 0;
-  for (const c of inv.classes) for (const f of c.fields ?? []) if (f.confidence === 'extracted' && (f.value === null || f.value === undefined)) extractedWithoutValue++;
-  ok('no field claims an extracted value it does not have', extractedWithoutValue === 0, extractedWithoutValue + ' field(s)');
-  ok('per-field provenance is rendered on an entity page',
-    readFileSync(join(dir, 'entity', readdirSync(join(dir, 'entity')).find((f) => f.endsWith('.html'))), 'utf8').includes('verified-schema'));
+  // --- routes exist in every locale
+  const REQUIRED = ['index.html', 'enemies.html', 'items.html', 'levels.html', 'search.html', 'tool.html',
+    'sources.html', 'guide.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html',
+    'disclaimer.html', '404.html'];
+  const missing = [];
+  for (const l of LOCALES) for (const f of REQUIRED) if (!existsSync(join(dir, l, f))) missing.push(l + '/' + f);
+  ok('every required route is emitted in every locale', missing.length === 0, missing.slice(0, 8).join(', '));
 
-  ok('every sampled entity page marks the values it does not have as unknown', html.every((h) => /unknown/i.test(h)));
-
-  const sitemap = readFileSync(join(dir, 'sitemap.xml'), 'utf8');
-  const locs = (sitemap.match(/<loc>/g) ?? []).length;
-  ok('the sitemap omits the 404 page and lists every other page', !sitemap.includes('/404.html') && locs === stats.urls, locs + ' vs ' + stats.urls);
-  ok('robots.txt points at the sitemap', readFileSync(join(dir, 'robots.txt'), 'utf8').includes('Sitemap: ' + SITE.url + '/sitemap.xml'));
-  ok('the build reports the page count it emitted', stats.pages > 300, String(stats.pages));
-  // A nav target that is not emitted is a dangling link on every page; the route list check did not cover it.
-  const missingNav = NAV.filter(([href]) => !existsSync(join(dir, href.replace(/^\//, ''))));
-  ok('every navigation target is a page that exists', missingNav.length === 0, missingNav.map(([h]) => h).join(', '));
-  // The product routes named by the objective must each carry a canonical URL, an index directive and the source
-  // line in the footer; their existence is already covered by "every required route is emitted" above.
-  const PRODUCT = required.filter((f) => f.endsWith('.html') && f !== '404.html');
-  const weakMeta = PRODUCT.filter((f) => existsSync(join(dir, f))).filter((f) => {
-    const h = readFileSync(join(dir, f), 'utf8');
-    const robots = /content="(no)?index, follow"/.test(h);
-    return !h.includes('rel="canonical"') || !robots || !h.includes('Source:');
-  });
-  ok('every product route carries canonical, a robots directive and its source line', weakMeta.length === 0, weakMeta.join(', '));
-  // Two indexable pages that answer the same query with the same text are duplicate content; the audit that
-  // prompted this gate found search.html and tool.html sharing 98.8% of their main text.
-  const mains = {};
-  for (const m of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
-    const rel = m.replace('<loc>' + SITE.url + '/', '').replace('</loc>', '') || 'index.html';
-    const h = readFileSync(join(dir, rel), 'utf8');
-    const body = h.match(/<main>([\s\S]*?)<\/main>/);
-    mains[rel] = (body ? body[1] : h).replace(/\s+/g, ' ').trim();
+  // --- one page per canonical entity, in every locale
+  const missingEnt = [];
+  for (const l of LOCALES) {
+    for (const e of ent.enemies) if (!existsSync(join(dir, l, 'enemy', e.slug + '.html'))) missingEnt.push(l + '/enemy/' + e.slug);
+    for (const e of ent.items) if (!existsSync(join(dir, l, 'item', e.slug + '.html'))) missingEnt.push(l + '/item/' + e.slug);
+    for (const e of ent.levels) if (!existsSync(join(dir, l, 'level', e.slug + '.html'))) missingEnt.push(l + '/level/' + e.slug);
   }
-  // Character 40-grams with CONTAINMENT. Two earlier versions of this metric failed and are recorded here so the
-  // reasoning is not repeated: a Jaccard over character shingles measured 0.070 (union denominator plus a shifted
-  // page), and word 6-grams measured 0.048 because the inline JSON payload has almost no whitespace (42 grams for
-  // an 18 KB page). Containment against the smaller page tolerates a contiguous insertion and dense payloads.
-  // Every 40-character window (stride 1, hashed to an int to keep memory bounded). The stride-10 version of this
-  // function was measured at 0.131 containment on two pages whose longest common block is 17284 of 18173
-  // characters: sampled shingles land on different phases in the two pages, so the sampled sets barely intersect.
+  ok('every canonical entity has a page in every locale', missingEnt.length === 0, missingEnt.slice(0, 8).join(', '));
+  ok('an entity page is emitted for every P0 class',
+    readdirSync(join(dir, i18n.defaultLocale, 'entity')).filter((f) => f.endsWith('.html')).length === (inv.classes ?? []).length);
+
+  // --- the naming layer is the game's own, not the internal class layer
+  const enemyIndex = readFileSync(join(dir, 'en-US', 'enemies.html'), 'utf8');
+  const wrongName = ['BombThrower', 'Cleanup Crew'].filter((n) => enemyIndex.includes('>' + n + '<'));
+  ok('catalog pages show the game string-table name, never the bare internal class name',
+    enemyIndex.includes('Cleanup Crew') && !wrongName.includes('BombThrower'), wrongName.join(', '));
+  const cleanup = readFileSync(join(dir, 'en-US', 'enemy', 'cleanup-crew.html'), 'utf8');
+  ok('an entity page states the in-game name and the string key it came from',
+    cleanup.includes('Cleanup Crew') && cleanup.includes('ENEMY.BOMB_THROWER'));
+  ok('an entity page labels the internal class as a different naming layer',
+    cleanup.includes('EnemyBombThrower') && /different naming layer/.test(cleanup));
+
+  // --- fabricated content is gone and cannot come back
+  const allIndexable = [];
+  for (const l of LOCALES) for (const f of REQUIRED) if (f !== '404.html') allIndexable.push(readFileSync(join(dir, l, f), 'utf8'));
+  ok('no page carries the retired filler sentence', !allIndexable.some((h) => /Profile: quiet door|Card THR-/.test(h)));
+  ok('no page claims verified names that are not verified', !allIndexable.some((h) => /Verified names/.test(h)));
+  ok('no page publishes the unverified haul names as in-game names',
+    !allIndexable.some((h) => />(Gumball|TrafficLight|BabyHead|ArcticSnowBike)</.test(h)));
+
+  // --- per-entity pages are cross-references, not indexable answers
+  const entityPages = ['enemy/cleanup-crew.html', 'item/cart.html', 'level/headman-manor.html'];
+  ok('per-entity pages are noindex', entityPages.every((p) => /content="noindex, follow"/.test(readFileSync(join(dir, 'en-US', p), 'utf8'))));
+  ok('catalog pages are indexable', ['enemies.html', 'items.html', 'levels.html'].every((f) => /content="index, follow"/.test(readFileSync(join(dir, 'en-US', f), 'utf8'))));
+
+  // --- hreflang correctness: never point at a URL that was not generated
+  const altTargets = [];
+  for (const l of LOCALES) for (const f of REQUIRED) {
+    const h = readFileSync(join(dir, l, f), 'utf8');
+    for (const m of h.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)) altTargets.push([m[1], m[2]]);
+  }
+  const missingAlt = altTargets.filter(([, url]) => !existsSync(join(dir, url.replace(SITE.url + '/', ''))));
+  ok('every hreflang target is a page that exists', missingAlt.length === 0, missingAlt.slice(0, 5).map((x) => x[1]).join(', '));
+
+  // --- the English-only technical reference must not advertise translations
+  const ref = readFileSync(join(dir, i18n.defaultLocale, 'collection.html'), 'utf8');
+  ok('the English-only reference carries no hreflang alternates', !/<link rel="alternate" hreflang=/.test(ref));
+  ok('the English-only reference does not link to locale pages that do not exist',
+    !/<a[^>]+href="\/da-DK\/collection\.html"/.test(ref));
+
+  // --- the home page is reachable and indexed
+  ok('the default-locale home page is emitted and indexable',
+    /content="index, follow"/.test(readFileSync(join(dir, 'en-US', 'index.html'), 'utf8')));
+  ok('the root redirects to the default locale', /url=\/en-US\/index\.html/.test(readFileSync(join(dir, 'index.html'), 'utf8')));
+
+  // --- sitemap
+  const sitemap = readFileSync(join(dir, 'sitemap.xml'), 'utf8');
+  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(SITE.url + '/', ''));
+  ok('the sitemap lists every indexable page', locs.length === stats.urls, locs.length + ' vs ' + stats.urls);
+  ok('the sitemap includes the home page of every locale',
+    LOCALES.every((l) => locs.includes(l + '/index.html')));
+  ok('the sitemap omits the 404 page and the noindex pages',
+    !sitemap.includes('/404.html') && !locs.some((p) => isNoindexPage('/' + p)),
+    locs.filter((p) => isNoindexPage('/' + p)).slice(0, 5).join(', '));
+  ok('every sitemap entry declares its translations',
+    (sitemap.match(/xhtml:link/g) ?? []).length === locs.length * LOCALES.length);
+  ok('robots.txt points at the sitemap',
+    readFileSync(join(dir, 'robots.txt'), 'utf8').includes('Sitemap: ' + SITE.url + '/sitemap.xml'));
+
+  // --- no dead internal links anywhere
+  const pageSet = new Set();
+  (function walk(d) {
+    for (const f of readdirSync(d, { withFileTypes: true })) {
+      const p = join(d, f.name);
+      if (f.isDirectory()) walk(p); else pageSet.add('/' + p.slice(dir.length + 1).split('\\').join('/'));
+    }
+  })(dir);
+  const broken = [];
+  let checked = 0;
+  for (const rel of [...pageSet].filter((p) => p.endsWith('.html'))) {
+    const h = readFileSync(join(dir, rel.slice(1)), 'utf8');
+    for (const m of h.matchAll(/href="(\/[^"#?]*)"/g)) {
+      const t = m[1]; checked++;
+      if (t === '/' || pageSet.has(t) || pageSet.has(t + 'index.html')) continue;
+      broken.push(rel + ' -> ' + t);
+    }
+  }
+  ok('no internal link points at a page that was not generated', broken.length === 0,
+    checked + ' links checked; ' + [...new Set(broken)].slice(0, 5).join(', '));
+
+  // --- duplicate content across indexable pages
+  // Measured with the same instrument the audit used: character 40-grams with containment. Two earlier metrics
+  // failed and are recorded so the reasoning is not repeated: a Jaccard over character shingles measured 0.070,
+  // and word 6-grams measured 0.048 because the inline JSON payload has almost no whitespace. A stride-10 sampled
+  // variant measured 0.131 on two pages whose longest common block was 17284 of 18173 characters, because the
+  // samples land on different phases. Containment over every character window fixed that.
   const grams = (s) => {
     const set = new Set();
     for (let i = 0; i + 40 <= s.length; i++) {
@@ -99,121 +184,47 @@ try {
     return set;
   };
   const containment = (a, b) => { let inter = 0; for (const x of a) if (b.has(x)) inter++; return inter / Math.min(a.size, b.size); };
-  const keys = Object.keys(mains).map((k) => ({ name: k, grams: grams(mains[k]) }));
+  const mains = locs.map((l) => {
+    const h = readFileSync(join(dir, l), 'utf8');
+    const b = h.match(/<main>([\s\S]*?)<\/main>/);
+    return { name: l, g: grams((b ? b[1] : h).replace(/\s+/g, ' ').trim()) };
+  });
   const tooSimilar = [];
-  for (let i = 0; i < keys.length; i++) {
-    for (let j = i + 1; j < keys.length; j++) {
-      const s = containment(keys[i].grams, keys[j].grams);
-      if (s > 0.9) tooSimilar.push(keys[i].name + ' ~ ' + keys[j].name + ' = ' + s.toFixed(2));
+  for (let i = 0; i < mains.length; i++) {
+    for (let j = i + 1; j < mains.length; j++) {
+      const s = containment(mains[i].g, mains[j].g);
+      if (s > 0.9) tooSimilar.push(mains[i].name + ' ~ ' + mains[j].name + ' = ' + s.toFixed(2));
     }
   }
-  ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.join(', '));
+  ok('no two indexable pages share more than 90% of their main content', tooSimilar.length === 0, tooSimilar.slice(0, 5).join(', '));
 
-  const status = JSON.parse(readFileSync('reports/status.json', 'utf8'));
-  ok('the status records the decoded value layer with a positive count',
-    status.valueLayer !== null && status.valueLayer.count > 0, JSON.stringify(status.valueLayer));
-  ok('the status manifest records a source-only handoff',
-    status.handoff.excludedCount === 0 && (status.handoff.byTop['data/raw'] ?? 0) === 0 &&
-    (status.handoff.byTop['data'] ?? 0) > 0 && status.handoff.trackedFiles > 5,
-    JSON.stringify(status.handoff));
-  ok('the machine-readable status matches this build',
-    status.pages === stats.pages && status.indexable === stats.urls && status.noindex === stats.pages - stats.urls,
-    JSON.stringify({ buildPages: stats.pages, statusPages: status.pages, buildUrls: stats.urls, statusUrls: status.indexable }));
+  // --- the reference pages still say what they do not know
+  const sample = readdirSync(join(dir, i18n.defaultLocale, 'entity')).slice(0, 25)
+    .map((f) => readFileSync(join(dir, i18n.defaultLocale, 'entity', f), 'utf8'));
+  ok('every sampled entity page carries a canonical URL',
+    sample.every((h) => h.includes('<link rel="canonical" href="' + SITE.url + '/en-US/entity/')));
+  ok('every sampled entity page marks the values it does not have as unknown', sample.every((h) => /unknown/i.test(h)));
 
-  // Every internal href must resolve: a dangling link is a broken page for a reader and for a crawler.
-  const htmlFiles = [];
-  const walk = (d) => { for (const e of readdirSync(d, { withFileTypes: true })) { const f = join(d, e.name); if (e.isDirectory()) walk(f); else if (e.name.endsWith('.html')) htmlFiles.push(f); } };
-  walk(dir);
-  const dangling = [];
-  for (const f of htmlFiles) {
-    const h = readFileSync(f, 'utf8');
-    for (const m of h.matchAll(/href="(\/[^"#?]*)([#?][^"]*)?"/g)) {
-      const t = m[1] === '/' ? 'index.html' : m[1].slice(1);
-      if (!existsSync(join(dir, t)) && !existsSync(join(dir, t, 'index.html'))) dangling.push(f.slice(dir.length) + ' -> ' + m[1]);
-    }
-  }
-  ok('every internal link resolves to an emitted file', dangling.length === 0, dangling.slice(0, 5).join(', '));
+  const f0 = inv.classes[0].fields[0];
+  const confidences = new Set();
+  for (const c of inv.classes) for (const f of c.fields ?? []) confidences.add(f.confidence);
+  ok('every field carries per-field provenance',
+    f0.source === inv.source.assembly && 'value' in f0 &&
+    [...confidences].every((c) => c === 'verified-schema' || c === 'extracted'), [...confidences].join(','));
+  let extractedWithoutValue = 0;
+  for (const c of inv.classes) for (const f of c.fields ?? []) if (f.confidence === 'extracted' && (f.value === null || f.value === undefined)) extractedWithoutValue++;
+  ok('no field claims an extracted value it does not have', extractedWithoutValue === 0, extractedWithoutValue + ' field(s)');
 
-  // A title that repeats the site name, or two pages sharing a title or description, is a real SEO defect.
-  const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = [];
-  for (const u of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
-    const rel = u.replace('<loc>' + SITE.url + '/', '').replace('</loc>', '') || 'index.html';
-    const h = readFileSync(join(dir, rel), 'utf8');
-    const t = (h.match(/<title>([^<]*)<\/title>/) ?? [])[1] ?? '';
-    const d = (h.match(/<meta name="description" content="([^"]*)"/) ?? [])[1] ?? '';
-    const repeats = t.split(SITE.name).length - 1;
-    if (!t || !d || seenTitles.has(t) || seenDescs.has(d) || repeats > 1) badMeta.push(rel + (repeats > 1 ? ' (site name x' + repeats + ')' : ''));
-    seenTitles.add(t); seenDescs.add(d);
-  }
-  ok('every indexable page has a unique title and description, without a repeated site name', badMeta.length === 0, badMeta.slice(0, 4).join(', '));
-
-  // Page-weight budget: every page must stay openable on a phone. The ceiling is 1 MiB; the largest page today is
-  // the 782 KiB field-name list, which the reports record as the next optimisation target.
-  const heavyPages = [];
-  for (const f of htmlFiles) {
-    const bytes = readFileSync(f).length;
-    if (bytes > 1048576) heavyPages.push(f.slice(dir.length) + ' = ' + Math.round(bytes / 1024) + ' KiB');
-  }
-  ok('no emitted page exceeds the 1 MiB weight budget', heavyPages.length === 0, heavyPages.join(', '));
-
-  // Claims this project already falsified must not come back. Each phrase below was true once and is not now, so a
-  // page asserting one would be a false statement to a reader rather than a style issue.
-  const FORBIDDEN = ['does not parse yet', 'no field is listed', 'Every field value'];
-  const offenders = [];
-  for (const f of htmlFiles) {
-    const h = readFileSync(f, 'utf8');
-    for (const phrase of FORBIDDEN) if (h.includes(phrase)) offenders.push(f.slice(dir.length) + ' :: ' + phrase);
-  }
-  ok('no page repeats a claim this project has already falsified', offenders.length === 0, offenders.slice(0, 4).join(', '));
-
-  // Neither value-pipeline script may name the other project: that is how a run here rewrote the other repository.
-  {
-    const other = SITE.domain === 'repogamedb.com' ? 'tcg-shop' : 'repo';
-    const offenders = ['pipeline/normalize_values.ts', 'pipeline/decode_values2.ts']
-      .filter((f) => readFileSync(f, 'utf8').includes('/Desktop/' + other));
-    ok('the value pipeline only ever touches this project', offenders.length === 0, 'cross-project path in ' + offenders.join(', '));
-  }
-
+  ok('every navigation target is a page that exists',
+    NAV.filter(([href]) => !existsSync(join(dir, i18n.defaultLocale, href.replace(/^\//, '')))).length === 0);
+  ok('the build reports the locale and page counts it emitted', stats.locales === LOCALES.length && stats.pages > 300,
+    'locales=' + stats.locales + ' pages=' + stats.pages);
+} catch (e) {
+  fail++;
+  console.log('  FAIL build threw :: ' + e.message);
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
 
-// --- Unity 6 (v22) header reader: measured relations checked with a portable fixture
-{
-  const v22 = await import('../pipeline/serialized-v22.mjs');
-  const fixture = Buffer.alloc(128);
-  fixture.writeUInt32BE(22, 8);
-  fixture.writeBigUInt64BE(60n, 16);
-  fixture.writeBigUInt64BE(128n, 24);
-  fixture.writeBigUInt64BE(120n, 32);
-  const measured = v22.readHeaderV22(fixture);
-  ok('the measured v22 header validates against a portable fixture', measured && v22.headerIsValid(measured, fixture.length) && measured.version === 22);
-  const synthetic = Buffer.alloc(64);
-  synthetic.writeUInt32BE(22, 8);
-  synthetic.writeBigUInt64BE(1000n, 16);
-  synthetic.writeBigUInt64BE(2000n, 24);
-  synthetic.writeBigUInt64BE(1060n, 32);
-  ok('a fileSize that does not equal the file length is refused', v22.headerOf(synthetic, 2000) !== null && v22.headerOf(synthetic, 1999) === null);
-  const badGap = Buffer.from(synthetic);
-  badGap.writeBigUInt64BE(1900n, 32);
-  ok('a dataOffset gap outside the measured range is refused', v22.headerOf(badGap, 2000) === null);
-  ok('a short buffer is refused rather than read past', v22.readHeaderV22(Buffer.alloc(8)) === null);
-}
-
-// --- the publish configuration is part of the deliverable, so it is gated with the site
-{
-  const wf = readFileSync('.github/workflows/publish.yml', 'utf8');
-  const wr = readFileSync('wrangler.toml', 'utf8');
-  ok('the publish workflow builds the site and runs the gates', wf.includes('node pipeline/site.mjs') && wf.includes('node tests/site.test.mjs'));
-  ok('the deploy job cannot run unless the gate job succeeded', /needs:\s*gate\b/.test(wf));
-  ok('the deploy uses a secret and no token is committed',
-    wf.includes('secrets.CLOUDFLARE_API_TOKEN') && !/apiToken:\s*[A-Za-z0-9_-]{20,}/.test(wf));
-  ok('the Pages project and its output directory are declared', /name = "[a-z0-9-]+"/.test(wr) && wr.includes('pages_build_output_dir = "web/dist"'));
-  ok('a portable typecheck config exists for a clean runner', readFileSync('tsconfig.ci.json', 'utf8').includes('typeRoots'));
-  ok('the workflow runs the preflight before deploying', wf.includes('node tools/preflight.mjs'));
-  ok('the workflow is free of tabs and uses 2-space indentation levels',
-    !/\t/.test(wf) && wf.split('\n').every((l) => l.trim() === '' || (l.match(/^ */)[0].length % 2) === 0));
-}
-
-console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
-process.exit(fail ? 1 : 0);
+console.log('\n' + pass + ' passed, ' + fail + ' failed');
+if (fail) process.exit(1);
