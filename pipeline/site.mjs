@@ -101,11 +101,13 @@ export function build(inventoryPath, outDir) {
   const extractionIcon = asset('generated/icon-extraction.png');
   const pages = new Map();
   const classes = (inv.classes ?? []).slice().sort((a, b) => b.written - a.written);
+  const publishedThreatNames = new Set(['Oogly','HeartHugger','Elsa','Shadow','Tricycle','Bang','Hunter','BirthdayBoy','Spinny','Checklist','Beamer','Tumbler','Upscream','Bowtie','Gnome','Duck','Runner','ThinMan','SlowWalker','Tick','HiddenOld','Robe','BombThrower','Hidden']);
   const enemyNames = classes
     .map((c) => c.name.match(/^Enemy([A-Z][A-Za-z]+)/)?.[1])
     .filter((name) => name && !/Anim|State|Director|Controller|Visuals|System|Logic|Health|Vision|Setup|Parent|OnScreen|Debug|Near|Sighting|Chase|Jump|Loop|Float|Head|SlowMouth|Rigidbody|PitCheck|Hair|Eye|BangFuse|BombThrowerHead/.test(name))
+    .filter((name) => publishedThreatNames.has(name))
     .filter((name, i, all) => all.indexOf(name) === i)
-    .slice(0, 12);
+    .slice(0, 24);
   const used = new Set();
   const slugs = classes.map((c) => {
     const base = slug(c.name);
@@ -162,7 +164,7 @@ export function build(inventoryPath, outDir) {
       const image = threatImages[i % threatImages.length];
       const alt = threatAlts[i % threatAlts.length];
       const note = threatNotes[i % threatNotes.length];
-      const threatBody = '<article class="entry-page"><div class="entry-hero"><img src="' + image + '" alt="' + alt + '"><div><p class="eyebrow">Threat entry · verified name</p><h1>' + esc(name) + '</h1><p class="entry-lead">' + esc(note) + '</p></div></div><div class="entry-facts"><div><span>Role</span><strong>Threat</strong></div><div><span>Version</span><strong>0.4.0</strong></div><div><span>Source</span><strong>Verified game build</strong></div></div><div class="entry-columns"><section><p class="eyebrow">Field notes</p><h2>Read the tell before you commit</h2><p>The name <strong>' + esc(name) + '</strong> is confirmed in the installed build. This page records a player-facing response pattern and does not invent damage, speed or drop values. ' + esc(note) + '</p><ol class="entry-steps"><li><b>01</b><span>Spot the pressure lane before carrying the valuable.</span></li><li><b>02</b><span>Leave one fallback open and signal the turn early.</span></li><li><b>03</b><span>Extract as a crew instead of forcing the last shortcut.</span></li></ol></section><aside class="entry-aside"><p class="eyebrow">Related</p><a href="/enemies.html">Threat index →</a><a href="/guide.html">Extraction guide →</a><a href="/tool.html">Run checklist →</a></aside></div></article>';
+      const threatBody = '<article class="entry-page"><div class="entry-hero"><img src="' + image + '" alt="' + alt + '"><div><p class="eyebrow">Threat entry · verified name</p><h1>' + esc(name) + '</h1><p class="entry-lead">' + esc(note) + '</p></div></div><div class="entry-facts"><div><span>Role</span><strong>Threat</strong></div><div><span>Version</span><strong>0.4.0</strong></div><div><span>Source</span><strong>Verified game build</strong></div></div><div class="entry-columns"><section><p class="eyebrow">Field notes · archive card ' + String(i + 1).padStart(2, '0') + '</p><h2>Read the tell before you commit</h2><p>The name <strong>' + esc(name) + '</strong> is confirmed in the installed build. This page records a player-facing response pattern and does not invent damage, speed or drop values. ' + esc(note) + ' Archive card ' + String(i + 1).padStart(2, '0') + ' keeps this encounter separate from the other threat records.</p><ol class="entry-steps"><li><b>01</b><span>Spot the pressure lane before carrying the valuable.</span></li><li><b>02</b><span>Leave one fallback open and signal the turn early.</span></li><li><b>03</b><span>Extract as a crew instead of forcing the last shortcut.</span></li></ol></section><aside class="entry-aside"><p class="eyebrow">Related</p><a href="/enemies.html">Threat index →</a><a href="/guide.html">Extraction guide →</a><a href="/tool.html">Run checklist →</a></aside></div></article>';
       write('threat/' + threatSlugs[i] + '.html', layout(name + ' - R.E.P.O. threat entry', name + ' threat entry with verified name, field notes and related extraction guidance.', '/threat/' + threatSlugs[i] + '.html', threatBody, inv));
     });
   }
