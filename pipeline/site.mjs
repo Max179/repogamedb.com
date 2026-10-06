@@ -94,7 +94,6 @@ export function build(inventoryPath, outDir) {
   const heroImage = asset('hero-repo.jpg');
   const generatedHeroImage = asset('generated/repo-hero-generated.png');
   const crateImage = asset('crate.png');
-  const levelImage = asset('level.jpg');
   const threatIcon = asset('generated/icon-threats.png');
   const valuablesIcon = asset('generated/icon-valuables.png');
   const gearIcon = asset('generated/icon-gear.png');
@@ -119,8 +118,8 @@ export function build(inventoryPath, outDir) {
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
 
   const enemyCount = enemyNames.length;
-  const threatImages = [threatIcon, heroImage, levelImage, crateImage];
-  const threatAlts = ['Generated threat radar badge', 'Official R.E.P.O. promotional artwork', 'Verified level texture export', 'Verified crate texture export'];
+  const threatImages = [threatIcon, heroImage, crateImage];
+  const threatAlts = ['Generated threat radar badge', 'Official R.E.P.O. promotional artwork', 'Verified crate texture export'];
   const threatSlugs = enemyNames.map((name) => slug(name));
   const valuableNames = ['Gumball','TrafficLight','Blender','Egg','BabyHead','Plane','Car','Milk','IceSaw','Boombox','Scale','Cocktail','ArcticSnowBike','Tray','Phone','Barrel','Flamethrower','Jackhammer','FireExtinguisher','Flashlight','CauldronBox','SpiderPotion','WizardTimeGlass','StarWand','TeethBot','EyeOfOrpigox','PowerCrystal','CrystalBall','SmallPotion','Pills','Camera','WizardStaff','Money','CubeBall','ScreamDoll','ForeverCandle','LevitationPotion','LovePotion'];
   const gearNames = ['WalkieTalkie','Gun','ReviveItem','Ladder','Melee','CartLaser','StaffZeroGravity','StaffVoid','Mine','CartCannon','StaffTorque','Orb','GunLaser','Tracker','Drone','LeafBlower','Battery','Grenade','HealthPack','MineStun','Shockwave','StunBaton','GrenadeDuctTaped','GrenadeHuman','GrenadeStun','GrenadeShockwave','EquipCube','DuckBucket'];
@@ -183,8 +182,8 @@ export function build(inventoryPath, outDir) {
       write(kind + '/' + slugsForKind[i] + '.html', layout(title + ' - R.E.P.O. ' + kind.slice(0, -1), title + ' player entry with verified name, image and route notes.', '/' + kind + '/' + slugsForKind[i] + '.html', body, inv));
     });
   };
-  writeCatalog('valuables', valuableNames, [valuablesIcon, crateImage, levelImage], ['Generated salvage crate badge', 'Verified crate texture export', 'Verified level texture export'], 'Browse confirmed haul names and the carrying decisions that keep an extraction profitable.', (name, i) => ['Carry it only when the return line stays visible.', 'Leave room for a second pickup instead of filling the hands too early.', 'A bulky haul changes the route; decide before the team enters the next room.', 'Keep the carrier protected and the fallback call clear.', 'Use the value lead to choose a safer exit, not a deeper detour.'][i % 5]);
-  writeCatalog('gear', gearNames, [gearIcon, heroImage, levelImage], ['Generated gear scanner badge', 'Official R.E.P.O. promotional artwork', 'Verified level texture export'], 'Find the equipment names confirmed in the build and choose a tool that solves the next obstacle.', (name, i) => ['Bring it when the route needs a fast reset.', 'Pair the tool with a spotter so the carrier is not isolated.', 'Use it for the next obstacle, not as a reason to overpack.', 'Keep the item ready before the alarm closes the lane.', 'A simple tool used early is safer than a perfect tool used late.'][i % 5]);
+  writeCatalog('valuables', valuableNames, [valuablesIcon, crateImage, heroImage], ['Generated salvage crate badge', 'Verified crate texture export', 'Official R.E.P.O. promotional artwork'], 'Browse confirmed haul names and the carrying decisions that keep an extraction profitable.', (name, i) => ['Carry it only when the return line stays visible.', 'Leave room for a second pickup instead of filling the hands too early.', 'A bulky haul changes the route; decide before the team enters the next room.', 'Keep the carrier protected and the fallback call clear.', 'Use the value lead to choose a safer exit, not a deeper detour.'][i % 5]);
+  writeCatalog('gear', gearNames, [gearIcon, heroImage, crateImage], ['Generated gear scanner badge', 'Official R.E.P.O. promotional artwork', 'Verified crate texture export'], 'Find the equipment names confirmed in the build and choose a tool that solves the next obstacle.', (name, i) => ['Bring it when the route needs a fast reset.', 'Pair the tool with a spotter so the carrier is not isolated.', 'Use it for the next obstacle, not as a reason to overpack.', 'Keep the item ready before the alarm closes the lane.', 'A simple tool used early is safer than a perfect tool used late.'][i % 5]);
 
   for (let ci = 0; ci < classes.length; ci++) {
     const c = classes[ci];
