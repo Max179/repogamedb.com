@@ -84,14 +84,6 @@
   ],
   "images": [
     {
-      "file": "renders/ENEMY.BOMB_THROWER.png",
-      "kind": "game",
-      "alt": {
-        "en": "3D render of the bomb thrower enemy model extracted from the game.",
-        "zh": "从游戏提取的炸弹投掷者3D模型渲染图。"
-      }
-    },
-    {
       "file": "mapped/the-bomb-thrower-skin.jpg",
       "kind": "game",
       "alt": {
