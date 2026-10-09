@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "repo-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["tools/preview.mjs"],
+      "port": 4187
+    }
+  ]
+}

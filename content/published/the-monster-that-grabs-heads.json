@@ -83,6 +83,14 @@
   ],
   "images": [
     {
+      "file": "renders/ENEMY.HEAD.png",
+      "kind": "game",
+      "alt": {
+        "en": "3D render of the head-grabbing enemy model extracted from the game.",
+        "zh": "从游戏提取的抓头怪物3D模型渲染图。"
+      }
+    },
+    {
       "file": "mapped/the-monster-that-grabs-heads-headman.jpg",
       "kind": "game",
       "alt": {

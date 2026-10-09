@@ -472,6 +472,7 @@ export function build(inventoryPath, outDir) {
     }
   };
   for (const root of ['web/assets', 'content/assets']) copyDir(join(process.cwd(), root), '');
+  copyDir(join(process.cwd(), 'content/renders'), 'renders');
   return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length, assets: assetCount, mappedImages: mappedCount.n, entities: entities.length, notes: notes.length };
 }
 
