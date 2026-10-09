@@ -14,6 +14,7 @@ compared against its note, and kept.
 | reviewed | file | asset name | entity | verdict |
 | --- | --- | --- | --- | --- |
 | 2026-09-30 | mapped/the-walkie-talkie-texture.jpg | Walkie_Basecolor RED | the-walkie-talkie-and-how-it-answers | ok — a red greebled colour sheet with a legible layout; matches the set the crew talks through |
+| 2026-10-10 | renders/ENEMY.HEAD.png | ENEMY.HEAD | the-monster-that-grabs-heads | ok with a note — opened the supplied 512x512 render: pale skull-like head, recessed eyes, open jaw and teeth are visible; this is a model render rather than an in-game screenshot. Only the head is shown, not the complete rig. |
 | 2026-09-30 | mapped/how-a-level-is-put-together-level.jpg | level manor 01 | how-a-level-is-put-together | ok, note corrected — a clean greyscale manor drawing on black; the note no longer calls it a theme texture without saying it is a picture |
 | 2026-09-30 | mapped/valuables-and-looting-coin.png | Coin Albedo | valuables-and-looting | ok — a coin icon and bar, legible, matches the coin valuable |
 | 2026-09-30 | mapped/your-avatar-and-where-it-is-shown-avatar.jpg | PlayerAvatar_Albedo | your-avatar-and-where-it-is-shown | ok — a grey avatar atlas with legible seams and features; not blank |

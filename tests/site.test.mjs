@@ -419,7 +419,8 @@ ok('every game image used in an entry has a manifest record and exists in the bu
   const bad = [];
   let checked = 0;
   for (const r of records) {
-    const f = join('content', 'assets', r.file);
+    const candidates = [join('content', 'assets', r.file), join('content', r.file)];
+    const f = candidates.find((candidate) => existsSync(candidate)) ?? candidates[0];
     if (!existsSync(f)) { bad.push(r.file + ' (missing)'); continue; }
     const buf = readFileSync(f);
     const sha = createHash('sha256').update(buf).digest('hex');
@@ -454,7 +455,7 @@ ok('every game image used in an entry has a manifest record and exists in the bu
 {
   const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
   const ledger = readFileSync('reports/image-reviews.md', 'utf8');
-  const judged = new Set([...ledger.matchAll(/\|\s*(mapped\/[^\s|]+)\s*\|/g)].map((m) => m[1].trim()));
+  const judged = new Set([...ledger.matchAll(/\|\s*((?:mapped|renders)\/[^\s|]+)\s*\|/g)].map((m) => m[1].trim()));
   const unjudged = manifest.records.filter((r) => !judged.has(r.file)).map((r) => r.file);
   ok('every mapped picture has a verdict in the review ledger', unjudged.length === 0,
     unjudged.slice(0, 3).join(', '));

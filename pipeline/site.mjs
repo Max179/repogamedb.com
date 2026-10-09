@@ -20,8 +20,8 @@ export const SITE = {
   tagline: 'Monsters, valuables, gear, maps and the run from entry to extraction',
   searchPlaceholder: 'Search monsters, valuables, gear or guides',
   versionBadge: 'R.E.P.O. v0.4.0 · read from a local copy',
-  heroImage: 'mapped/the-truck-and-the-end-of-a-run-healer.jpg',
-  heroAlt: 'The colour texture the game ships for the healer inside the truck.',
+  heroImage: 'renders/ENEMY.HEAD.png',
+  heroAlt: 'Local render of the head-grabbing enemy from verified R.E.P.O. game assets.',
   featured: ['enemies-and-their-behaviour', 'valuables-and-looting', 'weapons-you-can-bring', 'the-truck-and-the-end-of-a-run',
     'the-extraction-point-and-its-machinery', 'the-shop-between-runs', 'guns-and-how-they-fire', 'how-monsters-find-you'],
 };
@@ -155,7 +155,7 @@ export function build(inventoryPath, outDir) {
     '<p class="lead">' + esc(SITE.tagline) + '. Every entry says what the game itself establishes, and nothing here is estimated.</p>\n' +
     '<form class="heroSearch" action="/search.html" method="get" role="search"><input type="search" name="q" placeholder="' + esc(SITE.searchPlaceholder) + '" aria-label="Search this site"><button type="submit">Search</button></form>\n' +
     '<p class="ctas"><a class="btn primary" href="/entries/">Start here</a> <a class="btn" href="/entities/">Browse entities</a> <a class="btn" href="/articles/">Read the guides</a></p>\n' +
-    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="800" height="500"><figcaption class="dim small">Picture taken from the game itself.</figcaption></figure>\n</section>\n' +
+    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="512" height="512"><figcaption class="dim small">Local model render from verified game assets.</figcaption></figure>\n</section>\n' +
     '<section class="block">\n<h2>What this game is</h2>\n<p>' + esc(SITE.gameName) + ' is a co-op horror run: you and up to five others enter a level, find things worth money, carry them back to the extraction point and spend the takings on the shop between runs. "Monsters" here are the things that object to that plan.</p>\n' +
     '<p class="dim small">Documented build: ' + esc(inv.version ?? 'unknown') + '. Where the game changes between builds, the entry says which one it was checked against.</p>\n</section>\n' +
     '<section class="block">\n<h2>Popular entities</h2>\n<p class="dim">A curated starting set, each with a picture taken from the game.</p>\n<div class="grid">' + featuredList.map(card).join('') + '</div>\n<p><a href="/entities/">All entities by part of the run &rarr;</a></p>\n</section>\n' +

@@ -52,13 +52,19 @@ def measure(path):
     return {'mean': mean, 'stddev': stddev, 'median': median, 'uniform': uniform}
 
 
+def resolve_asset(file):
+    """Resolve extracted assets and Blender renders from the same manifest file name."""
+    candidates = [os.path.join('content', 'assets', file), os.path.join('content', file)]
+    return next((path for path in candidates if os.path.exists(path)), candidates[0])
+
+
 def main():
     if not os.path.exists(MANIFEST):
         print('no manifest'); return 1
     records = json.load(open(MANIFEST, encoding='utf-8')).get('records', [])
     rows = []
     for r in records:
-        path = os.path.join('content', 'assets', r['file'])
+        path = resolve_asset(r['file'])
         if not os.path.exists(path):
             rows.append((r, None, 'missing file')); continue
         try:

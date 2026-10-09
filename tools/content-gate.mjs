@@ -16,6 +16,13 @@ const MIN_IMAGE_BYTES = 1024;
 
 const prose = (e) => [e.title, e.summary, ...(e.body ?? [])].join(' ').toLowerCase();
 
+// Game renders are kept beside the source render pipeline, while extracted textures and diagrams live under
+// content/assets. Resolve both roots so the manifest, entry metadata, and published output use one file name.
+const resolveAsset = (root, file) => {
+  const candidates = [join(root, 'content', 'assets', file), join(root, 'content', file)];
+  return candidates.find((candidate) => existsSync(candidate)) ?? candidates[0];
+};
+
 /** @returns {string[]} violations */
 export function checkEntry(entry, dir, ids) {
   const bad = [];
@@ -32,7 +39,7 @@ export function checkEntry(entry, dir, ids) {
   if (!(entry.images ?? []).length) bad.push('published entry without an image');
   for (const img of entry.images ?? []) {
     if (!img.file) { bad.push('image without file'); continue; }
-    const onDisk = join(dir, img.file);
+    const onDisk = resolveAsset(dir.replace(/[/\\]content[/\\]assets$/, ''), img.file);
     if (!existsSync(onDisk)) { bad.push('image not on disk: ' + img.file); continue; }
     const size = statSync(onDisk).size;
     if (size < MIN_IMAGE_BYTES) bad.push('image smaller than 1 KB: ' + img.file);
@@ -87,7 +94,7 @@ export function checkMappedImages(entry, dir, manifest) {
     if (img.kind !== 'game') continue;
     const rec = (manifest.records ?? []).find((r) => r.file === img.file);
     if (!rec) { bad.push('game image without a manifest record: ' + img.file); continue; }
-    const p = join(dir, img.file);
+    const p = resolveAsset(dir.replace(/[/\\]content[/\\]assets$/, ''), img.file);
     if (!existsSync(p)) { bad.push('mapped image not on disk: ' + img.file); continue; }
     const buf = readFileSync(p);
     const h = createHash('sha256').update(buf).digest('hex');

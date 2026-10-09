@@ -2138,40 +2138,16 @@
       "sha256": "f9d0c7382da5d659de39e0361c6cd102709d3c8a02370526c3d9a20882ae40fc"
     },
     {
-      "entity": "ENEMY.BOMB_THROWER",
-      "kind": "game",
-      "file": "renders/ENEMY.BOMB_THROWER.png",
-      "sourceBundle": "Blender 3.2.2 render from Unity prefab",
-      "assetName": "ENEMY.BOMB_THROWER",
-      "note": "3D model exported from game and rendered at 1024x1024",
-      "width": 1024,
-      "height": 1024,
-      "bytes": 306200,
-      "sha256": "137528e65fb97c304f92f7e82a8d4b3c9ac85ab49a8f853e7701fbe5eb939a5c"
-    },
-    {
       "entity": "ENEMY.HEAD",
       "kind": "game",
       "file": "renders/ENEMY.HEAD.png",
       "sourceBundle": "Blender 3.2.2 render from Unity prefab",
       "assetName": "ENEMY.HEAD",
-      "note": "3D model exported from game and rendered at 1024x1024",
-      "width": 1024,
-      "height": 1024,
+      "note": "3D model exported from game; supplied render is 512x512",
+      "width": 512,
+      "height": 512,
       "bytes": 339235,
       "sha256": "6cc5e04b28ca78cf9434575c9a8ee26748d30ecd1886f2cd500c37efcdc436f2"
-    },
-    {
-      "entity": "ENEMY.OOGLY",
-      "kind": "game",
-      "file": "renders/ENEMY.OOGLY.png",
-      "sourceBundle": "Blender 3.2.2 render from Unity prefab",
-      "assetName": "ENEMY.OOGLY",
-      "note": "3D model exported from game and rendered at 1024x1024",
-      "width": 1024,
-      "height": 1024,
-      "bytes": 338308,
-      "sha256": "83c8c575b9ebc7a2fe1e63ffdae5581bba92a4e07501482250d940beaac44f59"
     }
   ]
 }
