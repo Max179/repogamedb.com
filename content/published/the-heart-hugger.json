@@ -74,12 +74,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-heart-hugger-texture.jpg",
-      "kind": "game",
+      "file": "fandom/heart-hugger.jpg",
+      "kind": "diagram",
       "alt": {
-        "en": "The colour texture the game ships for the heart hugger monster.",
-        "zh": "游戏为该怪物提供的颜色贴图。"
-      }
+        "en": "Community reference diagram from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图。"
+      },
+      "disclaimer": "Community diagram from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-heart-hugger.svg",

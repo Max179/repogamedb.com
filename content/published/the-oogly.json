@@ -79,11 +79,11 @@
   ],
   "images": [
     {
-      "file": "mapped/the-oogly-texture.jpg",
+      "file": "renders/ENEMY.OOGLY.png",
       "kind": "game",
       "alt": {
-        "en": "The colour texture the game ships for the oogly monster.",
-        "zh": "游戏为 oogly 怪物提供的颜色贴图。"
+        "en": "3D render from verified game assets.",
+        "zh": "从游戏资产导出的 3D 渲染。"
       }
     },
     {

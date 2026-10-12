@@ -84,11 +84,11 @@
   ],
   "images": [
     {
-      "file": "mapped/the-bomb-thrower-skin.jpg",
+      "file": "renders/ENEMY.BOMB_THROWER.png",
       "kind": "game",
       "alt": {
-        "en": "The game's own colour texture for the bomb thrower's body in its ordinary state.",
-        "zh": "游戏自带的炸弹投掷者本体颜色贴图（常态）。"
+        "en": "3D render from verified game assets.",
+        "zh": "从游戏资产导出的 3D 渲染。"
       }
     },
     {

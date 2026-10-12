@@ -91,11 +91,11 @@
       }
     },
     {
-      "file": "mapped/the-monster-that-grabs-heads-headman.jpg",
+      "file": "renders/ENEMY.HEAD.png",
       "kind": "game",
       "alt": {
-        "en": "The colour texture the game ships for this monster: a pale head with yellow eyes, green flesh and its other parts on the same sheet.",
-        "zh": "游戏为该怪物提供的颜色贴图：苍白头部与黄眼、绿色组织及其其余部件画在同一张图上。"
+        "en": "3D render from verified game assets.",
+        "zh": "从游戏资产导出的 3D 渲染。"
       }
     },
     {

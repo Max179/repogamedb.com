@@ -71,12 +71,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-slow-mouth-texture.jpg",
-      "kind": "game",
+      "file": "fandom/spewer.jpg",
+      "kind": "diagram",
       "alt": {
-        "en": "The mouth texture the game puts on a player when the slow mouth attaches.",
-        "zh": "当该怪物附身玩家时，游戏贴在玩家脸上的嘴部贴图。"
-      }
+        "en": "Community reference diagram from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图。"
+      },
+      "disclaimer": "Community diagram from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-slow-mouth.svg",

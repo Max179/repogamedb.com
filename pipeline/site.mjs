@@ -196,7 +196,7 @@ export function build(inventoryPath, outDir) {
     '<h1>Entities</h1><p class="lead">Browse by what you are dealing with in a run. Each entry says what the game itself establishes, and carries a picture taken from the game.</p>\n' +
     '<div class="grid">' + CATEGORIES.map((c) => {
       const list = entities.filter((e) => groupOf(e.category).key === c.key);
-      const cover = list.map(imgOf).find(Boolean);
+      const cover = list.map(imgOf).filter(img => img && !img.file.includes('texture'))[0] || list.map(imgOf).find(Boolean);
       if (!list.length) return '';
       return '<a class="card" href="/entities/' + c.key + '.html">' +
         (cover ? '<img loading="lazy" src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="480" height="300">' : '') +
@@ -208,7 +208,7 @@ export function build(inventoryPath, outDir) {
     const list = entities.filter((e) => groupOf(e.category).key === c.key);
     const onlyNotes = notes.filter((e) => groupOf(e.category).key === c.key);
     if (!list.length && !onlyNotes.length) continue;
-    const cover = list.map(imgOf).find(Boolean);
+    const cover = list.map(imgOf).filter(img => img && !img.file.includes('texture'))[0] || list.map(imgOf).find(Boolean);
     indexable('entities/' + c.key + '.html', c.name + ' in ' + SITE.gameName, c.blurb + ' ' + list.map((e) => e.title).join(', ') + '.',
       '<h1>' + esc(c.name) + '</h1><p class="lead">' + esc(c.blurb) + '</p>\n' +
       (cover ? '<figure class="banner"><img src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="900" height="380"><figcaption class="dim small">Picture taken from the game itself.</figcaption></figure>' : '') +
