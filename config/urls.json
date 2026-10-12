@@ -3645,7 +3645,17 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-banger.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-bar-that-shows-a-charge.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/notes/the-birthday-boy.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
@@ -3715,6 +3725,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-peeper.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-player-list-and-what-a-row-shows.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3735,12 +3750,22 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/the-rugrat.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-sounds-a-vehicle-makes.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
       "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/notes/the-tumbler.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

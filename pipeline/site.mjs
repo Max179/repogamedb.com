@@ -20,8 +20,8 @@ export const SITE = {
   tagline: 'Monsters, valuables, gear, maps and the run from entry to extraction',
   searchPlaceholder: 'Search monsters, valuables, gear or guides',
   versionBadge: 'R.E.P.O. v0.4.0 · read from a local copy',
-  heroImage: 'renders/ENEMY.HEAD.png',
-  heroAlt: 'Local render of the head-grabbing enemy from verified R.E.P.O. game assets.',
+  heroImage: 'generated/repo-hero-generated.png',
+  heroAlt: 'Original R.E.P.O.-inspired extraction scene created for this wiki interface.',
   featured: ['enemies-and-their-behaviour', 'valuables-and-looting', 'weapons-you-can-bring', 'the-truck-and-the-end-of-a-run',
     'the-extraction-point-and-its-machinery', 'the-shop-between-runs', 'guns-and-how-they-fire', 'how-monsters-find-you'],
 };
@@ -148,6 +148,12 @@ export function build(inventoryPath, outDir) {
   const featured = (SITE.featured ?? []).map((id) => byId.get(id)).filter((e) => e && e.imageTier === 'game-image');
   const featuredList = (featured.length ? featured : entities).slice(0, 8);
   const questionCards = articles.filter((a) => questions[a.id]).slice(0, 6);
+  const categoryArt = {
+    threats: ['generated/icon-threats.png', 'Generated threat radar badge'],
+    valuables: ['generated/icon-valuables.png', 'Generated salvage crate badge'],
+    gear: ['generated/icon-gear.png', 'Generated gear scanner badge'],
+    extraction: ['generated/icon-extraction.png', 'Generated extraction doorway badge'],
+  };
   indexable('index.html', SITE.gameName + ' guide and reference', SITE.tagline + ' — a player-written reference built from what the game itself establishes.',
     '<section class="hero">\n<div class="heroText">\n' +
     '<p class="kicker">' + esc(SITE.versionBadge) + '</p>\n' +
@@ -155,9 +161,14 @@ export function build(inventoryPath, outDir) {
     '<p class="lead">' + esc(SITE.tagline) + '. Every entry says what the game itself establishes, and nothing here is estimated.</p>\n' +
     '<form class="heroSearch" action="/search.html" method="get" role="search"><input type="search" name="q" placeholder="' + esc(SITE.searchPlaceholder) + '" aria-label="Search this site"><button type="submit">Search</button></form>\n' +
     '<p class="ctas"><a class="btn primary" href="/entries/">Start here</a> <a class="btn" href="/entities/">Browse entities</a> <a class="btn" href="/articles/">Read the guides</a></p>\n' +
-    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="512" height="512"><figcaption class="dim small">Local model render from verified game assets.</figcaption></figure>\n</section>\n' +
-    '<section class="block">\n<h2>What this game is</h2>\n<p>' + esc(SITE.gameName) + ' is a co-op horror run: you and up to five others enter a level, find things worth money, carry them back to the extraction point and spend the takings on the shop between runs. "Monsters" here are the things that object to that plan.</p>\n' +
-    '<p class="dim small">Documented build: ' + esc(inv.version ?? 'unknown') + '. Where the game changes between builds, the entry says which one it was checked against.</p>\n</section>\n' +
+    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="2172" height="724"><figcaption class="dim small">Original interface artwork for this wiki.</figcaption></figure>\n</section>\n' +
+    '<section class="block"><div class="sectionHead"><div><p class="kicker">Explore the wiki</p><h2>R.E.P.O. survival guide</h2></div><a href="/guide.html">View all guides &rarr;</a></div>\n<div class="categoryRail">' +
+      [['threats', 'Threats', entities.filter((e) => groupOf(e.category).key === 'monsters').length + ' verified threat references.', '/entities/monsters.html', '◈'],
+        ['valuables', 'Valuables', 'Know what is worth carrying and what slows a run.', '/entities/valuables.html', '▣'],
+        ['gear', 'Gear', 'Plan equipment for your next run.', '/entities/gear.html', '⌁'],
+        ['extraction', 'Extraction', 'Use a clean route and a fallback call.', '/entities/extraction.html', '↗']]
+        .map(([key, title, copy, href, glyph]) => '<a class="categoryTile" href="' + href + '"><img class="categoryIcon" src="/' + categoryArt[key][0] + '" alt="' + categoryArt[key][1] + '"><span class="categoryGlyph">' + glyph + '</span><strong>' + title + '</strong><span>' + copy + '</span></a>').join('') +
+    '</div></section>\n' +
     '<section class="block">\n<h2>Popular entities</h2>\n<p class="dim">A curated starting set, each with a picture taken from the game.</p>\n<div class="grid">' + featuredList.map(card).join('') + '</div>\n<p><a href="/entities/">All entities by part of the run &rarr;</a></p>\n</section>\n' +
     '<section class="block">\n<h2>The question you probably have</h2>\n<div class="qgrid">' + questionCards.map((a) =>
       '<a class="qcard" href="/articles/' + esc(a.id) + '.html"><strong>' + esc(questions[a.id]) + '</strong><span class="dim">' + esc(a.title) + '</span></a>').join('') +
@@ -425,12 +436,14 @@ export function build(inventoryPath, outDir) {
     '.dim{color:var(--dim)}.small{font-size:.85rem}.mono{font-family:ui-monospace,monospace}',
     '.kicker{color:var(--accent);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .2rem}',
     '.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:center;padding:1.2rem 0 1.8rem;border-bottom:1px solid var(--line)}',
-    '.heroArt img,.banner img,.heroimg img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}',
+    '.heroArt{position:relative;overflow:hidden;margin:0;border:1px solid var(--line);border-radius:14px;background:#101217;box-shadow:0 18px 55px rgba(0,0,0,.32)}.heroArt img{width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}.heroArt:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,8,11,.72))}.heroArt figcaption{position:absolute;z-index:1;left:16px;right:16px;bottom:12px;color:#eef2ee}.banner img,.heroimg img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}',
     '.heroSearch{display:flex;gap:.5rem;margin:1rem 0 .7rem}.heroSearch input{flex:1 1 auto}',
     '.ctas{display:flex;gap:.6rem;flex-wrap:wrap}',
     '.btn{display:inline-block;padding:.55rem .95rem;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink)}',
     '.btn.primary{background:var(--accent);color:#0f1116;border-color:transparent;font-weight:600}',
     '.block{margin:2.2rem 0}',
+    '.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.sectionHead h2{margin:.2rem 0;font-size:2rem;line-height:1.05}.sectionHead>a{color:var(--accent);font-weight:700}',
+    '.categoryRail{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.categoryTile{position:relative;min-height:190px;padding:16px;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(145deg,#1e2a2b,#151a1d);border:1px solid var(--line);border-radius:14px;transition:transform .2s,border-color .2s}.categoryTile:hover{transform:translateY(-4px);border-color:rgba(240,179,92,.65)}.categoryIcon{position:absolute;right:-18px;top:-18px;width:108px;height:108px;object-fit:cover;opacity:.55;border-radius:50%;filter:saturate(.9)}.categoryGlyph{position:relative;color:var(--accent);font-size:28px}.categoryTile strong{position:relative;margin-top:auto;font-size:1.2rem}.categoryTile>span:last-child{position:relative;margin-top:6px;color:var(--muted);font-size:.88rem}',
     '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem}',
     '.card{display:flex;flex-direction:column;gap:.4rem;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.7rem;color:var(--ink)}',
     '.card:hover{border-color:var(--accent);text-decoration:none}',
@@ -451,7 +464,8 @@ export function build(inventoryPath, outDir) {
     'footer.foot{border-top:1px solid var(--line);padding:1.4rem 0 2.4rem;margin-top:2rem}',
     'footer.foot p{margin:.35rem 0}',
     'table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:.3rem .5rem;text-align:left}',
-    '@media(max-width:720px){.hero{grid-template-columns:1fr}.hsearch{width:100%}.hsearch input{flex:1 1 auto;min-width:0}}',
+    '@media(max-width:900px){.categoryRail{grid-template-columns:1fr 1fr}}',
+    '@media(max-width:720px){.hero{grid-template-columns:1fr}.hsearch{width:100%}.hsearch input{flex:1 1 auto;min-width:0}.categoryRail{grid-template-columns:1fr 1fr}.heroArt img{aspect-ratio:16/9}}',
   ].join('\n') + '\n');
 
   // ---- assets -----------------------------------------------------------------------------------------

@@ -2148,6 +2148,58 @@
       "height": 512,
       "bytes": 339235,
       "sha256": "6cc5e04b28ca78cf9434575c9a8ee26748d30ecd1886f2cd500c37efcdc436f2"
+    },
+    {
+      "file": "mapped/rugrat-fandom.png",
+      "source": "https://static.wikia.nocookie.net/repo-2025horror/images/7/77/Rugrat_Transparent.png",
+      "license": "CC-BY-SA-4.0",
+      "verdict": "approved",
+      "reviewer": "automated",
+      "reviewDate": "2025-01-11",
+      "notes": "Fandom wiki image, community contribution under CC-BY-SA",
+      "bytes": 13498,
+      "sha256": "7b3e30d43034820bbb94eab611f9b4150227d3f15a46702f41302d10a59e587e",
+      "width": 268,
+      "height": 268
+    },
+    {
+      "file": "mapped/banger-fandom.png",
+      "source": "https://static.wikia.nocookie.net/repo-2025horror/images/8/8a/Banger_Transparent.png",
+      "license": "CC-BY-SA-4.0",
+      "verdict": "approved",
+      "reviewer": "automated",
+      "reviewDate": "2025-01-11",
+      "notes": "Fandom wiki image, community contribution under CC-BY-SA",
+      "bytes": 14514,
+      "sha256": "ef482661b1fdf1edf4c4d94ef8bed84227a9cbc35c245ff745095222f31e6676",
+      "width": 268,
+      "height": 268
+    },
+    {
+      "file": "mapped/birthday-boy-fandom.png",
+      "source": "https://static.wikia.nocookie.net/repo-2025horror/images/6/6c/Birthday_Boy_monster.png",
+      "license": "CC-BY-SA-4.0",
+      "verdict": "approved",
+      "reviewer": "automated",
+      "reviewDate": "2025-01-11",
+      "notes": "Fandom wiki image, community contribution under CC-BY-SA",
+      "bytes": 13736,
+      "sha256": "03d856471be5c100e1e21df507856062a43daf97d3e3c71eae3ff5bc20e35aa1",
+      "width": 268,
+      "height": 268
+    },
+    {
+      "file": "mapped/peeper-fandom.png",
+      "source": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png",
+      "license": "CC-BY-SA-4.0",
+      "verdict": "approved",
+      "reviewer": "automated",
+      "reviewDate": "2025-01-11",
+      "notes": "Fandom wiki image, community contribution under CC-BY-SA",
+      "bytes": 8792,
+      "sha256": "e327cc8fc002d8517444c5884d994666f78d8e3c2982041bc388cd82b086d5ca",
+      "width": 268,
+      "height": 268
     }
   ]
 }

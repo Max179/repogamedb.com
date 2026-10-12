@@ -263,3 +263,10 @@ The run is written to `reports/image-sanity.md` on every build; a flag is a requ
 | 2026-10-01 | mapped/the-exhibitions-the-museum-advertises-mittens.png | Museum Banner 03 | the-museum-and-its-props | ok — a tall exhibition banner headed Gregory Mittens, a figure in a sheet skirt under the repeated word Bravery, opened at 128x512 before the mapping was kept. |
 | 2026-10-01 | mapped/the-exhibitions-the-museum-advertises-good-dogs.png | Museum Banner 07 | the-museum-and-its-props | ok — a tall exhibition banner headed Good Dogs Taped on Bad Walls, a photograph of a dog taped to a wall with a date, opened at 128x512 before the mapping was kept. |
 | 2026-10-01 | mapped/the-exhibitions-the-museum-advertises-silverdance.png | Museum Banner 11 | the-museum-and-its-props | ok — a tall exhibition banner headed Silverdance, a face behind pink type with sponsor and date lines, opened at 128x512 before the mapping was kept. |
+
+## 2025-01-11: Fandom community diagrams
+
+| mapped/rugrat-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
+| mapped/banger-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
+| mapped/birthday-boy-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
+| mapped/peeper-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
