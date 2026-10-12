@@ -1,0 +1,1877 @@
+[
+  {
+    "id": "oogly",
+    "className": "EnemyOogly",
+    "displayName": "Oogly",
+    "p0Fields": 77,
+    "fields": [
+      {
+        "name": "visionTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "visualTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "teleportTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "visionSpotlight",
+        "type": "Light"
+      },
+      {
+        "name": "visionPointLight",
+        "type": "Light"
+      },
+      {
+        "name": "pointLightMaxIntensity",
+        "type": "float"
+      },
+      {
+        "name": "animationCurveSpotlightIntro",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "animationCurveSpotlightOutro",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "spotlightIntroDuration",
+        "type": "float"
+      },
+      {
+        "name": "spotlightOutroDuration",
+        "type": "float"
+      },
+      {
+        "name": "spotlightMaxIntensity",
+        "type": "float"
+      },
+      {
+        "name": "animationCurveTeleportOut",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "animationCurveTeleportIn",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "rb",
+        "type": "Rigidbody"
+      },
+      {
+        "name": "followTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "followTargetStartPosition",
+        "type": "Vector3"
+      },
+      {
+        "name": "enemyRigidbody",
+        "type": "EnemyRigidbody"
+      },
+      {
+        "name": "moveForce",
+        "type": "float"
+      },
+      {
+        "name": "turnSmoothness",
+        "type": "float"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/4/43/Oogly_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222007",
+    "fandomDescription": "The Oogly is a Level 2 Monster in R.E.P.O. and was added in V0.3.0 (the Monster update). It acts as an eye in the sky, that can block off certain rooms with the risk of being spotted by the hyper-violent searchlight.",
+    "fandomSections": [
+      "The Oogly is a Level 2 Monster in R.E.P.O. and was added in V0.3.0 (the Monster update). It acts as an eye in the sky, that can block off certain rooms with the risk of being spotted by the hyper-violent searchlight.",
+      "The Oogly is a small, monochromatic green ghost. Its torso appears to be drapped in a tattered rag (though this cloth may be part of its body, similar to the Robe), and instead of legs, the Oogly has a subtle light lime tail that resembles fire. The Oogly's hands are large, and skeletal, with long bony fingers that could pass for talons. The head appears loosely in the shape of a skull, with stringy bits of dark hair, and a mouth filled with jagged, dull fangs. The Oogly is very faintly transparent. The Oogly flies above the ground at all times (unless stunned, for obvious reasons), staying along the ceiling, and always facing downwards towards the floor, unless it has a target in its sights. It also appears to emanate green electricity.",
+      "The Oogly's most noticeable feature, and namesake, are its unblinking, unmoving, undead eyes. They are gigantic, bursting wide out of the sockets, and taking up the most of Oogly's face. The pupils are two tiny vertical dash lines. These eyes glow a bright lime the majority of the time, and produce a bright a green, bright spotlight. This is it's cone of vision, which means Oogly only can see what is actively inside the light. When spotting a target, the Oogly will scream, as its eyes pulsate and turn red. Oogly's eyes are uncannily more like actual searchlights than genuine eyes. They never move or even blink, only bulging when screaming. The pupils sit completely motionless in the center of its face. The eyes can faintly be heard, and actually sound like lightbulbs. But most of all, not only does its light actually show its vision, but it seems to actually BE its vision, as the Oogly seems to be blind in the very few moments its light isn't on.",
+      "The Oogly roams around aimlessly along the ceiling, and can't actually move outside of one room. It will stay, and will only leave the room when attacking a target, or changing spots. In the latter case, the Oogly will teleport by disappearing into a small portal, before reappearing in another room within close proximity a few seconds later. Whenever it spawns in, or enters a new room, Oogly will always start off with its lights/eyes off. In this state, the Oogly can't see semibots, and thus is completely passive for a few seconds, before it quickly flips its lights on. If it's attacked with its lights off, the Oogly immediately teleports out of the room, and relocates itself.",
+      "When its lights are on, the Oogly emits a constant large spotlight underneath it, which is highly visible to semibots. This is its cone of vision, and the Oogly is deaf, meaning standing in that light is the only way for the Oogly to see a target, which is thankfully pretty obvious, and not very difficult to avoid. However, the Oogly is EXTREMELY AGGRESSIVE, and will attack the moment it sees anything. If a semibot intersects its spotlight or attacks it while it's searching, the Oogly will scream and charge at the semibot, picking them up to begin its attack. It will hold onto the semibot for several seconds, flying around in rapid, erratic patterns, dealing 4 damage per tick until its attack is complete, which usually results in around 30 to 40 damage total. When the Oogly is finished attacking or when its target dies, it will drop them, making them take additional fall damage if they’re high enough above the ground. Oogly will teleport away after its attack and go back to roaming."
+    ]
+  },
+  {
+    "id": "heart-hugger",
+    "className": "EnemyHeartHugger",
+    "displayName": "Heart Hugger",
+    "p0Fields": 69,
+    "fields": [
+      {
+        "name": "followTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "headLook",
+        "type": "Transform"
+      },
+      {
+        "name": "springLimbs",
+        "type": "generic"
+      },
+      {
+        "name": "vineTransforms",
+        "type": "generic"
+      },
+      {
+        "name": "meshTransforms",
+        "type": "generic"
+      },
+      {
+        "name": "cuteMeshTransforms",
+        "type": "generic"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "growAnimationCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "popAwayMeshesCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "popBackMeshesCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "biteCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "biteScaleBounceCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "idleBreakerCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "popAwaySound",
+        "type": "Sound"
+      },
+      {
+        "name": "soundIdleLoop",
+        "type": "Sound"
+      },
+      {
+        "name": "soundStunLoop",
+        "type": "Sound"
+      },
+      {
+        "name": "soundGrow",
+        "type": "Sound"
+      },
+      {
+        "name": "soundDegrow",
+        "type": "Sound"
+      },
+      {
+        "name": "soundChompThrust",
+        "type": "Sound"
+      },
+      {
+        "name": "soundChompBite",
+        "type": "Sound"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/4/45/Heart_Hugger_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222041",
+    "fandomDescription": "The Heart Hugger is a Level 2 Monster in R.E.P.O. and was added in V0.3.0 (The Monster Update). It is a creature that pretends to be friendly, but it really isn't.",
+    "fandomSections": [
+      "The Heart Hugger is a Level 2 Monster in R.E.P.O. and was added in V0.3.0 (The Monster Update). It is a creature that pretends to be friendly, but it really isn't.",
+      "The Heart Hugger resembles a Venus flytrap with its cilia opened in the shape of a heart. On the inside are two uncanny smiley faces with its true \"mouth\" in the center; on each side of its \"face\" is a stubby arm.",
+      "When a semibot is under its hallucinogenic effects, the Heart Hugger will completely change its appearance to them, instead resembling an innocent floating heart with two cheery faces and flailing arms. They will also constantly say “hi” to the player in a joyful voice.",
+      "The Heart Hugger moves around aimlessly via burrowing underground and sprouting back up in another area (in other words, teleporting). If it spots a semibot, it will start spraying a pink mist at them. Should a semibot touch this mist, it will cause them to become tranced and hallucinate. They will gain pink Tumble Wings and start flying towards the Heart Hugger; at this point, the affected semibot(s) will be unable to move or look away from it without either attacking it with a weapon or needing assistance from another semibot. During the hallucination, the Heart Hugger will change its appearance for the affected semibot(s) to make itself look more friendly.",
+      "If a hallucinated semibot gets close enough, the Heart Hugger will shed its friendly hallucination form, revealing its true form with a scare, and begin chomping at them, dealing 30 damage per chomp, the Heart hugger will continue to pull the semibot(s) during this. After chomping for a few seconds, the Heart Hugger will let go of the hallucinated semibot(s), dealing an additional 10 physics damage if they hit a surface afterwards. The Heart Hugger will then burrow back down and eventually pop up somewhere else, thus repeating the process.",
+      "The Heart Hugger was added into the game.",
+      "Bug fix: 2 or more Heart Huggers are now unable to stunlock the player forever."
+    ]
+  },
+  {
+    "id": "elsa",
+    "className": "EnemyElsa",
+    "displayName": "Elsa",
+    "p0Fields": 45,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "anim",
+        "type": "EnemyElsaAnim"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "headMesh",
+        "type": "MeshRenderer"
+      },
+      {
+        "name": "angryCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "hurtCollider",
+        "type": "GameObject"
+      },
+      {
+        "name": "visualsTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "duckBucketCollider",
+        "type": "DuckBucketCollider"
+      },
+      {
+        "name": "headWiggleTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "deathParticlesSmall",
+        "type": "ParticleSystem[]"
+      },
+      {
+        "name": "deathParticlesBig",
+        "type": "ParticleSystem[]"
+      },
+      {
+        "name": "headSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "headTransformTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "tailFlyingPivotSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "tailFlyingPivotTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "tailFlyingPivotTransformTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "tail01Spring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "tail01Transform",
+        "type": "Transform"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "shadow-child",
+    "className": "EnemyShadow",
+    "displayName": "Shadow Child",
+    "p0Fields": 45,
+    "fields": [
+      {
+        "name": "anim",
+        "type": "EnemyShadowAnim"
+      },
+      {
+        "name": "springPoseAnimator",
+        "type": "BotSystemSpringPoseAnimator"
+      },
+      {
+        "name": "torsoBend",
+        "type": "Transform"
+      },
+      {
+        "name": "headBend",
+        "type": "Transform"
+      },
+      {
+        "name": "rightArmBend",
+        "type": "Transform"
+      },
+      {
+        "name": "leftArmBend",
+        "type": "Transform"
+      },
+      {
+        "name": "leftEyePivot",
+        "type": "Transform"
+      },
+      {
+        "name": "rightEyePivot",
+        "type": "Transform"
+      },
+      {
+        "name": "rightWristPivot",
+        "type": "Transform"
+      },
+      {
+        "name": "leftWristPivot",
+        "type": "Transform"
+      },
+      {
+        "name": "leftArmPoint",
+        "type": "Transform"
+      },
+      {
+        "name": "rightArmPoint",
+        "type": "Transform"
+      },
+      {
+        "name": "neckBend",
+        "type": "Transform"
+      },
+      {
+        "name": "leftHandDownPos",
+        "type": "Transform"
+      },
+      {
+        "name": "rightHandDownPos",
+        "type": "Transform"
+      },
+      {
+        "name": "visionTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "headTurnSpeed",
+        "type": "float"
+      },
+      {
+        "name": "eyeTurnSpeed",
+        "type": "float"
+      },
+      {
+        "name": "slapAnimationCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "leftHandAnimator",
+        "type": "Animator"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/4/4e/Shadow_Child_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054715",
+    "fandomDescription": "The Shadow Child is a Level 1 Monster in R.E.P.O. and acts as a shy creature that really hates being stared at.",
+    "fandomSections": [
+      "The Shadow Child is a Level 1 Monster in R.E.P.O. and acts as a shy creature that really hates being stared at.",
+      "The Shadow Child is a lanky creature which is entirely black with the exception of its face and its back-arms. When not looked at, it has a tall, thin torso to which a set of 2 long arms and legs are connected. The arms and legs are both thin, lacking hands and feet respectively, instead just coming together into sharp points. It has a white, child-like looking face, with black eyes, a small nose and a slightly agape, \"o\"-forming mouth.",
+      "When looked at, 6 arms start growing out of its back, 3 per side. Said arms have hands and a small gradient from black to white near the middle where the joint is.",
+      "Shortly before ‘yoinking’ a semibot, it opens it’s mouth wide, while simultaneously turning the inside of the mouth and eyes green.",
+      "The Shadow Child will periodically teleport around the map aimlessly. It will giggle every time it teleports. If it spots a semibot, it initially does nothing.",
+      "If the semibot isn't staring at the Shadow Child, it will do nothing to them. If the semibot is staring at the Shadow Child, the Shadow Child will get gradually more menacing and giggle- something that becomes more apparent the more it is stared at. This is visually shown via the hands on its back appearing and then slowly growing. If then looked away after, the hands will slowly shrink back down and then disappear.",
+      "If the Shadow Child is stared at for too long and its hands grow to full size, it will  shriek, force the offending semibot's vision towards its face, and then attack them. It will do this by grabbing the semibot and yanking them towards itself baring its teeth with a playful \"Yoink!\" vocalization, inflicting 50 damage with this attack. The Shadow Child will disappear before the semibot is able to hit it causing them to be flung.",
+      "When the Shadow Child is stunned, it will instantly despawn after recovering by teleporting away.",
+      "The Shadow Child takes 10 damage from physics, rather than the usual 25."
+    ]
+  },
+  {
+    "id": "rugrat",
+    "className": "EnemyTricycle",
+    "displayName": "Rugrat",
+    "p0Fields": 44,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "stateTimerMax",
+        "type": "float"
+      },
+      {
+        "name": "visuals",
+        "type": "EnemyTricycleVisuals"
+      },
+      {
+        "name": "teleportTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "bikeRiderTransforms",
+        "type": "generic"
+      },
+      {
+        "name": "audioBell",
+        "type": "Sound"
+      },
+      {
+        "name": "audioBellGlobal",
+        "type": "Sound"
+      },
+      {
+        "name": "audioFinalBellBuildup",
+        "type": "Sound"
+      },
+      {
+        "name": "audioIdle",
+        "type": "Sound"
+      },
+      {
+        "name": "audioMove",
+        "type": "Sound"
+      },
+      {
+        "name": "audioAttack",
+        "type": "Sound"
+      },
+      {
+        "name": "audioAttackLoop",
+        "type": "Sound"
+      },
+      {
+        "name": "audioAttackOutro",
+        "type": "Sound"
+      },
+      {
+        "name": "audioDeath",
+        "type": "Sound"
+      },
+      {
+        "name": "audioDeathBikeCrash",
+        "type": "Sound"
+      },
+      {
+        "name": "audioWheelRattle",
+        "type": "Sound"
+      },
+      {
+        "name": "audioWheelSqueak",
+        "type": "Sound"
+      },
+      {
+        "name": "audioTeleportOut",
+        "type": "Sound"
+      },
+      {
+        "name": "audioTeleportIn",
+        "type": "Sound"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/7/77/Rugrat_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054715",
+    "fandomDescription": "The Rugrat is a Level 2 Monster in R.E.P.O., it attacks by throwing valuables at the player. It can serve to be quite a challenge when trying to keep valuables intact or when combined with other monsters.",
+    "fandomSections": [
+      "The Rugrat is a Level 2 Monster in R.E.P.O., it attacks by throwing valuables at the player. It can serve to be quite a challenge when trying to keep valuables intact or when combined with other monsters.",
+      "The Rugrat appears to be an infant wearing a diaper. it has light skin, bulbous eyes with yellow irises, a small, wide nose, and a large, gaping mouth with thick lips and a single tooth on the right side of its mouth. Its body is relatively featureless except for its tummy which does appear to have fat rolls of some kind. Additionally, the Rugrat has no distinct fingers or toes.",
+      "While holding an item, it will squint, which implies that it is focusing on the throw. While it appears to be human, the Rugrat is simply too strong physically to realistically be normal. This supported as on death, \"green juices\" spills out among the death particles. This implies it's possibly mutated, or something else entirely, and it might even share a connection with the Tick, who also \"bleeds\" the same green slime.",
+      "The Rugrat aimlessly roams around until it sees a semibot. When it does, it will try to grab the nearest valuable, after which it will target chase down the semibot it spotted, attempting to throw what it's holding at them. It cannot throw the item within ~3 seconds of picking it up, if it is too close (in which case it will back up until it can throw it), or if it does not have line of sight with the semibot. It is difficult to hide from a Rugrat whilst it is holding the valuable. If it fails to pick one up, it will try again or run away. After throwing/failing a throw the Rugrat will be unable to aggro on a semibot for ~15 seconds. If a thrown item is too big, the Rugrat will also damage itself or fail to even throw the item enough to damage the targeted semibot.",
+      "Damage dealt to semibots depends on the weight of the item. Damage values are as stated below.",
+      "Damage dealt to monsters is the same as if it were done by the semibots."
+    ]
+  },
+  {
+    "id": "spewer",
+    "className": "EnemySlowMouth",
+    "displayName": "Spewer",
+    "p0Fields": 27,
+    "fields": [
+      {
+        "name": "enemySlowMouthAttack",
+        "type": "GameObject"
+      },
+      {
+        "name": "localCameraMouthPrefab",
+        "type": "GameObject"
+      },
+      {
+        "name": "enemySlowMouthOnPlayerTop",
+        "type": "GameObject"
+      },
+      {
+        "name": "enemySlowMouthOnPlayerBot",
+        "type": "GameObject"
+      },
+      {
+        "name": "particles",
+        "type": "Transform"
+      },
+      {
+        "name": "tentacles",
+        "type": "Transform"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "semiPuke",
+        "type": "SemiPuke"
+      },
+      {
+        "name": "mouthTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "enemyCollider",
+        "type": "Collider"
+      },
+      {
+        "name": "enemyVisuals",
+        "type": "Transform"
+      },
+      {
+        "name": "enemyRigidbody",
+        "type": "EnemyRigidbody"
+      },
+      {
+        "name": "physGrabObject",
+        "type": "PhysGrabObject"
+      },
+      {
+        "name": "followTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "followTargetStartPosition",
+        "type": "Vector3"
+      },
+      {
+        "name": "centerTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "audioSourceVO",
+        "type": "AudioSource"
+      },
+      {
+        "name": "enemySlowMouthAnim",
+        "type": "EnemySlowMouthAnim"
+      },
+      {
+        "name": "soundSpawnVO",
+        "type": "Sound"
+      },
+      {
+        "name": "soundIdleBreakerVO",
+        "type": "Sound"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/9/99/Spewer_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612100158",
+    "fandomDescription": "The Spewer is a Level 1 Monster in R.E.P.O. It is a floating, squid-like monster that attacks semibots by spewing acid and occasionally \"infesting\" them.",
+    "fandomSections": [
+      "The Spewer is a Level 1 Monster in R.E.P.O. It is a floating, squid-like monster that attacks semibots by spewing acid and occasionally \"infesting\" them.",
+      "The Spewer is a small, light-brown grey creature with 5 short tentacle-like limbs protruding from the back of its body. Its main body/head is almost like a set of dentures with a seam that clearly separates the top and bottom jaws. The Spewer's large overbite gives way to its reddish upper gums and sharp white teeth, both of which are constantly exposed. Two bony protrusions from the upper jaw can be seen connected to the mandible when the Spewer's mouth opens. It has a crooked cone-shaped nose as well as two eyes with black sclera and bright red, angular pupils.",
+      "The Spewer's signature feature is its lime-green, foamy vomit that it can project out of its mouth in massive quantities. When it latches onto a semibot's face its body spreads out across the player's face, with its jaws expanded inside the robot's mouth and the Spewer's eyes just above the lip, giving the impression that the semibot has teeth and nostrils. This seems to imply that the jaws are the only solid part of a Spewer's body.",
+      "The Spewer chaotically floats around the map until it spots a semibot. When it does, the Spewer becomes aggressive and will start chasing the semibot.",
+      "If the Spewer gets close enough to the target, It will then lunge at them, attaching itself to their face, this will temporarily stun the semibot for a brief moment, and the Spewer will remain on their face for anywhere for 40 seconds. While the Spewer is attached onto the semibots face, that semibots voice becomes much deeper, and they will occasionally vomit, dealing 10 damage every hit to both semibots and monsters. It is completely random for when and how long it vomits.",
+      "Eventually, the Spewer will release itself from the semibots face, briefly stunning the semibot, and the Spewer will immediately attempt to flee as quickly and directly as possible. After unlatching from the semibot, the Spewer will be on a cooldown, meaning it cannot latch onto any semibots face until the cooldown ends.",
+      "If the Spewer is unable to latch onto the target's face for long enough, or if it gets close enough to the player while on its cooldown, it will instead attack by vomiting, this deals 10 damage per hit to semibots and other Monsters. This attack also has some decent range, and pushes the Spewer backwards while vomiting. Even if it isn't aggressive, it may vomit without warning."
+    ]
+  },
+  {
+    "id": "banger",
+    "className": "EnemyBang",
+    "displayName": "Banger",
+    "p0Fields": 24,
+    "fields": [
+      {
+        "name": "anim",
+        "type": "EnemyBangAnim"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "horizontalRotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headLookAtSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headLookAtTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "headLookAtSource",
+        "type": "Transform"
+      },
+      {
+        "name": "deathEffects",
+        "type": "ParticleSystem[]"
+      },
+      {
+        "name": "headObjects",
+        "type": "GameObject[]"
+      },
+      {
+        "name": "particleParent",
+        "type": "Transform"
+      },
+      {
+        "name": "moveOffsetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "rotationTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "talkSource",
+        "type": "AudioSource"
+      },
+      {
+        "name": "stunLoopSource",
+        "type": "AudioSource"
+      },
+      {
+        "name": "talkSoundsTest",
+        "type": "Sound[]"
+      },
+      {
+        "name": "talkTopSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "talkTopSource",
+        "type": "Transform"
+      },
+      {
+        "name": "talkTopTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "talkBottomSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "talkBottomSource",
+        "type": "Transform"
+      },
+      {
+        "name": "talkBottomTarget",
+        "type": "Transform"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/8/8a/Banger_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612053934",
+    "fandomDescription": "The Banger is a Level 2 Monster in R.E.P.O. and acts as a living bomb, running up to semibots and exploding.",
+    "fandomSections": [
+      "Explosion (Death)",
+      "The Banger is a Level 2 Monster in R.E.P.O. and acts as a living bomb, running up to semibots and exploding.",
+      "Bangers resemble a human skull which is connected to a pair of two tiny, skeletal legs and feet. It has two red dots in it’s eye sockets resembling an iris.",
+      "There are multiple variations of Bangers. In one variation, they have a hole on the top-right of their skull out of which 3 sticks of dynamite emerge. In another version, it instead has a single stick of dynamite inside either their right eye socket or both. In it’s third variation, the entire top section of its skull above the eyes is a hole, in which a big, round & black bomb rests.",
+      "The Banger’s spawn in groups of three (six if replacing a level 3 Monster on levels 1-3) and they will roam around aimlessly, but usually together.",
+      "If a Banger is alerted by a semibot, its fuse ignites, and it charges at the nearest semibot before blowing up after 14-15 seconds.",
+      "Once the Banger's fuse is ignited, it is irreversible and an explosion is guaranteed.",
+      "If a semibot is caught anywhere in the blast, they will be launched away, but if too close into the blast, they also take 30 damage.",
+      "When a Banger dies while its fuse is ignited, it will do a death explosion, which is smaller and weaker than its normal explosion. If its fuse wasnt ignited, the Banger will die normally with no explosion.",
+      "In the Bangers death explosion, it will launch away  semibots caught in the blast, and also deals 15 damage to them if they were too close into the blast."
+    ]
+  },
+  {
+    "id": "huntsman",
+    "className": "EnemyHunter",
+    "displayName": "Huntsman",
+    "p0Fields": 24,
+    "fields": [
+      {
+        "name": "debugSpawn",
+        "type": "bool"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "enemyHunterAnim",
+        "type": "EnemyHunterAnim"
+      },
+      {
+        "name": "enemyHunterAlwaysActive",
+        "type": "EnemyHunterAlwaysActive"
+      },
+      {
+        "name": "investigateRayTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "verticalAimTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "gunAimTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "gunTipTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "hurtCollider",
+        "type": "HurtCollider"
+      },
+      {
+        "name": "lineRenderer",
+        "type": "LineRenderer"
+      },
+      {
+        "name": "lineRendererWidthCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "horizontalAimSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "verticalAimSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "shootEffectTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "shootEffects",
+        "type": "generic"
+      },
+      {
+        "name": "hitEffectTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "hitEffects",
+        "type": "generic"
+      },
+      {
+        "name": "deathEffects",
+        "type": "generic"
+      },
+      {
+        "name": "soundHurt",
+        "type": "Sound"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/4/4c/Huntsman_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054521",
+    "fandomDescription": "Shoots at anything it hears or touches",
+    "fandomSections": [
+      "Shoots at anything it hears or touches",
+      "The Huntsman is a Level 3 Monster in R.E.P.O. and acts as a blind hunter, who relies on sound and touch to then shoot the source.",
+      "The Huntsman resembles a blind hunter with a rifle.",
+      "For clothing, the Huntsman wears an outfit, the upper area consists of a cap, green jacket, white shirt, and red tie. For the lower area, it wears brown pants and gray boots.",
+      "The Huntsman roams around aimlessly, using its rifle to navigate its surroundings. The huntsman will occasionally make a humming noise, signaling that it is nearby. With a hearing distance 5x farther than normal monsters, the Huntsman will fire upon anything nearby that makes noise in its range. This includes valuables, semibots, and even certain Monsters.",
+      "A single shot deals 100 damage to and stuns the semibot.",
+      "Like other monsters, the Huntsman doesn't linger long, however because of its heightened sense of hearing, the Huntsman is prone to changing its course and heading to nearby rooms if there is audible noise activity. It will attempt to reach the location of the noise, if the Huntsman does arrive to said noise, it will stop for a few seconds to listen, then start roaming again. If the Huntsman is grabbed by a semibot, or physically touches it or an item theyre currently holding, it will immediately fire at them. It is unable to touch semibots that are hiding under furniture, or at high locations, but will still fire if any noise is heard in those areas.",
+      "If the Huntsman walks down a surface (most commonly staircases), it will fall and become stunned for a short moment, also usually taking some physics damage.",
+      "Voice chat or text chat make applicable noise in the game. Loud talking with the Huntsman nearby can cause him to investigate, and even fire at the speaking semibot.",
+      "The Huntsman initially starts in the Roaming phase, where it moves around randomly within the level; upon hearing a noise, a \"spherecast\" is performed, where a series of spheres is projected from the Huntsman to the source of the sound in a straight line, with the size of the sphere decreasing the further away the source is; this cannot go through walls."
+    ]
+  },
+  {
+    "id": "birthday-boy",
+    "className": "EnemyBirthdayBoy",
+    "displayName": "Birthday Boy",
+    "p0Fields": 23,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "anim",
+        "type": "BirthdayBoyAnim"
+      },
+      {
+        "name": "enemyParent",
+        "type": "EnemyParent"
+      },
+      {
+        "name": "mr",
+        "type": "MeshRenderer"
+      },
+      {
+        "name": "maxBalloons",
+        "type": "int"
+      },
+      {
+        "name": "balloonPrefab",
+        "type": "GameObject"
+      },
+      {
+        "name": "balloonSpawnPoints",
+        "type": "generic"
+      },
+      {
+        "name": "balloonCollisionChecker",
+        "type": "Transform"
+      },
+      {
+        "name": "standUpCollisionChecker",
+        "type": "Transform"
+      },
+      {
+        "name": "doorCollisionChecker",
+        "type": "Transform"
+      },
+      {
+        "name": "BBcollider",
+        "type": "CapsuleCollider"
+      },
+      {
+        "name": "colliderSmall",
+        "type": "CapsuleCollider"
+      },
+      {
+        "name": "visualMesh",
+        "type": "Transform"
+      },
+      {
+        "name": "headPivot",
+        "type": "Transform"
+      },
+      {
+        "name": "leftEyePivot",
+        "type": "Transform"
+      },
+      {
+        "name": "rightEyePivot",
+        "type": "Transform"
+      },
+      {
+        "name": "bottom",
+        "type": "Transform"
+      },
+      {
+        "name": "animatingBalloon",
+        "type": "Transform"
+      },
+      {
+        "name": "horizontalRotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "balloonPopEffect",
+        "type": "GameObject"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/6/6c/Birthday_Boy_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222356",
+    "fandomDescription": "Line of sight, Proximity",
+    "fandomSections": [
+      "Line of sight, Proximity",
+      "Attacks semibots when said balloons are popped.",
+      "The Birthday Boy is a Level 1 Monster in R.E.P.O. and was added in V0.3.0 (The Monster update), It acts as an area-denial (Balloon) creator, who becomes enraged when any of its balloons are popped.",
+      "The Birthday Boy appears as a small, ill child looking creature with messy hair and sunken red eyes, wearing a red uniform and tie with a colored party hat. Its mouth is constantly gaped open with missing teeth and constant drool dribbling out of it.",
+      "The Birthday boy also carries a bunch of colored balloons, deflated and hidden away in its pocket until it takes one out and blows it up.",
+      "Birthday Boys are the only monster which has variants based on if there are others of the same monster in the current level. These variants differ in the color of their birthday hat and balloons. There are 8 colors total:",
+      "The Birthday Boy will wander around the level aimlessly, occasionally stopping to inflate and place 1-4 balloons at once, inflating up to ~31 balloons in total per Birthday Boy.",
+      "The Birthday Boy is docile, meaning it will ignore the semibots unless provoked in one singular way (mentioned below). Occasionaly, it will stare at semibots when standing still.",
+      "If something, or someone, pops any of the Birthday Boy's balloons, it will instantly know when and where the balloon was popped, no matter how far the Birthday boy is from the balloon, it will then run all the way to where that balloon was popped.",
+      "If the Birthday boy sees any semibot near the area of the popped balloon, it will get very angry and start attacking, when enraged, the Birthday Boy will then begin swinging its arms and deal 10 damage every hit (Similar to Reaper)."
+    ]
+  },
+  {
+    "id": "spinny",
+    "className": "EnemySpinny",
+    "displayName": "Spinny",
+    "p0Fields": 23,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "SliceBorders",
+        "type": "float[]"
+      },
+      {
+        "name": "SliceColours",
+        "type": "Colors[]"
+      },
+      {
+        "name": "colors",
+        "type": "Color[]"
+      },
+      {
+        "name": "spinnyWheel",
+        "type": "Transform"
+      },
+      {
+        "name": "pieces",
+        "type": "Transform[]"
+      },
+      {
+        "name": "playerLockPoint",
+        "type": "Transform"
+      },
+      {
+        "name": "semiLine1",
+        "type": "SemiLine"
+      },
+      {
+        "name": "semiLine2",
+        "type": "SemiLine"
+      },
+      {
+        "name": "moneyBag",
+        "type": "GameObject"
+      },
+      {
+        "name": "surplusValuableSmall",
+        "type": "GameObject"
+      },
+      {
+        "name": "moneyBagSpawnPoint",
+        "type": "Transform"
+      },
+      {
+        "name": "enemySpinnyAnim",
+        "type": "EnemySpinnyAnim"
+      },
+      {
+        "name": "collisionCheck",
+        "type": "Transform"
+      },
+      {
+        "name": "moneyCollisionCheck",
+        "type": "Transform"
+      },
+      {
+        "name": "spinDurationSeconds",
+        "type": "float"
+      },
+      {
+        "name": "lineOfSightChecker",
+        "type": "Transform"
+      },
+      {
+        "name": "_torqueMultiplier",
+        "type": "float"
+      },
+      {
+        "name": "_followForceMultiplier",
+        "type": "float"
+      },
+      {
+        "name": "playerTarget",
+        "type": "PlayerAvatar"
+      }
+    ],
+    "hasFandomData": false,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "peeper",
+    "className": "EnemyBeamer",
+    "displayName": "Peeper",
+    "p0Fields": 18,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "anim",
+        "type": "EnemyBeamerAnim"
+      },
+      {
+        "name": "aimVerticalTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "hatTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "bottomTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "laser",
+        "type": "SemiLaser"
+      },
+      {
+        "name": "laserStartTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "laserRayTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "horizontalRotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "aimHorizontalCurve",
+        "type": "AnimationCurve"
+      },
+      {
+        "name": "aimHorizontalSpread",
+        "type": "float"
+      },
+      {
+        "name": "aimHorizontalSpeed",
+        "type": "float"
+      },
+      {
+        "name": "particleDeathSmoke",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBody",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathNose",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathHat",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleBottomSmoke",
+        "type": "ParticleSystem"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054522",
+    "fandomDescription": "The Peeper is a Level 1 Monster in R.E.P.O. It acts as an eyeball that forces Semibots to look at it.",
+    "fandomSections": [
+      "The Peeper is a Level 1 Monster in R.E.P.O. It acts as an eyeball that forces Semibots to look at it.",
+      "The Peeper resembles a giant eye with a bright orange iris that is always attached to the ceiling of rooms.",
+      "The Peeper will spawn in a random location on the map in a closed state and will not move at all, waiting…",
+      "When the Peeper senses that a semibot is in its line of sight for a short period of time, it will open up its eye and force them and other semibots to look at it.",
+      "After about 3 seconds of continuously staring at a semibot, it will start dealing 2 damage per second until its line of sight is broken with them.",
+      "When the Peepers line of sight is lost for a few seconds, it will despawn, but when a semibot goes back into its line of sight, the Peeper will retarget on them again.",
+      "The Peeper has 10 audio files, all for its staring and… blinking. They are consolidated in the table below:"
+    ]
+  },
+  {
+    "id": "tumbler",
+    "className": "EnemyTumbler",
+    "displayName": "Tumbler",
+    "p0Fields": 18,
+    "fields": [
+      {
+        "name": "debugSpawn",
+        "type": "bool"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "enemyTumblerAnim",
+        "type": "EnemyTumblerAnim"
+      },
+      {
+        "name": "hurtCollider",
+        "type": "HurtCollider"
+      },
+      {
+        "name": "particleDeathImpact",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBitsFar",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBitsShort",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathSmoke",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathHat",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "headSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "headTargetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "headTargetCodeTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "hatSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "hatTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "hatTargetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "mainMeshSpring",
+        "type": "SpringQuaternion"
+      }
+    ],
+    "hasFandomData": false,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "upscream",
+    "className": "EnemyUpscream",
+    "displayName": "Upscream",
+    "p0Fields": 18,
+    "fields": [
+      {
+        "name": "upscreamAnim",
+        "type": "EnemyUpscreamAnim"
+      },
+      {
+        "name": "deathEffects",
+        "type": "ParticleSystem[]"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "previousState",
+        "type": "State"
+      },
+      {
+        "name": "visionTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "headSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "headIdleTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeLeftSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "eyeLeftTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeLeftIdle",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeLeftTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeRightSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "eyeRightTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeRightIdle",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeRightTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "idleBreakTimeMin",
+        "type": "float"
+      },
+      {
+        "name": "idleBreakTimeMax",
+        "type": "float"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/2/25/Upscream_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612100128",
+    "fandomDescription": "The Upscream is a Level 2 Monster in R.E.P.O. and acts as a spider that will screech right into the semibot's faces.",
+    "fandomSections": [
+      "The Upscream is a Level 2 Monster in R.E.P.O. and acts as a spider that will screech right into the semibot's faces.",
+      "(To Be Expanded)",
+      "Upscream is small monster that crawls on hands and feet. It has a bald humanoid head. Its eyes exhibit strabismus, aimed in opposing directions until focused on a player. It also has a sharp nose and an oddly tight smirk. It has no torso, its arms and legs extending directly from the back of its head. Each hand has 5 sets of fingers, though its feet lack visible toes.",
+      "When Idle, Upscream occasionally stretches it’s limbs, causing cracking noises.",
+      "The Upscream will wander around aimlessly, occasionally cracking its limbs. Once it spots a semibot, the Upscream will give chase until it loses them or gives up after a long time. When the upscream gets close enough, as the name suggests, it will scream at the semibot, flinging them upwards and backwards and stunning them for 2 seconds. If the attacked semibot hits a surface after this, it will deal 10 damage to them.",
+      "When screeched at, the targeted semibot has their view locked onto the Upscream until it stops targeting them.",
+      "The Upscream can attack the semibot even if they hide in or under stuff like tables and bushes.",
+      "After screaming a maximum of three times, the Upscream will run away and ignore semibots for some time until it stops or gets interrupted, then it will stop and go back to normal.",
+      "The Upscream has 16 audio files, all for its, movement, voice, and well... screaming of course, they will be consolidated in a table below soon."
+    ]
+  },
+  {
+    "id": "bowtie",
+    "className": "EnemyBowtie",
+    "displayName": "Bowtie",
+    "p0Fields": 16,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "anim",
+        "type": "EnemyBowtieAnim"
+      },
+      {
+        "name": "hurtColliderLeave",
+        "type": "Transform"
+      },
+      {
+        "name": "headSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "HeadTargetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeRightSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "eyeRightTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeRightTargetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeLeftSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "eyeLeftTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "eyeLeftTargetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "horizontalRotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "verticalRotationTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "verticalRotationSpring",
+        "type": "SpringQuaternion"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/b/b5/Bowtie_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612053934",
+    "fandomDescription": "The Bowtie is a Level 2 Monster in R.E.P.O. and It attacks by creating very strong winds that blow things away.",
+    "fandomSections": [
+      "The Bowtie is a Level 2 Monster in R.E.P.O. and It attacks by creating very strong winds that blow things away.",
+      "The Bowtie is a Large, White, Puffy, Armless creature which resembles a cloud. The Bowtie's head is tall and flops to its right side. Its eyes are red, and it has a mouth with crooked, yellow teeth. It has a big, circular body and wears a big red bowtie (The inspiration for its name). The Bowtie has no arms, but it does does have two large, trunk-like legs that make a unique stomping sound.",
+      "The Bowtie will change its appearance majorly in its attack animation, it will morph into a shorter and wider version of itself. Its face will move to its torso, Its mouth also becomes huge and covers most of said torso, with its teeth being much larger and visible. Its eyes are much more spaced apart, and the bowtie that it wears will move further down and start spinning.",
+      "A painting in the Museum (which is also official concept art) depicts it having more of a square-shaped body, two tiny arms with three fingers, eyes that are closer together, and two pairs of toes with larger feet, its bowtie is also seemingly missing.",
+      "It will roam around aimlessly, but once the Bowtie Spots a semibot, it will instantly turn to face them, and then start its attack after a very short delay. During its attack, it will Morph into a giant fan, blowing wind at the targeted semibot For about 5 seconds. This concentrated current of air will push away and damage mostly everything: semibots, valuables, monsters, all that stuff.",
+      "It will especially be dangerous to the semibots, as they can be pushed back at an insanely fast speed, and will take damage everytime they hit a surface, the Bowtie will also slowly turn to the target if they move out of its attack. It can also blow away and damage any valuables in its blast, especially smaller valuables.",
+      "After the Bowtie's attack finishes, it will either go back to roaming, or it will leave. When the bowtie is leaving, it will start running, making it go much faster. The bowtie will deal 5 damage to any semibot in its way while running. Once it reaches to the area it wanted to go to, the bowtie will stop running and return to roaming."
+    ]
+  },
+  {
+    "id": "gnome",
+    "className": "EnemyGnome",
+    "displayName": "Gnome",
+    "p0Fields": 16,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "enemyGnomeAnim",
+        "type": "EnemyGnomeAnim"
+      },
+      {
+        "name": "rotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "avoidCollider",
+        "type": "BoxCollider"
+      },
+      {
+        "name": "speedMin",
+        "type": "float"
+      },
+      {
+        "name": "speedMax",
+        "type": "float"
+      },
+      {
+        "name": "backAwayOffset",
+        "type": "Transform"
+      },
+      {
+        "name": "moveOffsetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "rotationTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "deathEffects",
+        "type": "ParticleSystem[]"
+      },
+      {
+        "name": "soundHurt",
+        "type": "Sound"
+      },
+      {
+        "name": "soundDeath",
+        "type": "Sound"
+      },
+      {
+        "name": "soundImpactLight",
+        "type": "Sound"
+      },
+      {
+        "name": "soundImpactMedium",
+        "type": "Sound"
+      },
+      {
+        "name": "soundImpactHeavy",
+        "type": "Sound"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "animal",
+    "className": "EnemyDuck",
+    "displayName": "Animal",
+    "p0Fields": 14,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "duckBucketCollider",
+        "type": "DuckBucketCollider"
+      },
+      {
+        "name": "followOffsetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "bodySpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "bodyTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "bodyTargetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "anim",
+        "type": "EnemyDuckAnim"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "featherParticles",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "rotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headLookAtSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headLookAtTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "headLookAtSource",
+        "type": "Transform"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2b/Animal_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612095937",
+    "fandomDescription": "The Animal is a Level 2 Monster in R.E.P.O. that acts as a crazy creature that will run around all over the place trying to destroy everything.",
+    "fandomSections": [
+      "The Animal is a Level 2 Monster in R.E.P.O. that acts as a crazy creature that will run around all over the place trying to destroy everything.",
+      "The Animal resembles a flesh-toned, 6 legged creature with a deformed screaming face. Each leg ends with a human-like foot, implying that this monster may be a deformed human.",
+      "The Animal will roam around aimlessly. Once it spots a semibot, it will try to run up to them, after reaching the player, it will then start its attack -which is where it will \"wreak havoc\". Basically, it just runs around the room randomly.",
+      "In this state, its legs will become its main weapon, kicking anything that's in its way (including valuables and semibots). Every hit from the Animal will deal 2 damage to a semibot and stun them temporarily.",
+      "Where the Animal \"wreaks havoc\" depends on where the targeted semibot currently is. The animal won't leave the room if the targeted semibot is in the same room. If the targeted semibot then leaves the room, the animal will follow them into the other room. After ~20 seconds, the animal will calm down and flee into another farther room. After reaching it, the Animal will return to normal.",
+      "The Animal initially starts in its roaming phase, where he moves around randomly within the level; if it hears a noise, it will enter the Investigate phase. The investigating phase starts the animal's pathfinding to the source of the noise and pausing briefly before returning to its Roaming phase.",
+      "The Animal can spot crouched/hidden players faster than most other enemies. It can spot crouched players in 1.25 seconds instead of 2.5, and hiding players in 2 seconds instead of 5. Upon spotting a player, after a brief reaction animation (where it raises its middle legs and makes a startled noise), it will enter the Chase phase. The chase phase is where it continuously attempts to path find to the player for 10 seconds. If it gets within 3 units of the target player during the Chase phase, it will enter the Wreak Havoc state. If not, it will enter the Leave state when the Chase state ends.",
+      "In its Wreak Havoc phase, the Animal will move around randomly in the target player's room while kicking its legs around, knocking back and damaging any valuables it hits, as well as players (dealing 2 damage). This phase lasts for 20 seconds, after which it also enters the Leave state.",
+      "In its Leave state, it will choose a random location faraway from all players, and path find to that point, ignoring all noise or vision while moving to that point. Once it reaches that point, it re-enters its Roaming state."
+    ]
+  },
+  {
+    "id": "runner",
+    "className": "EnemyRunner",
+    "displayName": "Runner",
+    "p0Fields": 13,
+    "fields": [
+      {
+        "name": "headSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "headSpringTarget",
+        "type": "Transform"
+      },
+      {
+        "name": "headSpringSource",
+        "type": "Transform"
+      },
+      {
+        "name": "rotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "animator",
+        "type": "EnemyRunnerAnim"
+      },
+      {
+        "name": "hayParticlesBig",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "hayParticlesSmall",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "bitsParticlesFar",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "bitsParticlesShort",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "hurtCollider",
+        "type": "HurtCollider"
+      },
+      {
+        "name": "feetTransform",
+        "type": "Transform"
+      }
+    ],
+    "hasFandomData": false,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "headman",
+    "className": "EnemyThinMan",
+    "displayName": "Headman",
+    "p0Fields": 13,
+    "fields": [
+      {
+        "name": "anim",
+        "type": "EnemyThinManAnim"
+      },
+      {
+        "name": "tentacleR1",
+        "type": "GameObject"
+      },
+      {
+        "name": "tentacleR2",
+        "type": "GameObject"
+      },
+      {
+        "name": "tentacleR3",
+        "type": "GameObject"
+      },
+      {
+        "name": "tentacleL1",
+        "type": "GameObject"
+      },
+      {
+        "name": "tentacleL2",
+        "type": "GameObject"
+      },
+      {
+        "name": "tentacleL3",
+        "type": "GameObject"
+      },
+      {
+        "name": "extendedTentacles",
+        "type": "GameObject"
+      },
+      {
+        "name": "head",
+        "type": "GameObject"
+      },
+      {
+        "name": "tentacleLerp",
+        "type": "float"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "rb",
+        "type": "Rigidbody"
+      },
+      {
+        "name": "otherEnemies",
+        "type": "generic"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/2/20/Headman_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054405",
+    "fandomDescription": "Can fly to normally unreachable areas",
+    "fandomSections": [
+      "Can fly to normally unreachable areas",
+      "The Headman is a Level 3 Monster in R.E.P.O.. It will relentlessly chase any semibot it detects and is able to fly to reach semibots at higher altitudes.",
+      "The Headman is a giant, disembodied floating head with luminous yellow eyes. It appears to be a senior due to its greying hair, white eyebrows, wrinkled face, and noticeable balding. It appears to have a ponytail on the back of its head and sunken eye sockets.",
+      "The Headman floats around aimlessly, occasionally clacking its teeth. When it spots a Semibot (indicated with a piano stinger, visual glitch effect, and the Headman screaming), it will give chase, flying much faster than normal with its mouth ghoulishly agape. When attacking, the Headman will push its entire mouth out and attempt to bite the targeted Semibot, dealing 50 damage and applying slight knockback.",
+      "The Headman will not stop chasing the targeted Semibot until they either die, or the Headman loses track of them; in the former case, the Headman will become docile and start aimlessly wandering again. In the latter case, the Headman will stay in its angered state for a period of time (screaming and flying faster than usual), checking neighboring rooms in attempt to find another Semibot. If this proves fruitless, the Headman will then calm down and continue patrolling. If it does happen to find another Semibot, they will become the Headman's new target with no warning of the Headman chasing them (aside from its screaming fading in).",
+      "If the Headman spots/pursues a Semibot under a hiding spot, it will turn on the side of its head and try to bite its target. If it still cannot reach its target, it will stop searching that hiding spot until the targeted Semibot grabs the Headman or makes noise to alert it (note: it shares this behavior with the Robe, Reaper, and Clown). Even in areas where the targeted Semibot has a vertical advantage over the Headman, the Headman can simply fly upwards to reach its target.",
+      "If the Headman's path is blocked by an object for too long, it may bite the object in attempt to destroy or move it. This bite can deal damage to Valuables."
+    ]
+  },
+  {
+    "id": "floater",
+    "className": "EnemyFloater",
+    "displayName": "Floater",
+    "p0Fields": 12,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "animator",
+        "type": "EnemyFloaterAnim"
+      },
+      {
+        "name": "particleDeathImpact",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBitsFar",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBitsShort",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathSmoke",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "rotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "feetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "followParentTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "followParentCurve",
+        "type": "AnimationCurve"
+      }
+    ],
+    "hasFandomData": false,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "trudge",
+    "className": "EnemySlowWalker",
+    "displayName": "Trudge",
+    "p0Fields": 12,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "animator",
+        "type": "EnemySlowWalkerAnim"
+      },
+      {
+        "name": "particleDeathImpact",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBitsFar",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathBitsShort",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "particleDeathSmoke",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "horizontalRotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "feetTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "lookAtTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "attackOffsetTransform",
+        "type": "Transform"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": "https://static.wikia.nocookie.net/repo-2025horror/images/6/65/Trudge_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054905",
+    "fandomDescription": "The Trudge is a Level 3 Monster in R.E.P.O. that acts as a tank, soaking up health and dealing high amounts of damage.",
+    "fandomSections": [
+      "Vacuum Explosion:",
+      "Crouch Bite:",
+      "The Trudge is a Level 3 Monster in R.E.P.O. that acts as a tank, soaking up health and dealing high amounts of damage.",
+      "The Trudge is a large, fleshy, corpse-like creature which wears black metallic armor on its shoulders, chest, waist, and lower legs. Its skin is red and fleshy, with bits of bone protruding on its left knee, left forearm, right wrist and head.",
+      "The creature's head is a skull stained with blood. The right socket of the skull has a fleshy tendril poking out, with an orange eyeball at the end of it. The skull itself stems from its long, thin, floppy neck. Its body is broad with another eyeball (but black with an orange pupil) and ribs protruding from its abdomen.",
+      "Its left arm is severed at the elbow where we see bits of bone emerge. However, its right arm is long with the flesh fused into its mace, resembling a Morningstar. It's thighs are muscular and thick, but its lower legs are obscured by its armour boots.",
+      "Its onyx-coloured armor consists of multiple pieces: bulbous shoulder plates, smaller bicep and triceps plates, smooth upper chest plates, segmented tassets with a codplate and culet, and large metal boots with curved tips on the feet.",
+      "When it walks, only one foot lifts to step. He will also drag his mace around, creating sparks before it.",
+      "The Trudge is presumably the corpse (or corpses) of a creature, most likely human.",
+      "Concept art of the Trudge shows some additional bone parts on its neck."
+    ]
+  },
+  {
+    "id": "tick",
+    "className": "EnemyTick",
+    "displayName": "Tick",
+    "p0Fields": 11,
+    "fields": [
+      {
+        "name": "enemy",
+        "type": "Enemy"
+      },
+      {
+        "name": "anim",
+        "type": "EnemyTickAnim"
+      },
+      {
+        "name": "healAura",
+        "type": "GameObject"
+      },
+      {
+        "name": "currentState",
+        "type": "State"
+      },
+      {
+        "name": "stateTimer",
+        "type": "float"
+      },
+      {
+        "name": "rotationSpring",
+        "type": "SpringQuaternion"
+      },
+      {
+        "name": "grabForceZero",
+        "type": "GrabForce"
+      },
+      {
+        "name": "grabForceUngrabbable",
+        "type": "GrabForce"
+      },
+      {
+        "name": "forceGrabPoint",
+        "type": "GameObject"
+      },
+      {
+        "name": "flatCollider",
+        "type": "GameObject"
+      },
+      {
+        "name": "bloatCollider",
+        "type": "SphereCollider"
+      }
+    ],
+    "hasFandomData": true,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  },
+  {
+    "id": "hiddenold",
+    "className": "EnemyHiddenOld",
+    "displayName": "HiddenOld",
+    "p0Fields": 10,
+    "fields": [
+      {
+        "name": "material",
+        "type": "MaterialTrigger"
+      },
+      {
+        "name": "grounded",
+        "type": "Transform"
+      },
+      {
+        "name": "footstepParticlesTransform",
+        "type": "Transform"
+      },
+      {
+        "name": "footstepParticleSmoke",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "footstepParticleFoot",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "breathParticles",
+        "type": "ParticleSystem"
+      },
+      {
+        "name": "soundBreatheIn",
+        "type": "Sound"
+      },
+      {
+        "name": "soundBreatheOut",
+        "type": "Sound"
+      },
+      {
+        "name": "soundFootstepWalk",
+        "type": "Sound"
+      },
+      {
+        "name": "soundFootstepSprint",
+        "type": "Sound"
+      }
+    ],
+    "hasFandomData": false,
+    "fandomImage": null,
+    "fandomDescription": null,
+    "fandomSections": []
+  }
+]

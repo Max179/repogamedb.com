@@ -3645,6 +3645,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/reference/notes/reaper.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
       "url": "/reference/notes/the-banger.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3761,11 +3766,6 @@
     },
     {
       "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-tumbler.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

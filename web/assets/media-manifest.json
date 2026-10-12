@@ -1,0 +1,30 @@
+{
+  "assets": [
+    {
+      "file": "hero-repo.jpg",
+      "source": "https://cdn.akamai.steamstatic.com/steam/apps/3241660/library_hero.jpg",
+      "type": "official promotional artwork, not gameplay screenshot",
+      "downloadedAt": "2026-10-05",
+      "rightsReview": "Official Steam marketing asset. Ownership remains with the game rightsholder; reuse permission is not established. Local preview only pending publication review."
+    },
+    {
+      "file": "hero-repo-schematic.svg",
+      "source": "Original editorial illustration",
+      "type": "schematic, not a game map or gameplay screenshot",
+      "createdAt": "2026-10-05"
+    },
+    {
+      "file": "crate.png, level.jpg",
+      "source": "Windows verified asset export: C:\\Users\\CHEN\\Desktop\\repo\\content\\assets\\mapped",
+      "type": "game texture exports mapped to published entries",
+      "rightsReview": "Extracted from the user-owned local game build for the companion site; do not redistribute the original package."
+    },
+    {
+      "file": "generated/repo-hero-generated.png, generated/icon-threats.png, generated/icon-valuables.png, generated/icon-gear.png, generated/icon-extraction.png",
+      "source": "OpenAI built-in image generation",
+      "type": "original UI artwork for banner and category navigation",
+      "createdAt": "2026-10-05",
+      "rightsReview": "Generated original artwork; no game logos, screenshots or competitor assets used."
+    }
+  ]
+}
