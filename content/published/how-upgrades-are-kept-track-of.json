@@ -35,12 +35,13 @@
   ],
   "images": [
     {
-      "file": "mapped/how-upgrades-are-kept-track-of-upgradestand.jpg",
-      "kind": "game",
+      "file": "fandom/upgrades.jpg",
+      "kind": "community",
       "alt": {
-        "en": "The base colour texture taken from the game of the upgrade stand the entry describes.",
-        "zh": "取自游戏的升级台基础色贴图。"
-      }
+        "en": "Community reference picture of Upgrades from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Upgrades。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "how-upgrades-are-kept-track-of.svg",
@@ -55,5 +56,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

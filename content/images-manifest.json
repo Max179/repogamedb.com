@@ -2200,6 +2200,30 @@
       "sha256": "e327cc8fc002d8517444c5884d994666f78d8e3c2982041bc388cd82b086d5ca",
       "width": 268,
       "height": 268
+    },
+    {
+      "entity": "ENEMY.BOMB_THROWER",
+      "kind": "game",
+      "file": "renders/ENEMY.BOMB_THROWER.png",
+      "sourceBundle": "Blender 3.2.2 render from Unity prefab",
+      "assetName": "ENEMY.BOMB_THROWER",
+      "note": "Blender render of the model file named BOMB_THROWER; the image shows the green ghost used for the Oogly entry (512x512)",
+      "width": 512,
+      "height": 512,
+      "bytes": 306200,
+      "sha256": "137528e65fb97c304f92f7e82a8d4b3c9ac85ab49a8f853e7701fbe5eb939a5c"
+    },
+    {
+      "entity": "ENEMY.OOGLY",
+      "kind": "game",
+      "file": "renders/ENEMY.OOGLY.png",
+      "sourceBundle": "Blender 3.2.2 render from Unity prefab",
+      "assetName": "ENEMY.OOGLY",
+      "note": "Blender render of the model file named OOGLY; the image shows the duck-headed brute used for the Bomb Thrower entry (512x512)",
+      "width": 512,
+      "height": 512,
+      "bytes": 338308,
+      "sha256": "83c8c575b9ebc7a2fe1e63ffdae5581bba92a4e07501482250d940beaac44f59"
     }
   ]
 }

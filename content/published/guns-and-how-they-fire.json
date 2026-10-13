@@ -69,12 +69,13 @@
   ],
   "images": [
     {
-      "file": "mapped/guns-and-how-they-fire-lasergun.jpg",
-      "kind": "game",
+      "file": "fandom/pulse-pistol.png",
+      "kind": "community",
       "alt": {
-        "en": "The base colour texture taken from the game of the laser gun it ships.",
-        "zh": "取自游戏的激光枪基础色贴图。"
-      }
+        "en": "Community reference picture of Pulse Pistol from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Pulse Pistol。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "guns-and-how-they-fire.svg",
@@ -89,5 +90,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

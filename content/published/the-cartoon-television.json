@@ -58,28 +58,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-cartoon-television-set.jpg",
-      "kind": "game",
+      "file": "fandom/television.png",
+      "kind": "community",
       "alt": {
-        "en": "The game's own texture for the flat screen television the cartoon plays on, a dark set of panels and bezels.",
-        "zh": "游戏给播放卡通的平板电视准备的颜色贴图：深色的面板与边框。"
-      }
-    },
-    {
-      "file": "mapped/the-cartoon-television-cat.png",
-      "kind": "game",
-      "alt": {
-        "en": "The frames the game animates the cartoon cat from.",
-        "zh": "游戏用于播放卡通猫的逐帧图。"
-      }
-    },
-    {
-      "file": "mapped/the-cartoon-television-mouse.png",
-      "kind": "game",
-      "alt": {
-        "en": "The frames the game animates the cartoon mouse from.",
-        "zh": "游戏用于播放卡通鼠的逐帧图。"
-      }
+        "en": "Community reference picture of Television from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Television。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-cartoon-television.svg",
@@ -94,5 +79,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

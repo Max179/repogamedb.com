@@ -185,10 +185,10 @@ try {
   const published = readdirSync('content/published').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'published', x), 'utf8')));
   // Entities with a confirmed game picture are published under /entries/. A subject with no confirmed picture is a
   // noindex note in the evidence layer, out of the sitemap, never dressed up as a finished entry.
-  const entityFile = (e) => (e.imageTier === 'game-image' ? join(dir, 'entries', e.id + '.html') : join(dir, 'reference', 'notes', e.id + '.html'));
+  const entityFile = (e) => ((e.imageTier === 'game-image' || e.imageTier === 'community-image') ? join(dir, 'entries', e.id + '.html') : join(dir, 'reference', 'notes', e.id + '.html'));
   const missingPages = published.filter((e) => !existsSync(entityFile(e)));
   ok('every published subject has a page: entities under /entries/, picture-less subjects as notes', missingPages.length === 0, missingPages.map((e) => e.id).join(', '));
-  const misSitemapped = published.filter((e) => (e.imageTier === 'game-image'
+  const misSitemapped = published.filter((e) => ((e.imageTier === 'game-image' || e.imageTier === 'community-image')
     ? !sitemap.includes(SITE.url + '/entries/' + e.id + '.html')
     : sitemap.includes(SITE.url + '/reference/notes/' + e.id + '.html')));
   ok('the sitemap lists entities only, and keeps picture-less subjects out of it', misSitemapped.length === 0, misSitemapped.map((e) => e.id).join(', '));
@@ -196,7 +196,7 @@ try {
   for (const e of published) {
     const h = readFileSync(entityFile(e), 'utf8');
     if (!h.includes(e.title) || !h.includes(e.summary)) thin.push(e.id + ':text');
-    if (e.imageTier === 'game-image') {
+    if ((e.imageTier === 'game-image' || e.imageTier === 'community-image')) {
       if (!h.includes('What the game establishes') || !h.includes('Version and sources')) thin.push(e.id + ':structure');
     } else if (!h.includes('No confirmed picture from the game yet')) thin.push(e.id + ':note-label');
     if (!/<img[^>]+alt="[^"]+"/.test(h)) thin.push(e.id + ':image');
@@ -219,12 +219,14 @@ try {
   for (const e of published) {
     const h = readFileSync(entityFile(e), 'utf8');
     const hasGame = (e.images ?? []).some((i) => i.kind === 'game');
+    const hasCommunity = !hasGame && (e.images ?? []).some((i) => i.kind === 'community');
     if (hasGame && !h.includes('Picture taken from the game')) unlabelled.push(e.id + ':game');
-    if (!hasGame && !h.includes('No confirmed picture from the game yet')) unlabelled.push(e.id + ':diagram');
+    if (hasCommunity && !h.includes('Community picture from the R.E.P.O. Fandom wiki')) unlabelled.push(e.id + ':community');
+    if (!hasGame && !hasCommunity && !h.includes('No confirmed picture from the game yet')) unlabelled.push(e.id + ':diagram');
   }
   ok('every page says whether its picture came from the game or is a diagram note', unlabelled.length === 0, unlabelled.slice(0, 5).join(', '));
 
-  const illustrated = published.filter((e) => (e.images ?? []).some((i) => i.kind === 'game'));
+  const illustrated = published.filter((e) => (e.images ?? []).some((i) => i.kind === 'game' || i.kind === 'community'));
   ok('at least half of the published entries carry an image taken from the game',
     illustrated.length * 2 >= published.length, illustrated.length + ' of ' + published.length + ' entries');
 
@@ -244,7 +246,7 @@ try {
     const h = readFileSync(join(dir, 'index.html'), 'utf8').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
     return !/\b(schema|il2cpp|assembly-csharp|metadata|namespace|class|classes|field|fields)\b/i.test(h) && !/gameClasses|engineClasses/.test(h);
   })());
-  const catPages = CATEGORIES.filter((c) => published.some((e) => c.src.includes(e.category) && e.imageTier === 'game-image'));
+  const catPages = CATEGORIES.filter((c) => published.some((e) => c.src.includes(e.category) && (e.imageTier === 'game-image' || e.imageTier === 'community-image')));
   const badCatPages = catPages.filter((c) => {
     const rel = 'entities/' + c.key + '.html';
     if (!existsSync(join(dir, rel)) || !sitemap.includes(SITE.url + '/' + rel)) return true;

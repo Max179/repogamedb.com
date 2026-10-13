@@ -72,6 +72,15 @@
   ],
   "images": [
     {
+      "file": "fandom/clown-monster.png",
+      "kind": "diagram",
+      "alt": {
+        "en": "Community reference picture of Clown (Monster) from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Clown (Monster)。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+    },
+    {
       "file": "mapped/the-beamer-texture.jpg",
       "kind": "game",
       "alt": {

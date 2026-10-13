@@ -19,6 +19,15 @@
   ],
   "images": [
     {
+      "file": "fandom/rugrat.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture of Rugrat from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Rugrat。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+    },
+    {
       "file": "mapped/rugrat-fandom.png",
       "kind": "diagram",
       "alt": {
@@ -31,7 +40,7 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed in the evidence field; nothing here is estimated."
   ],
-  "imageTier": "diagram-only",
+  "imageTier": "community-image",
   "_needsReview": true,
   "_verificationStatus": "game-data-only",
   "_dataConfidence": "high"

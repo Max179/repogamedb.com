@@ -22,8 +22,9 @@ export const SITE = {
   versionBadge: 'R.E.P.O. v0.4.0 · read from a local copy',
   heroImage: 'generated/repo-hero-generated.png',
   heroAlt: 'Original R.E.P.O.-inspired extraction scene created for this wiki interface.',
-  featured: ['enemies-and-their-behaviour', 'valuables-and-looting', 'weapons-you-can-bring', 'the-truck-and-the-end-of-a-run',
-    'the-extraction-point-and-its-machinery', 'the-shop-between-runs', 'guns-and-how-they-fire', 'how-monsters-find-you'],
+  featured: ['the-oogly', 'the-bomb-thrower', 'the-monster-that-grabs-heads', 'the-heart-hugger',
+    'the-slow-mouth', 'the-upscream', 'the-bowtie-monster', 'the-animal'],
+
 };
 
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -120,11 +121,12 @@ export function build(inventoryPath, outDir) {
   const entries = existsSync(entriesDir)
     ? readdirSync(entriesDir).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join(entriesDir, f), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title))
     : [];
-  const entities = entries.filter((e) => e.imageTier === 'game-image');
-  const notes = entries.filter((e) => e.imageTier !== 'game-image');
+  const hasPic = (e) => e.imageTier === 'game-image' || e.imageTier === 'community-image';
+  const entities = entries.filter(hasPic);
+  const notes = entries.filter((e) => !hasPic(e));
   const byId = new Map(entries.map((e) => [e.id, e]));
-  const imgOf = (e) => (e.images ?? []).find((i) => i.kind === 'game') ?? (e.images ?? [])[0];
-  const entryHref = (id) => (byId.get(id)?.imageTier === 'game-image' ? '/entries/' + id + '.html' : '/reference/notes/' + id + '.html');
+  const imgOf = (e) => (e.images ?? []).find((i) => i.kind === 'game') ?? (e.images ?? []).find((i) => i.kind === 'community') ?? (e.images ?? [])[0];
+  const entryHref = (id) => (hasPic(byId.get(id) ?? {}) ? '/entries/' + id + '.html' : '/reference/notes/' + id + '.html');
   const oneLine = (e) => ((e.facts ?? [])[0]?.claim ?? e.summary ?? '');
   const whyOf = (because) => String(because ?? '').replace(/\s*\([^()]*\)\s*$/, '').trim();
   const card = (e) => {
@@ -145,7 +147,7 @@ export function build(inventoryPath, outDir) {
   const playerUpdates = updates.filter((u) => !String(u.url ?? '').startsWith('/reference/'));
 
   // ---- home ------------------------------------------------------------------------------------
-  const featured = (SITE.featured ?? []).map((id) => byId.get(id)).filter((e) => e && e.imageTier === 'game-image');
+  const featured = (SITE.featured ?? []).map((id) => byId.get(id)).filter((e) => e && hasPic(e));
   const featuredList = (featured.length ? featured : entities).slice(0, 8);
   const questionCards = articles.filter((a) => questions[a.id]).slice(0, 6);
   const categoryArt = {
@@ -169,7 +171,7 @@ export function build(inventoryPath, outDir) {
         ['extraction', 'Extraction', 'Use a clean route and a fallback call.', '/entities/extraction.html', '↗']]
         .map(([key, title, copy, href, glyph]) => '<a class="categoryTile" href="' + href + '"><img class="categoryIcon" src="/' + categoryArt[key][0] + '" alt="' + categoryArt[key][1] + '"><span class="categoryGlyph">' + glyph + '</span><strong>' + title + '</strong><span>' + copy + '</span></a>').join('') +
     '</div></section>\n' +
-    '<section class="block">\n<h2>Popular entities</h2>\n<p class="dim">A curated starting set, each with a picture taken from the game.</p>\n<div class="grid">' + featuredList.map(card).join('') + '</div>\n<p><a href="/entities/">All entities by part of the run &rarr;</a></p>\n</section>\n' +
+    '<section class="block">\n<h2>Popular entities</h2>\n<p class="dim">A curated starting set of monsters, each with a clear picture of what it looks like.</p>\n<div class="grid">' + featuredList.map(card).join('') + '</div>\n<p><a href="/entities/">All entities by part of the run &rarr;</a></p>\n</section>\n' +
     '<section class="block">\n<h2>The question you probably have</h2>\n<div class="qgrid">' + questionCards.map((a) =>
       '<a class="qcard" href="/articles/' + esc(a.id) + '.html"><strong>' + esc(questions[a.id]) + '</strong><span class="dim">' + esc(a.title) + '</span></a>').join('') +
     '</div>\n<p><a href="/articles/">All guides &rarr;</a></p>\n</section>\n' +
@@ -227,7 +229,7 @@ export function build(inventoryPath, outDir) {
     const related = (e.related ?? []).filter((id) => byId.has(id));
     indexable('entries/' + e.id + '.html', e.title, e.summary,
       '<article class="entry">\n' +
-      (img ? '<figure class="heroimg"><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" title="' + esc(img.alt?.zh ?? '') + '" width="900" height="520"><figcaption class="dim small">Picture taken from the game to identify this item; it remains the property of the developer.</figcaption></figure>' : '') +
+      (img ? '<figure class="heroimg"><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" title="' + esc(img.alt?.zh ?? '') + '" width="900" height="520"><figcaption class="dim small">' + (img.kind === 'community' ? 'Community picture from the R.E.P.O. Fandom wiki (CC-BY-SA 4.0), shown to identify this item. It is not a screenshot taken by this site.' : 'Picture taken from the game to identify this item; it remains the property of the developer.') + '</figcaption></figure>' : '') +
       '<p class="kicker">' + esc(groupOf(e.category).name) + ' · ' + esc(SITE.versionBadge) + '</p>\n<h1>' + esc(e.title) + '</h1>\n' +
       '<p class="oneline">' + esc(oneLine(e)) + '</p>\n<p class="lead">' + esc(e.summary) + '</p>\n' +
       '<aside class="facts"><h2>At a glance</h2><dl>' +
@@ -487,6 +489,7 @@ export function build(inventoryPath, outDir) {
   };
   for (const root of ['web/assets', 'content/assets']) copyDir(join(process.cwd(), root), '');
   copyDir(join(process.cwd(), 'content/renders'), 'renders');
+  copyDir(join(process.cwd(), 'content/images/fandom'), 'fandom');
   return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length, assets: assetCount, mappedImages: mappedCount.n, entities: entities.length, notes: notes.length };
 }
 

@@ -64,20 +64,13 @@
   ],
   "images": [
     {
-      "file": "mapped/valuables-that-are-also-tools-jackhammer.jpg",
-      "kind": "game",
+      "file": "fandom/jackhammer.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the valuable jackhammer.",
-        "zh": "游戏为“珍贵物”电锤提供的颜色贴图。"
-      }
-    },
-    {
-      "file": "mapped/valuables-that-are-also-tools-extinguisher.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for the valuable fire extinguisher, with its instruction labels.",
-        "zh": "游戏为“珍贵物”灭火器提供的颜色贴图，含使用说明标签。"
-      }
+        "en": "Community reference picture of Jackhammer from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Jackhammer。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "valuables-that-are-also-tools.svg",
@@ -92,5 +85,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

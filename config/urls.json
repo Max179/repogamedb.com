@@ -3035,6 +3035,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/reaper.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/running-a-gun-dry.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3070,12 +3075,22 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-banger.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-bathrooms-and-their-fittings.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
     {
       "url": "/entries/the-beamer.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-birthday-boy.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3195,7 +3210,17 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-gnomes-and-the-pickaxe.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-gumball-machine-that-hypnotises.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-heads-eyes-hair-and-teeth.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3270,6 +3295,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-peeper.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-potions-you-can-find.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3286,6 +3316,11 @@
     },
     {
       "url": "/entries/the-rooms-the-wizard-school-signs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-rugrat.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3645,22 +3680,7 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/reference/notes/reaper.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-banger.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
       "url": "/reference/notes/the-bar-that-shows-a-charge.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-birthday-boy.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
@@ -3695,16 +3715,6 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/reference/notes/the-gnomes-and-the-pickaxe.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-heads-eyes-hair-and-teeth.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
       "url": "/reference/notes/the-lean-a-vehicle-takes-from-its-speed.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3730,11 +3740,6 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/reference/notes/the-peeper.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
       "url": "/reference/notes/the-player-list-and-what-a-row-shows.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
@@ -3751,11 +3756,6 @@
     },
     {
       "url": "/reference/notes/the-record-every-monster-is-given.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-rugrat.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

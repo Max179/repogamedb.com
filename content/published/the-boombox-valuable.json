@@ -11,7 +11,6 @@
     "It has two speakers and two lights, kept as separate parts, so the case can glow while it plays without the speakers being the thing that is lit.",
     "The case is a picture of the item; the light map is a picture of where it lights up. The game ships an emissive map for it, and that map is what decides where the light appears: the bright spots on it are the speakers as the game lights them.",
     "It is not the same object as the radio the shop can play. The shop radio is documented under its own entry, and it carries a music list rather than a single clip, which is why the two are separate things to buy.",
-    "The picture beside this entry is the game's own: the emissive map for the boombox valuable, which lights its two speakers.",
     "What this entry does not tell you: what the music is, how long the clip is, or how much the boombox is worth. We have not verified those, so we do not print them."
   ],
   "facts": [
@@ -46,20 +45,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-boombox-valuable-texture.jpg",
-      "kind": "game",
+      "file": "fandom/museum-boombox.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the boombox valuable: its case, tape deck and speaker.",
-        "zh": "游戏为手提音响珍贵物提供的颜色贴图：外壳、磁带仓与喇叭。"
-      }
-    },
-    {
-      "file": "mapped/the-boombox-valuable-lights.png",
-      "kind": "game",
-      "alt": {
-        "en": "The emissive map the game ships for the boombox valuable, brightening its two speaker lights.",
-        "zh": "游戏为手提音响珍贵物提供的自发光贴图，点亮两侧喇叭。"
-      }
+        "en": "Community reference picture of Museum Boombox from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Museum Boombox。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-boombox-valuable.svg",
@@ -74,5 +66,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

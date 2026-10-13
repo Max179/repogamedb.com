@@ -84,19 +84,11 @@
   ],
   "images": [
     {
-      "file": "renders/ENEMY.BOMB_THROWER.png",
+      "file": "renders/ENEMY.OOGLY.png",
       "kind": "game",
       "alt": {
         "en": "3D render from verified game assets.",
         "zh": "从游戏资产导出的 3D 渲染。"
-      }
-    },
-    {
-      "file": "mapped/the-bomb-thrower-emission.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The emission texture the game ships for the same monster, the parts of it that glow on their own.",
-        "zh": "游戏为同一只怪物准备的自发光贴图，即会自行发亮的部分。"
       }
     }
   ],

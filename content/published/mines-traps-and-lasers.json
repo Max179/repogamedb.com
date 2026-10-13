@@ -74,12 +74,13 @@
   ],
   "images": [
     {
-      "file": "mapped/mines-traps-and-lasers-mine.jpg",
-      "kind": "game",
+      "file": "fandom/explosive-mine.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for an explosive mine found in a level.",
-        "zh": "游戏为关卡中的爆炸地雷提供的颜色贴图。"
-      }
+        "en": "Community reference picture of Explosive Mine from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Explosive Mine。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "mines-traps-and-lasers.svg",
@@ -94,5 +95,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

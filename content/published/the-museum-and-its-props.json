@@ -110,100 +110,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-museum-and-its-props-painting.jpg",
-      "kind": "game",
+      "file": "fandom/museum-of-human-art.png",
+      "kind": "community",
       "alt": {
-        "en": "One of the paintings the game itself places in the museum level.",
-        "zh": "游戏本身放在博物馆关卡中的画作之一。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-crow-painting.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "A second painting the game itself hangs in the museum: a crow's head in purple and black on a warm red ground.",
-        "zh": "游戏自己挂在博物馆里的第二幅画：暖红底上的紫黑色乌鸦头部。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-landscape-painting.png",
-      "kind": "game",
-      "alt": {
-        "en": "One of the game's own paintings: a wide landscape with a river, wooded hills and a small barn on a green field.",
-        "zh": "游戏自带的画作之一：一幅横幅风景画，河湾、林坡与绿地上的小谷仓。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-portrait-painting.png",
-      "kind": "game",
-      "alt": {
-        "en": "One of the game's own paintings: a dark portrait of a man in glasses with a hand raised to his chin.",
-        "zh": "游戏自带的画作之一：深色肖像画，戴眼镜的男子一手托着下巴。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-surrealist-painting.png",
-      "kind": "game",
-      "alt": {
-        "en": "One of the game's own paintings: a surreal canvas of a red apple with an eye in it, floating over dark hills.",
-        "zh": "游戏自带的画作之一：超现实画作，一只嵌着眼睛的红苹果悬在暗色山丘之上。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-tree-painting.png",
-      "kind": "game",
-      "alt": {
-        "en": "One of the game's own paintings: a lone tree bending over a flat field under a dark sky.",
-        "zh": "游戏自带的画作之一：暗色天空下，旷野上一棵倾斜的孤树。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-jannk-painting.png",
-      "kind": "game",
-      "alt": {
-        "en": "One of the game's own paintings: a portrait of a bearded man in glasses, a shirt and a tie.",
-        "zh": "游戏自带的画作之一：留胡子的男子肖像，戴眼镜、穿着衬衫与领带。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-creep-painting.png",
-      "kind": "game",
-      "alt": {
-        "en": "One of the game's own paintings: a dark canvas with a pale grinning face in it.",
-        "zh": "游戏自带的画作之一：暗色画布上浮现一张苍白的咧嘴笑脸。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-exhibition-banner.png",
-      "kind": "game",
-      "alt": {
-        "en": "A banner the museum hangs: a tall poster for a Moose Fighting exhibition, with a moose head and the line Witness the Carnage.",
-        "zh": "博物馆挂出的横幅：一张瘦长的「Moose Fighting」展览海报，画着驼鹿头，写着 Witness the Carnage。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-magic-banner.png",
-      "kind": "game",
-      "alt": {
-        "en": "A second exhibition banner the museum hangs: a tall poster headed Ancient Magic Artifacts, with a bandaged hand holding a glowing eye over candle flames.",
-        "zh": "博物馆挂出的第二张展览横幅：瘦长海报，标题 Ancient Magic Artifacts，绷带手托着一只发光眼睛，下面是烛火。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-folklore-banner.png",
-      "kind": "game",
-      "alt": {
-        "en": "A third exhibition banner the museum hangs: a tall poster headed The Creatures of Folklore, with a grinning skull above a red tentacle and a many-eyed mass.",
-        "zh": "博物馆挂出的第三张展览横幅：瘦长海报，标题 The Creatures of Folklore，咧嘴骷髅下方是红色触手与满布眼睛的一团。"
-      }
-    },
-    {
-      "file": "mapped/the-museum-and-its-props-furniture-banner.png",
-      "kind": "game",
-      "alt": {
-        "en": "A fourth exhibition banner the museum hangs: a tall poster headed Mildly Disturbing Furniture, with a red chair and a pale arm reaching over it.",
-        "zh": "博物馆挂出的第四张展览横幅：瘦长海报，标题 Mildly Disturbing Furniture，红椅子上一只苍白手臂探出。"
-      }
+        "en": "Community reference picture of Museum of Human Art from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Museum of Human Art。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-museum-and-its-props.svg",
@@ -213,34 +126,10 @@
         "zh": "博物馆与道具示意图：回到商店、从机器购买外观、摆放道具、其状态被记录。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
-    },
-    {
-      "file": "mapped/the-exhibitions-the-museum-advertises-mittens.png",
-      "kind": "game",
-      "alt": {
-        "en": "A further exhibition banner the museum hangs: a figure in a sheet skirt under the repeated word Bravery, headed Gregory Mittens.",
-        "zh": "博物馆挂出的又一张展览横幅：身裹床单的人物，背景反复写着 Bravery，标题 Gregory Mittens。"
-      }
-    },
-    {
-      "file": "mapped/the-exhibitions-the-museum-advertises-good-dogs.png",
-      "kind": "game",
-      "alt": {
-        "en": "A further exhibition banner: a dog taped to a wall, headed Good Dogs Taped on Bad Walls and presented by a museum of human art.",
-        "zh": "又一张展览横幅：被胶带粘在墙上的狗，标题 Good Dogs Taped on Bad Walls，署名 human art 博物馆。"
-      }
-    },
-    {
-      "file": "mapped/the-exhibitions-the-museum-advertises-silverdance.png",
-      "kind": "game",
-      "alt": {
-        "en": "A further exhibition banner: a face behind pink type reading Silverdance, a collection of wax dolls portraying the richest man alive.",
-        "zh": "又一张展览横幅：粉色字体 Silverdance 之后的特写面孔，副题是「以蜡像演绎世上最富有的人」。"
-      }
     }
   ],
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

@@ -75,20 +75,13 @@
   ],
   "images": [
     {
-      "file": "mapped/items-you-switch-carry-or-unlock-walkie.jpg",
-      "kind": "game",
+      "file": "fandom/flashlight.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the red walkie-talkie.",
-        "zh": "游戏为红色对讲机提供的颜色贴图。"
-      }
-    },
-    {
-      "file": "mapped/items-you-switch-carry-or-unlock-grenade.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for the shockwave grenade.",
-        "zh": "游戏为冲击波手雷提供的颜色贴图。"
-      }
+        "en": "Community reference picture of Flashlight from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Flashlight。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "items-you-switch-carry-or-unlock.svg",
@@ -103,5 +96,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

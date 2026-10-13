@@ -73,20 +73,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-upgrade-stand-button.jpg",
-      "kind": "game",
+      "file": "fandom/upgrades.jpg",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the upgrade stand's button, with its arrow mark.",
-        "zh": "游戏为升级台按钮提供的颜色贴图，带箭头标记。"
-      }
-    },
-    {
-      "file": "mapped/the-upgrade-stand-roller.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for the upgrade stand's roller.",
-        "zh": "游戏为升级台滚轴提供的颜色贴图。"
-      }
+        "en": "Community reference picture of Upgrades from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Upgrades。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-upgrade-stand-and-its-roll.svg",
@@ -101,5 +94,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

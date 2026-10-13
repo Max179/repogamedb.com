@@ -34,12 +34,13 @@
   ],
   "images": [
     {
-      "file": "mapped/valuables-and-looting-egg.png",
-      "kind": "game",
+      "file": "fandom/valuables.png",
+      "kind": "community",
       "alt": {
-        "en": "A texture taken from the game of an egg-shaped valuable.",
-        "zh": "取自游戏的蛋形贵重物品贴图。"
-      }
+        "en": "Community reference picture of Valuables from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Valuables。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "valuables-and-looting.svg",
@@ -49,18 +50,10 @@
         "zh": "贵重物品流程示意图：物品散落在关卡中、小队拾取搬运、易碎品不可掉落。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
-    },
-    {
-      "file": "mapped/valuables-and-looting-coin.png",
-      "kind": "game",
-      "alt": {
-        "en": "An albedo texture taken from the game of a coin valuable.",
-        "zh": "取自游戏的金币形贵重物品贴图。"
-      }
     }
   ],
   "sources": [
     "A local copy of the game, read only. Identifiers used to verify each fact are kept on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

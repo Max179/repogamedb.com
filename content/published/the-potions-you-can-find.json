@@ -53,20 +53,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-potions-you-can-find-levitation.jpg",
-      "kind": "game",
+      "file": "fandom/levitation-potion.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour artwork the game ships for the levitation potion valuable, drawn on a sheet that also holds other artwork.",
-        "zh": "游戏为悬浮药水珍贵物提供的颜色贴图，同一张贴图上还绘有其他美术内容。"
-      }
-    },
-    {
-      "file": "mapped/the-potions-you-can-find-cauldron.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The printed side of the box the game ships for the boxed cauldron valuable, with a cauldron and herbs pictured on it.",
-        "zh": "游戏为盒装坩埚珍贵物提供的包装纸盒印刷面，上面画有坩埚与草药。"
-      }
+        "en": "Community reference picture of Levitation Potion from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Levitation Potion。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-potions-you-can-find.svg",
@@ -81,5 +74,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

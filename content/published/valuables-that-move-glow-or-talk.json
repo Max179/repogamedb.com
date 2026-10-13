@@ -54,28 +54,13 @@
   ],
   "images": [
     {
-      "file": "mapped/valuables-that-move-glow-or-talk-teethbot.jpg",
-      "kind": "game",
+      "file": "fandom/teeth-bot.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the teeth bot valuable.",
-        "zh": "游戏为牙齿机器人珍贵物提供的颜色贴图。"
-      }
-    },
-    {
-      "file": "mapped/valuables-that-move-glow-or-talk-screamdoll.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for the scream doll valuable, showing its face and fabric.",
-        "zh": "游戏为尖叫玩偶珍贵物提供的颜色贴图，可见其面部与布料。"
-      }
-    },
-    {
-      "file": "mapped/valuables-that-move-glow-or-talk-camera.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for the old camera valuable, showing its lens and body.",
-        "zh": "游戏为老式相机珍贵物提供的颜色贴图，可见镜头与机身。"
-      }
+        "en": "Community reference picture of Teeth Bot from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Teeth Bot。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "valuables-that-move-glow-or-talk.svg",
@@ -90,5 +75,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

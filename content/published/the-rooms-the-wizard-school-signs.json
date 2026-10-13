@@ -47,32 +47,17 @@
   ],
   "images": [
     {
-      "file": "mapped/the-rooms-the-wizard-school-signs-dining-hall.png",
-      "kind": "game",
+      "file": "fandom/swiftbroom-academy-rooms.png",
+      "kind": "community",
       "alt": {
-        "en": "A plaque the wizard school hangs: a gold arched sign reading Dining Hall on a wooden board.",
-        "zh": "巫师学校挂出的铭牌：木板上金色拱形牌，写着 Dining Hall。"
-      }
-    },
-    {
-      "file": "mapped/the-rooms-the-wizard-school-signs-potions.png",
-      "kind": "game",
-      "alt": {
-        "en": "A second plaque from the same set, reading Potions and Spells.",
-        "zh": "同一套里的第二块铭牌，写着 Potions and Spells。"
-      }
-    },
-    {
-      "file": "mapped/the-rooms-the-wizard-school-signs-dungeon.png",
-      "kind": "game",
-      "alt": {
-        "en": "A third plaque from the same set, reading Storage Dungeon.",
-        "zh": "同一套里的第三块铭牌，写着 Storage Dungeon。"
-      }
+        "en": "Community reference picture of Swiftbroom Academy - Rooms from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Swiftbroom Academy - Rooms。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     }
   ],
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

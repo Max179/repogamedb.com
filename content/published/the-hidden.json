@@ -65,12 +65,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-hidden-footprint.png",
-      "kind": "game",
+      "file": "fandom/hidden.png",
+      "kind": "community",
       "alt": {
-        "en": "The footprint the hidden monster leaves: a pair of white bare footprints, the toes and the heel drawn separately, on transparency.",
-        "zh": "隐者留下的脚印贴图：一对白色赤脚印，脚趾与脚跟分开绘制，背景透明。"
-      }
+        "en": "Community reference picture of Hidden from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Hidden。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-hidden.svg",
@@ -85,5 +86,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

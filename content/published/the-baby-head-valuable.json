@@ -12,7 +12,6 @@
     "It does not lie still. There is a shortest and a longest interval between its jolts, and a smallest and a largest force for them, so the head twitches on a rhythm you cannot quite learn.",
     "It is thrown about as well: there is a torque multiplier and a maximum velocity belonging to it, which is what a knock does to a head this size.",
     "It knows whether it is the copy that matters locally, and monsters can be set to come and investigate it, so waking it is not only a problem for the player holding it.",
-    "The image beside this entry is the game's own: the colour sheet it ships for the head, with the eye, the brow, the mouth and the skin all on one sheet.",
     "What this entry does not tell you: what the head is worth, how far the cry carries in metres, or how long it stays quiet. We have not verified those numbers, so we do not print them."
   ],
   "facts": [
@@ -60,16 +59,17 @@
   ],
   "images": [
     {
-      "file": "mapped/the-baby-head-valuable-head.jpg",
-      "kind": "game",
+      "file": "fandom/baby-head.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour sheet the game ships for the baby head valuable.",
-        "zh": "游戏为婴儿头贵重物提供的颜色贴图。"
-      }
+        "en": "Community reference picture of Baby Head from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Baby Head。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     }
   ],
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

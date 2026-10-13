@@ -34,12 +34,13 @@
   ],
   "images": [
     {
-      "file": "mapped/reading-a-monster-before-it-reaches-you-face.jpg",
-      "kind": "game",
+      "file": "fandom/mentalist.png",
+      "kind": "community",
       "alt": {
-        "en": "The albedo texture taken from the game of one of the monster faces the entry says to read.",
-        "zh": "取自游戏的怪物面部反照率贴图，本条建议据此判断。"
-      }
+        "en": "Community reference picture of Mentalist from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Mentalist。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "reading-a-monster-before-it-reaches-you.svg",
@@ -54,5 +55,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

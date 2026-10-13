@@ -53,12 +53,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-cart-and-its-boost-pads-cart.jpg",
-      "kind": "game",
+      "file": "fandom/c-a-r-t.png",
+      "kind": "community",
       "alt": {
-        "en": "The albedo texture taken from the game of the portable cart the crew hauls loot with.",
-        "zh": "取自游戏的手推车反照率贴图，小队用它搬运战利品。"
-      }
+        "en": "Community reference picture of C.A.R.T. from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：C.A.R.T.。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-cart-and-its-boost-pads.svg",
@@ -73,5 +74,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

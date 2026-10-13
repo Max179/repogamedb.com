@@ -21,6 +21,15 @@
   ],
   "images": [
     {
+      "file": "fandom/reaper.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture of Reaper from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Reaper。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+    },
+    {
       "file": "mapped/reaper-fandom.png",
       "alt": {
         "en": "Community reference diagram of the Reaper.",
@@ -35,7 +44,7 @@
   "sources": [
     "Community Wiki documentation (https://repo-2025horror.fandom.com/wiki/Reaper). This entity has not been verified in game code analysis and may represent content from different game versions or community speculation."
   ],
-  "imageTier": "diagram-only",
+  "imageTier": "community-image",
   "_needsReview": true,
   "_verificationStatus": "unverified-community-source",
   "_dataConfidence": "medium",

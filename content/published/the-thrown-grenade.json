@@ -44,12 +44,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-thrown-grenade-grenade.jpg",
-      "kind": "game",
+      "file": "fandom/grenade.png",
+      "kind": "community",
       "alt": {
-        "en": "The base colour texture taken from the game of the grenade the player throws.",
-        "zh": "取自游戏的玩家所投掷手雷的基础色贴图。"
-      }
+        "en": "Community reference picture of Grenade from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Grenade。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-thrown-grenade.svg",
@@ -64,5 +65,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

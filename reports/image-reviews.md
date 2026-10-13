@@ -270,3 +270,5 @@ The run is written to `reports/image-sanity.md` on every build; a flag is a requ
 | mapped/banger-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
 | mapped/birthday-boy-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
 | mapped/peeper-fandom.png | approved | CC-BY-SA-4.0 | Community diagram from R.E.P.O. Fandom wiki |
+| 2026-10-13 | renders/ENEMY.BOMB_THROWER.png | ENEMY.BOMB_THROWER | the-oogly | ok with a note — opened the 512x512 render: a green ghost made of torn cloth shards with a cyan glowing eye and bony fingers. The file name says bomb thrower but the picture matches the Oogly description, so it is used on the Oogly entry. Model render, not an in-game screenshot. |
+| 2026-10-13 | renders/ENEMY.OOGLY.png | ENEMY.OOGLY | the-bomb-thrower | ok with a note — opened the 512x512 render: a pink and purple heavy-set figure with a rubber-duck head, yellow legs and a small floating head beside it. The file name says Oogly but the picture is the bomb thrower, so it is used on that entry. Model render, not an in-game screenshot. |

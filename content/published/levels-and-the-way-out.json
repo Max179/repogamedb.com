@@ -34,12 +34,13 @@
   ],
   "images": [
     {
-      "file": "mapped/levels-and-the-way-out-door.jpg",
-      "kind": "game",
+      "file": "fandom/locations.png",
+      "kind": "community",
       "alt": {
-        "en": "The game's own shop door texture, the way back out at the start of a level.",
-        "zh": "游戏自带的店铺大门贴图，即关卡起点的出口。"
-      }
+        "en": "Community reference picture of Locations from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Locations。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "levels-and-the-way-out.svg",
@@ -54,5 +55,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

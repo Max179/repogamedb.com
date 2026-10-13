@@ -66,12 +66,13 @@
   ],
   "images": [
     {
-      "file": "mapped/enemies-and-their-behaviour-bombthrower.png",
-      "kind": "game",
+      "file": "fandom/apex-predator.png",
+      "kind": "community",
       "alt": {
-        "en": "An albedo texture taken from the game for the monster that throws bombs, shown as flat artwork.",
-        "zh": "取自游戏的“投掷炸弹怪物”贴图（反照率贴图）。"
-      }
+        "en": "Community reference picture of Apex Predator from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Apex Predator。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "enemies-and-their-behaviour.svg",
@@ -81,18 +82,10 @@
         "zh": "怪物遭遇流程示意图：怪物发现小队、追击、被躲开或击退、小队继续前进。"
       },
       "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
-    },
-    {
-      "file": "mapped/enemies-and-their-behaviour-duck.png",
-      "kind": "game",
-      "alt": {
-        "en": "Another albedo texture taken from the game, for a different monster kind.",
-        "zh": "取自游戏的另一种怪物的反照率贴图。"
-      }
     }
   ],
   "sources": [
     "A local copy of the game, read only. Identifiers used to verify each fact are kept on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

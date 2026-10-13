@@ -60,12 +60,13 @@
   ],
   "images": [
     {
-      "file": "mapped/valuables-that-fight-back-gumball.jpg",
-      "kind": "game",
+      "file": "fandom/enemy-valuable.png",
+      "kind": "community",
       "alt": {
-        "en": "The albedo texture taken from the game of a gumball machine valuable, one of the trap valuables this entry describes.",
-        "zh": "取自游戏的扭蛋机贵重物品反照率贴图，即本条描述的陷阱类贵重物品之一。"
-      }
+        "en": "Community reference picture of Enemy Valuable from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Enemy Valuable。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "valuables-that-fight-back.svg",
@@ -80,5 +81,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

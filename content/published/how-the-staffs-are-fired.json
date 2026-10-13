@@ -69,20 +69,13 @@
   ],
   "images": [
     {
-      "file": "mapped/how-the-staffs-are-fired-void.jpg",
-      "kind": "game",
+      "file": "fandom/void-staff.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the void staff.",
-        "zh": "游戏为虚空法杖提供的颜色贴图。"
-      }
-    },
-    {
-      "file": "mapped/how-the-staffs-are-fired-torque.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The colour texture the game ships for the torque staff.",
-        "zh": "游戏为扭矩法杖提供的颜色贴图。"
-      }
+        "en": "Community reference picture of Void Staff from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Void Staff。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "how-the-staffs-are-fired.svg",
@@ -97,5 +90,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

@@ -129,76 +129,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-level-themes-and-what-they-hold-arctic.jpg",
-      "kind": "game",
+      "file": "fandom/locations.png",
+      "kind": "community",
       "alt": {
-        "en": "The game's own picture for its arctic level theme: a drawn snow base with a dome, dishes and a satellite mast.",
-        "zh": "游戏自带的极地关卡主题图：画着带穹顶、天线盘与卫星杆的雪地基地。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-arena.jpg",
-      "kind": "game",
-      "alt": {
-        "en": "The game's own picture for its arena level theme: a barn beside a dark trail of watching eyes.",
-        "zh": "游戏自带的竞技场关卡主题图：谷仓旁边是一条布满窥视眼睛的暗色路径。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-common-room-sign.png",
-      "kind": "game",
-      "alt": {
-        "en": "A sign the wizard theme hangs on its walls: a gold plaque on a wooden arch, reading Common Room.",
-        "zh": "巫师主题挂在墙上的标牌：木弧形托着的金色铭牌，写着 Common Room。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-dormatory-sign.png",
-      "kind": "game",
-      "alt": {
-        "en": "A second wizard sign, reading Dormatory.",
-        "zh": "第二块巫师主题标牌，写着 Dormatory。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-library-sign.png",
-      "kind": "game",
-      "alt": {
-        "en": "A third wizard sign, reading The Great Library.",
-        "zh": "第三块巫师主题标牌，写着 The Great Library。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-sludge-pits-sign.png",
-      "kind": "game",
-      "alt": {
-        "en": "A fourth wizard sign, reading Sludge Pits of Truth.",
-        "zh": "第四块巫师主题标牌，写着 Sludge Pits of Truth。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-specimen-sign.png",
-      "kind": "game",
-      "alt": {
-        "en": "A sign the arctic theme hangs on its walls: a white plaque reading Specimen Research beside an orange atom.",
-        "zh": "极地主题挂在墙上的标牌：白色牌面写着 Specimen Research，旁边是橙色原子图案。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-welcome-banner.png",
-      "kind": "game",
-      "alt": {
-        "en": "A banner the wizard theme hangs: a blue ribbon lettered Welcome New Students between two dark marks.",
-        "zh": "巫师主题挂出的横幅：蓝色缎带上写着 Welcome New Students，两端各有一个深色符号。"
-      }
-    },
-    {
-      "file": "mapped/the-level-themes-and-what-they-hold-bathroom-rug.png",
-      "kind": "game",
-      "alt": {
-        "en": "A piece of the manor theme's bathroom: its round purple rug. A rug is a flat mat, so the sheet is plain by design.",
-        "zh": "庄园主题浴室的一件陈设：圆形紫色地毯。地毯本就是平面织物，贴图素净是应然。"
-      }
+        "en": "Community reference picture of Locations from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Locations。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     },
     {
       "file": "the-level-themes-and-what-they-hold.svg",
@@ -213,5 +150,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }
