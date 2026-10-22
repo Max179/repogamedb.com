@@ -8,7 +8,7 @@
 > | Image coverage | 172/172 entries have a picture; 0 notes; 262 records; 0 unused community files |
 > | Image sanity | 262 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
-> | Community pictures | 131 entries; 81 files; 31 exact provenance, 50 weak |
+> | Community pictures | 131 entries; 81 files; 59 exact provenance, 22 weak |
 > | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
 >
 

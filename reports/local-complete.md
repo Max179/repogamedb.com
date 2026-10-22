@@ -609,7 +609,7 @@ git status --porcelain              -> 空
 
 - 46 个 diagram-only 词条全部补图：41 个用 Fandom 社区图，5 个用本地游戏素材（另有 6 个无实体选题使用明确标注的 illustrative 起始图）；原 SVG 图保留为第二张“非截图”说明。图片不再是无图注释：published 词条 172 / 注释 0。
 - 词条层级：41 个 game-image、131 个 community-image；所有已发布词条都有图。
-- manifest：262 条记录（181 game + 81 community）；community 中 31 条有精确 wiki 页面，50 条为弱出处（Fandom 被 Cloudflare 拦截，未自动抓取/未绕过），待补精确页面/作者。详见 `reports/image-sources.md`。
+- manifest：262 条记录（181 game + 81 community）；community 中 59 条有精确 wiki 页面，22 条为弱出处（Fandom 被 Cloudflare 拦截，未自动抓取/未绕过），待补精确页面/作者。详见 `reports/image-sources.md`。
 - 81 个社区图文件（最初 85 个，删除 4 个未再引用者）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
 - 新增 `/credits.html`：列出每张社区图的文件、使用词条、来源、作者、许可；页脚可达。社区图 caption 不再写“taken from the game”；`/reference/sources` 不再声称 “Nothing is community-sourced”。
 - 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 68 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 262 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
