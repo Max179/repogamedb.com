@@ -81,3 +81,18 @@ The extracted data was read from a local copy of build 0.4.0 — Mono engine, `A
 `57e631840687760c8de930f0c5774cf387d6a2e6b8d6b3eb3d67436cf999d372`. The copy is an unauthorised repack
 (see `reports/data-boundary.md`); the factual values are unaffected, but the source must not be described as a
 legitimate installed copy.
+
+
+## 2026-10-22 final backup and browser QA
+
+- Branch `feat/entry-images` pushed to GitHub (backup only; `publish.yml` triggers on main, so no workflow/deploy).
+  Remote head recorded: `0ae6611`.
+- Cloudflare project name corrected to `repogamedb-com` in `wrangler.toml` and `publish.yml` (commit `06f6678`);
+  the deploy token still fails with code 10000, see `reports/publish-plan.md`.
+- Browser QA on the built artifact:
+  - `/credits.html`: 81 community rows, 63 exact Fandom file links, weak rows marked, no empty author.
+  - `the-walkie-talkie-and-how-it-answers`: community caption names the Fandom source and uploader; 0 broken images.
+  - `staying-in-touch-with-the-crew`: game-asset caption, 0 broken images.
+  - 390px mobile: no horizontal overflow, 0 broken images after lazy images load.
+- Clean clone of HEAD: build 782/284, 68 tests, content gate 0, image coverage 172/172, preflight 13/13, smoke 284 kept.
+
