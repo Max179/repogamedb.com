@@ -1,7 +1,7 @@
 {
   "site": "repogamedb.com",
-  "head": "7df10b9",
-  "commits": 629,
+  "head": "06f6678",
+  "commits": 630,
   "pages": 782,
   "indexable": 284,
   "noindex": 498,
@@ -11,7 +11,7 @@
   "generatedBy": "pipeline/status.mjs",
   "headNote": "generated from this commit; the commit that adds this file is one step later",
   "handoff": {
-    "trackedFiles": 799,
+    "trackedFiles": 800,
     "byTop": {
       ".claude": 1,
       "(root)": 6,
@@ -23,7 +23,7 @@
       "docs": 1,
       "pipeline": 21,
       "projects": 2,
-      "reports": 31,
+      "reports": 32,
       "tests": 1,
       "tools": 15,
       "web": 7

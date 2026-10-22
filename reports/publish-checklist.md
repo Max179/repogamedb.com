@@ -12,6 +12,11 @@
 > The 2026-10-01 measurements below are kept for history and are superseded by this block.
 # Publish checklist — repogamedb.com
 
+> **2026-10-22 update:** branch `feat/entry-images` is pushed to GitHub as a backup (no workflow; branch only).
+> Project name corrected to **repogamedb-com** in `wrangler.toml` and `publish.yml` (commit `06f6678`).
+> Remaining blocker is the Cloudflare token scope/account (error 10000); exact owner actions and the
+> unrelated-history merge sequence are in [`publish-plan.md`](publish-plan.md).
+
 Everything that can be done without credentials has been done and is verified on branch `main`.
 This file lists exactly what is still missing, so publishing is a short, unambiguous step once the
 credentials exist.
