@@ -1322,28 +1322,6 @@
       "notes": "Page matched by monster name/meaning: the scratch scrape lists 'Rugrat' with this exact CDN file (fandom-monsters-retry.json, enemies-final.json). 512x512 rendition of the same wiki file (scratch records a 268 px thumbnail); the 268 px JPG of the same subject is the same artwork, so page and subject agree; byte identity unverified. Added in fa583ba 2026-10-13."
     },
     {
-      "file": "fandom/semibot-walkies.png",
-      "kind": "community",
-      "entity": "staying-in-touch-with-the-crew",
-      "width": 185,
-      "height": 148,
-      "bytes": 45323,
-      "sha256": "6f637c597a6d2d28404e3f68294ff26071e31fc42646c64f7e553803a9ef9a09",
-      "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/",
-      "originalUrl": "",
-      "author": "R.E.P.O. Fandom Wiki contributors",
-      "license": "CC-BY-SA-4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "retrievedAt": "2026-10-13",
-      "modified": true,
-      "provenance": "weak",
-      "verdict": "ok",
-      "reviewer": "lead",
-      "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; the exact file page was not recorded before the wiki became challenge-blocked, so the wiki root is the source link. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
-    },
-    {
       "file": "fandom/semibot.png",
       "kind": "community",
       "entity": "the-camera-that-follows-you",

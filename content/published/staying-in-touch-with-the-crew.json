@@ -41,13 +41,13 @@
   ],
   "images": [
     {
-      "file": "fandom/semibot-walkies.png",
-      "kind": "community",
+      "file": "mapped/staying-in-touch-with-the-crew-radio.jpg",
+      "kind": "game",
       "alt": {
-        "en": "Community reference picture of Semibot Walkies from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Semibot Walkies。"
+        "en": "The game's colour texture of the radio the crew uses to talk.",
+        "zh": "游戏中小队通话所用无线电的颜色贴图。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer."
     },
     {
       "file": "staying-in-touch-with-the-crew.svg",
@@ -62,5 +62,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "community-image"
+  "imageTier": "game-image"
 }

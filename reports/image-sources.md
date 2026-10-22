@@ -17,9 +17,9 @@ a Cloudflare challenge/HTTP 403 from this machine; the CDN (`static.wikia.nocook
 therefore did **not** scrape the wikis and did **not** bypass the challenge. It used the community files that were
 already in the repository.
 
-- **82 community files** are used; **31** have an exact wiki page (and, where available, the original CDN URL) from
-  the local `.scratch` scrape data; **51** have **weak provenance** and point at the wiki root.
-- Three earlier files (`bella.png`, `clown-monster.png`, `loom.png`) were removed after the refined mapping stopped
+- **81 community files** are used; **31** have an exact wiki page (and, where available, the original CDN URL) from
+  the local `.scratch` scrape data; **50** have **weak provenance** and point at the wiki root.
+- Four earlier files (`bella.png`, `clown-monster.png`, `loom.png`, `semibot-walkies.png`) were removed after the refined mapping stopped
   using them, so no unreferenced community file remains.
 - All 85 originally downloaded files were stored as WebP with a `.png`/`.jpg` name. They were re-encoded to the
   declared PNG/JPEG format so the server and the image tool agree on the bytes; the manifest marks the surviving files
@@ -61,7 +61,6 @@ Weak-provenance files (follow-up list):
 - `fandom/radio.png`
 - `fandom/roll-staff.png`
 - `fandom/rubber-duck.png`
-- `fandom/semibot-walkies.png`
 - `fandom/semibot.png`
 - `fandom/shotgun.png`
 - `fandom/snow-bike.png`
@@ -83,7 +82,7 @@ Weak-provenance files (follow-up list):
 
 The provenance audit also flagged these limitations; they are recorded here rather than hidden:
 
-- **13 opaque screenshots** may be local captures rather than wiki uploads: `ceiling-eye.png`, `cosmetic-boxes.png`, `cosmetics.png`, `disposal-arena.png`, `locations.png`, `map.png`, `museum-of-human-art.png`, `purchased-items.png`, `semibot.png`, `semibot-walkies.png`, `swiftbroom-academy-rooms.png`, `upgrades.jpg`, `valuables.png`. They are treated as weak provenance and should be replaced or linked to a verified file page before publishing.
+- **12 opaque screenshots** may be local captures rather than wiki uploads: `ceiling-eye.png`, `cosmetic-boxes.png`, `cosmetics.png`, `disposal-arena.png`, `locations.png`, `map.png`, `museum-of-human-art.png`, `purchased-items.png`, `semibot.png`, `swiftbroom-academy-rooms.png`, `upgrades.jpg`, `valuables.png`. They are treated as weak provenance and should be replaced or linked to a verified file page before publishing.
 - **14 JPGs** are 268 px Fandom thumbnails; re-encoding to JPEG lost any alpha. They are still legible at the size the page displays them, but they are not the full-size wiki file.
 - **Five subjects exist twice** (268 px JPG and 512 px PNG of the same artwork): banger, birthday-boy, headman, peeper, rugrat. Both copies are published on different entries; the credits page lists each file separately.
 - **No file was verified live** because the wiki HTML/API is challenge-blocked. A browser session that passes the challenge can fill the weak list without changing any code: record the file page and author with `tools/record-image.py --replace`.
