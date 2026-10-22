@@ -136,6 +136,18 @@ try {
   }
   ok('every internal link resolves to an emitted file', dangling.length === 0, dangling.slice(0, 5).join(', '));
 
+  // Pictures are the part of the page a reader notices first: every local src must be an emitted file. This is a
+  // separate gate from the link check because an <img> with a stale path is a broken picture, not a broken link.
+  const badImages = [];
+  for (const f of htmlFiles) {
+    const h = readFileSync(f, 'utf8');
+    for (const m of h.matchAll(/<img\b[^>]*\bsrc="(\/[^"]+)"/g)) {
+      const rel = m[1].replace(/^\//, '');
+      if (!existsSync(join(dir, rel))) badImages.push(f.slice(dir.length) + ' -> ' + m[1]);
+    }
+  }
+  ok('every image reference resolves to an emitted file', badImages.length === 0, badImages.slice(0, 5).join(', '));
+
   // A title that repeats the site name, or two pages sharing a title or description, is a real SEO defect.
   const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = [];
   for (const u of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
