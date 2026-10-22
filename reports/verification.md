@@ -8,7 +8,7 @@
 > | Image coverage | 172/172 entries have a picture; 0 notes; 263 records; 0 unused community files |
 > | Image sanity | 263 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
-> | Community pictures | 132 entries; 82 files; 26 exact provenance, 55 weak |
+> | Community pictures | 132 entries; 82 files; 31 exact provenance, 51 weak |
 > | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
 >
 > Commands: `node pipeline/site.mjs`, `node tools/content-gate.mjs`, `node tools/image-coverage.mjs`,
