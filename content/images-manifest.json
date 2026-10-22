@@ -10,9 +10,9 @@
       "bytes": 11236,
       "sha256": "6eb412dfc6438399b7f8718cc8e639d647a4c9900b0b0c03c4a6cc58739ee805",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Animal",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2b/Animal_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612095937",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Animal_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2b/Animal_Transparent.png/revision/latest?cb=20250612095937",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -21,7 +21,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/apex-predator.png",
@@ -65,7 +65,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/banger.jpg",
@@ -76,9 +76,9 @@
       "bytes": 11842,
       "sha256": "eb29e557d6864ece962629ce568e299dab9c0ae6ddaf7e063d14b48ce49e7563",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Banger",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/8/8a/Banger_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612053934",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Banger_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/8/8a/Banger_Transparent.png/revision/latest?cb=20250612053934",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -87,7 +87,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/banger.png",
@@ -98,9 +98,9 @@
       "bytes": 166554,
       "sha256": "98f8ad5cacd17ee6a8a621575f2a44d020e3528ea0b8536a29b4ddb5a35214cb",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Banger",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/8/8a/Banger_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612053934",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Banger_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/8/8a/Banger_Transparent.png/revision/latest?cb=20250612053934",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -109,7 +109,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/birthday-boy.jpg",
@@ -120,9 +120,9 @@
       "bytes": 9486,
       "sha256": "4c354fd62b0fc56184e4e24c440a63cb3bebba17c8eed286026894bd470e4c38",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Birthday_Boy",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/6/6c/Birthday_Boy_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222356",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Birthday_Boy_monster.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/6/6c/Birthday_Boy_monster.png/revision/latest?cb=20251201222356",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -131,7 +131,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/birthday-boy.png",
@@ -142,9 +142,9 @@
       "bytes": 157674,
       "sha256": "7f2bb3c077bfe1eefa57eb3fe215dd87c28d856ad48b344b0c330cb570614612",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Birthday_Boy",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/6/6c/Birthday_Boy_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222356",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Birthday_Boy_monster.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/6/6c/Birthday_Boy_monster.png/revision/latest?cb=20251201222356",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -153,7 +153,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/blender.png",
@@ -175,7 +175,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/bowtie.jpg",
@@ -186,9 +186,9 @@
       "bytes": 11171,
       "sha256": "5e8942a2dc4fe51ea88764b826be9b68a4ad1dd1517a9712659ebcea3da957fc",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Bowtie",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/b/b5/Bowtie_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612053934",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Bowtie_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/b/b5/Bowtie_Transparent.png/revision/latest?cb=20250612053934",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -197,7 +197,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/c-a-r-t-laser.png",
@@ -219,7 +219,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader MisterCosmic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/c-a-r-t.png",
@@ -252,9 +252,9 @@
       "bytes": 169747,
       "sha256": "83acc5207e958aa898ffa7e8aab2cc84b04c9a6937d4c4437e37dcb47f955cd7",
       "sourceName": "R.E.P.O. Fandom Wiki (repo-2025horror)",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Peeper",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054522",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Peeper_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest?cb=20250612054522",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -263,7 +263,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Page matched by monster name/meaning: the scratch scrape lists 'Peeper' with this exact CDN file (fandom-monsters-retry.json, enemies-final.json). 640x363 rendition of the same wiki file (scratch records a 268 px thumbnail); the 268 px JPG of the same subject is the same artwork, so page and subject agree; byte identity unverified. Opaque rectangle with no alpha: an in-game screenshot, not a cut-out wiki render; may be a local capture rather than a Fandom upload. Added in fa583ba 2026-10-13."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/chef.png",
@@ -307,7 +307,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Mikola2023; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/cosmetics.png",
@@ -351,7 +351,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Foka hehe; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/disposal-arena.png",
@@ -417,7 +417,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/elsa.png",
@@ -428,9 +428,9 @@
       "bytes": 175466,
       "sha256": "8a9302c025770ee021ad2cec559683678266a6ec99c97a86ed12421f283fb184",
       "sourceName": "R.E.P.O. Fandom Wiki (repo-2025horror)",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Elsa",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/9/94/Elsa_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222309",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Elsa_monster.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/9/94/Elsa_monster.png/revision/latest?cb=20251201222309",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -439,7 +439,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Page matched by monster name/meaning: the scratch scrape lists 'Elsa' with this exact CDN file (fandom-monsters-retry.json, enemies-final.json). 512x512 rendition of the same wiki file (scratch records a 268 px thumbnail); the 268 px JPG of the same subject is the same artwork, so page and subject agree; byte identity unverified. Added in fa583ba 2026-10-13."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/enemy-valuable.png",
@@ -483,7 +483,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Escue; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/explosive-mine.png",
@@ -527,7 +527,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Foka hehe; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/feather-drone.png",
@@ -571,7 +571,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Kipik4; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/gambit.png",
@@ -637,7 +637,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Escue; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/gumball-machine.png",
@@ -659,7 +659,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; local file matches this page's dimensions."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/headgrab.png",
@@ -670,9 +670,9 @@
       "bytes": 265851,
       "sha256": "3931e13d6fdd3783277feacd90aff18f1e4fb13cb8db5056a606b1d5ef44f1d6",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Headgrab",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/a/a6/Headgrab_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222115",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Headgrab_monster.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/a/a6/Headgrab_monster.png/revision/latest?cb=20251201222115",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -681,7 +681,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/headman.jpg",
@@ -692,9 +692,9 @@
       "bytes": 12708,
       "sha256": "997f7173d1eb705d1e1632ffc0560bc6e4624f87ff66652de59b187f4681835c",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Headman",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/20/Headman_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054405",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Headman_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/20/Headman_Transparent.png/revision/latest?cb=20250612054405",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -703,7 +703,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/headman.png",
@@ -714,9 +714,9 @@
       "bytes": 227435,
       "sha256": "58f3d2fc8628a6c13f0111dda562d810d3b32d47d5a7ca1392407d83b41117ba",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Headman",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/20/Headman_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054405",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Headman_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/20/Headman_Transparent.png/revision/latest?cb=20250612054405",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -725,7 +725,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/health-pack.png",
@@ -758,9 +758,9 @@
       "bytes": 9648,
       "sha256": "de53a6c07d6c32ea3b0fd1fd2d687d3a8b3115d7e170c183fca8a758072f0fc7",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Heart_Hugger",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/45/Heart_Hugger_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222041",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Heart_Hugger_monster.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/45/Heart_Hugger_monster.png/revision/latest?cb=20251201222041",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -769,7 +769,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/hidden.png",
@@ -780,9 +780,9 @@
       "bytes": 18255,
       "sha256": "33ec909c21be23277e75324a07c73a6105e9a6698c4d1809a5da0b31e3559ac7",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Hidden",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2c/Hidden_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250705193250",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Hidden_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2c/Hidden_Transparent.png/revision/latest?cb=20250705193250",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -791,7 +791,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/huntsman.jpg",
@@ -802,9 +802,9 @@
       "bytes": 7740,
       "sha256": "2d6a7074ccfe5bb2ed91e74341f5ee5a46ee45aab93d042718cd8bd5f1cead8f",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Huntsman",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/4c/Huntsman_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054521",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Huntsman_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/4c/Huntsman_Transparent.png/revision/latest?cb=20250612054521",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -813,7 +813,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/jackhammer.png",
@@ -835,7 +835,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader ArcherMaster5000; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/keycard.png",
@@ -857,7 +857,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader ArcherMaster5000; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/leaf-blower.png",
@@ -879,7 +879,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Thatonesemibot; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/levitation-potion.png",
@@ -901,7 +901,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader ArcherMaster5000; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/locations.png",
@@ -956,9 +956,9 @@
       "bytes": 204347,
       "sha256": "ece035e44da504bde80a54d343cd955a9dc80cd117df7fe9b100a85a5319a058",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Mentalist",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2c/Mentalist_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054522",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Mentalist_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/2c/Mentalist_Transparent.png/revision/latest?cb=20250612054522",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -967,7 +967,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/milk.png",
@@ -989,7 +989,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/museum-boombox.png",
@@ -1044,9 +1044,9 @@
       "bytes": 13852,
       "sha256": "20c9f2c159a82c6d56960171a54cca6fd583b0d59212b99abead7e45987d6802",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Oogly",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/43/Oogly_monster.png/revision/latest/scale-to-width-down/268?cb=20251201222007",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Oogly_monster.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/43/Oogly_monster.png/revision/latest?cb=20251201222007",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1055,7 +1055,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/peeper.jpg",
@@ -1066,9 +1066,9 @@
       "bytes": 7768,
       "sha256": "40fd8183773b567dc795340c4cc5075e41bb93a6219aa8a15d9e950a05a18556",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Peeper",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054522",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Peeper_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest?cb=20250612054522",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1077,7 +1077,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/peeper.png",
@@ -1088,9 +1088,9 @@
       "bytes": 121254,
       "sha256": "594f6cf26073abbb03576408b2767be4760a02a8483499a3980d6c0103f6b8d9",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Peeper",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054522",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Peeper_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/57/Peeper_Transparent.png/revision/latest?cb=20250612054522",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1099,7 +1099,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/prodzap.png",
@@ -1121,7 +1121,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader MisterCosmic; local file matches this page's dimensions."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/pulse-pistol.png",
@@ -1143,7 +1143,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Ask99999; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/purchased-items.png",
@@ -1187,7 +1187,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/reaper.png",
@@ -1198,9 +1198,9 @@
       "bytes": 160804,
       "sha256": "904b305cb9ee8bee1e6f7b40ae0c5968672f96498ddff48aa9c972b76032ccc3",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Reaper",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/a/ad/Reaper_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054522",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Reaper_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/a/ad/Reaper_Transparent.png/revision/latest?cb=20250612054522",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1209,7 +1209,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/robe.png",
@@ -1220,9 +1220,9 @@
       "bytes": 96134,
       "sha256": "0a523f29313a20f9ee03f2238c1b8513fec2f6ec806f9b8053809b6f59e9326a",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Robe",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/55/Robe_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054714",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Robe_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/5/55/Robe_Transparent.png/revision/latest?cb=20250612054714",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1231,7 +1231,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/roll-staff.png",
@@ -1253,7 +1253,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Thatonesemibot; local file matches this page's dimensions."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/rubber-duck.png",
@@ -1275,7 +1275,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Escue; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/rugrat.jpg",
@@ -1308,9 +1308,9 @@
       "bytes": 159460,
       "sha256": "348d0c3c83dc9b6bc368d001c351da57c8316c0da4cecf20c398f4cd49954631",
       "sourceName": "R.E.P.O. Fandom Wiki (repo-2025horror)",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Rugrat",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/7/77/Rugrat_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054715",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Rugrat_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/7/77/Rugrat_Transparent.png/revision/latest?cb=20250612054715",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1319,7 +1319,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Page matched by monster name/meaning: the scratch scrape lists 'Rugrat' with this exact CDN file (fandom-monsters-retry.json, enemies-final.json). 512x512 rendition of the same wiki file (scratch records a 268 px thumbnail); the 268 px JPG of the same subject is the same artwork, so page and subject agree; byte identity unverified. Added in fa583ba 2026-10-13."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/semibot.png",
@@ -1341,7 +1341,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader MisterCosmic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/shadow-child.jpg",
@@ -1352,9 +1352,9 @@
       "bytes": 6364,
       "sha256": "2fe838ae787400b7fab122fd0ae6f69cb1f38881b4193ced2e06ebeb40908c64",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Shadow_Child",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/4e/Shadow_Child_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054715",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Shadow_Child_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/4e/Shadow_Child_Transparent.png/revision/latest?cb=20250612054715",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1363,7 +1363,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/shotgun.png",
@@ -1407,7 +1407,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader ArcherMaster5000; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/spewer.jpg",
@@ -1418,9 +1418,9 @@
       "bytes": 9301,
       "sha256": "72279b7635031b321ba1841df263fbf98e40f79079c8f50aaff8815e8198ff57",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Spewer",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/9/99/Spewer_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612100158",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Spewer_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/9/99/Spewer_Transparent.png/revision/latest?cb=20250612100158",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1429,7 +1429,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/swiftbroom-academy-rooms.png",
@@ -1495,7 +1495,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/television.png",
@@ -1517,7 +1517,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/tick.png",
@@ -1561,7 +1561,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/traffic-light.png",
@@ -1583,7 +1583,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/tray.png",
@@ -1605,7 +1605,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/truck.png",
@@ -1627,7 +1627,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Thatonesemibot; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/trudge.jpg",
@@ -1638,9 +1638,9 @@
       "bytes": 8354,
       "sha256": "b9d87545e143f7448e3991de9f478571ac3554b547734ffbeb27b10f34083b2b",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Trudge",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/6/65/Trudge_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612054905",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Trudge_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/6/65/Trudge_Transparent.png/revision/latest?cb=20250612054905",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1649,7 +1649,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/upgrades.jpg",
@@ -1671,7 +1671,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Mikola2023; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/upscream.jpg",
@@ -1682,9 +1682,9 @@
       "bytes": 8094,
       "sha256": "aae6e86784fde3f1033d53526c978d0d62a9c9f247e1ac8bf69ebd44822482fa",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Upscream",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/25/Upscream_Transparent.png/revision/latest/scale-to-width-down/268?cb=20250612100128",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Upscream_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/2/25/Upscream_Transparent.png/revision/latest?cb=20250612100128",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1693,7 +1693,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/valuable-tracker.png",
@@ -1759,7 +1759,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader Thatonesemibot; the local picture may be a resized or cropped copy of this file."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/wizard-broom.png",
@@ -1781,7 +1781,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom file page matched by API search; uploader RoughlyHectic; local file matches this page's dimensions."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "entity": "batteries-and-charging",
