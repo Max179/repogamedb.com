@@ -32,9 +32,9 @@
       "bytes": 159922,
       "sha256": "1dbaf0614c0de7bb33debca71ded790d66e947b0d6ef3014ecf574c5d41fc06a",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Apex_Predator",
-      "originalUrl": "",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Apex_Predator_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/9/9d/Apex_Predator_Transparent.png/revision/latest?cb=20250612053934",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -43,7 +43,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/baby-head.png",
@@ -274,9 +274,9 @@
       "bytes": 240723,
       "sha256": "71a51172a9d2fda3ebc3432cc24c7337b39aa5c08cac6cd62d23e23578f013ed",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Chef",
-      "originalUrl": "",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Chef_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/7/74/Chef_Transparent.png/revision/latest?cb=20250612054402",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -285,7 +285,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/cosmetic-boxes.png",
@@ -582,9 +582,9 @@
       "bytes": 220015,
       "sha256": "1360429b5548ee543978bb7c672611fe73f296bd7b1ba9158424f87ef75a1195",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Gambit",
-      "originalUrl": "",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Gambit_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/4/40/Gambit_Transparent.png/revision/latest?cb=20251201220554",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -593,7 +593,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/gnome.png",
@@ -604,9 +604,9 @@
       "bytes": 191639,
       "sha256": "1e372132794d7a2d301f3b93426ca3d8ccd508aed44fcb1d704b84380f00cde0",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Gnome",
-      "originalUrl": "",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Gnome_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/d/d9/Gnome_Transparent.png/revision/latest?cb=20250612054403",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -615,7 +615,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/grenade.png",
@@ -1286,9 +1286,9 @@
       "bytes": 10928,
       "sha256": "08a9c42c6b9ddbd84b35e1f871ee2218f00d550c76585ac15599f7588e3dbae8",
       "sourceName": "R.E.P.O. Fandom Wiki (repo-2025horror)",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Rugrat",
-      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/7/77/Rugrat_Transparent.png",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Rugrat_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/7/77/Rugrat_Transparent.png/revision/latest?cb=20250612054715",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1297,7 +1297,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Page matched by monster name/meaning: the scratch scrape lists 'Rugrat' with this exact CDN file (fandom-monsters-retry.json, enemies-final.json). Byte-identical (at fa583ba) to content/assets/mapped/rugrat-fandom.png, whose manifest record carried this CDN URL. Added in 76fce11 2026-10-12. Unused at fa583ba; attached to an unrelated mechanics entry by the 223751b bulk picture pass."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/rugrat.png",
@@ -1528,9 +1528,9 @@
       "bytes": 159945,
       "sha256": "880274bf7c5c3265a5d70575fd4cb26a3654d9f575133149806630632a6a8379",
       "sourceName": "R.E.P.O. Fandom Wiki",
-      "sourcePage": "https://repo-2025horror.fandom.com/wiki/Tick",
-      "originalUrl": "",
-      "author": "R.E.P.O. Fandom Wiki contributors",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Tick_Transparent.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/3/32/Tick_Transparent.png/revision/latest?cb=20251201220709",
+      "author": "CritHaxXoG",
       "license": "CC-BY-SA-4.0",
       "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
       "retrievedAt": "2026-10-13",
@@ -1539,7 +1539,7 @@
       "verdict": "ok",
       "reviewer": "lead",
       "reviewDate": "2026-10-22",
-      "notes": "Fandom community image; source page recorded from the local scrape data. Re-encoded from the downloaded WebP to the declared PNG/JPEG format for the site."
+      "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
       "file": "fandom/toy-car.png",
