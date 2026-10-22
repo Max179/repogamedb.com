@@ -5,10 +5,10 @@
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
 > | Site gates | `[site-tests] 67 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
-> | Image coverage | 172/172 entries have a picture; 0 notes; 266 records; 0 unused community files |
-> | Image sanity | 266 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
+> | Image coverage | 172/172 entries have a picture; 0 notes; 263 records; 0 unused community files |
+> | Image sanity | 263 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
-> | Community pictures | 110 entries; 85 files; 29 exact provenance, 56 weak |
+> | Community pictures | 132 entries; 82 files; 26 exact provenance, 55 weak |
 > | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
 >
 > Commands: `node pipeline/site.mjs`, `node tools/content-gate.mjs`, `node tools/image-coverage.mjs`,

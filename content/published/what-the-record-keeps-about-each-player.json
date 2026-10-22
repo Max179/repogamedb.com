@@ -51,15 +51,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-save-and-your-run-record-background.jpg",
-      "kind": "game",
+      "file": "fandom/cosmetics.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “What the record keeps about each player”.",
-        "zh": "用于说明“What the record keeps about each player”的游戏素材。"
+        "en": "An in-game view of a player character lit green, wearing a hat, bandages and other cosmetics.",
+        "zh": "游戏内画面：一名泛着绿光的玩家角色，戴着帽子、缠着绷带，还有其它装饰品。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the end-of-run record background"
+      "shows": "One player character with its own appearance, standing in a dark room."
     },
     {
       "file": "what-the-record-keeps-about-each-player.svg",
@@ -74,5 +74,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

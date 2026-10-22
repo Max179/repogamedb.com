@@ -101,8 +101,9 @@ export function build(inventoryPath, outDir) {
       const license = esc(rec.license || 'CC-BY-SA-4.0');
       const licenseUrl = safeUrl(rec.licenseUrl || 'https://creativecommons.org/licenses/by-sa/4.0/');
       const licenseLink = licenseUrl ? ' (<a href="' + esc(licenseUrl) + '" rel="nofollow noopener">license</a>)' : '';
-      const modified = rec.modified ? ' It has been cropped or resized for this page.' : '';
-      const prefix = img.illustrative ? 'Illustrative community picture' + (img.shows ? ' showing ' + esc(img.shows) : '') + '. ' : 'Community picture';
+      const modified = rec.modified ? ' It has been re-encoded for this page.' : '';
+      const shown = String(img.shows ?? '').replace(/[.。!！?？]\s*$/u, '').trim();
+      const prefix = img.illustrative ? 'Illustrative community picture' + (shown ? ' showing ' + esc(shown) : '') : 'Community picture';
       return prefix + ' from ' + source + ', ' + license + licenseLink + ', by ' + author + '.' + modified + ' It is not a screenshot taken by this site.';
     }
     if (img.kind === 'game') {

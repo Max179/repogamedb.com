@@ -49,12 +49,12 @@
       "file": "fandom/valuables.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “How many valuables a level holds”.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“How many valuables a level holds”。"
+        "en": "A dark in-game room with a mounted skeleton, crew figures and the haul total shown at the top right as a fraction of the goal.",
+        "zh": "昏暗的游戏内房间，架着骨架标本，有几名队员，右上角以分数形式显示搬运总额与目标。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "R.E.P.O. valuables"
+      "shows": "A level interior with lootable objects and the running haul total in the corner."
     },
     {
       "file": "how-many-valuables-a-level-holds.svg",

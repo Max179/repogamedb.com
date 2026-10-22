@@ -2,10 +2,10 @@
 >
 > - Published entries: **172** (was 167); structured guides: **87**; picture-less noindex notes: **0** (was 48).
 > - Build: `pages=782 indexable=284` (noindex 498); **67** site gates pass.
-> - Images: **266** manifest records (181 game + 85 community; 29 exact provenance, 56 weak); **62** entries use a game
->   image and **110** use a community image; every published entry now has a picture. `/credits.html` lists every
+> - Images: **263** manifest records (181 game + 82 community; 26 exact provenance, 55 weak); **40** entries use a game
+>   image and **132** use a community image; every published entry now has a picture. `/credits.html` lists every
 >   community picture with source, author and licence.
-> - The 85 community files were stored as WebP under `.png`/`.jpg` names and were re-encoded to their declared format;
+> - The community files were stored as WebP under `.png`/`.jpg` names and were re-encoded to their declared format;
 >   manifest hashes/dimensions were refreshed. The Fandom wikis remain Cloudflare-blocked from this machine, so no new
 >   scraping was done; see `reports/image-sources.md` for the weak-provenance follow-up list.
 >

@@ -1,6 +1,6 @@
 > **Update 2026-10-22.** Automated scraping remains blocked: both R.E.P.O. Fandom wikis return a Cloudflare
 > challenge/403 from this machine; the CDN is reachable. No scraping or challenge bypass was used. This pass instead
-> reuses the 85 community files already in the repository and the local game texture library, repairs their manifest
+> reuses the 82 community files already in the repository and the local game texture library, repairs their manifest
 > records, and moves all 46 picture-less notes to entries. 29 files have an exact wiki page; 56 have weak provenance
 > (wiki root as source) and are listed in `reports/image-sources.md` for manual follow-up.
 # Fandom Scrape Report

@@ -50,15 +50,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-shop-between-runs-depot.jpg",
-      "kind": "game",
+      "file": "fandom/cosmetic-boxes.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “What the shop puts out”.",
-        "zh": "用于说明“What the shop puts out”的游戏素材。"
+        "en": "Boxes of stock stacked on the shelves of a shop-like room, under bright lights.",
+        "zh": "商店模样的房间里，货架上堆放着成箱的货品，上方灯光明亮。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the shop depot"
+      "shows": "Shelves holding stacked boxes of goods in a lit interior."
     },
     {
       "file": "what-the-shop-puts-out.svg",
@@ -73,5 +73,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

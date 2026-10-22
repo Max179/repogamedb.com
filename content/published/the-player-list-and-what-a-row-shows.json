@@ -44,15 +44,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-save-and-your-run-record-background.jpg",
+      "file": "mapped/the-arena-and-its-race-crown.jpg",
       "kind": "game",
       "alt": {
-        "en": "Game asset used to illustrate “The player list and what a row shows”.",
-        "zh": "用于说明“The player list and what a row shows”的游戏素材。"
+        "en": "The game's own crown icon, a flat yellow crown drawn on black.",
+        "zh": "游戏自带的皇冠图标：黑底上平涂的黄色皇冠。"
       },
       "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
       "illustrative": true,
-      "shows": "the end-of-run record background"
+      "shows": "A yellow crown icon from the game's interface art."
     },
     {
       "file": "the-player-list-and-what-a-row-shows.svg",

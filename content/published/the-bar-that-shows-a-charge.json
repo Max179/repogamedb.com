@@ -54,15 +54,15 @@
   ],
   "images": [
     {
-      "file": "mapped/batteries-and-charging-station.jpg",
-      "kind": "game",
+      "file": "fandom/energy-crystal.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “The bar that shows a charge”.",
-        "zh": "用于说明“The bar that shows a charge”的游戏素材。"
+        "en": "Community reference picture of the energy crystal: a yellow cluster of crystal shards.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：能量水晶，一簇黄色的晶体。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the charging station"
+      "shows": "A bright yellow crystal cluster, the game's own charge item."
     },
     {
       "file": "the-bar-that-shows-a-charge.svg",
@@ -77,5 +77,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

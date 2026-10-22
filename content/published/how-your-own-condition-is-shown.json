@@ -39,15 +39,15 @@
   ],
   "images": [
     {
-      "file": "mapped/health-and-recovery-pack.jpg",
-      "kind": "game",
+      "file": "fandom/semibot.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “How your own condition is shown”.",
-        "zh": "用于说明“How your own condition is shown”的游戏素材。"
+        "en": "Community reference picture of Semibot, the player character, from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Semibot，玩家角色。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "a health pack"
+      "shows": "The player character, a small white robot, standing and looking ahead."
     },
     {
       "file": "how-your-own-condition-is-shown.svg",
@@ -62,5 +62,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

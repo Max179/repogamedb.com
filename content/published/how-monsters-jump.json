@@ -44,15 +44,15 @@
   ],
   "images": [
     {
-      "file": "fandom/rugrat.jpg",
+      "file": "fandom/chef.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “How monsters jump”.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“How monsters jump”。"
+        "en": "Community reference picture of the Chef: a green frog-like monster in a chef's hat and apron.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：厨师（Chef），一只戴着厨师帽、系着围裙的绿色蛙状怪物。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the Rugrat monster"
+      "shows": "A squatting frog-like monster, a creature built to leave the ground."
     },
     {
       "file": "how-monsters-jump.svg",

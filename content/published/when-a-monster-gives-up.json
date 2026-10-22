@@ -46,15 +46,15 @@
   ],
   "images": [
     {
-      "file": "fandom/banger.jpg",
+      "file": "fandom/robe.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “When a monster gives up”.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“When a monster gives up”。"
+        "en": "Community reference picture of the Robe: a tall figure in a dark hooded robe with pale hands.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：长袍怪物（Robe），一个披着深色连帽长袍、双手苍白的高大身影。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the Banger monster"
+      "shows": "A tall robed figure standing with its hands at its sides."
     },
     {
       "file": "when-a-monster-gives-up.svg",

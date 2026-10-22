@@ -62,15 +62,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-cart-and-its-boost-pads-cart.jpg",
-      "kind": "game",
+      "file": "fandom/toy-car.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “Hitting things with a vehicle”.",
-        "zh": "用于说明“Hitting things with a vehicle”的游戏素材。"
+        "en": "Community reference picture of the Toy Car, the vehicle whose impacts are graded, from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），它的撞击会被分级。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the portable cart"
+      "shows": "The red car vehicle with its driver, undamaged."
     },
     {
       "file": "hitting-things-with-a-vehicle.svg",
@@ -85,5 +85,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

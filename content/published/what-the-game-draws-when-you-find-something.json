@@ -41,13 +41,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-valuable-tracker-device.jpg",
-      "kind": "game",
+      "file": "fandom/valuable-tracker.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “What the game draws when you find something”.",
-        "zh": "用于说明“What the game draws when you find something”的游戏素材。"
+        "en": "Community reference picture of the valuable tracker: a handheld rod with a ring at its end.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：贵重物品追踪器，一根末端带环的手持杆。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "A hand-held dowsing-rod-shaped device with a ring, the game's tool for locating valuables."
     },
     {
       "file": "what-the-game-draws-when-you-find-something.svg",
@@ -62,5 +64,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

@@ -46,13 +46,15 @@
   ],
   "images": [
     {
-      "file": "mapped/what-being-grabbed-feels-like-grabber.jpg",
-      "kind": "game",
+      "file": "fandom/headgrab.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “What being grabbed does to your view”.",
-        "zh": "用于说明“What being grabbed does to your view”的游戏素材。"
+        "en": "Community reference picture of the Headgrab: a wide-mouthed monster that takes hold of a player's head.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：抓头怪（Headgrab），一只张开大嘴、会抓住玩家头部的怪物。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "The monster that does the grabbing, with its mouth open."
     },
     {
       "file": "what-being-grabbed-does-to-your-view.svg",
@@ -67,5 +69,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

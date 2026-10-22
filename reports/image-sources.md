@@ -14,17 +14,16 @@ Updated 2026-10-22 for branch `feat/entry-images`.
 
 The two R.E.P.O. Fandom wikis (`repo-2025horror.fandom.com`, `repogame.fandom.com`) answer automated requests with
 a Cloudflare challenge/HTTP 403 from this machine; the CDN (`static.wikia.nocookie.net`) is reachable. This pass
-therefore did **not** scrape the wikis and did **not** bypass the challenge. It used the 85 community files that were
+therefore did **not** scrape the wikis and did **not** bypass the challenge. It used the community files that were
 already in the repository.
 
-- **29 files** have an exact wiki page and, where available, the original CDN URL from the local `.scratch` scrape
-  data.
-- **56 files** have **weak provenance**: the file was downloaded earlier without its file page, so the
-  manifest points at the wiki root and attributes the picture to "R.E.P.O. Fandom Wiki contributors". They are still
-  marked as community images, but the exact page/author has to be supplied before this can be called fully verified.
-- All 85 files were stored as WebP with a `.png`/`.jpg` name. They were re-encoded to the declared PNG/JPEG format
-  so the server and the image tool agree on the bytes; the manifest marks them `modified: true` and the entry captions
-  say they were re-encoded.
+- **82 community files** are used; **26** have an exact wiki page (and, where available, the original CDN URL) from
+  the local `.scratch` scrape data; **55** have **weak provenance** and point at the wiki root.
+- Three earlier files (`bella.png`, `clown-monster.png`, `loom.png`) were removed after the refined mapping stopped
+  using them, so no unreferenced community file remains.
+- All 85 originally downloaded files were stored as WebP with a `.png`/`.jpg` name. They were re-encoded to the
+  declared PNG/JPEG format so the server and the image tool agree on the bytes; the manifest marks the surviving files
+  `modified: true` and the entry captions say they were re-encoded.
 
 Weak-provenance files (follow-up list):
 
@@ -33,7 +32,6 @@ Weak-provenance files (follow-up list):
 - `fandom/c-a-r-t-laser.png`
 - `fandom/c-a-r-t.png`
 - `fandom/ceiling-eye.png`
-- `fandom/clown-monster.png`
 - `fandom/cosmetic-boxes.png`
 - `fandom/cosmetics.png`
 - `fandom/defibro.png`
@@ -88,7 +86,7 @@ Weak-provenance files (follow-up list):
 ## Attribution used on the site
 
 Each community image caption renders: "Community picture from <wiki link>, <licence> (<licence link>), by <author>.
-It has been cropped or resized for this page. It is not a screenshot taken by this site." Illustrative pictures add
+It has been re-encoded for this page. It is not a screenshot taken by this site." Illustrative pictures add
 "showing <what the picture shows>." The `/credits.html` page lists every community record with the entry that uses
 it, the source, the author and the licence. The manifest is the machine-readable source of the same facts.
 

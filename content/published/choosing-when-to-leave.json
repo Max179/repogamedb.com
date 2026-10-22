@@ -34,13 +34,15 @@
   ],
   "images": [
     {
-      "file": "mapped/extraction-run-point.jpg",
-      "kind": "game",
+      "file": "fandom/map.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “Choosing when to leave”.",
-        "zh": "用于说明“Choosing when to leave”的游戏素材。"
+        "en": "The game's handheld map device, its screen showing the level layout with one point of interest marked in red.",
+        "zh": "游戏中的手持地图设备，屏幕上显示关卡布局，并用红色标出一处兴趣点。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "A handheld map screen with a green level layout and one marked point of interest."
     },
     {
       "file": "choosing-when-to-leave.svg",
@@ -55,5 +57,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

@@ -64,15 +64,15 @@
   ],
   "images": [
     {
-      "file": "fandom/bella.png",
+      "file": "fandom/birthday-boy.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “The body every monster shares”.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“The body every monster shares”。"
+        "en": "Community reference picture of the Birthday Boy: a doll-like monster in a pointed party hat.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：生日男孩，一只戴着尖顶派对帽、像玩偶的怪物。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "Bella, a monster that rides a tricycle"
+      "shows": "A whole monster body, standing, as the shared physical body drives it."
     },
     {
       "file": "the-body-every-monster-shares.svg",

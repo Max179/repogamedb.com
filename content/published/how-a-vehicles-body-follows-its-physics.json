@@ -50,15 +50,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-car-and-the-plane-car.jpg",
-      "kind": "game",
+      "file": "fandom/toy-car.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “How a vehicle's body follows its physics”.",
-        "zh": "用于说明“How a vehicle's body follows its physics”的游戏素材。"
+        "en": "Community reference picture of the Toy Car, the body that a mesh transform follows, from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），其外观网格跟随物理体运动。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "a vehicle texture"
+      "shows": "The drawn body of the red car with its driver."
     },
     {
       "file": "how-a-vehicles-body-follows-its-physics.svg",
@@ -73,5 +73,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

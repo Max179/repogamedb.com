@@ -607,11 +607,11 @@ git status --porcelain              -> 空
 
 ## 2026-10-22 图片补齐（feat/entry-images）
 
-- 46 个 diagram-only 词条全部补图：10 个用 Fandom 社区图，36 个用本地游戏素材；原 SVG 图保留为第二张“非截图”说明。图片不再是无图注释：published 词条 172 / 注释 0。
-- 词条层级：62 个 game-image、110 个 community-image；所有已发布词条都有图。
-- manifest：266 条记录（181 game + 85 community）；community 中 29 条有精确 wiki 页面，56 条为弱出处（Fandom 被 Cloudflare 拦截，未自动抓取/未绕过），待补精确页面/作者。详见 `reports/image-sources.md`。
-- 85 个社区图文件原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
+- 46 个 diagram-only 词条全部补图：41 个用 Fandom 社区图，5 个用本地游戏素材（另有 6 个无实体选题使用明确标注的 illustrative 起始图）；原 SVG 图保留为第二张“非截图”说明。图片不再是无图注释：published 词条 172 / 注释 0。
+- 词条层级：40 个 game-image、132 个 community-image；所有已发布词条都有图。
+- manifest：263 条记录（181 game + 82 community）；community 中 26 条有精确 wiki 页面，55 条为弱出处（Fandom 被 Cloudflare 拦截，未自动抓取/未绕过），待补精确页面/作者。详见 `reports/image-sources.md`。
+- 82 个社区图文件（最初 85 个，删除 3 个未再引用者）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
 - 新增 `/credits.html`：列出每张社区图的文件、使用词条、来源、作者、许可；页脚可达。社区图 caption 不再写“taken from the game”；`/reference/sources` 不再声称 “Nothing is community-sourced”。
-- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 67 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 266 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
+- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 67 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 263 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
 - 工作分支 `feat/entry-images`（基于 fa583ba），未推送、未发布。
 

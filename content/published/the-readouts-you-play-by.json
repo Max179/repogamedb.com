@@ -54,15 +54,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-truck-screen-texture.jpg",
-      "kind": "game",
+      "file": "fandom/purchased-items.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “The readouts you play by”.",
-        "zh": "用于说明“The readouts you play by”的游戏素材。"
+        "en": "An in-game view with health and battery readouts at the top left, a money total at the top right and a large money figure floating over the scene.",
+        "zh": "游戏内画面：左上角是生命与电量读数，右上角是金钱总额，画面中央还浮着一个大额金钱数字。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
-      "illustrative": true,
-      "shows": "the truck screen texture"
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-readouts-you-play-by.svg",
@@ -77,5 +75,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

@@ -41,15 +41,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-level-themes-and-what-they-hold-common-room-sign.png",
-      "kind": "game",
+      "file": "fandom/television.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “The furniture a level is fitted with”.",
-        "zh": "用于说明“The furniture a level is fitted with”的游戏素材。"
+        "en": "The game's own television: a wooden-cased set with a speaker grille, showing static on its screen.",
+        "zh": "游戏自带的电视机：木壳机箱，带扬声器格栅，屏幕上满是雪花噪点。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
-      "illustrative": true,
-      "shows": "a common-room sign from a level"
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-furniture-a-level-is-fitted-with.svg",
@@ -64,5 +62,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

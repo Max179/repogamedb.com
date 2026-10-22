@@ -37,15 +37,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-token-machines-show-screen.jpg",
-      "kind": "game",
+      "file": "fandom/c-a-r-t.png",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “The numbers that float over things”.",
-        "zh": "用于说明“The numbers that float over things”的游戏素材。"
+        "en": "The C.A.R.T. hauling box, its front board showing a value of $0 between two hand symbols.",
+        "zh": "C.A.R.T. 搬运箱，正面板子在两个手的符号之间显示价值 $0。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the token machine screen"
+      "shows": "A cart whose board carries a value figure that changes with what it holds."
     },
     {
       "file": "the-numbers-that-float-over-things.svg",
@@ -60,5 +60,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }
