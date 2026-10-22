@@ -17,8 +17,8 @@ a Cloudflare challenge/HTTP 403 from this machine; the CDN (`static.wikia.nocook
 therefore did **not** scrape the wikis and did **not** bypass the challenge. It used the community files that were
 already in the repository.
 
-- **81 community files** are used; **59** have an exact wiki page (and, where available, the original CDN URL) from
-  the local scrape data or the Fandom API; **22** have **weak provenance** and point at the wiki root.
+- **81 community files** are used; **63** have an exact wiki page (and, where available, the original CDN URL) from
+  the local scrape data or the Fandom API; **18** have **weak provenance** and point at the wiki root.
 - Four earlier files (`bella.png`, `clown-monster.png`, `loom.png`, `semibot-walkies.png`) were removed after the refined mapping stopped
   using them, so no unreferenced community file remains.
 - All 85 originally downloaded files were stored as WebP with a `.png`/`.jpg` name. They were re-encoded to the
@@ -34,21 +34,17 @@ Weak-provenance files (follow-up list):
 - `fandom/enemy-valuable.png`
 - `fandom/explosive-mine.png`
 - `fandom/feather-drone.png`
-- `fandom/gumball-machine.png`
 - `fandom/health-pack.png`
 - `fandom/locations.png`
 - `fandom/map.png`
 - `fandom/museum-boombox.png`
 - `fandom/museum-of-human-art.png`
-- `fandom/prodzap.png`
 - `fandom/purchased-items.png`
-- `fandom/roll-staff.png`
 - `fandom/shotgun.png`
 - `fandom/swiftbroom-academy-rooms.png`
 - `fandom/sword.png`
 - `fandom/valuable-tracker.png`
 - `fandom/valuables.png`
-- `fandom/wizard-broom.png`
 
 ## Audit flags
 

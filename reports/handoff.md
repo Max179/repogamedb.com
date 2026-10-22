@@ -2,7 +2,7 @@
 >
 > - Published entries: **172** (was 167); structured guides: **87**; picture-less noindex notes: **0** (was 48).
 > - Build: `pages=782 indexable=284` (noindex 498); **68** site gates pass.
-> - Images: **262** manifest records (181 game + 81 community; 59 exact provenance, 22 weak); **41** entries use a game
+> - Images: **262** manifest records (181 game + 81 community; 63 exact provenance, 18 weak); **41** entries use a game
 >   image and **131** use a community image; every published entry now has a picture. `/credits.html` lists every
 >   community picture with source, author and licence.
 > - The community files were stored as WebP under `.png`/`.jpg` names and were re-encoded to their declared format;

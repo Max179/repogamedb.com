@@ -7,7 +7,7 @@
 > - New: `/credits.html` lists every community picture with source, author and licence; community captions no longer
 >   claim the picture was taken from the game.
 > - Publishing itself is still blocked: Cloudflare credentials/project binding and branch integration are unchanged
->   (see the blockers below). Weak image provenance remains for 22 community files.
+>   (see the blockers below). Weak image provenance remains for 18 community files.
 >
 > The 2026-10-01 measurements below are kept for history and are superseded by this block.
 # Publish checklist — repogamedb.com
