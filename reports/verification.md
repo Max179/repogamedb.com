@@ -3,7 +3,7 @@
 > | Item | Value |
 > | --- | --- |
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
-> | Site gates | `[site-tests] 67 passed, 0 failed` |
+> | Site gates | `[site-tests] 68 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
 > | Image coverage | 172/172 entries have a picture; 0 notes; 263 records; 0 unused community files |
 > | Image sanity | 263 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
@@ -11,6 +11,19 @@
 > | Community pictures | 132 entries; 82 files; 31 exact provenance, 51 weak |
 > | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
 >
+
+## 干净克隆复验（2026-10-22，feat/entry-images）
+
+用 `git archive HEAD`（不含 data/raw、不含 web/dist）解到工区外，`git init` 后整链执行：
+
+- build：`pages=782 indexable=284 schema(noindex)=492`
+- tests：`68 passed, 0 failed`（含新增的“every image reference resolves to an emitted file”）
+- content gate：172 entries / 0 violations
+- image coverage：172/172、0 notes、263 records、0 unused community
+- image sanity：263 records / 10 flagged
+- classify：284 keep / 492 noindex
+- preflight：13 ok / 0 failed；smoke：284 kept
+- 未跑 typecheck（本机无 node_modules；CI 会安装 TypeScript）
 > Commands: `node pipeline/site.mjs`, `node tools/content-gate.mjs`, `node tools/image-coverage.mjs`,
 > `python3 tools/image-sanity.py`, `node tests/site.test.mjs`, `node tools/classify-urls.mjs`, `node pipeline/status.mjs`.
 > Fandom HTML/API remained Cloudflare-blocked; no scraping was attempted.

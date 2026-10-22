@@ -612,6 +612,6 @@ git status --porcelain              -> 空
 - manifest：263 条记录（181 game + 82 community）；community 中 31 条有精确 wiki 页面，51 条为弱出处（Fandom 被 Cloudflare 拦截，未自动抓取/未绕过），待补精确页面/作者。详见 `reports/image-sources.md`。
 - 82 个社区图文件（最初 85 个，删除 3 个未再引用者）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
 - 新增 `/credits.html`：列出每张社区图的文件、使用词条、来源、作者、许可；页脚可达。社区图 caption 不再写“taken from the game”；`/reference/sources` 不再声称 “Nothing is community-sourced”。
-- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 67 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 263 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
+- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 68 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 263 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
 - 工作分支 `feat/entry-images`（基于 fa583ba），未推送、未发布。
 
