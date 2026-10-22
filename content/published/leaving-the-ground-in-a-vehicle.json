@@ -59,6 +59,17 @@
   ],
   "images": [
     {
+      "file": "mapped/the-boosts-a-vehicle-earns-ramp.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “Leaving the ground in a vehicle”.",
+        "zh": "用于说明“Leaving the ground in a vehicle”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "a ramp used by vehicles"
+    },
+    {
       "file": "leaving-the-ground-in-a-vehicle.svg",
       "kind": "diagram",
       "alt": {
@@ -71,5 +82,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

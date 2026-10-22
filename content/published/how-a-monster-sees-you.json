@@ -49,6 +49,17 @@
   ],
   "images": [
     {
+      "file": "fandom/peeper.jpg",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “How a monster sees you”.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“How a monster sees you”。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "the Peeper monster, an eyeball creature"
+    },
+    {
       "file": "how-a-monster-sees-you.svg",
       "kind": "diagram",
       "alt": {
@@ -61,5 +72,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "community-image"
 }

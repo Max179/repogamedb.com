@@ -45,15 +45,6 @@
   ],
   "images": [
     {
-      "file": "fandom/bella.png",
-      "kind": "diagram",
-      "alt": {
-        "en": "Community reference picture of Bella from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Bella。"
-      },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
-    },
-    {
       "file": "mapped/the-tricycle-riders-rig-tricycle.jpg",
       "kind": "game",
       "alt": {

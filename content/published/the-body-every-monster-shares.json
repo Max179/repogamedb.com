@@ -64,6 +64,17 @@
   ],
   "images": [
     {
+      "file": "fandom/bella.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “The body every monster shares”.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“The body every monster shares”。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "Bella, a monster that rides a tricycle"
+    },
+    {
       "file": "the-body-every-monster-shares.svg",
       "kind": "diagram",
       "alt": {
@@ -76,5 +87,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "community-image"
 }

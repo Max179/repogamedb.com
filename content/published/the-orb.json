@@ -59,6 +59,17 @@
   ],
   "images": [
     {
+      "file": "fandom/energy-crystal.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “The orb and what it does”.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“The orb and what it does”。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "a glowing energy crystal"
+    },
+    {
       "file": "the-orb.svg",
       "kind": "diagram",
       "alt": {
@@ -71,5 +82,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "community-image"
 }

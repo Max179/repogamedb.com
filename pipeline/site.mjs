@@ -86,6 +86,30 @@ export function build(inventoryPath, outDir) {
   const srcLine = 'Source: read from a local copy of the game · version ' + (inv.version ?? 'unknown') + ' · nothing invented';
   let manifest = { records: [] };
   try { manifest = JSON.parse(readFileSync(join(process.cwd(), 'content', 'images-manifest.json'), 'utf8')); } catch { /* none yet */ }
+  const manifestByFile = new Map((manifest.records ?? []).map((r) => [r.file, r]));
+  const imageRecord = (img) => manifestByFile.get(img.file) ?? null;
+  const safeUrl = (u) => (/^https?:\/\//i.test(String(u ?? '')) ? String(u) : '');
+  /** Caption for any entry/category picture, derived from the manifest record rather than assumed. */
+  const captionFor = (img) => {
+    const rec = imageRecord(img);
+    if (!rec) return esc(img.disclaimer ?? 'Original diagram drawn for this site. It is not a screenshot of the game.');
+    if (img.kind === 'community') {
+      const name = rec.sourceName || 'R.E.P.O. Fandom Wiki';
+      const page = safeUrl(rec.sourcePage);
+      const source = page ? '<a href="' + esc(page) + '" rel="nofollow noopener">' + esc(name) + '</a>' : esc(name);
+      const author = esc(rec.author || 'R.E.P.O. Fandom Wiki contributors');
+      const license = esc(rec.license || 'CC-BY-SA-4.0');
+      const licenseUrl = safeUrl(rec.licenseUrl || 'https://creativecommons.org/licenses/by-sa/4.0/');
+      const licenseLink = licenseUrl ? ' (<a href="' + esc(licenseUrl) + '" rel="nofollow noopener">license</a>)' : '';
+      const modified = rec.modified ? ' It has been cropped or resized for this page.' : '';
+      const prefix = img.illustrative ? 'Illustrative community picture' + (img.shows ? ' showing ' + esc(img.shows) : '') + '. ' : 'Community picture';
+      return prefix + ' from ' + source + ', ' + license + licenseLink + ', by ' + author + '.' + modified + ' It is not a screenshot taken by this site.';
+    }
+    if (img.kind === 'game') {
+      return 'Picture taken from the game to identify this item; it remains the property of the developer.';
+    }
+    return esc(img.disclaimer ?? 'Original diagram drawn for this site. It is not a screenshot of the game.');
+  };
 
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
@@ -110,7 +134,7 @@ export function build(inventoryPath, outDir) {
     '<footer class="foot"><div class="wrap">\n<p class="dim">' + esc(srcLine) + '</p>\n' +
     '<p class="dim">A diagram is always labelled as a diagram. A number we could not verify is not printed.</p>\n' +
     '<p class="dim"><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · ' +
-    '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/reference/">Technical reference</a></p>\n' +
+    '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/credits.html">Image credits</a> · <a href="/reference/">Technical reference</a></p>\n' +
     '</div></footer>\n</body>\n</html>\n';
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
   const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + '/' + rel); };
@@ -125,7 +149,20 @@ export function build(inventoryPath, outDir) {
   const entities = entries.filter(hasPic);
   const notes = entries.filter((e) => !hasPic(e));
   const byId = new Map(entries.map((e) => [e.id, e]));
-  const imgOf = (e) => (e.images ?? []).find((i) => i.kind === 'game') ?? (e.images ?? []).find((i) => i.kind === 'community') ?? (e.images ?? [])[0];
+  const usedBy = new Map();
+  for (const e of entries) for (const i of e.images ?? []) {
+    if (i.kind !== 'community') continue;
+    const list = usedBy.get(i.file) ?? [];
+    list.push(e.id);
+    usedBy.set(i.file, list);
+  }
+  const communityRecords = (manifest.records ?? []).filter((r) => r.kind === 'community')
+    .sort((a, b) => String(a.file).localeCompare(String(b.file)));
+  const imgOf = (e) => {
+    const imgs = e.images ?? [];
+    if (e.imageTier === 'community-image') return imgs.find((i) => i.kind === 'community') ?? imgs.find((i) => i.kind === 'game') ?? imgs[0];
+    return imgs.find((i) => i.kind === 'game') ?? imgs.find((i) => i.kind === 'community') ?? imgs[0];
+  };
   const entryHref = (id) => (hasPic(byId.get(id) ?? {}) ? '/entries/' + id + '.html' : '/reference/notes/' + id + '.html');
   const oneLine = (e) => ((e.facts ?? [])[0]?.claim ?? e.summary ?? '');
   const whyOf = (because) => String(because ?? '').replace(/\s*\([^()]*\)\s*$/, '').trim();
@@ -180,7 +217,7 @@ export function build(inventoryPath, outDir) {
       : '<p class="dim">No update notes yet.</p>') +
     '\n<p><a href="/updates.html">All updates &rarr;</a></p>\n</section>\n' +
     '<section class="block">\n<h2>Where the pictures and facts come from</h2>\n' +
-    '<p>Pictures are taken from a local copy of the game itself, each one recorded with the asset it came from; a diagram drawn for this site is always labelled as a diagram and is never passed off as a screenshot. Facts are read from the game\'s own files, not from a wiki or a forum. The build this site documents is <strong>' + esc(inv.version ?? 'unknown') + '</strong>.</p>\n' +
+    '<p>Most pictures are taken from a local copy of the game itself, recorded with the asset they came from. Where no game picture could be confirmed, the entry carries a community picture from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0, credited on the entry and on the <a href="/credits.html">image credits</a> page; a diagram drawn for this site is always labelled as a diagram and is never passed off as a screenshot. Facts are read from the game\'s own files, not from a wiki or a forum. The build this site documents is <strong>' + esc(inv.version ?? 'unknown') + '</strong>.</p>\n' +
     '<p class="dim small">The raw identifiers, tables and extraction notes are kept in a technical reference, reachable from the footer of every page and kept out of search engines on purpose.</p>\n</section>\n');
 
   // ---- game guide ------------------------------------------------------------------------------
@@ -191,11 +228,11 @@ export function build(inventoryPath, outDir) {
     '<h2>3. Find what is worth carrying</h2><p>Valuables, including the ones that fight back: <a href="/entities/valuables.html">valuables</a>.</p>\n' +
     '<h2>4. Carry it, or fight for it</h2><p>Gear, weapons and the physics of hauling: <a href="/entities/gear.html">gear</a> and <a href="/entities/weapons.html">weapons</a>.</p>\n' +
     '<h2>5. Get out and spend it</h2><p>Extraction, the shop and upgrades: <a href="/entities/extraction.html">extraction and the shop</a>.</p>\n' +
-    '<h2>How to use this site</h2><p>Use the search box, browse <a href="/entities/">entities by part of the run</a>, or read a <a href="/articles/">guide</a> that walks through one job from start to finish. Pictures come from the game; a diagram is always labelled as a diagram.</p>');
+    '<h2>How to use this site</h2><p>Use the search box, browse <a href="/entities/">entities by part of the run</a>, or read a <a href="/articles/">guide</a> that walks through one job from start to finish. Pictures come from the game where one exists; otherwise a community picture is credited, and a diagram is always labelled as a diagram.</p>');
 
   // ---- entity hub and category pages ------------------------------------------------------------
-  indexable('entities/index.html', 'Entities', 'Every part of the run this site documents, with pictures taken from the game.',
-    '<h1>Entities</h1><p class="lead">Browse by what you are dealing with in a run. Each entry says what the game itself establishes, and carries a picture taken from the game.</p>\n' +
+  indexable('entities/index.html', 'Entities', 'Every part of the run this site documents, with pictures taken from the game or credited to the community wiki.',
+    '<h1>Entities</h1><p class="lead">Browse by what you are dealing with in a run. Each entry says what the game itself establishes, and carries a picture: from the game where one exists, otherwise a credited community picture.</p>\n' +
     '<div class="grid">' + CATEGORIES.map((c) => {
       const list = entities.filter((e) => groupOf(e.category).key === c.key);
       const cover = list.map(imgOf).filter(img => img && !img.file.includes('texture'))[0] || list.map(imgOf).find(Boolean);
@@ -205,7 +242,7 @@ export function build(inventoryPath, outDir) {
         '<strong>' + esc(c.name) + '</strong><span class="dim">' + esc(c.blurb) + '</span>' +
         '<span class="chip">' + list.length + ' entries</span></a>';
     }).join('') + '</div>\n' +
-    '<p class="dim small">' + notes.length + ' further subjects exist only as notes so far, because no picture has been confirmed from the game for them. They are listed on their category page and kept out of search engines.</p>');
+    (notes.length ? '<p class="dim small">' + notes.length + ' further subjects exist only as notes so far, because no picture has been confirmed for them. They are listed on their category page and kept out of search engines.</p>' : '<p class="dim small">Every published subject has a picture. The technical reference keeps the raw identifiers and extraction notes out of search engines on purpose.</p>'));
   for (const c of CATEGORIES) {
     const list = entities.filter((e) => groupOf(e.category).key === c.key);
     const onlyNotes = notes.filter((e) => groupOf(e.category).key === c.key);
@@ -213,7 +250,7 @@ export function build(inventoryPath, outDir) {
     const cover = list.map(imgOf).filter(img => img && !img.file.includes('texture'))[0] || list.map(imgOf).find(Boolean);
     indexable('entities/' + c.key + '.html', c.name + ' in ' + SITE.gameName, c.blurb + ' ' + list.map((e) => e.title).join(', ') + '.',
       '<h1>' + esc(c.name) + '</h1><p class="lead">' + esc(c.blurb) + '</p>\n' +
-      (cover ? '<figure class="banner"><img src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="900" height="380"><figcaption class="dim small">Picture taken from the game itself.</figcaption></figure>' : '') +
+      (cover ? '<figure class="banner"><img src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="900" height="380"><figcaption class="dim small">' + captionFor(cover) + '</figcaption></figure>' : '') +
       (list.length ? '<div class="filter"><label for="f">Filter ' + esc(c.name.toLowerCase()) + '</label> <input id="f" type="search" placeholder="Type a word" autocomplete="off"> <span id="count" class="dim small"></span></div>\n' +
       '<div class="grid" id="cards">' + list.map(card).join('') + '</div>\n' : '') +
       (onlyNotes.length ? '<section class="block notes"><h2>Notes without a confirmed picture</h2><p class="dim">These subjects rest on the same verified facts, but no picture from the game has been confirmed for them yet, so they are notes rather than finished entries.</p><ul>' + onlyNotes.map(noteRow).join('') + '</ul></section>' : '') +
@@ -229,12 +266,12 @@ export function build(inventoryPath, outDir) {
     const related = (e.related ?? []).filter((id) => byId.has(id));
     indexable('entries/' + e.id + '.html', e.title, e.summary,
       '<article class="entry">\n' +
-      (img ? '<figure class="heroimg"><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" title="' + esc(img.alt?.zh ?? '') + '" width="900" height="520"><figcaption class="dim small">' + (img.kind === 'community' ? 'Community picture from the R.E.P.O. Fandom wiki (CC-BY-SA 4.0), shown to identify this item. It is not a screenshot taken by this site.' : 'Picture taken from the game to identify this item; it remains the property of the developer.') + '</figcaption></figure>' : '') +
+      (img ? '<figure class="heroimg"><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" title="' + esc(img.alt?.zh ?? '') + '" width="900" height="520"><figcaption class="dim small">' + captionFor(img) + '</figcaption></figure>' : '') +
       '<p class="kicker">' + esc(groupOf(e.category).name) + ' · ' + esc(SITE.versionBadge) + '</p>\n<h1>' + esc(e.title) + '</h1>\n' +
       '<p class="oneline">' + esc(oneLine(e)) + '</p>\n<p class="lead">' + esc(e.summary) + '</p>\n' +
       '<aside class="facts"><h2>At a glance</h2><dl>' +
       '<dt>Part of the run</dt><dd><a href="/entities/' + groupOf(e.category).key + '.html">' + esc(groupOf(e.category).name) + '</a></dd>' +
-      '<dt>Picture</dt><dd>taken from the game itself</dd>' +
+      '<dt>Picture</dt><dd>' + (img ? (img.kind === 'community' ? 'Community picture from ' + esc(imageRecord(img)?.sourceName || 'R.E.P.O. Fandom Wiki') + (img.illustrative ? ' (illustrative)' : '') : 'Game asset') : 'none') + '</dd>' +
       '<dt>Documented build</dt><dd>' + esc(inv.version ?? 'unknown') + '</dd>' +
       '<dt>Related entries</dt><dd>' + related.length + '</dd>' +
       '</dl></aside>\n' +
@@ -251,7 +288,7 @@ export function build(inventoryPath, outDir) {
     '<li><strong>Follow the <a href="/guide.html">game guide</a></strong> through a run.</li>' +
     '<li><strong>Read a <a href="/articles/">guide</a></strong> that walks through one job from start to finish.</li>' +
     '<li><strong>Search</strong> from the box at the top of any page.</li></ul>\n' +
-    '<h2>What the pictures are</h2><p>Where a picture could be taken from the game, it is; each one is labelled on the entry. Where no picture has been confirmed, the subject is kept as a note rather than dressed up as a finished entry.</p>\n' +
+    '<h2>What the pictures are</h2><p>Each entry says which kind of picture it carries: a game asset, a credited community picture from the R.E.P.O. Fandom wiki, or an original diagram. Community pictures are listed on the <a href="/credits.html">image credits</a> page.</p>\n' +
     '<h2>What we will never do</h2><p>We do not print a number we could not verify, we do not fill a gap with a guess, and a diagram is always labelled as a diagram.</p>');
   for (const e of notes) {
     const img = imgOf(e);
@@ -364,7 +401,7 @@ export function build(inventoryPath, outDir) {
     's.textContent=v?(rows.length+" match(es)"):"empty query - showing the first 20 indexed fields";' +
     'o.innerHTML=rows.slice(0,50).map(function(x){return "<div><span class=mono>"+x.field+"</span> <span class=dim>"+x.type+" - "+x.class+"</span></div>"}).join("")};q.addEventListener("input",draw);draw();</script>');
   reference('reference/sources.html', 'Sources', 'Where every number came from.',
-    '<h1>Sources</h1><div class="note">Every value in this build traces to a file on the Windows machine that produced it. Nothing is community-sourced and nothing is estimated.</div>' +
+    '<h1>Sources</h1><div class="note">Every <strong>value</strong> in this build traces to a file on the Windows machine that produced it; nothing numeric is estimated. <strong>Pictures</strong> are a separate layer: most are game assets, and some are community pictures from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0, credited individually and on the <a href="/credits.html">image credits</a> page. Facts are never copied from a wiki.</div>' +
     '<h2>Assembly</h2><p class="mono">' + esc(inv.source?.assembly ?? '') + '</p><h2>Extractor</h2><p class="mono">' + esc(inv.source?.extractor ?? '') + '</p>' +
     '<h2>Extracted at</h2><p class="mono">' + esc(inv.source?.extractedAt ?? '') + '</p><h2>Game version</h2><p>' + esc(inv.version ?? '') + '</p>' +
     '<h2>Per-field provenance</h2><p>' + esc(inv.provenance?.fields ?? 'source, version, checkedAt, confidence, value') + '</p>' +
@@ -376,6 +413,20 @@ export function build(inventoryPath, outDir) {
     '<li><a href="/reference/notes/">Notes waiting for a confirmed picture</a></li></ul>' +
     '<p><a href="/entities/">Back to the player reference</a></p>');
 
+  // ---- image credits -----------------------------------------------------------------------------
+  indexable('credits.html', 'Image credits', 'Sources, authors and licences for the community pictures used on this site.',
+    '<h1>Image credits</h1><p class="lead">Most pictures on this site are taken from a local copy of the game. Where no game picture could be confirmed, the entry uses a community picture from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0; those pictures are credited here and on the entry that uses them.</p>' +
+    '<p class="dim small">A community picture identifies a subject; it is not presented as this site\'s own artwork. Where the exact file page could not be recorded, the row is marked <strong>weak provenance</strong> and the source is the wiki itself. Diagram-only artwork is original to this site and is not listed here.</p>' +
+    (communityRecords.length ? '<table><thead><tr><th>File</th><th>Used by</th><th>Source</th><th>Author</th><th>Licence</th></tr></thead><tbody>' +
+      communityRecords.map((r) => {
+        const page = safeUrl(r.sourcePage);
+        const source = page ? '<a href="' + esc(page) + '" rel="nofollow noopener">' + esc(r.sourceName || 'R.E.P.O. Fandom Wiki') + '</a>' : esc(r.sourceName || 'R.E.P.O. Fandom Wiki');
+        const entriesFor = (usedBy.get(r.file) ?? []).map((id) => '<a href="/entries/' + esc(id) + '.html">' + esc(id) + '</a>').join(', ');
+        const licence = esc(r.license || 'CC-BY-SA-4.0');
+        return '<tr><td class="mono small">' + esc(r.file) + '</td><td class="small">' + (entriesFor || '<span class="dim">not used</span>') + '</td><td class="small">' + source + (r.provenance === 'weak' ? ' <span class="dim">(weak provenance)</span>' : '') + '</td><td class="small">' + esc(r.author || 'R.E.P.O. Fandom Wiki contributors') + '</td><td class="small">' + licence + (safeUrl(r.licenseUrl) ? ' <a href="' + esc(r.licenseUrl) + '" rel="nofollow noopener">license</a>' : '') + '</td></tr>';
+      }).join('') + '</tbody></table>' : '<p class="dim">No community pictures are used.</p>') +
+    '<p class="dim small">Game pictures remain the property of the developer and are used only to identify the item they belong to. If you are a rights holder and want a picture removed, contact the address on the <a href="/contact.html">contact page</a>.</p>');
+
   // ---- legal ---------------------------------------------------------------------------------------
   indexable('about.html', 'About', 'About this site and how it is built.',
     '<h1>About</h1><p>This site is a player-written reference for ' + esc(SITE.gameName) + '. It is generated by a static build; there is no database behind it.</p>' +
@@ -385,7 +436,7 @@ export function build(inventoryPath, outDir) {
     '<h1>Contact</h1><p>Corrections are welcome. Report the page, the claim and what the game actually does; corrections that cannot be checked against the game files cannot be used.</p><p>There is no form and no server behind this site.</p>');
   indexable('disclaimer.html', 'Disclaimer', 'No affiliation; game images are used only to identify items.',
     '<h1>Disclaimer</h1><p>Not affiliated with, endorsed by, or sponsored by the game\'s developer or publisher. Game names and marks belong to their owners.</p>' +
-    '<p>Some images are taken from the game to identify the item they belong to; those images remain the property of the developer. Diagrams drawn for this site are labelled as diagrams and are not screenshots.</p>');
+    '<p>Some images are taken from the game to identify the item they belong to; those images remain the property of the developer. Some pictures are community images from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0 and are credited on the entry and on the <a href="/credits.html">image credits</a> page. Diagrams drawn for this site are labelled as diagrams and are not screenshots. Community pictures are used to identify a subject, not to claim the game\'s artwork as this site\'s own.</p>');
   indexable('privacy.html', 'Privacy', 'No cookies, no tracking, no third-party requests.',
     '<h1>Privacy</h1><p>This static build sets no cookies, runs no analytics and makes no third-party requests. The search and lookup tools run entirely in your browser over data embedded in the page or fetched from this site.</p>');
   indexable('terms.html', 'Terms', 'Use of this site.',
@@ -489,7 +540,12 @@ export function build(inventoryPath, outDir) {
   };
   for (const root of ['web/assets', 'content/assets']) copyDir(join(process.cwd(), root), '');
   copyDir(join(process.cwd(), 'content/renders'), 'renders');
-  copyDir(join(process.cwd(), 'content/images/fandom'), 'fandom');
+  const imagesRoot = join(process.cwd(), 'content', 'images');
+  if (existsSync(imagesRoot)) {
+    for (const entry of readdirSync(imagesRoot, { withFileTypes: true })) {
+      if (entry.isDirectory()) copyDir(join(imagesRoot, entry.name), entry.name);
+    }
+  }
   return { pages: pages.size, urls: urls.length, outDir, schemaPages: [...pages.keys()].filter(isNoindexPage).length, assets: assetCount, mappedImages: mappedCount.n, entities: entities.length, notes: notes.length };
 }
 

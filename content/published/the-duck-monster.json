@@ -59,15 +59,6 @@
   ],
   "images": [
     {
-      "file": "fandom/apex-predator.png",
-      "kind": "diagram",
-      "alt": {
-        "en": "Community reference picture of Apex Predator from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Apex Predator。"
-      },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
-    },
-    {
       "file": "mapped/the-duck-monster-texture.jpg",
       "kind": "game",
       "alt": {

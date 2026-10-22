@@ -39,6 +39,17 @@
   ],
   "images": [
     {
+      "file": "mapped/health-and-recovery-pack.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “How your own condition is shown”.",
+        "zh": "用于说明“How your own condition is shown”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "a health pack"
+    },
+    {
       "file": "how-your-own-condition-is-shown.svg",
       "kind": "diagram",
       "alt": {
@@ -51,5 +62,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

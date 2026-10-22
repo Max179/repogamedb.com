@@ -28,17 +28,6 @@
         "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Reaper。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
-    },
-    {
-      "file": "mapped/reaper-fandom.png",
-      "alt": {
-        "en": "Community reference diagram of the Reaper.",
-        "zh": "Reaper 的社区参考图。"
-      },
-      "caption": "Community-documented appearance (source: R.E.P.O. Fandom Wiki)",
-      "source": "fandom",
-      "kind": "diagram",
-      "disclaimer": "Community diagram from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
     }
   ],
   "sources": [

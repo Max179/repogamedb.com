@@ -35,6 +35,17 @@
   ],
   "images": [
     {
+      "file": "fandom/loom.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “What decides whether a monster appears”.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“What decides whether a monster appears”。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "the Loom monster"
+    },
+    {
       "file": "what-decides-whether-a-monster-appears.svg",
       "kind": "diagram",
       "alt": {
@@ -47,5 +58,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "community-image"
 }

@@ -5,7 +5,7 @@
  * Exits non-zero and prints each violation, so a bad entry cannot reach the build.
  */
 import { readFileSync, existsSync, statSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, relative } from 'node:path';
 import { createHash } from 'node:crypto';
 
 export const BANNED = ['il2cpp', 'serializedfile', 'pptr', 'schema', 'metadata', 'payload', 'monobehaviour',
@@ -106,6 +106,61 @@ export function checkMappedImages(entry, dir, manifest) {
   return bad;
 }
 
+/** Manifest-level checks: every picture reference has one record, every community picture has a licence, every record matches its file. */
+export function checkManifest(manifest, entries, root) {
+  const bad = [];
+  const records = manifest.records ?? [];
+  const byFile = new Map();
+  for (const r of records) {
+    if (!r.file) { bad.push('manifest record without file'); continue; }
+    if (byFile.has(r.file)) bad.push('duplicate manifest record: ' + r.file);
+    byFile.set(r.file, r);
+    if (r.kind !== 'game' && r.kind !== 'community') bad.push('manifest record kind must be game|community: ' + r.file);
+    const p = resolveAsset(root, r.file);
+    if (!existsSync(p)) { bad.push('manifest file missing on disk: ' + r.file); continue; }
+    const buf = readFileSync(p);
+    if (r.bytes !== buf.length) bad.push('manifest bytes do not match file: ' + r.file);
+    if (r.sha256 !== createHash('sha256').update(buf).digest('hex')) bad.push('manifest sha256 does not match file: ' + r.file);
+    if (r.kind === 'community') {
+      for (const key of ['entity', 'sourceName', 'sourcePage', 'author', 'license', 'licenseUrl', 'retrievedAt']) {
+        if (!r[key]) bad.push('community record missing ' + key + ': ' + r.file);
+      }
+      if (r.sourcePage && !/^https?:\/\//.test(String(r.sourcePage))) bad.push('community sourcePage is not http(s): ' + r.file);
+      if (r.license !== 'CC-BY-SA-4.0') bad.push('unexpected community licence (' + r.license + '): ' + r.file);
+    } else {
+      for (const key of ['sourceBundle', 'assetName']) if (!r[key]) bad.push('game record missing ' + key + ': ' + r.file);
+    }
+  }
+  const used = new Set();
+  for (const e of entries) {
+    for (const img of e.data.images ?? []) {
+      if (img.kind !== 'game' && img.kind !== 'community') continue;
+      used.add(img.file);
+      if (!byFile.has(img.file)) bad.push('image without manifest record: ' + e.data.id + ' ' + img.file);
+      if (img.kind === 'community') {
+        const rec = byFile.get(img.file);
+        if (rec && rec.kind !== 'community') bad.push('entry calls image community but manifest says ' + rec.kind + ': ' + img.file);
+      }
+    }
+  }
+  const communityRoot = join(root, 'content', 'images');
+  if (existsSync(communityRoot)) {
+    const walk = (d, out = []) => {
+      for (const ent of readdirSync(d, { withFileTypes: true })) {
+        const p = join(d, ent.name);
+        if (ent.isDirectory()) walk(p, out); else if (/\.(png|jpe?g|webp|avif)$/i.test(ent.name)) out.push(relative(communityRoot, p).split('\\').join('/'));
+      }
+      return out;
+    };
+    for (const rel of walk(communityRoot)) {
+      if (!byFile.has(rel)) bad.push('community image file without manifest record: ' + rel);
+      else if (!used.has(rel)) bad.push('community image file is not used by any entry: ' + rel);
+    }
+  }
+  return bad;
+}
+
+
 if (process.argv[1] && process.argv[1].endsWith('content-gate.mjs')) {
   const root = process.cwd();
   const pubDir = join(root, 'content', 'published');
@@ -131,6 +186,9 @@ if (process.argv[1] && process.argv[1].endsWith('content-gate.mjs')) {
     if (bad.length) { violations += bad.length; console.log('  FAIL ' + e.data.id + ': ' + bad.join('; ')); }
     else console.log('  OK   ' + e.data.id + ' (' + e.data.images.length + ' image(s), ' + e.data.facts.length + ' fact(s))');
   }
+  const manifestBad = checkManifest(manifest, entries.filter((e) => e.file.includes('published')), root);
+  if (manifestBad.length) { violations += manifestBad.length; for (const msg of manifestBad) console.log('  FAIL manifest: ' + msg); }
+  else console.log('  OK   manifest (' + (manifest.records ?? []).length + ' record(s))');
   const artDir = join(root, 'content', 'articles');
   const articles = existsSync(artDir) ? readdirSync(artDir).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(artDir, x), 'utf8'))) : [];
   for (const a of articles) {

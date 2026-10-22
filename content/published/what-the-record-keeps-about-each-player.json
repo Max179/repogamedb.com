@@ -51,6 +51,17 @@
   ],
   "images": [
     {
+      "file": "mapped/the-save-and-your-run-record-background.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “What the record keeps about each player”.",
+        "zh": "用于说明“What the record keeps about each player”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "the end-of-run record background"
+    },
+    {
       "file": "what-the-record-keeps-about-each-player.svg",
       "kind": "diagram",
       "alt": {
@@ -63,5 +74,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

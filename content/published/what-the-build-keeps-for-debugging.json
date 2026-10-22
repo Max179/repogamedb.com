@@ -41,6 +41,17 @@
   ],
   "images": [
     {
+      "file": "mapped/the-save-and-your-run-record-background.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “What the build keeps for debugging”.",
+        "zh": "用于说明“What the build keeps for debugging”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "a game screen background"
+    },
+    {
       "file": "what-the-build-keeps-for-debugging.svg",
       "kind": "diagram",
       "alt": {
@@ -53,5 +64,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

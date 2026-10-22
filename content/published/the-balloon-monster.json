@@ -50,15 +50,6 @@
   ],
   "images": [
     {
-      "file": "fandom/birthday-boy.png",
-      "kind": "diagram",
-      "alt": {
-        "en": "Community reference picture of Birthday Boy from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Birthday Boy。"
-      },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
-    },
-    {
       "file": "mapped/the-balloon-monster-texture.jpg",
       "kind": "game",
       "alt": {

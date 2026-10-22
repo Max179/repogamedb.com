@@ -59,6 +59,17 @@
   ],
   "images": [
     {
+      "file": "mapped/the-cart-laser-cannon.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “The cart cannon”.",
+        "zh": "用于说明“The cart cannon”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "the cart's laser cannon, the cannon's laser variant"
+    },
+    {
       "file": "the-cart-cannon.svg",
       "kind": "diagram",
       "alt": {
@@ -71,5 +82,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

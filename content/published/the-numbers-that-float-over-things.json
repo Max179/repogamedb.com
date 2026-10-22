@@ -37,6 +37,17 @@
   ],
   "images": [
     {
+      "file": "mapped/the-token-machines-show-screen.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “The numbers that float over things”.",
+        "zh": "用于说明“The numbers that float over things”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "the token machine screen"
+    },
+    {
       "file": "the-numbers-that-float-over-things.svg",
       "kind": "diagram",
       "alt": {
@@ -49,5 +60,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

@@ -46,6 +46,17 @@
   ],
   "images": [
     {
+      "file": "fandom/valuables.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture from the R.E.P.O. Fandom wiki for “How many valuables a level holds”.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图，用于说明“How many valuables a level holds”。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "R.E.P.O. valuables"
+    },
+    {
       "file": "how-many-valuables-a-level-holds.svg",
       "kind": "diagram",
       "alt": {
@@ -58,5 +69,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "community-image"
 }

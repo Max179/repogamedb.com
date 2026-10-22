@@ -31,6 +31,17 @@
   ],
   "images": [
     {
+      "file": "mapped/the-car-and-the-plane-car.jpg",
+      "kind": "game",
+      "alt": {
+        "en": "Game asset used to illustrate “The lean a vehicle takes from its speed”.",
+        "zh": "用于说明“The lean a vehicle takes from its speed”的游戏素材。"
+      },
+      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "illustrative": true,
+      "shows": "a vehicle texture"
+    },
+    {
       "file": "the-lean-a-vehicle-takes-from-its-speed.svg",
       "kind": "diagram",
       "alt": {
@@ -43,5 +54,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "diagram-only"
+  "imageTier": "game-image"
 }

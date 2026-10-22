@@ -22,6 +22,17 @@ try {
 const dirtyAll = execSync('git status --porcelain').toString().trim().split('\n').filter(Boolean);
 const dirty = dirtyAll.filter((l) => !/reports\/status\.json$/.test(l));
 add('working tree is clean', dirty.length === 0, dirty.slice(0, 2).join(' | '));
+// Picture layer gates. They are run after the clean-tree check because both write generated reports.
+const runGate = (name, cmd) => {
+  try {
+    execSync(cmd, { stdio: 'pipe' });
+    add(name, true);
+  } catch (e) {
+    add(name, false, String(e.stdout ?? e).trim().split('\n').slice(-3).join(' | ').slice(0, 200));
+  }
+};
+runGate('content gate passes', 'node tools/content-gate.mjs');
+runGate('image coverage passes', 'node tools/image-coverage.mjs');
 const hasStatus = existsSync('reports/status.json');
 add('machine-readable status exists', hasStatus, 'reports/status.json');
 if (hasStatus) {

@@ -1,3 +1,19 @@
+> **Re-recorded 2026-10-22 on branch `feat/entry-images`.** The earlier records below are historical.
+>
+> | Item | Value |
+> | --- | --- |
+> | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
+> | Site gates | `[site-tests] 67 passed, 0 failed` |
+> | Content gate | 172 entries, 87 articles, 0 violations |
+> | Image coverage | 172/172 entries have a picture; 0 notes; 266 records; 0 unused community files |
+> | Image sanity | 266 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
+> | Classified URLs | 284 keep, 492 noindex |
+> | Community pictures | 110 entries; 85 files; 29 exact provenance, 56 weak |
+> | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
+>
+> Commands: `node pipeline/site.mjs`, `node tools/content-gate.mjs`, `node tools/image-coverage.mjs`,
+> `python3 tools/image-sanity.py`, `node tests/site.test.mjs`, `node tools/classify-urls.mjs`, `node pipeline/status.mjs`.
+> Fandom HTML/API remained Cloudflare-blocked; no scraping was attempted.
 # Verification record — R.E.P.O. (repogamedb.com)
 
 Recorded from a full local run on this machine. Every line below was produced by the command above it on the

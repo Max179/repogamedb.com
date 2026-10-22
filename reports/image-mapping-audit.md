@@ -1,3 +1,8 @@
+> **Update 2026-10-22.** This audit is superseded for the 46 entries it lists as diagram-only: all 46 now carry
+> a picture. 10 use a Fandom community image and 36 use a local game asset, with the original SVG kept as the second
+> image. No entry is diagram-only any more. Pictures that are not a literal depiction of the subject are marked
+> `illustrative` and their captions say what they show. See `reports/image-completion-plan.md` for the per-entry map
+> and `reports/image-sources.md` for the 56 community files whose exact wiki page is still weak provenance.
 # Image mapping audit — repogamedb.com
 
 Why some entries carry a diagram and not a picture from the game.

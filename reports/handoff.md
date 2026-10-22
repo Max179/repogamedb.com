@@ -1,3 +1,15 @@
+> **Update 2026-10-22 — image completion pass (branch `feat/entry-images`).**
+>
+> - Published entries: **172** (was 167); structured guides: **87**; picture-less noindex notes: **0** (was 48).
+> - Build: `pages=782 indexable=284` (noindex 498); **67** site gates pass.
+> - Images: **266** manifest records (181 game + 85 community; 29 exact provenance, 56 weak); **62** entries use a game
+>   image and **110** use a community image; every published entry now has a picture. `/credits.html` lists every
+>   community picture with source, author and licence.
+> - The 85 community files were stored as WebP under `.png`/`.jpg` names and were re-encoded to their declared format;
+>   manifest hashes/dimensions were refreshed. The Fandom wikis remain Cloudflare-blocked from this machine, so no new
+>   scraping was done; see `reports/image-sources.md` for the weak-provenance follow-up list.
+>
+> The measurements below are from the 2026-10-02 handoff and are kept for history; this block supersedes them.
 # Mac handoff — repogamedb.com
 
 Source-only handoff. This file is the checklist for the Mac side; everything in it was produced and verified on the

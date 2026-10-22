@@ -460,6 +460,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/credits.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/disclaimer.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2920,6 +2925,11 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
+      "url": "/entries/a-vehicle-that-is-wrecked-and-its-box.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/batteries-and-charging.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2930,7 +2940,22 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/choosing-when-to-leave.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/cosmetics-and-the-token-machine.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/drifting-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/driving-a-vehicle-and-staying-upright.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -2955,6 +2980,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/glossary-of-terms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/guns-and-how-they-fire.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -2970,12 +3000,52 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/hitting-things-with-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-a-level-is-put-together.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/how-a-monster-sees-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-monster-takes-damage.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-run-is-scored.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-vehicles-body-follows-its-physics.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-many-monsters-a-level-sends.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-many-valuables-a-level-holds.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/how-monsters-find-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-monsters-jump.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -2986,6 +3056,11 @@
     },
     {
       "url": "/entries/how-upgrades-are-kept-track-of.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-your-own-condition-is-shown.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3001,6 +3076,11 @@
     },
     {
       "url": "/entries/keycards-and-the-office.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/leaving-the-ground-in-a-vehicle.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3026,6 +3106,11 @@
     },
     {
       "url": "/entries/protecting-your-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/questions-players-ask.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3080,6 +3165,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-bar-that-shows-a-charge.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-bathrooms-and-their-fittings.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3096,6 +3186,11 @@
     },
     {
       "url": "/entries/the-blender-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-body-every-monster-shares.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3125,6 +3220,21 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-box-that-holds-valuables.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bullet-and-what-it-leaves-behind.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-camera-that-follows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-car-and-the-plane-you-can-carry.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3136,6 +3246,11 @@
     },
     {
       "url": "/entries/the-cart-as-an-object.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cart-cannon.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3210,6 +3325,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-furniture-a-level-is-fitted-with.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-gnomes-and-the-pickaxe.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3255,6 +3375,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-lean-a-vehicle-takes-from-its-speed.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-level-themes-and-what-they-hold.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3280,6 +3405,11 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-multipliers-a-vehicle-can-be-given.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-museum-and-its-props.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
@@ -3290,7 +3420,22 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-music-of-a-level.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-numbers-that-float-over-things.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-oogly.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-orb.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3300,7 +3445,27 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/the-player-list-and-what-a-row-shows.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/the-potions-you-can-find.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-readouts-that-fade-away.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-readouts-you-play-by.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-record-every-monster-is-given.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3371,6 +3536,16 @@
     },
     {
       "url": "/entries/the-snow-bike-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-sounds-a-vehicle-makes.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-sparks-a-vehicle-throws.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3525,7 +3700,17 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/what-a-monster-does-when-it-has-not-seen-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/what-a-monster-is-doing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-being-grabbed-does-to-your-view.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3535,7 +3720,47 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/what-decides-whether-a-monster-appears.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-happens-when-the-head-catches-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-build-keeps-for-debugging.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-game-draws-when-you-find-something.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-game-records-about-each-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/what-the-map-shows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-record-keeps-about-each-player.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-shop-puts-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/when-a-monster-gives-up.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3545,7 +3770,17 @@
       "reason": "player-facing page: a question a player asks"
     },
     {
+      "url": "/entries/when-a-monster-looks-under-something.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
       "url": "/entries/when-the-chat-box-will-not-open.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/which-version-this-site-documents.html",
       "action": "keep",
       "reason": "player-facing page: a question a player asks"
     },
@@ -3595,237 +3830,7 @@
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },
     {
-      "url": "/reference/notes/a-vehicle-that-is-wrecked-and-its-box.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/choosing-when-to-leave.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/drifting-a-vehicle.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/driving-a-vehicle-and-staying-upright.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/glossary-of-terms.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/hitting-things-with-a-vehicle.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-a-monster-sees-you.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-a-monster-takes-damage.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-a-run-is-scored.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-a-vehicles-body-follows-its-physics.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-many-monsters-a-level-sends.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-many-valuables-a-level-holds.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-monsters-jump.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/how-your-own-condition-is-shown.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
       "url": "/reference/notes/index.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/leaving-the-ground-in-a-vehicle.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/questions-players-ask.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-bar-that-shows-a-charge.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-body-every-monster-shares.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-box-that-holds-valuables.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-bullet-and-what-it-leaves-behind.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-camera-that-follows-you.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-cart-cannon.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-furniture-a-level-is-fitted-with.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-lean-a-vehicle-takes-from-its-speed.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-multipliers-a-vehicle-can-be-given.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-music-of-a-level.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-numbers-that-float-over-things.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-orb.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-player-list-and-what-a-row-shows.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-readouts-that-fade-away.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-readouts-you-play-by.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-record-every-monster-is-given.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-sounds-a-vehicle-makes.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/the-sparks-a-vehicle-throws.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-a-monster-does-when-it-has-not-seen-you.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-being-grabbed-does-to-your-view.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-decides-whether-a-monster-appears.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-happens-when-the-head-catches-you.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-the-build-keeps-for-debugging.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-the-game-draws-when-you-find-something.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-the-game-records-about-each-monster.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-the-record-keeps-about-each-player.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/what-the-shop-puts-out.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/when-a-monster-gives-up.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/when-a-monster-looks-under-something.html",
-      "action": "noindex",
-      "reason": "technical reference or duplicate kept reachable but not indexed"
-    },
-    {
-      "url": "/reference/notes/which-version-this-site-documents.html",
       "action": "noindex",
       "reason": "technical reference or duplicate kept reachable but not indexed"
     },

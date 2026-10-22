@@ -1,3 +1,15 @@
+> **Update 2026-10-22.** Measured on branch `feat/entry-images` (based on `fa583ba`), before commit:
+>
+> - Content: **172** published entries, **87** structured guides, **0** picture-less notes.
+> - Build: `pages=782 indexable=284` (noindex 498), **67** site gates, content gate **0 violations**, image coverage
+>   **172/172** with a picture, **266** image manifest records (181 game + 85 community), image sanity 266 records /
+>   10 flagged and all flagged files have a ledger verdict.
+> - New: `/credits.html` lists every community picture with source, author and licence; community captions no longer
+>   claim the picture was taken from the game.
+> - Publishing itself is still blocked: Cloudflare credentials/project binding and branch integration are unchanged
+>   (see the blockers below). Weak image provenance remains for 56 community files.
+>
+> The 2026-10-01 measurements below are kept for history and are superseded by this block.
 # Publish checklist — repogamedb.com
 
 Everything that can be done without credentials has been done and is verified on branch `main`.

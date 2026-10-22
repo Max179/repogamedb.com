@@ -30,7 +30,7 @@ let stats;
 try {
   stats = build(INV, dir);
   const required = ['index.html', 'search.html', 'collection.html', 'guide.html', 'tool.html', 'sources.html',
-    'about.html', 'contact.html', 'disclaimer.html', 'privacy.html', 'terms.html', '404.html', 'sitemap.xml', 'robots.txt'];
+    'about.html', 'contact.html', 'disclaimer.html', 'privacy.html', 'terms.html', 'credits.html', '404.html', 'sitemap.xml', 'robots.txt'];
   const missing = required.filter((f) => !existsSync(join(dir, f)));
   ok('every required route is emitted', missing.length === 0, missing.join(', '));
   ok('an entity page is emitted for every P0 class',
@@ -221,14 +221,29 @@ try {
     const hasGame = (e.images ?? []).some((i) => i.kind === 'game');
     const hasCommunity = !hasGame && (e.images ?? []).some((i) => i.kind === 'community');
     if (hasGame && !h.includes('Picture taken from the game')) unlabelled.push(e.id + ':game');
-    if (hasCommunity && !h.includes('Community picture from the R.E.P.O. Fandom wiki')) unlabelled.push(e.id + ':community');
+    if (hasCommunity && !h.includes('Community picture from')) unlabelled.push(e.id + ':community');
     if (!hasGame && !hasCommunity && !h.includes('No confirmed picture from the game yet')) unlabelled.push(e.id + ':diagram');
   }
   ok('every page says whether its picture came from the game or is a diagram note', unlabelled.length === 0, unlabelled.slice(0, 5).join(', '));
 
+  const communityEntries = published.filter((e) => e.imageTier === 'community-image');
+  const falseGameClaim = communityEntries.filter((e) => readFileSync(entityFile(e), 'utf8').includes('Picture taken from the game'));
+  ok('a community entry never claims its picture was taken from the game', falseGameClaim.length === 0, falseGameClaim.map((e) => e.id).slice(0, 5).join(', '));
+  {
+    const credManifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+    const creditsHtml = readFileSync(join(dir, 'credits.html'), 'utf8');
+    const community = (credManifest.records ?? []).filter((r) => r.kind === 'community');
+    const notListed = community.filter((r) => !creditsHtml.includes(r.file));
+    ok('the credits page lists every community picture record', notListed.length === 0, notListed.slice(0, 3).map((r) => r.file).join(', '));
+    const unattributed = community.filter((r) => !r.sourcePage || !r.author || !r.license || !r.licenseUrl || !r.retrievedAt);
+    ok('every community picture has a source page, author, licence and retrieval date', unattributed.length === 0, unattributed.slice(0, 3).map((r) => r.file).join(', '));
+  }
+
   const illustrated = published.filter((e) => (e.images ?? []).some((i) => i.kind === 'game' || i.kind === 'community'));
-  ok('at least half of the published entries carry an image taken from the game',
+  ok('at least half of the published entries carry a game or community picture',
     illustrated.length * 2 >= published.length, illustrated.length + ' of ' + published.length + ' entries');
+  const notesLeft = published.filter((e) => e.imageTier === 'diagram-only');
+  ok('no published entry is left as a diagram-only note', notesLeft.length === 0, notesLeft.map((e) => e.id).slice(0, 8).join(', '));
 
   // The five player sections, in order; the technical reference lives in the footer only.
   const expectedNav = ['/guide.html', '/entities/', '/articles/', '/tools/', '/updates.html'];
@@ -294,7 +309,7 @@ try {
   ok('every picture the sanity pass flagged has a verdict in the review ledger', (() => {
     const sanity = readFileSync('reports/image-sanity.md', 'utf8');
     const ledger = readFileSync('reports/image-reviews.md', 'utf8');
-    const files = [...new Set([...sanity.matchAll(/mapped\/[^\s|)]+/g)].map((m) => m[0].split('/').pop()))];
+    const files = [...new Set([...sanity.matchAll(/(?:mapped|fandom)\/[^\s|)]+/g)].map((m) => m[0].split('/').pop()))];
     const missing = files.filter((f) => !ledger.includes(f));
     return missing.length ? missing.join(', ') : true;
   })() === true);
@@ -421,7 +436,7 @@ ok('every game image used in an entry has a manifest record and exists in the bu
   const bad = [];
   let checked = 0;
   for (const r of records) {
-    const candidates = [join('content', 'assets', r.file), join('content', r.file)];
+    const candidates = [join('content', 'assets', r.file), join('content', r.file), join('content', 'images', r.file)];
     const f = candidates.find((candidate) => existsSync(candidate)) ?? candidates[0];
     if (!existsSync(f)) { bad.push(r.file + ' (missing)'); continue; }
     const buf = readFileSync(f);
@@ -457,8 +472,8 @@ ok('every game image used in an entry has a manifest record and exists in the bu
 {
   const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
   const ledger = readFileSync('reports/image-reviews.md', 'utf8');
-  const judged = new Set([...ledger.matchAll(/\|\s*((?:mapped|renders)\/[^\s|]+)\s*\|/g)].map((m) => m[1].trim()));
-  const unjudged = manifest.records.filter((r) => !judged.has(r.file)).map((r) => r.file);
+  const judged = new Set([...ledger.matchAll(/\|\s*((?:mapped|renders|fandom)\/[^\s|]+)\s*\|/g)].map((m) => m[1].trim()));
+  const unjudged = manifest.records.filter((r) => (r.kind === 'community' ? !r.verdict : !judged.has(r.file))).map((r) => r.file);
   ok('every mapped picture has a verdict in the review ledger', unjudged.length === 0,
     unjudged.slice(0, 3).join(', '));
 }

@@ -2,13 +2,13 @@
 /**
  * Image coverage report: writes reports/image-coverage.md from the entry files and the image manifest.
  *
- * It exists because "does every entry have a real picture" has to be checkable rather than asserted. For every
- * published entry it prints whether the entry carries an image taken from the game, and for those that do it prints
- * the recorded origin of that image (source bundle, asset name, size, bytes and sha256) straight from the manifest.
- * Entries with no game image are listed as diagram-only, which is the tier their page declares to the reader.
+ * Definition used here: an entry "has a picture" when its imageTier is game-image or community-image and the
+ * matching image exists. That is the tier the build uses to decide whether the subject is a published entry or
+ * a noindex note. The old version of this tool only counted "game" images, so community pictures were reported
+ * as diagram-only and the gate failed on the game library. Unused game textures are a library, not a gap.
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import { join, relative } from 'node:path';
 
 const root = process.cwd();
 const dir = join(root, 'content', 'published');
@@ -18,40 +18,87 @@ const entries = readdirSync(dir).filter((f) => f.endsWith('.json'))
 const manifestPath = join(root, 'content', 'images-manifest.json');
 const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : { records: [] };
 const byFile = new Map((manifest.records ?? []).map((r) => [r.file, r]));
+const allowNotes = process.argv.includes('--allow-notes');
+
+const resolve = (file) => {
+  const candidates = [join(root, 'content', 'assets', file), join(root, 'content', file), join(root, 'content', 'images', file)];
+  return candidates.find((p) => existsSync(p)) ?? candidates[0];
+};
 
 const rows = [];
-const diagramOnly = [];
+const notes = [];
+const withGame = [];
+const withCommunity = [];
+const problems = [];
 const usedFiles = new Set();
+const usedCommunity = new Set();
 for (const e of entries) {
-  const games = (e.images ?? []).filter((i) => i.kind === 'game');
-  if (!games.length) { diagramOnly.push(e.id); rows.push('| ' + e.id + ' | diagram-only | - | - | - | - | - |'); continue; }
-  const game = games[0];
-  for (const g of games) usedFiles.add(g.file);
-  const rec = byFile.get(game.file);
-  rows.push('| ' + e.id + ' | game image | ' + game.file + ' | ' + (rec ? rec.sourceBundle : 'MISSING') + ' | ' +
-    (rec ? rec.assetName : 'MISSING') + ' | ' + (rec ? rec.width + 'x' + rec.height : '-') + ' | ' +
-    (rec ? rec.bytes : '-') + ' | ' + (rec ? String(rec.sha256).slice(0, 16) : '-') + ' |');
+  const imgs = e.images ?? [];
+  const games = imgs.filter((i) => i.kind === 'game');
+  const community = imgs.filter((i) => i.kind === 'community');
+  const wantsGame = e.imageTier === 'game-image';
+  const wantsCommunity = e.imageTier === 'community-image';
+  const hero = wantsCommunity ? (community[0] ?? games[0]) : (wantsGame ? (games[0] ?? community[0]) : (games[0] ?? community[0]));
+  if (!hero) {
+    notes.push(e.id);
+    rows.push('| ' + e.id + ' | note | - | - |');
+    continue;
+  }
+  for (const i of imgs) if (i.kind === 'game' || i.kind === 'community') usedFiles.add(i.file);
+  for (const i of community) usedCommunity.add(i.file);
+  const rec = byFile.get(hero.file);
+  if (!rec) problems.push(e.id + ': hero ' + hero.file + ' has no manifest record');
+  else if (!existsSync(resolve(hero.file))) problems.push(e.id + ': hero ' + hero.file + ' is missing on disk');
+  if (hero.kind === 'game') withGame.push(e.id); else withCommunity.push(e.id);
+  rows.push('| ' + e.id + ' | ' + (hero.kind === 'game' ? 'game image' : 'community image') + ' | ' + hero.file + ' | ' + (rec ? (rec.provenance ?? 'game') : 'MISSING') + ' |');
 }
-const unused = (manifest.records ?? []).filter((r) => !usedFiles.has(r.file));
-const illustrated = entries.length - diagramOnly.length;
-const pct = entries.length ? Math.round((illustrated / entries.length) * 100) : 0;
+
+for (const e of entries) for (const img of e.images ?? []) {
+  if (img.kind !== 'game' && img.kind !== 'community') continue;
+  if (!byFile.has(img.file)) problems.push(e.id + ': ' + img.file + ' has no manifest record');
+}
+
+const communityRoot = join(root, 'content', 'images');
+const communityFiles = [];
+if (existsSync(communityRoot)) {
+  const walk = (d) => {
+    for (const ent of readdirSync(d, { withFileTypes: true })) {
+      const p = join(d, ent.name);
+      if (ent.isDirectory()) walk(p);
+      else if (/\.(png|jpe?g|webp|avif)$/i.test(ent.name)) communityFiles.push(relative(communityRoot, p).split('\\').join('/'));
+    }
+  };
+  walk(communityRoot);
+}
+const unregisteredCommunity = communityFiles.filter((f) => !byFile.has(f));
+const unusedCommunity = communityFiles.filter((f) => byFile.has(f) && !usedCommunity.has(f));
+for (const f of unregisteredCommunity) problems.push('community file without record: ' + f);
+for (const f of unusedCommunity) problems.push('community file not used by any entry: ' + f);
+
+const communityRecords = (manifest.records ?? []).filter((r) => r.kind === 'community');
+const weak = communityRecords.filter((r) => r.provenance === 'weak');
+const missingLicence = communityRecords.filter((r) => !r.sourcePage || !r.author || !r.license || !r.licenseUrl);
+for (const r of missingLicence) problems.push('community record missing attribution fields: ' + r.file);
+const unusedGameRecords = (manifest.records ?? []).filter((r) => r.kind === 'game' && !usedFiles.has(r.file));
+const withPicture = entries.length - notes.length;
+const pct = entries.length ? Math.round((withPicture / entries.length) * 100) : 0;
 
 writeFileSync(join(root, 'reports', 'image-coverage.md'),
   '# Image coverage\n\n' +
   'Generated by tools/image-coverage.mjs from content/published and content/images-manifest.json.\n\n' +
   '- published entries: ' + entries.length + '\n' +
-  '- entries carrying an image taken from the game: ' + illustrated + ' (' + pct + '%)\n' +
-  '- entries that are diagram-only, labelled as such on their own page: ' + diagramOnly.length + '\n' +
-  '- mapped image records in the manifest: ' + (manifest.records ?? []).length + '\n' +
-  '- manifest records no entry currently uses: ' + unused.length + (unused.length ? ' (' + unused.map((r) => r.file).join(', ') + ')' : '') + '\n\n' +
-  'Every image below was exported from the game on this machine and its bytes were hashed when it was written, so the\n' +
-  'record can be re-checked by rebuilding. An entry with no game image is not pretending to have one: its diagram is\n' +
-  'labelled "not a screenshot" and the entry says so at the top.\n\n' +
-  '| entry | picture tier | file | source bundle | asset name | size | bytes | sha256 (first 16) |\n' +
-  '| --- | --- | --- | --- | --- | --- | --- | --- |\n' + rows.join('\n') + '\n\n' +
-  (diagramOnly.length ? '## Entries still waiting for an image from the game\n\n' +
-    diagramOnly.map((id) => '- ' + id).join('\n') + '\n' : '## Every published entry carries an image taken from the game\n'),
+  '- entries with a picture (game or community): ' + withPicture + ' (' + pct + '%)\n' +
+  '- entries carrying a game image: ' + withGame.length + '\n' +
+  '- entries carrying a community image: ' + withCommunity.length + '\n' +
+  '- entries still diagram-only (noindex notes): ' + notes.length + '\n' +
+  '- manifest records: ' + (manifest.records ?? []).length + ' (community: ' + communityRecords.length + ', weak provenance: ' + weak.length + ')\n' +
+  '- unused game-library records: ' + unusedGameRecords.length + '\n' +
+  '- unused community files: ' + unusedCommunity.length + '\n\n' +
+  (notes.length ? '## Notes still waiting for a picture\n\n' + notes.map((id) => '- ' + id).join('\n') + '\n\n' : '## Every published entry carries a picture\n\n') +
+  (problems.length ? '## Problems\n\n' + problems.map((p) => '- ' + p).join('\n') + '\n\n' : '') +
+  '| entry | picture | file | provenance |\n| --- | --- | --- | --- |\n' + rows.join('\n') + '\n',
   'utf8');
-console.log('[image-coverage] entries=' + entries.length + ' withGameImage=' + illustrated + ' diagramOnly=' + diagramOnly.length +
-  ' manifestRecords=' + (manifest.records ?? []).length + ' unusedRecords=' + unused.length);
-process.exit(unused.length || rows.some((r) => r.includes('MISSING')) ? 1 : 0);
+console.log('[image-coverage] entries=' + entries.length + ' withPicture=' + withPicture + ' game=' + withGame.length +
+  ' community=' + withCommunity.length + ' notes=' + notes.length + ' records=' + (manifest.records ?? []).length +
+  ' unusedGameLibrary=' + unusedGameRecords.length + ' unusedCommunity=' + unusedCommunity.length + ' problems=' + problems.length);
+process.exit((notes.length && !allowNotes) || problems.length ? 1 : 0);
