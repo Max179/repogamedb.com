@@ -50,15 +50,15 @@
   ],
   "images": [
     {
-      "file": "fandom/cosmetic-boxes.png",
+      "file": "fandom/tax-token.png",
       "kind": "community",
       "alt": {
-        "en": "Boxes of stock stacked on the shelves of a shop-like room, under bright lights.",
-        "zh": "商店模样的房间里，货架上堆放着成箱的货品，上方灯光明亮。"
+        "en": "Illustrative community picture showing the tax token machine.",
+        "zh": "社区示意图：the tax token machine。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "Shelves holding stacked boxes of goods in a lit interior."
+      "shows": "the tax token machine"
     },
     {
       "file": "what-the-shop-puts-out.svg",

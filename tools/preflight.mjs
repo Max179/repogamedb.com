@@ -33,6 +33,7 @@ const runGate = (name, cmd) => {
 };
 runGate('content gate passes', 'node tools/content-gate.mjs');
 runGate('image coverage passes', 'node tools/image-coverage.mjs --no-write');
+runGate('entry hero images are unique', 'node tools/duplicate-images.mjs');
 const hasStatus = existsSync('reports/status.json');
 add('machine-readable status exists', hasStatus, 'reports/status.json');
 if (hasStatus) {

@@ -40,15 +40,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-save-and-your-run-record-background.jpg",
-      "kind": "game",
+      "file": "fandom/score-screen.jpg",
+      "kind": "community",
       "alt": {
-        "en": "The dark truck-interior backdrop the game itself uses behind its end-of-run result screen.",
-        "zh": "游戏在每局结算画面背后使用的深色卡车内部背景图。"
+        "en": "Illustrative community picture showing the end of a run in a dark room.",
+        "zh": "社区示意图：the end of a run in a dark room。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The empty background art of the result screen, with no figures on it."
+      "shows": "the end of a run in a dark room"
     },
     {
       "file": "how-a-run-is-scored.svg",
@@ -63,5 +63,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

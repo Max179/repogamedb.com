@@ -523,6 +523,10 @@ try {
     if (existsSync(p)) homeImgBytes += readFileSync(p).length;
   }
   ok('the homepage image payload is under 3 MiB', homeImgBytes < 3 * 1024 * 1024, (homeImgBytes / 1048576).toFixed(2) + ' MiB');
+  const heroUse = new Map();
+  for (const e of searchEntries) { const h = (e.images ?? [])[0]; if (h?.file) heroUse.set(h.file, (heroUse.get(h.file) ?? 0) + 1); }
+  const repeated = [...heroUse.entries()].filter(([, n]) => n > 1);
+  ok('every entry hero image is used by only one entry', repeated.length === 0, repeated.slice(0, 3).map(([f]) => f).join(', '));
 } catch (e) { ok('player search and social metadata checks run', false, String(e).slice(0, 200)); } finally { rmSync(uiDir, { recursive: true, force: true }); }
 
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');

@@ -45,15 +45,15 @@
   ],
   "images": [
     {
-      "file": "fandom/shotgun.png",
+      "file": "fandom/gun-shotgun.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the shotgun, one of the guns the crew can fire, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：霰弹枪，队员可以使用的枪械之一。"
+        "en": "Illustrative community picture showing a shotgun.",
+        "zh": "社区示意图：a shotgun。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A shotgun, one of the weapons whose hits a monster has to absorb."
+      "shows": "a shotgun"
     },
     {
       "file": "how-a-monster-takes-damage.svg",

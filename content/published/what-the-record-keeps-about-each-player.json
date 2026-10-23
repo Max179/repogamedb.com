@@ -51,15 +51,15 @@
   ],
   "images": [
     {
-      "file": "fandom/cosmetics.png",
+      "file": "fandom/semibot-dapper.png",
       "kind": "community",
       "alt": {
-        "en": "An in-game view of a player character lit green, wearing a hat, bandages and other cosmetics.",
-        "zh": "游戏内画面：一名泛着绿光的玩家角色，戴着帽子、缠着绷带，还有其它装饰品。"
+        "en": "Illustrative community picture showing a dressed-up Semibot.",
+        "zh": "社区示意图：a dressed-up Semibot。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "One player character with its own appearance, standing in a dark room."
+      "shows": "a dressed-up Semibot"
     },
     {
       "file": "what-the-record-keeps-about-each-player.svg",

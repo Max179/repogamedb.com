@@ -1,8 +1,8 @@
 > **Update 2026-10-22 — image completion pass (branch `feat/entry-images`).**
 >
 > - Published entries: **172** (was 167); structured guides: **87**; picture-less noindex notes: **0** (was 48).
-> - Build: `pages=782 indexable=284` (noindex 498); **77** site gates pass; UI theme, player search, social/JSON-LD and image budget are covered.
-> - Images: **294** manifest records (181 game + 113 community; 94 exact provenance, 19 weak); **28** entries use a game
+> - Build: `pages=782 indexable=284` (noindex 498); **78** site gates pass; UI theme, player search, social/JSON-LD and image budget are covered.
+> - Images: **328** manifest records (181 game + 147 community; 128 exact provenance, 19 weak); **25** entries use a game
 >   image and **131** use a community image; every published entry now has a picture. `/credits.html` lists every
 >   community picture with source, author and licence.
 > - The community files were stored as WebP under `.png`/`.jpg` names and were re-encoded to their declared format;

@@ -18,9 +18,10 @@ near-white (above 235). A flag is not a verdict: it means the file has to be loo
 | mapped/the-museum-and-its-props-creep-painting.png | Painting_S_Creep | 10.6 | 75% | 21 | almost no variation (stddev 10.6) |
 | mapped/the-valuables-you-can-find-calculator.png | new valaubles_Valuable Arctic Calculator_BaseColor | 16.5 | 93% | 123 | 93% of pixels within 6 of the median |
 | fandom/valuable-tracker.png | R.E.P.O. Fandom Wiki | 28.7 | 90% | 17 | 90% of pixels within 6 of the median |
+| fandom/tracker-valuable.png | R.E.P.O. Fandom Wiki | 28.7 | 90% | 17 | 90% of pixels within 6 of the median |
 | mapped/the-cleaning-tools-and-effects-sheet.png | Clean Effect Sprite Sheet | 31.4 | 98% | 17 | 98% of pixels within 6 of the median |
 | mapped/the-boombox-valuable-lights.png | Boombox_DefaultMaterial_Emissive | 33.4 | 93% | 0 | 93% of pixels within 6 of the median |
 | mapped/when-the-chat-box-will-not-open-emojis.jpg | emojis | 42.8 | 90% | 0 | 90% of pixels within 6 of the median |
 | mapped/the-level-themes-and-what-they-hold-arena.jpg | level arena 01 | 43.1 | 91% | 0 | 91% of pixels within 6 of the median |
 
-Totals: 294 records, 14 flagged.
+Totals: 328 records, 15 flagged.

@@ -59,15 +59,15 @@
   ],
   "images": [
     {
-      "file": "fandom/c-a-r-t-laser.png",
+      "file": "fandom/cartwand.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the C.A.R.T. with a gun mounted on it, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：装有炮的 C.A.R.T. 推车。"
+        "en": "Illustrative community picture showing a cart carrying a wand-like item.",
+        "zh": "社区示意图：a cart carrying a wand-like item。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The hauling cart with a mounted cannon-like gun and its controls."
+      "shows": "a cart carrying a wand-like item"
     },
     {
       "file": "the-cart-cannon.svg",

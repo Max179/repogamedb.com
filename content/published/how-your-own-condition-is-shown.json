@@ -39,15 +39,15 @@
   ],
   "images": [
     {
-      "file": "fandom/semibot.png",
+      "file": "fandom/burning-semibot.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Semibot, the player character, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Semibot，玩家角色。"
+        "en": "Illustrative community picture showing a Semibot on fire, showing its condition.",
+        "zh": "社区示意图：a Semibot on fire, showing its condition。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The player character, a small white robot, standing and looking ahead."
+      "shows": "a Semibot on fire, showing its condition"
     },
     {
       "file": "how-your-own-condition-is-shown.svg",

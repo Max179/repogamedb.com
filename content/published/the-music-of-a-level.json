@@ -59,15 +59,15 @@
   ],
   "images": [
     {
-      "file": "fandom/museum-boombox.png",
+      "file": "fandom/music-box.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the museum boombox: a colourful portable stereo with two speakers.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：博物馆手提音响，一台带两个喇叭、色彩鲜艳的便携立体声。"
+        "en": "Illustrative community picture showing a music box.",
+        "zh": "社区示意图：a music box。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A bright portable boombox, the game's own music-playing prop."
+      "shows": "a music box"
     },
     {
       "file": "the-music-of-a-level.svg",

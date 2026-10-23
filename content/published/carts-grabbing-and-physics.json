@@ -47,13 +47,15 @@
   ],
   "images": [
     {
-      "file": "fandom/c-a-r-t.png",
+      "file": "fandom/cart-big.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of C.A.R.T. from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：C.A.R.T.。"
+        "en": "Illustrative community picture showing a cart with its value display.",
+        "zh": "社区示意图：a cart with its value display。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "a cart with its value display"
     },
     {
       "file": "carts-grabbing-and-physics.svg",

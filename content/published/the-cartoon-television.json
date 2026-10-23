@@ -58,13 +58,15 @@
   ],
   "images": [
     {
-      "file": "fandom/television.png",
+      "file": "fandom/television-alt.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Television from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Television。"
+        "en": "Illustrative community picture showing a television showing static.",
+        "zh": "社区示意图：a television showing static。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "a television showing static"
     },
     {
       "file": "the-cartoon-television.svg",

@@ -46,15 +46,15 @@
   ],
   "images": [
     {
-      "file": "fandom/valuables.png",
+      "file": "fandom/camera-valuable.png",
       "kind": "community",
       "alt": {
-        "en": "A dark in-game room with a mounted skeleton, crew figures and the haul total shown at the top right as a fraction of the goal.",
-        "zh": "昏暗的游戏内房间，架着骨架标本，有几名队员，右上角以分数形式显示搬运总额与目标。"
+        "en": "Illustrative community picture showing a valuable camera.",
+        "zh": "社区示意图：a valuable camera。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A level interior with lootable objects and the running haul total in the corner."
+      "shows": "a valuable camera"
     },
     {
       "file": "how-many-valuables-a-level-holds.svg",

@@ -59,15 +59,15 @@
   ],
   "images": [
     {
-      "file": "fandom/extraction-point.png",
+      "file": "fandom/extraction-boxes.jpg",
       "kind": "community",
       "alt": {
-        "en": "The extraction machine: a lit platform under a sign reading $0 and a screen showing a crying face.",
-        "zh": "撤离机器：灯光照亮的平台，上方是写着 $0 的标牌和一块显示哭脸的屏幕。"
+        "en": "Illustrative community picture showing boxes at an extraction point.",
+        "zh": "社区示意图：boxes at an extraction point。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A machine that receives valuables, shows their value on a sign and answers with a face on a screen."
+      "shows": "boxes at an extraction point"
     },
     {
       "file": "the-box-that-holds-valuables.svg",

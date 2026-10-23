@@ -35,13 +35,15 @@
   ],
   "images": [
     {
-      "file": "fandom/extraction-point.png",
+      "file": "fandom/extraction-point-clean.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Extraction Point from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Extraction Point。"
+        "en": "Illustrative community picture showing an extraction point.",
+        "zh": "社区示意图：an extraction point。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "an extraction point"
     },
     {
       "file": "extraction-run.svg",

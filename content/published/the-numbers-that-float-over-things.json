@@ -37,15 +37,15 @@
   ],
   "images": [
     {
-      "file": "fandom/c-a-r-t.png",
+      "file": "fandom/pocket-cart.png",
       "kind": "community",
       "alt": {
-        "en": "The C.A.R.T. hauling box, its front board showing a value of $0 between two hand symbols.",
-        "zh": "C.A.R.T. 搬运箱，正面板子在两个手的符号之间显示价值 $0。"
+        "en": "Illustrative community picture showing a cart and its floating value display.",
+        "zh": "社区示意图：a cart and its floating value display。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A cart whose board carries a value figure that changes with what it holds."
+      "shows": "a cart and its floating value display"
     },
     {
       "file": "the-numbers-that-float-over-things.svg",

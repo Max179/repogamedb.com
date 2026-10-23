@@ -110,13 +110,15 @@
   ],
   "images": [
     {
-      "file": "fandom/museum-of-human-art.png",
+      "file": "fandom/painting.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Museum of Human Art from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Museum of Human Art。"
+        "en": "Illustrative community picture showing a framed painting.",
+        "zh": "社区示意图：a framed painting。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "a framed painting"
     },
     {
       "file": "the-museum-and-its-props.svg",

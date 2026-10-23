@@ -3,12 +3,12 @@
 > | Item | Value |
 > | --- | --- |
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
-> | Site gates | `[site-tests] 77 passed, 0 failed` |
+> | Site gates | `[site-tests] 78 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
-> | Image coverage | 172/172 entries have a picture; 0 notes; 294 records; 0 unused community files |
-> | Image sanity | 294 records, 14 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
+> | Image coverage | 172/172 entries have a picture; 0 notes; 328 records; 0 unused community files |
+> | Image sanity | 328 records, 15 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
-> | Community pictures | 144 entries; 113 files; 94 exact provenance, 19 weak |
+> | Community pictures | 144 entries; 147 files; 128 exact provenance, 19 weak |
 > | Typecheck | `npx tsc --noEmit -p tsconfig.ci.json` exit 0; includes `pipeline/**/*.ts` |
 >
 
@@ -19,8 +19,8 @@
 - build：`pages=782 indexable=284 schema(noindex)=492`
 - tests：`77 passed, 0 failed`（含 image-reference、search、social metadata、JSON-LD、social card 和 image-budget 门禁）
 - content gate：172 entries / 0 violations
-- image coverage：172/172、0 notes、294 records、0 unused community
-- image sanity：294 records / 14 flagged
+- image coverage：172/172、0 notes、328 records、0 unused community
+- image sanity：328 records / 15 flagged
 - classify：284 keep / 492 noindex
 - preflight：13 ok / 0 failed；smoke：284 kept
 - typecheck：`tsc --noEmit -p tsconfig.ci.json` exit 0（含 `pipeline/**/*.ts`）
@@ -94,6 +94,6 @@ legitimate installed copy.
   - `the-walkie-talkie-and-how-it-answers`: community caption names the Fandom source and uploader; 0 broken images.
   - `staying-in-touch-with-the-crew`: game-asset caption, 0 broken images.
   - 390px mobile: no horizontal overflow, 0 broken images after lazy images load.
-- Clean clone of HEAD: build 782/284, 77 tests, content gate 0, image coverage 172/172, preflight 13/13, smoke 284 kept.
+- Clean clone of HEAD: build 782/284, 78 tests, content gate 0, image coverage 172/172, preflight 14/14, smoke 284 kept.
 - UI/search/performance: industrial hazard theme, player search over 264 items, social card and og/Twitter/JSON-LD on every indexable page; homepage image payload 1.82 MiB (was ~10.3 MB). See reports/ui-redesign.md.
 

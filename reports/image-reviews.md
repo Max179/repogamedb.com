@@ -278,3 +278,4 @@ The run is written to `reports/image-sanity.md` on every build; a flag is a requ
 | 2026-10-23 | fandom/wrecked-car-1.jpg | Fandom community image | a-vehicle-that-is-wrecked-and-its-box | ok — a dark gameplay shot of a car breaking through a wall; the car body and debris read, low contrast is the night scene. |
 | 2026-10-23 | fandom/drift-car-2.jpg | Fandom community image | drifting-a-vehicle | ok — a dark gameplay shot of a car mid-collision with a wall; the car and the impact read. |
 | 2026-10-23 | fandom/hit-car-3.jpg | Fandom community image | hitting-things-with-a-vehicle | ok — a dark gameplay shot of a car hitting a wall; the car, wall and debris read. |
+| 2026-10-23 | fandom/tracker-valuable.png | Fandom community image | what-the-game-draws-when-you-find-something | ok — opened after conversion: a hand-held tracker with a ring and a twisted body; matches the valuable tracker the entry describes. |

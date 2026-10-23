@@ -41,15 +41,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-save-and-your-run-record-background.jpg",
-      "kind": "game",
+      "file": "fandom/settings-menu.jpg",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “What the build keeps for debugging”.",
-        "zh": "用于说明“What the build keeps for debugging”的游戏素材。"
+        "en": "Illustrative community picture showing the game's settings menu.",
+        "zh": "社区示意图：the game's settings menu。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "a game screen background"
+      "shows": "the game's settings menu"
     },
     {
       "file": "what-the-build-keeps-for-debugging.svg",
@@ -64,5 +64,5 @@
   "sources": [
     "A local copy of the game, read only. Identifiers are listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

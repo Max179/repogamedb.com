@@ -48,15 +48,15 @@
   ],
   "images": [
     {
-      "file": "mapped/the-save-and-your-run-record-background.jpg",
-      "kind": "game",
+      "file": "fandom/magazines-maps.jpg",
+      "kind": "community",
       "alt": {
-        "en": "Game asset used to illustrate “Glossary of the terms this site uses”.",
-        "zh": "用于说明“Glossary of the terms this site uses”的游戏素材。"
+        "en": "Illustrative community picture showing a wall of magazines and maps.",
+        "zh": "社区示意图：a wall of magazines and maps。"
       },
-      "disclaimer": "Game asset extracted from a local copy of the game; it remains the property of the developer.",
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "the end-of-run record background"
+      "shows": "a wall of magazines and maps"
     },
     {
       "file": "glossary-of-terms.svg",
@@ -71,5 +71,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each term is on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

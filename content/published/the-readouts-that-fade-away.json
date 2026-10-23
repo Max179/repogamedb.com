@@ -54,15 +54,15 @@
   ],
   "images": [
     {
-      "file": "fandom/upgrades.jpg",
+      "file": "fandom/upgrade-health.png",
       "kind": "community",
       "alt": {
-        "en": "A row of upgrade items on a shop shelf, each lit in its own colour, with a dark painted frieze above.",
-        "zh": "商店货架上排成一列的升级道具，各自发出不同颜色的光，上方是深色的彩绘横饰。"
+        "en": "Illustrative community picture showing a health upgrade box.",
+        "zh": "社区示意图：a health upgrade box。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The shop's upgrade stock on display, with the shelf lit item by item."
+      "shows": "a health upgrade box"
     },
     {
       "file": "the-readouts-that-fade-away.svg",

@@ -45,13 +45,15 @@
   ],
   "images": [
     {
-      "file": "fandom/truck.png",
+      "file": "fandom/truck-interior.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Truck from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Truck。"
+        "en": "Illustrative community picture showing the inside of the truck.",
+        "zh": "社区示意图：the inside of the truck。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "the inside of the truck"
     },
     {
       "file": "healing-at-the-truck.svg",

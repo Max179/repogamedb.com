@@ -129,13 +129,15 @@
   ],
   "images": [
     {
-      "file": "fandom/locations.png",
+      "file": "fandom/manor-map.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Locations from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Locations。"
+        "en": "Illustrative community picture showing a manor level map screen.",
+        "zh": "社区示意图：a manor level map screen。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "a manor level map screen"
     },
     {
       "file": "the-level-themes-and-what-they-hold.svg",

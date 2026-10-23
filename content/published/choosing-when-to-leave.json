@@ -34,15 +34,15 @@
   ],
   "images": [
     {
-      "file": "fandom/map.png",
+      "file": "fandom/map-valuable.png",
       "kind": "community",
       "alt": {
-        "en": "The game's handheld map device, its screen showing the level layout with one point of interest marked in red.",
-        "zh": "游戏中的手持地图设备，屏幕上显示关卡布局，并用红色标出一处兴趣点。"
+        "en": "Illustrative community picture showing a map valuable.",
+        "zh": "社区示意图：a map valuable。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A handheld map screen with a green level layout and one marked point of interest."
+      "shows": "a map valuable"
     },
     {
       "file": "choosing-when-to-leave.svg",

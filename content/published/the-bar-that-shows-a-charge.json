@@ -54,15 +54,15 @@
   ],
   "images": [
     {
-      "file": "fandom/energy-crystal.png",
+      "file": "fandom/drone-recharge.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the energy crystal: a yellow cluster of crystal shards.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：能量水晶，一簇黄色的晶体。"
+        "en": "Illustrative community picture showing a battery pack.",
+        "zh": "社区示意图：a battery pack。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A bright yellow crystal cluster, the game's own charge item."
+      "shows": "a battery pack"
     },
     {
       "file": "the-bar-that-shows-a-charge.svg",

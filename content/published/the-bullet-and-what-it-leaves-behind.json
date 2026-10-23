@@ -40,15 +40,15 @@
   ],
   "images": [
     {
-      "file": "fandom/pulse-pistol.png",
+      "file": "fandom/corn-ammo.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Pulse Pistol, one of the game's energy weapons.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：脉冲手枪（Pulse Pistol），游戏中的能量武器之一。"
+        "en": "Illustrative community picture showing corn ammunition.",
+        "zh": "社区示意图：corn ammunition。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A pistol-shaped energy weapon, the kind whose shot leaves a mark behind."
+      "shows": "corn ammunition"
     },
     {
       "file": "the-bullet-and-what-it-leaves-behind.svg",

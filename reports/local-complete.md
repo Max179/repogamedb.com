@@ -608,11 +608,11 @@ git status --porcelain              -> 空
 ## 2026-10-22 图片补齐（feat/entry-images）
 
 - 46 个 diagram-only 词条全部补图：41 个用 Fandom 社区图，5 个用本地游戏素材（另有 6 个无实体选题使用明确标注的 illustrative 起始图）；原 SVG 图保留为第二张“非截图”说明。图片不再是无图注释：published 词条 172 / 注释 0。
-- 词条层级（2026-10-23 残留 UV 替换后）：28 个 game-image、144 个 community-image；所有已发布词条都有图。
-- manifest：294 条记录（181 game + 113 community）；community 中 94 条有精确 wiki 页面，19 条为弱出处（Fandom HTML 被 Cloudflare 拦截；精确页面通过浏览器内的 MediaWiki API 解析，未绕过 challenge），待补精确页面/作者。详见 `reports/image-sources.md`。
-- 113 个社区图文件（最初 85 个，删除 4 个未再引用者；后续新增 walkie-talkie、13 张 UV 替换图、Headgrab 去重图、Enemies 去重图与 9 张车辆图）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
+- 词条层级（2026-10-23 重复图清零后）：25 个 game-image、147 个 community-image；所有已发布词条都有图。
+- manifest：328 条记录（181 game + 147 community）；community 中 128 条有精确 wiki 页面，19 条为弱出处（Fandom HTML 被 Cloudflare 拦截；精确页面通过浏览器内的 MediaWiki API 解析，未绕过 challenge），待补精确页面/作者。详见 `reports/image-sources.md`。
+- 147 个社区图文件（最初 85 个，删除 4 个未再引用者；后续新增 walkie-talkie、UV 替换图、Headgrab/Enemies/车辆去重图与全站重复图替换）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
 - 新增 `/credits.html`：列出每张社区图的文件、使用词条、来源、作者、许可；页脚可达。社区图 caption 不再写“taken from the game”；`/reference/sources` 不再声称 “Nothing is community-sourced”。
-- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 77 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 294 条（14 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
+- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 78 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 328 条（15 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
 - 工作分支 `feat/entry-images`（基于 fa583ba），已推送为备份分支；未合并 main、未发布。
 
 
@@ -624,7 +624,7 @@ git status --porcelain              -> 空
 - **SEO/社交**：全站补 `og:image`/`twitter:card`/JSON-LD（首页 WebSite+SearchAction，词条/指南 Article，其余 WebPage），新增 1200×630 `/social-card.png`。
 - **性能**：`web/assets` 11.26 MiB → **2.61 MiB**；首页图片负载约 10.3 MB → **1.82 MiB**；新增首页图片预算门禁（<3 MiB）。
 - **仓库**：新增 `package.json`/`package-lock.json`/`README.md`/`LICENSE`/`docs/data-pipeline.md`；`.scratch/`、`.claude/` 从 Git 索引移除并加入 `.gitignore`；`tsconfig.json` 纳入 `pipeline/**/*.ts`，`npm run typecheck` exit 0。
-- **门禁**：`npm test` **77 passed, 0 failed**；`npm run typecheck` exit 0；`tools/image-coverage.mjs --no-write`/`tools/coverage.mjs --no-write` 不再写 tracked report（preflight 可重复运行）。
+- **门禁**：`npm test` **78 passed, 0 failed**；`npm run typecheck` exit 0；`tools/image-coverage.mjs --no-write`/`tools/coverage.mjs --no-write` 不再写 tracked report（preflight 可重复运行）。
 
 
 
@@ -651,4 +651,13 @@ git status --porcelain              -> 空
 - 全站重复主图审计：30 组 / 64 个重复词条。先修 Monsters：9 组（apex、birthday、elsa、gambit、gnome、mentalist、peeper、robe、rugrat）全部换成不同图；再修 Physics 的 10 个 toy-car 词条，9 个换成 Hauler/Scout/Plane/Car-Through-Wall 等不同车辆图，1 个保留原图。
 - 剩余 20 组 / 54 个词条仍是概念/道具/UI 页共用同一对象参考图（cart、truck、upgrades、extraction、semibot、shotgun、valuables、save-screen 等）；它们是同一对象的说明图，不是错图，但卡片仍会重复。已在 reports/duplicate-images.md 列出，作为下一轮视觉去重清单。
 - 计数：manifest 294 条（181 game + 113 community；94 exact，19 weak）；image-coverage 172/172，records=294，unusedCommunity=0；image-sanity 294 条 / 14 flagged（均有 verdict）；tests 77 全过。
+
+
+
+## 2026-10-23 全站重复主图清零
+
+- 剩余 20 组 / 54 个概念、道具与界面页共用主图已全部替换为不同图片；新增 duplicate-images 门禁。
+- 结果：172 个词条 / 172 个不同主图文件 / 0 个重复组；tools/duplicate-images.mjs 输出 172 hero files, 0 duplicate groups。
+- 新增图片覆盖 cart、truck、upgrades、extraction、energy、semibot、shotgun、valuables、save-screen、cosmetics、map、museum、television、tracker 等；均有 Fandom file page、作者与 CC-BY-SA 4.0。
+- 计数：manifest 328 条（181 game + 147 community；128 exact，19 weak）；image-coverage 172/172，records=328，unusedCommunity=0；image-sanity 328 条 / 15 flagged（均有 verdict）；tests 78 全过；preflight 14/14。
 
