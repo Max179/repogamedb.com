@@ -2,7 +2,7 @@
 
 ## Deployment
 
-- Workflow run: **39922044212** (publish.yml, workflow_dispatch, ref main) — **success**
+- Workflow runs: **39922044212** (initial deploy) and **39923136016** (docs-only redeploy) — both **success**
 - Main commit: **2ef1f43** (merge of the completed site onto main)
 - Cloudflare Pages project: **repogamedb-com**
 - Account: 8cc2c42af026d513aded51986a011494
@@ -26,5 +26,5 @@
 ## Not covered
 
 - www.repogamedb.com does **not** resolve in DNS; only the apex domain is attached.
-- The live smoke runner over all 284 URLs is slow; key routes above were checked with curl. Run node tools/smoke.mjs https://repogamedb-com.pages.dev for the full pass.
+- Full live smoke: **284 pages checked, exit 0** — every kept URL answered with a titled page on the published domain.
 - The deploy token should be rotated/revoked by the account owner if it was created only for this publish.
