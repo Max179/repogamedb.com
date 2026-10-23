@@ -1762,6 +1762,28 @@
       "notes": "Fandom file page and uploader verified through the MediaWiki API; the local picture may be a resized/cropped copy."
     },
     {
+      "file": "fandom/walkie-talkies.jpg",
+      "kind": "community",
+      "entity": "the-walkie-talkie-and-how-it-answers",
+      "width": 1156,
+      "height": 925,
+      "bytes": 99690,
+      "sha256": "2b7ef7514c584686e83a7519fcebcacc4896ec9c0b5ed2ac78b6e86307f5452e",
+      "sourceName": "R.E.P.O. Fandom Wiki",
+      "sourcePage": "https://repo-2025horror.fandom.com/wiki/File:Walkie_Talkies.png",
+      "originalUrl": "https://static.wikia.nocookie.net/repo-2025horror/images/c/c9/Walkie_Talkies.png/revision/latest?cb=20260519185012",
+      "author": "Mikola2023",
+      "license": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "retrievedAt": "2026-10-23",
+      "modified": true,
+      "provenance": "exact",
+      "verdict": "ok",
+      "reviewer": "lead",
+      "reviewDate": "2026-10-23",
+      "notes": "High-resolution Fandom walkie-talkies render; converted from WebP to JPEG for page weight."
+    },
+    {
       "file": "fandom/wizard-broom.png",
       "kind": "community",
       "entity": "the-wizard-valuables",

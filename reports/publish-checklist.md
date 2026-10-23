@@ -2,7 +2,7 @@
 >
 > - Content: **172** published entries, **87** structured guides, **0** picture-less notes.
 > - Build: `pages=782 indexable=284` (noindex 498), **68** site gates, content gate **0 violations**, image coverage
->   **172/172** with a picture, **262** image manifest records (181 game + 81 community), image sanity 262 records /
+>   **172/172** with a picture, **263** image manifest records (181 game + 82 community), image sanity 263 records /
 >   10 flagged and all flagged files have a ledger verdict.
 > - New: `/credits.html` lists every community picture with source, author and licence; community captions no longer
 >   claim the picture was taken from the game.
