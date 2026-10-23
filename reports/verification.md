@@ -10,6 +10,7 @@
 > | Classified URLs | 284 keep, 492 noindex |
 > | Community pictures | 144 entries; 147 files; **147 exact provenance, 0 weak** |
 > | Typecheck | `npx tsc --noEmit -p tsconfig.ci.json` exit 0; includes `pipeline/**/*.ts` |
+> | Live | **published 2026-10-23** at https://repogamedb.com/; sitemap 284; workflow 39922044212 success |
 >
 
 ## 干净克隆复验（2026-10-22，feat/entry-images）

@@ -1,85 +1,31 @@
-# Publish plan — repogamedb.com (2026-10-22)
+# Publish plan — repogamedb.com (completed 2026-10-23)
 
-This is the executable handoff for publishing the completed image layer. It records what is already true, what is
-blocked, and the exact commands to finish. Nothing here has been pushed to main or deployed.
+## Status: published
 
-## Current facts
+The site is live on the custom domain and the Cloudflare Pages project.
 
-- Branch **feat/entry-images** is pushed to GitHub and is a backup only: `publish.yml` triggers on `push: branches:[main]`,
-  so the branch push started no workflow and no deploy.
-- Branch HEAD: `06f6678` (config fix targets `repogamedb-com`). Local gates: build `pages=782 indexable=284`,
-  68 site tests, content gate 0, image coverage 172/172, preflight 13/13. Clean clone verified.
-- Remote default branch is **main**, which is an unrelated history (its root is different from this branch). Do not
-  merge without `--allow-unrelated-histories`.
-- Live domain currently serves a stale 13-URL build. The live Cloudflare Pages project is **repogamedb-com**
-  (`repogamedb-com.pages.dev` resolves; `repogamedb.pages.dev` does not). The branch config was corrected from
-  `repogamedb` to `repogamedb-com` in commit `06f6678`.
-- GitHub Actions has 6 historical runs; all failed. Five passed the gate and failed at
-  `pages deploy` with Cloudflare `Authentication error [code: 10000]` on
-  `/accounts/***/pages/projects/repogamedb-com/upload-token`. The token identity resolves as a super admin, so the
-  likely causes are a missing `Account → Cloudflare Pages: Edit` permission or a token/account-id mismatch.
+- Main commit: **2ef1f43** (merge of the completed branch onto main)
+- Workflow: **39922044212** — gate success, deploy success
+- Cloudflare Pages project: **repogamedb-com**
+- Live: https://repogamedb.com/ → 200
+- Live sitemap: **284 URLs** (matches local indexable=284)
+- Live title: R.E.P.O. guide and reference · R.E.P.O. Wiki
+- Verification: reports/live-verification.md
 
-## Blockers (owner-only)
+## What changed to make it publish
 
-1. **Cloudflare token**: create/rotate an API token with `Account → Cloudflare Pages: Edit` (and Account Settings: Read)
-   on the account that owns **repogamedb-com**, update `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in the
-   repository secrets. Verify with `npx wrangler pages project list` (should show `repogamedb-com`).
-2. **History merge**: main and this branch have no merge base. The merge produces exactly 13 add/add conflicts.
-   Resolve all but the two config files with the branch side:
-   `git checkout --theirs -- .`, then restore `wrangler.toml name = "repogamedb-com"` and
-   `publish.yml --project-name=repogamedb-com`, run `node tests/site.test.mjs` and
-   `node tools/preflight.mjs`, commit, push main.
-3. **Intent**: publishing replaces a 13-URL live site with the 284-indexable build. Confirm that is intended before
-   pushing main.
+1. Merged the completed site onto main with --allow-unrelated-histories, keeping the branch content and the repogamedb-com project configuration. Main-only dead assets were removed.
+2. Created a Cloudflare API token with Pages Read + Pages Write for account 8cc2c42af026d513aded51986a011494 from the logged-in dashboard session; stored only in GitHub secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID.
+3. Ran the workflow on main; gate + deploy both passed.
 
-## Exact sequence
+## Remaining operational notes
 
-### A. Backup (already done)
+- www.repogamedb.com is not attached; only the apex domain resolves.
+- Rotate/revoke the deploy token if it should not remain in GitHub Actions.
+- For the full live smoke: node tools/smoke.mjs https://repogamedb-com.pages.dev.
+- The feature branch feat/entry-images remains as a backup; main is the deployed branch.
 
-```bash
-git push origin feat/entry-images          # branch only; no workflow, no deploy
-git bundle create /tmp/gsf-backup.bundle --all
-git bundle verify /tmp/gsf-backup.bundle
-```
+## Do not
 
-### B. Lower-risk publish without touching main (after the token is fixed)
-
-```bash
-gh workflow run publish.yml --ref feat/entry-images
-gh run list --workflow=publish.yml --limit 3
-```
-
-This runs the gate on the branch tree and deploys `web/dist` to `repogamedb-com`. It does not change main's history.
-
-### C. Canonical publish (merge into main)
-
-Rehearse in a scratch clone first. Then:
-
-```bash
-git switch main
-git merge --allow-unrelated-histories --no-ff feat/entry-images
-git checkout --theirs -- .
-# restore the two config decisions
-#   wrangler.toml: name = "repogamedb-com"
-#   .github/workflows/publish.yml: --project-name=repogamedb-com
-node tests/site.test.mjs
-node tools/preflight.mjs
-git add -A
-git commit -m "merge: entry images onto main"
-git push origin main
-```
-
-Verify with `gh run list --workflow=publish.yml --limit 3` and
-`npx wrangler pages deployment list --project-name=repogamedb-com`.
-
-## Do not do
-
-- Do not push local `main` as-is: it is 24 commits ahead of origin/main and would fire the failing deploy.
-- Do not push to a project named `repogamedb` (NXDOMAIN at `repogamedb.pages.dev`).
-- Do not commit Cloudflare tokens or account secrets.
-- Do not assume the branch push published anything; it did not.
-
-## Repo hygiene note
-
-The branch tracks `.scratch/` (14 files) and `.claude/` (1 file). They are now on the public branch via the backup
-push; if that is unwanted, remove them in a follow-up commit and force-update the branch only with owner approval.
+- Do not commit tokens or account secrets.
+- Do not deploy to a project named repogamedb (the correct project is repogamedb-com).

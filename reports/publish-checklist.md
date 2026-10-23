@@ -6,8 +6,7 @@
 >   10 flagged and all flagged files have a ledger verdict.
 > - New: `/credits.html` lists every community picture with source, author and licence; community captions no longer
 >   claim the picture was taken from the game.
-> - Publishing itself is still blocked: Cloudflare credentials/project binding and branch integration are unchanged
->   (see the blockers below). Weak image provenance remains for 18 community files.
+> - **Published 2026-10-23**: https://repogamedb.com/ serves the 284-URL build; workflow 39922044212 gate + deploy succeeded. Weak image provenance is now 0.
 >
 > The 2026-10-01 measurements below are kept for history and are superseded by this block.
 # Publish checklist — repogamedb.com
