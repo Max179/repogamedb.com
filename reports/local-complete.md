@@ -612,17 +612,17 @@ git status --porcelain              -> 空
 - manifest：263 条记录（181 game + 82 community）；community 中 64 条有精确 wiki 页面，18 条为弱出处（Fandom 被 Cloudflare 拦截，未自动抓取/未绕过），待补精确页面/作者。详见 `reports/image-sources.md`。
 - 82 个社区图文件（最初 85 个，删除 4 个未再引用者，另新增 walkie-talkie）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
 - 新增 `/credits.html`：列出每张社区图的文件、使用词条、来源、作者、许可；页脚可达。社区图 caption 不再写“taken from the game”；`/reference/sources` 不再声称 “Nothing is community-sourced”。
-- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 76 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 262 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
-- 工作分支 `feat/entry-images`（基于 fa583ba），未推送、未发布。
+- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 77 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 263 条（10 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
+- 工作分支 `feat/entry-images`（基于 fa583ba），已推送为备份分支；未合并 main、未发布。
 
 
 
 ## 2026-10-23 UI / 搜索 / 性能 / 仓库收尾
 
 - **UI**：改为 R.E.P.O. 原游戏工业 HUD 风格——近黑钢底、黄黑警示条、危险红、金属面板、Impact/窄体标题与等宽 HUD 标签；headers/footers/hero/category/entry/table 全线换肤，390px 适配。样式集中在 `pipeline/theme.mjs`。
-- **搜索**：`/search.html` 改为玩家搜索（172 词条 + 87 指南 + 核心页，共 264 项），带分类筛选、query 参数、结果计数和空状态；技术字段搜索保留在 `/reference/tool.html`。
+- **搜索**：`/search.html` 改为玩家搜索（172 词条 + 87 指南 + 核心页，共 264 项），带分类筛选、query 参数、结果计数和空状态；索引已剔除指南里的内部标识符（EnemyOogly 等）；技术字段搜索保留在 `/reference/tool.html`。
 - **SEO/社交**：全站补 `og:image`/`twitter:card`/JSON-LD（首页 WebSite+SearchAction，词条/指南 Article，其余 WebPage），新增 1200×630 `/social-card.png`。
 - **性能**：`web/assets` 11.26 MiB → **2.61 MiB**；首页图片负载约 10.3 MB → **1.82 MiB**；新增首页图片预算门禁（<3 MiB）。
 - **仓库**：新增 `package.json`/`package-lock.json`/`README.md`/`LICENSE`/`docs/data-pipeline.md`；`.scratch/`、`.claude/` 从 Git 索引移除并加入 `.gitignore`；`tsconfig.json` 纳入 `pipeline/**/*.ts`，`npm run typecheck` exit 0。
-- **门禁**：`npm test` **76 passed, 0 failed**；`npm run typecheck` exit 0；`tools/image-coverage.mjs --no-write`/`tools/coverage.mjs --no-write` 不再写 tracked report（preflight 可重复运行）。
+- **门禁**：`npm test` **77 passed, 0 failed**；`npm run typecheck` exit 0；`tools/image-coverage.mjs --no-write`/`tools/coverage.mjs --no-write` 不再写 tracked report（preflight 可重复运行）。
 

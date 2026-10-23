@@ -500,6 +500,7 @@ try {
   const idx = buildSearchIndex(searchEntries, searchArticles);
   ok('the search index covers entries, guides and core pages', idx.length >= searchEntries.length + searchArticles.length, idx.length + ' items');
   ok('the search index finds a monster and a guide by title', idx.some((x) => /oogly/i.test(x.t)) && idx.some((x) => x.k === 'Guides'));
+  ok('the search index does not leak internal identifiers', !/Enemy[A-Z]|Assembly-CSharp|MonoBehaviour|ScriptableObject/.test(JSON.stringify(idx)));
   const searchHtml = readFileSync(join(uiDir, 'search.html'), 'utf8');
   ok('the search page inlines the player index and has an empty state', searchHtml.includes('var S=') && searchHtml.includes('No matching page') && searchHtml.includes('id="filters"'), String(searchHtml.length));
   ok('the search page stays under the 1 MiB page budget', searchHtml.length < 1048576, String(searchHtml.length));

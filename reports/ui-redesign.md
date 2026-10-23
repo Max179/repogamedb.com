@@ -60,6 +60,6 @@ The page-weight test also asserts the homepage payload stays below 3 MiB.
 ## Verification
 
 - `node pipeline/site.mjs` → pages 782 / indexable 284
-- `node tests/site.test.mjs` → **76 passed, 0 failed** (new search, social metadata, JSON-LD, social-card and image-budget checks)
+- `node tests/site.test.mjs` → **77 passed, 0 failed** (new search, social metadata, JSON-LD, social-card and image-budget checks)
 - `npx tsc --noEmit -p tsconfig.ci.json` → exit 0, now including `pipeline/**/*.ts`
-- Browser QA: desktop and 390px; no horizontal overflow; search query `oogly` returns the entry and a guide; credits 81 rows; 0 broken images after lazy load.
+- Browser QA: desktop and 390px; no horizontal overflow; search query `oogly` returns the entry and a guide; the index strips internal identifiers from guide evidence; credits 81 rows; 0 broken images after lazy load.

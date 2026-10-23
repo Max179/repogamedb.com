@@ -94,7 +94,7 @@ export function buildSearchIndex(entries, articles = []) {
     items.push({ t: e.title, u: pictured ? '/entries/' + e.id + '.html' : '/reference/notes/' + e.id + '.html', k: groupOf(e.category).name, c: e.category, s: compact(body + ' ' + extra) });
   }
   for (const a of articles) {
-    const body = [a.target, ...(a.steps ?? []).map((s) => (s.do ?? '') + ' ' + (s.because ?? ''))].join(' ');
+    const body = [a.target, ...(a.steps ?? []).map((s) => s.do ?? '')].join(' ');
     items.push({ t: a.title, u: '/articles/' + a.id + '.html', k: 'Guides', c: 'Guides', s: compact(body) });
   }
   for (const [t, u, k, s] of [
