@@ -17,7 +17,7 @@ a Cloudflare challenge/HTTP 403 from this machine; the CDN (`static.wikia.nocook
 therefore did **not** scrape the wikis and did **not** bypass the challenge. It used the community files that were
 already in the repository.
 
-- **91 community files** are used; **72** have an exact wiki page (and, where available, the original CDN URL) from
+- **93 community files** are used; **74** have an exact wiki page (and, where available, the original CDN URL) from
   the local scrape data or the Fandom API; **19** have **weak provenance** and point at the wiki root.
 - Four earlier files (`bella.png`, `clown-monster.png`, `loom.png`, `semibot-walkies.png`) were removed after the refined mapping stopped
   using them, so no unreferenced community file remains.

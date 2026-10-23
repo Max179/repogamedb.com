@@ -5,10 +5,10 @@
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
 > | Site gates | `[site-tests] 77 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
-> | Image coverage | 172/172 entries have a picture; 0 notes; 272 records; 0 unused community files |
-> | Image sanity | 272 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
+> | Image coverage | 172/172 entries have a picture; 0 notes; 274 records; 0 unused community files |
+> | Image sanity | 274 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
-> | Community pictures | 144 entries; 91 files; 72 exact provenance, 19 weak |
+> | Community pictures | 144 entries; 93 files; 74 exact provenance, 19 weak |
 > | Typecheck | `npx tsc --noEmit -p tsconfig.ci.json` exit 0; includes `pipeline/**/*.ts` |
 >
 
@@ -19,8 +19,8 @@
 - build：`pages=782 indexable=284 schema(noindex)=492`
 - tests：`77 passed, 0 failed`（含 image-reference、search、social metadata、JSON-LD、social card 和 image-budget 门禁）
 - content gate：172 entries / 0 violations
-- image coverage：172/172、0 notes、272 records、0 unused community
-- image sanity：272 records / 10 flagged
+- image coverage：172/172、0 notes、274 records、0 unused community
+- image sanity：274 records / 10 flagged
 - classify：284 keep / 492 noindex
 - preflight：13 ok / 0 failed；smoke：284 kept
 - typecheck：`tsc --noEmit -p tsconfig.ci.json` exit 0（含 `pipeline/**/*.ts`）

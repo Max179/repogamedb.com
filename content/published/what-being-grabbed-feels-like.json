@@ -44,13 +44,13 @@
   ],
   "images": [
     {
-      "file": "fandom/headgrab.png",
+      "file": "fandom/headgrab-searching.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Headgrab from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Headgrab。"
+        "en": "Community gameplay picture of Headgrab searching a room, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community gameplay picture of Headgrab searching a room, from the R.E.P.O. Fandom wiki."
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "what-being-grabbed-feels-like.svg",
