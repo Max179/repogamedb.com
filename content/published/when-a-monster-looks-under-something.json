@@ -35,15 +35,15 @@
   ],
   "images": [
     {
-      "file": "fandom/gnome.png",
+      "file": "fandom/gnome-transparent.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Gnome: a small bearded monster in a pointed hat and blue shirt.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：地精（Gnome），一只戴尖帽、穿蓝衣、长胡子的小怪物。"
+        "en": "Illustrative community picture showing a gnome, a monster that looks under things.",
+        "zh": "Illustrative community picture showing a gnome, a monster that looks under things."
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A short monster, the height that has to look under furniture."
+      "shows": "a gnome"
     },
     {
       "file": "when-a-monster-looks-under-something.svg",

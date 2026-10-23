@@ -64,15 +64,15 @@
   ],
   "images": [
     {
-      "file": "fandom/toy-car.png",
+      "file": "fandom/scout-vehicle.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Toy Car, the vehicle whose engine, drift and impact sounds the entry lists, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），条目列出的引擎声、漂移声与撞击声都属于这台载具。"
+        "en": "Illustrative community picture showing a Scout vehicle.",
+        "zh": "社区示意图：a Scout vehicle。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The red car vehicle with its driver, silent in a still picture."
+      "shows": "a Scout vehicle"
     },
     {
       "file": "the-sounds-a-vehicle-makes.svg",

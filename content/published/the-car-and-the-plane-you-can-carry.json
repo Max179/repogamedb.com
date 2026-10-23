@@ -54,13 +54,15 @@
   ],
   "images": [
     {
-      "file": "fandom/toy-car.png",
+      "file": "fandom/toy-plane.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Toy Car from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Toy Car。"
+        "en": "Illustrative community picture showing the toy plane.",
+        "zh": "社区示意图：the toy plane。"
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "the toy plane"
     },
     {
       "file": "the-car-and-the-plane-you-can-carry.svg",

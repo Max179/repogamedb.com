@@ -31,15 +31,15 @@
   ],
   "images": [
     {
-      "file": "fandom/toy-car.png",
+      "file": "fandom/hauler-side.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Toy Car, the vehicle that leans with its speed, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），它会随速度产生倾斜。"
+        "en": "Illustrative community picture showing the side of a Hauler vehicle.",
+        "zh": "社区示意图：the side of a Hauler vehicle。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The red car vehicle standing level, not leaning."
+      "shows": "the side of a Hauler vehicle"
     },
     {
       "file": "the-lean-a-vehicle-takes-from-its-speed.svg",

@@ -84,15 +84,15 @@
   ],
   "images": [
     {
-      "file": "fandom/toy-car.png",
+      "file": "fandom/drift-car-2.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Toy Car, the vehicle that can be built to drift, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），游戏中可以设定为可漂移的载具。"
+        "en": "Illustrative community picture showing a car sliding through a wall.",
+        "zh": "社区示意图：a car sliding through a wall。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The red car vehicle with its driver, standing still."
+      "shows": "a car sliding through a wall"
     },
     {
       "file": "drifting-a-vehicle.svg",

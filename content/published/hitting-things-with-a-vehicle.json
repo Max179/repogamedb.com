@@ -62,15 +62,15 @@
   ],
   "images": [
     {
-      "file": "fandom/toy-car.png",
+      "file": "fandom/hit-car-3.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Toy Car, the vehicle whose impacts are graded, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），它的撞击会被分级。"
+        "en": "Illustrative community picture showing a car hitting a wall.",
+        "zh": "社区示意图：a car hitting a wall。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The red car vehicle with its driver, undamaged."
+      "shows": "a car hitting a wall"
     },
     {
       "file": "hitting-things-with-a-vehicle.svg",

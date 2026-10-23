@@ -34,13 +34,15 @@
   ],
   "images": [
     {
-      "file": "fandom/peeper.png",
+      "file": "fandom/peeper-top.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of Peeper from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Peeper。"
+        "en": "Illustrative community picture showing a Peeper watching from above.",
+        "zh": "Illustrative community picture showing a Peeper watching from above."
       },
-      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "a Peeper watching from above"
     },
     {
       "file": "how-monsters-find-you.svg",

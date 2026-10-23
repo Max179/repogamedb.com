@@ -40,15 +40,15 @@
   ],
   "images": [
     {
-      "file": "fandom/toy-car.png",
+      "file": "fandom/wrecked-car-1.jpg",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Toy Car: a red open car with a driver at the wheel, from the R.E.P.O. Fandom wiki.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：玩具车（Toy Car），一辆红色敞篷小车，驾驶座上坐着驾驶员。"
+        "en": "Illustrative community picture showing a car crashing through a wall.",
+        "zh": "社区示意图：a car crashing through a wall。"
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "The red car vehicle with its driver, shown intact rather than wrecked."
+      "shows": "a car crashing through a wall"
     },
     {
       "file": "a-vehicle-that-is-wrecked-and-its-box.svg",

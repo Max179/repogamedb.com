@@ -55,15 +55,15 @@
   ],
   "images": [
     {
-      "file": "fandom/mentalist.png",
+      "file": "fandom/apex-ducks.png",
       "kind": "community",
       "alt": {
-        "en": "Community reference picture of the Mentalist: a seated monster with a glowing head and thin arms.",
-        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：冥想者（Mentalist），一个坐着、头部发光、手臂细长的怪物。"
+        "en": "Illustrative community picture showing monsters moving through a level before they notice a player.",
+        "zh": "Illustrative community picture showing monsters moving through a level before they notice a player."
       },
       "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
       "illustrative": true,
-      "shows": "A monster sitting still rather than chasing."
+      "shows": "monsters moving through a level"
     },
     {
       "file": "what-a-monster-does-when-it-has-not-seen-you.svg",
