@@ -2,7 +2,7 @@
 
 ## Deployment
 
-- Workflow runs: **39922044212** (initial deploy) and **39923136016** (docs-only redeploy) — both **success**
+- Workflow runs: **39922044212** (initial deploy), **39923136016** (docs redeploy) and **39924210257** (SEO clean-URL deploy) — all **success**
 - Main commit: **2ef1f43** (merge of the completed site onto main)
 - Cloudflare Pages project: **repogamedb-com**
 - Account: 8cc2c42af026d513aded51986a011494
@@ -21,7 +21,7 @@
 | /robots.txt | 200 |
 | /social-card.png | 200 |
 | og:image | https://repogamedb.com/social-card.png |
-| canonical | https://repogamedb.com/index.html |
+| canonical | https://repogamedb.com/ (clean URLs; sitemap has 0 .html URLs) |
 
 ## Not covered
 
