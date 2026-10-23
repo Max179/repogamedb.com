@@ -609,10 +609,10 @@ git status --porcelain              -> 空
 
 - 46 个 diagram-only 词条全部补图：41 个用 Fandom 社区图，5 个用本地游戏素材（另有 6 个无实体选题使用明确标注的 illustrative 起始图）；原 SVG 图保留为第二张“非截图”说明。图片不再是无图注释：published 词条 172 / 注释 0。
 - 词条层级（2026-10-23 重复图清零后）：25 个 game-image、147 个 community-image；所有已发布词条都有图。
-- manifest：328 条记录（181 game + 147 community）；community 中 128 条有精确 wiki 页面，19 条为弱出处（Fandom HTML 被 Cloudflare 拦截；精确页面通过浏览器内的 MediaWiki API 解析，未绕过 challenge），待补精确页面/作者。详见 `reports/image-sources.md`。
+- manifest：178 条记录（31 game + 147 community；150 个未引用 game 文件已删除）；community 中 147 条全部有精确 wiki 页面与上传者，弱出处 0 条（Fandom HTML 被 Cloudflare 拦截；精确页面通过浏览器内的 MediaWiki API 解析，未绕过 challenge）。详见 `reports/image-sources.md`。
 - 147 个社区图文件（最初 85 个，删除 4 个未再引用者；后续新增 walkie-talkie、UV 替换图、Headgrab/Enemies/车辆去重图与全站重复图替换）原为 WebP 却使用 .png/.jpg 后缀，已转码为声明格式；manifest 的 bytes/sha256/尺寸已重算，页面注明“re-encoded”。
 - 新增 `/credits.html`：列出每张社区图的文件、使用词条、来源、作者、许可；页脚可达。社区图 caption 不再写“taken from the game”；`/reference/sources` 不再声称 “Nothing is community-sourced”。
-- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 78 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 328 条（15 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
+- 校验：`pages=782 indexable=284`（noindex 498）；`tests/site.test.mjs` 78 全过；content-gate 172 词条 0 违规；image-coverage 172/172，0 notes，0 unused community；image-sanity 178 条（12 flagged，全部有 ledger verdict）；classify 284 keep / 492 noindex。
 - 工作分支 `feat/entry-images`（基于 fa583ba），已推送为备份分支；未合并 main、未发布。
 
 
@@ -659,5 +659,21 @@ git status --porcelain              -> 空
 - 剩余 20 组 / 54 个概念、道具与界面页共用主图已全部替换为不同图片；新增 duplicate-images 门禁。
 - 结果：172 个词条 / 172 个不同主图文件 / 0 个重复组；tools/duplicate-images.mjs 输出 172 hero files, 0 duplicate groups。
 - 新增图片覆盖 cart、truck、upgrades、extraction、energy、semibot、shotgun、valuables、save-screen、cosmetics、map、museum、television、tracker 等；均有 Fandom file page、作者与 CC-BY-SA 4.0。
-- 计数：manifest 328 条（181 game + 147 community；128 exact，19 weak）；image-coverage 172/172，records=328，unusedCommunity=0；image-sanity 328 条 / 15 flagged（均有 verdict）；tests 78 全过；preflight 14/14。
+- 计数：manifest 178 条（31 game + 147 community；**147 exact，0 weak**）；image-coverage 172/172，records=178，unusedCommunity=0；image-sanity 178 条 / 12 flagged（均有 verdict）；tests 78 全过；preflight 14/14。
+
+
+
+## 2026-10-23 弱出处图片清零
+
+- 对 19 条 weak provenance 逐条处理：能拿到精确 file page/上传者的直接替换并标记 exact；最后 8 条本地/不透明截图用 Fandom 上同主题的精确文件替换（标题卡、地图、商店货架、DA 图、博物馆画作等）。
+- 结果：**147 个 community 文件，147 条 exact，0 条 weak**；所有图片都有 sourcePage、author、license、retrievedAt。
+- image-sanity 178 条 / 12 flagged（低对比标题卡、游戏截图、UI 图等），全部有 ledger verdict；tests 78、preflight 14/14。
+
+
+
+## 2026-10-23 未引用 game 图片清理
+
+- 删除 150 个只存在于 manifest、未被任何已发布词条引用的 game 图片（10,251,147 字节），并删除对应 manifest 记录；清单保留在 reports/unused-game-images.md。
+- manifest 328 → 178 条（game 181→31，community 147 不变）；image-coverage unusedGameLibrary 150→0，并新增「unused game image 即失败」门禁。
+- dist 44M → 36M，content/assets 13M → 3.2M；image-sanity 178 条 / 12 flagged；tests 78、preflight 14/14。
 

@@ -279,3 +279,5 @@ The run is written to `reports/image-sanity.md` on every build; a flag is a requ
 | 2026-10-23 | fandom/drift-car-2.jpg | Fandom community image | drifting-a-vehicle | ok — a dark gameplay shot of a car mid-collision with a wall; the car and the impact read. |
 | 2026-10-23 | fandom/hit-car-3.jpg | Fandom community image | hitting-things-with-a-vehicle | ok — a dark gameplay shot of a car hitting a wall; the car, wall and debris read. |
 | 2026-10-23 | fandom/tracker-valuable.png | Fandom community image | what-the-game-draws-when-you-find-something | ok — opened after conversion: a hand-held tracker with a ring and a twisted body; matches the valuable tracker the entry describes. |
+| 2026-10-23 | fandom/valuables.png | Fandom community image | how-many-valuables-a-level-holds | ok — exact Fandom category title card; the word VALUABLES is legible over a dark silhouette, so low variation is the artwork, not a blank file. |
+| 2026-10-23 | fandom/locations.png | Fandom community image | how-many-monsters-a-level-sends | ok — exact Fandom category title card; the word LOCATIONS is legible over a dark manor silhouette, so low variation is the artwork. |

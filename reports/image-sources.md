@@ -17,44 +17,24 @@ a Cloudflare challenge/HTTP 403 from this machine; the CDN (`static.wikia.nocook
 therefore did **not** scrape the wikis and did **not** bypass the challenge. It used the community files that were
 already in the repository.
 
-- **147 community files** are used; **128** have an exact wiki page (and, where available, the original CDN URL) from
-  the local scrape data or the Fandom API; **19** have **weak provenance** and point at the wiki root.
+- **147 community files** are used; **147** have an exact wiki page (and, where available, the original CDN URL) from
+  the local scrape data or the Fandom API; **0** have weak provenance.
 - Four earlier files (`bella.png`, `clown-monster.png`, `loom.png`, `semibot-walkies.png`) were removed after the refined mapping stopped
   using them, so no unreferenced community file remains.
 - All 85 originally downloaded files were stored as WebP with a `.png`/`.jpg` name. They were re-encoded to the
   declared PNG/JPEG format so the server and the image tool agree on the bytes; the manifest marks the surviving files
   `modified: true` and the entry captions say they were re-encoded.
 
-Weak-provenance files (follow-up list):
-
-- `fandom/c-a-r-t.png`
-- `fandom/cosmetics.png`
-- `fandom/disposal-arena.png`
-- `fandom/duct-taped-grenade.png`
-- `fandom/enemy-valuable.png`
-- `fandom/explosive-mine.png`
-- `fandom/feather-drone.png`
-- `fandom/health-pack.png`
-- `fandom/locations.png`
-- `fandom/map.png`
-- `fandom/museum-boombox.png`
-- `fandom/museum-of-human-art.png`
-- `fandom/purchased-items.png`
-- `fandom/shotgun.png`
-- `fandom/swiftbroom-academy-rooms.png`
-- `fandom/sword.png`
-- `fandom/valuable-tracker.png`
-- `fandom/valuables.png`
-- `fandom/duck-monster.png` (gameplay screenshot; uploader not captured)
+Weak-provenance files: **none**. The 2026-10-23 pass resolved all 19 records to exact Fandom file pages and uploaders.
 
 ## Audit flags
 
 The provenance audit also flagged these limitations; they are recorded here rather than hidden:
 
-- **8 opaque screenshots** may be local captures rather than wiki uploads: `cosmetics.png`, `disposal-arena.png`, `locations.png`, `map.png`, `museum-of-human-art.png`, `purchased-items.png`, `swiftbroom-academy-rooms.png`, `valuables.png`. They are treated as weak provenance and should be replaced or linked to a verified file page before publishing.
+- The eight opaque screenshots that were previously weak have been replaced with exact Fandom files (category title cards, map, shelf, DA image, museum painting); they are no longer weak.
 - **14 JPGs** are 268 px Fandom thumbnails; re-encoding to JPEG lost any alpha. They are still legible at the size the page displays them, but they are not the full-size wiki file.
 - **Five subjects exist twice** (268 px JPG and 512 px PNG of the same artwork): banger, birthday-boy, headman, peeper, rugrat. Both copies are published on different entries; the credits page lists each file separately.
-- Files added in the 2026-10-23 UV-replacement pass were resolved live through the Fandom MediaWiki API from a browser session; older weak records remain weak. Pages not found remain weak.
+- All 147 community records were resolved live through the Fandom MediaWiki API from a browser session; no weak record remains.
 
 ## UV texture replacement (2026-10-23)
 

@@ -80,6 +80,7 @@ const weak = communityRecords.filter((r) => r.provenance === 'weak');
 const missingLicence = communityRecords.filter((r) => !r.sourcePage || !r.author || !r.license || !r.licenseUrl);
 for (const r of missingLicence) problems.push('community record missing attribution fields: ' + r.file);
 const unusedGameRecords = (manifest.records ?? []).filter((r) => r.kind === 'game' && !usedFiles.has(r.file));
+for (const r of unusedGameRecords) problems.push('game image not used by any entry: ' + r.file);
 const withPicture = entries.length - notes.length;
 const pct = entries.length ? Math.round((withPicture / entries.length) * 100) : 0;
 

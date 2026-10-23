@@ -12,16 +12,13 @@ near-white (above 235). A flag is not a verdict: it means the file has to be loo
 | fandom/gnomes.png | R.E.P.O. Fandom Wiki | 6.4 | 81% | 37 | almost no variation (stddev 6.4) |
 | fandom/wrecked-car-1.jpg | R.E.P.O. Fandom Wiki | 9.4 | 73% | 65 | almost no variation (stddev 9.4) |
 | fandom/drift-car-2.jpg | R.E.P.O. Fandom Wiki | 9.5 | 70% | 64 | almost no variation (stddev 9.5) |
-| mapped/the-spinny-texture.jpg | Spinny_Albedo | 10.2 | 58% | 109 | almost no variation (stddev 10.2) |
 | mapped/moving-loot-and-gear-crate.png | Crate_DefaultMaterial_BaseColor | 10.3 | 50% | 47 | almost no variation (stddev 10.3) |
 | fandom/hit-car-3.jpg | R.E.P.O. Fandom Wiki | 10.5 | 61% | 61 | almost no variation (stddev 10.5) |
-| mapped/the-museum-and-its-props-creep-painting.png | Painting_S_Creep | 10.6 | 75% | 21 | almost no variation (stddev 10.6) |
-| mapped/the-valuables-you-can-find-calculator.png | new valaubles_Valuable Arctic Calculator_BaseColor | 16.5 | 93% | 123 | 93% of pixels within 6 of the median |
-| fandom/valuable-tracker.png | R.E.P.O. Fandom Wiki | 28.7 | 90% | 17 | 90% of pixels within 6 of the median |
 | fandom/tracker-valuable.png | R.E.P.O. Fandom Wiki | 28.7 | 90% | 17 | 90% of pixels within 6 of the median |
+| fandom/valuable-tracker.png | R.E.P.O. Fandom Wiki | 28.7 | 90% | 17 | 90% of pixels within 6 of the median |
 | mapped/the-cleaning-tools-and-effects-sheet.png | Clean Effect Sprite Sheet | 31.4 | 98% | 17 | 98% of pixels within 6 of the median |
-| mapped/the-boombox-valuable-lights.png | Boombox_DefaultMaterial_Emissive | 33.4 | 93% | 0 | 93% of pixels within 6 of the median |
 | mapped/when-the-chat-box-will-not-open-emojis.jpg | emojis | 42.8 | 90% | 0 | 90% of pixels within 6 of the median |
-| mapped/the-level-themes-and-what-they-hold-arena.jpg | level arena 01 | 43.1 | 91% | 0 | 91% of pixels within 6 of the median |
+| fandom/valuables.png | R.E.P.O. Fandom Wiki | 47.9 | 94% | 17 | 94% of pixels within 6 of the median |
+| fandom/locations.png | R.E.P.O. Fandom Wiki | 49.8 | 94% | 17 | 94% of pixels within 6 of the median |
 
-Totals: 328 records, 15 flagged.
+Totals: 178 records, 12 flagged.
