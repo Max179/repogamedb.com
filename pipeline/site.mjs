@@ -154,7 +154,7 @@ export function build(inventoryPath, outDir) {
   const urls = [];
   const socialImage = SITE.url + '/social-card.png';
   const layout = (title, description, path, body) => {
-    const fullTitle = title.includes(SITE.name) ? title : title + ' · ' + SITE.name;
+    const fullTitle = title.includes(SITE.name) ? title : (title.length + SITE.name.length + 3 > 60 ? title : title + ' · ' + SITE.name);
     const urlPath = publicPath(path);
     const metaDesc = metaDescription(description);
     const isArticle = path.startsWith('/entries/') || path.startsWith('/articles/');
@@ -526,8 +526,9 @@ export function build(inventoryPath, outDir) {
     ['values.html', 'values', 'Decoded values'], ['tool.html', 'tool', 'Field lookup'], ['sources.html', 'sources', 'Sources'],
   ]) stub(oldRel, '/reference/' + name + '.html', title);
 
+  const sitemapLastmod = new Date().toISOString().slice(0, 10);
   write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map((u) => '  <loc>' + u + '</loc>\n').join('') + '</urlset>\n');
+    urls.map((u) => '  <url><loc>' + u + '</loc><lastmod>' + sitemapLastmod + '</lastmod></url>\n').join('') + '</urlset>\n');
   write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n');
   write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="6"/></svg>' + String.fromCharCode(10));
   write('brand.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="' + esc(SITE.gameName) + '"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="5"/><circle cx="32" cy="30" r="4" fill="#0f1116"/><path d="M20 50h24" stroke="#0f1116" stroke-width="5" stroke-linecap="round"/></svg>\n');

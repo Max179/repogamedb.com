@@ -159,12 +159,12 @@ try {
     const repeats = t.split(SITE.name).length - 1;
     const can = (h.match(/<link rel="canonical" href="([^"]*)"/) ?? [])[1] ?? '';
     const expectedCanonical = SITE.url + publicPath('/' + rel);
-    if (d.length > 160 || can.endsWith('.html') || can !== expectedCanonical) badSeo.push(rel + ' (' + d.length + ' chars, canonical=' + can + ')');
+    if (t.length > 60 || d.length > 160 || can.endsWith('.html') || can !== expectedCanonical) badSeo.push(rel + ' (' + d.length + ' chars, canonical=' + can + ')');
     if (!t || !d || seenTitles.has(t) || seenDescs.has(d) || repeats > 1) badMeta.push(rel + (repeats > 1 ? ' (site name x' + repeats + ')' : ''));
     seenTitles.add(t); seenDescs.add(d);
   }
   ok('every indexable page has a unique title and description, without a repeated site name', badMeta.length === 0, badMeta.slice(0, 4).join(', '));
-  ok('every indexable page has a <=160-char description and a clean canonical URL matching the sitemap', badSeo.length === 0, badSeo.slice(0, 4).join(', '));
+  ok('every indexable page has a <=60-char title, <=160-char description and a clean canonical URL matching the sitemap', badSeo.length === 0, badSeo.slice(0, 4).join(', '));
 
   // Page-weight budget: every page must stay openable on a phone. The ceiling is 1 MiB; the largest page today is
   // the 782 KiB field-name list, which the reports record as the next optimisation target.
