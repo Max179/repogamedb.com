@@ -5,10 +5,10 @@
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
 > | Site gates | `[site-tests] 68 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
-> | Image coverage | 172/172 entries have a picture; 0 notes; 262 records; 0 unused community files |
-> | Image sanity | 262 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
+> | Image coverage | 172/172 entries have a picture; 0 notes; 263 records; 0 unused community files |
+> | Image sanity | 263 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
-> | Community pictures | 131 entries; 81 files; 63 exact provenance, 18 weak |
+> | Community pictures | 131 entries; 82 files; 64 exact provenance, 18 weak |
 > | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
 >
 
@@ -19,14 +19,14 @@
 - build：`pages=782 indexable=284 schema(noindex)=492`
 - tests：`68 passed, 0 failed`（含新增的“every image reference resolves to an emitted file”）
 - content gate：172 entries / 0 violations
-- image coverage：172/172、0 notes、262 records、0 unused community
-- image sanity：262 records / 10 flagged
+- image coverage：172/172、0 notes、263 records、0 unused community
+- image sanity：263 records / 10 flagged
 - classify：284 keep / 492 noindex
 - preflight：13 ok / 0 failed；smoke：284 kept
 - 未跑 typecheck（本机无 node_modules；CI 会安装 TypeScript）
 > Commands: `node pipeline/site.mjs`, `node tools/content-gate.mjs`, `node tools/image-coverage.mjs`,
 > `python3 tools/image-sanity.py`, `node tests/site.test.mjs`, `node tools/classify-urls.mjs`, `node pipeline/status.mjs`.
-> Fandom HTML/API remained Cloudflare-blocked; no scraping was attempted.
+ > Fandom HTML was challenge-blocked; the MediaWiki API was used from the ego browser session to resolve 64 file pages/uploaders. No bulk scraping, no challenge bypass.
 # Verification record — R.E.P.O. (repogamedb.com)
 
 Recorded from a full local run on this machine. Every line below was produced by the command above it on the
