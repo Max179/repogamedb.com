@@ -3,13 +3,13 @@
 > | Item | Value |
 > | --- | --- |
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
-> | Site gates | `[site-tests] 68 passed, 0 failed` |
+> | Site gates | `[site-tests] 76 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
 > | Image coverage | 172/172 entries have a picture; 0 notes; 263 records; 0 unused community files |
 > | Image sanity | 263 records, 10 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
 > | Classified URLs | 284 keep, 492 noindex |
 > | Community pictures | 131 entries; 82 files; 64 exact provenance, 18 weak |
-> | Typecheck | not run locally (no `node_modules`); CI installs TypeScript |
+> | Typecheck | `npx tsc --noEmit -p tsconfig.ci.json` exit 0; includes `pipeline/**/*.ts` |
 >
 
 ## 干净克隆复验（2026-10-22，feat/entry-images）
@@ -17,13 +17,13 @@
 用 `git archive HEAD`（不含 data/raw、不含 web/dist）解到工区外，`git init` 后整链执行：
 
 - build：`pages=782 indexable=284 schema(noindex)=492`
-- tests：`68 passed, 0 failed`（含新增的“every image reference resolves to an emitted file”）
+- tests：`76 passed, 0 failed`（含 image-reference、search、social metadata、JSON-LD、social card 和 image-budget 门禁）
 - content gate：172 entries / 0 violations
 - image coverage：172/172、0 notes、263 records、0 unused community
 - image sanity：263 records / 10 flagged
 - classify：284 keep / 492 noindex
 - preflight：13 ok / 0 failed；smoke：284 kept
-- 未跑 typecheck（本机无 node_modules；CI 会安装 TypeScript）
+- typecheck：`tsc --noEmit -p tsconfig.ci.json` exit 0（含 `pipeline/**/*.ts`）
 > Commands: `node pipeline/site.mjs`, `node tools/content-gate.mjs`, `node tools/image-coverage.mjs`,
 > `python3 tools/image-sanity.py`, `node tests/site.test.mjs`, `node tools/classify-urls.mjs`, `node pipeline/status.mjs`.
  > Fandom HTML was challenge-blocked; the MediaWiki API was used from the ego browser session to resolve 64 file pages/uploaders. No bulk scraping, no challenge bypass.
@@ -94,5 +94,6 @@ legitimate installed copy.
   - `the-walkie-talkie-and-how-it-answers`: community caption names the Fandom source and uploader; 0 broken images.
   - `staying-in-touch-with-the-crew`: game-asset caption, 0 broken images.
   - 390px mobile: no horizontal overflow, 0 broken images after lazy images load.
-- Clean clone of HEAD: build 782/284, 68 tests, content gate 0, image coverage 172/172, preflight 13/13, smoke 284 kept.
+- Clean clone of HEAD: build 782/284, 76 tests, content gate 0, image coverage 172/172, preflight 13/13, smoke 284 kept.
+- UI/search/performance: industrial hazard theme, player search over 264 items, social card and og/Twitter/JSON-LD on every indexable page; homepage image payload 1.82 MiB (was ~10.3 MB). See reports/ui-redesign.md.
 

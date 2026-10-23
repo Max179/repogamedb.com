@@ -10,13 +10,15 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { themeCSS } from './theme.mjs';
 
 export const SITE = {
   name: 'R.E.P.O. Wiki',
   gameName: 'R.E.P.O.',
   domain: 'repogamedb.com',
   url: 'https://repogamedb.com',
-  accent: '#ff5c5c',
+  accent: '#f2b705',
+  danger: '#d3402f',
   tagline: 'Monsters, valuables, gear, maps and the run from entry to extraction',
   searchPlaceholder: 'Search monsters, valuables, gear or guides',
   versionBadge: 'R.E.P.O. v0.4.0 · read from a local copy',
@@ -79,7 +81,31 @@ export const CATEGORIES = [
   { key: 'basics', name: 'Basics and answers', src: ['FAQ', 'Glossary', 'Versions'], blurb: 'Common questions, the words this site uses, and which build it documents.' },
 ];
 
-const groupOf = (category) => (CATEGORIES.find((c) => c.src.includes(category)) ?? CATEGORIES[CATEGORIES.length - 1]);
+export const groupOf = (category) => (CATEGORIES.find((c) => c.src.includes(category)) ?? CATEGORIES[CATEGORIES.length - 1]);
+
+/** Player-facing search index: entries, guides and a few core pages. Kept small enough to inline into search.html. */
+export function buildSearchIndex(entries, articles = []) {
+  const compact = (s, n = 300) => String(s ?? '').replace(/\s+/g, ' ').trim().slice(0, n);
+  const items = [];
+  for (const e of entries) {
+    const pictured = e.imageTier === 'game-image' || e.imageTier === 'community-image';
+    const body = [e.summary, ...(e.body ?? []).slice(0, 4)].join(' ');
+    const extra = (e.facts ?? []).map((f) => f.claim).join(' ');
+    items.push({ t: e.title, u: pictured ? '/entries/' + e.id + '.html' : '/reference/notes/' + e.id + '.html', k: groupOf(e.category).name, c: e.category, s: compact(body + ' ' + extra) });
+  }
+  for (const a of articles) {
+    const body = [a.target, ...(a.steps ?? []).map((s) => (s.do ?? '') + ' ' + (s.because ?? ''))].join(' ');
+    items.push({ t: a.title, u: '/articles/' + a.id + '.html', k: 'Guides', c: 'Guides', s: compact(body) });
+  }
+  for (const [t, u, k, s] of [
+    ['Start here: R.E.P.O. guide', '/guide.html', 'Pages', 'Scout, carry, extract; routes, crew roles and gear choices.'],
+    ['All entities by part of the run', '/entities/', 'Pages', 'Browse monsters, valuables, gear, weapons, maps, hazards and interface entries.'],
+    ['Image credits', '/credits.html', 'Pages', 'Sources, authors, uploaders and licences for community pictures.'],
+    ['About this wiki', '/about.html', 'Pages', 'Independent player reference built from the game files.'],
+    ['Contact and corrections', '/contact.html', 'Pages', 'Report a wrong field or missing picture.'],
+  ]) items.push({ t, u, k, c: k, s });
+  return items;
+}
 
 export function build(inventoryPath, outDir) {
   const inv = JSON.parse(readFileSync(inventoryPath, 'utf8'));
@@ -116,15 +142,28 @@ export function build(inventoryPath, outDir) {
   mkdirSync(outDir, { recursive: true });
   const pages = new Map();
   const urls = [];
-  const layout = (title, description, path, body) => '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
-    '<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>' + esc(title.includes(SITE.name) ? title : title + ' · ' + SITE.name) + '</title>\n' +
+  const socialImage = SITE.url + '/social-card.png';
+  const layout = (title, description, path, body) => {
+    const fullTitle = title.includes(SITE.name) ? title : title + ' · ' + SITE.name;
+    const isArticle = path.startsWith('/entries/') || path.startsWith('/articles/');
+    const schemaType = isArticle ? 'Article' : (path === '/' ? 'WebSite' : 'WebPage');
+    const schema = {
+      '@context': 'https://schema.org', '@type': schemaType, name: title, description, url: SITE.url + path, image: socialImage,
+      isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+      ...(path === '/' ? { potentialAction: { '@type': 'SearchAction', target: SITE.url + '/search.html?q={search_term_string}', 'query-input': 'required name=search_term_string' } } : {}),
+    };
+    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>' + esc(fullTitle) + '</title>\n' +
     '<meta name="description" content="' + esc(description) + '">\n<meta name="robots" content="' + (isNoindexPage(path) ? 'noindex, follow' : 'index, follow') + '">\n' +
-    '<link rel="canonical" href="' + SITE.url + path + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
+    '<meta name="theme-color" content="#080a08">\n<link rel="canonical" href="' + SITE.url + path + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
     '<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
     '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
-    '<meta property="og:title" content="' + esc(title) + '"><meta property="og:type" content="website">\n' +
-    '<meta property="og:description" content="' + esc(description) + '">\n' +
-    '<style>:root{--accent:' + SITE.accent + '}</style>\n<link rel="stylesheet" href="/style.css">\n</head>\n<body>\n' +
+    '<meta property="og:title" content="' + esc(fullTitle) + '"><meta property="og:type" content="' + (isArticle ? 'article' : 'website') + '"><meta property="og:site_name" content="' + esc(SITE.name) + '"><meta property="og:locale" content="en_US">\n' +
+    '<meta property="og:description" content="' + esc(description) + '"><meta property="og:url" content="' + SITE.url + path + '">\n' +
+    '<meta property="og:image" content="' + socialImage + '"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="R.E.P.O. Wiki — monsters, valuables and extraction">\n' +
+    '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + esc(fullTitle) + '"><meta name="twitter:description" content="' + esc(description) + '"><meta name="twitter:image" content="' + socialImage + '">\n' +
+    '<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, '\\u003c') + '</script>\n' +
+    '<link rel="stylesheet" href="/style.css">\n</head>\n<body>\n' +
     '<a class="skip" href="#main">Skip to content</a>\n' +
     '<header class="top">\n<div class="wrap bar">\n' +
     '<a class="brand" href="/"><img src="/brand.svg" alt="' + esc(SITE.gameName) + '" width="34" height="34"><span>' + esc(SITE.gameName) + '<em>wiki</em></span></a>\n' +
@@ -137,6 +176,7 @@ export function build(inventoryPath, outDir) {
     '<p class="dim"><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · ' +
     '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/credits.html">Image credits</a> · <a href="/reference/">Technical reference</a></p>\n' +
     '</div></footer>\n</body>\n</html>\n';
+  };
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
   const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + '/' + rel); };
   const reference = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); };
@@ -201,7 +241,7 @@ export function build(inventoryPath, outDir) {
     '<p class="lead">' + esc(SITE.tagline) + '. Every entry says what the game itself establishes, and nothing here is estimated.</p>\n' +
     '<form class="heroSearch" action="/search.html" method="get" role="search"><input type="search" name="q" placeholder="' + esc(SITE.searchPlaceholder) + '" aria-label="Search this site"><button type="submit">Search</button></form>\n' +
     '<p class="ctas"><a class="btn primary" href="/entries/">Start here</a> <a class="btn" href="/entities/">Browse entities</a> <a class="btn" href="/articles/">Read the guides</a></p>\n' +
-    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="2172" height="724"><figcaption class="dim small">Original interface artwork for this wiki.</figcaption></figure>\n</section>\n' +
+    '</div>\n<figure class="heroArt"><img src="/' + esc(SITE.heroImage) + '" alt="' + esc(SITE.heroAlt) + '" width="1600" height="533"><figcaption class="dim small">Original interface artwork for this wiki.</figcaption></figure>\n</section>\n' +
     '<section class="block"><div class="sectionHead"><div><p class="kicker">Explore the wiki</p><h2>R.E.P.O. survival guide</h2></div><a href="/guide.html">View all guides &rarr;</a></div>\n<div class="categoryRail">' +
       [['threats', 'Threats', entities.filter((e) => groupOf(e.category).key === 'monsters').length + ' verified threat references.', '/entities/monsters.html', '◈'],
         ['valuables', 'Valuables', 'Know what is worth carrying and what slows a run.', '/entities/valuables.html', '▣'],
@@ -325,8 +365,8 @@ export function build(inventoryPath, outDir) {
   // ---- tools and updates -------------------------------------------------------------------------
   indexable('tools/index.html', 'Tools', 'Search boxes and checkers for looking something up on this site.',
     '<h1>Tools</h1><p class="lead">The tools here run in your browser; nothing you type is sent anywhere.</p>\n<div class="grid">' +
-    '<a class="card" href="/search.html"><strong>Search field names</strong><span class="dim">Search the field names the game writes, by name, type or the class that declares them.</span></a>' +
-    '<a class="card" href="/reference/tool.html"><strong>Field lookup</strong><span class="dim">Ask which class declares a field.</span></a>' +
+    '<a class="card" href="/search.html"><strong>Search the wiki</strong><span class="dim">Find monsters, valuables, gear, guides and pages in the player index.</span></a>' +
+    '<a class="card" href="/reference/tool.html"><strong>Field lookup</strong><span class="dim">Ask which class declares a field; technical reference only.</span></a>' +
     '<a class="card" href="/articles/"><strong>Guides</strong><span class="dim">Step-by-step write-ups for one job at a time.</span></a>' +
     '</div><p class="dim small">These utilities report what the game\'s files contain. They are not part of the player reference and carry no advice.</p>');
   indexable('updates.html', 'Updates', 'What has been added to this site, newest first.',
@@ -386,14 +426,28 @@ export function build(inventoryPath, outDir) {
       '<div class="note">Each row is one object read out of the game\'s own files. Its class was accepted only because the measured layout consumed that object\'s payload exactly, so these are the game\'s values rather than estimates.</div>' +
       (list.length === 0 ? '<p class="dim">No object in this build decoded yet.</p>' : rows + (names.length > 40 ? '<p class="dim">Showing 40 of ' + names.length + ' classes.</p>' : '')));
   }
-  indexable('search.html', 'Search', 'Search every field name the game defines, in your browser.',
-    '<h1>Search</h1><p class="dim">Client-side over ' + (inv.totals?.fields ?? 0) + ' fields. No network requests.</p>' +
-    '<p><input id="q" type="search" placeholder="field or class" autocomplete="off"> <span id="status" class="dim"></span></p><ul id="out"></ul>' +
-    '<script>var F=' + JSON.stringify(lookupFields(inv, '', 200)) + ';var q=document.getElementById("q"),o=document.getElementById("out"),s=document.getElementById("status");' +
-    'var draw=function(){var v=q.value.trim().toLowerCase();var r=!v?F.slice(0,50):F.filter(function(x){return x.field.toLowerCase().indexOf(v)>=0||x.class.toLowerCase().indexOf(v)>=0||String(x.type).toLowerCase().indexOf(v)>=0});' +
-    's.textContent=v?(r.length+" match(es)"):("Showing first 50 of "+F.length+" indexed fields");' +
-    'o.innerHTML=r.slice(0,50).map(function(x){return "<li>"+x.class+" <span class=dim>"+x.field+": "+x.type+"</span></li>"}).join("")};' +
-    'var pre=new URLSearchParams(location.search).get("q");if(pre)q.value=pre;q.addEventListener("input",draw);draw();</script>');
+  const searchItems = buildSearchIndex(entries, articles);
+  const searchKinds = ['All', ...new Set(searchItems.map((x) => x.k))];
+  indexable('search.html', 'Search the wiki', 'Find monsters, valuables, gear, guides and pages from the R.E.P.O. wiki.',
+    '<section class="searchPage">' +
+    '<p class="kicker">Field database // player index</p><h1>Search the wiki</h1>' +
+    '<p class="lead">Find a monster, valuable, gear item, guide or page. Everything here is built from the published entries and guides; the technical field tables live in the reference layer.</p>' +
+    '<div class="searchbox"><input id="q" type="search" placeholder="Try Oogly, battery, cart, extraction…" autocomplete="off" aria-label="Search the wiki"><button type="button" id="clear">Clear</button></div>' +
+    '<div class="filters" id="filters" role="group" aria-label="Filter results"></div>' +
+    '<p id="status" class="dim" aria-live="polite">Loading search index…</p><div id="results" class="results"></div>' +
+    '<noscript><p class="note">Search runs in your browser. Enable JavaScript to search the wiki.</p></noscript>' +
+    '<script>var S=' + JSON.stringify(searchItems).replace(/</g, '\\u003c') + ';' +
+    'var Q=document.getElementById("q"),R=document.getElementById("results"),F=document.getElementById("filters"),ST=document.getElementById("status");' +
+    'var K=' + JSON.stringify(searchKinds) + ',A="All";' +
+    'K.forEach(function(k){var b=document.createElement("button");b.type="button";b.textContent=k;b.onclick=function(){A=k;draw();};F.appendChild(b);});' +
+    'document.getElementById("clear").onclick=function(){Q.value="";A="All";draw();Q.focus();};' +
+    'function draw(){var v=Q.value.trim().toLowerCase();var rows=S.filter(function(x){return (A==="All"||x.k===A)&&(!v||((x.t+" "+x.k+" "+x.c+" "+x.s).toLowerCase().indexOf(v)>=0));});' +
+    'ST.textContent=(v||A!=="All")?(rows.length+" result(s)"):("Browse "+S.length+" pages or type to search.");' +
+    'Array.prototype.forEach.call(F.children,function(b){b.className=b.textContent===A?"on":"";});' +
+    'R.innerHTML="";if(!rows.length){var e=document.createElement("div");e.className="empty";e.textContent="No matching page. Try a monster, valuable, gear item or guide name.";R.appendChild(e);return;}' +
+    'rows.slice(0,30).forEach(function(x){var a=document.createElement("a");a.className="result";a.href=x.u;var h=document.createElement("h2");h.textContent=x.t;var m=document.createElement("div");m.className="meta";m.textContent=x.k+(x.c&&x.c!==x.k?" // "+x.c:"");var p=document.createElement("p");p.textContent=x.s;a.appendChild(h);a.appendChild(m);a.appendChild(p);R.appendChild(a);});}' +
+    'var pre=new URLSearchParams(location.search).get("q");if(pre){Q.value=pre;}Q.addEventListener("input",draw);draw();</script>' +
+    '</section>');
   reference('reference/tool.html', 'Field lookup', 'Find which class declares a field.',
     '<h1>Field lookup</h1><p>Enter a field or type fragment; the tool searches the extracted field tables only, and never guesses a value.</p>' +
     '<p><input id="q" type="search" placeholder="field or type" autocomplete="off"> <span id="s" class="dim"></span></p><div id="o"></div>' +
@@ -410,7 +464,7 @@ export function build(inventoryPath, outDir) {
   reference('reference/index.html', 'Technical reference', 'Identifiers, tables and provenance for modders. Not indexed.',
     '<h1>Technical reference</h1><p class="lead">For modders and for checking our data. Deliberately kept out of search engines: it lists identifiers read from the game\'s files, which are useful to a modder but are not answers to a player\'s question.</p><ul>' +
     '<li><a href="/reference/collection.html">All names</a></li><li><a href="/reference/enemies.html">Enemy types and states</a></li><li><a href="/reference/enums.html">Enums</a></li>' +
-    '<li><a href="/reference/values.html">Decoded values</a></li><li><a href="/search.html">Search</a></li><li><a href="/reference/tool.html">Field lookup</a></li><li><a href="/reference/sources.html">Sources and method</a></li>' +
+    '<li><a href="/reference/values.html">Decoded values</a></li><li><a href="/search.html">Search the wiki</a></li><li><a href="/reference/tool.html">Field lookup</a></li><li><a href="/reference/sources.html">Sources and method</a></li>' +
     '<li><a href="/reference/notes/">Notes waiting for a confirmed picture</a></li></ul>' +
     '<p><a href="/entities/">Back to the player reference</a></p>');
 
@@ -466,61 +520,7 @@ export function build(inventoryPath, outDir) {
   write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="6"/></svg>' + String.fromCharCode(10));
   write('brand.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="' + esc(SITE.gameName) + '"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="5"/><circle cx="32" cy="30" r="4" fill="#0f1116"/><path d="M20 50h24" stroke="#0f1116" stroke-width="5" stroke-linecap="round"/></svg>\n');
 
-  write('style.css', [
-    ':root{--bg:#0f1116;--panel:#171a21;--panel2:#1c202a;--line:#262b36;--ink:#e9edf5;--dim:#9aa3b2;--accent:#ff5c5c}',
-    '*{box-sizing:border-box}',
-    'body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}',
-    'a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}',
-    '.wrap{max-width:68rem;margin:0 auto;padding:0 1.1rem}',
-    '.skip{position:absolute;left:-9999px}',
-    'header.top{position:sticky;top:0;z-index:20;background:rgba(15,17,22,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}',
-    '.bar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.7rem 1.1rem}',
-    '.brand{display:flex;align-items:center;gap:.55rem;color:var(--ink);font-weight:700;letter-spacing:.2px}',
-    '.brand em{color:var(--dim);font-style:normal;font-weight:500}.brand span{white-space:nowrap}',
-    'nav.main{display:flex;gap:.9rem;flex:1 1 auto;flex-wrap:wrap;font-size:.95rem}',
-    'nav.main a{color:var(--dim);padding:.25rem 0;border-bottom:2px solid transparent}',
-    'nav.main a.on{color:var(--ink);border-bottom-color:var(--accent)}',
-    '.hsearch{display:flex;gap:.4rem}',
-    'input[type=search]{padding:.5rem .6rem;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:9px;min-width:12rem}',
-    'button{padding:.5rem .8rem;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:9px;cursor:pointer}',
-    'button:hover{border-color:var(--accent)}',
-    'main{padding:1.4rem 1.1rem 3rem}',
-    'h1{font-size:2rem;line-height:1.2;margin:.4rem 0 .6rem}h2{font-size:1.25rem;margin:2rem 0 .6rem}',
-    '.lead{font-size:1.08rem;color:#cfd6e4;max-width:46rem}',
-    '.dim{color:var(--dim)}.small{font-size:.85rem}.mono{font-family:ui-monospace,monospace}',
-    '.kicker{color:var(--accent);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .2rem}',
-    '.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:center;padding:1.2rem 0 1.8rem;border-bottom:1px solid var(--line)}',
-    '.heroArt{position:relative;overflow:hidden;margin:0;border:1px solid var(--line);border-radius:14px;background:#101217;box-shadow:0 18px 55px rgba(0,0,0,.32)}.heroArt img{width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;display:block;filter:saturate(1.08) contrast(1.04)}.heroArt:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,8,11,.72))}.heroArt figcaption{position:absolute;z-index:1;left:16px;right:16px;bottom:12px;color:#eef2ee}.banner img,.heroimg img{width:100%;height:auto;border-radius:14px;border:1px solid var(--line);display:block}',
-    '.heroSearch{display:flex;gap:.5rem;margin:1rem 0 .7rem}.heroSearch input{flex:1 1 auto}',
-    '.ctas{display:flex;gap:.6rem;flex-wrap:wrap}',
-    '.btn{display:inline-block;padding:.55rem .95rem;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink)}',
-    '.btn.primary{background:var(--accent);color:#0f1116;border-color:transparent;font-weight:600}',
-    '.block{margin:2.2rem 0}',
-    '.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.sectionHead h2{margin:.2rem 0;font-size:2rem;line-height:1.05}.sectionHead>a{color:var(--accent);font-weight:700}',
-    '.categoryRail{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.categoryTile{position:relative;min-height:190px;padding:16px;display:flex;flex-direction:column;overflow:hidden;background:linear-gradient(145deg,#1e2a2b,#151a1d);border:1px solid var(--line);border-radius:14px;transition:transform .2s,border-color .2s}.categoryTile:hover{transform:translateY(-4px);border-color:rgba(240,179,92,.65)}.categoryIcon{position:absolute;right:-18px;top:-18px;width:108px;height:108px;object-fit:cover;opacity:.55;border-radius:50%;filter:saturate(.9)}.categoryGlyph{position:relative;color:var(--accent);font-size:28px}.categoryTile strong{position:relative;margin-top:auto;font-size:1.2rem}.categoryTile>span:last-child{position:relative;margin-top:6px;color:var(--muted);font-size:.88rem}',
-    '.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem}',
-    '.card{display:flex;flex-direction:column;gap:.4rem;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.7rem;color:var(--ink)}',
-    '.card:hover{border-color:var(--accent);text-decoration:none}',
-    '.card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:#000}',
-    '.card strong{font-size:1rem}.card .dim{font-size:.9rem}',
-    '.chip{align-self:flex-start;font-size:.72rem;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:.1rem .5rem}',
-    '.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:1rem}',
-    '.qcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.9rem;display:flex;flex-direction:column;gap:.35rem}',
-    '.filter{display:flex;gap:.6rem;align-items:center;margin:1rem 0}',
-    '.updates{list-style:none;padding:0}.updates li{padding:.45rem 0;border-bottom:1px solid var(--line)}.when{color:var(--dim);font-size:.85rem;margin-right:.5rem}',
-    '.entry{max-width:46rem}.entry h2{margin-top:2rem}',
-    '.heroimg{margin:0 0 1rem}.banner{margin:0 0 1rem}',
-    '.oneline{font-size:1.12rem;background:var(--panel);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:.7rem .9rem;max-width:46rem}',
-    '.facts{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:.8rem 1rem;max-width:46rem}',
-    '.facts dl{display:grid;grid-template-columns:max-content 1fr;gap:.3rem 1rem;margin:.3rem 0 0}.facts dt{color:var(--dim)}.facts dd{margin:0}',
-    '.verified li{margin:.4rem 0}.steps li{margin:.6rem 0}',
-    '.note{border-left:3px solid var(--accent);background:var(--panel);padding:.8rem 1rem;border-radius:0 10px 10px 0;max-width:46rem}',
-    'footer.foot{border-top:1px solid var(--line);padding:1.4rem 0 2.4rem;margin-top:2rem}',
-    'footer.foot p{margin:.35rem 0}',
-    'table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:.3rem .5rem;text-align:left}',
-    '@media(max-width:900px){.categoryRail{grid-template-columns:1fr 1fr}}',
-    '@media(max-width:720px){.hero{grid-template-columns:1fr}.hsearch{width:100%}.hsearch input{flex:1 1 auto;min-width:0}.categoryRail{grid-template-columns:1fr 1fr}.heroArt img{aspect-ratio:16/9}}',
-  ].join('\n') + '\n');
+  write('style.css', themeCSS);
 
   // ---- assets -----------------------------------------------------------------------------------------
   let assetCount = 0;

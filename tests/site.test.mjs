@@ -9,7 +9,7 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
+import { build, lookupFields, buildSearchIndex, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
 let pass = 0, fail = 0;
@@ -489,6 +489,40 @@ ok('every game image used in an entry has a manifest record and exists in the bu
   ok('every mapped picture has a verdict in the review ledger', unjudged.length === 0,
     unjudged.slice(0, 3).join(', '));
 }
+
+
+// --- player search and social metadata
+const uiDir = mkdtempSync(join(tmpdir(), 'repo-ui-'));
+try {
+  build(INV, uiDir);
+  const searchEntries = readdirSync('content/published').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join('content', 'published', f), 'utf8')));
+  const searchArticles = readdirSync('content/articles').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join('content', 'articles', f), 'utf8')));
+  const idx = buildSearchIndex(searchEntries, searchArticles);
+  ok('the search index covers entries, guides and core pages', idx.length >= searchEntries.length + searchArticles.length, idx.length + ' items');
+  ok('the search index finds a monster and a guide by title', idx.some((x) => /oogly/i.test(x.t)) && idx.some((x) => x.k === 'Guides'));
+  const searchHtml = readFileSync(join(uiDir, 'search.html'), 'utf8');
+  ok('the search page inlines the player index and has an empty state', searchHtml.includes('var S=') && searchHtml.includes('No matching page') && searchHtml.includes('id="filters"'), String(searchHtml.length));
+  ok('the search page stays under the 1 MiB page budget', searchHtml.length < 1048576, String(searchHtml.length));
+  const sitemapXml = readFileSync(join(uiDir, 'sitemap.xml'), 'utf8');
+  const urls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const badMeta = urls.filter((u) => {
+    const rel = u.replace(SITE.url + '/', '') || 'index.html';
+    const h = readFileSync(join(uiDir, rel), 'utf8');
+    return !h.includes('og:image') || !h.includes('social-card.png') || !h.includes('twitter:card') || !h.includes('application/ld+json');
+  });
+  ok('every indexable page carries social metadata and JSON-LD', badMeta.length === 0, badMeta.slice(0, 3).join(', '));
+  const idxHtml = readFileSync(join(uiDir, 'index.html'), 'utf8');
+  const jsonLd = (idxHtml.match(/<script type="application\/ld\+json">([^<]+)<\/script>/) ?? [])[1];
+  let schemaOk = false; try { schemaOk = JSON.parse(jsonLd)['@context'] === 'https://schema.org'; } catch { schemaOk = false; }
+  ok('the homepage JSON-LD is valid schema.org JSON', schemaOk);
+  ok('the social card asset was emitted', existsSync(join(uiDir, 'social-card.png')));
+  let homeImgBytes = 0;
+  for (const m of idxHtml.matchAll(/<img[^>]+src="(\/[^"]+)"/g)) {
+    const p = join(uiDir, m[1].slice(1));
+    if (existsSync(p)) homeImgBytes += readFileSync(p).length;
+  }
+  ok('the homepage image payload is under 3 MiB', homeImgBytes < 3 * 1024 * 1024, (homeImgBytes / 1048576).toFixed(2) + ' MiB');
+} catch (e) { ok('player search and social metadata checks run', false, String(e).slice(0, 200)); } finally { rmSync(uiDir, { recursive: true, force: true }); }
 
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

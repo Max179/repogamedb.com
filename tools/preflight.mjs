@@ -32,7 +32,7 @@ const runGate = (name, cmd) => {
   }
 };
 runGate('content gate passes', 'node tools/content-gate.mjs');
-runGate('image coverage passes', 'node tools/image-coverage.mjs');
+runGate('image coverage passes', 'node tools/image-coverage.mjs --no-write');
 const hasStatus = existsSync('reports/status.json');
 add('machine-readable status exists', hasStatus, 'reports/status.json');
 if (hasStatus) {
@@ -72,7 +72,7 @@ add('build output is not tracked', !tracked.includes('web/dist/'));
   const { execFileSync } = await import('node:child_process');
   let out = '';
   try {
-    out = execFileSync(process.execPath, ['tools/coverage.mjs'], { encoding: 'utf8' });
+    out = execFileSync(process.execPath, ['tools/coverage.mjs', '--no-write'], { encoding: 'utf8' });
   } catch (e) {
     out = String((e.stdout ?? '') + (e.stderr ?? ''));
   }

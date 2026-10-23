@@ -1,0 +1,44 @@
+MIT License
+
+Copyright (c) 2026 repogamedb.com contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+Scope note (not part of the MIT grant)
+
+This MIT licence applies to the site's source code only: the generator and
+tooling in pipeline/, tests/, tools/, config/ and the static shell assets in
+web/assets/ that were created for this project.
+
+It does not apply to, and does not relicense, any of the following:
+
+- Game assets, textures, renders and screenshots exported from R.E.P.O. Those
+  remain the property of the game's developer and its rights holders and keep
+  their original status. They are used on the site only to identify the subject
+  they belong to.
+- Community images from the R.E.P.O. Fandom wiki or any other third party.
+  Those are published under their own licences (currently CC-BY-SA 4.0) and
+  remain the property of their respective authors; attribution is recorded in
+  content/images-manifest.json and on the site's credits page.
+- Game names, logos, trademarks and other third-party marks.
+
+If you reuse any picture or data file from this repository, check its own
+recorded source and licence first; the MIT licence is not a grant for it.
