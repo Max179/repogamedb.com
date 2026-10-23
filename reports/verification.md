@@ -3,7 +3,7 @@
 > | Item | Value |
 > | --- | --- |
 > | Build | `[site] pages=782 indexable=284 schema(noindex)=492` |
-> | Site gates | `[site-tests] 78 passed, 0 failed` |
+> | Site gates | `[site-tests] 79 passed, 0 failed` |
 > | Content gate | 172 entries, 87 articles, 0 violations |
 > | Image coverage | 172/172 entries have a picture; 0 notes; 178 records; 0 unused community files |
 > | Image sanity | 178 records, 12 flagged; every flagged file has a verdict in `reports/image-reviews.md` |
@@ -95,6 +95,6 @@ legitimate installed copy.
   - `the-walkie-talkie-and-how-it-answers`: community caption names the Fandom source and uploader; 0 broken images.
   - `staying-in-touch-with-the-crew`: game-asset caption, 0 broken images.
   - 390px mobile: no horizontal overflow, 0 broken images after lazy images load.
-- Clean clone of HEAD: build 782/284, 78 tests, content gate 0, image coverage 172/172, preflight 14/14, smoke 284 kept.
+- Clean clone of HEAD: build 782/284, 79 tests, content gate 0, image coverage 172/172, preflight 14/14, smoke 284 kept.
 - UI/search/performance: industrial hazard theme, player search over 264 items, social card and og/Twitter/JSON-LD on every indexable page; homepage image payload 1.82 MiB (was ~10.3 MB). See reports/ui-redesign.md.
 

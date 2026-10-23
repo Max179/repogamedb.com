@@ -31,6 +31,16 @@ export const SITE = {
 
 const slug = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+/** Public URL path: Cloudflare Pages serves clean URLs and 308s the .html form. */
+export const publicPath = (path) => path === '/' || path === '/index.html' ? '/' : path.endsWith('/index.html') ? path.slice(0, -10) : path.replace(/\.html$/, '');
+/** Keep meta/OG descriptions inside the useful search-snippet range. */
+export const metaDescription = (s) => {
+  const text = String(s ?? '').replace(/\s+/g, ' ').trim();
+  if (text.length <= 160) return text;
+  const cut = text.slice(0, 157);
+  const at = cut.lastIndexOf(' ');
+  return (at > 120 ? cut.slice(0, at) : cut).replace(/[.,;:!?\u2014-]+$/, '') + '\u2026';
+};
 
 /** Pure, fixture-tested: field search across the inventory. */
 export function lookupFields(inventory, query, limit = 50) {
@@ -145,23 +155,25 @@ export function build(inventoryPath, outDir) {
   const socialImage = SITE.url + '/social-card.png';
   const layout = (title, description, path, body) => {
     const fullTitle = title.includes(SITE.name) ? title : title + ' · ' + SITE.name;
+    const urlPath = publicPath(path);
+    const metaDesc = metaDescription(description);
     const isArticle = path.startsWith('/entries/') || path.startsWith('/articles/');
     const schemaType = isArticle ? 'Article' : (path === '/' ? 'WebSite' : 'WebPage');
     const schema = {
-      '@context': 'https://schema.org', '@type': schemaType, name: title, description, url: SITE.url + path, image: socialImage,
+      '@context': 'https://schema.org', '@type': schemaType, name: title, description: metaDesc, url: SITE.url + urlPath, image: socialImage,
       isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
-      ...(path === '/' ? { potentialAction: { '@type': 'SearchAction', target: SITE.url + '/search.html?q={search_term_string}', 'query-input': 'required name=search_term_string' } } : {}),
+      ...(path === '/' ? { potentialAction: { '@type': 'SearchAction', target: SITE.url + '/search?q={search_term_string}', 'query-input': 'required name=search_term_string' } } : {}),
     };
     return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
     '<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>' + esc(fullTitle) + '</title>\n' +
-    '<meta name="description" content="' + esc(description) + '">\n<meta name="robots" content="' + (isNoindexPage(path) ? 'noindex, follow' : 'index, follow') + '">\n' +
-    '<meta name="theme-color" content="#080a08">\n<link rel="canonical" href="' + SITE.url + path + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
-    '<link rel="alternate" hreflang="en" href="' + SITE.url + path + '">' +
-    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + path + '">' +
+    '<meta name="description" content="' + esc(metaDesc) + '">\n<meta name="robots" content="' + (isNoindexPage(path) ? 'noindex, follow' : 'index, follow') + '">\n' +
+    '<meta name="theme-color" content="#080a08">\n<link rel="canonical" href="' + SITE.url + urlPath + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
+    '<link rel="alternate" hreflang="en" href="' + SITE.url + urlPath + '">' +
+    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + urlPath + '">' +
     '<meta property="og:title" content="' + esc(fullTitle) + '"><meta property="og:type" content="' + (isArticle ? 'article' : 'website') + '"><meta property="og:site_name" content="' + esc(SITE.name) + '"><meta property="og:locale" content="en_US">\n' +
-    '<meta property="og:description" content="' + esc(description) + '"><meta property="og:url" content="' + SITE.url + path + '">\n' +
+    '<meta property="og:description" content="' + esc(metaDesc) + '"><meta property="og:url" content="' + SITE.url + urlPath + '">\n' +
     '<meta property="og:image" content="' + socialImage + '"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="R.E.P.O. Wiki — monsters, valuables and extraction">\n' +
-    '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + esc(fullTitle) + '"><meta name="twitter:description" content="' + esc(description) + '"><meta name="twitter:image" content="' + socialImage + '">\n' +
+    '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + esc(fullTitle) + '"><meta name="twitter:description" content="' + esc(metaDesc) + '"><meta name="twitter:image" content="' + socialImage + '">\n' +
     '<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, '\\u003c') + '</script>\n' +
     '<link rel="stylesheet" href="/style.css">\n</head>\n<body>\n' +
     '<a class="skip" href="#main">Skip to content</a>\n' +
@@ -178,7 +190,7 @@ export function build(inventoryPath, outDir) {
     '</div></footer>\n</body>\n</html>\n';
   };
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
-  const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + '/' + rel); };
+  const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + publicPath('/' + rel)); };
   const reference = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); };
 
   // ---- content --------------------------------------------------------------------------------

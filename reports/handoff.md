@@ -2,7 +2,7 @@
 >
 > - Published entries: **172** (was 167); structured guides: **87**; picture-less noindex notes: **0** (was 48).
 > - Live: **published 2026-10-23** at https://repogamedb.com/ (284 sitemap URLs, workflow 39922044212 success).
-> - Build: `pages=782 indexable=284` (noindex 498); **78** site gates pass; UI theme, player search, social/JSON-LD and image budget are covered.
+> - Build: `pages=782 indexable=284` (noindex 498); **79** site gates pass; UI theme, player search, social/JSON-LD and image budget are covered.
 > - Images: **178** manifest records (31 game + 147 community; **147 exact provenance, 0 weak**); **25** entries use a game
 >   image and **131** use a community image; every published entry now has a picture. `/credits.html` lists every
 >   community picture with source, author and licence.

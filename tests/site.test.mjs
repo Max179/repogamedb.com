@@ -9,9 +9,10 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, buildSearchIndex, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
+import { build, lookupFields, buildSearchIndex, publicPath, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
+const fileForLoc = (loc) => { const p = loc.replace(SITE.url, ''); if (p === '' || p === '/') return 'index.html'; if (p.endsWith('/')) return p.slice(1) + 'index.html'; return p.slice(1) + '.html'; };
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = '') => { if (cond) { pass++; console.log('  PASS ' + name); } else { fail++; console.log('  FAIL ' + name + (detail ? ' :: ' + detail : '')); } };
 
@@ -79,7 +80,7 @@ try {
   // prompted this gate found search.html and tool.html sharing 98.8% of their main text.
   const mains = {};
   for (const m of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
-    const rel = m.replace('<loc>' + SITE.url + '/', '').replace('</loc>', '') || 'index.html';
+    const rel = fileForLoc(m.replace('<loc>', '').replace('</loc>', ''));
     const h = readFileSync(join(dir, rel), 'utf8');
     const body = h.match(/<main>([\s\S]*?)<\/main>/);
     mains[rel] = (body ? body[1] : h).replace(/\s+/g, ' ').trim();
@@ -149,17 +150,21 @@ try {
   ok('every image reference resolves to an emitted file', badImages.length === 0, badImages.slice(0, 5).join(', '));
 
   // A title that repeats the site name, or two pages sharing a title or description, is a real SEO defect.
-  const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = [];
+  const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = []; const badSeo = [];
   for (const u of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
-    const rel = u.replace('<loc>' + SITE.url + '/', '').replace('</loc>', '') || 'index.html';
+    const rel = fileForLoc(u.replace('<loc>', '').replace('</loc>', ''));
     const h = readFileSync(join(dir, rel), 'utf8');
     const t = (h.match(/<title>([^<]*)<\/title>/) ?? [])[1] ?? '';
     const d = (h.match(/<meta name="description" content="([^"]*)"/) ?? [])[1] ?? '';
     const repeats = t.split(SITE.name).length - 1;
+    const can = (h.match(/<link rel="canonical" href="([^"]*)"/) ?? [])[1] ?? '';
+    const expectedCanonical = SITE.url + publicPath('/' + rel);
+    if (d.length > 160 || can.endsWith('.html') || can !== expectedCanonical) badSeo.push(rel + ' (' + d.length + ' chars, canonical=' + can + ')');
     if (!t || !d || seenTitles.has(t) || seenDescs.has(d) || repeats > 1) badMeta.push(rel + (repeats > 1 ? ' (site name x' + repeats + ')' : ''));
     seenTitles.add(t); seenDescs.add(d);
   }
   ok('every indexable page has a unique title and description, without a repeated site name', badMeta.length === 0, badMeta.slice(0, 4).join(', '));
+  ok('every indexable page has a <=160-char description and a clean canonical URL matching the sitemap', badSeo.length === 0, badSeo.slice(0, 4).join(', '));
 
   // Page-weight budget: every page must stay openable on a phone. The ceiling is 1 MiB; the largest page today is
   // the 782 KiB field-name list, which the reports record as the next optimisation target.
@@ -201,8 +206,8 @@ try {
   const missingPages = published.filter((e) => !existsSync(entityFile(e)));
   ok('every published subject has a page: entities under /entries/, picture-less subjects as notes', missingPages.length === 0, missingPages.map((e) => e.id).join(', '));
   const misSitemapped = published.filter((e) => ((e.imageTier === 'game-image' || e.imageTier === 'community-image')
-    ? !sitemap.includes(SITE.url + '/entries/' + e.id + '.html')
-    : sitemap.includes(SITE.url + '/reference/notes/' + e.id + '.html')));
+    ? !sitemap.includes(SITE.url + '/entries/' + e.id)
+    : sitemap.includes(SITE.url + '/reference/notes/' + e.id)));
   ok('the sitemap lists entities only, and keeps picture-less subjects out of it', misSitemapped.length === 0, misSitemapped.map((e) => e.id).join(', '));
   const thin = [];
   for (const e of published) {
@@ -221,7 +226,7 @@ try {
   const badRefPages = [...REFERENCE_PATHS].filter((rel) => {
     const file = rel.endsWith('/') ? join(dir, rel.slice(1), 'index.html') : join(dir, rel.slice(1));
     const h = readFileSync(file, 'utf8');
-    return !h.includes('noindex, follow') || sitemap.includes(SITE.url + rel);
+    return !h.includes('noindex, follow') || sitemap.includes(SITE.url + publicPath('/' + rel));
   });
   ok('technical reference pages are noindex and stay out of the sitemap', badRefPages.length === 0, badRefPages.join(', '));
 
@@ -276,7 +281,7 @@ try {
   const catPages = CATEGORIES.filter((c) => published.some((e) => c.src.includes(e.category) && (e.imageTier === 'game-image' || e.imageTier === 'community-image')));
   const badCatPages = catPages.filter((c) => {
     const rel = 'entities/' + c.key + '.html';
-    if (!existsSync(join(dir, rel)) || !sitemap.includes(SITE.url + '/' + rel)) return true;
+    if (!existsSync(join(dir, rel)) || !sitemap.includes(SITE.url + publicPath('/' + rel))) return true;
     const h = readFileSync(join(dir, rel), 'utf8');
     return !/<figure class="banner">[\s\S]*?<img/.test(h) || !/id="f"/.test(h) || !/class="card"/.test(h);
   });
@@ -290,7 +295,7 @@ try {
     const h = readFileSync(join(dir, 'articles', a.id + '.html'), 'utf8');
     for (const section of ['Applies to', 'Before you start', 'Steps', 'Common mistakes', 'Related entries', 'Sources']) if (!h.includes(section)) thinArticles.push(a.id + ':' + section);
     if (!/<ol[\s>]/.test(h) || (a.steps ?? []).length < 3) thinArticles.push(a.id + ':steps');
-    if (!sitemap.includes(SITE.url + '/articles/' + a.id + '.html')) thinArticles.push(a.id + ':not in sitemap');
+    if (!sitemap.includes(SITE.url + '/articles/' + a.id)) thinArticles.push(a.id + ':not in sitemap');
     const ids = (a.steps ?? []).flatMap((s) => String(s.because).split(/[(),\s]+/)).filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
     for (const id of ids) if (h.includes(id)) thinArticles.push(a.id + ': leaks ' + id);
   }
@@ -333,8 +338,9 @@ ok('every game image used in an entry has a manifest record and exists in the bu
   const classified = new Map((urlsCfg.entries ?? []).map((e) => [e.url, e.action]));
   const emitted = htmlFiles.map((f) => '/' + f.slice(dir.length + 1).split('\\').join('/')).filter((p) => p !== '/404.html');
   const unclassified = emitted.filter((p) => !classified.has(p));
-  const keepNotInSitemap = [...classified].filter(([u, a]) => a === 'keep' && !sitemap.includes(SITE.url + u)).map(([u]) => u);
-  const noindexInSitemap = [...classified].filter(([u, a]) => a === 'noindex' && sitemap.includes(SITE.url + u)).map(([u]) => u);
+  const siteLocs = new Set((sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? []).map((m) => m.replace('<loc>', '').replace('</loc>', '')));
+  const keepNotInSitemap = [...classified].filter(([u, a]) => a === 'keep' && !siteLocs.has(SITE.url + publicPath(u))).map(([u]) => u);
+  const noindexInSitemap = [...classified].filter(([u, a]) => a === 'noindex' && siteLocs.has(SITE.url + publicPath(u))).map(([u]) => u);
   const badRedirects = (urlsCfg.redirects ?? []).filter((r) => !existsSync(join(dir, String(r.to).replace(/^\//, ''))));
   ok('every emitted page is classified in config/urls.json and the classification matches the sitemap',
     unclassified.length === 0 && keepNotInSitemap.length === 0 && noindexInSitemap.length === 0 && badRedirects.length === 0,
@@ -507,7 +513,7 @@ try {
   const sitemapXml = readFileSync(join(uiDir, 'sitemap.xml'), 'utf8');
   const urls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   const badMeta = urls.filter((u) => {
-    const rel = u.replace(SITE.url + '/', '') || 'index.html';
+    const rel = fileForLoc(u);
     const h = readFileSync(join(uiDir, rel), 'utf8');
     return !h.includes('og:image') || !h.includes('social-card.png') || !h.includes('twitter:card') || !h.includes('application/ld+json');
   });
