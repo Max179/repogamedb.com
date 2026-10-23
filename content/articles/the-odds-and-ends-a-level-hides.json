@@ -1,0 +1,61 @@
+{
+  "id": "the-odds-and-ends-a-level-hides",
+  "title": "The odds and ends a level hides",
+  "tier": "published",
+  "kind": "article",
+  "target": "The smaller set pieces in R.E.P.O. — named potions, a set of gnomes and the head in the museum — so a strange thing in a level can be read for what it is.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with valuables in it",
+    "Somewhere to stand back",
+    "A crew that will not smash everything"
+  ],
+  "steps": [
+    {
+      "do": "Expect potions to be valuables in their own right rather than props.",
+      "because": "four potions are named as kinds of valuable in their own right (ValuableLovePotion, ValuableSmallPotion, ValuableLevitationPotion, ValuableSpiderPotion)"
+    },
+    {
+      "do": "Stand back from the levitation potion.",
+      "because": "the levitation potion carries a sphere for levitation (levitationSphere)"
+    },
+    {
+      "do": "Pick the small potion up carefully, because it carries a health pool and a healing aura and breaks into particles.",
+      "because": "the small potion holds a health pool and a healing aura and breaks into particles (healthPool, healAura, breakParticles)"
+    },
+    {
+      "do": "Treat the gnomes as one set piece rather than as separate monsters.",
+      "because": "a director keeps the gnomes as a set, with a list of them and a state of its own (EnemyGnomeDirector, gnomes, currentState)"
+    },
+    {
+      "do": "Expect them to close on you at different speeds.",
+      "because": "each gnome moves at a speed between a minimum and a maximum (speedMin, speedMax)"
+    },
+    {
+      "do": "Watch how they avoid each other rather than expecting a straight line.",
+      "because": "they have a collider for avoiding each other and an offset for backing away (avoidCollider, backAwayOffset)"
+    },
+    {
+      "do": "Listen for the pickaxe, because its warning and its hit are separate sounds.",
+      "because": "the pickaxe has a tell and a hit as separate sounds (soundPickaxeTell, soundPickaxeHit)"
+    },
+    {
+      "do": "Give the museum's head room, because opening it is staged.",
+      "because": "it is a head that opens and closes with its own transforms and sounds, an animation curve and a lights curve, open particles and a spot light, and eyes with a red state, a cooldown curve and a colour used while cooling (headTransform, headTopTransform, headBottomTransform, soundOpen, soundClose, animationCurve, animationCurveLights, particlesOpen, spotLight, evilEyes, soundRedEyes, animationCurveEyesCoolDown, colorCooldown, fireEyes)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating a named potion as ordinary loot and carrying it into a fight.",
+    "Meeting the gnomes as if they were a single monster.",
+    "Missing the pickaxe's warning sound.",
+    "Standing next to the museum head while it is opening."
+  ],
+  "relatedEntities": [
+    "the-potions-you-can-find",
+    "the-gnomes-and-the-pickaxe",
+    "the-money-head-in-the-museum"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

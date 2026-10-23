@@ -1,0 +1,93 @@
+{
+  "id": "enemies-and-their-behaviour",
+  "title": "Enemies and what they do",
+  "category": "Enemies",
+  "tier": "published",
+  "summary": "R.E.P.O. throws several different monsters at your crew, and each one behaves differently: some chase you, some grab you, some throw things or simply will not stop walking.",
+  "body": [
+    "Each monster is its own thing in the game, so you can expect a different threat from each one rather than a single reskinned enemy.",
+    "The game keeps track of what a monster is currently doing, which is why a monster can switch between calmly walking and attacking you.",
+    "The names this site verified are: a small round chaser, a grabber that latches onto you, a slow walker, a thrower and a hugger.",
+    "What this entry does not tell you: how much damage each monster does, how much health it has, or how fast it moves. We have not verified those numbers, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game defines several distinct monsters rather than one enemy type.",
+      "evidence": "identifiers: EnemyOogly, EnemySlowWalkerAnim, EnemyHeadGrabberAnim"
+    },
+    {
+      "claim": "One monster is built around throwing something at you.",
+      "evidence": "identifier: EnemyBombThrowerAnim"
+    },
+    {
+      "claim": "Monsters have tracked behaviour states.",
+      "evidence": "identifiers: EnemyState, EnemyType"
+    },
+    {
+      "claim": "A monster can latch onto and hold a player.",
+      "evidence": "identifier: EnemyHeartHugger"
+    },
+    {
+      "claim": "Attack colliders are named one by one, with a swipe, a melee, a dropkick and a wave among them.",
+      "evidence": "asset names: Hurt Collider Swipe, Hurt Collider Melee, Hurt Collider Dropkick, Hurt Collider Wave"
+    },
+    {
+      "claim": "Each monster line brings its own animations, from spawning and idling through moving, attacking, being stunned and despawning.",
+      "evidence": "asset names: Enemy - Bang Spawn, Enemy - Bang Idle, Enemy - Bang Move, Enemy Beamer - Attack, Enemy Beamer - Stun, Enemy Bomb Thrower - Back Away, Enemy Bomb Thrower - Attack"
+    },
+    {
+      "claim": "One monster's head can come off and grow.",
+      "evidence": "asset names: Enemy Bomb Thrower - Body Head - Detach, Enemy Bomb Thrower - Body Head - Grow, Enemy Bomb Thrower - Body Head - Idle"
+    },
+    {
+      "claim": "One monster is a duck, built from a beak, a body, a head, a wing and legs, with animations for walking, flying, slashing and being stunned.",
+      "evidence": "asset names: Enemy Duck, Duck Beak, Duck Body, Duck Head, Duck Wing, Duck Fly, Duck Walk, Duck Slash, Duck Stun"
+    },
+    {
+      "claim": "Another monster is a hunter that aims, shoots and can leave.",
+      "evidence": "asset names: Enemy Hunter, Enemy Hunter - Aim, Enemy Hunter - Shoot, Enemy Hunter - Leave Start"
+    },
+    {
+      "claim": "One monster is a slow mouth, with its own attack, a hive attack, a tentacle and an eye.",
+      "evidence": "asset names: Enemy Slow Mouth, Enemy Slow Mouth Attack, Enemy Slow Mouth Hive Attack, Enemy Slow Mouth Tentacle, Enemy Slow Mouth eye"
+    },
+    {
+      "claim": "Another opens and closes its mouth, can drop and trap a player, and has a walk cycle of its own.",
+      "evidence": "asset names: Enemy Spinny, Enemy Spinny - Open Mouth, Enemy Spinny - Close Mouth Drop Player, Enemy Spinny - Trap Player, Enemy Spinny - Walk cycle"
+    },
+    {
+      "claim": "The slow mouth can be attached to a player, with a top piece and a bot piece, and it carries camera visuals of its own.",
+      "evidence": "asset names: Enemy Slow Mouth On Player Bot, Enemy Slow Mouth On Player Top, Enemy Slow Mouth Camera Visuals"
+    }
+  ],
+  "related": [
+    "valuables-and-looting",
+    "extraction-run"
+  ],
+  "images": [
+    {
+      "file": "fandom/monster-update-art.jpg",
+      "kind": "community",
+      "alt": {
+        "en": "Illustrative community picture showing several of the monsters in the game.",
+        "zh": "Illustrative community picture showing several of the monsters in the game."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site.",
+      "illustrative": true,
+      "shows": "several of the monsters in the game"
+    },
+    {
+      "file": "enemies-and-their-behaviour.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram of a run: a monster notices the crew, chases, is avoided or fought, and the crew continues.",
+        "zh": "怪物遭遇流程示意图：怪物发现小队、追击、被躲开或击退、小队继续前进。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. Identifiers used to verify each fact are kept on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "community-image"
+}

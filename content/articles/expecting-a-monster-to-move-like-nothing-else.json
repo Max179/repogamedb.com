@@ -1,0 +1,61 @@
+{
+  "id": "expecting-a-monster-to-move-like-nothing-else",
+  "title": "Expecting a monster to move like nothing else",
+  "tier": "published",
+  "kind": "article",
+  "target": "How movement works in R.E.P.O. — the body every monster shares, the ones that tumble, and the three kinds of jump — so a monster's approach can be read rather than only survived.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run with monsters awake",
+    "Somewhere to watch from",
+    "A monster that is not walking"
+  ],
+  "steps": [
+    {
+      "do": "Do not think of a monster as walking; think of its body following a target.",
+      "because": "a shared physical body follows a target rather than each monster owning its movement (EnemyRigidbody, enemy, followTarget)"
+    },
+    {
+      "do": "Expect some of them to fall differently.",
+      "because": "the body can use gravity or a gravity value of its own (gravity, customGravity)"
+    },
+    {
+      "do": "Notice that idling and chasing move differently, not only faster or slower.",
+      "because": "idle and chasing each have their own position and rotation speeds with their own smoothing, plus rotation damping (positionSpeedIdle, positionSpeedLerpIdle, positionSpeedChase, positionSpeedLerpChase, rotationSpeedIdle, rotationSpeedChase, rotationSpeedDamping)"
+    },
+    {
+      "do": "Give a monster room to warp, and watch for the distance at which it stops moving.",
+      "because": "there are separate warp distances for idle and for chasing, and a distance below which the body counts as not moving (distanceWarpIdle, distanceWarpChase, notMovingDistance)"
+    },
+    {
+      "do": "Expect at least one monster to come at you by tumbling rather than walking.",
+      "because": "a monster moves by tumbling rather than walking, with a tumble loop kept locally and across the level (EnemyTumbler, EnemyTumblerAnim, enemyTumbler, sfxTumbleLoopLocal, sfxTumbleLoopGlobal)"
+    },
+    {
+      "do": "Treat a jump as a behaviour with a surface, not as part of walking.",
+      "because": "jumping is its own behaviour with handling for the surface it lands on, an upward and a sideways force and a delay before and after (EnemyJump, EnemyJumpSurface, surfaceJumpForceUp, surfaceJumpForceSide, surfaceJumpDelay, surfaceLandDelay)"
+    },
+    {
+      "do": "Know that a monster stuck in one place behaves differently from one that is merely jumping.",
+      "because": "a stuck jump is limited by a count and has its own forces and delays (stuckJump, stuckJumpCount, stuckJumpForceUp, stuckJumpForceSide)"
+    },
+    {
+      "do": "Know that a gap is its own case as well.",
+      "because": "a gap jump has an upward and a forward force with its own delays, and landing can put the navigation agent back onto the surface (gapJump, gapJumpForceUp, gapJumpForceForward, warpAgentOnLand)"
+    }
+  ],
+  "commonMistakes": [
+    "Timing a swing as if every monster walked at the same pace.",
+    "Standing where a tumbling monster is about to roll.",
+    "Assuming a monster that jumped is committed to the spot it left.",
+    "Reading a stuck jump as the monster giving up."
+  ],
+  "relatedEntities": [
+    "the-body-every-monster-shares",
+    "enemies-that-move-differently",
+    "how-monsters-jump"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

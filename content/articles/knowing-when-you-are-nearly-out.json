@@ -1,0 +1,57 @@
+{
+  "id": "knowing-when-you-are-nearly-out",
+  "title": "Knowing when you are nearly out",
+  "tier": "published",
+  "kind": "article",
+  "target": "How your own condition is shown in R.E.P.O. — health, carried charge and a weapon about to run dry — so you act before the warning becomes a loss.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run in progress",
+    "A battery or a charged tool",
+    "A weapon you can empty"
+  ],
+  "steps": [
+    {
+      "do": "Read your health off the display rather than expecting a number.",
+      "because": "the player's health display sits on a mesh with a parent of its own and is driven by a colour gradient (PlayerHealth, meshParent, healthMaterialColor)"
+    },
+    {
+      "do": "Check which health display you are looking at.",
+      "because": "the display knows whether it belongs to the menu avatar (isMenuAvatar)"
+    },
+    {
+      "do": "Use the sounds as well as the display.",
+      "because": "being hurt, being healed and being upgraded each have their own sound (hurtOther, healOther, upgradeOther)"
+    },
+    {
+      "do": "Read the battery bar's charge and drain as two separate fills.",
+      "because": "charge and drain have separate fills and values (batteryBarCharge, batteryBarDrain, batteryCharge, batteryDrain)"
+    },
+    {
+      "do": "Act on the out-of-battery and needs-charging visuals instead of waiting for the tool to stop.",
+      "because": "there are visuals for a battery that is out and for one that needs charging, with an effect when a bar is lost (batteryOutVisual, batteryChargeNeededVisual, barLossEffectPrefab)"
+    },
+    {
+      "do": "Know that an empty weapon is a state of its own rather than an absence.",
+      "because": "being out of shots is a state with its own beginning, update and fixed update, and an empty gun has a click of its own (OutOfAmmo, onStateOutOfAmmoStart, onStateOutOfAmmoUpdate, onStateOutOfAmmoFixedUpdate, soundNoAmmoClick)"
+    },
+    {
+      "do": "Expect some weapons to build up before they fire, and check what yours puts out.",
+      "because": "a gun can build up before it fires, with a time for the build-up and a time for the shot, and how many shots it puts out at once, its spread and its range are configured per gun (hasBuildUp, buildUpTime, shootTime, hasOneShot, numberOfBullets, gunRandomSpread, gunRange)"
+    }
+  ],
+  "commonMistakes": [
+    "Waiting for a tool to die instead of watching the bar drain.",
+    "Reading the menu avatar's health display as your own.",
+    "Pulling the trigger on an empty weapon and taking the click for a jam.",
+    "Assuming every weapon fires the moment you press."
+  ],
+  "relatedEntities": [
+    "how-your-own-condition-is-shown",
+    "the-bar-that-shows-a-charge",
+    "running-a-gun-dry"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

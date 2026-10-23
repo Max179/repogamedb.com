@@ -1,0 +1,61 @@
+{
+  "id": "reading-the-readouts-without-looking-away",
+  "title": "Reading the readouts without looking away",
+  "tier": "published",
+  "kind": "article",
+  "target": "Which readout in R.E.P.O. answers which question, so the screen is read rather than stared at.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run in progress",
+    "Something in your hands",
+    "A crew to keep track of"
+  ],
+  "steps": [
+    {
+      "do": "Know which readout answers which question rather than scanning all of them.",
+      "because": "health, the haul, the goal and item details each have a readout of their own under one state readout (HUD, HealthUI, HaulUI, GoalUI, ItemInfoUI)"
+    },
+    {
+      "do": "Look for the second item readout when the first one is not enough.",
+      "because": "item details have a second readout for extra information (ItemInfoExtraUI)"
+    },
+    {
+      "do": "Use the value screen to price what is in front of you.",
+      "because": "what something is worth has its own screen element (ValueScreen)"
+    },
+    {
+      "do": "Check the shop's own readouts between runs instead of guessing what it costs.",
+      "because": "the shop has readouts for what it costs and how it is growing (ShopCostUI, ShopIncreaseUI)"
+    },
+    {
+      "do": "Read the level and run readouts before you commit to a plan.",
+      "because": "there are readouts for the level and for the run record (LevelUI, StatsUI)"
+    },
+    {
+      "do": "Read the numbers that float over things, not only the fixed readout.",
+      "because": "the floating value text has intro and outro curves, a colour and a text size for a value and another pair for a cost (WorldSpaceUIValue, curveIntro, curveOutro, colorValue, colorCost, textSizeValue, textSizeCost)"
+    },
+    {
+      "do": "Notice when value is lost, because it has an object of its own.",
+      "because": "there is a world-space interface parent and a separate object for value that has been lost (WorldSpaceUIParent, WorldSpaceUIValueLost)"
+    },
+    {
+      "do": "Learn the discovery graphic's three colour pairs so the news is read at a glance.",
+      "because": "the graphic has a colour pair for a discovery, one for a reminder and one for bad news, each with a corner and a middle colour, and it can be anchored to the middle or to any corner (ValuableDiscoverGraphic, colorDiscoverCorner, colorDiscoverMiddle, ColorReminderCorner, ColorBadCorner, middle, topLeft, topRight, botLeft, botRight)"
+    }
+  ],
+  "commonMistakes": [
+    "Watching the readout you always watch while the haul readout is the one changing.",
+    "Missing the second line of item detail and guessing what the item does.",
+    "Reading a floating number as a value when it was a cost.",
+    "Treating every coloured flash as good news."
+  ],
+  "relatedEntities": [
+    "the-readouts-you-play-by",
+    "the-numbers-that-float-over-things",
+    "what-the-game-draws-when-you-find-something"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

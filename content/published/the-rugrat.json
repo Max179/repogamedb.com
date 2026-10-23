@@ -1,0 +1,38 @@
+{
+  "id": "the-rugrat",
+  "title": "The Rugrat",
+  "category": "Enemies",
+  "summary": "The Rugrat is a monster in R.E.P.O. documented from game file analysis. This entry verifies the components the game ships, without claiming unverified behavior.",
+  "body": [
+    "This entry documents the Rugrat from game file analysis.",
+    "What we can verify: the game ships complete audio, animation and visual components for this monster.",
+    "What this entry does not claim: exact damage numbers, spawn rates, or detailed behavior. We print only what we have verified."
+  ],
+  "facts": [
+    {
+      "claim": "The game ships audio, animation and particle components for this monster.",
+      "evidence": "verified from MonoBehaviour components in game files"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour"
+  ],
+  "images": [
+    {
+      "file": "fandom/rugrat.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture of Rugrat from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Rugrat。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed in the evidence field; nothing here is estimated."
+  ],
+  "imageTier": "community-image",
+  "_needsReview": true,
+  "_verificationStatus": "game-data-only",
+  "_dataConfidence": "high"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "reading-what-a-level-will-hold",
+  "title": "Reading what a level will hold",
+  "tier": "published",
+  "kind": "article",
+  "target": "What decides how much loot and how many monsters a level in R.E.P.O. sends, so a run can be planned around the level rather than discovered halfway through it.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run starting",
+    "Some idea of the level's theme",
+    "A crew that can split up"
+  ],
+  "steps": [
+    {
+      "do": "Expect the loot to be decided by the level, not by luck alone.",
+      "because": "a director decides the valuables in a level, with an amount curve for each size (ValuableDirector, tinyMaxAmountCurve1, smallMaxAmountCurve1, mediumMaxAmountCurve1, bigMaxAmountCurve1, wideMaxAmountCurve1, tallMaxAmountCurve1, veryTallMaxAmountCurve1)"
+    },
+    {
+      "do": "Treat each size of valuable as having its own chance as well as its own amount.",
+      "because": "each size has a chance of its own beside its amount (tinyChance, smallChance, mediumChance, bigChance, wideChance, tallChance, veryTallChance)"
+    },
+    {
+      "do": "Plan around a changing level rather than a fixed one.",
+      "because": "each size has a second amount curve and the total value of a level has two curves of its own (tinyMaxAmountCurve2, veryTallMaxAmountCurve2, totalMaxValueCurve1, totalMaxValueCurve2)"
+    },
+    {
+      "do": "Pick the difficulty with the monster count in mind.",
+      "because": "the level has an enemy director with three difficulty settings of its own (EnemyDirector, enemiesDifficulty1, enemiesDifficulty2, enemiesDifficulty3)"
+    },
+    {
+      "do": "Expect pressure to come in waves rather than steadily.",
+      "because": "each difficulty has its amount curves in pairs, with a curve for the pause between spawns (amountCurve1_1, amountCurve1_2, spawnIdlePauseCurve)"
+    },
+    {
+      "do": "Know that a monster is only allowed to stay for a while.",
+      "because": "there are two curves for how long it may stay before it despawns, and despawns decrease with time given in minutes and as a percentage (despawnTimeCurve_1, despawnTimeCurve_2, despawnedDecreaseMinutes, despawnedDecreasePercent)"
+    },
+    {
+      "do": "Remember that which monsters appear is set up separately from how many.",
+      "because": "an enemy set-up holds a list of things to spawn (EnemySetup, spawnObjects)"
+    },
+    {
+      "do": "Expect some monsters to be unlocked by progress rather than to be present from the first run.",
+      "because": "a set-up can be gated by levels completed with a lowest and a highest value, and it counts runs played (levelsCompletedCondition, levelsCompletedMin, levelsCompletedMax, runsPlayed)"
+    }
+  ],
+  "commonMistakes": [
+    "Assuming a quiet start means a quiet level.",
+    "Planning a full sweep when the level's monsters are gated by how far the crew has got.",
+    "Treating every size of valuable as equally likely.",
+    "Leaving the level early because a spawn wave ended, when the loot director is separate."
+  ],
+  "relatedEntities": [
+    "how-many-valuables-a-level-holds",
+    "how-many-monsters-a-level-sends",
+    "what-decides-whether-a-monster-appears"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

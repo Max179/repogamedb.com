@@ -1,0 +1,53 @@
+{
+  "id": "spending-tokens-without-regretting-it",
+  "title": "Spending tokens without regretting it",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to approach the cosmetic machine in R.E.P.O. so a token is a decision rather than a reflex.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A shop with the cosmetic machine in it",
+    "Currency to spend",
+    "A rough idea of which part of your avatar you want to change"
+  ],
+  "steps": [
+    {
+      "do": "Treat the machine as a dispenser with a sequence rather than as a shelf.",
+      "because": "it is run by an animator that points back at the machine, so what it does is a sequence with a beginning and a payoff (CosmeticShopMachine, CosmeticShopMachineAnimator)"
+    },
+    {
+      "do": "Expect a token at one of four grades rather than a named item.",
+      "because": "the game keeps cosmetic tokens in four grades, each with its own colouring (CosmeticShopToken_Basecolor_Common, CosmeticShopToken_Basecolor_Uncommon, CosmeticShopToken_Basecolor_Rare, CosmeticShopToken_Basecolor_UltraRare)"
+    },
+    {
+      "do": "Judge the pull after the display has come to rest, not while it is spinning.",
+      "because": "the screen spins and then settles on a separate transform with its own curve (screenSpinTransform, screenSpinSettleTransform)"
+    },
+    {
+      "do": "Look at what you already own before spending again.",
+      "because": "a cosmetic can be hidden again rather than only collected, so owning one is not the same as wearing it (CosmeticHideCondition)"
+    },
+    {
+      "do": "Check which part of the avatar the cosmetic lands on.",
+      "because": "the avatar is split into parts such as the head, the body, an arm and a leg, each carrying a default surface (Cosmetic - Head Top Mesh - Default, Cosmetic - Body Top Mesh - Default)"
+    },
+    {
+      "do": "Pick cosmetic objects up from the floor through their own interface.",
+      "because": "cosmetic objects in the world have an interface of their own, and tokens have one as well (CosmeticWorldObjectUI, CosmeticTokenUI)"
+    }
+  ],
+  "commonMistakes": [
+    "Spending for a named cosmetic when the machine hands over a token at a grade.",
+    "Judging a pull before the display has settled.",
+    "Buying a second copy of something you already own and have only hidden.",
+    "Forgetting that a cosmetic is laid over one part of the avatar rather than the whole figure."
+  ],
+  "relatedEntities": [
+    "cosmetics-and-the-token-machine",
+    "the-token-machines-show",
+    "your-avatar-and-where-it-is-shown"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "repogamedb-com",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static R.E.P.O. guide site (repogamedb.com), generated from a committed normalized data index.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node pipeline/site.mjs",
+    "test": "node tests/site.test.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.ci.json",
+    "gates": "node tools/content-gate.mjs && node tools/image-coverage.mjs",
+    "preflight": "node tools/preflight.mjs",
+    "smoke": "node tools/smoke.mjs",
+    "status": "node pipeline/status.mjs",
+    "verify": "npm test && npm run typecheck && npm run preflight"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^22.0.0"
+  }
+}

@@ -1,12 +1,14 @@
 {
   "game": "R.E.P.O.",
   "engine": "unity",
-  "version": "0.4.0 (folder R.E.P.O.v0.4.0)",
+  "version": "0.4.0",
   "source": {
     "assembly": "REPO_Data/Managed/Assembly-CSharp.dll",
     "extractor": "repo-p0-inventory@0.1.0",
     "extractedAt": "2026-09-27T03:59:15.072Z",
     "note": "per-instance decoded values; each instance is one object whose layout consumed its payload exactly"
+  ,
+    "versionSource": { "file": "REPO_Data/sharedassets0.assets", "sha256": "c4b42e9553f716578a9358b92b5e39705aa3e7edaa379c0d643d98395d0cf84a", "bytes": 67228396, "offset": 66428081, "label": "Version - RELEASE / v0.4.0", "note": "the version label the game's own menu asset carries; the player-settings slot in globalgamemanagers reads 0.1, a stale default" }
   },
   "count": 77,
   "instances": [

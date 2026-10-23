@@ -5,9 +5,11 @@
  * (a missing canonical, a page missing its source line, a sitemap listing the 404 page).
  */
 import { readFileSync, existsSync, rmSync, readdirSync, mkdtempSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, SITE, NAV } from '../pipeline/site.mjs';
+import { build, lookupFields, buildSearchIndex, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
 let pass = 0, fail = 0;
@@ -28,7 +30,7 @@ let stats;
 try {
   stats = build(INV, dir);
   const required = ['index.html', 'search.html', 'collection.html', 'guide.html', 'tool.html', 'sources.html',
-    'about.html', 'contact.html', 'disclaimer.html', 'privacy.html', 'terms.html', '404.html', 'sitemap.xml', 'robots.txt'];
+    'about.html', 'contact.html', 'disclaimer.html', 'privacy.html', 'terms.html', 'credits.html', '404.html', 'sitemap.xml', 'robots.txt'];
   const missing = required.filter((f) => !existsSync(join(dir, f)));
   ok('every required route is emitted', missing.length === 0, missing.join(', '));
   ok('an entity page is emitted for every P0 class',
@@ -37,7 +39,7 @@ try {
 
   const html = readdirSync(join(dir, 'entity')).slice(0, 25).map((f) => readFileSync(join(dir, 'entity', f), 'utf8'));
   ok('every sampled entity page carries a canonical URL', html.every((h) => h.includes('<link rel="canonical" href="' + SITE.url + '/entity/')));
-  ok('every sampled entity page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
+  ok('every sampled reference page names its source and game version', html.every((h) => h.includes('Assembly-CSharp.dll') && h.includes(inv.version)));
   const f0 = inv.classes[0].fields[0];
   const confidences = new Set();
   let extracted = 0;
@@ -134,6 +136,18 @@ try {
   }
   ok('every internal link resolves to an emitted file', dangling.length === 0, dangling.slice(0, 5).join(', '));
 
+  // Pictures are the part of the page a reader notices first: every local src must be an emitted file. This is a
+  // separate gate from the link check because an <img> with a stale path is a broken picture, not a broken link.
+  const badImages = [];
+  for (const f of htmlFiles) {
+    const h = readFileSync(f, 'utf8');
+    for (const m of h.matchAll(/<img\b[^>]*\bsrc="(\/[^"]+)"/g)) {
+      const rel = m[1].replace(/^\//, '');
+      if (!existsSync(join(dir, rel))) badImages.push(f.slice(dir.length) + ' -> ' + m[1]);
+    }
+  }
+  ok('every image reference resolves to an emitted file', badImages.length === 0, badImages.slice(0, 5).join(', '));
+
   // A title that repeats the site name, or two pages sharing a title or description, is a real SEO defect.
   const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = [];
   for (const u of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
@@ -174,20 +188,210 @@ try {
     ok('the value pipeline only ever touches this project', offenders.length === 0, 'cross-project path in ' + offenders.join(', '));
   }
 
+  // The content model decides what may become a page: an entry that fails its rules must not reach the build.
+  ok('the published entries pass the content gate', (() => {
+    try { execFileSync(process.execPath, ['tools/content-gate.mjs'], { stdio: 'pipe' }); return true; }
+    catch (e) { return String(e.stdout ?? '') + String(e.message ?? ''); }
+  })() === true);
+
+  const published = readdirSync('content/published').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'published', x), 'utf8')));
+  // Entities with a confirmed game picture are published under /entries/. A subject with no confirmed picture is a
+  // noindex note in the evidence layer, out of the sitemap, never dressed up as a finished entry.
+  const entityFile = (e) => ((e.imageTier === 'game-image' || e.imageTier === 'community-image') ? join(dir, 'entries', e.id + '.html') : join(dir, 'reference', 'notes', e.id + '.html'));
+  const missingPages = published.filter((e) => !existsSync(entityFile(e)));
+  ok('every published subject has a page: entities under /entries/, picture-less subjects as notes', missingPages.length === 0, missingPages.map((e) => e.id).join(', '));
+  const misSitemapped = published.filter((e) => ((e.imageTier === 'game-image' || e.imageTier === 'community-image')
+    ? !sitemap.includes(SITE.url + '/entries/' + e.id + '.html')
+    : sitemap.includes(SITE.url + '/reference/notes/' + e.id + '.html')));
+  ok('the sitemap lists entities only, and keeps picture-less subjects out of it', misSitemapped.length === 0, misSitemapped.map((e) => e.id).join(', '));
+  const thin = [];
+  for (const e of published) {
+    const h = readFileSync(entityFile(e), 'utf8');
+    if (!h.includes(e.title) || !h.includes(e.summary)) thin.push(e.id + ':text');
+    if ((e.imageTier === 'game-image' || e.imageTier === 'community-image')) {
+      if (!h.includes('What the game establishes') || !h.includes('Version and sources')) thin.push(e.id + ':structure');
+    } else if (!h.includes('No confirmed picture from the game yet')) thin.push(e.id + ':note-label');
+    if (!/<img[^>]+alt="[^"]+"/.test(h)) thin.push(e.id + ':image');
+    // Only code-style names count as a leak: a plain English word such as "Shelf" is also the subject of the entry.
+    const ids = (e.facts ?? []).flatMap((x) => String(x.evidence).replace(/^identifiers?:?\s*/, '').split(/[,\s]+/))
+      .filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
+    for (const id of ids) if (h.includes(id)) thin.push(e.id + ': leaks ' + id + ' to players');
+  }
+  ok('every entity page carries its text, structure and image, leaks no identifier; every note says why it is a note', thin.length === 0, thin.slice(0, 6).join(', '));
+  const badRefPages = [...REFERENCE_PATHS].filter((rel) => {
+    const file = rel.endsWith('/') ? join(dir, rel.slice(1), 'index.html') : join(dir, rel.slice(1));
+    const h = readFileSync(file, 'utf8');
+    return !h.includes('noindex, follow') || sitemap.includes(SITE.url + rel);
+  });
+  ok('technical reference pages are noindex and stay out of the sitemap', badRefPages.length === 0, badRefPages.join(', '));
+
+  // The picture rule, checked on the built pages rather than only in the content files: an entry must say whether
+  // its picture came from the game or is an original diagram, and most entries must actually carry a game image.
+  const unlabelled = [];
+  for (const e of published) {
+    const h = readFileSync(entityFile(e), 'utf8');
+    const hasGame = (e.images ?? []).some((i) => i.kind === 'game');
+    const hasCommunity = !hasGame && (e.images ?? []).some((i) => i.kind === 'community');
+    if (hasGame && !h.includes('Picture taken from the game')) unlabelled.push(e.id + ':game');
+    if (hasCommunity && !h.includes('Community picture from')) unlabelled.push(e.id + ':community');
+    if (!hasGame && !hasCommunity && !h.includes('No confirmed picture from the game yet')) unlabelled.push(e.id + ':diagram');
+  }
+  ok('every page says whether its picture came from the game or is a diagram note', unlabelled.length === 0, unlabelled.slice(0, 5).join(', '));
+
+  const communityEntries = published.filter((e) => e.imageTier === 'community-image');
+  const falseGameClaim = communityEntries.filter((e) => readFileSync(entityFile(e), 'utf8').includes('Picture taken from the game'));
+  ok('a community entry never claims its picture was taken from the game', falseGameClaim.length === 0, falseGameClaim.map((e) => e.id).slice(0, 5).join(', '));
+  {
+    const credManifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+    const creditsHtml = readFileSync(join(dir, 'credits.html'), 'utf8');
+    const community = (credManifest.records ?? []).filter((r) => r.kind === 'community');
+    const notListed = community.filter((r) => !creditsHtml.includes(r.file));
+    ok('the credits page lists every community picture record', notListed.length === 0, notListed.slice(0, 3).map((r) => r.file).join(', '));
+    const unattributed = community.filter((r) => !r.sourcePage || !r.author || !r.license || !r.licenseUrl || !r.retrievedAt);
+    ok('every community picture has a source page, author, licence and retrieval date', unattributed.length === 0, unattributed.slice(0, 3).map((r) => r.file).join(', '));
+  }
+
+  const illustrated = published.filter((e) => (e.images ?? []).some((i) => i.kind === 'game' || i.kind === 'community'));
+  ok('at least half of the published entries carry a game or community picture',
+    illustrated.length * 2 >= published.length, illustrated.length + ' of ' + published.length + ' entries');
+  const notesLeft = published.filter((e) => e.imageTier === 'diagram-only');
+  ok('no published entry is left as a diagram-only note', notesLeft.length === 0, notesLeft.map((e) => e.id).slice(0, 8).join(', '));
+
+  // The five player sections, in order; the technical reference lives in the footer only.
+  const expectedNav = ['/guide.html', '/entities/', '/articles/', '/tools/', '/updates.html'];
+  ok('the top navigation is exactly the five player sections, in order',
+    NAV.length === expectedNav.length && NAV.every(([h], i) => h === expectedNav[i]) &&
+    !NAV.some(([h]) => h === '/reference/' || h === '/collection.html'), NAV.map(([h]) => h).join(' '));
+
+  // The "what's new" list is a set of internal links, so a stale URL there is a broken link on a player page.
+  const updates = JSON.parse(readFileSync('content/updates.json', 'utf8'));
+  const badUpdates = updates.filter((u) => !u.date || !u.title || !u.kind || !u.url || !existsSync(join(dir, String(u.url).replace(/^\//, ''))));
+  ok('every item on the updates page has a date, a title, a kind and a link that exists',
+    Array.isArray(updates) && updates.length > 0 && badUpdates.length === 0,
+    badUpdates.slice(0, 4).map((u) => u.url).join(', '));
+  ok('the home page leads with the game, not with build statistics or internal terminology', (() => {
+    const h = readFileSync(join(dir, 'index.html'), 'utf8').replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
+    return !/\b(schema|il2cpp|assembly-csharp|metadata|namespace|class|classes|field|fields)\b/i.test(h) && !/gameClasses|engineClasses/.test(h);
+  })());
+  const catPages = CATEGORIES.filter((c) => published.some((e) => c.src.includes(e.category) && (e.imageTier === 'game-image' || e.imageTier === 'community-image')));
+  const badCatPages = catPages.filter((c) => {
+    const rel = 'entities/' + c.key + '.html';
+    if (!existsSync(join(dir, rel)) || !sitemap.includes(SITE.url + '/' + rel)) return true;
+    const h = readFileSync(join(dir, rel), 'utf8');
+    return !/<figure class="banner">[\s\S]*?<img/.test(h) || !/id="f"/.test(h) || !/class="card"/.test(h);
+  });
+  ok('every player category has an indexable page with a cover picture, a filter and cards',
+    catPages.length > 0 && badCatPages.length === 0, badCatPages.map((c) => c.key).join(', '));
+
+  const articles = readdirSync('content/articles').filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join('content', 'articles', x), 'utf8')));
+  ok('every published article has a page', articles.every((a) => existsSync(join(dir, 'articles', a.id + '.html'))));
+  const thinArticles = [];
+  for (const a of articles) {
+    const h = readFileSync(join(dir, 'articles', a.id + '.html'), 'utf8');
+    for (const section of ['Applies to', 'Before you start', 'Steps', 'Common mistakes', 'Related entries', 'Sources']) if (!h.includes(section)) thinArticles.push(a.id + ':' + section);
+    if (!/<ol[\s>]/.test(h) || (a.steps ?? []).length < 3) thinArticles.push(a.id + ':steps');
+    if (!sitemap.includes(SITE.url + '/articles/' + a.id + '.html')) thinArticles.push(a.id + ':not in sitemap');
+    const ids = (a.steps ?? []).flatMap((s) => String(s.because).split(/[(),\s]+/)).filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
+    for (const id of ids) if (h.includes(id)) thinArticles.push(a.id + ': leaks ' + id);
+  }
+  ok('every article page carries its goal, version, prerequisites, steps, mistakes, related entities and sources', thinArticles.length === 0, thinArticles.slice(0, 6).join(', '));
+  // The player questions the home page uses live in a file of their own and the build swallows a broken one, so
+  // check the file itself, that every question belongs to a published guide and that no guide goes unasked.
+  let questions = null;
+  try { questions = JSON.parse(readFileSync(join('data', 'guide-questions.json'), 'utf8')); } catch (e) { questions = null; }
+  const questionProblems = [];
+  if (!questions) questionProblems.push('data/guide-questions.json does not parse');
+  const asked = Object.keys(questions ?? {});
+  for (const a of articles) if (!asked.includes(a.id)) questionProblems.push(a.id + ':no player question');
+  for (const id of asked) if (!articles.some((a) => a.id === id)) questionProblems.push(id + ':not a published guide');
+  ok('the player questions parse and cover every guide', questionProblems.length === 0, questionProblems.slice(0, 6).join(', '));
+
+  // An image claiming to come from the game must match the manifest that documents where it came from.
+  const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+  const gameImages = published.flatMap((e) => (e.images ?? []).filter((i) => i.kind === 'game').map((i) => ({ id: e.id, img: i })));
+  const badGame = gameImages.filter(({ img }) => !(manifest.records ?? []).some((r) => r.file === img.file) || !existsSync(join(dir, img.file)));
+    // The binding picture rule is enforced in two steps: tools/image-sanity.py flags every exported file that carries
+  // almost no variation, and this gate refuses to let a flag go unanswered. Every flagged file must have a verdict
+  // written into reports/image-reviews.md, so a near-blank or flat sheet cannot sit in the manifest unexamined.
+  ok('the sanity report covers every mapped picture', (() => {
+    const manifestCount = JSON.parse(readFileSync('content/images-manifest.json', 'utf8')).records.length;
+    const totals = readFileSync('reports/image-sanity.md', 'utf8').match(/Totals: (\d+) records, (\d+) flagged/);
+    return totals && Number(totals[1]) === manifestCount ? true : 'sanity report does not cover the manifest';
+  })() === true);
+  ok('every picture the sanity pass flagged has a verdict in the review ledger', (() => {
+    const sanity = readFileSync('reports/image-sanity.md', 'utf8');
+    const ledger = readFileSync('reports/image-reviews.md', 'utf8');
+    const files = [...new Set([...sanity.matchAll(/(?:mapped|fandom)\/[^\s|)]+/g)].map((m) => m[0].split('/').pop()))];
+    const missing = files.filter((f) => !ledger.includes(f));
+    return missing.length ? missing.join(', ') : true;
+  })() === true);
+
+ok('every game image used in an entry has a manifest record and exists in the build', badGame.length === 0 && gameImages.length > 0,
+    badGame.map((x) => x.id + ':' + x.img.file).join(', ') || (gameImages.length ? '' : 'no game image is used yet'));
+
+  const urlsCfg = JSON.parse(readFileSync('config/urls.json', 'utf8'));
+  const classified = new Map((urlsCfg.entries ?? []).map((e) => [e.url, e.action]));
+  const emitted = htmlFiles.map((f) => '/' + f.slice(dir.length + 1).split('\\').join('/')).filter((p) => p !== '/404.html');
+  const unclassified = emitted.filter((p) => !classified.has(p));
+  const keepNotInSitemap = [...classified].filter(([u, a]) => a === 'keep' && !sitemap.includes(SITE.url + u)).map(([u]) => u);
+  const noindexInSitemap = [...classified].filter(([u, a]) => a === 'noindex' && sitemap.includes(SITE.url + u)).map(([u]) => u);
+  const badRedirects = (urlsCfg.redirects ?? []).filter((r) => !existsSync(join(dir, String(r.to).replace(/^\//, ''))));
+  ok('every emitted page is classified in config/urls.json and the classification matches the sitemap',
+    unclassified.length === 0 && keepNotInSitemap.length === 0 && noindexInSitemap.length === 0 && badRedirects.length === 0,
+    JSON.stringify({ unclassified: unclassified.slice(0, 3), keepNotInSitemap: keepNotInSitemap.slice(0, 3), noindexInSitemap: noindexInSitemap.slice(0, 3), badRedirects: badRedirects.slice(0, 3) }));
+  const missingAlternates = htmlFiles.filter((f) => {
+    const h = readFileSync(f, 'utf8');
+    return !h.includes('hreflang="en"') || !h.includes('hreflang="x-default"');
+  });
+  ok('every page declares the languages it really has (en plus x-default, self-referencing)', missingAlternates.length === 0, missingAlternates.slice(0, 3).join(', '));
+  const notMobile = htmlFiles.filter((f) => {
+    const h = readFileSync(f, 'utf8');
+    if (!h.includes('name="viewport"') || !h.includes('width=device-width')) return true;
+    for (const m of h.matchAll(/style="[^"]*width:\s*(\d+)px/gi)) if (Number(m[1]) > 400) return true;
+    return false;
+  });
+  ok('mobile smoke: every page has a responsive viewport and no fixed width wider than a phone', notMobile.length === 0, notMobile.slice(0, 3).join(', '));
+
+  // The deploy target is declared twice (workflow flag and wrangler.toml); the two must agree.
+  {
+    const wfText = readFileSync('.github/workflows/publish.yml', 'utf8');
+    const wrangler = readFileSync('wrangler.toml', 'utf8');
+    const inWorkflow = (wfText.match(/--project-name=([a-z0-9-]+)/) ?? [])[1];
+    const inWrangler = (wrangler.match(/name = "([a-z0-9-]+)"/) ?? [])[1];
+    ok('the workflow and wrangler.toml agree on the Cloudflare Pages project, and the workflow gates the deploy',
+      !!inWorkflow && inWorkflow === inWrangler && /needs:\s*gate\b/.test(wfText) && wfText.includes('node tests/site.test.mjs') && wfText.includes('preflight'),
+      JSON.stringify({ workflow: inWorkflow, wrangler: inWrangler }));
+  }
 } finally {
   rmSync(dir, { recursive: true, force: true });
 }
 
-// --- Unity 6 (v22) header reader: measured relations checked with a portable fixture
+// --- Unity 6 (v22) header reader: the measured relations, checked against real game files
 {
   const v22 = await import('../pipeline/serialized-v22.mjs');
-  const fixture = Buffer.alloc(128);
-  fixture.writeUInt32BE(22, 8);
-  fixture.writeBigUInt64BE(60n, 16);
-  fixture.writeBigUInt64BE(128n, 24);
-  fixture.writeBigUInt64BE(120n, 32);
-  const measured = v22.readHeaderV22(fixture);
-  ok('the measured v22 header validates against a portable fixture', measured && v22.headerIsValid(measured, fixture.length) && measured.version === 22);
+  // The raw level files are game data and stay on the extraction host, so the check uses whichever of these is in
+  // front of it: the file itself when this tree carries it, and the committed byte record of its first bytes when it
+  // does not (pipeline/v22_sample_record.mjs writes that record on the host that has the game package). A tree with
+  // neither is reported as unreadable rather than passing a check it did not run.
+  const recordPath = join('data', 'normalized', 'v22-header-samples.json');
+  const record = existsSync(recordPath) ? JSON.parse(readFileSync(recordPath, 'utf8')) : { samples: [] };
+  const unreadable = [];
+  let checked = 0;
+  let valid = 0;
+  for (const s of record.samples ?? []) {
+    const onDisk = [s.relative, s.source].find((p) => typeof p === 'string' && existsSync(p)) ?? null;
+    let buf = null;
+    let actualSize = null;
+    if (onDisk) { buf = readFileSync(onDisk); actualSize = buf.length; }
+    else if (typeof s.headHex === 'string' && s.headBytes === s.headHex.length / 2) { buf = Buffer.from(s.headHex, 'hex'); actualSize = s.fileBytes; }
+    if (!buf) { unreadable.push(s.source ?? 'unrecorded'); continue; }
+    checked++;
+    const h = v22.readHeaderV22(buf);
+    if (h && v22.headerIsValid(h, actualSize) && h.version === 22) valid++;
+  }
+  ok('the measured v22 header validates against real game files or their committed byte record',
+    checked > 0 && valid === checked && unreadable.length === 0,
+    'checked=' + checked + ' valid=' + valid + (unreadable.length ? ' unreadable=' + unreadable.join(', ') : ''));
   const synthetic = Buffer.alloc(64);
   synthetic.writeUInt32BE(22, 8);
   synthetic.writeBigUInt64BE(1000n, 16);
@@ -214,6 +418,116 @@ try {
   ok('the workflow is free of tabs and uses 2-space indentation levels',
     !/\t/.test(wf) && wf.split('\n').every((l) => l.trim() === '' || (l.match(/^ */)[0].length % 2) === 0));
 }
+
+
+// --- every recorded image origin is re-checkable: the file on disk must match
+// the manifest's bytes, sha256 and dimensions. A mapping that cannot be
+// re-checked is not evidence, so this is gated rather than reported.
+{
+  const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+  const pngOrJpegDims = (b) => {
+    if (b.length > 24 && b.readUInt32BE(0) === 0x89504e47) {
+      return { width: b.readUInt32BE(16), height: b.readUInt32BE(20) };
+    }
+    if (b.length > 4 && b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i + 9 < b.length) {
+        if (b[i] !== 0xff) { i++; continue; }
+        const m = b[i + 1];
+        if (m === 0xd8 || m === 0x01 || (m >= 0xd0 && m <= 0xd7)) { i += 2; continue; }
+        const len = b.readUInt16BE(i + 2);
+        if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) {
+          return { height: b.readUInt16BE(i + 5), width: b.readUInt16BE(i + 7) };
+        }
+        i += 2 + len;
+      }
+    }
+    return null;
+  };
+  const records = manifest.records ?? [];
+  const bad = [];
+  let checked = 0;
+  for (const r of records) {
+    const candidates = [join('content', 'assets', r.file), join('content', r.file), join('content', 'images', r.file)];
+    const f = candidates.find((candidate) => existsSync(candidate)) ?? candidates[0];
+    if (!existsSync(f)) { bad.push(r.file + ' (missing)'); continue; }
+    const buf = readFileSync(f);
+    const sha = createHash('sha256').update(buf).digest('hex');
+    const dim = pngOrJpegDims(buf);
+    if (buf.length !== r.bytes) bad.push(r.file + ' (bytes)');
+    else if (sha !== r.sha256) bad.push(r.file + ' (sha256)');
+    else if (dim && (dim.width !== r.width || dim.height !== r.height)) bad.push(r.file + ' (dimensions)');
+    else checked++;
+  }
+  ok('every image manifest record matches the file on disk (bytes, sha256, dimensions)',
+    bad.length === 0, bad.slice(0, 3).join(', '));
+  ok('the image manifest is not empty', checked > 0);
+}
+
+// --- every identifier an entry cites as evidence must be a real identifier in this build
+{
+  let passed = true, out = '';
+  try {
+    out = execFileSync(process.execPath, ['tools/verify-citations.mjs'], { encoding: 'utf8' });
+  } catch (e) {
+    passed = false;
+    out = String((e.stdout ?? '') + (e.stderr ?? ''));
+  }
+  ok('every identifier cited as evidence exists in this build', passed,
+    out.trim().split('\n').filter((l) => l.includes('CHECK')).slice(0, 3).join(' | '));
+}
+
+// --- every picture the site shows from the game must have been opened and judged.
+// The ledger preamble calls the review a separate human step, but a gate only required a verdict for
+// pictures the sanity pass happened to flag, so most mappings were never looked at. This closes that:
+// a manifest record without a verdict now fails the suite.
+{
+  const manifest = JSON.parse(readFileSync('content/images-manifest.json', 'utf8'));
+  const ledger = readFileSync('reports/image-reviews.md', 'utf8');
+  const judged = new Set([...ledger.matchAll(/\|\s*((?:mapped|renders|fandom)\/[^\s|]+)\s*\|/g)].map((m) => m[1].trim()));
+  const unjudged = manifest.records.filter((r) => (r.kind === 'community' ? !r.verdict : !judged.has(r.file))).map((r) => r.file);
+  ok('every mapped picture has a verdict in the review ledger', unjudged.length === 0,
+    unjudged.slice(0, 3).join(', '));
+}
+
+
+// --- player search and social metadata
+const uiDir = mkdtempSync(join(tmpdir(), 'repo-ui-'));
+try {
+  build(INV, uiDir);
+  const searchEntries = readdirSync('content/published').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join('content', 'published', f), 'utf8')));
+  const searchArticles = readdirSync('content/articles').filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join('content', 'articles', f), 'utf8')));
+  const idx = buildSearchIndex(searchEntries, searchArticles);
+  ok('the search index covers entries, guides and core pages', idx.length >= searchEntries.length + searchArticles.length, idx.length + ' items');
+  ok('the search index finds a monster and a guide by title', idx.some((x) => /oogly/i.test(x.t)) && idx.some((x) => x.k === 'Guides'));
+  ok('the search index does not leak internal identifiers', !/Enemy[A-Z]|Assembly-CSharp|MonoBehaviour|ScriptableObject/.test(JSON.stringify(idx)));
+  const searchHtml = readFileSync(join(uiDir, 'search.html'), 'utf8');
+  ok('the search page inlines the player index and has an empty state', searchHtml.includes('var S=') && searchHtml.includes('No matching page') && searchHtml.includes('id="filters"'), String(searchHtml.length));
+  ok('the search page stays under the 1 MiB page budget', searchHtml.length < 1048576, String(searchHtml.length));
+  const sitemapXml = readFileSync(join(uiDir, 'sitemap.xml'), 'utf8');
+  const urls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const badMeta = urls.filter((u) => {
+    const rel = u.replace(SITE.url + '/', '') || 'index.html';
+    const h = readFileSync(join(uiDir, rel), 'utf8');
+    return !h.includes('og:image') || !h.includes('social-card.png') || !h.includes('twitter:card') || !h.includes('application/ld+json');
+  });
+  ok('every indexable page carries social metadata and JSON-LD', badMeta.length === 0, badMeta.slice(0, 3).join(', '));
+  const idxHtml = readFileSync(join(uiDir, 'index.html'), 'utf8');
+  const jsonLd = (idxHtml.match(/<script type="application\/ld\+json">([^<]+)<\/script>/) ?? [])[1];
+  let schemaOk = false; try { schemaOk = JSON.parse(jsonLd)['@context'] === 'https://schema.org'; } catch { schemaOk = false; }
+  ok('the homepage JSON-LD is valid schema.org JSON', schemaOk);
+  ok('the social card asset was emitted', existsSync(join(uiDir, 'social-card.png')));
+  let homeImgBytes = 0;
+  for (const m of idxHtml.matchAll(/<img[^>]+src="(\/[^"]+)"/g)) {
+    const p = join(uiDir, m[1].slice(1));
+    if (existsSync(p)) homeImgBytes += readFileSync(p).length;
+  }
+  ok('the homepage image payload is under 3 MiB', homeImgBytes < 3 * 1024 * 1024, (homeImgBytes / 1048576).toFixed(2) + ' MiB');
+  const heroUse = new Map();
+  for (const e of searchEntries) { const h = (e.images ?? [])[0]; if (h?.file) heroUse.set(h.file, (heroUse.get(h.file) ?? 0) + 1); }
+  const repeated = [...heroUse.entries()].filter(([, n]) => n > 1);
+  ok('every entry hero image is used by only one entry', repeated.length === 0, repeated.slice(0, 3).map(([f]) => f).join(', '));
+} catch (e) { ok('player search and social metadata checks run', false, String(e).slice(0, 200)); } finally { rmSync(uiDir, { recursive: true, force: true }); }
 
 console.log('[site-tests] ' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

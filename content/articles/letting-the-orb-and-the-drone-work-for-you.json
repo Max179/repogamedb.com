@@ -1,0 +1,61 @@
+{
+  "id": "letting-the-orb-and-the-drone-work-for-you",
+  "title": "Letting the orb and the drone work for you",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the orb and the drone in R.E.P.O. behave when you leave them to it, so a tool that works by itself is deployed on purpose.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "An orb or a drone in the crew's inventory",
+    "Batteries or charge",
+    "Valuables you want collected"
+  ],
+  "steps": [
+    {
+      "do": "Pick the orb's kind before you deploy it, because it comes in two.",
+      "because": "orbs come in two kinds, a constant one and a pulsing one (ItemOrb, OrbType)"
+    },
+    {
+      "do": "Stand where the orb's radius can do something.",
+      "because": "the orb carries a radius of its own (orbRadius)"
+    },
+    {
+      "do": "Let it collect rather than carrying everything yourself.",
+      "because": "there is a behaviour for a valuable being absorbed, with its own duration and the value it adds (AbsorbingValuable, effectiveDuration, valueToAdd)"
+    },
+    {
+      "do": "Expect company, and know what the company is.",
+      "because": "roaches orbit the orb with their own radius, rotation speed and noise (RoachOrbit)"
+    },
+    {
+      "do": "Watch the orb's battery, because it drains at a rate of its own.",
+      "because": "the orb drains a battery at its own rate (batteryDrainRate, batteryDrainPreset)"
+    },
+    {
+      "do": "Deploy the drone knowing it can be pointed at people as well as loot.",
+      "because": "the drone has separate targeting for valuables, players, enemies and ordinary objects (ItemDrone, targetValuables, targetPlayers, targetEnemies, targetNonValuables)"
+    },
+    {
+      "do": "Read the drone's line to see what it is working on.",
+      "because": "the drone keeps a line between two points with a start point of its own (lineBetweenTwoPoints, lineStartPoint)"
+    },
+    {
+      "do": "Recall it rather than leaving it out, because it runs on a battery of its own.",
+      "because": "the drone carries a battery drain setting and its own retract and end sounds (ItemDroneSounds, batteryDrainPreset, DroneRetract, DroneEnd)"
+    }
+  ],
+  "commonMistakes": [
+    "Deploying an orb without deciding which kind you want.",
+    "Leaving an orb running while its battery drains unnoticed.",
+    "Pointing a drone at the crew by accident, because players are on the list.",
+    "Walking away from a drone and coming back to a dead battery."
+  ],
+  "relatedEntities": [
+    "the-orb",
+    "the-drone",
+    "the-box-that-holds-valuables"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

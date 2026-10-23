@@ -1,0 +1,53 @@
+{
+  "id": "reading-the-fences",
+  "title": "Reading the fences a level closes with",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to read the fences, railings and barriers of a R.E.P.O. level so the theme and the route are clear before you commit to a room.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level to read",
+    "Enough light to see a railing",
+    "A reason to move carefully"
+  ],
+  "steps": [
+    {
+      "do": "Read the ceiling fence to place the theme.",
+      "because": "a ceiling fence is named for the ordinary level and a second one for the arctic theme (Fence - Ceiling, Fence - Ceiling Arctic)"
+    },
+    {
+      "do": "Test a catwalk railing before you lean on it.",
+      "because": "an arctic catwalk railing and a catwalk railing with its own sheets are named (Arctic Catwalk Railing, Catwalk Railing_DefaultMaterial_BaseColor3)"
+    },
+    {
+      "do": "Treat a stairs railing as part of the route.",
+      "because": "stairs railings are named by theme, a manor one and a catwalk one among them (Stair Manor Railing_DefaultMaterial_BaseColor, Stairs Catwalk Railing_DefaultMaterial_BaseColor)"
+    },
+    {
+      "do": "Do not read a misspelled name as a different piece.",
+      "because": "one arctic stairs railing is named with a second spelling of arctic (Arctiv Stairs Railing2)"
+    },
+    {
+      "do": "On the arena track, read the barrier shape before the corner.",
+      "because": "barriers are named for the places the track turns, splits, drops, crosses a stream and opens a gap (Arena Race Track Piece Barrier Turn, Arena Race Track Piece Barrier Split Path, Arena Race Track Piece Barrier Danger Gap)"
+    },
+    {
+      "do": "Take a plain fence as the level's own edge.",
+      "because": "the build names a plain fence of its own (Fence)"
+    }
+  ],
+  "commonMistakes": [
+    "Crossing a catwalk without checking what is above it.",
+    "Assuming two levels use the same fence for the same purpose.",
+    "Being surprised by a track that splits because the barrier was not read.",
+    "Treating the wizard stairs railing as a different piece of kit from the manor one."
+  ],
+  "relatedEntities": [
+    "the-fences-and-railings",
+    "how-a-level-is-put-together",
+    "the-arena-and-its-race"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; nothing here is estimated."
+  ]
+}

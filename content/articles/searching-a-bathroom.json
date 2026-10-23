@@ -1,0 +1,53 @@
+{
+  "id": "searching-a-bathroom",
+  "title": "Searching a bathroom",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to work through a bathroom in R.E.P.O. without leaving anything behind, given that the room is fitted with its own sink, stall and pipework.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A way into the room",
+    "A free hand",
+    "Enough light to read the walls"
+  ],
+  "steps": [
+    {
+      "do": "Check the stalls before the open floor.",
+      "because": "a bathroom is named as a room set of its own with a stall beside it (Bathroom, Bathroom Stall)"
+    },
+    {
+      "do": "Look at the sink and the space under it.",
+      "because": "the sink has a collider object of its own (Bathroom Sink, Bathroom Sink_collider)"
+    },
+    {
+      "do": "Do not skip the shop's own bathroom.",
+      "because": "the shop's version is fitted separately with its own sink and toilet (Shop Bathroom Sink, Shop Toilet)"
+    },
+    {
+      "do": "Expect the walls to be worn.",
+      "because": "the shop bathroom walls are named as worn and as broken, the worn one under two orders of the same words (Shop Bathroom Wall Grimey, Shop Bathroom Grimey Wall, Shop Bathroom Wall Broken)"
+    },
+    {
+      "do": "Follow the pipework rather than the walls.",
+      "because": "three shop bathroom pipes are numbered, and the first has a big version as well (Shop Bathroom Pipe1, Shop Bathroom Pipe2, Shop Bathroom Pipe3, Shop Bathroom Pipe1 Big)"
+    },
+    {
+      "do": "Read the sign before you open the door.",
+      "because": "the game ships a metal plate reading Bathroom (arctic sign bathroom)"
+    }
+  ],
+  "commonMistakes": [
+    "Walking past a small room because it looks like a cupboard.",
+    "Treating the sink as scenery instead of a piece with a collider.",
+    "Searching only the manor bathroom and skipping the shop's.",
+    "Following a pipe run out of the room and forgetting the stalls."
+  ],
+  "relatedEntities": [
+    "the-bathrooms-and-their-fittings",
+    "the-kitchens-and-their-fittings",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; nothing here is estimated."
+  ]
+}

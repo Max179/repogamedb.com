@@ -1,0 +1,61 @@
+{
+  "id": "drifting-and-leaving-the-ground",
+  "title": "Drifting and leaving the ground",
+  "tier": "published",
+  "kind": "article",
+  "target": "How drifting and being airborne work in R.E.P.O.'s vehicles, so a slide or a jump is something you start on purpose rather than survive.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A vehicle you can drive",
+    "Some open ground",
+    "A ramp or a rise if you want air"
+  ],
+  "steps": [
+    {
+      "do": "Know that drifting is a system with its own switch before you look for a button.",
+      "because": "drifting is a system with its own switch on the vehicle (ItemVehicle, hasDrifting, enableDriftPhysics)"
+    },
+    {
+      "do": "Start a drift with speed and angle, not with the handbrake alone.",
+      "because": "a drift starts from a speed threshold and an angle threshold, and lasts at least a minimum time (driftSpeedThreshold, driftAngleThreshold, driftMinDuration)"
+    },
+    {
+      "do": "Expect the slide to slow you down unless you hold it.",
+      "because": "it has its own turning speed and speed bounds (driftTurningSpeed, driftMaxSpeed, driftMinSpeedRatio)"
+    },
+    {
+      "do": "Feed the slide in rather than snapping into it.",
+      "because": "the speed ramps up over a time when a drift starts (driftSpeedRampUpTime)"
+    },
+    {
+      "do": "Use the exit boost deliberately, because leaving a drift changes the drag.",
+      "because": "leaving a drift applies an exit boost and switches between a drift drag, a default drag and a smoothing time (driftExitBoost, driftDrag, driftDragDefault, driftDragSmoothTime)"
+    },
+    {
+      "do": "Watch for the drift's own effects, which change with how hard you are drifting.",
+      "because": "drifting has particles with a transform, and a light with settings per drift level (driftingParticlesTransform, driftParticles, driftLight, driftLightSettings, driftLevelSettings)"
+    },
+    {
+      "do": "Know that being airborne is a system too, with lift of its own.",
+      "because": "being airborne is a system with its own switch and a lift force (enableAirbornePhysics, airborneLiftForce)"
+    },
+    {
+      "do": "Pitch the vehicle in the air and steer less, because the air has its own rules.",
+      "because": "the vehicle pitches in the air towards a target angle at a speed and strength blended in over a blend speed, steering in the air uses a multiplier of its own, and falling applies a gravity of its own with a maximum and a speed below which it does not apply (airborneTargetPitch, airbornePitchSpeed, airbornePitchStrength, airborneBlendSpeed, airborneSteeringMultiplier, fallGravityAcceleration, fallGravityMax, fallGravityMinDownwardVelocity, fallGravityTopSpeed)"
+    }
+  ],
+  "commonMistakes": [
+    "Expecting a drift to hold itself once it starts.",
+    "Snapping into a slide and losing the speed the drift needed.",
+    "Steering as hard in the air as on the ground.",
+    "Forgetting that falling has its own gravity and a floor to it."
+  ],
+  "relatedEntities": [
+    "drifting-a-vehicle",
+    "leaving-the-ground-in-a-vehicle",
+    "how-a-vehicles-body-follows-its-physics"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

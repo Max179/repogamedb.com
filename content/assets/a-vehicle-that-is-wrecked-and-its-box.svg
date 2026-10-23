@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 220" width="980" height="220" role="img" aria-label="A vehicle that is wrecked, and the box on it">
+  <rect width="980" height="220" fill="#12141a"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#8ecbff"/></marker></defs>
+  <rect x="20" y="52" width="215" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="84" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">step 1</text>
+  <text x="38" y="112" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">A hit lands</text>
+  <rect x="255" y="52" width="215" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="273" y="84" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">step 2</text>
+  <text x="273" y="112" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">States run out</text>
+  <rect x="490" y="52" width="215" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="508" y="84" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">step 3</text>
+  <text x="508" y="112" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Fire and an explosion</text>
+  <rect x="725" y="52" width="235" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="743" y="84" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">step 4</text>
+  <text x="743" y="112" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">The box breaks, or comes back</text>
+  <rect x="20" y="158" width="460" height="44" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="186" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Being repaired has particles of its own</text>
+  <rect x="500" y="158" width="460" height="44" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="518" y="186" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">The box on the vehicle is the vehicle's own object</text>
+</svg>

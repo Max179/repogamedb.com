@@ -1,0 +1,48 @@
+{
+  "id": "cleaning-up-what-a-run-leaves-behind",
+  "title": "Cleaning up what a run leaves behind",
+  "tier": "published",
+  "kind": "article",
+  "target": "How cleaning works in an R.E.P.O. level, given that cleaning has its own director and effect, that a clean spot is identified by the game, and that the level's pieces carry a clean state of their own.",
+  "version": "0.4.0 (see the sources page)",
+  "prerequisites": [
+    "Something to clean with",
+    "A level you have already been through",
+    "A moment when nothing is chasing you"
+  ],
+  "steps": [
+    {
+      "do": "Treat cleaning as a short piece of the game rather than as a menu action.",
+      "because": "cleaning has a director and a clean effect of its own (Clean Director, Clean Effect)"
+    },
+    {
+      "do": "Watch the surface rather than the tool: the sparkle is what tells you it worked.",
+      "because": "the clean effect is drawn from a sprite sheet of its own (Clean Effect Sprite Sheet)"
+    },
+    {
+      "do": "Go back over a spot the game has not registered as clean yet.",
+      "because": "a clean spot has an identifier of its own (Clean Spot Identifier, CleanEffectParticleSettings)"
+    },
+    {
+      "do": "Look for the cleaning cupboard rather than carrying everything yourself.",
+      "because": "the museum keeps cleaning supplies of its own, a mop among them (Museum Storage Mop, Museum Storage Cleaning Supplies)"
+    },
+    {
+      "do": "Expect a cleaned wall or corner to look different from an untouched one.",
+      "because": "the level's wall and corner pieces carry a clean version beside them (Column Bot Wall_1x0.25_Clean, Column Top Corner Wall_1x0.125_Clean)"
+    }
+  ],
+  "commonMistakes": [
+    "Walking past a mess because the tool is not in your hand.",
+    "Cleaning a surface the game has already marked clean instead of moving on.",
+    "Hunting for the mop in the shop when the level keeps supplies of its own.",
+    "Assuming a cleaned room means a safe one."
+  ],
+  "relatedEntities": [
+    "the-cleaning-tools-and-effects",
+    "moving-loot-and-gear"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

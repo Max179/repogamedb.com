@@ -1,0 +1,66 @@
+{
+  "id": "the-machines-that-are-also-traps",
+  "title": "The machines that are also traps",
+  "tier": "published",
+  "kind": "article",
+  "target": "What a blender, a gumball machine, a traffic light and a tray do when they go off in R.E.P.O., and what each of them tells you before it does.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A level with the machine valuables still standing",
+    "A crew that will not crowd a machine while it is working",
+    "A way to leave a valuable behind if it starts up"
+  ],
+  "steps": [
+    {
+      "do": "Treat a blender, a gumball machine, a traffic light and a tray as one kind of thing: a valuable that is also a machine.",
+      "because": "each carries the trap state of triggered, active and started, the switch for triggering on a timer and the rarity level at which it goes off (trapTriggered, trapActive, trapStart, triggerOnTimer, trapActivateRarityLevel)"
+    },
+    {
+      "do": "Do not reach into a blender for the money, because it has blades of its own.",
+      "because": "it has a timer of its own and blades with a speed and a curve (blenderTimer, blade, bladeSpeed, bladeCurve)"
+    },
+    {
+      "do": "Listen to a blender, because it says what it is doing.",
+      "because": "it has separate sounds for the blades starting, looping and ending, plus a loop for being stuck and one for an empty jug (soundBladeStart, soundBladeLoop, soundBladeEnd, soundBladeStuckLoop, soundBladeEmptyLoop)"
+    },
+    {
+      "do": "Expect a blender to throw what is inside it.",
+      "because": "it has a bill soup with a curve of its own, a cap that pops with a collider, and particles for the bills, dust and the cap (billSoup, billSoupCurve, capPop, capCollider, billParticles, dustParticles)"
+    },
+    {
+      "do": "Look away from the gumball machine rather than at it.",
+      "because": "it works on the player with a vignette, a screen spiral, camera zoom speeds and an amount, and it takes aim away (vignetteIntensity, screenSpiralEffect, cameraZoomSpeedIn, cameraZoomAmount, noAimStrength)"
+    },
+    {
+      "do": "Watch its lids and its eye, because the eye is what does the work.",
+      "because": "it has meshes for its lids closed and open, an eyeball of its own and a globe, and the eye has a lock transform and a line of its own (closedLidsMesh, openLidsMesh, eyeBallMesh, eyeLockTransform, hypnosisLine)"
+    },
+    {
+      "do": "Read a traffic light as a countdown rather than as a signal to cross.",
+      "because": "each colour has a length of time of its own and red lingers after the others (redLightDuration, greenLightDuration, yellowLightDuration, lingerOnRedTime)"
+    },
+    {
+      "do": "Expect a traffic light's zap to be both loud and physical.",
+      "because": "zapping shakes the camera with a length, a strength and bounds, has sparks, smoke and a zap particle of its own, and the light torques and tumbles (cameraShakeTime, sparkParticles, smokeParticles, zapParticles, SelfTorqueMultiplier, tumbleForceMultiplier)"
+    },
+    {
+      "do": "Count what is standing on a tray before you move it.",
+      "because": "what stands on the tray is kept as a group of its own, with particles and colliders for those things (trayThings, trayParticles, trayColliders)"
+    }
+  ],
+  "commonMistakes": [
+    "Putting a hand into a blender that is still running.",
+    "Meeting the gumball machine's eye instead of turning away.",
+    "Crossing in front of a traffic light while its red is lingering.",
+    "Lifting a tray and losing what was standing on it."
+  ],
+  "relatedEntities": [
+    "the-blender-valuable",
+    "the-gumball-machine-that-hypnotises",
+    "the-traffic-light-valuable",
+    "the-tray-valuable"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "reaper",
+  "title": "The Reaper",
+  "category": "Enemies",
+  "summary": "The Reaper is a Level 3 monster in R.E.P.O. documented from community sources. This entry provides reference information without claiming verified behavior details.",
+  "body": [
+    "This entry documents the Reaper from community sources.",
+    "⚠️ Data Source Notice: This entity is documented in community sources but has not been verified in game code analysis. Information may be incomplete or subject to change.",
+    "What we document: appearance description and reported behavior patterns from community observations.",
+    "What this entry does not claim: exact damage numbers verified from game files."
+  ],
+  "facts": [
+    {
+      "claim": "Community sources classify this as a Level 3 threat.",
+      "evidence": "documented in R.E.P.O. Fandom wiki"
+    }
+  ],
+  "related": [
+    "enemies-and-their-behaviour",
+    "how-monsters-find-you"
+  ],
+  "images": [
+    {
+      "file": "fandom/reaper.png",
+      "kind": "community",
+      "alt": {
+        "en": "Community reference picture of Reaper from the R.E.P.O. Fandom wiki.",
+        "zh": "来自 R.E.P.O. Fandom Wiki 的社区参考图：Reaper。"
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "Community Wiki documentation (https://repo-2025horror.fandom.com/wiki/Reaper). This entity has not been verified in game code analysis and may represent content from different game versions or community speculation."
+  ],
+  "imageTier": "community-image",
+  "_needsReview": true,
+  "_verificationStatus": "unverified-community-source",
+  "_dataConfidence": "medium",
+  "_missingFromUnity": true,
+  "_gameVersion": "unknown",
+  "_fandomUrl": "https://repo-2025horror.fandom.com/wiki/Reaper",
+  "_disclaimer": "This monster is documented in the community Wiki but not verified in game code. Information accuracy cannot be guaranteed."
+}

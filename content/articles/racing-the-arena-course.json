@@ -1,0 +1,47 @@
+{
+  "id": "racing-the-arena-course",
+  "title": "Racing the arena course",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to get through an arena race in R.E.P.O., given that the game builds the course from track pieces with a start and an end, shows a timer and a pulsing arrow, and gives the winner a crown.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A crew ready to start a race",
+    "The arena loaded",
+    "An agreement on who drives and who rides"
+  ],
+  "steps": [
+    {
+      "do": "Find the start piece before anything else.",
+      "because": "the course is laid out from a start piece and an end piece with pieces between them (ArenaRaceTrackPieceStart, ArenaRaceTrackPieceEnd)"
+    },
+    {
+      "do": "Follow the arrow rather than guessing the turns.",
+      "because": "the interface carries an arrow of its own that pulses (ArenaRaceArrowPulsate)"
+    },
+    {
+      "do": "Watch the timer instead of the score.",
+      "because": "the race has a timer of its own on the interface (ArenaRaceTimerUI)"
+    },
+    {
+      "do": "Look for the pad on the straight sections.",
+      "because": "a boost on the course comes from a pad of its own (Arena Race Boost Pad)"
+    },
+    {
+      "do": "Wait for the crown rather than assuming the result.",
+      "because": "the game gives the winner a crown, and the player's own crown is a separate piece (Arena Crown, Arena Crown Player)"
+    }
+  ],
+  "commonMistakes": [
+    "Turning before the arrow changes and losing the course.",
+    "Ignoring the timer until the race is over.",
+    "Treating the crown as decoration rather than as the result."
+  ],
+  "relatedEntities": [
+    "the-arena-and-its-race",
+    "the-level-themes-and-what-they-hold"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

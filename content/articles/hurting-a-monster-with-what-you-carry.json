@@ -1,0 +1,53 @@
+{
+  "id": "hurting-a-monster-with-what-you-carry",
+  "title": "Hurting a monster with what you carry",
+  "tier": "published",
+  "kind": "article",
+  "target": "How damage to a monster works in R.E.P.O. — the health behind it, the three sizes of impact, what objects do and what a death leaves behind.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "Something to hit with",
+    "Something to throw",
+    "A monster willing to stand still"
+  ],
+  "steps": [
+    {
+      "do": "Think of a monster as carrying a health total rather than as indestructible.",
+      "because": "a monster carries a health total and a freeze time for dying (EnemyHealth, health, deathFreezeTime)"
+    },
+    {
+      "do": "Hit it hard on purpose, because impacts come in three sizes.",
+      "because": "impacts hurt it with separate damage for a light, a medium and a heavy one (impactHurt, impactLightDamage, impactMediumDamage, impactHeavyDamage)"
+    },
+    {
+      "do": "Throw things when a weapon is not the answer.",
+      "because": "being hurt by an object has its own switch, a multiplier and an option to stun (objectHurt, objectHurtMultiplier, objectHurtStun)"
+    },
+    {
+      "do": "Know that the stun is a choice the game makes, not a guarantee.",
+      "because": "the object-hurt options include whether it stuns (objectHurtStun)"
+    },
+    {
+      "do": "Expect some kills to pay out.",
+      "because": "a monster can be set to leave a valuable behind up to a maximum number (spawnValuable, spawnValuableMax)"
+    },
+    {
+      "do": "Read the feedback rather than only the health: being hurt, starting to die, dying and being hit by an object each signal.",
+      "because": "being hurt, starting to die, dying and being hurt by an object each raise an event (onHurt, onDeathStart, onDeath, onObjectHurt)"
+    }
+  ],
+  "commonMistakes": [
+    "Giving up on a monster that is taking damage but has not fallen yet.",
+    "Throwing things at a monster that cannot be stunned by objects.",
+    "Assuming every kill leaves something behind.",
+    "Missing the moment between starting to die and being dead."
+  ],
+  "relatedEntities": [
+    "how-a-monster-takes-damage",
+    "what-being-grabbed-feels-like",
+    "reading-a-monster-before-it-reaches-you"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "reading-the-record-the-game-keeps-for-you",
+  "title": "Reading the record the game keeps for you",
+  "tier": "published",
+  "kind": "article",
+  "target": "What R.E.P.O. writes down about a player and about each monster, so a run can be read from the game's own record instead of from memory.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run in progress",
+    "A crew of more than one if you want to compare",
+    "Some upgrades bought"
+  ],
+  "steps": [
+    {
+      "do": "Know that your record has three inventory spots and a flag for each being taken.",
+      "because": "each player has three inventory spots, each with a flag for being taken (playerInventorySpot1, playerInventorySpot2, playerInventorySpot3, playerInventorySpot1Taken, playerInventorySpot2Taken, playerInventorySpot3Taken)"
+    },
+    {
+      "do": "Expect your colour and health to be on the record rather than only in the world.",
+      "because": "a player's colour and health are kept on the record (playerColor, playerHealth)"
+    },
+    {
+      "do": "Know that having the crown is a flag.",
+      "because": "the record keeps a flag for a player having a crown (playerHasCrown)"
+    },
+    {
+      "do": "Read your upgrades from the record if you lose track of what you bought.",
+      "because": "every upgrade the record knows has its own flag, including speed, strength, throwing, range, an extra jump, launching, the map player count, the tumble climb, the tumble wings, a crouch rest and the death head battery (playerUpgradeSpeed, playerUpgradeStrength, playerUpgradeThrow, playerUpgradeRange)"
+    },
+    {
+      "do": "Expect a monster to have a name and a localized name of its own.",
+      "because": "a monster's record carries a name and a localized version of it (EnemyParent, enemyName, enemyNameLocalized)"
+    },
+    {
+      "do": "Read a monster's difficulty and its multipliers rather than judging by size.",
+      "because": "its record carries a difficulty and an action and overcharge multiplier (difficulty, actionMultiplier, overchargeMultiplier)"
+    },
+    {
+      "do": "Know that spawning and despawning are timed from ranges.",
+      "because": "it has a spawned time range and a despawned time range, each with a lowest and a highest value, along with timers for both (SpawnedTimeMin, SpawnedTimeMax, DespawnedTimeMin, DespawnedTimeMax)"
+    },
+    {
+      "do": "Use the per-monster checklist to see what a monster is meant to do.",
+      "because": "each monster has a record with a name, a difficulty and a type, a sighting stinger, the music for when it is near and health hooks for being hurt, dying and being hit (EnemyChecklist, name, difficulty, type, sightingStinger, enemyNearMusic, healthMax, healthMeshParent, healthOnHurt, healthOnDeath, healthImpact)"
+    }
+  ],
+  "commonMistakes": [
+    "Assuming an empty inventory spot means the flag is clear when it is tracked separately.",
+    "Judging a monster's difficulty by how big it is rather than by its record.",
+    "Forgetting that despawning is timed rather than instant.",
+    "Buying an upgrade you already own because the record was not checked."
+  ],
+  "relatedEntities": [
+    "what-the-record-keeps-about-each-player",
+    "the-record-every-monster-is-given",
+    "what-the-game-records-about-each-monster"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

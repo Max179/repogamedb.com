@@ -1,0 +1,50 @@
+{
+  "id": "getting-a-vehicle-to-feel-right",
+  "title": "Getting a vehicle to feel right",
+  "tier": "published",
+  "kind": "article",
+  "target": "How a vehicle in R.E.P.O. is set up so that it feels controllable, given that the game leans it with speed, gives it force multipliers, and equips it with its own sounds and sparks.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A vehicle bought for the run",
+    "A crew that agrees who drives",
+    "Enough room to find out how it handles"
+  ],
+  "steps": [
+    {
+      "do": "Expect the body to lean with speed rather than staying flat.",
+      "because": "the lean is built from a pitch-up and a pitch-down force with a maximum for each, smoothed over time (velocityPitchUpForce, velocityPitchDownForce, velocityPitchSmoothTime)"
+    },
+    {
+      "do": "Allow for the yaw lean when you turn.",
+      "because": "the lean also has a yaw force and a maximum of its own (velocityPitchYawForce, velocityPitchYawMax)"
+    },
+    {
+      "do": "Treat the shove it gives as a setting rather than a constant.",
+      "because": "a vehicle can be given a bumper-car force multiplier and a side-tackle multiplier (bumperCarForceMultiplier, bumperCarSideTackleMultiplier)"
+    },
+    {
+      "do": "Listen for the state of the vehicle rather than watching the body.",
+      "because": "it names its start and stop sounds, an engine pitch range, a hyper-speed loop and an airborne wind loop (engineStartSound, engineStopSound, minEnginePitch, maxEnginePitch, hyperSpeedLoop, airborneWindLoop)"
+    },
+    {
+      "do": "Remember that the sparks and the wreck are parts of the same machine.",
+      "because": "each side has its own spark transform, particles, collider and light, and a wreck has destruction states and an explosion point (sparkTransformLeft, sparkParticlesLeft, sparkLightLeft, destructionStates, explosionPosTransform)"
+    }
+  ],
+  "commonMistakes": [
+    "Driving it like a car when the body is built to lean.",
+    "Blaming the handling when the real problem is one of the multipliers.",
+    "Leaving a wreck where it fell without taking the box it was carrying."
+  ],
+  "relatedEntities": [
+    "the-lean-a-vehicle-takes-from-its-speed",
+    "the-multipliers-a-vehicle-can-be-given",
+    "the-sounds-a-vehicle-makes",
+    "the-sparks-a-vehicle-throws",
+    "a-vehicle-that-is-wrecked-and-its-box"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

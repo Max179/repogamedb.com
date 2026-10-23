@@ -1,0 +1,57 @@
+{
+  "id": "charging-up-and-catching-your-fall",
+  "title": "Charging up and catching your fall",
+  "tier": "published",
+  "kind": "article",
+  "target": "How the charging station and the tumble-wings upgrade work in R.E.P.O., so a battery is topped up knowingly and a fall is survived on purpose.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A charging station in the shop",
+    "Something to charge",
+    "The tumble wings bought, if you have them"
+  ],
+  "steps": [
+    {
+      "do": "Put the item in the station rather than beside it.",
+      "because": "the station has a body and a subtle light, and it takes an item (ChargingStation, meshObject, subtleLight, item)"
+    },
+    {
+      "do": "Read the bar while it charges, because charging is drawn in segments.",
+      "because": "it charges in segments along a curve and lights a bar of its own (chargeSegments, chargeCurve, barLight)"
+    },
+    {
+      "do": "Know that a crystal can break, and that it is audible.",
+      "because": "it holds a crystal cylinder and a set of crystals, and it has a sound for a power crystal breaking (crystalCylinder, crystals, soundPowerCrystalBreak)"
+    },
+    {
+      "do": "Do not stand in the beam.",
+      "because": "it works with a laser mesh, a laser point and a line drawn between two points (chargeLaserMesh, laserPoint, chargeLaser, LineBetweenTwoPoints)"
+    },
+    {
+      "do": "Remember the wings belong to your avatar rather than to an item slot.",
+      "because": "the upgrade refers to the player avatar it belongs to (ItemUpgradePlayerTumbleWingsLogic, playerAvatar)"
+    },
+    {
+      "do": "Expect the wings to be built from a left and a right.",
+      "because": "the wings have a transform of their own with a left and a right wing transform (transformWings, transformWingLeft, transformWingRight)"
+    },
+    {
+      "do": "Use the light and the sound to tell whether the wings are out.",
+      "because": "there is a light belonging to the wings and a looping sound played from a local audio source (lightWings, soundWingsLoop, localAudioSource)"
+    }
+  ],
+  "commonMistakes": [
+    "Leaving an item next to the station and assuming it charged.",
+    "Standing where the beam points.",
+    "Forgetting that the wings are an avatar upgrade rather than a carried tool.",
+    "Missing that the wings are lit and audible, and so can be checked without looking."
+  ],
+  "relatedEntities": [
+    "the-charging-station-and-its-beam",
+    "the-tumble-wings-upgrade",
+    "items-you-switch-carry-or-unlock"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

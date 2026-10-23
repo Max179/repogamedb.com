@@ -1,0 +1,238 @@
+{
+  "site": "repogamedb.com",
+  "floor": 20,
+  "columns": [
+    {
+      "id": "enemies",
+      "label": "Enemies and their variants",
+      "categories": [
+        "Enemies"
+      ],
+      "entries": [
+        "the-floater",
+        "the-beamer",
+        "the-tricycle-rider",
+        "the-hunter",
+        "the-shadow",
+        "the-balloon-monster",
+        "the-runner",
+        "the-thin-man",
+        "the-upscream",
+        "the-elsa",
+        "the-heart-hugger",
+        "the-slow-mouth",
+        "the-animal",
+        "the-hidden",
+        "the-duck-monster",
+        "the-bomb-and-its-fuse",
+        "the-heads-eyes-hair-and-teeth",
+        "the-oogly",
+        "the-slow-walker",
+        "the-gnomes-and-the-pickaxe",
+        "the-tick-and-its-mouth",
+        "the-valuable-thrower",
+        "the-bowtie-monster",
+        "the-robed-monster"
+      ]
+    },
+    {
+      "id": "behaviour",
+      "label": "Behaviour and how to answer it",
+      "categories": [
+        "Enemies"
+      ],
+      "entries": [
+        "what-a-monster-is-doing",
+        "reading-a-monster-before-it-reaches-you",
+        "when-a-monster-has-you",
+        "how-a-monster-sees-you",
+        "what-the-game-records-about-each-monster",
+        "what-a-monster-does-when-it-has-not-seen-you",
+        "how-many-monsters-a-level-sends",
+        "what-happens-when-the-head-catches-you"
+      ]
+    },
+    {
+      "id": "valuables",
+      "label": "Valuables and value grades",
+      "categories": [
+        "Valuables"
+      ],
+      "entries": [
+        "the-valuables-you-can-find",
+        "valuables-that-fight-back",
+        "the-wizard-valuables",
+        "valuables-that-are-also-tools",
+        "how-many-valuables-a-level-holds",
+        "the-things-that-are-not-loot",
+        "valuables-with-a-behaviour-of-their-own",
+        "the-car-and-the-plane-you-can-carry",
+        "the-cartoon-television",
+        "the-boombox-valuable",
+        "the-snow-bike-valuable"
+      ]
+    },
+    {
+      "id": "extraction",
+      "label": "Hauling and extraction",
+      "categories": [
+        "Extraction"
+      ],
+      "entries": [
+        "the-truck-and-the-end-of-a-run",
+        "choosing-when-to-leave"
+      ]
+    },
+    {
+      "id": "items",
+      "label": "Items you can carry",
+      "categories": [
+        "Items"
+      ],
+      "entries": [
+        "items-you-switch-carry-or-unlock"
+      ]
+    },
+    {
+      "id": "weapons",
+      "label": "Weapons",
+      "categories": [
+        "Weapons"
+      ]
+    },
+    {
+      "id": "ammo",
+      "label": "Ammunition and charge",
+      "entries": [
+        "batteries-and-charging",
+        "guns-and-how-they-fire",
+        "running-a-gun-dry"
+      ],
+      "status": "guns fire a bullet object and keep an out-of-shots state; there is no separate ammunition item, so shots and charge are the two resources"
+    },
+    {
+      "id": "medical",
+      "label": "Medical help and reviving",
+      "entries": [
+        "health-and-recovery",
+        "the-revive-item",
+        "healing-at-the-truck"
+      ]
+    },
+    {
+      "id": "maps",
+      "label": "Maps, levels and themes",
+      "categories": [
+        "Maps"
+      ],
+      "entries": [
+        "the-music-of-a-level"
+      ]
+    },
+    {
+      "id": "events",
+      "label": "Events and set pieces",
+      "entries": [
+        "the-museum-and-its-props",
+        "mines-traps-and-lasers",
+        "the-money-head-in-the-museum"
+      ],
+      "status": "no separate event system found; level set pieces (the museum, mines, traps and lasers) are documented here and under maps"
+    },
+    {
+      "id": "shop",
+      "label": "The shop between runs",
+      "categories": [
+        "Shop"
+      ]
+    },
+    {
+      "id": "coop",
+      "label": "Playing with a crew",
+      "entries": [
+        "staying-in-touch-with-the-crew",
+        "when-the-chat-box-will-not-open",
+        "the-lobby-and-spectating",
+        "what-the-record-keeps-about-each-player"
+      ],
+      "status": "multiplayer is networked; documented through comms and lobby entries"
+    },
+    {
+      "id": "solo",
+      "label": "Solo strategy",
+      "entries": [
+        "the-cart-and-its-boost-pads",
+        "extraction-run"
+      ],
+      "status": "solo play is covered through guides rather than a separate system"
+    },
+    {
+      "id": "combos",
+      "label": "Item combinations",
+      "entries": [
+        "item-combinations"
+      ],
+      "status": "no combination or crafting system found in this build"
+    },
+    {
+      "id": "physics",
+      "label": "Physics, grabbing and the cart",
+      "categories": [
+        "Physics"
+      ],
+      "entries": [
+        "carts-grabbing-and-physics",
+        "the-cart-and-its-boost-pads",
+        "the-boosts-a-vehicle-earns"
+      ]
+    },
+    {
+      "id": "cosmetics",
+      "label": "Cosmetics and the avatar",
+      "categories": [
+        "Cosmetics"
+      ]
+    },
+    {
+      "id": "interface",
+      "label": "Screens and run records",
+      "categories": [
+        "Interface"
+      ],
+      "entries": [
+        "the-readouts-you-play-by",
+        "how-a-run-is-scored",
+        "the-truck-screen",
+        "what-the-game-draws-when-you-find-something",
+        "what-being-grabbed-does-to-your-view",
+        "the-numbers-that-float-over-things"
+      ]
+    },
+    {
+      "id": "faq",
+      "label": "Answers to the questions players ask most",
+      "entries": [
+        "questions-players-ask"
+      ]
+    },
+    {
+      "id": "glossary",
+      "label": "Glossary of the terms this site uses",
+      "entries": [
+        "glossary-of-terms"
+      ]
+    },
+    {
+      "id": "versions",
+      "label": "Which version this site documents",
+      "entries": [
+        "which-version-this-site-documents"
+      ]
+    },
+    {
+      "id": "guides",
+      "label": "Step-by-step run guides",
+      "kind": "articles"
+    }
+  ]
+}

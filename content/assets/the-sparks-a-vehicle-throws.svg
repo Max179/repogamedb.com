@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 200" width="980" height="200" role="img" aria-label="The sparks a vehicle throws">
+  <rect width="980" height="200" fill="#12141a"/>
+  <rect x="20" y="40" width="290" height="60" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="76" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">A scrape starts on one side</text>
+  <rect x="330" y="40" width="290" height="60" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="348" y="76" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">That side has its own transform</text>
+  <rect x="640" y="40" width="320" height="60" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="658" y="76" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Particles, a collider and a light</text>
+  <rect x="20" y="120" width="460" height="56" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="154" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">The loop runs while the scrape lasts</text>
+  <rect x="500" y="120" width="460" height="56" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="518" y="154" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Sound scaled from a minimum to a maximum</text>
+</svg>

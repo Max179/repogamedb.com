@@ -1,0 +1,53 @@
+{
+  "id": "reading-the-wizard-school-rooms",
+  "title": "Reading the wizard school's rooms",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the plates a wizard level hangs on its doors in R.E.P.O., given that the level is a school with named subject rooms and its own hazards.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A wizard level to read",
+    "Enough light to read a plaque",
+    "A reason to pick a door"
+  ],
+  "steps": [
+    {
+      "do": "Read the plaque before choosing a door.",
+      "because": "the school signs a dining hall and a lecture hall, with a dungeon below them (Wizard Sign Dining Hall, Wizard Sign Lecture Hall, Wizard Sign Dungeon)"
+    },
+    {
+      "do": "Learn the subject rooms, because they are where the level's props live.",
+      "because": "potions and spells, sorcery, the dark arts and a school of magic plants are each signed (Wizard Sign Potions And Spells, Wizard Sign Sorcery Class, Wizard Sign Dark Arts)"
+    },
+    {
+      "do": "Find the administration before you wander.",
+      "because": "a headmaster's study and a thinking chamber carry plates of their own (Wizard Sign Headmasters Study, Wizard Sign Thinking Chamber)"
+    },
+    {
+      "do": "Treat a named hazard as a warning, not scenery.",
+      "because": "an enchanted lava room, a deathpit corridor and the sludge pits are signed as plainly as the teaching rooms (Wizard Sign Enchanted Lava Room, Wizard Sign Deathpit Corridor, Wizard Sign Sludge Pits of Joy)"
+    },
+    {
+      "do": "Check the wings and the courtyard on the way through.",
+      "because": "a west wing garden, a courtyard and a gnome alley are signed (Wizard Sign West Wing Garden, Wizard Sign Courtyard, Wizard Sign Gnome Alley)"
+    },
+    {
+      "do": "Expect blocked and double doors behind the plates.",
+      "because": "the theme fits its rooms with doors and bookshelves of its own, including blocked and double versions (Wizard Door, Wizard Door Blocked, Wizard Door Double, Wizard Bookshelf Blocked)"
+    }
+  ],
+  "commonMistakes": [
+    "Opening doors at random because the plates all look the same.",
+    "Treating the hazard rooms as ordinary corridors.",
+    "Assuming the subject rooms hold the same props as the dining hall.",
+    "Pushing a blocked door instead of reading the plaque beside it."
+  ],
+  "relatedEntities": [
+    "the-rooms-the-wizard-school-signs",
+    "the-level-themes-and-what-they-hold",
+    "valuables-and-looting"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; nothing here is estimated."
+  ]
+}

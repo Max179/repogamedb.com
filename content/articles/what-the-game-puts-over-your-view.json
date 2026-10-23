@@ -1,0 +1,57 @@
+{
+  "id": "what-the-game-puts-over-your-view",
+  "title": "What the game puts over your view",
+  "tier": "published",
+  "kind": "article",
+  "target": "The two things R.E.P.O. runs on top of a level for you: the component that places and smooths your camera, and the tools the build keeps for reading the game itself.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run in progress",
+    "A crew that will hold still while you check the view",
+    "A keyboard you can reach while playing"
+  ],
+  "steps": [
+    {
+      "do": "Expect your view to be placed by a component of its own rather than by your character.",
+      "because": "a component of its own positions the camera (CameraPosition)"
+    },
+    {
+      "do": "Look at the offsets if the view sits oddly, because there is one for each axis.",
+      "because": "it follows the player's own transform with an offset in each of the three axes (playerTransform, playerOffset.x, playerOffset.y, playerOffset.z)"
+    },
+    {
+      "do": "Expect the view to lag rather than snap, because the position it arrives at is smoothed.",
+      "because": "it drives a camera controller and smooths the position it arrives at (camController, positionSmooth)"
+    },
+    {
+      "do": "Expect the build to ship the tools its own makers used rather than leaving them out.",
+      "because": "the build ships a debug console with a key that toggles it (DebugConsoleUI, toggleKey, enableObject)"
+    },
+    {
+      "do": "Read the console's own lines before typing anything into it.",
+      "because": "it keeps a chat text, a suggestions text and a response text, along with a scroll indicator of its own (chatText, suggestionsText, responseText, scrollIndicator)"
+    },
+    {
+      "do": "Know that there is a second tool that watches a monster rather than the shop.",
+      "because": "there is an enemy debug overlay with a switch and a reference to the enemy it watches (EnemyDebugGUI, showDebugUI, enemyScript)"
+    },
+    {
+      "do": "Use the overlay to read a monster's state rather than to guess it.",
+      "because": "the overlay reads the state, the time in that state and the maximum time off the monster by name (currentStatePropertyName, stateTimePropertyName, stateTimeMaxPropertyName)"
+    }
+  ],
+  "commonMistakes": [
+    "Blaming the level when the view is placed by a component with its own offsets.",
+    "Expecting the camera to snap to the character instead of smoothing into place.",
+    "Typing into the console without reading the line it is already showing you.",
+    "Watching a monster and guessing its state when the build can print it."
+  ],
+  "relatedEntities": [
+    "the-camera-that-follows-you",
+    "what-the-build-keeps-for-debugging",
+    "what-being-grabbed-does-to-your-view"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -1,0 +1,3888 @@
+{
+  "site": "repogamedb.com",
+  "note": "One line per emitted page. \"redirects\" stays empty until this site has ever been published under an older URL; a redirect entry must point at a page that exists.",
+  "generatedBy": "tools/classify-urls.mjs",
+  "redirects": [],
+  "entries": [
+    {
+      "url": "/about.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/a-run-from-entry-to-extraction.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/arming-the-cart-and-firing-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/breaking-contact-with-a-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/carrying-a-tool-that-runs-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/carrying-an-orb-without-draining-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/charging-up-and-catching-your-fall.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/choosing-upgrades-as-a-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/choosing-what-to-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/choosing-what-your-avatar-wears.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/cleaning-up-what-a-run-leaves-behind.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/clearing-the-museum-without-setting-it-off.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/crossing-a-room-with-mines-and-lasers.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/dealing-with-a-monster-that-teleports.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/dealing-with-the-monster-that-carries-a-bomb.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/dealing-with-the-monster-that-comes-apart.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/drifting-and-leaving-the-ground.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/expecting-a-monster-to-move-like-nothing-else.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/finishing-a-run-on-your-terms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/firing-a-gun-without-wasting-the-shot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/firing-a-staff-without-wrecking-the-room.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/first-run-what-to-expect.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/following-the-hints-to-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/getting-a-valuable-to-the-extraction-point.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/getting-a-vehicle-to-feel-right.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/getting-free-when-a-monster-has-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/getting-through-the-office-door.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/getting-what-you-need-from-the-between-run-shop.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/handling-a-valuable-that-might-be-a-trap.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/hearing-the-hidden-before-you-see-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/hurting-a-monster-with-what-you-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/index.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/keeping-everyone-standing-through-a-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/keeping-the-batteries-alive.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/keeping-the-crew-in-touch-when-the-level-splits-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/keeping-your-speed-up-a-ramp-and-through-a-drift.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/knowing-when-you-are-nearly-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/letting-the-orb-and-the-drone-work-for-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/making-the-shop-visit-count.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/pointing-a-tracker-at-the-right-thing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/protecting-a-haul-in-the-valuables-box.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/pushing-the-cart-without-losing-the-load.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/racing-the-arena-course.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-a-level-before-you-commit.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-a-monster-before-it-strikes.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-a-monster-state.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-a-room-by-its-furniture.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-a-theme-before-you-fill-your-arms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-fences.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-music-and-the-radio.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-readouts-without-looking-away.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-record-the-game-keeps-for-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-run-record-instead-of-guessing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-signs-of-a-level.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-the-wizard-school-rooms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reading-what-a-level-will-hold.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/reviving-someone-under-pressure.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/running-a-level-with-a-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/searching-a-bathroom.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/searching-a-kitchen.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/searching-a-storage-room.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/sending-the-drone-first.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/spending-tokens-without-regretting-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/spending-upgrade-money-sensibly.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/staying-on-the-shopkeepers-good-side.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/taking-the-tutorial-before-a-real-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-head-and-what-it-does.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-machines-that-are-also-traps.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-messages-that-do-not-wait-for-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-monsters-that-hang-on-springs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-monsters-that-search-for-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-monsters-with-a-trick-of-their-own.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-museum-and-what-is-in-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-odds-and-ends-a-level-hides.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-small-monsters-and-their-tricks.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-valuables-that-go-off-by-themselves.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/the-vehicles-in-the-level.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/using-a-staff-without-losing-the-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/using-a-stun-window.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/using-a-vehicle-as-a-weapon-without-wrecking-it.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/using-the-ladder-without-wasting-the-battery.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/using-the-map-instead-of-your-memory.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/valuable-run-routine.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/valuables-you-can-actually-use.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/watching-a-run-after-you-go-down.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/what-a-shot-leaves-behind.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/what-the-game-puts-over-your-view.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/what-the-run-record-is-for.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/articles/when-to-swing-and-when-to-stop.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/collection.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/contact.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/credits.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/disclaimer.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/enemies.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entities/basics.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/behaviour.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/extraction.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/gear.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/hazards.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/index.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/interface.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/maps.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/monsters.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/valuables.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entities/weapons.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entity/absorbingvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/afterlevelgen-d-81.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/aimstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/audioeffectstatevariablefilter.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/audiolistenerfollow.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/audiolowpasslogic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/babyheadvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/barrelvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/batteryvisuallogic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/blendervaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/breathingstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/buildmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/buttonstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cachedupgrade.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cameracrouchnoise.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cameranoise.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cameraposition.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cameratilt.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/camerautils.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/carthovercollider.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cartobject.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/changeleveltype.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/chargingstation.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/chatmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/chatstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/colorstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cosmeticshopmachine.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cosmeticshopmachineanimator.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cosmeticshopmachineconfetti.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/cosmeticworldobjecthealth.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/crystalballvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debugconsoleui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debugenemyinvestigate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debugfps.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debuglevelscompleted.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debugserverui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debugui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/debugvaluablemeshes.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/destructionstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/dirtfindermapenemy.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/dirtfindermapscanlines.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/discordmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/dollarvalueset-d-38.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/doorstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/driftlevelsettings.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/eggstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemy.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyanimal.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyanimalanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyattackstuckphysobject.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybang.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybanganim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybangbomb.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybangdirector.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybangfuse.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybeamer.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybeameranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybirthdayboy.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybombthrower.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybombthroweranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybombthrowerhead.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybowtie.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemybowtieanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyceilingeye.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyceilingeyeanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemychecklist.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemydebuggui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemydirector.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyduck.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyduckanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyelsa.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyelsaanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyfakedebugdummy.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyfloater.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyfloateranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemygnome.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemygnomeanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemygnomedirector.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemygnomestunfly.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemygrounded.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadanimationsystem.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadbottilt.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadcatchcutscene.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadchaseoffset.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadcontroller.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadeye.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadeyeidle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadeyetarget.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadeyetilt.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadeyetremble.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadfloat.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadgrabber.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadgrabberanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadgrabberlocalcamera.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadhair.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadhairlean.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadhairtarget.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadhairtilt.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadlean.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadloop.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadpupil.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadtilt.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadup.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyheadvisual.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhealth.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhearthugger.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhearthuggercuteface.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhearthuggergaschecker.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhidden.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhiddenanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhiddenold.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhunter.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhunteralwaysactive.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyhunteranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyjump.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyjumpsurface.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemynavmeshagent.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyonscreen.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyoogly.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyparent.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemypitcheck.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyplayerdistance.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyplayerroom.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyrigidbody.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyrobe.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyrobeanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyrobepersistent.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyrunner.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyrunneranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemysetup-d-113.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemysetup.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyshadow.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyshadowanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyshadowscreenveineffect.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouth.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouthanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouthattached.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouthattaching.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouthdebug.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouthhiveattack.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowmouthparticlepukecollision.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowwalker.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyslowwalkeranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyspinny.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyspinnyanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyspinnyparticle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatechase.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatechasebegin.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatechaseend.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatechaseslow.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatedespawn.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystateinvestigate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatelookunder.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystateroaming.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatesneak.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatespawn.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemystatestunned.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemythinman.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemythinmananim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemythinmantentacle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytick.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytickanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytickhealaura.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytricycle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytricyclevisuals.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytriggerattack.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytumbler.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytumbleranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemytype.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyupscream.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyupscreamanim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyvaluableexplosion.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyvaluablethrower.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyvaluablethroweranim.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/enemyvision.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/envelopestate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/eventsystem.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/extractionpoint.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/extractionpointtracking-2.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/extractionpointtracking.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/extractionsdonestate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/eyeoverridestate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/filterstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/fireextinguishervaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/flamethrowervaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/floaterattackstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/floatersphereeffectstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/footstepstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/gamemanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/gamestate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/goalui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/grabstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/gumballvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/haului.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/healthui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/hud.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/icesawvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/impactstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/item.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemattributes.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itembattery.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemcartcannon.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemcartcannonmain.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemcartlaser.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemdeactivateduntillevel.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemdrone.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemdronesounds.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemduckbucket.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemequipcube.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemequippable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgrenade.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgrenadeducttaped.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgrenadehuman.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgrenadeshockwave.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgrenadestun.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgun.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgunbullet.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemgunlaser.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemhealthpack.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/iteminfoextraui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/iteminfoui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemladder.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemleafblower.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemlight.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemmelee.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemmine.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemminestun.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemminetrigger.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemorb.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemreviveitem.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemrubberduck.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemsecretshoptype.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemshockwave.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemstafftorque.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemstaffvoid.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemstaffzerogravity.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemstunbaton.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemtoggle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemtracker.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemtype.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemupgrade.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemupgradeplayertumblewingslogic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemvaluablebox.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemvehicle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemvehicleboostpad.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemvolume-2.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemvolume.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemwalkiebox.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/itemwalkietalkie.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/jackhammervaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/laserstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/level.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelambience.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelambiencebreaker.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelgenerator.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelmaterialswitch.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelmusic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelmusicasset.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelmusictrack.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelpoint.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/levelvaluables.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/lookforvaluabletypes.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/mainmenugamemodestate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/mapbacktrack.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/maplayer.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/mapvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/mask.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/menuelementanimations.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/menuelementhover.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/menuplayerlisted.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/menustate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/milkvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/minetype.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/mixereffects.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/moddedstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/moneyvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/museumlasereditorlogic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/museumlaserlogic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/museumlaserstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/museumpropmoneyhead.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/musicalvaluablelogic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/musicenemycatch.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/musicenemynear.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/musicenemysighting.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/musicmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/networkmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/notvaluableobject.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/orbtype.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/overlaystate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/pagestate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/phonevaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/physgrabcart.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/physgrabincart.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playeraccess.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playeravatarmenu.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playeravatartalkanimation.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playerchatboxstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playercollision.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playerhealth.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playerhealthgrab.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/playermaterial.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/postprocessvolume.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/powercrystalvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/progressionmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/punmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/roachorbit.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/rotationstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/runstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/savelevel.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/screamdollvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/sessionmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopcostui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopincreaseui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopkeeper.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopkeeperdetectionsphere.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopkeycarddoor.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopradio.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/shopscreenpage.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/spawnpoint.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/splashscreenui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/spotstate.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/standaloneinputmodule.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-10.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-11.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-12.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-13.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-14.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-15.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-16.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-17.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-18.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-19.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-2.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-20.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-21.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-22.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-23.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-24.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-25.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-26.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-27.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-28.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-29.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-3.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-30.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-31.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-32.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-33.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-34.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-35.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-36.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-37.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-38.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-39.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-4.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-40.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-41.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-42.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-43.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-44.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-45.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-46.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-47.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-48.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-49.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-5.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-50.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-51.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-52.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-53.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-54.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-55.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-56.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-57.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-58.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-59.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-6.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-60.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-61.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-62.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-63.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-64.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-65.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-66.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-67.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-68.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-69.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-7.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-70.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-71.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-72.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-8.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state-9.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/state.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-10.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-11.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-12.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-13.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-14.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-15.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-16.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-2.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-3.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-4.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-5.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-6.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-7.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-8.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states-9.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/states.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/staticgrabobject.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/statsmanager.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/statsui.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/statsupdate-d-82.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/status.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/storedvaluablemesh.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/surplusvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/trafficlightvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/trapactivateraritylevel.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckdoor.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckhealer.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckhealerline.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/trucklandscapescroller.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckmenuanimated.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckscreenopen.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckscreenpage.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/truckscreentext.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/tutorialtrucktrigger.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/tvcartooncontroller.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/upgradeinfo.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/upgradestand.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablearcticsnowbike.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableboombox.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablecamera.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablecar.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablecauldronbox.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablecocktail.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablecubeball.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuabledebug.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuabledirector.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablediscover.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablediscovercustom.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablediscovergraphic.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableegg.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableeyeoforpigox.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableflashlight.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableforevercandle.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablelevitationpotion.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablelovepotion.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableobject.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablepills.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableplane.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablepropswitch.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablescale.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablesmallpotion.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablespiderpotion.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablestarwand.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuableteethbot.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuabletray.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablevolume.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablevolumedebugdisplay.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablewizardstaff.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuablewizardtimeglass.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/value.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/valuescreen.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/vaseexplosiontest.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/voicelogger.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/wizardbroomvaluable.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/worldspaceuiparent.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/worldspaceuivalue.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entity/worldspaceuivaluelost.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/entries/a-vehicle-that-is-wrecked-and-its-box.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/batteries-and-charging.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/carts-grabbing-and-physics.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/choosing-when-to-leave.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/cosmetics-and-the-token-machine.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/drifting-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/driving-a-vehicle-and-staying-upright.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/enemies-and-their-behaviour.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/enemies-that-move-differently.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/extraction-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/gear-you-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/glossary-of-terms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/guns-and-how-they-fire.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/healing-at-the-truck.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/health-and-recovery.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/hitting-things-with-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-level-is-put-together.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-monster-sees-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-monster-takes-damage.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-run-is-scored.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-a-vehicles-body-follows-its-physics.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-many-monsters-a-level-sends.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-many-valuables-a-level-holds.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-monsters-find-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-monsters-jump.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-the-staffs-are-fired.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-upgrades-are-kept-track-of.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/how-your-own-condition-is-shown.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/index.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/items-you-switch-carry-or-unlock.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/keycards-and-the-office.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/leaving-the-ground-in-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/levels-and-the-way-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/melee-weapons.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/mines-traps-and-lasers.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/moving-loot-and-gear.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/protecting-your-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/questions-players-ask.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/reading-a-monster-before-it-reaches-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/reaper.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/running-a-gun-dry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/staying-in-touch-with-the-crew.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/stunning-instead-of-killing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-animal.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-arena-and-its-race.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-baby-head-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-balloon-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-banger.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bar-that-shows-a-charge.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bathrooms-and-their-fittings.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-beamer.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-birthday-boy.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-blender-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-body-every-monster-shares.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bomb-and-its-fuse.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bomb-thrower.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-boombox-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-boosts-a-vehicle-earns.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bowtie-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-box-that-holds-valuables.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-bullet-and-what-it-leaves-behind.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-camera-that-follows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-car-and-the-plane-you-can-carry.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cart-and-its-boost-pads.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cart-as-an-object.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cart-cannon.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cart-laser.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cartoon-television.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-charging-station-and-its-beam.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-cleaning-tools-and-effects.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-drone.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-duck-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-egg-valuable-that-cracks.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-elsa-in-two-sizes.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-elsa.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-exploding-rubber-duck.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-extraction-point-and-its-machinery.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-eye-that-follows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-fences-and-railings.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-floater.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-furniture-a-level-is-fitted-with.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-gnomes-and-the-pickaxe.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-gumball-machine-that-hypnotises.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-heads-eyes-hair-and-teeth.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-heart-hugger.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-hidden.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-hunter.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-kitchens-and-their-fittings.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-ladder.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-leaf-blower.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-lean-a-vehicle-takes-from-its-speed.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-level-themes-and-what-they-hold.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-lights-and-beeps-on-a-vehicle.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-lobby-and-spectating.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-money-head-in-the-museum.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-monster-that-grabs-heads.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-multipliers-a-vehicle-can-be-given.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-museum-and-its-props.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-museums-laser.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-music-of-a-level.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-numbers-that-float-over-things.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-oogly.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-orb.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-peeper.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-player-list-and-what-a-row-shows.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-potions-you-can-find.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-readouts-that-fade-away.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-readouts-you-play-by.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-record-every-monster-is-given.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-revive-item.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-robed-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-rooms-the-wizard-school-signs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-rugrat.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-runner.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-save-and-your-run-record.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-shadow.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-shop-between-runs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-shop-radio.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-shopkeeper-and-what-it-watches.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-signs-that-name-a-station.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-slow-mouth.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-slow-walker.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-snow-bike-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-sounds-a-vehicle-makes.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-sparks-a-vehicle-throws.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-spinny.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-staffs.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-storage-rooms-and-their-fittings.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-thin-man.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-things-that-are-not-loot.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-thrown-grenade.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tick-and-its-mouth.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-token-machines-show.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-traffic-light-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tray-valuable.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tricycle-rider.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tricycle-riders-rig.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-truck-and-the-end-of-a-run.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-truck-screen.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tumble-wings-upgrade.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-tutorial-level.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-upgrade-stand-and-its-roll.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-upgrades-you-find.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-upscream.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-valuable-thrower.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-valuable-tracker.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-valuables-you-can-find.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-walkie-talkie-and-how-it-answers.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/the-wizard-valuables.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/valuables-and-looting.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/valuables-that-are-also-tools.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/valuables-that-fight-back.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/valuables-that-move-glow-or-talk.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/valuables-with-a-behaviour-of-their-own.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/weapons-you-can-bring.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-a-monster-does-when-it-has-not-seen-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-a-monster-is-doing.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-being-grabbed-does-to-your-view.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-being-grabbed-feels-like.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-decides-whether-a-monster-appears.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-happens-when-the-head-catches-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-build-keeps-for-debugging.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-game-draws-when-you-find-something.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-game-records-about-each-monster.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-map-shows-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-record-keeps-about-each-player.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/what-the-shop-puts-out.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/when-a-monster-gives-up.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/when-a-monster-has-you.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/when-a-monster-looks-under-something.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/when-the-chat-box-will-not-open.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/which-version-this-site-documents.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/entries/your-avatar-and-where-it-is-shown.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/enums.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/guide.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/index.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/privacy.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/reference/collection.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/enemies.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/enums.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/index.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/notes/index.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/sources.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/tool.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/reference/values.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/search.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/sources.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/terms.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/tool.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    },
+    {
+      "url": "/tools/index.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/updates.html",
+      "action": "keep",
+      "reason": "player-facing page: a question a player asks"
+    },
+    {
+      "url": "/values.html",
+      "action": "noindex",
+      "reason": "technical reference or duplicate kept reachable but not indexed"
+    }
+  ]
+}

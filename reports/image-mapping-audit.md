@@ -1,0 +1,100 @@
+> **Update 2026-10-22.** This audit is superseded for the 46 entries it lists as diagram-only: all 46 now carry
+> a picture. 10 use a Fandom community image and 36 use a local game asset, with the original SVG kept as the second
+> image. No entry is diagram-only any more. Pictures that are not a literal depiction of the subject are marked
+> `illustrative` and their captions say what they show. See `reports/image-completion-plan.md` for the per-entry map
+> and `reports/image-sources.md` for 0 community files whose exact wiki page is still weak provenance; all 147 community files now have a Fandom file page and uploader.
+# Image mapping audit — repogamedb.com
+
+Why some entries carry a diagram and not a picture from the game.
+
+**Method.** Every texture name in the readable bundles was enumerated with UnityPy
+(`resources.assets` 2,207; `sharedassets0.assets` 306; `sharedassets1.assets` and `sharedassets2.assets` hold no
+Texture2D in this build). Candidate names were searched for each subject a remaining diagram-only entry describes.
+A mapping is only added when the texture **name states the subject** *and* the exported file is opened and shows
+that subject.
+
+## What is mapped
+
+115 records in `content/images-manifest.json`, covering **100 of 142** published entries. Each record carries the
+source bundle, asset name, byte count, dimensions and sha256, and a gate re-checks all four against the file on disk.
+Six mappings have been exported, opened and rejected since this audit was first written; each rejection is recorded in
+`reports/image-reviews.md` with what the sheet actually showed, and that is why the count is 115 and not the 120 an
+earlier version of this report quoted.
+
+## What is not mapped, and why
+
+The **42** diagram-only entries fall into four groups. None of them is a backlog item.
+
+### 1. Nothing in the build depicts the subject — 30 entries
+
+These describe behaviour, rules, records or screens. There is no texture of "how a monster sees you" or of "how a
+run is scored", and the content rules forbid giving an entry a filler picture, so a diagram is the correct tier:
+
+`choosing-when-to-leave`, `drifting-a-vehicle`, `driving-a-vehicle-and-staying-upright`, `glossary-of-terms`,
+`hitting-things-with-a-vehicle`, `how-a-monster-sees-you`, `how-a-monster-takes-damage`, `how-a-run-is-scored`,
+`how-a-vehicles-body-follows-its-physics`, `how-many-monsters-a-level-sends`, `how-many-valuables-a-level-holds`,
+`how-monsters-jump`, `how-your-own-condition-is-shown`, `leaving-the-ground-in-a-vehicle`,
+`questions-players-ask`, `the-body-every-monster-shares`, `the-lobby-and-spectating`, `the-music-of-a-level`,
+`the-numbers-that-float-over-things`, `the-player-list-and-what-a-row-shows`, `the-readouts-that-fade-away`,
+`the-readouts-you-play-by`, `the-record-every-monster-is-given`, `what-a-monster-does-when-it-has-not-seen-you`,
+`what-being-grabbed-does-to-your-view`, `what-decides-whether-a-monster-appears`,
+`what-happens-when-the-head-catches-you`, `what-the-game-draws-when-you-find-something`,
+`what-the-game-records-about-each-monster`, `which-version-this-site-documents`
+
+### 2. The subject is concrete but the texture does not exist — 3 entries
+
+| Entry | Searched for | Result |
+| --- | --- | --- |
+| `the-gnomes-and-the-pickaxe` | `pickaxe` | **0 textures.** A gnome texture exists but is already mapped to `enemies-that-move-differently`; no pickaxe texture exists at all. |
+| `the-bullet-and-what-it-leaves-behind` | `bullet`, `projectile` | **0 textures.** The bullet is an object with behaviour but has no texture of its own in these bundles. |
+| `the-hidden` | `hidden` | No texture; the entry describes a spawn rule rather than an object. |
+
+### 3. A texture exists but it would not read as the subject — 5 entries
+
+A matching name is not enough: the file has to be opened.
+
+| Entry | Texture considered | Why it is not used |
+| --- | --- | --- |
+| `the-box-that-holds-valuables` | `Safe_BaseColor` | The entry describes a **box**; the only container texture is a **safe**. Not the same object. |
+| `the-heads-eyes-hair-and-teeth` | `Hair`, `eyebrows`, `Headman Eye Sockets`, `Teeth Bot - Albedo` | Generic names. Nothing ties `Hair` to the head this entry describes rather than to the player avatar, so the mapping cannot be confirmed. |
+| `what-the-shop-puts-out` | `Shop Cash register` | The entry is about the stock pools the shop chooses from, not the register. |
+| `the-things-that-are-not-loot` | `props_Material_BaseColor`, `shop prop candy shelves_DefaultMaterial_BaseColor` | "Props" is a catch-all sheet; it does not show the class of objects the entry is about. |
+| `the-cart-as-an-object` | `PORTABLE CART_Cart Base.001_BaseColor`, `cart handle_DefaultMaterial_BaseColor` | Both cart textures are **already mapped** to `the-cart-and-its-boost-pads` and `carts-grabbing-and-physics`. Reusing one would put the same picture on three pages. |
+
+### 4. A picture was mapped, opened and rejected — 4 entries
+
+These are the review rejections recorded in `reports/image-reviews.md`: the texture name matched, the file was
+exported, and opening it showed something that is not the subject. The mapping, the file and the manifest record
+were deleted each time, and the entry went back to its diagram.
+
+| Entry | File rejected | What the sheet actually shows |
+| --- | --- | --- |
+| `the-ladder` | `the-ladder-ladder.jpg` | blue-grey metal panels with hazard stripes and dark rectangles. No rail, rung or extending section can be made out, so nothing on it reads as a ladder. |
+| `the-cart-cannon` | `the-cart-cannon-cannon.jpg` | dark angular shards on grey with red panels. Nothing reads as a cannon or a barrel. |
+| `the-orb` | `the-orb-orb.jpg` | a dark brown field with one yellow-and-black chevron panel. There is no sphere on the sheet. |
+| `the-level-themes-and-what-they-hold` | `the-level-themes-and-what-they-hold-arctic.jpg` | building interior surfaces, not the valuable the note claimed. |
+
+A fifth rejection, `Headman Eye Sockets` for `the-heads-eyes-hair-and-teeth`, is the one group 3 above already
+describes: it was opened and found to be a near-blank dark maroon band, and the ledger holds its row.
+
+### Recorded from the other sites
+
+The same rule produced three rejections on supermarketsimulator.wiki: `T_PaperBag_alb` was exported, **opened**, and
+rejected as a near-uniform tan field (stddev 2.5) — every `T_PaperBag_*` texture is a material map, so no picture of
+a bag exists there either; `Toggle_Switch_Off_Frame` is a flat purple disc with no structure of its own; and
+`T_CategorySign_AlbedoTransparency` is the blank plate the category signs are printed on, with no category anywhere
+on it. Each mapping was deleted and each entry kept another picture or its diagram.
+
+### A note on transparent art and JPEG
+
+A JPEG cannot carry alpha. Where a mapped texture has a transparent field, the exported file keeps the colour the
+game stores under that field, which in this build runs from near-black to near-white depending on the sheet. Every
+JPEG mapping was opened as the page receives it, not as a viewer that ignores alpha would show it, and each one
+reads: the review ledger holds the verdict for each record (`reports/image-reviews.md`). The plate colour behind an
+icon sheet is a design question, not a mapping error.
+
+## The rule this audit applies
+
+A mapping is evidence only when the texture name states the subject **and** opening the file shows that subject.
+Where either half fails, the entry keeps its diagram, which its page labels as an original illustration rather than
+a screenshot. **No entry is given a picture to make it look finished.**

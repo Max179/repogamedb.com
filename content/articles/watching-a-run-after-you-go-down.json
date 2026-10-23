@@ -1,0 +1,61 @@
+{
+  "id": "watching-a-run-after-you-go-down",
+  "title": "Watching a run after you go down",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to stay useful in R.E.P.O. once you are spectating rather than playing, using the player list, the voice channel and the extraction readout.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A crew run in progress",
+    "A headset if you want to talk",
+    "The understanding that the crew can still finish without you"
+  ],
+  "steps": [
+    {
+      "do": "Expect to keep watching rather than dropping out of the run.",
+      "because": "the game keeps a flag for a player spectating rather than playing (isSpectate)"
+    },
+    {
+      "do": "Use the menu's player list to see who is still up.",
+      "because": "the menu can list players, and each listed entry has a name and a head of its own (MenuPlayerListed, playerName, playerHead)"
+    },
+    {
+      "do": "Read the connection figure on a row rather than guessing who is lagging.",
+      "because": "a row carries a ping figure as text (pingText)"
+    },
+    {
+      "do": "Watch the crowning on a row, and know it can be forced.",
+      "because": "a row can be crowned on the left and on the right, and a crown can be forced onto it (leftCrown, rightCrown, forceCrown)"
+    },
+    {
+      "do": "Make your own row readable so the crew can find you at a glance.",
+      "because": "a listed name can be drawn bright (brightName)"
+    },
+    {
+      "do": "Keep talking, because voice is part of the same networking the run uses.",
+      "because": "voice comes through the game's networking library with a voice box of its own (VoiceBox, Photon.Voice.Unity)"
+    },
+    {
+      "do": "Watch extraction readiness rather than asking whether it is time to leave.",
+      "because": "readiness is a state with flags and a localised label of its own (ExtractReady, OpenToExtractReady, localizedExtractionReady)"
+    },
+    {
+      "do": "Remember the lobby can keep the kinds of lobby you have saved.",
+      "because": "the game keeps lobby types that have been saved and a lobby menu of its own (LobbyMenu, Lobby, savedLobbyTypes)"
+    }
+  ],
+  "commonMistakes": [
+    "Sitting silent because you are not the one holding the valuables.",
+    "Guessing who is lagging instead of reading the row.",
+    "Missing that the crew is extraction-ready because you were watching the wrong thing.",
+    "Dropping out of the run rather than spectating the rest of it."
+  ],
+  "relatedEntities": [
+    "the-lobby-and-spectating",
+    "the-player-list-and-what-a-row-shows",
+    "staying-in-touch-with-the-crew"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

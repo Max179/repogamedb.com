@@ -1,0 +1,62 @@
+{
+  "id": "valuables-you-can-actually-use",
+  "title": "Valuables you can actually use",
+  "tier": "published",
+  "kind": "article",
+  "target": "Which valuables in R.E.P.O. are devices rather than ornaments, and what each of them does: fuel timers, a blade, talking parts, a glow curve and a duck that explodes.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A crew that knows which of you is holding the device",
+    "A hand free to drop something that starts behaving badly",
+    "A way to reach the extractor without passing the rest of the crew"
+  ],
+  "steps": [
+    {
+      "do": "Expect some of what you pick up to be a device rather than an ornament.",
+      "because": "the game files a flamethrower, an extinguisher, a jackhammer, an ice saw and a barrel as valuables of their own (FlamethrowerValuable, FireExtinguisherValuable, JackhammerValuable, IceSawValuable, BarrelValuable)"
+    },
+    {
+      "do": "Check the fuel before you rely on a device you found.",
+      "because": "the flamethrower and the extinguisher keep a fuel timer, a trigger and a sound for running empty (fuelTimer, triggerMesh, soundFlameEmpty)"
+    },
+    {
+      "do": "Do not stand behind a jackhammer you have started.",
+      "because": "it has start, end and looping sounds with an impact loop, a collider, and particles for dirt and dust (soundStart, soundImpactLoop, dirtParticles, dustParticles)"
+    },
+    {
+      "do": "Treat the ice saw and the barrel as traps as much as loot.",
+      "because": "both are traps with triggered and active states and a timer, and the saw keeps a blade with its own curve and speed and a collider that hurts (trapTriggered, trapActive, triggerOnTimer, bladeCurve, bladeSpeed, hurtCollider)"
+    },
+    {
+      "do": "Listen to a valuable that talks, because talking is what it is doing.",
+      "because": "the teeth bot has two transforms for talking and spring limbs, and the eye valuable has an eye transform with a rotation threshold (ValuableTeethBot, talkTopTransform, ValuableEyeOfOrpigox, rotationThreshold)"
+    },
+    {
+      "do": "Expect a power crystal to light up on a curve of its own.",
+      "because": "it has a centre, a crystal object, a glow curve and a light (PowerCrystalValuable, GlowCurve, CrystalLight)"
+    },
+    {
+      "do": "Read the game's own naming rather than the shape when you are deciding what counts as loot.",
+      "because": "whether an object counts as loot is named by the game rather than decided by how it looks (ValuableObject, NotValuableObject)"
+    },
+    {
+      "do": "Do not squeeze a rubber duck you intend to sell.",
+      "because": "the duck has a quack, a squeak and a loop, and an explosion with a sound heard across the level (ItemRubberDuck, soundQuack, soundSqueak, soundDuckExplosionGlobal)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating a flamethrower or a jackhammer as a plain valuable and finding out what it does in your hands.",
+    "Carrying an ice saw or a barrel without expecting it to go off.",
+    "Deciding what is loot from its shape rather than from what the game calls it.",
+    "Squeezing the duck to hear it quack while the crew is standing around you."
+  ],
+  "relatedEntities": [
+    "valuables-that-are-also-tools",
+    "valuables-that-move-glow-or-talk",
+    "the-wizard-valuables",
+    "the-exploding-rubber-duck"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

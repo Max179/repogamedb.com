@@ -1,0 +1,61 @@
+{
+  "id": "what-a-shot-leaves-behind",
+  "title": "What a shot leaves behind",
+  "tier": "published",
+  "kind": "article",
+  "target": "What a bullet and a grenade actually do in R.E.P.O. after they leave your hands, so the marks on a level can be read for what they are.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A gun with ammunition",
+    "A grenade to throw",
+    "A wall you do not mind marking"
+  ],
+  "steps": [
+    {
+      "do": "Know that a bullet can carry a hurt collider, but need not.",
+      "because": "a bullet can carry a hurt collider and a flag for whether it has one (ItemGunBullet, hasHurtCollider, hurtCollider)"
+    },
+    {
+      "do": "Expect that collider to last only a moment.",
+      "because": "there is a timer on that hurt collider (hurtColliderTimer)"
+    },
+    {
+      "do": "Look at what is left where a shot landed.",
+      "because": "a bullet carries a hit object that it leaves where it lands (hitGameObject)"
+    },
+    {
+      "do": "Know that the mark is cleaned up after a time.",
+      "because": "the hit object has a time before it is destroyed (hitGameObjectDestroyTime)"
+    },
+    {
+      "do": "Expect some shots to carry extra particles.",
+      "because": "a bullet can carry extra particles, with a flag for whether it has them (hasExtraParticles, extraParticles)"
+    },
+    {
+      "do": "Read a grenade by its blink and its ticking rather than by its shape.",
+      "because": "the grenade blinks in a colour of its own and ticks for a set time with a tick sound (ItemGrenade, blinkColor, tickTime, soundTick)"
+    },
+    {
+      "do": "Stand back from the splintering as well as the blast.",
+      "because": "splintering has its own sound and animation curve, and the grenade raises an event when it detonates (soundSplinter, splinterAnimationCurve, onDetonate)"
+    },
+    {
+      "do": "Remember that a grenade can be spawned rather than thrown, and that it can show you its throw.",
+      "because": "it knows whether it was spawned rather than carried and it has a throw line of its own (isSpawnedGrenade, throwLine)"
+    }
+  ],
+  "commonMistakes": [
+    "Assuming every bullet hurts on contact.",
+    "Hunting for a mark that the game has already cleaned up.",
+    "Reading a spawned grenade as one a crewmate threw.",
+    "Standing behind cover that a grenade's splintering can still reach."
+  ],
+  "relatedEntities": [
+    "the-bullet-and-what-it-leaves-behind",
+    "the-thrown-grenade",
+    "guns-and-how-they-fire"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "the-lobby-and-spectating",
+  "title": "The lobby, the player list and getting ready",
+  "category": "Co-op",
+  "summary": "R.E.P.O. gets a crew together in a lobby of its own: the game keeps lobby types, lists the players itself, caps the crew through its networking layer, and has a separate state for watching instead of playing.",
+  "body": [
+    "Before a run there is a lobby, and the game has a menu of its own for it rather than leaving the whole thing to a platform overlay.",
+    "Lobby types are remembered. The game keeps a record of the kinds of lobby that have been saved, which is why a setup can be picked again rather than rebuilt every session.",
+    "The crew is listed by the game. There is a player list the menu can show, and the menu elements carry hover and animation states of their own, so the list is a menu object rather than a line of text.",
+    "Networking carries its own limit. The game uses a networking view of its own and keeps a maximum number of players, so the size of a crew is set by the game rather than by whoever is hosting.",
+    "Voice is carried alongside the written chat. The game includes a voice layer from the networking library it uses and has a voice box component of its own, which is a second way of talking that is not the chat box.",
+    "Being ready is a state rather than a button. Extraction has readiness flags and a localised ready label, so the game knows when the crew is standing in the right place instead of only knowing that something was pressed.",
+    "A player can also be left watching rather than playing: the game keeps a flag for spectating that is separate from being in the run.",
+    "What this entry does not tell you: how many players a crew may hold, what the voice layer does in detail, or what each lobby type changes about a run. We have not verified those, so we do not print them."
+  ],
+  "facts": [
+    {
+      "claim": "The game has a lobby menu and keeps the types of lobby that have been saved.",
+      "evidence": "identifiers: LobbyMenu, Lobby, savedLobbyTypes"
+    },
+    {
+      "claim": "The main menu has a game mode state of its own.",
+      "evidence": "identifier: MainMenuGameModeState"
+    },
+    {
+      "claim": "The menu can list the players, with hover and animation states of their own.",
+      "evidence": "identifiers: MenuPlayerListed, MenuElementHover, MenuElementAnimations"
+    },
+    {
+      "claim": "Networking uses a view of its own and keeps a maximum number of players.",
+      "evidence": "identifiers: PhotonView, maxPlayersPhoton"
+    },
+    {
+      "claim": "Voice comes through the networking library the game uses, and there is a voice box component of its own.",
+      "evidence": "identifiers: VoiceBox, Photon.Voice.Unity"
+    },
+    {
+      "claim": "Extraction readiness is a state with flags of its own and a localised label.",
+      "evidence": "identifiers: ExtractReady, OpenToExtractReady, localizedExtractionReady"
+    },
+    {
+      "claim": "There is a flag for a player spectating rather than playing.",
+      "evidence": "identifier: isSpectate"
+    },
+    {
+      "claim": "The lobby has its own camera menu and buttons for stepping to the next and the previous player being watched, and it ships lobbies of its own such as a forest one.",
+      "evidence": "asset names: CameraLobbyMenu, Big Button Spectate Next, Big Button Spectate Previous, Lobby Forest"
+    },
+    {
+      "claim": "The lobby is a scene of its own, with a forest, a landscape, a ditch, a road, a wooden barrier and signs for a closed road and for no stopping.",
+      "evidence": "asset names: Lobby - Forest, Lobby Landscape, Lobby Ditch, Lobby Road, Lobby Wooden Barrier, Lobby Sign - Closed Road, Lobby Sign - No stopping"
+    },
+    {
+      "claim": "Those two signs are drawn from sheets of their own, one for the closed road and one for no stopping.",
+      "evidence": "asset names: Sign_Closed Road_Albedo, Sign_No stopping_Albedo"
+    }
+  ],
+  "related": [
+    "staying-in-touch-with-the-crew",
+    "extraction-run"
+  ],
+  "images": [
+    {
+      "file": "mapped/the-lobby-and-spectating-closed-road-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The lobby's closed-road sign: a weathered orange board lettered Avstangd vag.",
+        "zh": "大厅里的封路标牌：风化的橙色牌面，写着 Avstangd vag。"
+      }
+    },
+    {
+      "file": "mapped/the-lobby-and-spectating-no-stopping-sign.png",
+      "kind": "game",
+      "alt": {
+        "en": "The lobby's no-stopping sign: a yellow board with a blue oval crossed through in red.",
+        "zh": "大厅里的禁止停车标牌：黄色牌面，蓝色椭圆被红色斜线划掉。"
+      }
+    },
+    {
+      "file": "the-lobby-and-spectating.svg",
+      "kind": "diagram",
+      "alt": {
+        "en": "Diagram: a lobby is opened, the players are listed, the run starts, and a player who is out watches the others.",
+        "zh": "示意图：开房、列出玩家、开始对局、出局玩家观看其他人。"
+      },
+      "disclaimer": "Original diagram drawn for this site. It is not a screenshot of the game."
+    }
+  ],
+  "sources": [
+    "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
+  ],
+  "imageTier": "game-image"
+}

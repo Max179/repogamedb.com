@@ -1,0 +1,61 @@
+{
+  "id": "getting-a-valuable-to-the-extraction-point",
+  "title": "Getting a valuable to the extraction point",
+  "tier": "published",
+  "kind": "article",
+  "target": "How a haul in R.E.P.O. is actually finished: the extraction point is a machine with a tube, a grabbed button and its own screens, and going over the haul goal is a state of its own.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A valuable in hand or on the way",
+    "A crew that will not stand in the machine's path",
+    "Someone watching the truck screen while the haul runs"
+  ],
+  "steps": [
+    {
+      "do": "Treat the extraction point as a machine you operate rather than a doorway you stand in.",
+      "because": "the extraction point has an area, a tube, and a station and button of its own (ExtractionPoint, extractionArea, extractionTube, shopStation, shopButton)"
+    },
+    {
+      "do": "Watch the tube, because the haul is staged rather than instant.",
+      "because": "the tube builds up, slams down and retracts, each with its own sound, and the slam has a version played for everyone (tubeSlamDown, soundTubeRaise, soundTubeSlam, soundTubeRetract, soundTubeSlamGlobal)"
+    },
+    {
+      "do": "Grab the button to start a haul instead of pressing it.",
+      "because": "the button is a grabbed object with on and off states, a deny material and its own press curve (buttonGrabObject, button, buttonOff, buttonDenyMaterial, buttonPressAnimationCurve)"
+    },
+    {
+      "do": "Read the machine's own lines rather than guessing its state from the lights.",
+      "because": "it prints separate lines for extracting, ready, active, locked, completed and a tax return (localizedExtractionExtracting, localizedExtractionReady, localizedExtractionActive, localizedExtractionLocked, localizedExtractionCompleted, localizedExtractionTaxReturn)"
+    },
+    {
+      "do": "Fill the haul to its goal, and keep going if you can, because going over is a state of its own.",
+      "because": "it holds a haul goal and a surplus state with its own start, increase and deduction sounds (haulGoal, surplusStateStart, surplusStateIncreaseLoop, surplusDeductionStart, surplusDeductionEnd)"
+    },
+    {
+      "do": "Keep clear of the machine while it is taking a load.",
+      "because": "it carries a safety spawn, a room volume and hurt colliders of its own (safetySpawn, roomVolume, hurtColliders, hurtColliderMain)"
+    },
+    {
+      "do": "Read the truck screen while the haul is being worked on.",
+      "because": "a message on the truck screen has a screen type, a loading bar and a result bar with a light of its own (screenType, chatMessageLoadingBar, chatMessageResultBar, chatMessageResultBarLight)"
+    },
+    {
+      "do": "Learn the families of valuables, because a level chooses what it holds.",
+      "because": "a level records the valuables it prefers and sorts them by size kinds running from tiny to very tall (LevelValuables, ValuablePresets, veryTall)"
+    }
+  ],
+  "commonMistakes": [
+    "Standing in the tube's path while the machine is working.",
+    "Pressing the button instead of grabbing it.",
+    "Reading the lights and missing the line the machine is printing at you.",
+    "Stopping the moment the haul goal is met, when going over is a state of its own."
+  ],
+  "relatedEntities": [
+    "the-extraction-point-and-its-machinery",
+    "the-truck-screen",
+    "the-valuables-you-can-find"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "the-museum-and-what-is-in-it",
+  "title": "The museum and what is in it",
+  "tier": "published",
+  "kind": "article",
+  "target": "What the museum level in R.E.P.O. brings with it — its own artwork, a prop defined by the game, and a head that opens, lights up and goes red.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A run heading into the museum",
+    "A keycard if the office is locked",
+    "A crew that will not stand next to the head"
+  ],
+  "steps": [
+    {
+      "do": "Expect the museum to be a theme with artwork of its own rather than a generic hall.",
+      "because": "the game ships separate level artwork per theme, with the museum among them (level museum 01)"
+    },
+    {
+      "do": "Treat the props in it as things the game defines rather than as scenery.",
+      "because": "the game defines its own museum props rather than only scenery (MuseumPropMoneyHead)"
+    },
+    {
+      "do": "Watch the head, because it opens and closes rather than sitting still.",
+      "because": "it is a head that opens and closes, with a top half, a bottom half and a mesh transform of its own, and a sound for each (headTransform, headTopTransform, headBottomTransform, headTopMeshTransform, soundOpen, soundClose)"
+    },
+    {
+      "do": "Expect the opening to be staged.",
+      "because": "opening it has an animation curve and a second curve for its lights, with open particles and a spot light (animationCurve, animationCurveLights, particlesOpen, spotLight)"
+    },
+    {
+      "do": "Read the eyes, because they go red with a sound and a cooldown of their own.",
+      "because": "its eyes have a red state with its own sound, a cooldown curve and a colour used while cooling (evilEyes, soundRedEyes, animationCurveEyesCoolDown, colorCooldown, fireEyes)"
+    },
+    {
+      "do": "Notice the room going quiet while the prop is active.",
+      "because": "it carries a low-pass filter for the walls, so the room is muffled while the prop is active (lowPassWall)"
+    },
+    {
+      "do": "Know that a cosmetic out in the world carries a condition of its own.",
+      "because": "cosmetic objects have a condition tracked in the game (CosmeticWorldObjectHealth)"
+    },
+    {
+      "do": "Check the office door before assuming the level is closed to you.",
+      "because": "the office door is a keycard door kept in a locked and an unlocked state (ShopKeycardDoor, shop office keycard_LOCKED, shop office keycard_UNLOCKED)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating the museum's props as decoration and walking into them.",
+    "Standing beside the head while it opens.",
+    "Missing the room going quiet as a sign that the prop is active.",
+    "Assuming the office is out of reach without checking the keycard door."
+  ],
+  "relatedEntities": [
+    "the-museum-and-its-props",
+    "the-money-head-in-the-museum",
+    "keycards-and-the-office"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

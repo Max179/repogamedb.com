@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" width="980" height="260" role="img" aria-label="The boosts a vehicle earns">
+  <rect width="980" height="260" fill="#12141a"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#8ecbff"/></marker></defs>
+  <rect x="20" y="50" width="200" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="82" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">the ground</text>
+  <text x="38" y="110" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">A slope in the window pays</text>
+  <rect x="255" y="50" width="200" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="273" y="82" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">the slide</text>
+  <text x="273" y="110" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Holding it banks a boost</text>
+  <rect x="490" y="50" width="200" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="508" y="82" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">three levels</text>
+  <text x="508" y="110" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Each has its own push</text>
+  <rect x="725" y="50" width="200" height="86" rx="12" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="743" y="82" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">shown</text>
+  <text x="743" y="110" fill="#e8e8e8" font-family="system-ui,sans-serif" font-size="15">Particles and a brighter light</text>
+  <g stroke="#8ecbff" stroke-width="2"><path d="M220 93 H247" marker-end="url(#ar)"/><path d="M455 93 H482" marker-end="url(#ar)"/><path d="M690 93 H717" marker-end="url(#ar)"/></g>
+  <rect x="20" y="160" width="200" height="46" rx="10" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="38" y="188" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">Too slow: nothing</text>
+  <rect x="255" y="160" width="200" height="46" rx="10" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="273" y="188" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">Too flat: nothing</text>
+  <rect x="490" y="160" width="200" height="46" rx="10" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="508" y="188" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">Turn: speed is redirected</text>
+  <rect x="725" y="160" width="200" height="46" rx="10" fill="#1b1f27" stroke="#2a2f3a"/>
+  <text x="743" y="188" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="13">Duration ends it</text>
+  <text x="20" y="238" fill="#9aa3b2" font-family="system-ui,sans-serif" font-size="12">Original diagram drawn for this site - not a screenshot. Numbers we could not verify are not shown.</text>
+</svg>

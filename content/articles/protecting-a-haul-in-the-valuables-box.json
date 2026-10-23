@@ -1,0 +1,61 @@
+{
+  "id": "protecting-a-haul-in-the-valuables-box",
+  "title": "Protecting a haul in the valuables box",
+  "tier": "published",
+  "kind": "article",
+  "target": "How to use the valuables box in R.E.P.O. as protection rather than as another thing to carry, while monsters whose job is to attack loot are around.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "A valuables box",
+    "Valuables worth protecting",
+    "A level with monsters that go for loot"
+  ],
+  "steps": [
+    {
+      "do": "Start from what the level actually contains rather than from what you found.",
+      "because": "the level decides which valuables are present to protect (LevelValuables)"
+    },
+    {
+      "do": "Assume something in the level is aimed at your loot, not at you.",
+      "because": "a monster exists whose job is to throw something at valuables (EnemyValuableThrower)"
+    },
+    {
+      "do": "Separate the explosive thrower from the loot thrower in your head.",
+      "because": "another monster throws explosives at the crew rather than at the valuables (EnemyBombThrower, EnemyBombThrowerHead)"
+    },
+    {
+      "do": "Use the fixed grab points as anchors when you are moving a haul.",
+      "because": "objects that can be grabbed but do not move exist in the level (StaticGrabObject)"
+    },
+    {
+      "do": "Put the haul in the box built to hold valuables rather than piling it loose.",
+      "because": "the box has a part that checks what is inside it and a point where valuables are placed (ItemValuableBox, boxChecker, PhysGrabObjectComponentInsideBoxChecker, insidePoint)"
+    },
+    {
+      "do": "Know the box has a limit before you count on it.",
+      "because": "the box carries a value limit (valueLimit)"
+    },
+    {
+      "do": "Open and close it deliberately rather than leaving it open.",
+      "because": "it opens and closes with curves of its own, a duration and a sound for each (animationCurveOpen, animationCurveClose, animationDuration, soundOpen, soundClose)"
+    },
+    {
+      "do": "Read the box's own screen rather than guessing what is inside.",
+      "because": "it answers on a text screen with an animator that moves through a starting, a middle and an ending position (textScreen, textScreenAnimatorTransform, textScreenStartPosition, textScreenMidPosition, textScreenEndPosition)"
+    }
+  ],
+  "commonMistakes": [
+    "Treating the loot thrower and the bomb thrower as the same threat.",
+    "Leaving valuables loose beside a fixed grab point instead of in the box.",
+    "Filling the box past what it will hold and expecting the rest to be protected.",
+    "Reading your own memory instead of the box's screen."
+  ],
+  "relatedEntities": [
+    "the-box-that-holds-valuables",
+    "protecting-your-loot",
+    "the-valuable-thrower"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}
