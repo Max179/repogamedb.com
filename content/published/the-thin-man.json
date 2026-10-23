@@ -57,12 +57,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-thin-man-texture.jpg",
-      "kind": "game",
+      "file": "fandom/trudge.png",
+      "kind": "community",
       "alt": {
-        "en": "The game's own face sheet for the thin man, showing two faces: one with bright eyes and an open mouth, one blank.",
-        "zh": "游戏自带的薄人面孔贴图，含两张脸：一张亮眼张口，一张空白。"
-      }
+        "en": "Community picture of the Trudge, the tall monster with reaching tentacles, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of the Trudge, the tall monster with reaching tentacles, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-thin-man.svg",
@@ -77,5 +78,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

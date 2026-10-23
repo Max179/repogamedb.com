@@ -83,12 +83,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-shopkeeper-texture.jpg",
-      "kind": "game",
+      "file": "fandom/shopkeeper.jpg",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the shopkeeper, with its panels, vents and thruster parts.",
-        "zh": "游戏为店主机器人提供的颜色贴图，可见面板、通风口与推进部件。"
-      }
+        "en": "Community picture of the Shopkeeper machine in the service station, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of the Shopkeeper machine in the service station, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-shopkeeper-and-what-it-watches.svg",
@@ -103,5 +104,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

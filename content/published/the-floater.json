@@ -68,12 +68,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-floater-texture.jpg",
-      "kind": "game",
+      "file": "fandom/mentalist.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the floater, showing its pale body and the pink tissue over it.",
-        "zh": "游戏为漂浮怪提供的颜色贴图，可见其苍白身体与覆盖其上的粉色组织。"
-      }
+        "en": "Community picture of the Mentalist, the floating monster with spring-driven arms and legs, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of the Mentalist, the floating monster with spring-driven arms and legs, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-floater.svg",
@@ -88,5 +89,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

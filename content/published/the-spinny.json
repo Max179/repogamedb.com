@@ -84,16 +84,17 @@
   ],
   "images": [
     {
-      "file": "mapped/the-spinny-texture.jpg",
-      "kind": "game",
+      "file": "fandom/gambit.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the spinny monster.",
-        "zh": "游戏为该怪物提供的颜色贴图。"
-      }
+        "en": "Community picture of Gambit, the monster built around a spinning wheel, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of Gambit, the monster built around a spinning wheel, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     }
   ],
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

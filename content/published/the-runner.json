@@ -44,12 +44,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-runner-texture.jpg",
-      "kind": "game",
+      "file": "fandom/huntsman.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the runner monster.",
-        "zh": "游戏为奔跑怪提供的颜色贴图。"
-      }
+        "en": "Community picture of the Huntsman, the runner that bursts into hay when it is hit, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of the Huntsman, the runner that bursts into hay when it is hit, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-runner.svg",
@@ -64,5 +65,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

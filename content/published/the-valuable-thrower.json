@@ -55,12 +55,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-valuable-thrower-texture.jpg",
-      "kind": "game",
+      "file": "fandom/rugrat.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the monster that throws valuables.",
-        "zh": "游戏为投掷珍贵物的怪物提供的颜色贴图。"
-      }
+        "en": "Community picture of the Rugrat, the monster that picks up and throws valuables, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of the Rugrat, the monster that picks up and throws valuables, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-valuable-thrower.svg",
@@ -75,5 +76,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }

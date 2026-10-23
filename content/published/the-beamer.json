@@ -72,20 +72,13 @@
   ],
   "images": [
     {
-      "file": "mapped/the-beamer-texture.jpg",
-      "kind": "game",
+      "file": "fandom/beamer-clown.png",
+      "kind": "community",
       "alt": {
-        "en": "The colour texture the game ships for the beamer monster.",
-        "zh": "游戏为激光怪提供的颜色贴图。"
-      }
-    },
-    {
-      "file": "mapped/the-beamer-smoke.png",
-      "kind": "game",
-      "alt": {
-        "en": "The soft smoke puff the game's beamer gives off, drawn from a particle sheet of its own.",
-        "zh": "游戏为激光怪自带的一张粒子贴图：一团柔和的烟。"
-      }
+        "en": "Community picture of the Clown monster that fires the beamer laser, from the R.E.P.O. Fandom wiki.",
+        "zh": "Community picture of the Clown monster that fires the beamer laser, from the R.E.P.O. Fandom wiki."
+      },
+      "disclaimer": "Community picture from the R.E.P.O. Fandom wiki, licensed CC-BY-SA 4.0. Not a screenshot taken by this site."
     },
     {
       "file": "the-beamer.svg",
@@ -100,5 +93,5 @@
   "sources": [
     "A local copy of the game, read only. The grounding for each fact is listed on the technical reference pages; nothing here is estimated."
   ],
-  "imageTier": "game-image"
+  "imageTier": "community-image"
 }
