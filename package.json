@@ -13,7 +13,7 @@
     "preflight": "node tools/preflight.mjs",
     "smoke": "node tools/smoke.mjs",
     "status": "node pipeline/status.mjs",
-    "verify": "npm test && npm run typecheck && npm run gates && npm run preflight"
+    "verify": "npm test && npm run typecheck && npm run preflight"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

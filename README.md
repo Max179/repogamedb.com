@@ -41,7 +41,7 @@ is `node tools/preview.mjs` (port 4187 by default, override with `PORT`).
 | `npm run smoke` | Check the built artefact in `web/dist` against the classified URL list (`config/urls.json`). With a URL argument (`npm run smoke -- https://repogamedb.com`) it checks the live site instead. |
 | `npm run status` | Recompute `reports/status.json` from a fresh temp build plus git. |
 | `npm run typecheck` | `tsc --noEmit -p tsconfig.ci.json` — checks `.mjs` and the `.ts` pipeline. |
-| `npm run verify` | `npm test && npm run typecheck && npm run gates && npm run preflight` — the full local gate chain. It expects a clean tree, so run it after committing, or accept the preflight clean-tree failure. |
+| `npm run verify` | `npm test && npm run typecheck && npm run preflight` — the full local gate chain. It expects a clean tree, so run it after committing. Preflight runs both gates in no-write mode, so the tree stays clean. |
 
 Typecheck (TypeScript is a devDependency; covers `.mjs` and `.ts`):
 
