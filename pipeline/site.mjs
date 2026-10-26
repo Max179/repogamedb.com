@@ -187,7 +187,7 @@ export function build(inventoryPath, outDir) {
     '<p class="dim">A diagram is always labelled as a diagram. A number we could not verify is not printed.</p>\n' +
     '<p class="dim"><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · ' +
     '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/credits.html">Image credits</a> · <a href="/reference/">Technical reference</a></p>\n' +
-    '</div></footer>\n</body>\n</html>\n';
+    '</div></footer>\n<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{\\"token\\":\\"f292fd509ecf420b8a323f36c2f815a2\\"}"></script>\n</body>\n</html>\n';
   };
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
   const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + publicPath('/' + rel)); };
@@ -504,8 +504,8 @@ export function build(inventoryPath, outDir) {
   indexable('disclaimer.html', 'Disclaimer', 'No affiliation; game images are used only to identify items.',
     '<h1>Disclaimer</h1><p>Not affiliated with, endorsed by, or sponsored by the game\'s developer or publisher. Game names and marks belong to their owners.</p>' +
     '<p>Some images are taken from the game to identify the item they belong to; those images remain the property of the developer. Some pictures are community images from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0 and are credited on the entry and on the <a href="/credits.html">image credits</a> page. Diagrams drawn for this site are labelled as diagrams and are not screenshots. Community pictures are used to identify a subject, not to claim the game\'s artwork as this site\'s own.</p>');
-  indexable('privacy.html', 'Privacy', 'No cookies, no tracking, no third-party requests.',
-    '<h1>Privacy</h1><p>This static build sets no cookies, runs no analytics and makes no third-party requests. The search and lookup tools run entirely in your browser over data embedded in the page or fetched from this site.</p>');
+  indexable('privacy.html', 'Privacy', 'How this site handles data: no cookies, cookieless aggregate analytics.',
+    '<h1>Privacy</h1><p>This static build sets no cookies. It loads Cloudflare Web Analytics, a cookieless aggregate measurement script, and makes no other third-party requests. The search and lookup tools run entirely in your browser over data embedded in the page or fetched from this site.</p>');
   indexable('terms.html', 'Terms', 'Use of this site.',
     '<h1>Terms</h1><p>Provided as-is for personal reference. Data may change as the game patches; each build records the version it was read from.</p>');
 
