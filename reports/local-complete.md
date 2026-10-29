@@ -677,3 +677,23 @@ git status --porcelain              -> 空
 - manifest 328 → 178 条（game 181→31，community 147 不变）；image-coverage unusedGameLibrary 150→0，并新增「unused game image 即失败」门禁。
 - dist 44M → 36M，content/assets 13M → 3.2M；image-sanity 178 条 / 12 flagged；tests 78、preflight 14/14。
 
+## 2026-10-30 macOS 集成复核（Mac Harness，repo-dev）
+
+- 环境：macOS 26.5.1（arm64），Node v22.23.2，npm 10.9.8；构建/测试/门禁不需要游戏 raw，也不需要网络。
+- 同步：本地 main 原与 origin/main 分叉 —— 本地 37d68d5 与远端 a2b452e 是**同一补丁**（docs: record analytics, www and GSC status）；已用 `git rebase origin/main` 丢弃重复提交（"skipped previously applied commit 37d68d5"），只保留远端 a2b452e；工作区里 supervisor 改写的 `HARNESS-NEXT-ACTION.md` 单独提交，不丢历史。
+- 门禁实测（命令 → 结果 → exit code）：
+  - `node pipeline/site.mjs` → `[site] pages=782 indexable=284 schema(noindex)=492 out=web/dist` → **0**（782 = 777 个 HTML + sitemap.xml/robots.txt/style.css/favicon.svg/brand.svg）
+  - `node tests/site.test.mjs` → `[site-tests] 79 passed, 0 failed` → **0**
+  - `npm run typecheck` → `tsc --noEmit -p tsconfig.ci.json` 无输出 → **0**
+  - `npm run gates` → content-gate **172 entries / 0 violations**；image-coverage **172/172 有图、178 records、0 problems** → **0**
+  - `npm run status` → 重新生成 `reports/status.json`（head/commits、pages=782、indexable=284、noindex=498、classes=478、fields=19505、valueLayer=77）→ **0**
+  - `npm run preflight` → `[preflight] 14 ok, 0 failed` → **0**
+  - `npm run smoke` → `284 kept, 492 noindex`，artefact 通过 → **0**
+- 独立审计（另写脚本遍历 `web/dist` 777 个 HTML，不依赖仓库断言）：sitemap 284 = keep 284（0 缺、0 多）；**0 条断内链**；**0 组重复 title/description**；title 最长 60、description 最长 160；全部 indexable 页有 viewport、hreflang en/x-default、合法 JSON-LD、单一 h1、`robots: index, follow`；0 个 TODO/placeholder 页；0 个 >1 MiB 页；0 张外链图片；第三方请求只有 cookieless Cloudflare beacon（与 privacy 页描述一致）。
+- 图片：manifest **178 条 = 31 game + 147 community（147 exact / 0 weak）**，全部 CC-BY-SA 4.0 带来源页/作者/日期；12 条 flagged 均有 ledger verdict；172 个词条主图 = 172 个不同文件、0 重复组。
+- 覆盖矩阵：21 列，20 列有已发布词条；`combos` 记录为 ABSENT（draft，不填充猜测）。
+- 线上复核（只读）：sitemap **284**，与本地 URL 集合完全一致（0 only-live / 0 only-local）；live smoke **284/284**；13 个采样页与本地 dist 的 title/canonical/robots/hreflang/JSON-LD/OG/Twitter 全部一致；www 200、http→https 301、未知路径 404 + noindex；GitHub Actions run **40275998887**（a2b452e）gate + deploy 均 success → 线上即最新已部署提交（a2b452e 相对 4b8781d 只有 docs）。
+- 本轮修正（全部是报告/生成物，**未改站点代码、内容或数据**）：`reports/coverage-report.md` 由过期的 167 重新生成为 172；`reports/status.json` 由过期 head `a9e39fa`/643 commits 重新生成；live-verification / seo-audit / publish-plan 的过期陈述加 2026-10-30 更正；新增 `reports/revival-2026-10-30.md`。
+- 剩余阻塞：本轮提交尚未 push/deploy（由 Lead 执行）；`/contact` 页没有任何可联系渠道（全站 0 个 mailto/表单，README 却写"用站上的联系地址"）——AdSense 审核前需 owner 提供邮箱或公开 issue 链接；sitemap `lastmod` 目前取构建日（每次部署 284 条全部标记为已修改）；GSC/Bing/IndexNow 需 owner 账号；数据层重新提取仍需 Windows 游戏文件（见 `docs/data-pipeline.md` 的边界记录）。
+
+
