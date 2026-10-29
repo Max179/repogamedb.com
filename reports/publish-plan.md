@@ -2,6 +2,12 @@
 
 ## Status: published
 
+> **Addendum 2026-10-30.** This plan records the 2026-10-23 launch. Current state: latest deployed commit is
+> **a2b452e** (workflow **40275998887**, gate + deploy success); the site has been redeployed several times since launch
+> (canonical clean URLs, valid sitemap + title caps, IndexNow key, analytics + www support, docs). The "www is not
+> attached" note below is **outdated** — www.repogamedb.com is attached and answers 200 since 2026-10-26. The current
+> verification state and remaining operational tasks are in `reports/live-verification.md`.
+
 The site is live on the custom domain and the Cloudflare Pages project.
 
 - Main commit: **2ef1f43** (merge of the completed branch onto main)

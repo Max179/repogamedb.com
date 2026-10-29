@@ -13,7 +13,7 @@
 
 - **0 titles exceed 60 characters**; the site suffix is omitted when it would push the title past 60.
 - **18 titles are under 30 characters**; short but not invalid; they are mostly short entity names.
-- **9 descriptions are under 70 characters**; utility pages, still unique and non-empty.
+- **8 descriptions are under 70 characters** (re-measured 2026-10-30; the 2026-10-26 privacy re-wording moved one above 70); utility pages, still unique and non-empty.
 - Titles and descriptions remain unique.
 
 ## Operational SEO not done here
@@ -32,3 +32,17 @@ These need the site owner's accounts and ongoing cadence, not a code change:
 - node tools/preflight.mjs → 14/14.
 - GSC sitemap row: 284 discovered / 0 errors, status success.
 - Live verification after deploy: reports/live-verification.md.
+
+## Re-measured 2026-10-30 (macOS gate pass)
+
+Independent recount over the 284 classified keep pages in `web/dist` (no site code changed):
+
+- titles: **284 unique**, max **60** chars, **18** under 30 chars — unchanged.
+- descriptions: **284 unique**, max **160** chars, **8** under 70 chars (was recorded as 9 on 2026-10-23; the 2026-10-26
+  analytics/privacy re-wording lengthened one description past 70).
+- every keep page: one `<h1>`, `robots: index, follow`, a canonical equal to its sitemap URL, `hreflang en` +
+  `x-default`, valid JSON-LD, Open Graph and Twitter card.
+- sitemap: 284 URLs = classified keep set exactly; 492 noindex pages stay out; 0 internal links broken across 777 HTML pages.
+
+SEO item 3 in the operational list above is now **done** (Cloudflare Web Analytics beacon, cookieless) — see
+`reports/analytics-setup.md` and `reports/live-verification.md`.
