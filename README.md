@@ -40,6 +40,7 @@ is `node tools/preview.mjs` (port 4187 by default, override with `PORT`).
 | `npm run preflight` | Publish checklist: runs the tests, requires a clean working tree, re-runs both gates, checks `reports/status.json`, the handoff report, the workflow, the untracked raw/build boundaries and the coverage floor. |
 | `npm run smoke` | Check the built artefact in `web/dist` against the classified URL list (`config/urls.json`). With a URL argument (`npm run smoke -- https://repogamedb.com`) it checks the live site instead. |
 | `npm run status` | Recompute `reports/status.json` from a fresh temp build plus git. |
+| `node tools/content-dates.mjs` | Re-derive `content/dates.json` (the sitemap `<lastmod>` dates) from the content files' git history. Run it after editing content, then commit the file; the build never calls git. |
 | `npm run typecheck` | `tsc --noEmit -p tsconfig.ci.json` — checks `.mjs` and the `.ts` pipeline. |
 | `npm run verify` | `npm test && npm run typecheck && npm run preflight` — the full local gate chain. It expects a clean tree, so run it after committing. Preflight runs both gates in no-write mode, so the tree stays clean. |
 
