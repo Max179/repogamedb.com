@@ -42,6 +42,11 @@ export const metaDescription = (s) => {
   return (at > 120 ? cut.slice(0, at) : cut).replace(/[.,;:!?\u2014-]+$/, '') + '\u2026';
 };
 
+/** Internal addresses use the same clean form as canonical/og:url/sitemap: Cloudflare Pages 308s the .html form. */
+export const cleanInternalLinks = (html) => html
+  .replace(/(href|action)="\/index\.html(?=([#?"]))/g, '$1="/')
+  .replace(/(href|action)="(\/[^"]*?)\.html(?=([#?"]))/g, '$1="$2');
+
 /** Pure, fixture-tested: field search across the inventory. */
 export function lookupFields(inventory, query, limit = 50) {
   if (typeof query !== 'string') throw new TypeError('query must be a string');
@@ -67,6 +72,14 @@ export const NAV = [
   ['/tools/', 'Tools'],
   ['/updates.html', 'Updates'],
 ];
+
+/** Short labels for the breadcrumb trail of single-level pages; the layered pages pass their own trail. */
+export const BREADCRUMB_LABELS = {
+  '/about.html': 'About', '/contact.html': 'Contact', '/privacy.html': 'Privacy', '/terms.html': 'Terms',
+  '/disclaimer.html': 'Disclaimer', '/credits.html': 'Image credits', '/guide.html': 'Game guide',
+  '/tools/index.html': 'Tools', '/updates.html': 'Updates', '/search.html': 'Search',
+  '/entries/index.html': 'Start here', '/entities/index.html': 'Entities', '/articles/index.html': 'Guides',
+};
 
 /** Evidence layer: reachable from the footer and /reference/ only, never indexed. */
 export const REFERENCE_PATHS = new Set(['/collection.html', '/enemies.html', '/enums.html', '/values.html', '/tool.html', '/sources.html', '/reference/']);
@@ -101,11 +114,11 @@ export function buildSearchIndex(entries, articles = []) {
     const pictured = e.imageTier === 'game-image' || e.imageTier === 'community-image';
     const body = [e.summary, ...(e.body ?? []).slice(0, 4)].join(' ');
     const extra = (e.facts ?? []).map((f) => f.claim).join(' ');
-    items.push({ t: e.title, u: pictured ? '/entries/' + e.id + '.html' : '/reference/notes/' + e.id + '.html', k: groupOf(e.category).name, c: e.category, s: compact(body + ' ' + extra) });
+    items.push({ t: e.title, u: publicPath(pictured ? '/entries/' + e.id + '.html' : '/reference/notes/' + e.id + '.html'), k: groupOf(e.category).name, c: e.category, s: compact(body + ' ' + extra) });
   }
   for (const a of articles) {
     const body = [a.target, ...(a.steps ?? []).map((s) => s.do ?? '')].join(' ');
-    items.push({ t: a.title, u: '/articles/' + a.id + '.html', k: 'Guides', c: 'Guides', s: compact(body) });
+    items.push({ t: a.title, u: publicPath('/articles/' + a.id + '.html'), k: 'Guides', c: 'Guides', s: compact(body) });
   }
   for (const [t, u, k, s] of [
     ['Start here: R.E.P.O. guide', '/guide.html', 'Pages', 'Scout, carry, extract; routes, crew roles and gear choices.'],
@@ -113,7 +126,7 @@ export function buildSearchIndex(entries, articles = []) {
     ['Image credits', '/credits.html', 'Pages', 'Sources, authors, uploaders and licences for community pictures.'],
     ['About this wiki', '/about.html', 'Pages', 'Independent player reference built from the game files.'],
     ['Contact and corrections', '/contact.html', 'Pages', 'Report a wrong field or missing picture.'],
-  ]) items.push({ t, u, k, c: k, s });
+  ]) items.push({ t, u: publicPath(u), k, c: k, s });
   return items;
 }
 
@@ -123,6 +136,11 @@ export function build(inventoryPath, outDir) {
   let manifest = { records: [] };
   try { manifest = JSON.parse(readFileSync(join(process.cwd(), 'content', 'images-manifest.json'), 'utf8')); } catch { /* none yet */ }
   const manifestByFile = new Map((manifest.records ?? []).map((r) => [r.file, r]));
+  // Truthful sitemap dates, written by tools/content-dates.mjs from the content's git history. A page with no dated
+  // source has no entry here and therefore no <lastmod> at all — never the build date.
+  let contentDates = {};
+  try { contentDates = JSON.parse(readFileSync(join(process.cwd(), 'content', 'dates.json'), 'utf8')).pages ?? {}; } catch { /* no dates file: omit every lastmod */ }
+  let publishedDates = {};
   const imageRecord = (img) => manifestByFile.get(img.file) ?? null;
   const safeUrl = (u) => (/^https?:\/\//i.test(String(u ?? '')) ? String(u) : '');
   /** Caption for any entry/category picture, derived from the manifest record rather than assumed. */
@@ -153,25 +171,38 @@ export function build(inventoryPath, outDir) {
   const pages = new Map();
   const urls = [];
   const socialImage = SITE.url + '/social-card.png';
-  const layout = (title, description, path, body) => {
+  const layout = (title, description, path, body, opts = {}) => {
     const fullTitle = title.includes(SITE.name) ? title : (title.length + SITE.name.length + 3 > 60 ? title : title + ' · ' + SITE.name);
-    const urlPath = publicPath(path);
+    const urlPath = opts.canonical ? new URL(opts.canonical).pathname : publicPath(path);
+    const canonical = opts.canonical ?? SITE.url + urlPath;
     const metaDesc = metaDescription(description);
-    const isArticle = path.startsWith('/entries/') || path.startsWith('/articles/');
-    const schemaType = isArticle ? 'Article' : (path === '/' ? 'WebSite' : 'WebPage');
-    const schema = {
-      '@context': 'https://schema.org', '@type': schemaType, name: title, description: metaDesc, url: SITE.url + urlPath, image: socialImage,
-      isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
-      ...(path === '/' ? { potentialAction: { '@type': 'SearchAction', target: SITE.url + '/search?q={search_term_string}', 'query-input': 'required name=search_term_string' } } : {}),
-    };
-    return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
+    const isHome = urlPath === '/';
+    const isArticle = (urlPath.startsWith('/entries/') && urlPath !== '/entries/') ||
+      (urlPath.startsWith('/articles/') && urlPath !== '/articles/');
+    const robots = opts.robots ?? (isNoindexPage(path) ? 'noindex, follow' : 'index, follow');
+    const contentDate = contentDates[urlPath] ?? null;
+    const publishedDate = publishedDates[urlPath] ?? null;
+    const website = { '@type': 'WebSite', '@id': SITE.url + '/#website', name: SITE.name, url: SITE.url + '/' };
+    const nodes = [];
+    if (isHome) {
+      nodes.push({ ...website, description: metaDesc,
+        potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: SITE.url + '/search?q={search_term_string}' }, 'query-input': 'required name=search_term_string' } });
+    } else {
+      const crumbs = [{ name: 'Home', url: SITE.url + '/' }, ...(opts.crumbs ?? [{ name: opts.crumbName ?? BREADCRUMB_LABELS[path] ?? title, url: canonical }])];
+      nodes.push(isArticle
+        ? { '@type': 'Article', '@id': canonical + '#article', headline: fullTitle, name: fullTitle, description: metaDesc, url: canonical, image: opts.image ?? socialImage, isPartOf: website, ...(contentDate ? { dateModified: contentDate } : {}), ...(publishedDate ? { datePublished: publishedDate } : {}) }
+        : { '@type': 'WebPage', '@id': canonical + '#webpage', name: fullTitle, description: metaDesc, url: canonical, image: opts.image ?? socialImage, isPartOf: website, ...(contentDate ? { dateModified: contentDate } : {}) });
+      nodes.push({ '@type': 'BreadcrumbList', '@id': canonical + '#breadcrumb',
+        itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) });
+    }
+    const schema = { '@context': 'https://schema.org', '@graph': nodes };
+    return cleanInternalLinks('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n' +
     '<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>' + esc(fullTitle) + '</title>\n' +
-    '<meta name="description" content="' + esc(metaDesc) + '">\n<meta name="robots" content="' + (isNoindexPage(path) ? 'noindex, follow' : 'index, follow') + '">\n' +
-    '<meta name="theme-color" content="#080a08">\n<link rel="canonical" href="' + SITE.url + urlPath + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
-    '<link rel="alternate" hreflang="en" href="' + SITE.url + urlPath + '">' +
-    '<link rel="alternate" hreflang="x-default" href="' + SITE.url + urlPath + '">' +
+    '<meta name="description" content="' + esc(metaDesc) + '">\n<meta name="robots" content="' + robots + '">\n' +
+    '<meta name="theme-color" content="#080a08">\n<link rel="canonical" href="' + canonical + '">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n' +
+    (opts.extraHead ?? '<link rel="alternate" hreflang="en" href="' + canonical + '"><link rel="alternate" hreflang="x-default" href="' + canonical + '">') +
     '<meta property="og:title" content="' + esc(fullTitle) + '"><meta property="og:type" content="' + (isArticle ? 'article' : 'website') + '"><meta property="og:site_name" content="' + esc(SITE.name) + '"><meta property="og:locale" content="en_US">\n' +
-    '<meta property="og:description" content="' + esc(metaDesc) + '"><meta property="og:url" content="' + SITE.url + urlPath + '">\n' +
+    '<meta property="og:description" content="' + esc(metaDesc) + '"><meta property="og:url" content="' + canonical + '">\n' +
     '<meta property="og:image" content="' + socialImage + '"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="R.E.P.O. Wiki — monsters, valuables and extraction">\n' +
     '<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + esc(fullTitle) + '"><meta name="twitter:description" content="' + esc(metaDesc) + '"><meta name="twitter:image" content="' + socialImage + '">\n' +
     '<script type="application/ld+json">' + JSON.stringify(schema).replace(/</g, '\\u003c') + '</script>\n' +
@@ -187,11 +218,11 @@ export function build(inventoryPath, outDir) {
     '<p class="dim">A diagram is always labelled as a diagram. A number we could not verify is not printed.</p>\n' +
     '<p class="dim"><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · ' +
     '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/credits.html">Image credits</a> · <a href="/reference/">Technical reference</a></p>\n' +
-    '</div></footer>\n<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{\\"token\\":\\"f292fd509ecf420b8a323f36c2f815a2\\"}"></script>\n</body>\n</html>\n';
+    '</div></footer>\n<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{\\"token\\":\\"f292fd509ecf420b8a323f36c2f815a2\\"}"></script>\n</body>\n</html>\n');
   };
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
-  const indexable = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); urls.push(SITE.url + publicPath('/' + rel)); };
-  const reference = (rel, title, desc, body) => { write(rel, layout(title, desc, '/' + rel, body)); };
+  const indexable = (rel, title, desc, body, opts) => { write(rel, layout(title, desc, '/' + rel, body, opts)); urls.push(SITE.url + publicPath('/' + rel)); };
+  const reference = (rel, title, desc, body, opts) => { write(rel, layout(title, desc, '/' + rel, body, opts)); };
 
   // ---- content --------------------------------------------------------------------------------
   const entriesDir = join(process.cwd(), 'content', 'published');
@@ -232,6 +263,10 @@ export function build(inventoryPath, outDir) {
   try { articles = readdirSync(join(process.cwd(), 'content', 'articles')).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(process.cwd(), 'content', 'articles', x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* none yet */ }
   let updates = [];
   try { updates = JSON.parse(readFileSync(join(process.cwd(), 'content', 'updates.json'), 'utf8')); } catch { /* none yet */ }
+  // datePublished is only claimed where the updates log records the item as new; it is never inferred.
+  for (const u of updates) {
+    if (String(u.kind ?? '').startsWith('New') && u.date && u.url) publishedDates[publicPath(String(u.url))] = String(u.date);
+  }
   let questions = {};
   try { questions = JSON.parse(readFileSync(join(process.cwd(), 'data', 'guide-questions.json'), 'utf8')); } catch { /* none yet */ }
   const playerUpdates = updates.filter((u) => !String(u.url ?? '').startsWith('/reference/'));
@@ -266,7 +301,7 @@ export function build(inventoryPath, outDir) {
       '<a class="qcard" href="/articles/' + esc(a.id) + '.html"><strong>' + esc(questions[a.id]) + '</strong><span class="dim">' + esc(a.title) + '</span></a>').join('') +
     '</div>\n<p><a href="/articles/">All guides &rarr;</a></p>\n</section>\n' +
     '<section class="block">\n<h2>Latest updates</h2>\n' + (playerUpdates.length
-      ? '<ul class="updates">' + playerUpdates.slice(0, 6).map((u) => '<li><span class="when">' + esc(u.date) + '</span> <a href="' + esc(u.url) + '">' + esc(u.title) + '</a> <span class="dim small">' + esc(u.kind ?? '') + '</span></li>').join('') + '</ul>'
+      ? '<ul class="updates">' + playerUpdates.slice(0, 6).map((u) => '<li><span class="when">' + esc(u.date) + '</span> <a href="' + esc(publicPath(u.url)) + '">' + esc(u.title) + '</a> <span class="dim small">' + esc(u.kind ?? '') + '</span></li>').join('') + '</ul>'
       : '<p class="dim">No update notes yet.</p>') +
     '\n<p><a href="/updates.html">All updates &rarr;</a></p>\n</section>\n' +
     '<section class="block">\n<h2>Where the pictures and facts come from</h2>\n' +
@@ -274,7 +309,7 @@ export function build(inventoryPath, outDir) {
     '<p class="dim small">The raw identifiers, tables and extraction notes are kept in a technical reference, reachable from the footer of every page and kept out of search engines on purpose.</p>\n</section>\n');
 
   // ---- game guide ------------------------------------------------------------------------------
-  indexable('guide.html', 'Game guide', 'How a run works in R.E.P.O., and what to do first.',
+  indexable('guide.html', 'R.E.P.O. game guide: how a run works, step by step', 'How a run works in R.E.P.O. and what to do first: read the level, work out what is after you, find what is worth carrying, and get the haul out.',
     '<h1>Game guide</h1><p class="lead">A short path through a run, with a link to the entries behind each step.</p>\n' +
     '<h2>1. Get in and read the level</h2><p>What the level holds and where the way out is: <a href="/entities/maps.html">maps and levels</a>.</p>\n' +
     '<h2>2. Work out what is after you</h2><p>Monsters, how they move and how to read them: <a href="/entities/monsters.html">monsters</a>.</p>\n' +
@@ -284,7 +319,7 @@ export function build(inventoryPath, outDir) {
     '<h2>How to use this site</h2><p>Use the search box, browse <a href="/entities/">entities by part of the run</a>, or read a <a href="/articles/">guide</a> that walks through one job from start to finish. Pictures come from the game where one exists; otherwise a community picture is credited, and a diagram is always labelled as a diagram.</p>');
 
   // ---- entity hub and category pages ------------------------------------------------------------
-  indexable('entities/index.html', 'Entities', 'Every part of the run this site documents, with pictures taken from the game or credited to the community wiki.',
+  indexable('entities/index.html', 'R.E.P.O. entities: monsters, valuables, gear and maps', 'Every part of a R.E.P.O. run this site documents, with pictures taken from the game or credited to the community wiki: monsters, valuables, gear, maps and more.',
     '<h1>Entities</h1><p class="lead">Browse by what you are dealing with in a run. Each entry says what the game itself establishes, and carries a picture: from the game where one exists, otherwise a credited community picture.</p>\n' +
     '<div class="grid">' + CATEGORIES.map((c) => {
       const list = entities.filter((e) => groupOf(e.category).key === c.key);
@@ -301,7 +336,7 @@ export function build(inventoryPath, outDir) {
     const onlyNotes = notes.filter((e) => groupOf(e.category).key === c.key);
     if (!list.length && !onlyNotes.length) continue;
     const cover = list.map(imgOf).filter(img => img && !img.file.includes('texture'))[0] || list.map(imgOf).find(Boolean);
-    indexable('entities/' + c.key + '.html', c.name + ' in ' + SITE.gameName, c.blurb + ' ' + list.map((e) => e.title).join(', ') + '.',
+    indexable('entities/' + c.key + '.html', c.name + ' in ' + SITE.gameName + ' — what the game defines', c.blurb + ' ' + list.map((e) => e.title).join(', ') + '.',
       '<h1>' + esc(c.name) + '</h1><p class="lead">' + esc(c.blurb) + '</p>\n' +
       (cover ? '<figure class="banner"><img src="/' + esc(cover.file) + '" alt="' + esc(cover.alt?.en ?? '') + '" width="900" height="380"><figcaption class="dim small">' + captionFor(cover) + '</figcaption></figure>' : '') +
       (list.length ? '<div class="filter"><label for="f">Filter ' + esc(c.name.toLowerCase()) + '</label> <input id="f" type="search" placeholder="Type a word" autocomplete="off"> <span id="count" class="dim small"></span></div>\n' +
@@ -310,14 +345,18 @@ export function build(inventoryPath, outDir) {
       '<p><a href="/entities/">Back to all entities</a></p>\n' +
       '<script>var f=document.getElementById("f");if(f){var cards=Array.prototype.slice.call(document.querySelectorAll("#cards .card")),c=document.getElementById("count");' +
       'var run=function(){var q=f.value.trim().toLowerCase(),n=0;cards.forEach(function(el){var hit=!q||el.textContent.toLowerCase().indexOf(q)>=0;el.style.display=hit?"":"none";if(hit)n++;});c.textContent=n+" shown";};' +
-      'f.addEventListener("input",run);run();}</script>');
+      'f.addEventListener("input",run);run();}</script>', { crumbs: [{ name: 'Entities', url: SITE.url + '/entities/' }, { name: c.name, url: SITE.url + publicPath('/entities/' + c.key + '.html') }] });
   }
 
   // ---- entities and notes ----------------------------------------------------------------------
   for (const e of entities) {
     const img = imgOf(e);
     const related = (e.related ?? []).filter((id) => byId.has(id));
-    indexable('entries/' + e.id + '.html', e.title, e.summary,
+    const category = groupOf(e.category);
+    // A base title short enough that the brand suffix would still leave under 30 characters gets the words that say
+    // what the page is about; every other title keeps the game's own subject name.
+    const pageTitle = e.title.length + SITE.name.length + 3 < 30 ? e.title + ' — R.E.P.O. ' + category.name : e.title;
+    indexable('entries/' + e.id + '.html', pageTitle, e.summary,
       '<article class="entry">\n' +
       (img ? '<figure class="heroimg"><img src="/' + esc(img.file) + '" alt="' + esc(img.alt?.en ?? '') + '" title="' + esc(img.alt?.zh ?? '') + '" width="900" height="520"><figcaption class="dim small">' + captionFor(img) + '</figcaption></figure>' : '') +
       '<p class="kicker">' + esc(groupOf(e.category).name) + ' · ' + esc(SITE.versionBadge) + '</p>\n<h1>' + esc(e.title) + '</h1>\n' +
@@ -332,9 +371,16 @@ export function build(inventoryPath, outDir) {
       '<h2>In play</h2>' + (e.body ?? []).map((p) => '<p>' + esc(p) + '</p>').join('') + '\n' +
       (related.length ? '<h2>Related</h2><div class="grid">' + related.map((id) => card(byId.get(id))).join('') + '</div>' : '') +
       '<h2>Version and sources</h2><p class="dim small">' + esc((e.sources ?? []).join(' ')) + ' Documented build: ' + esc(inv.version ?? 'unknown') + '.</p>\n' +
-      '</article>');
+      '</article>', {
+        crumbs: [
+          { name: 'Entities', url: SITE.url + '/entities/' },
+          { name: category.name, url: SITE.url + '/entities/' + category.key },
+          { name: pageTitle, url: SITE.url + publicPath('/entries/' + e.id + '.html') },
+        ],
+        ...(img ? { image: SITE.url + '/' + img.file } : {}),
+      });
   }
-  indexable('entries/index.html', 'Start here', 'How to use this site, and where to begin with a run.',
+  indexable('entries/index.html', 'Start here: how to use this R.E.P.O. reference', 'How to use this R.E.P.O. reference: browse entities by part of the run, follow the game guide, read a step-by-step guide or search the wiki.',
     '<h1>Start here</h1><p class="lead">This site is a player-written reference for ' + esc(SITE.gameName) + '. It does not try to be a full wiki: every entry states what the game itself establishes, and says plainly when something has not been verified.</p>\n' +
     '<h2>The four things you can do</h2><ul>' +
     '<li><strong>Browse <a href="/entities/">entities</a></strong> by the part of the run you are dealing with.</li>' +
@@ -359,31 +405,37 @@ export function build(inventoryPath, outDir) {
   // ---- guides ------------------------------------------------------------------------------------
   for (const a of articles) {
     const related = (a.relatedEntities ?? []).filter((id) => byId.has(id));
-    indexable('articles/' + a.id + '.html', a.title, a.target,
+    const pageTitle = a.title.length + SITE.name.length + 3 < 30 ? a.title + ' — R.E.P.O. step-by-step guide' : a.title;
+    indexable('articles/' + a.id + '.html', pageTitle, a.target,
       '<article class="entry"><p class="kicker">Guide</p>\n<h1>' + esc(a.title) + '</h1>\n<p class="lead">' + esc(a.target) + '</p>\n' +
       '<h2>Applies to</h2><p class="dim">' + esc(a.version ?? SITE.versionBadge) + '</p>\n' +
       '<h2>Before you start</h2><ul>' + (a.prerequisites ?? []).map((p) => '<li>' + esc(p) + '</li>').join('') + '</ul>\n' +
       '<h2>Steps</h2><ol class="steps">' + (a.steps ?? []).map((s) => '<li><strong>' + esc(s.do) + '</strong><br><span class="dim small">' + esc(whyOf(s.because)) + '</span></li>').join('') + '</ol>\n' +
       '<h2>Common mistakes</h2><ul>' + (a.commonMistakes ?? []).map((m) => '<li>' + esc(m) + '</li>').join('') + '</ul>\n' +
       (related.length ? '<h2>Related entries</h2><div class="grid">' + related.map((id) => card(byId.get(id))).join('') + '</div>' : '') +
-      '<h2>Sources</h2><p class="dim small">' + esc((a.sources ?? []).join(' ')) + '</p></article>');
+      '<h2>Sources</h2><p class="dim small">' + esc((a.sources ?? []).join(' ')) + '</p></article>', {
+        crumbs: [
+          { name: 'Guides', url: SITE.url + '/articles/' },
+          { name: pageTitle, url: SITE.url + publicPath('/articles/' + a.id + '.html') },
+        ],
+      });
   }
-  indexable('articles/index.html', 'Guides', 'Step-by-step guides for a run, each grounded in what the game itself establishes.',
+  indexable('articles/index.html', 'R.E.P.O. guides: step-by-step run walkthroughs', 'Step-by-step R.E.P.O. guides for a run, each with its goal, the build it applies to, the steps and why they work, grounded in what the game itself establishes.',
     '<h1>Guides</h1><p class="lead">Each guide has a goal, the build it applies to, what you need first, the steps and the mistakes people make. Every step says why it works.</p>\n' +
     '<div class="grid">' + articles.map((a) => '<a class="card qcard" href="/articles/' + esc(a.id) + '.html">' +
       (questions[a.id] ? '<strong>' + esc(questions[a.id]) + '</strong><span>' + esc(a.title) + '</span>' : '<strong>' + esc(a.title) + '</strong>') +
       '<span class="dim">' + esc(a.target) + '</span></a>').join('') + '</div>');
 
   // ---- tools and updates -------------------------------------------------------------------------
-  indexable('tools/index.html', 'Tools', 'Search boxes and checkers for looking something up on this site.',
+  indexable('tools/index.html', 'R.E.P.O. wiki tools: player search and field lookup', 'Player tools for this R.E.P.O. reference: a browser search over every entry, guide and page, plus a field lookup in the technical reference.',
     '<h1>Tools</h1><p class="lead">The tools here run in your browser; nothing you type is sent anywhere.</p>\n<div class="grid">' +
     '<a class="card" href="/search.html"><strong>Search the wiki</strong><span class="dim">Find monsters, valuables, gear, guides and pages in the player index.</span></a>' +
     '<a class="card" href="/reference/tool.html"><strong>Field lookup</strong><span class="dim">Ask which class declares a field; technical reference only.</span></a>' +
     '<a class="card" href="/articles/"><strong>Guides</strong><span class="dim">Step-by-step write-ups for one job at a time.</span></a>' +
     '</div><p class="dim small">These utilities report what the game\'s files contain. They are not part of the player reference and carry no advice.</p>');
-  indexable('updates.html', 'Updates', 'What has been added to this site, newest first.',
+  indexable('updates.html', 'R.E.P.O. wiki updates: new entries, guides and fixes', 'What has been added to this R.E.P.O. reference, newest first: new entries and guides are listed once a fact has been checked against the game or a picture confirmed.',
     '<h1>Updates</h1><p class="lead">What has been added, newest first. Entries are added only when a fact has been checked against the game or a picture confirmed.</p>\n' +
-    (playerUpdates.length ? '<ul class="updates">' + playerUpdates.map((u) => '<li><span class="when">' + esc(u.date) + '</span> <a href="' + esc(u.url) + '">' + esc(u.title) + '</a> <span class="dim small">' + esc(u.kind ?? '') + '</span></li>').join('') + '</ul>' : '<p class="dim">No update notes yet.</p>') +
+    (playerUpdates.length ? '<ul class="updates">' + playerUpdates.map((u) => '<li><span class="when">' + esc(u.date) + '</span> <a href="' + esc(publicPath(u.url)) + '">' + esc(u.title) + '</a> <span class="dim small">' + esc(u.kind ?? '') + '</span></li>').join('') + '</ul>' : '<p class="dim">No update notes yet.</p>') +
     '<p class="dim small">Notes for subjects that have no confirmed picture yet are listed in the technical reference, which is reachable from the footer.</p>');
 
   // ---- evidence layer (unchanged content, footer only) --------------------------------------------
@@ -440,7 +492,7 @@ export function build(inventoryPath, outDir) {
   }
   const searchItems = buildSearchIndex(entries, articles);
   const searchKinds = ['All', ...new Set(searchItems.map((x) => x.k))];
-  indexable('search.html', 'Search the wiki', 'Find monsters, valuables, gear, guides and pages from the R.E.P.O. wiki.',
+  indexable('search.html', 'Search the R.E.P.O. wiki: monsters, valuables, gear', 'Find a monster, valuable, gear item, guide or page in this R.E.P.O. reference with the in-browser search; everything is built from the published entries and guides.',
     '<section class="searchPage">' +
     '<p class="kicker">Field database // player index</p><h1>Search the wiki</h1>' +
     '<p class="lead">Find a monster, valuable, gear item, guide or page. Everything here is built from the published entries and guides; the technical field tables live in the reference layer.</p>' +
@@ -481,7 +533,7 @@ export function build(inventoryPath, outDir) {
     '<p><a href="/entities/">Back to the player reference</a></p>');
 
   // ---- image credits -----------------------------------------------------------------------------
-  indexable('credits.html', 'Image credits', 'Sources, authors and licences for the community pictures used on this site.',
+  indexable('credits.html', 'R.E.P.O. image credits: sources, authors and licences', 'Sources, authors and licences for the community pictures used on this R.E.P.O. reference, plus how game pictures and original diagrams are labelled.',
     '<h1>Image credits</h1><p class="lead">Most pictures on this site are taken from a local copy of the game. Where no game picture could be confirmed, the entry uses a community picture from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0; those pictures are credited here and on the entry that uses them.</p>' +
     '<p class="dim small">A community picture identifies a subject; it is not presented as this site\'s own artwork. Where the exact file page could not be recorded, the row is marked <strong>weak provenance</strong> and the source is the wiki itself. Diagram-only artwork is original to this site and is not listed here.</p>' +
     (communityRecords.length ? '<table><thead><tr><th>File</th><th>Used by</th><th>Source</th><th>Author</th><th>Licence</th></tr></thead><tbody>' +
@@ -495,40 +547,44 @@ export function build(inventoryPath, outDir) {
     '<p class="dim small">Game pictures remain the property of the developer and are used only to identify the item they belong to. If you are a rights holder and want a picture removed, contact the address on the <a href="/contact.html">contact page</a>.</p>');
 
   // ---- legal ---------------------------------------------------------------------------------------
-  indexable('about.html', 'About', 'About this site and how it is built.',
+  indexable('about.html', 'R.E.P.O. wiki: about this reference and its method', 'About this R.E.P.O. reference: a player-written site generated by a static build, with no database behind it, and a method that reads facts from the files the game ships.',
     '<h1>About</h1><p>This site is a player-written reference for ' + esc(SITE.gameName) + '. It is generated by a static build; there is no database behind it.</p>' +
     '<h2>Method</h2><p>No page on this site is hand-written from memory. Everything shown is produced by the build from the files listed on the <a href="/reference/sources.html">sources page</a>. When the build cannot read something, it says so.</p>' +
     '<h2>What is on which layer</h2><p>The player reference — entities, guides, the game guide and the tools — is what the site is for. Identifiers, tables and extraction notes are an evidence layer behind the <a href="/reference/">technical reference</a>, kept out of search engines on purpose.</p>');
-  indexable('contact.html', 'Contact', 'How to report a wrong value.',
+  indexable('contact.html', 'R.E.P.O. wiki contact: report a wrong value or picture', 'How to report a wrong value, a missing picture or a factual error in this R.E.P.O. reference, and what a correction needs to be checkable against the game files.',
     '<h1>Contact</h1><p>Corrections are welcome. Report the page, the claim and what the game actually does; corrections that cannot be checked against the game files cannot be used.</p><p>There is no form and no server behind this site.</p>');
-  indexable('disclaimer.html', 'Disclaimer', 'No affiliation; game images are used only to identify items.',
+  indexable('disclaimer.html', 'R.E.P.O. wiki disclaimer: affiliation and image rights', 'Not affiliated with, endorsed by or sponsored by the developer or publisher of the game; names, marks and images remain the property of their owners.',
     '<h1>Disclaimer</h1><p>Not affiliated with, endorsed by, or sponsored by the game\'s developer or publisher. Game names and marks belong to their owners.</p>' +
     '<p>Some images are taken from the game to identify the item they belong to; those images remain the property of the developer. Some pictures are community images from the R.E.P.O. Fandom wiki under CC-BY-SA 4.0 and are credited on the entry and on the <a href="/credits.html">image credits</a> page. Diagrams drawn for this site are labelled as diagrams and are not screenshots. Community pictures are used to identify a subject, not to claim the game\'s artwork as this site\'s own.</p>');
-  indexable('privacy.html', 'Privacy', 'How this site handles data: no cookies, cookieless aggregate analytics.',
+  indexable('privacy.html', 'R.E.P.O. wiki privacy: no cookies, cookieless analytics', 'How this R.E.P.O. reference handles data: no cookies, one cookieless aggregate analytics script, no other third-party requests, and search that runs in your browser.',
     '<h1>Privacy</h1><p>This static build sets no cookies. It loads Cloudflare Web Analytics, a cookieless aggregate measurement script, and makes no other third-party requests. The search and lookup tools run entirely in your browser over data embedded in the page or fetched from this site.</p>');
-  indexable('terms.html', 'Terms', 'Use of this site.',
+  indexable('terms.html', 'R.E.P.O. wiki terms of use and data version policy', 'Terms of use for this R.E.P.O. reference: provided as-is for personal reference, data may change as the game patches, and each build records the version it was read from.',
     '<h1>Terms</h1><p>Provided as-is for personal reference. Data may change as the game patches; each build records the version it was read from.</p>');
 
-  write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p>Try the <a href="/entities/">entities</a> or the search box at the top of the page.</p>').replace('content="index, follow"', 'content="noindex, follow"'));
+  write('404.html', layout('Not found', 'Page not found.', '/404.html', '<h1>Page not found</h1><p>Try the <a href="/entities/">entities</a> or the search box at the top of the page.</p>', { robots: 'noindex, follow' }));
 
   // ---- machine-readable ------------------------------------------------------------------------------
   // Old top-level addresses keep working: each is a noindex stub that points at the reference page now.
   const stub = (oldRel, newPath, title) => {
-    const html = layout(title + ' (moved)', 'This page has moved into the technical reference.', '/' + oldRel,
-      '<h1>' + esc(title) + '</h1><p class="note">This page has moved into the <a href="' + newPath + '">technical reference</a>. The address was kept so an old link still lands somewhere useful.</p>')
-      .replace('content="index, follow"', 'content="noindex, follow"')
-      .replace('<link rel="canonical" href="' + SITE.url + '/' + oldRel + '">', '<link rel="canonical" href="' + SITE.url + newPath + '">')
-      .replace('<head>', '<head>\n<meta http-equiv="refresh" content="0; url=' + newPath + '">');
-    write(oldRel, html);
+    const target = SITE.url + publicPath(newPath);
+    const cleanTarget = publicPath(newPath);
+    write(oldRel, layout(title + ' (moved)', 'This page has moved into the technical reference.', '/' + oldRel,
+      '<h1>' + esc(title) + '</h1><p class="note">This page has moved into the <a href="' + cleanTarget + '">technical reference</a>. The address was kept so an old link still lands somewhere useful.</p>',
+      { canonical: target, robots: 'noindex, follow',
+        extraHead: '<meta http-equiv="refresh" content="0; url=' + cleanTarget + '"><link rel="alternate" hreflang="en" href="' + target + '"><link rel="alternate" hreflang="x-default" href="' + target + '">' }));
   };
   for (const [oldRel, name, title] of [
     ['collection.html', 'collection', 'All names'], ['enemies.html', 'enemies', 'Enemy types and states'], ['enums.html', 'enums', 'Enums'],
     ['values.html', 'values', 'Decoded values'], ['tool.html', 'tool', 'Field lookup'], ['sources.html', 'sources', 'Sources'],
   ]) stub(oldRel, '/reference/' + name + '.html', title);
 
-  const sitemapLastmod = new Date().toISOString().slice(0, 10);
+  // <lastmod> comes from content/dates.json (the content's git date), never from the build date. A page without a
+  // dated content source omits the element: a missing lastmod is honest, a build-day one is not.
   write('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    urls.map((u) => '  <url><loc>' + u + '</loc><lastmod>' + sitemapLastmod + '</lastmod></url>\n').join('') + '</urlset>\n');
+    urls.map((u) => {
+      const date = contentDates[u.slice(SITE.url.length)];
+      return '  <url><loc>' + u + '</loc>' + (date ? '<lastmod>' + date + '</lastmod>' : '') + '</url>\n';
+    }).join('') + '</urlset>\n');
   write('robots.txt', 'User-agent: *\nAllow: /\nSitemap: ' + SITE.url + '/sitemap.xml\n');
   write('favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="6"/></svg>' + String.fromCharCode(10));
   write('brand.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="' + esc(SITE.gameName) + '"><rect width="64" height="64" rx="14" fill="' + SITE.accent + '"/><circle cx="32" cy="30" r="13" fill="none" stroke="#0f1116" stroke-width="5"/><circle cx="32" cy="30" r="4" fill="#0f1116"/><path d="M20 50h24" stroke="#0f1116" stroke-width="5" stroke-linecap="round"/></svg>\n');

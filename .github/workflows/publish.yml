@@ -11,7 +11,10 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     steps:
+      # Full history: the site tests re-derive every sitemap <lastmod> from the content files' git dates.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -32,7 +35,10 @@ jobs:
       contents: read
       deployments: write
     steps:
+      # Full history: the preflight and smoke steps re-run the same content-date gate on the artefact.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

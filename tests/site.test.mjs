@@ -9,7 +9,8 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
-import { build, lookupFields, buildSearchIndex, publicPath, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
+import { build, lookupFields, buildSearchIndex, publicPath, metaDescription, SITE, NAV, CATEGORIES, REFERENCE_PATHS } from '../pipeline/site.mjs';
+import { deriveDates } from '../pipeline/dates.mjs';
 
 const INV = 'data/normalized/p0-inventory.json';
 const fileForLoc = (loc) => { const p = loc.replace(SITE.url, ''); if (p === '' || p === '/') return 'index.html'; if (p.endsWith('/')) return p.slice(1) + 'index.html'; return p.slice(1) + '.html'; };
@@ -24,6 +25,11 @@ ok('lookupFields is case-insensitive', lookupFields(inv, 'VALUABLE', 5).length =
 ok('lookupFields returns an empty list (not an error) when nothing matches', lookupFields(inv, 'zzz-no-such-field-zzz', 5).length === 0);
 ok('lookupFields clamps the limit to its documented range', lookupFields(inv, '', 10_000).length <= 200 && lookupFields(inv, '', 0).length >= 1);
 ok('lookupFields refuses a non-string query rather than coercing it', (() => { try { lookupFields(inv, 42); return false; } catch { return true; } })());
+ok('the description truncator cuts on a word boundary and never exceeds 160 characters', (() => {
+  const long = 'monster valuable extraction guide '.repeat(8).trim();
+  const cut = metaDescription(long);
+  return cut.length <= 160 && cut.endsWith('\u2026') && long.startsWith(cut.slice(0, -1)) && long[cut.length - 1] === ' ';
+})());
 
 // --- the build
 const dir = mkdtempSync(join(tmpdir(), 'repo-site-'));
@@ -123,19 +129,33 @@ try {
     status.pages === stats.pages && status.indexable === stats.urls && status.noindex === stats.pages - stats.urls,
     JSON.stringify({ buildPages: stats.pages, statusPages: status.pages, buildUrls: stats.urls, statusUrls: status.indexable }));
 
-  // Every internal href must resolve: a dangling link is a broken page for a reader and for a crawler.
+  // Every internal href must resolve: a dangling link is a broken page for a reader and for a crawler. Internal
+  // addresses use the clean public form (/guide); Cloudflare Pages serves that from the emitted guide.html file.
   const htmlFiles = [];
   const walk = (d) => { for (const e of readdirSync(d, { withFileTypes: true })) { const f = join(d, e.name); if (e.isDirectory()) walk(f); else if (e.name.endsWith('.html')) htmlFiles.push(f); } };
   walk(dir);
+  const cleanToFile = (p) => (p === '/' || p === '' ? 'index.html' : p.endsWith('/') ? p.slice(1) + 'index.html' : p.slice(1) + '.html');
+  const resolvesInternal = (p) => {
+    const raw = p.replace(/^\//, '');
+    if (!raw) return true;
+    if (existsSync(join(dir, raw))) return true;
+    return existsSync(join(dir, cleanToFile(p)));
+  };
   const dangling = [];
   for (const f of htmlFiles) {
     const h = readFileSync(f, 'utf8');
-    for (const m of h.matchAll(/href="(\/[^"#?]*)([#?][^"]*)?"/g)) {
-      const t = m[1] === '/' ? 'index.html' : m[1].slice(1);
-      if (!existsSync(join(dir, t)) && !existsSync(join(dir, t, 'index.html'))) dangling.push(f.slice(dir.length) + ' -> ' + m[1]);
+    for (const m of h.matchAll(/(?:href|action)="(\/[^"#?]*)(?:[#?][^"]*)?"/g)) {
+      if (!resolvesInternal(m[1])) dangling.push(f.slice(dir.length) + ' -> ' + m[1]);
     }
   }
   ok('every internal link resolves to an emitted file', dangling.length === 0, dangling.slice(0, 5).join(', '));
+  const htmlFormLinks = [];
+  for (const f of htmlFiles) {
+    const h = readFileSync(f, 'utf8');
+    for (const m of h.matchAll(/(?:href|action)="(\/[^"]*?\.html)(?:[#?"])/g)) htmlFormLinks.push(f.slice(dir.length) + ' -> ' + m[1]);
+  }
+  ok('every internal link and form action uses the clean URL form, not the redirecting .html form',
+    htmlFormLinks.length === 0, htmlFormLinks.slice(0, 5).join(', '));
 
   // Pictures are the part of the page a reader notices first: every local src must be an emitted file. This is a
   // separate gate from the link check because an <img> with a stale path is a broken picture, not a broken link.
@@ -149,22 +169,187 @@ try {
   }
   ok('every image reference resolves to an emitted file', badImages.length === 0, badImages.slice(0, 5).join(', '));
 
-  // A title that repeats the site name, or two pages sharing a title or description, is a real SEO defect.
-  const seenTitles = new Set(); const seenDescs = new Set(); const badMeta = []; const badSeo = [];
-  for (const u of (sitemap.match(/<loc>([^<]+)<\/loc>/g) ?? [])) {
-    const rel = fileForLoc(u.replace('<loc>', '').replace('</loc>', ''));
+  // ---- technical SEO: one contract for the public URL form, the human text and the machine markup ----------------
+  // Each check reads the artefact, not the generator: a title can be short after the brand suffix is applied, a
+  // canonical can drift from the sitemap, and a lastmod can silently become the build date.
+  const parseSitemap = (xml) => {
+    const problems = [];
+    const stack = [];
+    const urlsFound = [];
+    let current = null;
+    for (const tok of xml.match(/<[^>]+>|[^<]+/g) ?? []) {
+      if (tok.startsWith('<?') || tok.startsWith('<!--')) continue;
+      if (tok.startsWith('</')) {
+        const name = tok.slice(2, -1).trim();
+        const open = stack.pop();
+        if (open !== name) problems.push('closing ' + name + ' does not match ' + open);
+        if (name === 'url' && current) { urlsFound.push(current); current = null; }
+        continue;
+      }
+      if (tok.startsWith('<')) {
+        if (tok.endsWith('/>')) { problems.push('unexpected self-closing ' + tok.slice(0, 20)); continue; }
+        const name = tok.slice(1).split(/[\s>]/)[0];
+        stack.push(name);
+        if (name === 'loc' && !current) current = { loc: '', lastmod: null };
+        continue;
+      }
+      const text = tok.trim();
+      if (!text) continue;
+      const open = stack[stack.length - 1];
+      if (open === 'loc' && current) current.loc = text;
+      else if (open === 'lastmod' && current) current.lastmod = text;
+      else problems.push('text outside loc/lastmod: ' + text.slice(0, 30));
+    }
+    if (stack.length) problems.push('unclosed: ' + stack.join(','));
+    return { problems, urls: urlsFound };
+  };
+  const parsedSitemap = parseSitemap(sitemap);
+  const sitemapUrls = parsedSitemap.urls;
+  ok('the sitemap is well-formed XML with a urlset namespace and one loc per url',
+    parsedSitemap.problems.length === 0 && sitemap.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"') &&
+    sitemapUrls.length === (sitemap.match(/<loc>/g) ?? []).length,
+    parsedSitemap.problems.slice(0, 3).join(' | '));
+  ok('the sitemap lists exactly the indexable clean URLs, without duplicates and without the .html form',
+    sitemapUrls.length === stats.urls && new Set(sitemapUrls.map((x) => x.loc)).size === sitemapUrls.length &&
+    sitemapUrls.every((x) => x.loc.startsWith(SITE.url + '/') && !x.loc.endsWith('.html')),
+    JSON.stringify({ parsed: sitemapUrls.length, indexable: stats.urls }));
+
+  const contentDates = JSON.parse(readFileSync('content/dates.json', 'utf8')).pages;
+  const pages = [];
+  for (const located of sitemapUrls) {
+    const rel = fileForLoc(located.loc);
     const h = readFileSync(join(dir, rel), 'utf8');
-    const t = (h.match(/<title>([^<]*)<\/title>/) ?? [])[1] ?? '';
-    const d = (h.match(/<meta name="description" content="([^"]*)"/) ?? [])[1] ?? '';
-    const repeats = t.split(SITE.name).length - 1;
-    const can = (h.match(/<link rel="canonical" href="([^"]*)"/) ?? [])[1] ?? '';
-    const expectedCanonical = SITE.url + publicPath('/' + rel);
-    if (t.length > 60 || d.length > 160 || can.endsWith('.html') || can !== expectedCanonical) badSeo.push(rel + ' (' + d.length + ' chars, canonical=' + can + ')');
-    if (!t || !d || seenTitles.has(t) || seenDescs.has(d) || repeats > 1) badMeta.push(rel + (repeats > 1 ? ' (site name x' + repeats + ')' : ''));
-    seenTitles.add(t); seenDescs.add(d);
+    pages.push({
+      rel,
+      path: new URL(located.loc).pathname,
+      lastmod: located.lastmod,
+      title: (h.match(/<title>([^<]*)<\/title>/) ?? [])[1] ?? '',
+      desc: (h.match(/<meta name="description" content="([^"]*)"/) ?? [])[1] ?? '',
+      canonical: (h.match(/<link rel="canonical" href="([^"]*)"/) ?? [])[1] ?? '',
+      ogUrl: (h.match(/<meta property="og:url" content="([^"]*)"/) ?? [])[1] ?? '',
+      ogImage: (h.match(/<meta property="og:image" content="([^"]*)"/) ?? [])[1] ?? '',
+      twitterImage: (h.match(/<meta name="twitter:image" content="([^"]*)"/) ?? [])[1] ?? '',
+      robots: (h.match(/<meta name="robots" content="([^"]*)"/) ?? [])[1] ?? '',
+      head: h,
+    });
   }
-  ok('every indexable page has a unique title and description, without a repeated site name', badMeta.length === 0, badMeta.slice(0, 4).join(', '));
-  ok('every indexable page has a <=60-char title, <=160-char description and a clean canonical URL matching the sitemap', badSeo.length === 0, badSeo.slice(0, 4).join(', '));
+  const expectedCanonical = (p) => SITE.url + p.path;
+  const badTitles = pages.filter((p) => p.title.length < 25 || p.title.length > 60 || p.title.trim() !== p.title);
+  ok('every indexable page has a 25-60 character title',
+    badTitles.length === 0, badTitles.slice(0, 4).map((p) => p.rel + ' = ' + p.title.length + ' "' + p.title + '"').join(', '));
+  const badDescs = pages.filter((p) => p.desc.length < 70 || p.desc.length > 160 || p.desc.trim() !== p.desc || /  /.test(p.desc));
+  ok('every indexable page has a 70-160 character description',
+    badDescs.length === 0, badDescs.slice(0, 4).map((p) => p.rel + ' = ' + p.desc.length).join(', '));
+  const dupCases = (pick) => pages.filter((p, i) => pages.findIndex((q) => pick(q) === pick(p)) !== i);
+  const dupTitles = dupCases((p) => p.title);
+  const dupDescs = dupCases((p) => p.desc);
+  const repeatedName = pages.filter((p) => p.title.split(SITE.name).length - 1 > 1);
+  ok('indexable titles and descriptions are unique, and a title never repeats the site name',
+    dupTitles.length === 0 && dupDescs.length === 0 && repeatedName.length === 0,
+    JSON.stringify({ dupTitles: dupTitles.slice(0, 3).map((p) => p.rel), dupDescs: dupDescs.slice(0, 3).map((p) => p.rel), repeatedName: repeatedName.slice(0, 3).map((p) => p.rel) }));
+  const badUrlForm = pages.filter((p) => p.canonical !== expectedCanonical(p) || p.ogUrl !== p.canonical || p.robots !== 'index, follow');
+  ok('canonical, og:url and the sitemap URL are the same clean URL on every indexable page',
+    badUrlForm.length === 0, badUrlForm.slice(0, 4).map((p) => p.rel + ' canonical=' + p.canonical + ' og=' + p.ogUrl + ' robots=' + p.robots).join(', '));
+  const badSocial = pages.filter((p) => !p.ogImage || !p.twitterImage || p.ogImage !== p.twitterImage ||
+    !p.head.includes('property="og:title"') || !p.head.includes('property="og:description"') || !p.head.includes('property="og:type"') ||
+    !p.head.includes('name="twitter:card"') || !p.head.includes('name="twitter:title"') || !p.head.includes('name="twitter:description"'));
+  ok('every indexable page has og and twitter metadata, and the twitter image is the og image',
+    badSocial.length === 0, badSocial.slice(0, 3).map((p) => p.rel).join(', '));
+
+  // JSON-LD: a parseable graph per page, WebSite + SearchAction on the home page, Article for entries/guides, a
+  // breadcrumb that ends on the canonical, and dates/images only where the content can prove them.
+  const graphOf = (head) => {
+    const blocks = [...head.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+    if (!blocks.length) return { error: 'no JSON-LD' };
+    let parsed = null;
+    try { parsed = JSON.parse(blocks[0]); } catch { return { error: 'does not parse' }; }
+    if (parsed['@context'] !== 'https://schema.org') return { error: '@context' };
+    return { nodes: parsed['@graph'] ?? [] };
+  };
+  const badLd = [];
+  const ldNodes = new Map();
+  for (const p of pages) {
+    const graph = graphOf(p.head);
+    if (graph.error) { badLd.push(p.rel + ': ' + graph.error); continue; }
+    const pageNode = graph.nodes.find((n) => n['@type'] === 'WebPage' || n['@type'] === 'Article' || n['@type'] === 'WebSite');
+    const crumb = graph.nodes.find((n) => n['@type'] === 'BreadcrumbList');
+    if (!pageNode) { badLd.push(p.rel + ': no page node'); continue; }
+    ldNodes.set(p.rel, pageNode);
+    if (pageNode.url !== p.canonical) badLd.push(p.rel + ': node url != canonical');
+    if (p.path === '/') {
+      if (pageNode['@type'] !== 'WebSite') badLd.push(p.rel + ': home node is ' + pageNode['@type']);
+      if (pageNode.potentialAction?.target?.urlTemplate !== SITE.url + '/search?q={search_term_string}') badLd.push(p.rel + ': no SearchAction');
+      if (crumb) badLd.push(p.rel + ': home has a breadcrumb');
+      continue;
+    }
+    const wantArticle = (p.path.startsWith('/entries/') && p.path !== '/entries/') ||
+      (p.path.startsWith('/articles/') && p.path !== '/articles/');
+    const want = wantArticle ? 'Article' : 'WebPage';
+    if (pageNode['@type'] !== want) badLd.push(p.rel + ': ' + pageNode['@type'] + ' != ' + want);
+    if (!crumb) badLd.push(p.rel + ': no BreadcrumbList');
+    else {
+      const items = crumb.itemListElement ?? [];
+      if (!items.length || items[0].name !== 'Home' || items[0].item !== SITE.url + '/') badLd.push(p.rel + ': breadcrumb does not start at Home');
+      if (items[items.length - 1]?.item !== p.canonical) badLd.push(p.rel + ': breadcrumb does not end on canonical');
+      if (items.some((it, i) => it.position !== i + 1)) badLd.push(p.rel + ': breadcrumb positions');
+    }
+    const image = pageNode.image;
+    if (typeof image !== 'string' || !image.startsWith(SITE.url + '/') || !existsSync(join(dir, image.slice((SITE.url + '/').length)))) badLd.push(p.rel + ': JSON-LD image does not resolve');
+    if (wantArticle && !pageNode.headline) badLd.push(p.rel + ': Article without headline');
+    const knownDate = contentDates[p.path] ?? null;
+    if (knownDate ? pageNode.dateModified !== knownDate : !!pageNode.dateModified) badLd.push(p.rel + ': dateModified is not the content date');
+  }
+  ok('every indexable page has JSON-LD that parses, names the page, matches its canonical and ends its breadcrumb on it',
+    badLd.length === 0, badLd.slice(0, 5).join('; '));
+  const updatesLog = JSON.parse(readFileSync('content/updates.json', 'utf8'));
+  const publishedDates = new Map(updatesLog
+    .filter((x) => String(x.kind ?? '').startsWith('New') && x.date)
+    .map((x) => [publicPath(String(x.url)), x.date]));
+  const badPublished = pages.filter((p) => {
+    const expected = publishedDates.get(p.path) ?? null;
+    const node = ldNodes.get(p.rel);
+    return expected ? node.datePublished !== expected : !!node?.datePublished;
+  });
+  ok('datePublished is only claimed where the updates log records the item as new',
+    badPublished.length === 0, badPublished.slice(0, 4).map((p) => p.rel).join(', '));
+
+  // <lastmod> contract: it is the content date recorded in content/dates.json, never the day of the build.
+  const dated = sitemapUrls.filter((x) => x.lastmod !== null);
+  const undated = sitemapUrls.filter((x) => x.lastmod === null);
+  const badLastmod = sitemapUrls.filter((x) => (x.lastmod ?? null) !== (contentDates[new URL(x.loc).pathname] ?? null));
+  ok('every sitemap lastmod is the recorded content date, and pages without a dated source omit it',
+    badLastmod.length === 0, badLastmod.slice(0, 4).map((x) => x.loc + ' lastmod=' + x.lastmod).join(', '));
+  ok('the sitemap does not stamp one build date on every URL',
+    dated.length > 0 && undated.length > 0 && new Set(dated.map((x) => x.lastmod)).size > 1,
+    JSON.stringify({ dated: dated.length, undated: undated.length, distinct: [...new Set(dated.map((x) => x.lastmod))] }));
+  const badDateForm = dated.filter((x) => !/^\d{4}-\d{2}-\d{2}$/.test(x.lastmod) || Number.isNaN(new Date(x.lastmod + 'T00:00:00Z').getTime()));
+  ok('every sitemap lastmod is a valid ISO date', badDateForm.length === 0, badDateForm.slice(0, 4).map((x) => x.lastmod).join(', '));
+  let datesStatus = '';
+  try {
+    const derived = deriveDates();
+    if (!derived) datesStatus = 'SKIP: full git history is not available in this checkout';
+    else if (JSON.stringify(derived.pages) !== JSON.stringify(contentDates)) datesStatus = 'content/dates.json is stale: run node tools/content-dates.mjs';
+  } catch (e) { datesStatus = 'SKIP: ' + String(e).slice(0, 100); }
+  ok('content/dates.json is current with the content history (node tools/content-dates.mjs after content edits)',
+    datesStatus === '' || datesStatus.startsWith('SKIP:'), datesStatus);
+
+  const robotsTxt = readFileSync(join(dir, 'robots.txt'), 'utf8');
+  ok('robots.txt allows crawling, disallows nothing and points at the sitemap',
+    /^User-agent: \*$/m.test(robotsTxt) && /^Allow: \/$/m.test(robotsTxt) &&
+    robotsTxt.split('Sitemap: ').length === 2 && robotsTxt.includes('Sitemap: ' + SITE.url + '/sitemap.xml') &&
+    !/Disallow/i.test(robotsTxt), robotsTxt.replace(/\n/g, ' | '));
+  const urlsCfgForNoindex = JSON.parse(readFileSync('config/urls.json', 'utf8'));
+  const sitemapLocSet = new Set(sitemapUrls.map((x) => x.loc));
+  const noindexLeaks = [];
+  for (const e of (urlsCfgForNoindex.entries ?? []).filter((x) => x.action === 'noindex')) {
+    const noindexFile = join(dir, String(e.url).replace(/^\//, ''));
+    if (!existsSync(noindexFile)) { noindexLeaks.push(e.url + ': missing file'); continue; }
+    const noindexHtml = readFileSync(noindexFile, 'utf8');
+    if (!/content="noindex, follow"/.test(noindexHtml)) noindexLeaks.push(e.url + ': not marked noindex');
+    if (sitemapLocSet.has(SITE.url + publicPath(e.url))) noindexLeaks.push(e.url + ': listed in the sitemap');
+  }
+  ok('every classified noindex page stays out of the sitemap and is marked noindex',
+    noindexLeaks.length === 0, noindexLeaks.slice(0, 4).join(', '));
 
   // Page-weight budget: every page must stay openable on a phone. The ceiling is 1 MiB; the largest page today is
   // the 782 KiB field-name list, which the reports record as the next optimisation target.
@@ -296,7 +481,10 @@ try {
     for (const section of ['Applies to', 'Before you start', 'Steps', 'Common mistakes', 'Related entries', 'Sources']) if (!h.includes(section)) thinArticles.push(a.id + ':' + section);
     if (!/<ol[\s>]/.test(h) || (a.steps ?? []).length < 3) thinArticles.push(a.id + ':steps');
     if (!sitemap.includes(SITE.url + '/articles/' + a.id)) thinArticles.push(a.id + ':not in sitemap');
-    const ids = (a.steps ?? []).flatMap((s) => String(s.because).split(/[(),\s]+/)).filter((x) => /[a-z][A-Z]|[0-9]|_/.test(x));
+    // Only code-style names count as a leak: the token must contain a letter, so the digits in a truthful date
+    // string ("01" inside 2026-10-01) are not treated as a leaked identifier.
+    const ids = (a.steps ?? []).flatMap((s) => String(s.because).split(/[(),\s]+/))
+      .filter((x) => /[A-Za-z]/.test(x) && (/[a-z][A-Z]/.test(x) || /_/.test(x) || /[0-9]/.test(x)));
     for (const id of ids) if (h.includes(id)) thinArticles.push(a.id + ': leaks ' + id);
   }
   ok('every article page carries its goal, version, prerequisites, steps, mistakes, related entities and sources', thinArticles.length === 0, thinArticles.slice(0, 6).join(', '));
@@ -520,8 +708,14 @@ try {
   ok('every indexable page carries social metadata and JSON-LD', badMeta.length === 0, badMeta.slice(0, 3).join(', '));
   const idxHtml = readFileSync(join(uiDir, 'index.html'), 'utf8');
   const jsonLd = (idxHtml.match(/<script type="application\/ld\+json">([^<]+)<\/script>/) ?? [])[1];
-  let schemaOk = false; try { schemaOk = JSON.parse(jsonLd)['@context'] === 'https://schema.org'; } catch { schemaOk = false; }
-  ok('the homepage JSON-LD is valid schema.org JSON', schemaOk);
+  let homeSchema = null; try { homeSchema = JSON.parse(jsonLd); } catch { homeSchema = null; }
+  const homeNodes = homeSchema?.['@graph'] ?? [];
+  const homeSite = homeNodes.find((n) => n['@type'] === 'WebSite');
+  const homeAction = homeSite?.potentialAction;
+  ok('the homepage JSON-LD declares WebSite with a SearchAction for the search page',
+    homeSchema?.['@context'] === 'https://schema.org' && !!homeSite && homeAction?.['@type'] === 'SearchAction' &&
+    String(homeAction.target?.urlTemplate ?? '').includes('/search?q={search_term_string}'),
+    JSON.stringify({ types: homeNodes.map((n) => n['@type']), target: homeAction?.target?.urlTemplate }));
   ok('the social card asset was emitted', existsSync(join(uiDir, 'social-card.png')));
   let homeImgBytes = 0;
   for (const m of idxHtml.matchAll(/<img[^>]+src="(\/[^"]+)"/g)) {

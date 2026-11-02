@@ -20,7 +20,16 @@ const walk = (d, out = []) => {
 };
 const emitted = walk(dist).map((p) => '/' + relative(dist, p).split('\\').join('/')).sort();
 const sitemap = readFileSync(join(dist, 'sitemap.xml'), 'utf8');
-const indexable = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname));
+// The sitemap publishes clean URLs (/about) while the build emits files (/about.html): map each located clean URL back
+// to the emitted file it is served from, or every page would be classified noindex.
+const fileForClean = (p) => (p === '/' ? '/index.html' : p.endsWith('/') ? p + 'index.html' : p + '.html');
+const located = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => fileForClean(new URL(m[1]).pathname));
+const missingTargets = located.filter((p) => !emitted.includes(p));
+if (missingTargets.length) {
+  console.error('[classify] sitemap URL(s) have no emitted file: ' + missingTargets.slice(0, 5).join(', '));
+  process.exit(1);
+}
+const indexable = new Set(located);
 const previous = existsSync('config/urls.json') ? JSON.parse(readFileSync('config/urls.json', 'utf8')) : { redirects: [] };
 const entries = emitted.filter((p) => p !== '/404.html').map((p) => ({
   url: p,
