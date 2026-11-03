@@ -40,5 +40,8 @@
   ],
   "sources": [
     "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ],
+  "relatedGuides": [
+    "deciding-when-to-extract"
   ]
 }

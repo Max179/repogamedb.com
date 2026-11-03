@@ -696,4 +696,13 @@ git status --porcelain              -> 空
 - 本轮修正（全部是报告/生成物，**未改站点代码、内容或数据**）：`reports/coverage-report.md` 由过期的 167 重新生成为 172；`reports/status.json` 由过期 head `a9e39fa`/643 commits 重新生成；live-verification / seo-audit / publish-plan 的过期陈述加 2026-10-30 更正；新增 `reports/revival-2026-10-30.md`。
 - 剩余阻塞：本轮提交尚未 push/deploy（由 Lead 执行）；`/contact` 页没有任何可联系渠道（全站 0 个 mailto/表单，README 却写"用站上的联系地址"）——AdSense 审核前需 owner 提供邮箱或公开 issue 链接；sitemap `lastmod` 目前取构建日（每次部署 284 条全部标记为已修改）；GSC/Bing/IndexNow 需 owner 账号；数据层重新提取仍需 Windows 游戏文件（见 `docs/data-pipeline.md` 的边界记录）。
 
+## 2026-11-03 Growth P1：新增 1 篇可索引指南（repo-dev）
+
+- 新增 `content/articles/deciding-when-to-extract.json` → 干净 URL `/articles/deciding-when-to-extract`，标题 48 字符、描述 146 字符、8 个步骤；延伸自既有已发布事实：extraction 记录、end-of-run 画面（not enough / enough / everyone aboard）、level points of interest、valued loot、run 计分 bonus/penalty、extraction machine haul 显示、truck healer、between-run shop。**未新增任何数字或机制**。
+- 内链：新页 → 3 个 entry（choosing-when-to-leave、the-truck-and-the-end-of-a-run、extraction-run）+ 2 篇 guide（finishing-a-run-on-your-terms、valuable-run-routine）；反向内链：3 篇既有 guide 的 "Related guides" 卡片、game guide 第 5 步上下文链接、/articles 索引、/updates、home latest-updates + 问题卡片、站内搜索索引（后四者为自动生成）。渲染器新增可选 `relatedGuides` 字段（仅存在时渲染）。
+- 计数（构建产物实测）：pages **782 → 783**，indexable **284 → 285**，sitemap loc **284 → 285**，lastmod present **274 → 275**（新页 2026-11-03，10 页无内容日期仍省略），published guides **87 → 88**，guide questions **87 → 88**，updates rows **14 → 15**，config keep **284 → 285**（noindex 492 不变），content/dates 页面 **274 → 275**。
+- 门禁（全部 exit 0）：build 783/285/492；tests 94 passed / 0 failed；typecheck；content-gate 172 entries / 0 violations；image coverage 172/172 + 178 records + 0 problems；duplicate heroes 0；citations unmatched 0；coverage 21 列 / 20 covered / 0 quality failures（guides 列 87→88）；classify 285 keep / 492 noindex；smoke 285 kept / 492 noindex；clean tree 上 preflight 14 ok / 0 failed。
+- 日期纪律：先提交内容（新文件进入 git 历史），再运行 `node tools/content-dates.mjs` 重新生成 `content/dates.json`（275 页），因此新页与 4 个被编辑的内容文件得到真实的 2026-11-03；测试会从 git 重新推导并拒绝过期日期。
+- 未 push / 未 deploy：线上仍是 284 URL 的旧构建；部署后需在 GSC 重新提交 sitemap。详见 `reports/growth-2026-11-03.md`、`reports/seo-audit.md` 的 2026-11-03 addendum。
+
 

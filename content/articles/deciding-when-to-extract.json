@@ -1,0 +1,65 @@
+{
+  "id": "deciding-when-to-extract",
+  "title": "When to extract in R.E.P.O.: is the haul enough?",
+  "tier": "published",
+  "kind": "article",
+  "target": "When to extract in R.E.P.O.: reading the end-of-run screen, the extraction machine's haul display and the crew bonuses to decide a haul is enough.",
+  "version": "0.4.0, read from the copy of the game this site was built from (see the sources page)",
+  "prerequisites": [
+    "At least one extraction point found or marked on the level",
+    "Voice contact with the rest of the crew",
+    "A load in hand, so the question is about the next one rather than the first"
+  ],
+  "steps": [
+    {
+      "do": "Bank the loads you already have before you judge the next one.",
+      "because": "completed extractions are recorded by the game, so a banked load is progress that a load still on the floor is not (ExtractionsDoneState)"
+    },
+    {
+      "do": "Decide the trip before the last carry, not while standing in the truck doorway.",
+      "because": "the end-of-run screen keeps separate pages for not enough and enough, so the call is made against a result rather than a feeling (TruckScreenPage)"
+    },
+    {
+      "do": "Read the level's own points of interest to see what is still out there.",
+      "because": "the level interface works from defined points of interest, so finding the way out and the places still worth visiting is navigation rather than memory (LevelPoint, LevelUI)"
+    },
+    {
+      "do": "Treat what is left as a question about its worth rather than about whether more exists.",
+      "because": "the level decides which valuables are available, so a level can still hold more while the trip already has what it needs (LevelValuables)"
+    },
+    {
+      "do": "Count one more death against the bonuses a clean run carries.",
+      "because": "surviving as a full crew and finishing with no deaths are separate bonuses, and dying carries a penalty of its own (roundPointsBonusAllSurvived, roundPointsBonusNoDeaths, penaltyDeath)"
+    },
+    {
+      "do": "Watch the extraction machine's own haul display instead of counting in your head.",
+      "because": "the machine has a haul goal, a haul bar and a surplus state with its own steps, and its focus hints include going back to the truck (haulGoal, haulBar, surplusStateDoneLevel1, localizedFocusBackToTruck)"
+    },
+    {
+      "do": "Call the crew back before the last load and heal at the truck after the haul.",
+      "because": "one ending is that every player is aboard, and the truck carries a healer with a beam and particles of its own (TruckScreenPage, TruckDoor, TruckHealer, healerBeamPrefab)"
+    },
+    {
+      "do": "Spend the takings between runs rather than treating the last load as a reason to stay in the level.",
+      "because": "the between-run shop has its own shopkeeper and manager, and the truck shows the shop introduction as the crew arrives (ShopKeeper, ShopManager, localizedFocusShopIntro)"
+    }
+  ],
+  "commonMistakes": [
+    "Waiting for the level to announce a deadline instead of deciding from what is already banked.",
+    "Measuring the next load by what the last trip found, when the level decides its own valuables.",
+    "Staying for one more item after the crew is already back at the truck.",
+    "Treating an extraction as the end of the run rather than a decision the crew can make more than once."
+  ],
+  "relatedEntities": [
+    "choosing-when-to-leave",
+    "the-truck-and-the-end-of-a-run",
+    "extraction-run"
+  ],
+  "relatedGuides": [
+    "finishing-a-run-on-your-terms",
+    "valuable-run-routine"
+  ],
+  "sources": [
+    "A local copy of the game, read only. Grounding for each step is on the technical reference pages; no number is estimated."
+  ]
+}

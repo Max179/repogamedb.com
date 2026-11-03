@@ -261,6 +261,7 @@ export function build(inventoryPath, outDir) {
 
   let articles = [];
   try { articles = readdirSync(join(process.cwd(), 'content', 'articles')).filter((x) => x.endsWith('.json')).map((x) => JSON.parse(readFileSync(join(process.cwd(), 'content', 'articles', x), 'utf8'))).sort((a, b) => a.title.localeCompare(b.title)); } catch { /* none yet */ }
+  const articleById = new Map(articles.map((a) => [a.id, a]));
   let updates = [];
   try { updates = JSON.parse(readFileSync(join(process.cwd(), 'content', 'updates.json'), 'utf8')); } catch { /* none yet */ }
   // datePublished is only claimed where the updates log records the item as new; it is never inferred.
@@ -315,7 +316,7 @@ export function build(inventoryPath, outDir) {
     '<h2>2. Work out what is after you</h2><p>Monsters, how they move and how to read them: <a href="/entities/monsters.html">monsters</a>.</p>\n' +
     '<h2>3. Find what is worth carrying</h2><p>Valuables, including the ones that fight back: <a href="/entities/valuables.html">valuables</a>.</p>\n' +
     '<h2>4. Carry it, or fight for it</h2><p>Gear, weapons and the physics of hauling: <a href="/entities/gear.html">gear</a> and <a href="/entities/weapons.html">weapons</a>.</p>\n' +
-    '<h2>5. Get out and spend it</h2><p>Extraction, the shop and upgrades: <a href="/entities/extraction.html">extraction and the shop</a>.</p>\n' +
+    '<h2>5. Get out and spend it</h2><p>Extraction, the shop and upgrades: <a href="/entities/extraction.html">extraction and the shop</a>. Deciding when the haul is enough is its own call: see <a href="/articles/deciding-when-to-extract.html">when to extract</a>.</p>\n' +
     '<h2>How to use this site</h2><p>Use the search box, browse <a href="/entities/">entities by part of the run</a>, or read a <a href="/articles/">guide</a> that walks through one job from start to finish. Pictures come from the game where one exists; otherwise a community picture is credited, and a diagram is always labelled as a diagram.</p>');
 
   // ---- entity hub and category pages ------------------------------------------------------------
@@ -405,6 +406,7 @@ export function build(inventoryPath, outDir) {
   // ---- guides ------------------------------------------------------------------------------------
   for (const a of articles) {
     const related = (a.relatedEntities ?? []).filter((id) => byId.has(id));
+    const relatedGuides = (a.relatedGuides ?? []).filter((id) => articleById.has(id)).map((id) => articleById.get(id));
     const pageTitle = a.title.length + SITE.name.length + 3 < 30 ? a.title + ' — R.E.P.O. step-by-step guide' : a.title;
     indexable('articles/' + a.id + '.html', pageTitle, a.target,
       '<article class="entry"><p class="kicker">Guide</p>\n<h1>' + esc(a.title) + '</h1>\n<p class="lead">' + esc(a.target) + '</p>\n' +
@@ -413,6 +415,7 @@ export function build(inventoryPath, outDir) {
       '<h2>Steps</h2><ol class="steps">' + (a.steps ?? []).map((s) => '<li><strong>' + esc(s.do) + '</strong><br><span class="dim small">' + esc(whyOf(s.because)) + '</span></li>').join('') + '</ol>\n' +
       '<h2>Common mistakes</h2><ul>' + (a.commonMistakes ?? []).map((m) => '<li>' + esc(m) + '</li>').join('') + '</ul>\n' +
       (related.length ? '<h2>Related entries</h2><div class="grid">' + related.map((id) => card(byId.get(id))).join('') + '</div>' : '') +
+      (relatedGuides.length ? '<h2>Related guides</h2><div class="grid">' + relatedGuides.map((g) => '<a class="card qcard" href="/articles/' + esc(g.id) + '.html"><strong>' + esc(g.title) + '</strong><span class="dim">' + esc(g.target) + '</span></a>').join('') + '</div>' : '') +
       '<h2>Sources</h2><p class="dim small">' + esc((a.sources ?? []).join(' ')) + '</p></article>', {
         crumbs: [
           { name: 'Guides', url: SITE.url + '/articles/' },

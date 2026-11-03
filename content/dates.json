@@ -3,9 +3,9 @@
   "source": "git committer date of the newest commit touching each page's content source",
   "note": "Date per clean page URL. The sitemap emits <lastmod> only for a page listed here; pages with no dated content source get no <lastmod> rather than the build date.",
   "pages": {
-    "/": "2026-10-23",
-    "/articles/": "2026-10-01",
-    "/articles/a-run-from-entry-to-extraction": "2026-10-01",
+    "/": "2026-11-03",
+    "/articles/": "2026-11-03",
+    "/articles/a-run-from-entry-to-extraction": "2026-11-03",
     "/articles/arming-the-cart-and-firing-it": "2026-10-01",
     "/articles/breaking-contact-with-a-monster": "2026-10-01",
     "/articles/carrying-a-tool-that-runs-out": "2026-10-01",
@@ -20,9 +20,10 @@
     "/articles/dealing-with-a-monster-that-teleports": "2026-10-01",
     "/articles/dealing-with-the-monster-that-carries-a-bomb": "2026-10-01",
     "/articles/dealing-with-the-monster-that-comes-apart": "2026-10-01",
+    "/articles/deciding-when-to-extract": "2026-11-03",
     "/articles/drifting-and-leaving-the-ground": "2026-10-01",
     "/articles/expecting-a-monster-to-move-like-nothing-else": "2026-10-01",
-    "/articles/finishing-a-run-on-your-terms": "2026-10-01",
+    "/articles/finishing-a-run-on-your-terms": "2026-11-03",
     "/articles/firing-a-gun-without-wasting-the-shot": "2026-10-01",
     "/articles/firing-a-staff-without-wrecking-the-room": "2026-10-01",
     "/articles/first-run-what-to-expect": "2026-10-01",
@@ -85,7 +86,7 @@
     "/articles/using-a-vehicle-as-a-weapon-without-wrecking-it": "2026-10-01",
     "/articles/using-the-ladder-without-wasting-the-battery": "2026-10-01",
     "/articles/using-the-map-instead-of-your-memory": "2026-10-01",
-    "/articles/valuable-run-routine": "2026-10-01",
+    "/articles/valuable-run-routine": "2026-11-03",
     "/articles/valuables-you-can-actually-use": "2026-10-01",
     "/articles/watching-a-run-after-you-go-down": "2026-10-01",
     "/articles/what-a-shot-leaves-behind": "2026-10-01",
@@ -276,6 +277,6 @@
     "/entries/when-the-chat-box-will-not-open": "2026-10-01",
     "/entries/which-version-this-site-documents": "2026-10-23",
     "/entries/your-avatar-and-where-it-is-shown": "2026-10-23",
-    "/updates": "2026-10-01"
+    "/updates": "2026-11-03"
   }
 }

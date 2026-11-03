@@ -6,6 +6,31 @@
 > Every number below was measured on the built `web/dist` on macOS with the committed content (no network, no game
 > files). The 2026-10-23 and 2026-10-30 sections are kept as history.
 
+## Growth addendum — 2026-11-03
+
+One new indexable guide was added for the end-of-run decision cluster:
+`/articles/deciding-when-to-extract` ("When to extract in R.E.P.O.: is the haul enough?", 8 grounded steps, 3 related
+entries, 2 related guides, contextual inbound links from 3 existing guides + the game guide + the automatic indexes).
+Full rationale, grounding table and link map: `reports/growth-2026-11-03.md`. No new numbers or mechanics were
+introduced; every step is grounded in identifiers already published on the site.
+
+| Metric | 2026-11-02 | 2026-11-03 |
+| --- | --- | --- |
+| Indexable / emitted files | 284 / 782 | **285 / 783** |
+| HTML files | 777 | **778** |
+| Sitemap `<loc>` | 284 | **285** |
+| Sitemap `<lastmod>` present / omitted | 274 / 10 | **275 / 10** (new page 2026-11-03) |
+| Titles | 284 unique, 30–60 chars | **285 unique, 30–60 chars** (new: 48) |
+| Descriptions | 284 unique, 70–160 chars | **285 unique, 70–160 chars** (new: 146) |
+| JSON-LD | 1 WebSite + 24 WebPage + 259 Article, 283 breadcrumbs | **1 WebSite + 24 WebPage + 260 Article, 284 breadcrumbs** |
+| Published guides / questions / updates rows | 87 / 87 / 14 | **88 / 88 / 15** |
+| config/urls.json keep / noindex | 284 / 492 | **285 / 492** |
+| Test suite | 94 passed | **94 passed** (new page is covered by the existing SEO gates) |
+| Internal `.html` links | 0 | **0** |
+
+The date contract is unchanged: the new page carries `<lastmod>2026-11-03</lastmod>` from `content/dates.json`
+(regenerated from git after the content commit); the 10 pages without a dated content source still omit it.
+
 ## Measured state (2026-11-02)
 
 | Item | Result |
