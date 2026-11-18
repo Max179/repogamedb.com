@@ -7,11 +7,17 @@ The Cloudflare Web Analytics beacon token was rotated from
 ## Changed
 
 - `pipeline/site.mjs` — the one hard-coded token in the footer beacon.
+- `pipeline/site.mjs` — corrected the beacon JSON quoting. The old source emitted
+  `data-cf-beacon="{\"token\":\"…\"}"`; because backslash is not an HTML escape,
+  the parser truncated the attribute to `{\` and the beacon never read a token
+  (no `cdn-cgi/rum` request). It now emits HTML-escaped quotes
+  (`data-cf-beacon="{&quot;token&quot;:&quot;…&quot;}"`), so the DOM value is
+  valid JSON. This is a pre-existing bug, not a token-value change.
 - `reports/analytics-setup.md` — recorded the new public token (old value kept only as history).
 
-The beacon URL (`https://static.cloudflareinsights.com/beacon.min.js`) and the
-`data-cf-beacon` shape are unchanged. Every page still gets exactly one beacon
-element; no second script was added.
+The beacon URL (`https://static.cloudflareinsights.com/beacon.min.js`) is
+unchanged. Every page still gets exactly one beacon element; no second script
+was added.
 
 ## Not changed
 
@@ -26,6 +32,11 @@ element; no second script was added.
 - Pages carrying the new token: 778. Pages carrying the old token: 0.
 - Pages with exactly one `beacon.min.js` element: 778; 0 pages with zero or more than one.
 - `npm test`: 94 passed, 0 failed.
+- Browser check of the two encodings against the live beacon: the old `\"` form
+  left `data-cf-beacon` as `{\` and requested only `beacon.min.js`; the
+  `&quot;` form produced `window.__cfBeacon.token =
+  "40369ef574cb4fa28f472e125feddb7d"` and requested
+  `https://cloudflareinsights.com/cdn-cgi/rum`.
 
 ## Post-deploy check
 

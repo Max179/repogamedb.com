@@ -218,7 +218,7 @@ export function build(inventoryPath, outDir) {
     '<p class="dim">A diagram is always labelled as a diagram. A number we could not verify is not printed.</p>\n' +
     '<p class="dim"><a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · ' +
     '<a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/credits.html">Image credits</a> · <a href="/reference/">Technical reference</a></p>\n' +
-    '</div></footer>\n<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{\\"token\\":\\"40369ef574cb4fa28f472e125feddb7d\\"}"></script>\n</body>\n</html>\n');
+    '</div></footer>\n<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;:&quot;40369ef574cb4fa28f472e125feddb7d&quot;}"></script>\n</body>\n</html>\n');
   };
   const write = (rel, html) => { const f = join(outDir, rel); mkdirSync(dirname(f), { recursive: true }); writeFileSync(f, html, 'utf8'); pages.set('/' + rel, html); };
   const indexable = (rel, title, desc, body, opts) => { write(rel, layout(title, desc, '/' + rel, body, opts)); urls.push(SITE.url + publicPath('/' + rel)); };
