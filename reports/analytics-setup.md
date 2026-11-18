@@ -3,7 +3,7 @@
 ## What was added
 
 - **Cloudflare Web Analytics** site created for host `repogamedb.com` (account 8cc2c42af026d513aded51986a011494).
-- Public site token: `f292fd509ecf420b8a323f36c2f815a2`.
+- Public site token: `40369ef574cb4fa28f472e125feddb7d` (rotated 2026-11-19; the previous token was `f292fd509ecf420b8a323f36c2f815a2`).
 - The build injects the official Cloudflare beacon on every page:
   `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{...}"></script>`
 - The script is cookieless and aggregate; no personal profiles are built by the site.
